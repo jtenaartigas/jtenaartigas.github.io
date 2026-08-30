@@ -1,0 +1,1536 @@
+/* =========================================================
+   VARIABLES GENERALES
+   ========================================================= */
+
+:root {
+
+  /* Colores institucionales */
+
+  --junta-green: #00843d;
+  --junta-green-dark: #006b32;
+  --junta-green-soft: #edf8f1;
+
+
+  /* Colores de apoyo */
+
+  --pencil-yellow: #f5b700;
+  --pencil-blue: #2374d8;
+  --pencil-red: #d83b32;
+
+
+  /* Colores neutros */
+
+  --text-main: #24302a;
+  --text-soft: #66736c;
+
+  --background: #ffffff;
+  --background-soft: #f6f9f7;
+
+  --border: #dfe8e2;
+
+
+  /* Sombras */
+
+  --shadow-soft:
+    0 10px 30px rgba(28, 55, 39, 0.09);
+
+  --shadow-medium:
+    0 15px 38px rgba(28, 55, 39, 0.13);
+
+
+  /* Bordes */
+
+  --radius-small: 10px;
+  --radius-medium: 18px;
+  --radius-large: 26px;
+
+
+  /* Ancho máximo */
+
+  --max-width: 1200px;
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin: 0;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  line-height: 1.65;
+
+  color: var(--text-main);
+
+  background: var(--background);
+
+}
+
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
+}
+
+
+a {
+  color: inherit;
+}
+
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+.skip-link {
+
+  position: absolute;
+
+  top: -100px;
+  left: 20px;
+
+  z-index: 9999;
+
+  padding: 10px 16px;
+
+  color: #ffffff;
+
+  background: var(--junta-green-dark);
+
+  border-radius: var(--radius-small);
+
+  text-decoration: none;
+
+}
+
+
+.skip-link:focus {
+  top: 20px;
+}
+
+
+/* =========================================================
+   BANNER PRINCIPAL
+   ========================================================= */
+
+.site-banner {
+
+  width: 100%;
+
+  background: #f7f7f5;
+
+  overflow: hidden;
+
+}
+
+
+.site-banner a {
+
+  display: block;
+
+  text-decoration: none;
+
+}
+
+
+.banner-image {
+
+  width: 100%;
+  height: auto;
+
+}
+
+
+/* =========================================================
+   BARRA DE NAVEGACIÓN
+   ========================================================= */
+
+.navigation-wrapper {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid var(--border);
+
+  box-shadow:
+    0 4px 14px rgba(28, 55, 39, 0.06);
+
+}
+
+
+.navigation-container {
+
+  width: min(94%, var(--max-width));
+
+  min-height: 72px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+}
+
+
+/* =========================================================
+   LOGO EN LA NAVEGACIÓN
+   ========================================================= */
+
+.navigation-logo {
+
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease;
+
+}
+
+
+.navigation-logo:hover {
+  transform: scale(1.05);
+}
+
+
+.navigation-logo img {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+}
+
+
+/* =========================================================
+   MENÚ PRINCIPAL
+   ========================================================= */
+
+.main-navigation {
+
+  margin-left: auto;
+
+}
+
+
+.main-navigation ul {
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  list-style: none;
+
+}
+
+
+.main-navigation li {
+
+  position: relative;
+
+}
+
+
+.main-navigation a {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 13px 15px 11px 25px;
+
+  font-size: 0.94rem;
+  font-weight: 650;
+
+  color: var(--text-main);
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+
+}
+
+
+/* =========================================================
+   PUNTA DE LÁPIZ DEL MENÚ
+   ========================================================= */
+
+.main-navigation a::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 9px;
+  top: 50%;
+
+  width: 8px;
+  height: 18px;
+
+  background: var(--junta-green);
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 27%,
+      100% 100%,
+      0 100%,
+      0 27%
+    );
+
+  transform:
+    translateY(-50%)
+    rotate(90deg);
+
+  border-radius: 1px;
+
+}
+
+
+.nav-green a::before {
+  background: var(--junta-green);
+}
+
+
+.nav-yellow a::before {
+  background: var(--pencil-yellow);
+}
+
+
+.nav-blue a::before {
+  background: var(--pencil-blue);
+}
+
+
+.nav-red a::before {
+  background: var(--pencil-red);
+}
+
+
+.main-navigation a:hover,
+.main-navigation a:focus-visible {
+
+  color: var(--junta-green-dark);
+
+  background: var(--junta-green-soft);
+
+}
+
+
+/* =========================================================
+   BOTÓN MENÚ MÓVIL
+   ========================================================= */
+
+.menu-toggle {
+
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  margin-left: auto;
+
+  padding: 10px;
+
+  background: transparent;
+
+  border: 0;
+
+  cursor: pointer;
+
+}
+
+
+.menu-toggle span {
+
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 5px 0;
+
+  background: var(--text-main);
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+
+}
+
+
+/* =========================================================
+   BIENVENIDA
+   ========================================================= */
+
+.welcome-section {
+
+  padding: 80px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--junta-green-soft),
+      #ffffff 68%
+    );
+
+}
+
+
+.welcome-container {
+
+  width: min(92%, var(--max-width));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(260px, 0.65fr);
+
+  align-items: center;
+
+  gap: 70px;
+
+}
+
+
+.welcome-content {
+  max-width: 760px;
+}
+
+
+.section-label {
+
+  margin: 0 0 10px;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  color: var(--junta-green);
+
+}
+
+
+.welcome-content h1 {
+
+  margin: 0 0 25px;
+
+  font-size:
+    clamp(2.2rem, 4.5vw, 4rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+}
+
+
+.welcome-content p {
+
+  margin: 0 0 18px;
+
+  color: var(--text-soft);
+
+  font-size: 1.05rem;
+
+}
+
+
+.welcome-content .welcome-intro {
+
+  color: var(--text-main);
+
+  font-size: 1.2rem;
+  font-weight: 650;
+
+}
+
+
+.welcome-tomatito {
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+}
+
+
+.welcome-tomatito img {
+
+  width: min(100%, 320px);
+
+  filter:
+    drop-shadow(
+      0 18px 16px
+      rgba(20, 50, 30, 0.12)
+    );
+
+}
+
+
+/* =========================================================
+   CONTENEDORES GENERALES
+   ========================================================= */
+
+.section-container {
+
+  width: min(92%, var(--max-width));
+
+  margin: 0 auto;
+
+}
+
+
+.section-heading {
+
+  max-width: 700px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+
+}
+
+
+.section-heading h2 {
+
+  margin: 0;
+
+  font-size:
+    clamp(2rem, 4vw, 3rem);
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+
+}
+
+
+.section-heading > p:last-child {
+
+  margin: 14px 0 0;
+
+  color: var(--text-soft);
+
+}
+
+
+/* =========================================================
+   ACCESOS PRINCIPALES
+   ========================================================= */
+
+.main-access-section {
+
+  padding: 90px 0 100px;
+
+  background: var(--background);
+
+}
+
+
+.access-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+
+}
+
+
+.access-card {
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-medium);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.access-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: var(--shadow-medium);
+
+}
+
+
+.access-image-link {
+
+  display: block;
+
+  overflow: hidden;
+
+}
+
+
+.access-image {
+
+  width: 100%;
+
+  aspect-ratio: 3 / 2;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.35s ease;
+
+}
+
+
+.access-card:hover .access-image {
+
+  transform: scale(1.025);
+
+}
+
+
+.access-content {
+
+  padding: 26px;
+
+}
+
+
+/* =========================================================
+   PEQUEÑO LÁPIZ DE LAS TARJETAS
+   ========================================================= */
+
+.access-pencil {
+
+  display: block;
+
+  width: 48px;
+  height: 5px;
+
+  margin-bottom: 19px;
+
+  border-radius: 5px;
+
+}
+
+
+.pencil-yellow {
+  background: var(--pencil-yellow);
+}
+
+
+.pencil-blue {
+  background: var(--pencil-blue);
+}
+
+
+.pencil-red {
+  background: var(--pencil-red);
+}
+
+
+.access-card h3 {
+
+  margin: 0 0 11px;
+
+  font-size: 1.35rem;
+
+}
+
+
+.access-card p {
+
+  margin: 0 0 24px;
+
+  color: var(--text-soft);
+
+}
+
+
+.access-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-weight: 750;
+
+  color: var(--junta-green-dark);
+
+  text-decoration: none;
+
+}
+
+
+.access-link:hover,
+.access-link:focus-visible {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+
+  background: #f3f6f4;
+
+  border-top: 1px solid var(--border);
+
+}
+
+
+.footer-container {
+
+  width: min(92%, var(--max-width));
+
+  margin: 0 auto;
+
+  padding: 45px 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+
+}
+
+
+.footer-junta img {
+
+  width: min(100%, 330px);
+  height: auto;
+
+}
+
+
+.footer-school {
+
+  text-align: right;
+
+}
+
+
+.footer-school p {
+
+  margin: 2px 0;
+
+  color: var(--text-soft);
+
+}
+
+
+.footer-school .footer-school-name {
+
+  color: var(--text-main);
+
+  font-size: 1.05rem;
+  font-weight: 750;
+
+}
+
+
+.footer-school a {
+
+  display: inline-block;
+
+  margin-top: 8px;
+
+  font-weight: 700;
+
+  color: var(--junta-green-dark);
+
+  text-decoration: none;
+
+}
+
+
+.footer-school a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER INFERIOR
+   ========================================================= */
+
+.footer-bottom {
+
+  border-top: 1px solid var(--border);
+
+}
+
+
+.footer-bottom-container {
+
+  width: min(92%, var(--max-width));
+
+  min-height: 58px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  font-size: 0.85rem;
+
+  color: var(--text-soft);
+
+}
+
+
+.footer-bottom-container p {
+  margin: 0;
+}
+
+
+.footer-bottom-container a {
+
+  font-weight: 700;
+
+  color: var(--junta-green-dark);
+
+  text-decoration: none;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .welcome-container {
+
+    grid-template-columns:
+      minmax(0, 1.3fr)
+      minmax(220px, 0.7fr);
+
+    gap: 35px;
+
+  }
+
+
+  .access-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+  }
+
+
+  .access-card:last-child {
+
+    grid-column: 1 / -1;
+
+    max-width: 560px;
+
+    justify-self: center;
+
+  }
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN MÓVIL
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .navigation-container {
+    min-height: 66px;
+  }
+
+
+  .navigation-logo {
+
+    width: 46px;
+    height: 46px;
+
+  }
+
+
+  .menu-toggle {
+    display: block;
+  }
+
+
+  .main-navigation {
+
+    position: absolute;
+
+    top: 66px;
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    padding: 12px 4% 20px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: var(--shadow-soft);
+
+  }
+
+
+  .main-navigation.is-open {
+    display: block;
+  }
+
+
+  .main-navigation ul {
+    display: block;
+  }
+
+
+  .main-navigation li {
+    margin: 4px 0;
+  }
+
+
+  .main-navigation a {
+    padding: 13px 16px 13px 30px;
+  }
+
+
+  .menu-toggle.is-open span:nth-child(1) {
+
+    transform:
+      translateY(7px)
+      rotate(45deg);
+
+  }
+
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+
+  .menu-toggle.is-open span:nth-child(3) {
+
+    transform:
+      translateY(-7px)
+      rotate(-45deg);
+
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .banner-image {
+
+    min-height: 190px;
+
+    object-fit: cover;
+    object-position: center;
+
+  }
+
+
+  .welcome-section {
+    padding: 60px 0;
+  }
+
+
+  .welcome-container {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+  }
+
+
+  .welcome-content {
+    text-align: center;
+  }
+
+
+  .welcome-tomatito img {
+    width: 220px;
+  }
+
+
+  .main-access-section {
+    padding: 65px 0 75px;
+  }
+
+
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .access-card:last-child {
+
+    grid-column: auto;
+
+    max-width: none;
+
+  }
+
+
+  .footer-container {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+  }
+
+
+  .footer-school {
+    text-align: left;
+  }
+
+
+  .footer-bottom-container {
+
+    padding: 15px 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+
+    transition: none !important;
+
+  }
+
+}
+
+/* =========================================================
+   PÁGINAS INTERIORES
+   ========================================================= */
+
+.page-intro {
+
+  padding: 55px 0 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--junta-green-soft),
+      #ffffff 72%
+    );
+
+}
+
+
+.page-intro-container {
+
+  width: min(92%, var(--max-width));
+
+  margin: 0 auto;
+
+}
+
+
+.page-intro h1 {
+
+  margin: 0;
+
+  font-size:
+    clamp(2.4rem, 5vw, 4rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+}
+
+
+.page-intro-text {
+
+  max-width: 720px;
+
+  margin: 20px 0 0;
+
+  font-size: 1.08rem;
+
+  color: var(--text-soft);
+
+}
+
+
+/* =========================================================
+   MIGAS DE PAN
+   ========================================================= */
+
+.breadcrumbs {
+
+  margin-bottom: 35px;
+
+}
+
+
+.breadcrumbs ol {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  font-size: 0.86rem;
+
+  color: var(--text-soft);
+
+}
+
+
+.breadcrumbs li {
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+
+.breadcrumbs li:not(:last-child)::after {
+
+  content: "›";
+
+  margin-left: 7px;
+
+  color: #9aa69f;
+
+}
+
+
+.breadcrumbs a {
+
+  color: var(--junta-green-dark);
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+}
+
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+
+  text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   ENLACE ACTIVO DEL MENÚ
+   ========================================================= */
+
+.main-navigation a[aria-current="page"] {
+
+  color: var(--junta-green-dark);
+
+  background: var(--junta-green-soft);
+
+}
+
+
+/* =========================================================
+   SECCIÓN DE CURSOS
+   ========================================================= */
+
+.courses-section {
+
+  padding: 75px 0 100px;
+
+  background: var(--background);
+
+}
+
+
+.courses-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+}
+
+
+/* =========================================================
+   TARJETAS DE CURSO
+   ========================================================= */
+
+.course-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-medium);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.course-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow-medium);
+
+}
+
+
+.course-card > a {
+
+  min-height: 210px;
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(0, 1fr);
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+/* =========================================================
+   NÚMERO DEL CURSO
+   ========================================================= */
+
+.course-number {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.5rem;
+  font-weight: 850;
+
+  color: #ffffff;
+
+  background: var(--junta-green);
+
+}
+
+
+/* =========================================================
+   CONTENIDO DE TARJETA
+   ========================================================= */
+
+.course-content {
+
+  padding: 28px;
+
+}
+
+
+.course-stage {
+
+  margin: 0 0 5px;
+
+  font-size: 0.73rem;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: var(--junta-green);
+
+}
+
+
+.course-content h2 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.55rem;
+
+  line-height: 1.2;
+
+}
+
+
+.course-content > p:not(.course-stage) {
+
+  margin: 0 0 18px;
+
+  color: var(--text-soft);
+
+}
+
+
+.course-access {
+
+  display: inline-block;
+
+  font-size: 0.94rem;
+  font-weight: 750;
+
+  color: var(--junta-green-dark);
+
+}
+
+
+/* =========================================================
+   EDUCACIÓN INFANTIL
+   ========================================================= */
+
+.course-infantil .course-number {
+
+  background: #d29a00;
+
+}
+
+
+.course-infantil .course-stage {
+
+  color: #9c7200;
+
+}
+
+
+/* =========================================================
+   EDUCACIÓN PRIMARIA
+   ========================================================= */
+
+.course-primary .course-number {
+
+  background: var(--junta-green);
+
+}
+
+
+/* =========================================================
+   APOYO Y ORIENTACIÓN
+   ========================================================= */
+
+
+
+
+.course-support .course-number {
+
+  background: #5367a5;
+
+}
+
+
+.course-support .course-stage {
+
+  color: #5367a5;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .courses-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .page-intro {
+
+    padding: 42px 0 48px;
+
+  }
+
+
+  .courses-section {
+
+    padding: 55px 0 70px;
+
+  }
+
+
+  .course-card > a,
+  .course-support > a {
+
+    min-height: auto;
+
+    grid-template-columns: 78px minmax(0, 1fr);
+
+  }
+
+
+  .course-number {
+
+    font-size: 1.65rem;
+
+  }
+
+
+  .course-content {
+
+    padding: 22px 18px;
+
+  }
+
+
+  .course-content h2 {
+
+    font-size: 1.3rem;
+
+  }
+
+}
