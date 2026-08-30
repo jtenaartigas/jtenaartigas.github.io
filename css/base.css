@@ -1534,3 +1534,234 @@ select {
   }
 
 }
+
+/* =========================================================
+   MATERIAS DE CADA CURSO
+   ========================================================= */
+
+.subjects-section {
+
+  padding: 75px 0 100px;
+
+  background: var(--background);
+
+}
+
+
+.subjects-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+}
+
+
+/* =========================================================
+   TARJETAS DE MATERIAS
+   ========================================================= */
+
+.subject-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-medium);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.subject-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow-medium);
+
+}
+
+
+.subject-card > a {
+
+  min-height: 215px;
+
+  display: grid;
+
+  grid-template-columns:
+    105px
+    minmax(0, 1fr);
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+/* =========================================================
+   SÍMBOLO DE CADA MATERIA
+   ========================================================= */
+
+.subject-icon {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+  font-weight: 850;
+
+  text-align: center;
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.subject-content {
+
+  padding: 27px;
+
+}
+
+
+.subject-content h2 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.35rem;
+
+  line-height: 1.25;
+
+}
+
+
+.subject-content p {
+
+  margin: 0 0 18px;
+
+  color: var(--text-soft);
+
+}
+
+
+.subject-access {
+
+  font-size: 0.93rem;
+  font-weight: 750;
+
+  color: var(--junta-green-dark);
+
+}
+
+
+/* =========================================================
+   COLORES DE LAS MATERIAS
+   ========================================================= */
+
+.subject-maths .subject-icon {
+  background: #2374d8;
+}
+
+
+.subject-language .subject-icon {
+  background: #d65353;
+}
+
+
+.subject-science .subject-icon {
+  background: var(--junta-green);
+}
+
+
+.subject-english .subject-icon {
+  background: #6a58b8;
+}
+
+
+.subject-french .subject-icon {
+  background: #405ca8;
+}
+
+
+.subject-pe .subject-icon {
+  background: #dd8a22;
+}
+
+
+.subject-art .subject-icon {
+  background: #b34d98;
+}
+
+
+.subject-values .subject-icon {
+  background: #68737c;
+}
+
+
+/* =========================================================
+   TABLET Y MÓVIL
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .subjects-section {
+    padding: 55px 0 70px;
+  }
+
+
+  .subject-card > a {
+
+    min-height: auto;
+
+    grid-template-columns:
+      78px
+      minmax(0, 1fr);
+
+  }
+
+
+  .subject-icon {
+    font-size: 1.45rem;
+  }
+
+
+  .subject-content {
+    padding: 22px 18px;
+  }
+
+
+  .subject-content h2 {
+    font-size: 1.2rem;
+  }
+
+}
