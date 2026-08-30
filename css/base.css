@@ -1118,3 +1118,442 @@ select {
   }
 
 }
+
+/* =========================================================
+   PÁGINAS INTERIORES
+   ========================================================= */
+
+.page-intro {
+
+  padding: 55px 0 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--junta-green-soft),
+      #ffffff 72%
+    );
+
+}
+
+
+.page-intro-container {
+
+  width: min(92%, var(--max-width));
+
+  margin: 0 auto;
+
+}
+
+
+.page-intro h1 {
+
+  margin: 0;
+
+  font-size:
+    clamp(2.4rem, 5vw, 4rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+}
+
+
+.page-intro-text {
+
+  max-width: 720px;
+
+  margin: 20px 0 0;
+
+  font-size: 1.08rem;
+
+  color: var(--text-soft);
+
+}
+
+
+/* =========================================================
+   MIGAS DE PAN
+   ========================================================= */
+
+.breadcrumbs {
+
+  margin-bottom: 35px;
+
+}
+
+
+.breadcrumbs ol {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  font-size: 0.86rem;
+
+  color: var(--text-soft);
+
+}
+
+
+.breadcrumbs li {
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+
+.breadcrumbs li:not(:last-child)::after {
+
+  content: "›";
+
+  margin-left: 7px;
+
+  color: #9aa69f;
+
+}
+
+
+.breadcrumbs a {
+
+  color: var(--junta-green-dark);
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+}
+
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+
+  text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   ENLACE ACTIVO DEL MENÚ
+   ========================================================= */
+
+.main-navigation a[aria-current="page"] {
+
+  color: var(--junta-green-dark);
+
+  background: var(--junta-green-soft);
+
+}
+
+
+/* =========================================================
+   SECCIÓN DE CURSOS
+   ========================================================= */
+
+.courses-section {
+
+  padding: 75px 0 100px;
+
+  background: var(--background);
+
+}
+
+
+.courses-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+}
+
+
+/* =========================================================
+   TARJETAS DE CURSO
+   ========================================================= */
+
+.course-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-medium);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.course-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow-medium);
+
+}
+
+
+.course-card > a {
+
+  min-height: 210px;
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(0, 1fr);
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+/* =========================================================
+   NÚMERO DEL CURSO
+   ========================================================= */
+
+.course-number {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.5rem;
+  font-weight: 850;
+
+  color: #ffffff;
+
+  background: var(--junta-green);
+
+}
+
+
+/* =========================================================
+   CONTENIDO DE TARJETA
+   ========================================================= */
+
+.course-content {
+
+  padding: 28px;
+
+}
+
+
+.course-stage {
+
+  margin: 0 0 5px;
+
+  font-size: 0.73rem;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: var(--junta-green);
+
+}
+
+
+.course-content h2 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.55rem;
+
+  line-height: 1.2;
+
+}
+
+
+.course-content > p:not(.course-stage) {
+
+  margin: 0 0 18px;
+
+  color: var(--text-soft);
+
+}
+
+
+.course-access {
+
+  display: inline-block;
+
+  font-size: 0.94rem;
+  font-weight: 750;
+
+  color: var(--junta-green-dark);
+
+}
+
+
+/* =========================================================
+   EDUCACIÓN INFANTIL
+   ========================================================= */
+
+.course-infantil .course-number {
+
+  background: #d29a00;
+
+}
+
+
+.course-infantil .course-stage {
+
+  color: #9c7200;
+
+}
+
+
+/* =========================================================
+   EDUCACIÓN PRIMARIA
+   ========================================================= */
+
+.course-primary .course-number {
+
+  background: var(--junta-green);
+
+}
+
+
+/* =========================================================
+   APOYO Y ORIENTACIÓN
+   ========================================================= */
+
+.course-support {
+
+  grid-column: 1 / -1;
+
+}
+
+
+.course-support > a {
+
+  grid-template-columns:
+    160px
+    minmax(0, 1fr);
+
+}
+
+
+.course-support .course-number {
+
+  background: #5367a5;
+
+}
+
+
+.course-support .course-stage {
+
+  color: #5367a5;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .courses-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .course-support {
+
+    grid-column: auto;
+
+  }
+
+
+  .course-support > a {
+
+    grid-template-columns:
+      120px
+      minmax(0, 1fr);
+
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .page-intro {
+
+    padding: 42px 0 48px;
+
+  }
+
+
+  .courses-section {
+
+    padding: 55px 0 70px;
+
+  }
+
+
+  .course-card > a,
+  .course-support > a {
+
+    min-height: auto;
+
+    grid-template-columns: 78px minmax(0, 1fr);
+
+  }
+
+
+  .course-number {
+
+    font-size: 1.65rem;
+
+  }
+
+
+  .course-content {
+
+    padding: 22px 18px;
+
+  }
+
+
+  .course-content h2 {
+
+    font-size: 1.3rem;
+
+  }
+
+}
