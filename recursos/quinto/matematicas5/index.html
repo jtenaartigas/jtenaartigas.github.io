@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Recursos educativos de Matemáticas de 5.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Matemáticas 5.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+
+  <!-- ESTILOS ESPECÍFICOS DE LA PÁGINA -->
+  <style>
+    .subject-page {
+      background: var(--background-soft);
+    }
+
+    .subject-shell {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    .subject-intro {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      padding: 2rem 2rem 0;
+      overflow: hidden;
+      border: 1px solid #cbdcf4;
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          #eff6ff 0%,
+          #ffffff 70%
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-intro-text {
+      padding-bottom: 2rem;
+    }
+
+    .subject-label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: var(--pencil-blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subject-intro h1 {
+      margin: 0 0 0.75rem;
+      color: var(--text-main);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    .subject-intro p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .subject-mascot {
+      display: block;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .learning-heading {
+      margin: 0 0 1.25rem;
+      color: var(--text-main);
+      font-size: 1.45rem;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .learning-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      min-height: 155px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-3px);
+      border-color: #b8d0ef;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .learning-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pencil-blue);
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    .learning-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .learning-content h2 {
+      margin: 0 0 0.55rem;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .learning-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .learning-count {
+      align-self: flex-start;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: #eef5ff;
+      color: #315f9e;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .subject-intro {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .subject-intro-text {
+        padding-bottom: 0;
+      }
+
+      .subject-mascot {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subject-shell {
+        width: min(94%, var(--max-width));
+        padding-top: 1.25rem;
+      }
+
+      .subject-intro {
+        border-radius: 20px;
+      }
+
+      .learning-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 145px;
+      }
+
+      .learning-number {
+        font-size: 1.05rem;
+      }
+
+      .learning-content {
+        padding: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
+  <header class="site-banner">
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
+  </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
+  <div class="navigation-wrapper">
+
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- MENÚ PRINCIPAL -->
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+
+        <ul>
+
+          <li class="nav-green">
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li class="nav-yellow">
+            <a href="/familias/">
+              Familias
+            </a>
+          </li>
+
+          <li class="nav-blue">
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+          </li>
+
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">
+                🔒
+              </span>
+              Área privada Profesorado
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="subject-page"
+  >
+
+    <div class="subject-shell">
+
+
+      <!-- MIGAS DE PAN -->
+
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+
+        <ol>
+
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/">
+              Recursos educativos
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/quinto/">
+              5.º de Primaria
+            </a>
+          </li>
+
+          <li aria-current="page">
+            Matemáticas
+          </li>
+
+        </ol>
+
+      </nav>
+
+
+      <!-- ==================================================
+           PRESENTACIÓN DE LA MATERIA
+           ================================================== -->
+
+      <section class="subject-intro">
+
+        <div class="subject-intro-text">
+
+          <span class="subject-label">
+            Matemáticas · 5.º de Primaria
+          </span>
+
+          <h1>
+            Matemáticas
+          </h1>
+
+          <p>
+            En este espacio encontrarás explicaciones, actividades,
+            problemas, materiales de refuerzo y ampliación y recursos
+            para avanzar paso a paso en los contenidos de Matemáticas
+            de 5.º de Educación Primaria.
+          </p>
+
+        </div>
+
+
+        <!-- TOMATITO MATEMÁTICAS -->
+
+        <img
+          src="/img/tomatito/matematicas.png"
+          alt=""
+          class="subject-mascot"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           SITUACIONES DE APRENDIZAJE
+           ================================================== -->
+
+      <section aria-labelledby="situaciones-aprendizaje">
+
+        <h2
+          id="situaciones-aprendizaje"
+          class="learning-heading"
+        >
+          Elige una Situación de Aprendizaje
+        </h2>
+
+
+        <div class="learning-grid">
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 1 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/numeracion/"
+          >
+
+            <div class="learning-number">
+              01
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Numeración
+              </h2>
+
+              <p>
+                Lectura y escritura de números de hasta nueve cifras,
+                valor posicional, comparación, descomposición,
+                redondeo, ordinales y números romanos.
+              </p>
+
+              <span class="learning-count">
+                8 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 2 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/operaciones/"
+          >
+
+            <div class="learning-number">
+              02
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Operaciones
+              </h2>
+
+              <p>
+                Cálculo mental, sumas, restas, multiplicaciones,
+                divisiones, propiedades, jerarquía de operaciones
+                y resolución de problemas de varias etapas.
+              </p>
+
+              <span class="learning-count">
+                7 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 3 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/decimales/"
+          >
+
+            <div class="learning-number">
+              03
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Decimales
+              </h2>
+
+              <p>
+                Comparación, descomposición y redondeo de números
+                decimales, cálculo mental y operaciones con decimales,
+                incluyendo multiplicaciones y divisiones.
+              </p>
+
+              <span class="learning-count">
+                9 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 4 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/fracciones/"
+          >
+
+            <div class="learning-number">
+              04
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Fracciones
+              </h2>
+
+              <p>
+                Representación, comparación y equivalencias,
+                fracción de una cantidad, operaciones con fracciones
+                y transformación entre fracciones y decimales.
+              </p>
+
+              <span class="learning-count">
+                5 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 5 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/potencias-divisibilidad/"
+          >
+
+            <div class="learning-number">
+              05
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Potencias y divisibilidad
+              </h2>
+
+              <p>
+                Potencias, base y exponente, múltiplos, divisores,
+                números primos y compuestos y reglas de divisibilidad
+                aplicadas a problemas.
+              </p>
+
+              <span class="learning-count">
+                3 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 6 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/estadistica-probabilidad/"
+          >
+
+            <div class="learning-number">
+              06
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Estadística y probabilidad
+              </h2>
+
+              <p>
+                Sucesos y probabilidades, Regla de Laplace,
+                frecuencias, media, moda, mediana, rango
+                y representación e interpretación de gráficos.
+              </p>
+
+              <span class="learning-count">
+                5 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 7 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/unidades-medida/"
+          >
+
+            <div class="learning-number">
+              07
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Unidades de medida
+              </h2>
+
+              <p>
+                Masa, capacidad, longitud, superficie y volumen,
+                factores de conversión y resolución de problemas
+                con diferentes unidades de medida.
+              </p>
+
+              <span class="learning-count">
+                4 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 8 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/matematicas5/geometria/"
+          >
+
+            <div class="learning-number">
+              08
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Geometría
+              </h2>
+
+              <p>
+                Escalas, coordenadas, ángulos, transformaciones,
+                elementos geométricos, polígonos, cuerpos geométricos,
+                perímetros y áreas.
+              </p>
+
+              <span class="learning-count">
+                8 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
+      </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>
