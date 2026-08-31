@@ -1,0 +1,6211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Fracciones de Matemáticas de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Fracciones | Matemáticas 6.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- TAILWIND: se mantiene para conservar el diseño del material -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CONFIGURACIÓN TAILWIND DEL MATERIAL -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: '#007A33',
+              dark: '#005724',
+              light: '#e6f4ea',
+              accent: '#00a847',
+            },
+            editorial: {
+              bg: '#f8faf9',
+              card: '#ffffff',
+              border: '#d1e7dd',
+              text: '#1e293b',
+              subtext: '#475569',
+              amber: '#d97706',
+              amberBg: '#fef3c7',
+            }
+          },
+          fontFamily: {
+            sans: ['system-ui', 'sans-serif'],
+            heading: ['system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ESTILOS ESPECÍFICOS DE LA SITUACIÓN DE APRENDIZAJE -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-page .text-heading {
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+    }
+
+    .custom-shadow {
+      box-shadow:
+        0 4px 20px -2px
+        rgba(0, 122, 51, 0.08);
+    }
+
+    /* =========================================================
+       FRACCIÓN VERTICAL REUTILIZABLE
+       ========================================================= */
+
+    .frac {
+      display: inline-grid;
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-items: stretch;
+
+      min-width: 1.45em;
+      margin: 0 0.12em;
+
+      color: inherit;
+
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+      font-size: 0.92em;
+      font-weight: 600;
+      line-height: 1;
+
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .frac .num {
+      display: block;
+
+      padding:
+        0
+        0.18em
+        0.09em;
+
+      border-bottom:
+        1.5px solid
+        currentColor;
+    }
+
+    .frac .den {
+      display: block;
+
+      padding:
+        0.09em
+        0.18em
+        0;
+    }
+
+    /* =========================================================
+       INTEGRACIÓN CON LA WEB PRINCIPAL
+       ========================================================= */
+
+    .topic-shell {
+      width: min(94%, 1280px);
+
+      margin: 0 auto;
+
+      padding:
+        1.5rem
+        0
+        2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+  </style>
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
+  <header class="site-banner">
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
+  </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
+  <div class="navigation-wrapper">
+
+    <div class="navigation-container">
+
+
+      <!-- LOGO DEL CENTRO -->
+
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- MENÚ PRINCIPAL -->
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+
+        <ul>
+
+          <li class="nav-green">
+
+            <a href="/">
+              Inicio
+            </a>
+
+          </li>
+
+
+          <li class="nav-yellow">
+
+            <a href="/familias/">
+              Familias
+            </a>
+
+          </li>
+
+
+          <li class="nav-blue">
+
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+
+          </li>
+
+
+          <li class="nav-red">
+
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span aria-hidden="true">
+                🔒
+              </span>
+
+              Área privada Profesorado
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="topic-page"
+  >
+
+    <div class="topic-shell">
+
+
+      <!-- MIGAS DE PAN -->
+
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+
+        <ol>
+
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/">
+              Recursos educativos
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/sexto/">
+              6.º de Primaria
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/sexto/matematicas6/">
+              Matemáticas
+            </a>
+          </li>
+
+          <li aria-current="page">
+            Fracciones
+          </li>
+
+        </ol>
+
+      </nav>
+
+
+      <!-- ==================================================
+           PORTADA DE LA SITUACIÓN DE APRENDIZAJE
+           ================================================== -->
+
+      <section class="bg-gradient-to-r from-junta-dark via-junta to-junta-accent text-white rounded-3xl p-8 md:p-12 mb-10 shadow-lg relative overflow-hidden">
+
+
+        <!-- FRACCIONES DECORATIVAS -->
+
+        <div class="absolute -right-10 -bottom-10 opacity-10 text-white font-extrabold text-7xl sm:text-8xl lg:text-9xl select-none text-heading tracking-tight">
+          ½ ¾
+        </div>
+
+
+        <!-- TEXTO -->
+
+        <div class="relative z-20 max-w-3xl md:pr-40 lg:pr-52">
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-heading leading-tight mb-4">
+            4. LAS FRACCIONES
+          </h1>
+
+          <p class="text-emerald-100 text-base md:text-lg leading-relaxed text-justify">
+            Representa, compara y transforma fracciones; trabaja con potencias,
+            calcula el mínimo común múltiplo y el máximo común divisor,
+            opera con fracciones y aplica estos conocimientos para resolver
+            situaciones cotidianas y tareas competenciales.
+          </p>
+
+        </div>
+
+
+        <!-- TOMATITO FRACCIONES -->
+
+        <img
+          src="/img/tomatito/tomatito-fracciones.png"
+          alt=""
+          class="relative z-10 block w-40 sm:w-48 h-auto object-contain mx-auto mt-6 pointer-events-none select-none md:absolute md:right-[60px] lg:right-[80px] md:bottom-0 md:w-44 lg:w-52 md:mx-0 md:mt-0"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           ÍNDICE DE NAVEGACIÓN
+           ================================================== -->
+
+      <nav class="bg-white rounded-2xl p-5 mb-10 shadow-sm border border-emerald-100">
+<h3 class="text-xs font-bold uppercase tracking-wider text-junta mb-3 flex items-center gap-2">
+<span>
+     📍
+    </span>
+    Contenidos de la Situación de Aprendizaje
+   </h3>
+<div class="flex flex-wrap gap-2 text-xs md:text-sm">
+<!-- ENLACE: 4.1 REPRESENTACIÓN, COMPARACIÓN Y EQUIVALENCIA -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-1" onclick="scrollToSec('sec-1', event)">
+     4.1 Representación, comparación y equivalencia
+    </a>
+<!-- ENLACE: 4.2 OPERACIONES CON FRACCIONES -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-2" onclick="scrollToSec('sec-2', event)">
+     4.2 Operaciones con fracciones
+    </a>
+<!-- ENLACE: 4.3 FRACCIONES Y NÚMEROS DECIMALES -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-3" onclick="scrollToSec('sec-3', event)">
+     4.3 Fracciones y números decimales
+    </a>
+<!-- ENLACE: 4.4 MÍNIMO COMÚN MÚLTIPLO Y MÁXIMO COMÚN DIVISOR -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-4" onclick="scrollToSec('sec-4', event)">
+     4.4 Mínimo Común Múltiplo y Máximo Común Divisor
+    </a>
+<!-- ENLACE: 4.5 SUMAS Y RESTAS DE FRACCIONES CON DISTINTO DENOMINADOR -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-5" onclick="scrollToSec('sec-5', event)">
+     4.5 Sumas y restas con distinto denominador
+    </a>
+<!-- ENLACE: 4.6 PROBLEMAS Y TAREAS COMPETENCIALES -->
+<a class="px-3 py-1.5 bg-editorial-amberBg text-editorial-amber hover:bg-amber-600 hover:text-white font-bold rounded-lg transition" href="#sec-6" onclick="scrollToSec('sec-6', event)">
+     4.6 Problemas y Desafíos
+    </a>
+<!-- ENLACE: 4.7 REPASO DE SITUACIONES DE APRENDIZAJE ANTERIORES -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-7" onclick="scrollToSec('sec-7', event)">
+     4.7 Repaso de operaciones
+    </a>
+<!-- ENLACE: REPASAMOS LO APRENDIDO -->
+<a class="px-3 py-1.5 bg-emerald-100 text-junta-dark hover:bg-junta hover:text-white rounded-lg transition font-bold" href="#sec-repaso" onclick="scrollToSec('sec-repaso', event)">
+     🔄 Repasamos lo aprendido
+    </a>
+<!-- ENLACE: DIANA DE AUTOEVALUACIÓN -->
+<a class="px-3 py-1.5 bg-indigo-100 text-indigo-800 hover:bg-indigo-600 hover:text-white rounded-lg transition font-bold" href="#sec-diana" onclick="scrollToSec('sec-diana', event)">
+     🎯 Autoevaluación
+    </a>
+</div>
+</nav>
+
+
+      <!-- ==================================================
+           BLOQUE PRINCIPAL DE CONTENIDOS
+           ================================================== -->
+
+      <div class="space-y-12 topic-content">
+
+        
+<!-- =========================================================== -->
+<!-- SECCIÓN 4.1 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      4.1
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Representación, comparación y equivalencia de fracciones
+     </h2>
+</div>
+<!-- EXPLICACIÓN 4.1 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+<span>
+       🍰
+      </span>
+      ¿Qué es una fracción y cómo se expresa?
+     </h3>
+<div class="space-y-3 text-sm md:text-base text-slate-700 leading-relaxed">
+<p class="text-justify">
+       Una fracción expresa una o varias partes iguales en las que se divide una
+            unidad o un todo. Consta de dos términos:
+      </p>
+<ul class="space-y-2">
+<li>
+<strong class="text-junta-dark">
+         Numerador:
+        </strong>
+        indica el número de partes iguales que tomamos o consideramos.
+       </li>
+<li>
+<strong class="text-junta-dark">
+         Denominador:
+        </strong>
+        indica el número total de partes iguales en las que se ha dividido la unidad.
+       </li>
+</ul>
+<p class="text-justify">
+       Cuando dos o más fracciones tienen el mismo denominador, es mayor aquella
+            que tiene el numerador más grande. Dos fracciones son
+       <strong class="text-junta-dark">
+        equivalentes
+       </strong>
+       cuando representan
+            la misma cantidad. Podemos obtenerlas por
+       <strong class="text-junta-dark">
+        amplificación
+       </strong>
+       o por
+       <strong class="text-junta-dark">
+        simplificación
+       </strong>.
+        <br/>Por ejemplo, amplificamos multiplicando numerador y denominador por el mismo número.
+        <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+         2
+        </span>
+<span class="den">
+         3
+        </span>
+</span>
+       --&gt; 
+       <span aria-label="Multiplicamos por 2" class="frac" role="math">
+<span class="num">
+         x2
+        </span>
+<span class="den">
+         x2
+        </span>
+</span>
+       =
+       <span aria-label="4 partido por 6" class="frac" role="math">
+<span class="num">
+         4
+        </span>
+<span class="den">
+         6
+        </span>
+</span>
+</div>
+<br/>Y simplificamos dividiendo numerador y denominadorpor el mismo número. 
+       <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span aria-label="6 partido por 9" class="frac" role="math">
+<span class="num">
+         6
+        </span>
+<span class="den">
+         9
+        </span>
+</span>
+       --&gt; 
+       <span aria-label="Dividimos por 3" class="frac" role="math">
+<span class="num">
+         :3
+        </span>
+<span class="den">
+         :3
+        </span>
+</span>
+       =
+       <span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+         2
+        </span>
+<span class="den">
+         3
+        </span>
+</span>
+</div>
+<br/>Recuerda que todas las divisiones que hagamos tienen que ser exactas.
+       <br/>Cuando simplificamos al máximo llegamos a la <strong>fracción irreducible</strong>.
+       <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="12 partido por 20" class="frac" role="math">
+<span class="num">
+         12
+        </span>
+<span class="den">
+         20
+        </span>
+</span>
+<span aria-label="Entre 2" class="frac" role="math">
+<span class="num">
+         :2
+        </span>
+<span class="den">
+         :2
+        </span>
+</span>
+       =
+       <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+         6
+        </span>
+<span class="den">
+         10
+        </span>
+</span>
+<span aria-label="Entre 2" class="frac" role="math">
+<span class="num">
+         :2
+        </span>
+<span class="den">
+         :2
+        </span>
+</span>
+       =
+       <span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+         3
+        </span>
+<span class="den">
+         5
+        </span>
+</span>
+</div>
+</p>
+<p class="text-justify">
+       Para calcular la
+       <strong class="text-junta-dark">
+        fracción de un número
+       </strong>
+       ,
+            dividimos la cantidad entre el denominador y multiplicamos el resultado por
+            el numerador.
+      </p>
+<!-- EJEMPLO DE LA CLASE FRACCIÓN -->
+<div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+         3
+        </span>
+<span class="den">
+         4
+        </span>
+</span>
+<span>
+        de 20 = 15
+       </span>
+</div>
+<!-- FRACCIONES CON POTENCIAS -->
+<div class="bg-white p-4 rounded-xl border border-emerald-200 mt-4">
+<h4 class="text-sm md:text-base font-bold text-junta-dark mb-2 text-heading">
+        Fracciones con potencias
+       </h4>
+<p class="text-sm text-slate-700 leading-relaxed text-justify mb-3">
+        También podemos encontrar <strong>potencias dentro de una fracción</strong> o elevar una fracción completa a una potencia. Para resolverlas, calculamos primero las potencias y después simplificamos la fracción si es posible.
+       </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="bg-emerald-50/60 p-3 rounded-lg border border-emerald-100 text-sm text-slate-700">
+<strong class="text-junta-dark">Potencias en numerador y denominador:</strong><br/>
+<span aria-label="2 al cubo partido por 5 al cuadrado" class="frac" role="math">
+<span class="num">
+           2<sup>3</sup>
+</span>
+<span class="den">
+           5<sup>2</sup>
+</span>
+</span> = <span aria-label="8 partido por 25" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           25
+          </span>
+</span>
+</div>
+<div class="bg-emerald-50/60 p-3 rounded-lg border border-emerald-100 text-sm text-slate-700">
+<strong class="text-junta-dark">Potencia de una fracción:</strong><br/>
+         (<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span>)<sup>2</sup> = <span aria-label="2 al cuadrado partido por 3 al cuadrado" class="frac" role="math">
+<span class="num">
+           2<sup>2</sup>
+</span>
+<span class="den">
+           3<sup>2</sup>
+</span>
+</span> = <span aria-label="4 partido por 9" class="frac" role="math">
+<span class="num">
+           4
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</div>
+</div>
+<p class="text-xs md:text-sm text-slate-600 mt-3 leading-relaxed">
+        Recuerda: (a/b)<sup>n</sup> = a<sup>n</sup>/b<sup>n</sup>. El exponente afecta tanto al numerador como al denominador.
+       </p>
+</div>
+</div>
+</div>
+<!-- EJERCICIOS 4.1 -->
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+      Ejercicios de práctica
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 4.1.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Escribe la fracción que representa cada uno de los siguientes casos e indica cuál es su numerador y su denominador:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Una tarta dividida en 12 partes iguales de la que se han consumido 7 partes.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Una parcela de olivar dividida en 15 franjas iguales de las que se han cosechado 11 franjas.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Un mosaico dividido en 16 piezas iguales de las que 9 están coloreadas.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Una colección dividida en 20 grupos iguales de los que se han revisado 13 grupos.
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Dibuja las siguientes fracciones de una cuadrícula rectangular dividida en 20 partes iguales:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Siete veinteavos.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Trece veinteavos.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Diecisiete veinteavos.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Diecinueve veinteavos.
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Escribe con cifras las siguientes fracciones y señala si son menores, iguales o mayores que la unidad:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Siete doceavos.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Trece doceavos.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Quince quinceavos.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Diecisiete veinteavos.
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Compara las siguientes parejas de fracciones utilizando los signos &gt;, &lt; o =. Puedes buscar fracciones equivalentes para justificar tu respuesta:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> ___ <span aria-label="15 partido por 24" class="frac" role="math">
+<span class="num">
+           15
+          </span>
+<span class="den">
+           24
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> ___ <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="9 partido por 12" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           12
+          </span>
+</span> ___ <span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> ___ <span aria-label="14 partido por 20" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Ordena las siguientes series de fracciones según se indica. Antes de ordenar, simplifica las que puedas:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         De menor a mayor: <span aria-label="6 partido por 16" class="frac" role="math">
+<span class="num">
+           6
+          </span>
+<span class="den">
+           16
+          </span>
+</span>, <span aria-label="14 partido por 16" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           16
+          </span>
+</span>, <span aria-label="10 partido por 16" class="frac" role="math">
+<span class="num">
+           10
+          </span>
+<span class="den">
+           16
+          </span>
+</span>, <span aria-label="3 partido por 16" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           16
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+         De menor a mayor: <span aria-label="18 partido por 24" class="frac" role="math">
+<span class="num">
+           18
+          </span>
+<span class="den">
+           24
+          </span>
+</span>, <span aria-label="5 partido por 24" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           24
+          </span>
+</span>, <span aria-label="21 partido por 24" class="frac" role="math">
+<span class="num">
+           21
+          </span>
+<span class="den">
+           24
+          </span>
+</span>, <span aria-label="11 partido por 24" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           24
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+         De mayor a menor: <span aria-label="14 partido por 20" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           20
+          </span>
+</span>, <span aria-label="19 partido por 20" class="frac" role="math">
+<span class="num">
+           19
+          </span>
+<span class="den">
+           20
+          </span>
+</span>, <span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span>, <span aria-label="17 partido por 20" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+         De mayor a menor: <span aria-label="9 partido por 12" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           12
+          </span>
+</span>, <span aria-label="12 partido por 12" class="frac" role="math">
+<span class="num">
+           12
+          </span>
+<span class="den">
+           12
+          </span>
+</span>, <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span>, <span aria-label="11 partido por 12" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Obtén dos fracciones equivalentes a cada una de las siguientes por amplificación, multiplicando por 4 y por 5:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="3 partido por 7" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           7
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="5 partido por 9" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 7
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Simplifica las siguientes fracciones hasta obtener la fracción irreducible e indica por qué número has dividido en cada paso:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="36 partido por 48" class="frac" role="math">
+<span class="num">
+           36
+          </span>
+<span class="den">
+           48
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="54 partido por 72" class="frac" role="math">
+<span class="num">
+           54
+          </span>
+<span class="den">
+           72
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="84 partido por 126" class="frac" role="math">
+<span class="num">
+           84
+          </span>
+<span class="den">
+           126
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="96 partido por 144" class="frac" role="math">
+<span class="num">
+           96
+          </span>
+<span class="den">
+           144
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 8
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Comprueba mediante el producto en cruz si las siguientes parejas de fracciones son equivalentes:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 9" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           9
+          </span>
+</span> y <span aria-label="35 partido por 45" class="frac" role="math">
+<span class="num">
+           35
+          </span>
+<span class="den">
+           45
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="8 partido por 12" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           12
+          </span>
+</span> y <span aria-label="18 partido por 27" class="frac" role="math">
+<span class="num">
+           18
+          </span>
+<span class="den">
+           27
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> y <span aria-label="22 partido por 35" class="frac" role="math">
+<span class="num">
+           22
+          </span>
+<span class="den">
+           35
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="14 partido por 21" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           21
+          </span>
+</span> y <span aria-label="30 partido por 45" class="frac" role="math">
+<span class="num">
+           30
+          </span>
+<span class="den">
+           45
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.9 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 9
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Calcula el valor numérico de las siguientes fracciones de una cantidad:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> de 960
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> de 1 440
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> de 2 250
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="9 partido por 16" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           16
+          </span>
+</span> de 3 200
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.10 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 10
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve los siguientes cálculos de la fracción de una cantidad aplicados a contextos cotidianos:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Los <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> de 1 080 litros de aceite de oliva virgen extra de Úbeda.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Los <span aria-label="5 partido por 9" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           9
+          </span>
+</span> de 1 350 kg de fresas de la costa de Huelva.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Los <span aria-label="11 partido por 16" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           16
+          </span>
+</span> de 960 estudiantes de varios centros educativos de Córdoba.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Los <span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span> de 2 400 metros de un tramo del paseo marítimo de Almería.
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.11 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 11
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve los siguientes problemas calculando fracciones de una cantidad y, cuando sea necesario, la parte que queda:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         En un colegio de Sevilla hay 720 alumnos. Si los <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> participan en proyectos deportivos, ¿cuántos participan y cuántos no?
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Un taller artesanal de cerámica dispone de 1 260 piezas. Si los <span aria-label="5 partido por 9" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           9
+          </span>
+</span> están decoradas y de estas piezas decoradas <span aria-label="2 partido por 7" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           7
+          </span>
+</span> son azules, ¿cuántas piezas azules hay?
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Una lonja ha desembarcado 1 440 kg de pescado. Por la mañana vende los <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> del total. ¿Cuántos kilogramos vende y cuántos quedan?
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Un autobús debe recorrer 360 km. En la primera parte completa los <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> del trayecto y después recorre 75 km más. ¿Cuántos kilómetros ha recorrido en total y cuántos le faltan?
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.1.12 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 12
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula las siguientes fracciones con potencias y expresa cada resultado como fracción irreducible:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         (<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span>)<sup>2</sup>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+         (<span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           5
+          </span>
+</span>)<sup>3</sup>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="2 a la cuarta partido por 4 al cuadrado" class="frac" role="math">
+<span class="num">
+           2<sup>4</sup>
+</span>
+<span class="den">
+           4<sup>2</sup>
+</span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="3 al cubo partido por 6 al cuadrado" class="frac" role="math">
+<span class="num">
+           3<sup>3</sup>
+</span>
+<span class="den">
+           6<sup>2</sup>
+</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- SECCIÓN 4.2 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      4.2
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Operaciones con fracciones
+     </h2>
+</div>
+<!-- EXPLICACIÓN 4.2 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+<span>
+       ➕
+      </span>
+      Suma, resta, multiplicación y división de fracciones
+     </h3>
+<ul class="text-sm md:text-base text-slate-700 leading-relaxed space-y-2">
+<li>
+<strong class="text-junta-dark">
+        Suma y resta con el mismo denominador:
+       </strong>
+       mantenemos el denominador y sumamos o restamos los numeradores.
+       <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="5 partido por 9" class="frac" role="math">
+<span class="num">
+         5
+        </span>
+<span class="den">
+         9
+        </span>
+</span>
+       +
+       <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+         2
+        </span>
+<span class="den">
+         9
+        </span>
+</span>
+       =
+       <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+         7
+        </span>
+<span class="den">
+         9
+        </span>
+</span>
+</div>
+</li>
+<li>
+<strong class="text-junta-dark">
+        Multiplicación:
+       </strong>
+       multiplicamos los numeradores entre sí y los denominadores entre sí.
+       <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+         2
+        </span>
+<span class="den">
+         5
+        </span>
+</span>
+       x
+       <span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+         3
+        </span>
+<span class="den">
+         4
+        </span>
+</span>
+       =
+       <span aria-label="6 partido por 20" class="frac" role="math">
+<span class="num">
+         6
+        </span>
+<span class="den">
+         20
+        </span>
+</span>
+</div>
+</li>
+<li>
+<strong class="text-junta-dark">
+        División:
+       </strong>
+       multiplicamos en cruz.
+       <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="4 partido por 6" class="frac" role="math">
+<span class="num">
+         4
+        </span>
+<span class="den">
+         6
+        </span>
+</span>
+       :
+       <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+         1
+        </span>
+<span class="den">
+         3
+        </span>
+</span>
+       =
+       <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+         12
+        </span>
+<span class="den">
+         6
+        </span>
+</span>
+</div>
+</li>
+<li>
+       Siempre que sea posible, simplificamos el resultado hasta obtener su
+            fracción irreducible.
+      </li>
+</ul>
+</div>
+<!-- EJERCICIOS 4.2 -->
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+      Ejercicios de práctica
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 4.2.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes sumas de fracciones con el mismo denominador y simplifica el resultado hasta obtener la fracción irreducible:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 18" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="8 partido por 18" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           18
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="11 partido por 24" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           24
+          </span>
+</span> + <span aria-label="7 partido por 24" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           24
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="13 partido por 30" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           30
+          </span>
+</span> + <span aria-label="12 partido por 30" class="frac" role="math">
+<span class="num">
+           12
+          </span>
+<span class="den">
+           30
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="17 partido por 36" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           36
+          </span>
+</span> + <span aria-label="13 partido por 36" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           36
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.2.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes restas de fracciones con el mismo denominador y simplifica el resultado:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="17 partido por 20" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − <span aria-label="9 partido por 20" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="23 partido por 30" class="frac" role="math">
+<span class="num">
+           23
+          </span>
+<span class="den">
+           30
+          </span>
+</span> − <span aria-label="8 partido por 30" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           30
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="29 partido por 36" class="frac" role="math">
+<span class="num">
+           29
+          </span>
+<span class="den">
+           36
+          </span>
+</span> − <span aria-label="11 partido por 36" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           36
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="41 partido por 48" class="frac" role="math">
+<span class="num">
+           41
+          </span>
+<span class="den">
+           48
+          </span>
+</span> − <span aria-label="17 partido por 48" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           48
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.2.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Realiza las siguientes operaciones combinadas con fracciones de igual denominador y simplifica el resultado final:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="11 partido por 18" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="5 partido por 18" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           18
+          </span>
+</span> − <span aria-label="7 partido por 18" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="3 partido por 18" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           18
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="21 partido por 24" class="frac" role="math">
+<span class="num">
+           21
+          </span>
+<span class="den">
+           24
+          </span>
+</span> − <span aria-label="8 partido por 24" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           24
+          </span>
+</span> + <span aria-label="5 partido por 24" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           24
+          </span>
+</span> − <span aria-label="3 partido por 24" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           24
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="25 partido por 30" class="frac" role="math">
+<span class="num">
+           25
+          </span>
+<span class="den">
+           30
+          </span>
+</span> − <span aria-label="9 partido por 30" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           30
+          </span>
+</span> + <span aria-label="7 partido por 30" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           30
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="31 partido por 40" class="frac" role="math">
+<span class="num">
+           31
+          </span>
+<span class="den">
+           40
+          </span>
+</span> + <span aria-label="6 partido por 40" class="frac" role="math">
+<span class="num">
+           6
+          </span>
+<span class="den">
+           40
+          </span>
+</span> − <span aria-label="17 partido por 40" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           40
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.2.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes multiplicaciones de fracciones y simplifica el resultado obtenido. Siempre que puedas, simplifica antes de multiplicar:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> × <span aria-label="18 partido por 35" class="frac" role="math">
+<span class="num">
+           18
+          </span>
+<span class="den">
+           35
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="15 partido por 28" class="frac" role="math">
+<span class="num">
+           15
+          </span>
+<span class="den">
+           28
+          </span>
+</span> × <span aria-label="14 partido por 25" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           25
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="9 partido por 16" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           16
+          </span>
+</span> × <span aria-label="24 partido por 27" class="frac" role="math">
+<span class="num">
+           24
+          </span>
+<span class="den">
+           27
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="21 partido por 32" class="frac" role="math">
+<span class="num">
+           21
+          </span>
+<span class="den">
+           32
+          </span>
+</span> × <span aria-label="16 partido por 49" class="frac" role="math">
+<span class="num">
+           16
+          </span>
+<span class="den">
+           49
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.2.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes divisiones de fracciones y simplifica el resultado final:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> : <span aria-label="14 partido por 15" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           15
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="9 partido por 10" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           10
+          </span>
+</span> : <span aria-label="6 partido por 25" class="frac" role="math">
+<span class="num">
+           6
+          </span>
+<span class="den">
+           25
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="15 partido por 28" class="frac" role="math">
+<span class="num">
+           15
+          </span>
+<span class="den">
+           28
+          </span>
+</span> : <span aria-label="5 partido por 14" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           14
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="11 partido por 18" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           18
+          </span>
+</span> : <span aria-label="22 partido por 27" class="frac" role="math">
+<span class="num">
+           22
+          </span>
+<span class="den">
+           27
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.2.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Calcula el resultado de las siguientes operaciones combinadas y exprésalo en su forma irreducible:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         (<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> + <span aria-label="3 partido por 12" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           12
+          </span>
+</span>) × <span aria-label="9 partido por 20" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+         (<span aria-label="17 partido por 18" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           18
+          </span>
+</span> − <span aria-label="5 partido por 18" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           18
+          </span>
+</span>) : <span aria-label="4 partido por 9" class="frac" role="math">
+<span class="num">
+           4
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="15 partido por 16" class="frac" role="math">
+<span class="num">
+           15
+          </span>
+<span class="den">
+           16
+          </span>
+</span> × (<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> − <span aria-label="6 partido por 15" class="frac" role="math">
+<span class="num">
+           6
+          </span>
+<span class="den">
+           15
+          </span>
+</span>)
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         (<span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span> + <span aria-label="3 partido por 20" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           20
+          </span>
+</span>) : <span aria-label="8 partido por 25" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           25
+          </span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- SECCIÓN 4.3 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-3">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      4.3
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Relación entre fracciones y números decimales
+     </h2>
+</div>
+<!-- EXPLICACIÓN 4.3 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+<span>
+       🔄
+      </span>
+      ¿Cómo se relacionan las fracciones y los decimales?
+     </h3>
+<p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify">
+      Una fracción es también una división. Para transformarla en un número decimal,
+          dividimos el numerador entre el denominador. 
+      <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="4 partido por 8" class="frac" role="math">
+<span class="num">
+         4
+        </span>
+<span class="den">
+         8
+        </span>
+</span>
+       = 4:8 
+       = 0,5
+      </div>
+<br/>Una <strong class="text-junta-dark">
+       fracción decimal
+      </strong>
+      tiene como denominador
+          la unidad seguida de ceros. Para pasar de decimal a fracción decimal,
+          escribimos el número sin coma en el numerador y colocamos en el denominador
+          tantos ceros como cifras decimales tenga el número.
+      <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Ejemplo:
+       </span>
+<span aria-label="3 partido por 10" class="frac" role="math">
+<span class="num">
+         3
+        </span>
+<span class="den">
+         10
+        </span>
+</span>
+       = 0,3
+      </div>
+<div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+<span>
+        Otro ejemplo:
+       </span>
+       0,005 =
+       <span aria-label="3 partido por 10" class="frac" role="math">
+<span class="num">
+         5
+        </span>
+<span class="den">
+         1000
+        </span>
+</span>
+</div>
+</p>
+</div>
+<!-- EJERCICIOS 4.3 -->
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+      Ejercicios de práctica
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 4.3.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Transforma las siguientes fracciones en números decimales exactos:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="9 partido por 16" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           16
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="17 partido por 25" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           25
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.3.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Expresa los siguientes números decimales exactos en forma de fracción decimal y simplifica después la fracción si es posible:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         0,375
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         1,24
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         0,0625
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         2,008
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.3.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Une cada fracción con su expresión decimal correspondiente:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span> ➔ (0,035 / 0,35 / 3,5)
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="125 partido por 1000" class="frac" role="math">
+<span class="num">
+           125
+          </span>
+<span class="den">
+           1000
+          </span>
+</span> ➔ (0,125 / 1,25 / 0,0125)
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="18 partido por 25" class="frac" role="math">
+<span class="num">
+           18
+          </span>
+<span class="den">
+           25
+          </span>
+</span> ➔ (0,72 / 0,072 / 7,2)
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="135 partido por 100" class="frac" role="math">
+<span class="num">
+           135
+          </span>
+<span class="den">
+           100
+          </span>
+</span> ➔ (0,135 / 1,35 / 13,5)
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.3.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Coloca el signo de comparación correcto (&gt;, &lt; o =) entre la fracción y el número decimal:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> ___ 0,87
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span> ___ 0,65
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="9 partido por 16" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           16
+          </span>
+</span> ___ 0,56
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="17 partido por 25" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           25
+          </span>
+</span> ___ 0,7
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.3.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Completa lo que falta en cada caso y, cuando aparezca una fracción decimal, simplifícala:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> = ____
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         ____ = 0,625
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="27 partido por 40" class="frac" role="math">
+<span class="num">
+           27
+          </span>
+<span class="den">
+           40
+          </span>
+</span> = ____
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         ____ = 1,125
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.3.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Ordena de menor a mayor la siguiente lista mixta de fracciones y números decimales convirtiendo todos los valores al formato que te resulte más útil:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         0,58 − <span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           5
+          </span>
+</span> − 0,625 − <span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> − 0,82 − <span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − 0,9
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         0,375 − <span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           5
+          </span>
+</span> − 0,32 − <span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="19 partido por 20" class="frac" role="math">
+<span class="num">
+           19
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − 0,925 − <span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> − 0,96
+        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+<!-- SECCIÓN 4.4 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-4">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      4.4
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Mínimo Común Múltiplo y Máximo Común Divisor
+     </h2>
+</div>
+<!-- EXPLICACIÓN 4.4 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+<span>🔢</span>
+      ¿Cuándo utilizamos el m.c.m. y el M.C.D.?
+     </h3>
+<div class="space-y-4 text-sm md:text-base text-slate-700 leading-relaxed">
+<p class="text-justify">
+       Un <strong>múltiplo</strong> de un número se obtiene al multiplicarlo por 0, 1, 2, 3... Un <strong>divisor</strong> es un número que divide a otro exactamente. A partir de estas ideas podemos calcular el <strong>mínimo común múltiplo (m.c.m.)</strong> y el <strong>máximo común divisor (M.C.D.)</strong>.
+      </p>
+<ul class="list-disc list-outside ml-5 space-y-2">
+<li><strong>m.c.m.:</strong> es el menor múltiplo positivo que tienen en común dos o más números. Es muy útil cuando buscamos cuándo vuelven a coincidir varios sucesos o cuando necesitamos un denominador común.</li>
+<li><strong>M.C.D.:</strong> es el mayor divisor que tienen en común dos o más números. Lo utilizamos para repartir o agrupar en el mayor número posible de grupos iguales, o para obtener piezas iguales lo más grandes posible.</li>
+</ul>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<p class="font-bold text-junta-dark mb-2">Ejemplo de m.c.m.</p>
+<p>12 = 2<sup>2</sup> × 3</p>
+<p>18 = 2 × 3<sup>2</sup></p>
+<p class="mt-1"><strong>m.c.m. (12, 18) = 2<sup>2</sup> × 3<sup>2</sup> = 36</strong></p>
+<p class="text-xs text-slate-600 mt-1">Tomamos todos los factores primos con el mayor exponente.</p>
+</div>
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<p class="font-bold text-junta-dark mb-2">Ejemplo de M.C.D.</p>
+<p>24 = 2<sup>3</sup> × 3</p>
+<p>36 = 2<sup>2</sup> × 3<sup>2</sup></p>
+<p class="mt-1"><strong>M.C.D. (24, 36) = 2<sup>2</sup> × 3 = 12</strong></p>
+<p class="text-xs text-slate-600 mt-1">Tomamos solo los factores comunes con el menor exponente.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- EJERCICIOS 4.4 -->
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">Ejercicios de práctica</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 4.4.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Escribe los primeros múltiplos indicados y localiza el primer múltiplo común distinto de cero:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Múltiplos de 4 y de 6 hasta encontrar el primero común.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Múltiplos de 6 y de 9 hasta encontrar el primero común.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Múltiplos de 8 y de 12 hasta encontrar el primero común.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Múltiplos de 10 y de 15 hasta encontrar el primero común.
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Escribe todos los divisores de cada pareja y determina su mayor divisor común:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         12 y 18
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         20 y 30
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         28 y 42
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         36 y 54
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Descompón los siguientes números en factores primos:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         72
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         90
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         120
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         180
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula el <strong>m.c.m.</strong> mediante la descomposición en factores primos:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         m.c.m. (12, 18)
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         m.c.m. (20, 30)
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         m.c.m. (24, 36)
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         m.c.m. (45, 60)
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula el <strong>M.C.D.</strong> mediante la descomposición en factores primos:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         M.C.D. (24, 36)
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         M.C.D. (42, 56)
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         M.C.D. (60, 90)
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         M.C.D. (84, 126)
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula el m.c.m. de tres números:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         m.c.m. (4, 6, 8)
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         m.c.m. (6, 9, 12)
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         m.c.m. (8, 12, 18)
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         m.c.m. (10, 15, 25)
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 7
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula el M.C.D. de tres números:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         M.C.D. (18, 24, 30)
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         M.C.D. (36, 48, 60)
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         M.C.D. (42, 70, 98)
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         M.C.D. (72, 108, 144)
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 8
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Indica si conviene utilizar m.c.m. o M.C.D. y resuelve:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Dos luces se encienden cada 6 s y 8 s. ¿Cada cuántos segundos coinciden?
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Hay 24 lápices rojos y 36 azules. Se quieren hacer el mayor número de lotes iguales sin que sobre ninguno. ¿Cuántos lotes?
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Dos autobuses pasan cada 15 min y 20 min. Si coinciden ahora, ¿cuándo volverán a coincidir?
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Se cortan cuerdas de 48 m y 60 m en trozos iguales lo más largos posible. ¿Cuánto mide cada trozo?
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.9 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 9
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula en cada caso los dos valores pedidos:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         m.c.m. y M.C.D. de 18 y 24
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         m.c.m. y M.C.D. de 30 y 45
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         m.c.m. y M.C.D. de 42 y 63
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         m.c.m. y M.C.D. de 50 y 75
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.4.10 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 10
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Resuelve estas situaciones aplicando m.c.m. o M.C.D.:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Tres campanas suenan cada 12, 18 y 24 minutos. Si suenan juntas a las 10:00, ¿a qué hora volverán a coincidir?
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Se tienen 84 naranjas y 126 manzanas para preparar el mayor número de cajas iguales sin que sobre fruta. ¿Cuántas cajas se pueden preparar?
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Tres corredores dan una vuelta en 20 s, 30 s y 45 s. Si salen juntos, ¿cuánto tardarán en volver a coincidir en la salida?
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Se quieren formar cuadrados iguales con tablones de 96 cm y 144 cm usando piezas de la mayor longitud posible. ¿Qué longitud tendrá cada pieza?
+        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- SECCIÓN 4.5 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-5">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">4.5</span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Sumas y restas de fracciones con distinto denominador
+     </h2>
+</div>
+<!-- EXPLICACIÓN 4.5 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+<span>➕➖</span>
+      ¿Cómo obtenemos un denominador común?
+     </h3>
+<div class="space-y-4 text-sm md:text-base text-slate-700 leading-relaxed">
+<p class="text-justify">
+       Para sumar o restar fracciones con <strong>distinto denominador</strong> no podemos operar directamente los numeradores. Primero debemos convertirlas en fracciones equivalentes que tengan el mismo denominador. Para elegir el denominador común más sencillo utilizamos normalmente el <strong>m.c.m. de los denominadores</strong>.
+      </p>
+<ol class="list-decimal list-outside ml-5 space-y-2">
+<li>Calculamos el m.c.m. de los denominadores.</li>
+<li>Transformamos cada fracción en una equivalente con ese denominador común.</li>
+<li>Sumamos o restamos los numeradores y mantenemos el denominador.</li>
+<li>Simplificamos el resultado si es posible.</li>
+</ol>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<p class="font-bold text-junta-dark mb-2">Ejemplo de suma</p>
+<p><span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span> + <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span></p>
+<p>m.c.m. (3, 8) = 24</p>
+<p><span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span> = <span aria-label="16 partido por 24" class="frac" role="math">
+<span class="num">
+           16
+          </span>
+<span class="den">
+           24
+          </span>
+</span>   y   <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> = <span aria-label="15 partido por 24" class="frac" role="math">
+<span class="num">
+           15
+          </span>
+<span class="den">
+           24
+          </span>
+</span></p>
+<p><strong><span aria-label="16 partido por 24" class="frac" role="math">
+<span class="num">
+           16
+          </span>
+<span class="den">
+           24
+          </span>
+</span> + <span aria-label="15 partido por 24" class="frac" role="math">
+<span class="num">
+           15
+          </span>
+<span class="den">
+           24
+          </span>
+</span> = <span aria-label="31 partido por 24" class="frac" role="math">
+<span class="num">
+           31
+          </span>
+<span class="den">
+           24
+          </span>
+</span></strong></p>
+</div>
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<p class="font-bold text-junta-dark mb-2">Ejemplo de resta</p>
+<p><span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> − <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span></p>
+<p>m.c.m. (10, 4) = 20</p>
+<p><span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> = <span aria-label="14 partido por 20" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           20
+          </span>
+</span>   y   <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span> = <span aria-label="5 partido por 20" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           20
+          </span>
+</span></p>
+<p><strong><span aria-label="14 partido por 20" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − <span aria-label="5 partido por 20" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           20
+          </span>
+</span> = <span aria-label="9 partido por 20" class="frac" role="math">
+<span class="num">
+           9
+          </span>
+<span class="den">
+           20
+          </span>
+</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+<!-- EJERCICIOS 4.5 -->
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">Ejercicios de práctica</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 4.5.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula las siguientes sumas de fracciones con distinto denominador y simplifica:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="1 partido por 2" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           2
+          </span>
+</span> + <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span> + <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           5
+          </span>
+</span> + <span aria-label="1 partido por 2" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           2
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span> + <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula las siguientes restas de fracciones con distinto denominador y simplifica:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span> − <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span> − <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> − <span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           5
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="11 partido por 12" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           12
+          </span>
+</span> − <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Realiza las sumas y expresa el resultado como fracción irreducible:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> + <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 9" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           9
+          </span>
+</span> + <span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> + <span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="13 partido por 18" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Realiza las restas y simplifica al máximo:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> − <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="13 partido por 15" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           15
+          </span>
+</span> − <span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="17 partido por 18" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           18
+          </span>
+</span> − <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="19 partido por 20" class="frac" role="math">
+<span class="num">
+           19
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − <span aria-label="7 partido por 15" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           15
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula estas sumas de tres fracciones:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="1 partido por 2" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           2
+          </span>
+</span> + <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span> + <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           5
+          </span>
+</span> + <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span> + <span aria-label="3 partido por 10" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           10
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> + <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> + <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="7 partido por 15" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           15
+          </span>
+</span> + <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           9
+          </span>
+</span> + <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Resuelve respetando el orden de izquierda a derecha en sumas y restas:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span> − <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span> + <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> + <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span> − <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="11 partido por 12" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           12
+          </span>
+</span> − <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           9
+          </span>
+</span> − <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="13 partido por 15" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           15
+          </span>
+</span> + <span aria-label="3 partido por 10" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           10
+          </span>
+</span> − <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 7
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula y, si el resultado es mayor que la unidad, exprésalo también como número mixto:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span> + <span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> + <span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="11 partido por 12" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           12
+          </span>
+</span> + <span aria-label="7 partido por 9" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="13 partido por 15" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           15
+          </span>
+</span> + <span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 4.5.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 8
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Resuelve estas operaciones y comprueba el resultado transformando las fracciones en equivalentes con denominador común:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> + <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> − <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> − <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span> + <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="11 partido por 18" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="5 partido por 9" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           9
+          </span>
+</span> − <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="17 partido por 20" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> + <span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           5
+          </span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 4.6 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-editorial-amber/40" id="sec-6">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-editorial-amber text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      4.6
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Problemas y Desafíos
+     </h2>
+</div>
+<!-- PARTE A: PROBLEMAS -->
+<div class="mb-10">
+<h3 class="text-base font-bold text-junta mb-4 flex items-center gap-2 text-heading">
+      📌 Parte A: Problemas
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- PROBLEMA 4.6.1 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 1
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+En un obrador de repostería de Estepa se han elaborado 960 pestiños. Por la mañana se empaquetan los <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> del total y por la tarde los <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> del total. ¿Cuántos pestiños se han empaquetado en total y cuántos quedan sin empaquetar?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.2 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 2
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Una cooperativa olivarera de Baeza ha producido 4 320 litros de aceite de oliva. Vende los <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> de la producción a un distribuidor y después <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span> del total a comercios locales. ¿Cuántos litros se han vendido y cuántos quedan por vender?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.3 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 3
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Manuel dedica <span aria-label="5 partido por 24" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           24
+          </span>
+</span> del día a estudiar, <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> a clases y actividades y <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span> a descansar. El resto lo dedica a dormir. ¿Qué fracción del día duerme? ¿Cuántas horas representa?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.4 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 4
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+De una finca de cítricos de 120 hectáreas, <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> se dedican a mandarinas y <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> a naranjas. El resto se reserva para otros cultivos. ¿Cuántas hectáreas ocupa cada uso?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.5 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 5
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Un grupo de senderistas lleva recorridos <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> de una ruta de 30 km. Después avanza 4,5 km más. ¿Cuántos kilómetros ha recorrido en total y cuántos le faltan?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.6 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 6
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+En un mercado de abastos, un pescadero vende <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> de una partida por la mañana y <span aria-label="5 partido por 16" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           16
+          </span>
+</span> del total por la tarde. ¿Qué fracción ha vendido en total y qué fracción le queda?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.7 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 7
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Isabel compra <span aria-label="7 partido por 8" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           8
+          </span>
+</span> de kilo de queso payoyo. Si el kilo cuesta 18,40 €, ¿cuánto pagará? Si entrega 20 €, ¿cuánto cambio recibirá?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.8 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 8
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Un depósito contiene 2 400 litros de agua. Por la mañana se consumen <span aria-label="5 partido por 16" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           16
+          </span>
+</span> del depósito y por la tarde <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> del total inicial. ¿Cuántos litros se consumen y cuántos quedan al final del día?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.9 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 9
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+En un colegio, <span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span> del alumnado participa en baloncesto y <span aria-label="3 partido por 10" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           10
+          </span>
+</span> en fútbol sala. Si ningún alumno participa en ambos equipos, ¿qué fracción no practica ninguno de estos dos deportes? Si hay 600 alumnos, ¿cuántos son?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.10 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 10
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Una caja contiene 120 mantecados. María come <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span> del total y su hermano <span aria-label="3 partido por 10" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           10
+          </span>
+</span>. Después se regalan 18 mantecados. ¿Cuántos quedan en la caja?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.11 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">Problema 11</p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        En una estación, un autobús pasa cada 18 minutos y otro cada 24 minutos. Si coinciden a las 9:00, ¿cuántos minutos pasarán hasta que vuelvan a coincidir y a qué hora sucederá?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.12 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">Problema 12</p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        Una cooperativa dispone de 96 botellas de aceite y 144 tarros de aceitunas. Quiere preparar el mayor número posible de lotes iguales sin que sobre ningún producto. ¿Cuántos lotes podrá formar y cuántos productos de cada tipo tendrá cada lote?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.13 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">Problema 13</p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        Durante una ruta, Ana recorre por la mañana los <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> del trayecto y por la tarde los <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span>. ¿Qué fracción del recorrido ha completado en total y qué fracción le queda?
+       </p>
+</div>
+<!-- PROBLEMA 4.6.14 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">Problema 14</p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        En un huerto, (<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span>)<sup>2</sup> de una parcela se destina finalmente a tomates. Calcula la fracción de la parcela ocupada por tomates y simplifica el resultado si es posible.
+       </p>
+</div>
+</div>
+</div>
+<!-- PARTE B: TAREAS COMPETENCIALES -->
+<div>
+<h3 class="text-base font-bold text-editorial-amber mb-6 flex items-center gap-2 text-heading">
+      🌟 Parte B: Desafíos
+     </h3>
+<!-- DESAFÍO 4.6.1 -->
+<div class="bg-amber-50/50 rounded-2xl p-6 mb-6 border border-amber-200">
+<h4 class="text-sm md:text-base font-bold text-amber-900 mb-3">
+       Desafío 1: El reparto de la cosecha en la Subbética Cordobesa
+      </h4>
+<p class="text-xs md:text-sm text-slate-700 mb-4 leading-relaxed text-justify">
+       Tres hermanos han heredado una finca familiar de olivares en la comarca de
+            la Subbética Cordobesa. Para organizar la recogida de la aceituna, acuerdan
+            dividirse el trabajo y la recolección según la superficie asignada a cada uno:
+      </p>
+<ul class="text-xs md:text-sm text-slate-700 space-y-2 mb-4 bg-white p-4 rounded-xl border border-amber-200 leading-relaxed">
+<li>
+        Al hermano mayor le corresponde
+        <span aria-label="7 partido por 15" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           15
+          </span>
+</span>
+        de la finca.
+       </li>
+<li>
+        Al hermano mediano le corresponde
+        <span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           5
+          </span>
+</span>
+        de la finca.
+       </li>
+<li>
+        Al hermano menor le corresponde el resto de la finca.
+       </li>
+</ul>
+<p class="text-xs md:text-sm text-slate-700 mb-4 leading-relaxed">
+       La producción total de la finca en la presente campaña ha sido de
+       <strong>
+        28 500 kg de aceituna
+       </strong>
+       .
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-800 leading-relaxed">
+<!-- PREGUNTA DEL DESAFÍO 4.6.1.1 -->
+<li>
+<strong>
+         Pregunta 1:
+        </strong>
+        ¿Qué fracción de la finca le corresponde al hermano menor?
+       </li>
+<!-- PREGUNTA DEL DESAFÍO 4.6.1.2 -->
+<li>
+<strong>
+         Pregunta 2:
+        </strong>
+        Calcula cuántos kilogramos de aceitunas recolectará cada hermano y comprueba que la suma coincide con la producción total.
+       </li>
+<!-- PREGUNTA DEL DESAFÍO 4.6.1.3 -->
+<li>
+<strong>
+         Pregunta 3:
+        </strong>
+        Si la cooperativa paga la aceituna a 0,96 € el kilo, ¿cuánto dinero obtendrá el hermano mayor por la venta de su cosecha? Redondea el resultado a céntimos si fuese necesario.
+       </li>
+<!-- PREGUNTA DEL DESAFÍO 4.6.1.4 -->
+<li>
+<strong>
+         Pregunta 4:
+        </strong>
+        El hermano mediano decide donar
+        <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+        de sus ganancias a una asociación benéfica local. ¿Cuánto dinero donará?
+       </li>
+</ul>
+</div>
+<!-- DESAFÍO 4.6.2 -->
+<div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200">
+<h4 class="text-sm md:text-base font-bold text-amber-900 mb-3">
+       Desafío 2: La repostería tradicional
+      </h4>
+<p class="text-xs md:text-sm text-slate-700 mb-3 leading-relaxed text-justify">
+       Las monjas de un conocido convento de Sevilla preparan cajas de dulces
+            artesanales para la época navideña. Una de sus recetas más famosas son
+            las cortadillas de cidra.
+      </p>
+<p class="text-xs md:text-sm text-slate-700 mb-3 leading-relaxed">
+       Para elaborar un lote completo necesitan:
+      </p>
+<ul class="text-xs md:text-sm text-slate-700 space-y-2 mb-4 bg-white p-4 rounded-xl border border-amber-200 leading-relaxed">
+<li>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+        kg de harina de trigo.
+       </li>
+<li>
+<span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+        kg de manteca de cerdo.
+       </li>
+<li>
+<span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span>
+        kg de cabello de ángel.
+       </li>
+<li>
+<span aria-label="3 partido por 25" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           25
+          </span>
+</span>
+        kg de azúcar glas.
+       </li>
+</ul>
+<ul class="text-xs md:text-sm space-y-2 text-slate-800 leading-relaxed">
+<!-- PREGUNTA DEL DESAFÍO 4.6.2.1 -->
+<li>
+<strong>
+         Pregunta 1:
+        </strong>
+        Ordena los ingredientes de mayor a menor según la cantidad utilizada en la receta.
+       </li>
+<!-- PREGUNTA DEL DESAFÍO 4.6.2.2 -->
+<li>
+<strong>
+         Pregunta 2:
+        </strong>
+        Expresa en forma de número decimal los kilogramos necesarios de cada ingrediente.
+       </li>
+<!-- PREGUNTA DEL DESAFÍO 4.6.2.3 -->
+<li>
+<strong>
+         Pregunta 3:
+        </strong>
+        Si quieren preparar 6 lotes completos, ¿cuántos kilogramos de harina, manteca y cabello de ángel necesitarán?
+       </li>
+<!-- PREGUNTA DEL DESAFÍO 4.6.2.4 -->
+<li>
+<strong>
+         Pregunta 4:
+        </strong>
+        Si el kilogramo de cabello de ángel cuesta 4,80 € y el de harina 1,60 €, calcula mediante operaciones combinadas cuánto gastarán en ambos ingredientes al elaborar 8 lotes completos.
+       </li>
+</ul>
+</div>
+<!-- DESAFÍO 4.6.3 -->
+<div class="bg-amber-50/50 rounded-2xl p-6 mt-6 border border-amber-200">
+<h4 class="text-sm md:text-base font-bold text-amber-900 mb-3">Desafío 3: Organización de una feria escolar</h4>
+<p class="text-xs md:text-sm text-slate-700 mb-4 leading-relaxed text-justify">
+       En una feria escolar se organizan actividades deportivas, talleres y turnos de voluntariado. Algunos datos requieren utilizar m.c.m., M.C.D. y operaciones con fracciones de distinto denominador.
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-800 leading-relaxed">
+<li><strong>Pregunta 1:</strong> Dos actividades comienzan cada 20 y 30 minutos. Si coinciden a las 10:00, ¿a qué hora volverán a comenzar a la vez?</li>
+<li><strong>Pregunta 2:</strong> Hay 72 camisetas y 108 gorras para formar el mayor número de premios iguales sin que sobre nada. ¿Cuántos premios pueden prepararse?</li>
+<li><strong>Pregunta 3:</strong> Por la mañana participa <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> del alumnado y por la tarde <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span>. Si no se repiten participantes, ¿qué fracción participa en total?</li>
+<li><strong>Pregunta 4:</strong> Si la zona de juegos ocupa (<span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           5
+          </span>
+</span>)<sup>2</sup> del patio, calcula la fracción exacta ocupada.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- SECCIÓN 4.7 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-7">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      4.7
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Repaso de operaciones
+     </h2>
+</div>
+<!-- EJERCICIOS DE REPASO -->
+<div class="mb-10">
+<h3 class="text-base font-bold text-junta mb-4 flex items-center gap-2 text-heading">
+      🧮 Ejercicios de repaso
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 4.7.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes sumas y restas con números decimales:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         1 245,806 + 389,475
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         5 000,25 − 2 846,795
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         728,45 + 1 095,608 − 349,875
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         2 000 − 1 234,568
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.7.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes multiplicaciones con números decimales:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         125,48 × 3,75
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         48,075 × 100
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         0,625 × 1 000
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         18,36 × 0,45
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.7.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes divisiones de decimales y aproxima a las centésimas cuando el cociente no sea exacto:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         987,6 : 24
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         1 250 : 3,2
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         845,64 : 1,8
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         15,375 : 0,125
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.7.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Resuelve las siguientes operaciones combinadas respetando la jerarquía de las operaciones:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         (125,5 + 74,5) × 3 − 85,75
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         480 : (18,5 − 6,5) + 27,35
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         250,8 − 12 × 3,25 + 48,6 : 6
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         (500 − 124,75) : 2,5 + 6,4 × 25
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.7.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Calcula el m.c.m. y el M.C.D. de cada pareja:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         18 y 24
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         30 y 45
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         42 y 56
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         60 y 84
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 4.7.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Resuelve estas sumas y restas de fracciones con distinto denominador:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span> + <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> − <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span> + <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> − <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- PROBLEMAS DE REPASO -->
+<div>
+<h3 class="text-base font-bold text-junta mb-4 flex items-center gap-2 text-heading">
+      📌 Problemas de repaso
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- PROBLEMA 4.7.1 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 1
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Un supermercado recibe 48 cajas de conservas. Cada caja contiene 36 latas y cada lata se vende a 2,15 €. Si se venden todas, ¿cuál es la recaudación total?
+       </p>
+</div>
+<!-- PROBLEMA 4.7.2 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 2
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+En un depósito municipal hay 125 000 litros. Durante tres jornadas se consumen 18 450,5 litros, 27 890,75 litros y 16 325,25 litros. ¿Cuántos litros quedan?
+       </p>
+</div>
+<!-- PROBLEMA 4.7.3 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 3
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Se quieren repartir 4 275 kg de garbanzos en sacos de 17,5 kg. ¿Cuántos sacos completos pueden llenarse y cuántos kilogramos sobran?
+       </p>
+</div>
+<!-- PROBLEMA 4.7.4 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">
+        Problema 4
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+Un agricultor vende 5 250 kg de tomates a 1,35 €/kg y 3 600 kg de pimientos a 1,85 €/kg. Los costes de recolección y transporte ascienden a 2 475,50 €. ¿Cuál es el beneficio neto?
+       </p>
+</div>
+<!-- PROBLEMA 4.7.5 -->
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+<p class="font-bold text-junta mb-1">Problema 5</p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        Un club organiza entrenamientos cada 12 días y revisiones médicas cada 18 días. Si ambas actividades coinciden hoy, ¿dentro de cuántos días volverán a coincidir? Si en ese periodo el equipo completa <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> de un plan y después <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span> adicional, ¿qué fracción habrá completado?
+       </p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- REPASAMOS LO APRENDIDO -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-junta" id="sec-repaso">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      🔄
+     </span>
+<div>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+       Repasamos lo aprendido
+      </h2>
+<p class="text-xs text-slate-500">
+       Bloque de consolidación y repaso global de la Situación de Aprendizaje
+      </p>
+</div>
+</div>
+<!-- FICHA DE REFUERZO -->
+<div class="mb-10">
+<div class="bg-emerald-50 border-l-4 border-junta p-4 rounded-r-xl mb-6">
+<h3 class="text-base font-bold text-junta-dark flex items-center gap-2 text-heading">
+       🟢 Ficha de Refuerzo
+      </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- REFUERZO 4.1 • REPRESENTACIÓN Y EQUIVALENCIA -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.1 • Representación y equivalencia
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Resuelve estas actividades de consolidación sobre fracciones:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Escribe la fracción que representa 9 partes tomadas de un total de 14.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Compara: <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> [ ____ ] <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span>.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Escribe dos fracciones equivalentes a <span aria-label="3 partido por 7" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           7
+          </span>
+</span> multiplicando por 2 y por 5.
+        </li>
+<li>
+<strong>
+          d)
+         </strong> Calcula (<span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           3
+          </span>
+</span>)<sup>2</sup> y expresa el resultado como fracción irreducible.</li>
+</ul>
+</div>
+<!-- REFUERZO 4.2 • OPERACIONES CON FRACCIONES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.2 • Operaciones con fracciones
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Opera y simplifica cuando sea posible:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="7 partido por 18" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="5 partido por 18" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           18
+          </span>
+</span> = __________________
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span> − <span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span> = __________________
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> × <span aria-label="4 partido por 15" class="frac" role="math">
+<span class="num">
+           4
+          </span>
+<span class="den">
+           15
+          </span>
+</span> = __________________
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> : <span aria-label="14 partido por 18" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           18
+          </span>
+</span> = __________________
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 4.3 • FRACCIONES Y DECIMALES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.3 • Fracciones y decimales
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Relaciona fracciones y números decimales:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span> = __________________
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="7 partido por 20" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           20
+          </span>
+</span> = __________________
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         0,625 = ______ / 1 000
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         1,25 = ______ / 100
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 4.4 • MCM Y MCD -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.4 • MCM y MCD
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Calcula o identifica el procedimiento adecuado:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         m.c.m. (6, 8) = __________________
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         M.C.D. (18, 24) = __________________
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Descompón 60 en factores primos.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Dos luces parpadean cada 4 s y 6 s. ¿Cada cuántos segundos coinciden?
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 4.5 • FRACCIONES CON DISTINTO DENOMINADOR -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.5 • Fracciones con distinto denominador
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Busca primero el m.c.m. de los denominadores y resuelve:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="1 partido por 2" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           2
+          </span>
+</span> + <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span> − <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="2 partido por 5" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           5
+          </span>
+</span> + <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           6
+          </span>
+</span> − <span aria-label="1 partido por 3" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           3
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- REFUERZO 4.6 • PROBLEMA CON FRACCIONES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.6 • Problema con fracciones
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Una biblioteca tiene 480 libros de aventuras. Los <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> están prestados. Responde:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         ¿Cuántos libros están prestados? ➔ __________________
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         ¿Cuántos libros quedan disponibles? ➔ __________________
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Expresa la parte disponible mediante una fracción ➔ __________________
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Simplifica esa fracción hasta hacerla irreducible ➔ __________________
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 4.7 • REPASO DE SITUACIONES DE APRENDIZAJE ANTERIORES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 4.7 • Repaso de situaciones de aprendizaje anteriores
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Resuelve las operaciones con números decimales:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         145,8 + 72,365 = __________________
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         500 − 238,75 = __________________
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         18,5 × 2,4 = __________________
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         184,8 : 8 = __________________
+        </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- FICHA DE AMPLIACIÓN -->
+<div class="mb-10">
+<div class="bg-amber-50 border-l-4 border-editorial-amber p-4 rounded-r-xl mb-6">
+<h3 class="text-base font-bold text-editorial-amber flex items-center gap-2 text-heading">
+       🟠 Ficha de Ampliación
+      </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- AMPLIACIÓN 4.1 • REPRESENTACIÓN Y EQUIVALENCIA -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.1 • Representación y equivalencia
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Razona y resuelve las siguientes actividades:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Ordena de menor a mayor: <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span>, <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span>, <span aria-label="11 partido por 16" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           16
+          </span>
+</span> y <span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span>.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Simplifica <span aria-label="126 partido por 198" class="frac" role="math">
+<span class="num">
+           126
+          </span>
+<span class="den">
+           198
+          </span>
+</span> hasta obtener la fracción irreducible.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Comprueba si <span aria-label="14 partido por 21" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           21
+          </span>
+</span> y <span aria-label="26 partido por 39" class="frac" role="math">
+<span class="num">
+           26
+          </span>
+<span class="den">
+           39
+          </span>
+</span> son equivalentes.
+        </li>
+<li>
+<strong>
+          d)
+         </strong> Simplifica <span aria-label="2 a la cuarta partido por 6 al cuadrado" class="frac" role="math">
+<span class="num">
+           2<sup>4</sup>
+</span>
+<span class="den">
+           6<sup>2</sup>
+</span>
+</span>.</li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 4.2 • OPERACIONES CON FRACCIONES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.2 • Operaciones con fracciones
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Resuelve las operaciones combinadas y simplifica completamente:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         (<span aria-label="13 partido por 20" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           20
+          </span>
+</span> + <span aria-label="3 partido por 20" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           20
+          </span>
+</span>) × <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+         (<span aria-label="17 partido por 24" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           24
+          </span>
+</span> − <span aria-label="5 partido por 24" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           24
+          </span>
+</span>) : <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="21 partido por 25" class="frac" role="math">
+<span class="num">
+           21
+          </span>
+<span class="den">
+           25
+          </span>
+</span> : <span aria-label="14 partido por 15" class="frac" role="math">
+<span class="num">
+           14
+          </span>
+<span class="den">
+           15
+          </span>
+</span> × <span aria-label="5 partido por 9" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+         (<span aria-label="11 partido por 18" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           18
+          </span>
+</span> + <span aria-label="5 partido por 18" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           18
+          </span>
+</span>) : <span aria-label="8 partido por 27" class="frac" role="math">
+<span class="num">
+           8
+          </span>
+<span class="den">
+           27
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 4.3 • FRACCIONES Y DECIMALES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.3 • Fracciones y decimales
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Convierte, compara y ordena con precisión:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Convierte <span aria-label="13 partido por 16" class="frac" role="math">
+<span class="num">
+           13
+          </span>
+<span class="den">
+           16
+          </span>
+</span> en número decimal.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Expresa 0,4375 como fracción decimal y simplifica.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Compara: <span aria-label="11 partido por 16" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           16
+          </span>
+</span> [ ____ ] 0,69.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Ordena de menor a mayor: 0,58 • <span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           5
+          </span>
+</span> • <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> • 0,59.
+        </li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 4.4 • MCM Y MCD -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.4 • MCM y MCD
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Resuelve aplicando descomposición en factores primos:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         m.c.m. (18, 24, 30)
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         M.C.D. (72, 108, 144)
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Calcula m.c.m. y M.C.D. de 84 y 126.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Tres eventos se repiten cada 12, 18 y 30 minutos. ¿Cuándo vuelven a coincidir?
+        </li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 4.5 • FRACCIONES CON DISTINTO DENOMINADOR -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.5 • Fracciones con distinto denominador
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Resuelve y simplifica completamente:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+<span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           8
+          </span>
+</span> + <span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           12
+          </span>
+</span> − <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          b)
+         </strong>
+<span aria-label="11 partido por 15" class="frac" role="math">
+<span class="num">
+           11
+          </span>
+<span class="den">
+           15
+          </span>
+</span> − <span aria-label="2 partido por 9" class="frac" role="math">
+<span class="num">
+           2
+          </span>
+<span class="den">
+           9
+          </span>
+</span> + <span aria-label="1 partido por 6" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           6
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          c)
+         </strong>
+<span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           10
+          </span>
+</span> + <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> + <span aria-label="1 partido por 8" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           8
+          </span>
+</span>
+</li>
+<li>
+<strong>
+          d)
+         </strong>
+<span aria-label="17 partido por 18" class="frac" role="math">
+<span class="num">
+           17
+          </span>
+<span class="den">
+           18
+          </span>
+</span> − <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> − <span aria-label="1 partido por 9" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           9
+          </span>
+</span>
+</li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 4.6 • DESAFÍO DE APLICACIÓN -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.6 • Desafío de aplicación
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Una cooperativa produce 7 200 litros de aceite. Vende <span aria-label="5 partido por 12" class="frac" role="math">
+<span class="num">
+           5
+          </span>
+<span class="den">
+           12
+          </span>
+</span> de la producción a comercios y <span aria-label="7 partido por 24" class="frac" role="math">
+<span class="num">
+           7
+          </span>
+<span class="den">
+           24
+          </span>
+</span> a restaurantes. Del aceite restante, envasa <span aria-label="3 partido por 5" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           5
+          </span>
+</span> en botellas para venta directa. Responde:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         ¿Qué fracción de la producción se ha vendido inicialmente?
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         ¿Cuántos litros se han vendido a comercios y a restaurantes?
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         ¿Cuántos litros quedan tras esas ventas y cuántos se destinan a venta directa?
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         ¿Cuántos litros permanecen finalmente sin vender ni envasar?
+        </li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 4.7 • REPASO DE SITUACIONES DE APRENDIZAJE ANTERIORES -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 4.7 • Repaso de situaciones de aprendizaje anteriores
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+Resuelve respetando la jerarquía de las operaciones:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         (425,75 − 185,75) × 3,25
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         1 440 : 1,2 − 275,65
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         2 750,875 + 849,125 − 1 600,75
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         (84,6 + 35,4) : 0,75
+        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-indigo-200" id="sec-diana">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-indigo-600 text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      🎯
+     </span>
+<div>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+       Diana de Autoevaluación Interactiva
+      </h2>
+<p class="text-xs text-slate-500">
+       Reflexiona sobre tu propio aprendizaje haciendo clic en la opción que mejor te defina
+      </p>
+</div>
+</div>
+<div class="space-y-4">
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.1 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.1</span>
+       Represento y comparo fracciones, obtengo equivalentes, simplifico, calculo fracciones de cantidades y resuelvo fracciones con potencias.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.2 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.2</span>
+       Resuelvo y combino operaciones con fracciones de igual denominador, multiplicaciones y divisiones, simplificando los resultados.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.3 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.3</span>
+       Transformo fracciones en decimales y decimales exactos en fracciones, comparando ambas representaciones con precisión.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.4 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.4</span>
+       Calculo m.c.m. y M.C.D. mediante múltiplos, divisores o descomposición en factores primos y elijo cuál utilizar en cada situación.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.5 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.5</span>
+       Sumo y resto fracciones con distinto denominador utilizando el m.c.m. para obtener fracciones equivalentes.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.6 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.6</span>
+       Selecciono y encadeno las operaciones adecuadas para resolver problemas y desafíos de varias etapas con fracciones, m.c.m. y M.C.D.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 4.7 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">4.7</span>
+       Aplico con seguridad las operaciones y estrategias de cálculo estudiadas en los situaciones de aprendizaje anteriores y las relaciono con los nuevos contenidos.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+</div>
+</section>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
+      </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ======================================================
+       JAVASCRIPT DEL MATERIAL
+       ====================================================== -->
+
+  <script>
+    function scrollToSec(id, event) {
+
+      if (event) {
+        event.preventDefault();
+      }
+
+      const target =
+        document.getElementById(id);
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+
+    }
+
+
+    function selectEval(button) {
+
+      const container =
+        button.parentElement;
+
+      const buttons =
+        container.querySelectorAll('button');
+
+
+      buttons.forEach((item) => {
+
+        item.className =
+          'px-3 py-1.5 rounded-lg border border-slate-200 bg-white ' +
+          'text-xs font-bold text-slate-600 hover:bg-slate-100 transition';
+
+      });
+
+
+      button.className =
+        'px-3 py-1.5 rounded-lg border border-junta bg-junta text-white ' +
+        'text-xs font-bold shadow-sm transition transform scale-105';
+
+    }
+  </script>
+
+
+  <!-- ======================================================
+       JAVASCRIPT GENERAL DE LA WEB
+       ====================================================== -->
+
+  <script src="/js/main.js"></script>
+
+
+</body>
+
+</html>
