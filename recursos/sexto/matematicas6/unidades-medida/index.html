@@ -1,1 +1,3959 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Unidades de medida de Matemáticas de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Unidades de medida | Matemáticas 6.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- TAILWIND: se mantiene para conservar el diseño del material -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CONFIGURACIÓN TAILWIND DEL MATERIAL -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: '#007A33',
+              dark: '#005724',
+              light: '#e6f4ea',
+              accent: '#00a847',
+            },
+            editorial: {
+              bg: '#f8faf9',
+              card: '#ffffff',
+              border: '#d1e7dd',
+              text: '#1e293b',
+              subtext: '#475569',
+              amber: '#d97706',
+              amberBg: '#fef3c7',
+            }
+          },
+          fontFamily: {
+            sans: ['system-ui', 'sans-serif'],
+            heading: ['system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ESTILOS ESPECÍFICOS DE LA SITUACIÓN DE APRENDIZAJE -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-page .text-heading {
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+    }
+
+    .custom-shadow {
+      box-shadow:
+        0 4px 20px -2px
+        rgba(0, 122, 51, 0.08);
+    }
+
+    /* =========================================================
+       ESCALAS DE CONVERSIÓN REUTILIZABLES
+       ========================================================= */
+
+    .unit-scale {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(80px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .unit-box {
+      position: relative;
+      display: flex;
+      min-height: 64px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #a7d8b8;
+      border-radius: 0.75rem;
+      background: #f0fdf4;
+    }
+
+    .unit-box:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -0.55rem;
+      z-index: 2;
+      color: #007A33;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       FRACCIÓN VERTICAL REUTILIZABLE
+       ========================================================= */
+
+    .frac {
+      display: inline-grid;
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-items: stretch;
+      min-width: 1.45em;
+      margin: 0 0.12em;
+      color: inherit;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 0.92em;
+      font-weight: 600;
+      line-height: 1;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .frac .num {
+      display: block;
+      padding: 0 0.18em 0.09em;
+      border-bottom: 1.5px solid currentColor;
+    }
+
+    .frac .den {
+      display: block;
+      padding: 0.09em 0.18em 0;
+    }
+
+    /* =========================================================
+       POTENCIA REUTILIZABLE
+       ========================================================= */
+
+    .power {
+      display: inline-flex;
+      align-items: flex-start;
+      white-space: nowrap;
+      font-weight: 600;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+
+    .power sup {
+      position: relative;
+      top: -0.35em;
+      margin-left: 0.04em;
+      font-size: 0.7em;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       REPRESENTACIÓN DE UNIDADES DE TIEMPO
+       ========================================================= */
+
+    .time-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .time-axis {
+      stroke: #334155;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+    }
+
+    .time-box-svg {
+      fill: #f0fdf4;
+      stroke: #86c99e;
+      stroke-width: 2;
+    }
+
+    .time-title-svg {
+      fill: #005724;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .time-note-svg {
+      fill: #475569;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .time-arrow-svg {
+      fill: #007A33;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .time-operation {
+      background: #ffffff;
+      border: 1px solid #a7d8b8;
+      border-radius: 0.9rem;
+      padding: 1rem;
+    }
+
+    .time-operation .step {
+      display: block;
+      margin-top: 0.2rem;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    /* =========================================================
+       INTEGRACIÓN CON LA WEB PRINCIPAL
+       ========================================================= */
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+  </style>
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
+  <header class="site-banner">
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
+  </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
+  <div class="navigation-wrapper">
+
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- MENÚ PRINCIPAL -->
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+
+        <ul>
+
+          <li class="nav-green">
+            <a href="/">Inicio</a>
+          </li>
+
+          <li class="nav-yellow">
+            <a href="/familias/">Familias</a>
+          </li>
+
+          <li class="nav-blue">
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+          </li>
+
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span>
+              Área privada Profesorado
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="topic-page"
+  >
+
+    <div class="topic-shell">
+
+
+      <!-- MIGAS DE PAN -->
+
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/matematicas6/">Matemáticas</a></li>
+          <li aria-current="page">Unidades de medida</li>
+        </ol>
+
+      </nav>
+
+
+      <!-- ==================================================
+           PORTADA DE LA SITUACIÓN DE APRENDIZAJE
+           ================================================== -->
+
+      <section class="bg-gradient-to-r from-junta-dark via-junta to-junta-accent text-white rounded-3xl p-8 md:p-12 mb-10 shadow-lg relative overflow-hidden">
+
+        <!-- DECORACIÓN -->
+        <div class="absolute -right-8 -bottom-12 opacity-10 text-white font-extrabold text-8xl sm:text-9xl select-none text-heading">
+          kg · l · m³
+        </div>
+
+        <!-- TEXTO -->
+        <div class="relative z-20 max-w-3xl md:pr-40 lg:pr-52">
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-heading leading-tight mb-4">
+            7. UNIDADES DE MEDIDA
+          </h1>
+
+          <p class="text-emerald-100 text-base md:text-lg leading-relaxed text-justify">
+            Convierte y utiliza unidades de masa, capacidad, longitud, superficie,
+            volumen y tiempo; opera con medidas complejas y resuelve situaciones reales
+            relacionadas con el comercio, el transporte, la agricultura, la gestión del agua
+            y la organización de horarios y duraciones.
+          </p>
+
+        </div>
+
+        <!-- TOMATITO UNIDADES DE MEDIDA -->
+        <img
+          src="/img/tomatito/tomatito-unidades-medida.png"
+          alt=""
+          class="relative z-10 block w-52 sm:w-64 h-auto object-contain mx-auto mt-6 pointer-events-none select-none md:absolute md:right-[60px] lg:right-[80px] md:bottom-0 md:w-80 lg:w-96 md:mx-0 md:mt-0"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           ÍNDICE DE NAVEGACIÓN
+           ================================================== -->
+
+      <nav class="bg-white rounded-2xl p-5 mb-10 shadow-sm border border-emerald-100">
+<h3 class="text-xs font-bold uppercase tracking-wider text-junta mb-3 flex items-center gap-2">
+<span>
+     📍
+    </span>
+    Contenidos de la Situación de Aprendizaje
+   </h3>
+<div class="flex flex-wrap gap-2 text-xs md:text-sm">
+<!-- ENLACE 7.1 -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-1" onclick="scrollToSec('sec-1', event)">
+     7.1 Masa
+    </a>
+<!-- ENLACE 7.2 -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-2" onclick="scrollToSec('sec-2', event)">
+     7.2 Capacidad
+    </a>
+<!-- ENLACE 7.3 -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-3" onclick="scrollToSec('sec-3', event)">
+     7.3 Longitud, superficie y volumen
+    </a>
+<!-- ENLACE 7.4 -->
+<a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-4" onclick="scrollToSec('sec-4', event)">
+     7.4 Unidades de tiempo
+    </a>
+<!-- ENLACE 7.5 -->
+<a class="px-3 py-1.5 bg-editorial-amberBg text-editorial-amber hover:bg-amber-600 hover:text-white font-bold rounded-lg transition" href="#sec-5" onclick="scrollToSec('sec-5', event)">
+     7.5 Problemas y desafíos
+    </a>
+<!-- ENLACE REPASO -->
+<a class="px-3 py-1.5 bg-emerald-100 text-junta-dark hover:bg-junta hover:text-white rounded-lg transition font-bold" href="#sec-repaso" onclick="scrollToSec('sec-repaso', event)">
+     🔄 Repasamos lo aprendido
+    </a>
+<!-- ENLACE AUTOEVALUACIÓN -->
+<a class="px-3 py-1.5 bg-indigo-100 text-indigo-800 hover:bg-indigo-600 hover:text-white rounded-lg transition font-bold" href="#sec-diana" onclick="scrollToSec('sec-diana', event)">
+     🎯 Autoevaluación
+    </a>
+</div>
+</nav>
+
+
+      <!-- ==================================================
+           BLOQUE PRINCIPAL DE CONTENIDOS
+           ================================================== -->
+
+      <div class="space-y-12 topic-content">
+
+        
+<!-- =========================================================== -->
+<!-- SECCIÓN 7.1 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      7.1
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Unidades de masa y repaso de operaciones avanzadas
+     </h2>
+</div>
+<!-- EXPLICACIÓN 7.1 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 text-heading">
+      Las unidades de masa
+     </h3>
+<p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-4">
+      La unidad principal de masa en el Sistema Métrico Decimal es el
+      <strong>
+       gramo (g)
+      </strong>
+      . En la industria y el comercio también se
+          utilizan con frecuencia el
+      <strong>
+       kilogramo (kg)
+      </strong>
+      y la
+      <strong>
+       tonelada métrica (t)
+      </strong>
+      .
+     </p>
+<!-- ESCALA DE CONVERSIÓN: ESCALA DE UNIDADES DE MASA -->
+<div class="bg-white rounded-2xl p-5 border border-emerald-200">
+<h4 class="font-bold text-junta-dark text-sm mb-3">
+       Escala de unidades de masa
+      </h4>
+<div class="overflow-x-auto">
+<div class="unit-scale min-w-[650px]">
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          kg
+         </span>
+<span class="text-[10px] text-slate-500">
+          kilogramo
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          hg
+         </span>
+<span class="text-[10px] text-slate-500">
+          hectogramo
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          dag
+         </span>
+<span class="text-[10px] text-slate-500">
+          decagramo
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          g
+         </span>
+<span class="text-[10px] text-slate-500">
+          gramo
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          dg
+         </span>
+<span class="text-[10px] text-slate-500">
+          decigramo
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          cg
+         </span>
+<span class="text-[10px] text-slate-500">
+          centigramo
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          mg
+         </span>
+<span class="text-[10px] text-slate-500">
+          miligramo
+         </span>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-600 mt-3">
+       Cada salto hacia la derecha multiplica por
+       <strong>
+        10
+       </strong>
+       ;
+    cada salto hacia la izquierda divide entre
+       <strong>
+        10
+       </strong>
+       .
+    Además, 1 t = 1 000 kg.
+      </p>
+</div>
+</div>
+<!-- EJERCICIOS 7.1 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 7.1.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 1
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Transforma las siguientes cantidades a la unidad incompleja solicitada:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        4,85 t a kilogramos.
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        850 000 mg a gramos.
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        3,4 dag  a hectogramos.
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        0,075 kg a miligramos.
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.1.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 2
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en forma incompleja (en gramos) las siguientes mediciones expresadas en forma compleja:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        5 kg, 3 hg y 8 g
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        12 dag, 4 dg y 5 cg
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        2 t, 45 kg y 300 g
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        8 hg, 25 cg y 40 mg
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.1.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 3
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en forma compleja utilizando al menos tres unidades distintas las siguientes cantidades:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        4 582,6 g
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        12,405 kg
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        850,25 dag
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        3 045,8 dg
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.1.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 4
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Ordena de mayor a menor las siguientes cantidades de masa previa conversión a gramos:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        0,45 t
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        4 600 hg
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        458 000 g
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        4,6 dag
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.1.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 5
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Realiza las siguientes operaciones con medidas de masa expresando el resultado final en kilogramos:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        2,5 t + 340 kg + 8 500 hg
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        1,2 dag - 45 000 g
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        3 g x (45 kg + 350 dag)
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        (4,5 t - 1 200 kg) : 6
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.1.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 6
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Una cooperativa olivarera de Martos (Jaén) ha recolectado durante una jornada un total de 48,5 toneladas de aceituna. Si de cada tonelada de aceituna se obtienen aproximadamente 220 kg de aceite de oliva virgen extra, ¿cuántos kilogramos de aceite se obtendrán en total?
+      </p>
+</div>
+<!-- EJERCICIO 7.1.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 7
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un camión de mercancías sale del Puerto de Algeciras con un peso total (tarado incluido) de 18,4 toneladas. Si el camión vacío pesa 6,8 t y lleva cargadas 80 cajas iguales de productos hortofrutícolas de la comarca del Poniente Almeriense, ¿cuántos kilogramos pesa cada caja?
+      </p>
+</div>
+<!-- EJERCICIO 7.1.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 8
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un secadero tradicional de jamones en Jabugo (Huelva) recibe una partida de 250 jamones con un peso medio de 8,4 kg por pieza. Durante el proceso de curación, cada jamón pierde aproximadamente
+       <span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+         1
+        </span>
+<span class="den">
+         4
+        </span>
+</span>
+       de su masa inicial. ¿Cuál será la masa total en gramos de la partida una vez curada?
+      </p>
+</div>
+<!-- EJERCICIO 7.1.9 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 9
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       En un laboratorio farmacéutico de Granada se preparan dosis de un medicamento utilizando 0,45 kg de principio activo. Si cada comprimido debe contener exactamente 150 mg de dicho principio, ¿cuántos comprimidos completos se podrán elaborar?
+      </p>
+</div>
+<!-- EJERCICIO 7.1.10 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 10
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un barco pesquero desembarca en el puerto de Isla Cristina (Huelva) 3,2 toneladas de sardinas y 1 800 kg de boquerones. Si vende las sardinas a 2,40 €/kg y los boquerones a 3,10 €/kg, ¿cuál es el valor total de la captura desembarcada?
+      </p>
+</div>
+<!-- EJERCICIO 7.1.11 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 11
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Resuelve las siguientes operaciones:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        483 912 x 547
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        3 845 600 : 482
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        84 938,25 : 3,45
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        604,82 : 0,142
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.1.12 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 12
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Resuelve las siguientes operaciones combinadas:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        (4,8 x
+        <span aria-label="10 elevado a 3" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ) - ( 348,5 + (12,4 x 15,2) ) +
+        <span aria-label="10 elevado a 4" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          4
+         </sup>
+</span>
+        : 25
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        (
+        <span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+          3
+         </span>
+<span class="den">
+          4
+         </span>
+</span>
+        +
+        <span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+          5
+         </span>
+<span class="den">
+          6
+         </span>
+</span>
+        ) x (
+        <span aria-label="8 partido por 5" class="frac" role="math">
+<span class="num">
+          8
+         </span>
+<span class="den">
+          5
+         </span>
+</span>
+        -
+        <span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+          2
+         </span>
+<span class="den">
+          3
+         </span>
+</span>
+        )
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+<span aria-label="7 partido por 12" class="frac" role="math">
+<span class="num">
+          7
+         </span>
+<span class="den">
+          12
+         </span>
+</span>
+        : (
+        <span aria-label="5 partido por 4" class="frac" role="math">
+<span class="num">
+          5
+         </span>
+<span class="den">
+          4
+         </span>
+</span>
+        -
+        <span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+          2
+         </span>
+<span class="den">
+          3
+         </span>
+</span>
+        ) +
+        <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">
+          3
+         </span>
+<span class="den">
+          8
+         </span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- SECCIÓN 7.2 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      7.2
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Unidades de capacidad y repaso de operaciones avanzadas
+     </h2>
+</div>
+<!-- EXPLICACIÓN 7.2 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+<h3 class="text-base font-bold text-junta-dark mb-3 text-heading">
+      Las unidades de capacidad
+     </h3>
+<p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-4">
+      La unidad principal de capacidad es el
+      <strong>
+       litro (l)
+      </strong>
+      .
+          Se utiliza para medir la cantidad de líquido que contiene un recipiente.
+     </p>
+<!-- ESCALA DE CONVERSIÓN: ESCALA DE UNIDADES DE CAPACIDAD -->
+<div class="bg-white rounded-2xl p-5 border border-emerald-200">
+<h4 class="font-bold text-junta-dark text-sm mb-3">
+       Escala de unidades de capacidad
+      </h4>
+<div class="overflow-x-auto">
+<div class="unit-scale min-w-[650px]">
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          kl
+         </span>
+<span class="text-[10px] text-slate-500">
+          kilolitro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          hl
+         </span>
+<span class="text-[10px] text-slate-500">
+          hectolitro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          dal
+         </span>
+<span class="text-[10px] text-slate-500">
+          decalitro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          l
+         </span>
+<span class="text-[10px] text-slate-500">
+          litro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          dl
+         </span>
+<span class="text-[10px] text-slate-500">
+          decilitro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          cl
+         </span>
+<span class="text-[10px] text-slate-500">
+          centilitro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          ml
+         </span>
+<span class="text-[10px] text-slate-500">
+          mililitro
+         </span>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-600 mt-3">
+       Cada salto hacia la derecha multiplica por
+       <strong>
+        10
+       </strong>
+       ;
+    cada salto hacia la izquierda divide entre
+       <strong>
+        10
+       </strong>
+       .
+      </p>
+</div>
+</div>
+<!-- EJERCICIOS 7.2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 7.2.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 1
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Convierte las siguientes capacidades a la unidad indicada:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        14,5 kl a litros.
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        45 800 ml a decalitros.
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        3,25 hl a centilitros .
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        0,085 dal a mililitros.
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 2
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en litros las siguientes mediciones dadas en forma compleja:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        4 kl, 6 hl y 5 dal
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        12 hl, 8 l y 45 cl
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        3 dal, 15 dl y 250 ml
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        2 kl, 4 dal, 8 l y 500 ml
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 3
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en forma compleja las siguientes cantidades de capacidad:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        3 458,25 l
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        45,805 hl
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        850,4 cl
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        12 045,8 ml
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 4
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Convierte a centilitros las siguientes medidas. Después, ordena de menor a mayor:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        0,035 kl
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        3,6 hl
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        358 l
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        35 400 cl
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 5
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Asocia las siguientes expresiones de fracción o decimal de litro con su equivalencia en mililitros:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+<span aria-label="1 partido por 2" class="frac" role="math">
+<span class="num">
+          1
+         </span>
+<span class="den">
+          2
+         </span>
+</span>
+        litro
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+<span aria-label="1 partido por 4" class="frac" role="math">
+<span class="num">
+          1
+         </span>
+<span class="den">
+          4
+         </span>
+</span>
+        de litro
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+<span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+          3
+         </span>
+<span class="den">
+          4
+         </span>
+</span>
+        de litro
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        0,2 litros
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 6
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Una almazara de Montilla (Córdoba) almacena en un depósito principal un total de 18,5 kilolitros de aceite de oliva virgen extra. Si se envasa todo el aceite en garrafas de 5 litros, ¿cuántas garrafas completas se obtendrán y cuál será el valor de la producción si cada garrafa se vende a 32,50 €?
+      </p>
+</div>
+<!-- EJERCICIO 7.2.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 7
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       El embalse de Iznájar, el más grande de Andalucía, ha recibido una aportación por lluvias de 3,4 hectómetros cúbicos de agua. Si una planta potabilizadora procesa 850 kilolitros de agua por hora, ¿cuántas horas tardará en procesar una cantidad equivalente a 4,25 hectolitros por cada habitante de una ciudad de 100 000 habitantes?
+      </p>
+</div>
+<!-- EJERCICIO 7.2.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 8
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Una bodega tradicional de Jerez de la Frontera embotella un tonel de vino fino que contiene 4,5 hectolitros. Si utiliza botellas estándar de 75 cl cada una, ¿cuántas botellas completas se pueden llenar?
+      </p>
+</div>
+<!-- EJERCICIO 7.2.9 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 9
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       En una fábrica de refrescos de Sevilla se llena un tanque con 12,8 kilolitros de zumo de naranja. Si se envasa en ladrillos de cartón (bricks) de 33 cl de capacidad cada uno, ¿cuántos envases completos se pueden llenar y cuántos mililitros de zumo sobrarán?
+      </p>
+</div>
+<!-- EJERCICIO 7.2.10 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 10
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un camión cisterna reparte agua potable a tres granjas de la Serranía de Ronda. Lleva una carga inicial de 15 kilolitros. En la primera granja descarga 4 500 litros, en la segunda 38 hectolitros y en la tercera 25 decalitros. ¿Cuántos litros de agua quedan en la cisterna al finalizar el reparto?
+      </p>
+</div>
+<!-- EJERCICIO 7.2.11 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 11
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Resuelve las siguientes operaciones combinadas:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>a)</strong>
+        (125 x
+        <span aria-label="10 elevado a 4" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          4
+         </sup>
+</span>
+        ) + (384 x
+        <span aria-label="10 elevado a 3" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ) -
+        <span aria-label="(15 elevado a 2" class="power" role="math">
+<span class="base">
+          (15
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        x 100)
+       </li>
+<li>
+<strong>b)</strong>
+         (248 x
+        <span aria-label="10 elevado a 4" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ) + (517 x
+        <span aria-label="10 elevado a 3" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        ) -
+        <span aria-label="(15 elevado a 2" class="power" role="math">
+<span class="base">
+          (12
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        x 100)
+       </li>
+<li>
+<strong>
+           c)
+         </strong>
+         (356 x
+        <span aria-label="10 elevado a 4" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          4
+         </sup>
+</span>
+        ) + (129 x
+        <span aria-label="10 elevado a 3" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ) -
+        <span aria-label="(15 elevado a 2" class="power" role="math">
+<span class="base">
+          (18
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        x 10)
+       </li>
+<li>
+<strong>
+           d)
+         </strong>
+         (472 x
+        <span aria-label="10 elevado a 4" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          5
+         </sup>
+</span>
+        ) + (245 x
+        <span aria-label="10 elevado a 3" class="power" role="math">
+<span class="base">
+          10
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        ) -
+        <span aria-label="(15 elevado a 2" class="power" role="math">
+<span class="base">
+          (12
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        x 1 000)
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.12 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 12
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Calcula:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        485,324 x 68,05
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        15 849,6 : 24,15
+       </li>
+<li>
+<strong>
+           c)
+         </strong>
+         728,456 × 39,08
+       </li>
+<li>
+<strong>
+           d)
+         </strong>
+         18 672,4 : 35,6
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.2.13 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 13
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Resuelve:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        (
+        <span aria-label="4 partido por 10" class="frac" role="math">
+<span class="num">
+          4
+         </span>
+<span class="den">
+          10
+         </span>
+</span>
+        +
+        <span aria-label="7 partido por 10" class="frac" role="math">
+<span class="num">
+          7
+         </span>
+<span class="den">
+          10
+         </span>
+</span>
+        ) : (
+        <span aria-label="11 partido por 6" class="frac" role="math">
+<span class="num">
+          11
+         </span>
+<span class="den">
+          6
+         </span>
+</span>
+        -
+        <span aria-label="5 partido por 6" class="frac" role="math">
+<span class="num">
+          5
+         </span>
+<span class="den">
+          6
+         </span>
+</span>
+        ) x
+        <span aria-label="5 partido por 2" class="frac" role="math">
+<span class="num">
+          5
+         </span>
+<span class="den">
+          2
+         </span>
+</span>
+</li>
+<li>
+<strong>
+         b)
+        </strong>
+        ( 120,5 - (8,4 x 6,2) ) : 0,25 +
+        <span aria-label="(3,5 elevado a 2" class="power" role="math">
+<span class="base">
+          (3,5
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        x 4)
+       </li>
+<li>
+<strong>c)</strong>
+        (
+        <span aria-label="3 partido por 8" class="frac" role="math">
+<span class="num">3</span>
+<span class="den">8</span>
+</span>
+        +
+        <span aria-label="5 partido por 8" class="frac" role="math">
+<span class="num">5</span>
+<span class="den">8</span>
+</span>
+        )
+        :
+        (
+        <span aria-label="13 partido por 7" class="frac" role="math">
+<span class="num">13</span>
+<span class="den">7</span>
+</span>
+        -
+        <span aria-label="6 partido por 7" class="frac" role="math">
+<span class="num">6</span>
+<span class="den">7</span>
+</span>
+        )
+        x
+        <span aria-label="7 partido por 3" class="frac" role="math">
+<span class="num">7</span>
+<span class="den">3</span>
+</span>
+</li>
+<li>
+<strong>d)</strong>
+        ( 145,8 - (9,6 x 7,5) ) : 0,4 +
+        <span aria-label="(4,2 elevado a 2)" class="power" role="math">
+<span class="base">(4,2</span>
+<sup>2</sup>
+</span>
+        x 5)
+      </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- SECCIÓN 7.3 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-3">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      7.3
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Longitud, superficie y volumen / capacidad
+     </h2>
+</div>
+<!-- EXPLICACIÓN 7.3 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8 space-y-5">
+<h3 class="text-base font-bold text-junta-dark text-heading">
+      Las unidades de longitud, superficie y volumen
+     </h3>
+<!-- ESCALA DE CONVERSIÓN: ESCALA DE UNIDADES DE LONGITUD -->
+<div class="bg-white rounded-2xl p-5 border border-emerald-200">
+<h4 class="font-bold text-junta-dark text-sm mb-3">
+       Escala de unidades de longitud
+      </h4>
+<div class="overflow-x-auto">
+<div class="unit-scale min-w-[650px]">
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          km
+         </span>
+<span class="text-[10px] text-slate-500">
+          kilómetro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          hm
+         </span>
+<span class="text-[10px] text-slate-500">
+          hectómetro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          dam
+         </span>
+<span class="text-[10px] text-slate-500">
+          decámetro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          m
+         </span>
+<span class="text-[10px] text-slate-500">
+          metro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          dm
+         </span>
+<span class="text-[10px] text-slate-500">
+          decímetro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          cm
+         </span>
+<span class="text-[10px] text-slate-500">
+          centímetro
+         </span>
+</div>
+<div class="unit-box">
+<span class="font-bold text-junta-dark">
+          mm
+         </span>
+<span class="text-[10px] text-slate-500">
+          milímetro
+         </span>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-600 mt-3">
+       Cada salto hacia la derecha multiplica por
+       <strong>
+        10
+       </strong>
+       ;
+    cada salto hacia la izquierda divide entre
+       <strong>
+        10
+       </strong>
+       .
+      </p>
+</div>
+<!-- FACTORES DE CONVERSIÓN -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<strong class="text-junta-dark">
+        Longitud
+       </strong>
+<p class="text-xs text-slate-600 mt-1">
+        Unidad principal: metro. Cada salto cambia por un factor de 10.
+       </p>
+</div>
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<strong class="text-junta-dark">
+        Superficie
+       </strong>
+<p class="text-xs text-slate-600 mt-1">
+        Unidad principal: m². Cada salto cambia por un factor de 100.
+       </p>
+</div>
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<strong class="text-junta-dark">
+        Volumen
+       </strong>
+<p class="text-xs text-slate-600 mt-1">
+        Unidad principal: m³. Cada salto cambia por un factor de 1 000.
+       </p>
+</div>
+</div>
+<!-- RELACIÓN VOLUMEN-CAPACIDAD -->
+<div class="bg-white p-4 rounded-xl border border-emerald-200">
+<h4 class="font-bold text-junta-dark text-sm mb-2">
+       Relación fundamental entre volumen y capacidad
+      </h4>
+<div class="flex flex-wrap gap-3 text-xs md:text-sm text-slate-700">
+<span class="bg-emerald-50 px-3 py-2 rounded-lg">
+        1 m³ = 1 kl = 1 000 l
+       </span>
+<span class="bg-emerald-50 px-3 py-2 rounded-lg">
+        1 dm³ = 1 l
+       </span>
+<span class="bg-emerald-50 px-3 py-2 rounded-lg">
+        1 cm³ = 1 ml
+       </span>
+</div>
+</div>
+</div>
+<!-- EJERCICIOS 7.3 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 7.3.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 1
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Convierte las siguientes longitudes a la unidad indicada:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        45,8 km a metros.
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        850 000 cm a hm.
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        3,25 dam a milímetros.
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        0,048 hm a decímetros.
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 2
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en metros las siguientes longitudes dadas en forma compleja:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        3 km, 5 hm y 8 dam
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        12 dam, 4 m y 50 cm
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        2 hm, 15 dm y 800 mm
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 3
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en forma compleja la distancia de 14 508,45 metros utilizando kilómetros, hectómetros, decámetros y metros.
+      </p>
+</div>
+<!-- EJERCICIO 7.3.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 4
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Pasa todas las unidades a metros. Después ordena de mayor a menor las siguientes medidas de longitud:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+        4,2 km ; 425 dam ; 4 300 m ; 42 800 dm
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 5
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Realiza la siguiente operación: (3,5 km + 42 hm) - (1 200 m + 850 dam) expresando el resultado final en metros.
+      </p>
+</div>
+<!-- EJERCICIO 7.3.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 6
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un tramo de la Vía Verde de la Sierra entre Olvera (Cádiz) y Puerto Serrano mide 36,5 km. Un grupo de ciclistas ha recorrido por la mañana 2 hm y 45 dam por cada uno de los 8 tramos en los que han dividido la ruta. ¿Cuántos kilómetros les quedan por recorrer por la tarde?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 7
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Para cercar una finca rectangular dedicada al cría de caballo cartujano en Jerez de la Frontera, se necesitan 4 hilos de alambre de espino. Si la finca mide 450 m de largo y 280 m de ancho, ¿cuántos rollos de alambre de 2 hm cada uno se deberán comprar como mínimo?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 8
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       El trazado del tren de alta velocidad entre Sevilla y Granada tiene una longitud de 240 km. Si se han renovado 1 800 decámetros de vía en un primer tramo y 42 hectómetros en un segundo tramo, ¿cuántos kilómetros de vía quedan aún por renovar?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.9 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 9
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un atleta realiza sus entrenamientos en una pista del Estadio de la Cartuja de Sevilla de 400 metros de cuerda. Si da 15 vueltas completas a la pista cinco días a la semana, ¿cuántos kilómetros recorre al cabo de 4 semanas de entrenamiento?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.10 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 10
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un barco de rescate marítimo patrulla una zona de la costa de Almería recorriendo 12,4 millas náuticas. Si una milla náutica equivale a 1 852 metros, ¿cuántos kilómetros y hectómetros ha recorrido la embarcación?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.11 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 11
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Convierte las siguientes unidades de superficie dividiendo o multiplicando por 100 según corresponda:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        4,5
+        <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        a
+        <span aria-label="cm elevado a 2" class="power" role="math">
+<span class="base">
+          cm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         b)
+        </strong>
+        850 000
+        <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        a
+        <span aria-label="km elevado a 2" class="power" role="math">
+<span class="base">
+          km
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         c)
+        </strong>
+        32,5
+        <span aria-label="hm elevado a 2" class="power" role="math">
+<span class="base">
+          hm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        a
+        <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         d)
+        </strong>
+        0,075
+        <span aria-label="dam elevado a 2" class="power" role="math">
+<span class="base">
+          dam
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        a
+        <span aria-label="mm elevado a 2" class="power" role="math">
+<span class="base">
+          mm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.12 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 12
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Transforma las siguientes medidas a metros cuadrados
+       <span aria-label="(m elevado a 2" class="power" role="math">
+<span class="base">
+         (m
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       ):
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        14,5
+        <span aria-label="hm elevado a 2" class="power" role="math">
+<span class="base">
+          hm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         b)
+        </strong>
+        250
+        <span aria-label="cm elevado a 2" class="power" role="math">
+<span class="base">
+          cm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         c)
+        </strong>
+        4,2
+        <span aria-label="dam elevado a 2" class="power" role="math">
+<span class="base">
+          dam
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         d)
+        </strong>
+        1 200
+        <span aria-label="mm elevado a 2" class="power" role="math">
+<span class="base">
+          mm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.13 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 13
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en forma incompleja
+       <span aria-label="(m elevado a 2" class="power" role="math">
+<span class="base">
+         (m
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       ) la extensión de una finca que mide: 12
+       <span aria-label="hm elevado a 2" class="power" role="math">
+<span class="base">
+         hm
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       , 45
+       <span aria-label="dam elevado a 2" class="power" role="math">
+<span class="base">
+         dam
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       y 300
+       <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+         m
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       .
+      </p>
+</div>
+<!-- EJERCICIO 7.3.14 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 14
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Realiza la siguiente suma de superficies expresando el resultado final en
+       <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+         m
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       :
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+        2,5
+        <span aria-label="hm elevado a 2" class="power" role="math">
+<span class="base">
+          hm
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        + 14
+        <span aria-label="dam elevado a 2" class="power" role="math">
+<span class="base">
+          dam
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        + 3 500
+        <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.15 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 15
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un olivar centenario en la comarca de La Loma (Jaén) ocupa una superficie de 48,5
+       <span aria-label="hm elevado a 2" class="power" role="math">
+<span class="base">
+         hm
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       . Si se calcula que por cada decámetro cuadrado hay plantados 2 olivos, ¿cuántos olivos componen la explotación?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.16 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 16
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Se desea pavimentar la plaza principal de un municipio de la provincia de Huelva que tiene forma rectangular de 85 metros de largo por 40 metros de ancho. Si el coste de la baldosa de granito es de 35 € por metro cuadrado, ¿cuál será el presupuesto total de la obra?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.17 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 17
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       El Parque Nacional de Doñana abarca una superficie aproximada de 543
+       <span aria-label="km elevado a 2" class="power" role="math">
+<span class="base">
+         km
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       . Expresa dicha superficie en metros cuadrados.
+      </p>
+</div>
+<!-- EJERCICIO 7.3.18 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 18
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Una parcela urbana en la Costa del Sol de 0,12
+       <span aria-label="km elevado a 2" class="power" role="math">
+<span class="base">
+         km
+        </span>
+<sup>
+         2
+        </sup>
+</span>
+       se divide en 4 solares iguales para la construcción de viviendas unifamiliares. ¿Cuántos metros cuadrados tendrá cada uno de los solares?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.19 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 19
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Efectúa las siguientes conversiones entre unidades de volumen multiplicando o dividiendo por 1 000 por cada escalón:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        3,5
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        a
+        <span aria-label="dm elevado a 3" class="power" role="math">
+<span class="base">
+          dm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         b)
+        </strong>
+        4 500 000
+        <span aria-label="cm elevado a 3" class="power" role="math">
+<span class="base">
+          cm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        a
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         c)
+        </strong>
+        0,028
+        <span aria-label="dm elevado a 3" class="power" role="math">
+<span class="base">
+          dm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        a
+        <span aria-label="mm elevado a 3" class="power" role="math">
+<span class="base">
+          mm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         d)
+        </strong>
+        1,2
+        <span aria-label="hm elevado a 3" class="power" role="math">
+<span class="base">
+          hm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        a
+        <span aria-label="dam elevado a 3" class="power" role="math">
+<span class="base">
+          dam
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.20 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 20
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Expresa en litros las siguientes cantidades de volumen utilizando la equivalencia 1
+       <span aria-label="dm elevado a 3" class="power" role="math">
+<span class="base">
+         dm
+        </span>
+<sup>
+         3
+        </sup>
+</span>
+       = 1 litro:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        4,5
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         b)
+        </strong>
+        8 500
+        <span aria-label="cm elevado a 3" class="power" role="math">
+<span class="base">
+          cm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         c)
+        </strong>
+        0,12
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+<li>
+<strong>
+         d)
+        </strong>
+        450
+        <span aria-label="dm elevado a 3" class="power" role="math">
+<span class="base">
+          dm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.21 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 21
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Transforma a metros cúbicos
+       <span aria-label="(m elevado a 3" class="power" role="math">
+<span class="base">
+         (m
+        </span>
+<sup>
+         3
+        </sup>
+</span>
+       ) las siguientes capacidades de recipientes industriales:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        12 500 litros
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        4,8 kilolitros
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        350 hectolitros
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        850 000 mililitros
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.22 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 22
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Completa las siguientes igualdades sobre volumen y capacidad:
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        1
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        = ___ litros = ___ kilolitros
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        1
+        <span aria-label="cm elevado a 3" class="power" role="math">
+<span class="base">
+          cm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        = ___ mililitros = ___ litros
+       </li>
+<li>
+<strong>
+         c)
+        </strong>
+        4,5
+        <span aria-label="dm elevado a 3" class="power" role="math">
+<span class="base">
+          dm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        = ___ cl
+       </li>
+<li>
+<strong>
+         d)
+        </strong>
+        2 500
+        <span aria-label="cm elevado a 3" class="power" role="math">
+<span class="base">
+          cm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        = ___ dl
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.23 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 23
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Una piscina olímpica instalada en un complejo deportivo de Málaga tiene 50 metros de largo, 25 metros de ancho y 2 metros de profundidad uniforme.
+      </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+         a)
+        </strong>
+        Calcula su volumen total en metros cúbicos
+        <span aria-label="(m elevado a 3" class="power" role="math">
+<span class="base">
+          (m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ).
+       </li>
+<li>
+<strong>
+         b)
+        </strong>
+        ¿Cuántos litros y kilolitros de agua se necesitan para llenarla por completo?
+       </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.3.24 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 24
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un aljibe histórico de la Alhambra de Granada tiene forma rectangular con unas dimensiones interiores de 8 metros de largo, 4 metros de ancho y 3 metros de altura. Si actualmente contiene agua hasta los
+       <span aria-label="2 partido por 3" class="frac" role="math">
+<span class="num">
+         2
+        </span>
+<span class="den">
+         3
+        </span>
+</span>
+       de su capacidad, ¿cuántos litros de agua almacena?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.25 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 25
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un camión cisterna para el transporte de leche fresca tiene un depósito cilíndrico cuyo volumen interno es de 18,5
+       <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+         m
+        </span>
+<sup>
+         3
+        </sup>
+</span>
+       . Si el precio de la leche es de 0,85 € el litro, ¿cuál es el valor comercial de la carga total del camión?
+      </p>
+</div>
+<!-- EJERCICIO 7.3.26 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+       Ejercicio 26
+      </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+       Un frasco de perfume artesanal elaborado en la Alpujarra tiene un volumen interno de 125
+       <span aria-label="cm elevado a 3" class="power" role="math">
+<span class="base">
+         cm
+        </span>
+<sup>
+         3
+        </sup>
+</span>
+       . ¿Cuántos frascos completos se podrán llenar con un bidón que contiene 1,5 decalitros de perfume?
+      </p>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+<!-- SECCIÓN 7.4 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-4">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      7.4
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Unidades de tiempo
+     </h2>
+</div>
+<!-- EXPLICACIÓN 7.4 -->
+<div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8 space-y-5">
+<h3 class="text-base font-bold text-junta-dark text-heading">
+      Medimos y operamos con el tiempo
+     </h3>
+<p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify">
+      Para medir duraciones utilizamos principalmente el <strong>segundo (s)</strong>, el <strong>minuto (min)</strong>, la <strong>hora (h)</strong> y el <strong>día (d)</strong>. A diferencia de las unidades del sistema métrico decimal, las unidades de tiempo no cambian de 10 en 10: entre segundos, minutos y horas trabajamos de <strong>60 en 60</strong>, mientras que un día tiene <strong>24 horas</strong>.
+     </p>
+<!-- SVG 7.4: EQUIVALENCIAS DE TIEMPO -->
+<div class="bg-white rounded-2xl p-4 border border-emerald-200 overflow-x-auto">
+<svg aria-label="Equivalencias entre días, horas, minutos y segundos" class="time-svg min-w-[680px]" role="img" viewbox="0 0 760 190">
+<rect class="time-box-svg" height="76" rx="14" width="130" x="30" y="55"></rect>
+<rect class="time-box-svg" height="76" rx="14" width="130" x="220" y="55"></rect>
+<rect class="time-box-svg" height="76" rx="14" width="130" x="410" y="55"></rect>
+<rect class="time-box-svg" height="76" rx="14" width="130" x="600" y="55"></rect>
+<text class="time-title-svg" text-anchor="middle" x="95" y="86">1 día</text>
+<text class="time-note-svg" text-anchor="middle" x="95" y="108">24 horas</text>
+<text class="time-title-svg" text-anchor="middle" x="285" y="86">1 hora</text>
+<text class="time-note-svg" text-anchor="middle" x="285" y="108">60 minutos</text>
+<text class="time-title-svg" text-anchor="middle" x="475" y="86">1 minuto</text>
+<text class="time-note-svg" text-anchor="middle" x="475" y="108">60 segundos</text>
+<text class="time-title-svg" text-anchor="middle" x="665" y="86">1 segundo</text>
+<text class="time-note-svg" text-anchor="middle" x="665" y="108">unidad básica</text>
+<line class="time-axis" x1="160" x2="220" y1="93" y2="93"></line>
+<line class="time-axis" x1="350" x2="410" y1="93" y2="93"></line>
+<line class="time-axis" x1="540" x2="600" y1="93" y2="93"></line>
+<text class="time-arrow-svg" text-anchor="middle" x="190" y="80">× 24</text>
+<text class="time-arrow-svg" text-anchor="middle" x="380" y="80">× 60</text>
+<text class="time-arrow-svg" text-anchor="middle" x="570" y="80">× 60</text>
+<text class="time-note-svg" text-anchor="middle" x="380" y="160">Para volver hacia unidades mayores, dividimos por 60; de horas a días, dividimos por 24.</text>
+</svg>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- EJEMPLO 7.4: SUMA -->
+<div class="time-operation">
+<h4 class="font-bold text-junta-dark text-sm mb-2">Suma de tiempos</h4>
+<span class="step">1 h 48 min 35 s</span>
+<span class="step">+ 2 h 27 min 50 s</span>
+<span class="step">= 3 h 75 min 85 s</span>
+<span class="step">85 s = 1 min 25 s</span>
+<span class="step">76 min = 1 h 16 min</span>
+<span class="step text-junta-dark">Resultado: 4 h 16 min 25 s</span>
+</div>
+<!-- EJEMPLO 7.4: RESTA -->
+<div class="time-operation">
+<h4 class="font-bold text-junta-dark text-sm mb-2">Resta de tiempos</h4>
+<span class="step">5 h 12 min 20 s</span>
+<span class="step">− 2 h 48 min 45 s</span>
+<span class="step">Pedimos 1 min: 20 s → 80 s</span>
+<span class="step">Pedimos 1 h: 11 min → 71 min</span>
+<span class="step text-junta-dark">Resultado: 2 h 23 min 35 s</span>
+</div>
+<!-- EJEMPLO 7.4: MULTIPLICACIÓN -->
+<div class="time-operation">
+<h4 class="font-bold text-junta-dark text-sm mb-2">Multiplicación</h4>
+<span class="step">1 h 25 min 30 s × 3</span>
+<span class="step">= 3 h 75 min 90 s</span>
+<span class="step">90 s = 1 min 30 s</span>
+<span class="step">76 min = 1 h 16 min</span>
+<span class="step text-junta-dark">Resultado: 4 h 16 min 30 s</span>
+</div>
+<!-- EJEMPLO 7.4: DIVISIÓN -->
+<div class="time-operation">
+<h4 class="font-bold text-junta-dark text-sm mb-2">División</h4>
+<span class="step">5 h 30 min : 3</span>
+<span class="step">5 h 30 min = 330 min</span>
+<span class="step">330 : 3 = 110 min</span>
+<span class="step">110 min = 1 h 50 min</span>
+<span class="step text-junta-dark">Resultado: 1 h 50 min</span>
+</div>
+</div>
+<p class="text-xs md:text-sm text-slate-600 leading-relaxed text-justify">
+<strong>Consejo:</strong> en sumas y restas conviene colocar horas con horas, minutos con minutos y segundos con segundos. En multiplicaciones y divisiones puede resultar más sencillo transformar primero toda la duración a una unidad menor, operar y volver después a forma compleja.
+     </p>
+</div>
+<!-- EJERCICIOS 7.4 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 7.4.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 1</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Realiza las siguientes conversiones de tiempo:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 3 h 25 min a minutos.</li>
+<li><strong>b)</strong> 2 d 6 h a horas.</li>
+<li><strong>c)</strong> 7 min 45 s a segundos.</li>
+<li><strong>d)</strong> 183 min a horas y minutos.</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 2</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Expresa las siguientes duraciones en forma compleja:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 7 200 s en horas, minutos y segundos.</li>
+<li><strong>b)</strong> 15 650 s en horas, minutos y segundos.</li>
+<li><strong>c)</strong> 3 025 min en días, horas y minutos.</li>
+<li><strong>d)</strong> 53 h 40 min en días, horas y minutos.</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 3</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Calcula las siguientes sumas y expresa cada resultado en forma compleja:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 2 h 35 min + 1 h 48 min.</li>
+<li><strong>b)</strong> 1 h 48 min 35 s + 2 h 27 min 50 s.</li>
+<li><strong>c)</strong> 3 d 14 h + 2 d 17 h.</li>
+<li><strong>d)</strong> 45 min 38 s + 1 h 29 min 47 s.</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 4</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Resuelve las siguientes restas de tiempo:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 5 h 20 min − 2 h 45 min.</li>
+<li><strong>b)</strong> 5 h 12 min 20 s − 2 h 48 min 45 s.</li>
+<li><strong>c)</strong> 4 d 6 h − 1 d 19 h.</li>
+<li><strong>d)</strong> 2 h − 47 min 35 s.</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 5</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Multiplica las siguientes duraciones y normaliza los resultados:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 1 h 25 min × 4.</li>
+<li><strong>b)</strong> 45 min 30 s × 5.</li>
+<li><strong>c)</strong> 2 h 18 min 15 s × 3.</li>
+<li><strong>d)</strong> 1 d 7 h × 6.</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 6</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Divide cada duración en partes iguales:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 6 h 30 min : 3.</li>
+<li><strong>b)</strong> 4 h 48 min : 4.</li>
+<li><strong>c)</strong> 3 d 12 h : 6.</li>
+<li><strong>d)</strong> 2 h 15 min : 5.</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 7</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Resuelve las siguientes situaciones con horarios y duraciones:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> Una película comienza a las 17:35 y dura 1 h 47 min. ¿A qué hora termina?</li>
+<li><strong>b)</strong> Una carrera dura 2 h 18 min 45 s. Otra corredora tarda 12 min 30 s menos. ¿Cuál es su tiempo?</li>
+<li><strong>c)</strong> Un viaje de 6 h 40 min se divide en 4 etapas iguales. ¿Cuánto dura cada etapa?</li>
+<li><strong>d)</strong> Un sistema de riego funciona 3 h 15 min diarios durante 7 días. ¿Cuál es el tiempo total de funcionamiento?</li>
+</ul>
+</div>
+<!-- EJERCICIO 7.4.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">Ejercicio 8</span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">Realiza estas operaciones combinadas con unidades de tiempo:</p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> (2 h 35 min + 1 h 50 min) × 2.</li>
+<li><strong>b)</strong> (8 h 30 min − 2 h 45 min) : 3.</li>
+<li><strong>c)</strong> 1 d 6 h + (2 h 40 min × 3).</li>
+<li><strong>d)</strong> 2 d − (5 h 35 min × 4).</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 7.5 -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-editorial-amber/40" id="sec-5">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-editorial-amber text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      7.5
+     </span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+      Problemas y desafíos
+     </h2>
+</div>
+<!-- PARTE A -->
+<div class="mb-10">
+<h3 class="text-base font-bold text-junta mb-5 text-heading">
+      🧮 Parte A: Problemas de repaso
+     </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- EJERCICIO 7.5.1 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 1
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Un contenedor marítimo en el Puerto de Cádiz tiene una capacidad volumétrica de 33,2
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        . Si se cargan en él 40 cajas cúbicas de 0,5
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        de volumen cada una y con un peso de 125 kg por caja, calcula:
+       </p>
+<ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         El volumen libre que queda en el contenedor en
+         <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+           m
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         y en litros.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         El peso total de la carga expresado en toneladas.
+        </li>
+</ul>
+</div>
+<!-- EJERCICIO 7.5.2 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 2
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Una finca de cítricos en la Vega del Guadalquivir produce 120 toneladas de naranjas. Se empaqueta el 60 % de la cosecha en mallas de 5 kg y el resto en cajas de 15 kg. ¿Cuántas mallas y cuántas cajas se utilizarán en total?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.3 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 3
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Para regar una parcela de hortalizas de 2,4
+        <span aria-label="km elevado a 2" class="power" role="math">
+<span class="base">
+          km
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        se consume un promedio de 15 litros de agua por metro cuadrado a la semana. ¿Cuántos kilolitros de agua se consumirán en un mes (4 semanas)?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.4 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 4
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Una empresa de transportes de mercancías de Bailén (Jaén) realiza una ruta de 480 km. El camión consume 28 litros de gasóleo por cada 100 km recorridos. Si el litro de combustible cuesta 1,65 €, ¿cuál es el coste total del carburante utilizado en el viaje de ida y vuelta?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.5 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 5
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Un depósito de agua potable de forma cúbica tiene una altura de 30 metros. Si está lleno hasta el 80 % de su capacidad, ¿cuántos litros de agua le faltan para estar completamente lleno?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.6 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 6
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Una cooperativa vinícola del Condado de Huelva dispone de 3,6 hectolitros de vino. Si envasa la mitad en botellas de 75 cl y la otra mitad en garrafas de 5 litros, ¿cuántos envases de cada tipo necesitará?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.7 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 7
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Un tramo de autovía de 18,5 km y 24 metros de ancho se va a asfaltar con una capa de aglomerado de 5 cm de espesor. Calcula el volumen de asfalto necesario expresado en metros cúbicos.
+       </p>
+</div>
+<!-- EJERCICIO 7.5.8 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 8
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Un agricultor vende una parcela de 1,5
+        <span aria-label="km elevado a 2" class="power" role="math">
+<span class="base">
+          km
+         </span>
+<sup>
+          2
+         </sup>
+</span>
+        a razón de 12 € el metro cuadrado. Con el dinero obtenido compra un camión por 45 000 € y deposita el resto en una cuenta bancaria. ¿Qué cantidad de dinero ha ingresado en el banco?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.9 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 9
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        En una fábrica de conservas de pescado de Barbate (Cádiz) se procesan 4,5 toneladas de atún. Si se envasa en latas de 150 gramos netos cada una, ¿cuántas latas se producen y cuál es su expresión en potencias de base 10?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.10 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 10
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Un depósito de riego contiene 12
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        de agua. Si se conecta una bomba que extrae 250 litros por minuto, ¿cuántos minutos tardará en vaciarse por completo?
+       </p>
+</div>
+<!-- EJERCICIO 7.5.11 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 11
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Un tren sale de Córdoba a las 8:45 y llega a Madrid a las 10:38. Tras una parada de 42 minutos, continúa durante 1 h 56 min hasta su destino final. Calcula la duración total del viaje, incluido el tiempo de parada, y la hora de llegada al destino final.
+       </p>
+</div>
+<!-- EJERCICIO 7.5.12 -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+        Ejercicio 12
+       </span>
+<p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+        Una bomba de riego funciona 2 h 35 min cada día durante 6 días. Si debe repartir el mismo tiempo total de funcionamiento entre 5 sectores de una finca, ¿cuánto tiempo corresponde a cada sector? Expresa el resultado en horas, minutos y segundos.
+       </p>
+</div>
+</div>
+</div>
+<!-- PARTE B -->
+<div>
+<h3 class="text-base font-bold text-editorial-amber mb-5 text-heading">
+      🌟 Parte B: Desafíos
+     </h3>
+<div class="space-y-6">
+<!-- DESAFÍO 7.5.1 -->
+<div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+<h4 class="text-sm md:text-base font-bold text-amber-900">
+        Desafío 1: Gestión de la Red Hidrográfica y Embalses de la Cuenca del Guadalquivir
+       </h4>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        La Confederación Hidrográfica del Guadalquivir gestiona el almacenamiento de agua para el consumo humano, agrícola e industrial en la comunidad andaluza. Un técnico de gestión analiza los datos de tres embalses principales durante el inicio del año hidrológico:
+       </p>
+<ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+<li>
+         Embalse A (Iznájar): Capacidad máxima: 980
+         <span aria-label="hm elevado a 3" class="power" role="math">
+<span class="base">
+           hm
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         . Nivel actual: 42 % de su capacidad.
+        </li>
+<li>
+         Embalse B (Breña II): Capacidad máxima: 820
+         <span aria-label="hm elevado a 3" class="power" role="math">
+<span class="base">
+           hm
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         . Nivel actual: 35 % de su capacidad.
+        </li>
+<li>
+         Embalse C (Tranco de Beas): Capacidad máxima: 240
+         <span aria-label="hm elevado a 3" class="power" role="math">
+<span class="base">
+           hm
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         . Nivel actual: 60 % de su capacidad.
+        </li>
+</ul>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.1 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        1. Cálculos de capacidad y volumen en litros:
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.2 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         a)
+        </strong>
+        Calcula el volumen de agua almacenado en cada uno de los tres embalses expresado en hectómetros cúbicos
+        <span aria-label="(hm elevado a 3" class="power" role="math">
+<span class="base">
+          (hm
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ).
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.3 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         b)
+        </strong>
+        Convierte el volumen total de agua almacenada entre los tres embalses a metros cúbicos
+        <span aria-label="(m elevado a 3" class="power" role="math">
+<span class="base">
+          (m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ) y exprésalo en potencias de base 10.
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.4 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         c)
+        </strong>
+        ¿A cuántos kilolitros y litros equivale el volumen total almacenado entre los tres embalses?
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.5 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        2. Planificación del consumo:
+       </p>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        Si la provincia consume una media de 1,5 hectómetros cúbicos diarios para abastecer a la población e industria:
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.6 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         a)
+        </strong>
+        ¿Durante cuántos días completos se podría mantener el suministro utilizando únicamente el agua almacenada actualmente en los tres embalses?
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.1.7 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         b)
+        </strong>
+        Expresa el resultado en meses y días aproximados (considerando meses de 30 días).
+       </p>
+</div>
+<!-- DESAFÍO 7.5.2 -->
+<div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+<h4 class="text-sm md:text-base font-bold text-amber-900">
+        Desafío 2: Logística de Exportación del Aceite de Oliva desde el Puerto de Algeciras
+       </h4>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        Una multinacional agroalimentaria andaluza prepara una gran expedición de Aceite de Oliva Virgen Extra (AOVE) con destino al mercado asiático desde el Puerto de Algeciras:
+       </p>
+<ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+<li>
+         Dimensiones internas del contenedor: 5,90 m de largo, 2,35 m de ancho y 2,38 m de alto.
+        </li>
+<li>
+         Peso máximo de carga útil permitida por contenedor: 21,6 toneladas.
+        </li>
+<li>
+         Envase comercial: El aceite se transporta en cajas de 4 garrafas de 5 litros de capacidad cada una.
+        </li>
+<li>
+         Masa de la caja: Cada garrafa llena de aceite pesa 4,6 kg y la caja de cartón vacía pesa 400 g.
+        </li>
+</ul>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.1 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        1. Estudio volumétrico del contenedor:
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.2 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         a)
+        </strong>
+        Calcula el volumen interno total de un contenedor marítimo expresado en metros cúbicos
+        <span aria-label="(m elevado a 3" class="power" role="math">
+<span class="base">
+          (m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        ), redondeando a dos cifras decimales.
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.3 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         b)
+        </strong>
+        Expresa dicha capacidad volumétrica interna en litros equivalentes.
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.4 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        2. Estudio de pesos y masa máxima:
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.5 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         a)
+        </strong>
+        Calcula el peso total en kilogramos de una caja llena de 4 garrafas de aceite.
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.6 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         b)
+        </strong>
+        Determina el número máximo de cajas que se pueden cargar en un contenedor sin superar el límite de peso útil permitido (21,6 t).
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.7 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        3. Análisis de capacidad comercial:
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.8 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         a)
+        </strong>
+        ¿Cuántos litros de aceite de oliva se exportarán en un contenedor cargado al máximo de su peso permitido?
+       </p>
+<!-- PREGUNTA DEL DESAFÍO 7.5.2.9 -->
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+<strong>
+         b)
+        </strong>
+        Si el precio de exportación de cada litro de aceite es de 6,80 €, ¿cuál es el valor económico total de la mercancía transportada en una flota de 12 contenedores? Resuelve el problema mediante una única operación combinada.
+       </p>
+</div>
+<!-- DESAFÍO 7.5.3 -->
+<div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+<h4 class="text-sm md:text-base font-bold text-amber-900">
+        Desafío 3: La carrera solidaria del colegio
+       </h4>
+<p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+        En una carrera solidaria, un grupo recorre un circuito de 2,4 km por vuelta. Cada vuelta tarda de media 14 min 30 s y el grupo realiza 6 vueltas. Al terminar, descansa 25 min y regresa andando al colegio durante 38 min 45 s.
+       </p>
+<ul class="text-xs md:text-sm text-slate-800 leading-relaxed space-y-2">
+<li><strong>a)</strong> Calcula la distancia total recorrida durante las 6 vueltas y exprésala en metros.</li>
+<li><strong>b)</strong> Calcula el tiempo total empleado en las 6 vueltas.</li>
+<li><strong>c)</strong> Añade el descanso y el regreso andando. ¿Cuánto tiempo transcurre desde el comienzo de la carrera hasta la llegada al colegio?</li>
+<li><strong>d)</strong> Si la carrera comenzó a las 9:20, ¿a qué hora llega el grupo al colegio?</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- REPASAMOS LO APRENDIDO -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-junta" id="sec-repaso">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      🔄
+     </span>
+<div>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+       Repasamos lo aprendido
+      </h2>
+<p class="text-xs text-slate-500">
+       Bloque de consolidación y repaso global de la Situación de Aprendizaje
+      </p>
+</div>
+</div>
+<!-- FICHA DE REFUERZO -->
+<div class="mb-10">
+<div class="bg-emerald-50 border-l-4 border-junta p-4 rounded-r-xl mb-6">
+<h3 class="text-base font-bold text-junta-dark text-heading">
+       🟢 Ficha de Refuerzo
+      </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- REFUERZO 7.1 • UNIDADES DE MASA -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 7.1 • Unidades de masa
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Convierte y opera con medidas de masa:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         3,5 kg a gramos.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         42 000 mg a gramos.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         2 kg, 5 hg y 8 g a gramos.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Calcula
+         <span aria-label="3 partido por 4" class="frac" role="math">
+<span class="num">
+           3
+          </span>
+<span class="den">
+           4
+          </span>
+</span>
+         de 240 kg.
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 7.2 • UNIDADES DE CAPACIDAD -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 7.2 • Unidades de capacidad
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Resuelve las siguientes conversiones:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         4,8 kl a litros.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         750 ml a centilitros.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         3 hl, 5 dal y 8 l a litros.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Expresa
+         <span aria-label="1 partido por 2" class="frac" role="math">
+<span class="num">
+           1
+          </span>
+<span class="den">
+           2
+          </span>
+</span>
+         litro en mililitros.
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 7.3 • LONGITUD, SUPERFICIE Y VOLUMEN -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 7.3 • Longitud, superficie y volumen
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Aplica correctamente el factor de conversión:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         5,6 km a metros.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         3,5
+         <span aria-label="m elevado a 2" class="power" role="math">
+<span class="base">
+           m
+          </span>
+<sup>
+           2
+          </sup>
+</span>
+         a
+         <span aria-label="cm elevado a 2" class="power" role="math">
+<span class="base">
+           cm
+          </span>
+<sup>
+           2
+          </sup>
+</span>
+         .
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         2,4
+         <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+           m
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         a litros.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Completa: 1
+         <span aria-label="dm elevado a 3" class="power" role="math">
+<span class="base">
+           dm
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         = ______ litro.
+        </li>
+</ul>
+</div>
+<!-- REFUERZO 7.4 • UNIDADES DE TIEMPO -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 7.4 • Unidades de tiempo
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">Convierte y opera con duraciones:</p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> 2 h 30 min a minutos.</li>
+<li><strong>b)</strong> 1 h 45 min + 2 h 35 min.</li>
+<li><strong>c)</strong> 4 h 10 min − 1 h 55 min.</li>
+<li><strong>d)</strong> 1 h 20 min × 3.</li>
+</ul>
+</div>
+<!-- REFUERZO 7.5 • PROBLEMA INTEGRADO -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Refuerzo 7.5 • Problema integrado
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Un depósito contiene 8
+        <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+          m
+         </span>
+<sup>
+          3
+         </sup>
+</span>
+        de agua y se extraen 2 500 litros:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Expresa el volumen inicial en litros.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Calcula los litros que quedan.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Expresa el resultado en metros cúbicos.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Indica qué parte del depósito se ha utilizado.
+        </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- FICHA DE AMPLIACIÓN -->
+<div class="mb-10">
+<div class="bg-amber-50 border-l-4 border-editorial-amber p-4 rounded-r-xl mb-6">
+<h3 class="text-base font-bold text-editorial-amber text-heading">
+       🟠 Ficha de Ampliación
+      </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- AMPLIACIÓN 7.1 • UNIDADES DE MASA -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 7.1 • Unidades de masa
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Resuelve las actividades de ampliación:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Ordena: 0,85 t; 845 kg; 8 600 hg; 850 000 g.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Expresa 12 508,45 g en forma compleja.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Calcula (2,8 t − 650 kg) : 5.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         ¿Cuántas dosis de 125 mg se obtienen con 0,75 kg?
+        </li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 7.2 • UNIDADES DE CAPACIDAD -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 7.2 • Unidades de capacidad
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Convierte, compara y resuelve:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Ordena: 0,45 kl; 4,6 hl; 455 l; 45 500 cl.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Expresa 5 048,75 l en forma compleja.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         ¿Cuántas botellas de 75 cl se llenan con 6 hl?
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Calcula los mililitros que sobran.
+        </li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 7.3 • SUPERFICIE Y VOLUMEN -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 7.3 • Superficie y volumen
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Resuelve los siguientes retos:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Convierte 0,075
+         <span aria-label="km elevado a 2" class="power" role="math">
+<span class="base">
+           km
+          </span>
+<sup>
+           2
+          </sup>
+</span>
+         en metros cuadrados.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Convierte 4 250 000
+         <span aria-label="cm elevado a 3" class="power" role="math">
+<span class="base">
+           cm
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         en metros cúbicos.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Calcula los litros de un prisma de 6 m × 4 m × 2,5 m.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Halla su valor si cada litro cuesta 0,04 €.
+        </li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 7.4 • UNIDADES DE TIEMPO -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 7.4 • Unidades de tiempo
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">Resuelve operaciones y problemas con tiempos:</p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li><strong>a)</strong> Expresa 93 725 s en días, horas, minutos y segundos.</li>
+<li><strong>b)</strong> 3 h 48 min 35 s + 2 h 27 min 50 s.</li>
+<li><strong>c)</strong> (7 h 15 min − 2 h 40 min) : 5.</li>
+<li><strong>d)</strong> Una actividad empieza a las 8:45 y dura 3 h 38 min 25 s. ¿A qué hora termina?</li>
+</ul>
+</div>
+<!-- AMPLIACIÓN 7.5 • DESAFÍO INTEGRADO -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+<span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+        Ampliación 7.5 • Desafío integrado
+       </span>
+<p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+        Una nave rectangular mide 40 m × 25 m × 8 m y está ocupada al 65 %:
+       </p>
+<ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+<li>
+<strong>
+          a)
+         </strong>
+         Calcula el volumen total.
+        </li>
+<li>
+<strong>
+          b)
+         </strong>
+         Calcula el volumen ocupado.
+        </li>
+<li>
+<strong>
+          c)
+         </strong>
+         Expresa el volumen libre en litros.
+        </li>
+<li>
+<strong>
+          d)
+         </strong>
+         Si cada caja ocupa 0,5
+         <span aria-label="m elevado a 3" class="power" role="math">
+<span class="base">
+           m
+          </span>
+<sup>
+           3
+          </sup>
+</span>
+         , ¿cuántas cajas más caben?
+        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================== -->
+<!-- DIANA DE AUTOEVALUACIÓN -->
+<!-- =========================================================== -->
+<section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-indigo-200" id="sec-diana">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-indigo-600 text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+      🎯
+     </span>
+<div>
+<h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+       Diana de Autoevaluación Interactiva
+      </h2>
+<p class="text-xs text-slate-500">
+       Reflexiona sobre tu aprendizaje haciendo clic en la opción que mejor te defina
+      </p>
+</div>
+</div>
+<div class="space-y-4">
+<!-- CRITERIO DE AUTOEVALUACIÓN 7.1 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">
+        7.1
+       </span>
+       Convierto, comparo y opero con unidades de masa en forma compleja e incompleja.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi nunca
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        A veces
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi siempre
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Siempre
+       </button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 7.2 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">
+        7.2
+       </span>
+       Convierto y utilizo unidades de capacidad para resolver situaciones cotidianas.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi nunca
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        A veces
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi siempre
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Siempre
+       </button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 7.3 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">
+        7.3
+       </span>
+       Distingo los factores de conversión de longitud, superficie y volumen, y relaciono volumen con capacidad.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi nunca
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        A veces
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi siempre
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Siempre
+       </button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 7.4 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">
+        7.4
+       </span>
+       Convierto unidades de tiempo y resuelvo sumas, restas, multiplicaciones y divisiones con horas, minutos y segundos.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi nunca</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">A veces</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Casi siempre</button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">Siempre</button>
+</div>
+</div>
+<!-- CRITERIO DE AUTOEVALUACIÓN 7.5 -->
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+<span class="font-bold text-junta mr-1">
+        7.5
+       </span>
+       Resuelvo problemas integrados de varias etapas seleccionando las unidades y operaciones adecuadas.
+      </div>
+<div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi nunca
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        A veces
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Casi siempre
+       </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button">
+        Siempre
+       </button>
+</div>
+</div>
+</div>
+</section>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
+      </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ======================================================
+       JAVASCRIPT DEL MATERIAL
+       ====================================================== -->
+
+  <script>
+    function scrollToSec(id, event) {
+
+      if (event) {
+        event.preventDefault();
+      }
+
+      const target =
+        document.getElementById(id);
+
+      if (target) {
+
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+
+      }
+
+    }
+
+
+    function selectEval(button) {
+
+      const container =
+        button.parentElement;
+
+      const buttons =
+        container.querySelectorAll('button');
+
+
+      buttons.forEach((item) => {
+
+        item.className =
+          'px-3 py-1.5 rounded-lg border border-slate-200 bg-white ' +
+          'text-xs font-bold text-slate-600 hover:bg-slate-100 transition';
+
+      });
+
+
+      button.className =
+        'px-3 py-1.5 rounded-lg border border-junta bg-junta text-white ' +
+        'text-xs font-bold shadow-sm transition transform scale-105';
+
+    }
+  </script>
+
+
+  <!-- ======================================================
+       JAVASCRIPT GENERAL DE LA WEB
+       ====================================================== -->
+
+  <script src="/js/main.js"></script>
+
+
+</body>
+
+</html>
 
