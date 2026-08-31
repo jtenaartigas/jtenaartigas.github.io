@@ -1,0 +1,4896 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Potencias, divisibilidad y raíces cuadradas de Matemáticas de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Potencias y raíces | Matemáticas 6.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- TAILWIND: se mantiene para conservar el diseño del material -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CONFIGURACIÓN TAILWIND DEL MATERIAL -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: '#007A33',
+              dark: '#005724',
+              light: '#e6f4ea',
+              accent: '#00a847',
+            },
+            editorial: {
+              bg: '#f8faf9',
+              card: '#ffffff',
+              border: '#d1e7dd',
+              text: '#1e293b',
+              subtext: '#475569',
+              amber: '#d97706',
+              amberBg: '#fef3c7',
+            }
+          },
+          fontFamily: {
+            sans: ['system-ui', 'sans-serif'],
+            heading: ['system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ESTILOS ESPECÍFICOS DE LA SITUACIÓN DE APRENDIZAJE -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-page .text-heading {
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+    }
+
+    .custom-shadow {
+      box-shadow:
+        0 4px 20px -2px
+        rgba(0, 122, 51, 0.08);
+    }
+
+    /* =========================================================
+       POTENCIA REUTILIZABLE
+       ========================================================= */
+
+    .power {
+      display: inline-flex;
+      align-items: flex-start;
+      white-space: nowrap;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-weight: 600;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+
+    .power sup {
+      position: relative;
+      top: -0.35em;
+      margin-left: 0.04em;
+      font-size: 0.7em;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       FRACCIÓN VERTICAL REUTILIZABLE
+       ========================================================= */
+
+    .frac {
+      display: inline-grid;
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-items: stretch;
+      min-width: 1.45em;
+      margin: 0 0.12em;
+      color: inherit;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 0.92em;
+      font-weight: 600;
+      line-height: 1;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .frac .num {
+      display: block;
+      padding: 0 0.18em 0.09em;
+      border-bottom: 1.5px solid currentColor;
+    }
+
+    .frac .den {
+      display: block;
+      padding: 0.09em 0.18em 0;
+    }
+
+    /* =========================================================
+       RAÍZ CUADRADA REUTILIZABLE
+       ========================================================= */
+
+    .sqrt {
+      display: inline-flex;
+      align-items: flex-start;
+      white-space: nowrap;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-weight: 600;
+      line-height: 1;
+      vertical-align: middle;
+    }
+
+    .sqrt .radical {
+      font-size: 1.35em;
+      line-height: 0.95;
+      margin-right: -0.04em;
+    }
+
+    .sqrt .radicand {
+      display: inline-block;
+      min-width: 1.15em;
+      padding: 0.10em 0.16em 0;
+      border-top: 1.5px solid currentColor;
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    /* =========================================================
+       INTEGRACIÓN CON LA WEB PRINCIPAL
+       ========================================================= */
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+  </style>
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
+  <header class="site-banner">
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
+  </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
+  <div class="navigation-wrapper">
+
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+      </a>
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- MENÚ PRINCIPAL -->
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green">
+            <a href="/">Inicio</a>
+          </li>
+
+          <li class="nav-yellow">
+            <a href="/familias/">Familias</a>
+          </li>
+
+          <li class="nav-blue">
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+          </li>
+
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span>
+              Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="topic-page"
+  >
+
+    <div class="topic-shell">
+
+      <!-- MIGAS DE PAN -->
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/matematicas6/">Matemáticas</a></li>
+          <li aria-current="page">Potencias y raíces</li>
+        </ol>
+      </nav>
+
+
+      <!-- ==================================================
+           PORTADA DE LA SITUACIÓN DE APRENDIZAJE
+           ================================================== -->
+
+      <section class="bg-gradient-to-r from-junta-dark via-junta to-junta-accent text-white rounded-3xl p-8 md:p-12 mb-10 shadow-lg relative overflow-hidden">
+
+        <!-- POTENCIA DECORATIVA -->
+        <div class="absolute -right-10 -bottom-10 opacity-10 text-white font-extrabold text-8xl sm:text-9xl select-none text-heading">
+          10²
+        </div>
+
+        <!-- TEXTO -->
+        <div class="relative z-20 max-w-3xl md:pr-40 lg:pr-52">
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-heading leading-tight mb-4">
+            5. POTENCIAS Y RAÍCES
+          </h1>
+
+          <p class="text-emerald-100 text-base md:text-lg leading-relaxed text-justify">
+            Descubre cómo funcionan las potencias y sus operaciones, aplica reglas de
+            divisibilidad y aprende a interpretar la raíz cuadrada para resolver
+            cálculos, situaciones matemáticas y problemas cotidianos.
+          </p>
+        </div>
+
+        <!-- TOMATITO POTENCIAS -->
+        <img
+          src="/img/tomatito/tomatito-potencias.png"
+          alt=""
+          class="relative z-10 block w-52 sm:w-64 h-auto object-contain mx-auto mt-6 pointer-events-none select-none md:absolute md:right-[60px] lg:right-[80px] md:bottom-0 md:w-80 lg:w-96 md:mx-0 md:mt-0"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           ÍNDICE DE NAVEGACIÓN
+           ================================================== -->
+
+      <nav class="bg-white rounded-2xl p-5 mb-10 shadow-sm border border-emerald-100">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-junta mb-3 flex items-center gap-2">
+          <span>📍</span>
+          Contenidos de la Situación de Aprendizaje
+        </h3>
+
+        <div class="flex flex-wrap gap-2 text-xs md:text-sm">
+
+          <a
+            class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition"
+            href="#sec-1"
+            onclick="scrollToSec('sec-1', event)"
+          >
+            5.1 Las potencias
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition"
+            href="#sec-2"
+            onclick="scrollToSec('sec-2', event)"
+          >
+            5.2 Divisibilidad
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition"
+            href="#sec-3"
+            onclick="scrollToSec('sec-3', event)"
+          >
+            5.3 Operaciones con potencias
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition"
+            href="#sec-4"
+            onclick="scrollToSec('sec-4', event)"
+          >
+            5.4 Raíz cuadrada
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-editorial-amberBg text-editorial-amber hover:bg-amber-600 hover:text-white font-bold rounded-lg transition"
+            href="#sec-5"
+            onclick="scrollToSec('sec-5', event)"
+          >
+            5.5 Problemas y desafíos
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-emerald-100 text-junta-dark hover:bg-junta hover:text-white rounded-lg transition font-bold"
+            href="#sec-repaso"
+            onclick="scrollToSec('sec-repaso', event)"
+          >
+            🔄 Repasamos lo aprendido
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-indigo-100 text-indigo-800 hover:bg-indigo-600 hover:text-white rounded-lg transition font-bold"
+            href="#sec-diana"
+            onclick="scrollToSec('sec-diana', event)"
+          >
+            🎯 Autoevaluación
+          </a>
+
+        </div>
+      </nav>
+
+
+      <!-- ==================================================
+           BLOQUE PRINCIPAL DE CONTENIDOS
+           ================================================== -->
+
+      <div class="space-y-12 topic-content">
+
+
+        <!-- =================================================
+             SECCIÓN 5.1
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100"
+          id="sec-1"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              5.1
+            </span>
+
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+              Las potencias
+            </h2>
+          </div>
+
+
+          <!-- EXPLICACIÓN 5.1 -->
+
+          <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+
+            <h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+              <span>🔢</span>
+              ¿Qué es una potencia?
+            </h3>
+
+            <div class="space-y-3 text-sm md:text-base text-slate-700 leading-relaxed">
+
+              <p class="text-justify">
+                Una potencia es una forma abreviada de escribir una multiplicación
+                en la que todos los factores son iguales.
+              </p>
+
+              <ul class="space-y-2">
+
+                <li>
+                  <strong class="text-junta-dark">Base:</strong>
+                  es el número que se repite como factor.
+                </li>
+
+                <li>
+                  <strong class="text-junta-dark">Exponente:</strong>
+                  es el número pequeño situado arriba a la derecha que indica
+                  cuántas veces se multiplica la base por sí misma.
+                </li>
+
+              </ul>
+
+              <div class="inline-flex flex-wrap items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200">
+                <span>Ejemplo:</span>
+
+                <span
+                  aria-label="3 elevado a 4"
+                  class="power"
+                  role="math"
+                >
+                  <span class="base">3</span>
+                  <sup>4</sup>
+                </span>
+
+                <span>
+                  = 3 × 3 × 3 × 3 = 81
+                </span>
+              </div>
+
+              <p class="text-justify">
+                Cuando el exponente es 2, se lee «al cuadrado»; cuando es 3,
+                se lee «al cubo».
+              </p>
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+
+                <p class="font-bold text-junta-dark mb-2">
+                  ¿Por qué una potencia con exponente 0 vale 1?
+                </p>
+
+                <p class="text-justify mb-3">
+                  Observa qué ocurre cuando vamos disminuyendo el exponente de una potencia de base 3.
+                  Cada vez que bajamos una unidad en el exponente, dividimos el resultado anterior entre 3:
+                </p>
+
+                <div class="space-y-1 font-semibold text-slate-800">
+                  <div>
+                    <span aria-label="3 elevado a 3" class="power" role="math">
+                      <span class="base">3</span><sup>3</sup>
+                    </span>
+                    = 27
+                  </div>
+
+                  <div>
+                    <span aria-label="3 elevado a 2" class="power" role="math">
+                      <span class="base">3</span><sup>2</sup>
+                    </span>
+                    = 27 : 3 = 9
+                  </div>
+
+                  <div>
+                    <span aria-label="3 elevado a 1" class="power" role="math">
+                      <span class="base">3</span><sup>1</sup>
+                    </span>
+                    = 9 : 3 = 3
+                  </div>
+
+                  <div>
+                    <span aria-label="3 elevado a 0" class="power" role="math">
+                      <span class="base">3</span><sup>0</sup>
+                    </span>
+                    = 3 : 3 =
+                    <strong class="text-junta-dark">1</strong>
+                  </div>
+                </div>
+
+                <p class="text-xs md:text-sm text-slate-600 mt-3 text-justify">
+                  Lo mismo ocurre con cualquier base distinta de 0: al llegar al exponente 0,
+                  el resultado es 1. Por eso, por ejemplo,
+                  <span aria-label="9 elevado a 0" class="power" role="math">
+                    <span class="base">9</span><sup>0</sup>
+                  </span>
+                  = 1 y
+                  <span aria-label="12 elevado a 0" class="power" role="math">
+                    <span class="base">12</span><sup>0</sup>
+                  </span>
+                  = 1.
+                </p>
+
+              </div>
+
+              <p class="text-justify">
+                Las potencias de base 10 equivalen a la unidad seguida de tantos ceros como indique el exponente.
+              </p>
+
+              <div class="inline-flex flex-wrap items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200">
+                <span>Ejemplo:</span>
+
+                <span
+                  aria-label="10 elevado a 5"
+                  class="power"
+                  role="math"
+                >
+                  <span class="base">10</span>
+                  <sup>5</sup>
+                </span>
+
+                <span>
+                  = 100 000
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- EJERCICIOS 5.1 -->
+
+          <div class="space-y-6">
+
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+              Ejercicios de práctica
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+              <!-- EJERCICIO 5.1.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Escribe las siguientes multiplicaciones de factores iguales en forma de potencia:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 4 × 4 × 4 × 4</li>
+                  <li><strong>b)</strong> 7 × 7 × 7</li>
+                  <li><strong>c)</strong> 10 × 10 × 10 × 10 × 10</li>
+                  <li><strong>d)</strong> 2 × 2 × 2 × 2 × 2 × 2</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Expresa las siguientes potencias como una multiplicación de factores iguales:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="5 elevado a 4" class="power" role="math">
+                      <span class="base">5</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="8 elevado a 3" class="power" role="math">
+                      <span class="base">8</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="9 elevado a 5" class="power" role="math">
+                      <span class="base">9</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="10 elevado a 6" class="power" role="math">
+                      <span class="base">10</span><sup>6</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula el valor numérico de las siguientes potencias:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="2 elevado a 5" class="power" role="math">
+                      <span class="base">2</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="3 elevado a 4" class="power" role="math">
+                      <span class="base">3</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="6 elevado a 3" class="power" role="math">
+                      <span class="base">6</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="9 elevado a 2" class="power" role="math">
+                      <span class="base">9</span><sup>2</sup>
+                    </span>
+                  </li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve las siguientes potencias de base 10:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="10 elevado a 3" class="power" role="math">
+                      <span class="base">10</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="10 elevado a 5" class="power" role="math">
+                      <span class="base">10</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="10 elevado a 2" class="power" role="math">
+                      <span class="base">10</span><sup>2</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="10 elevado a 8" class="power" role="math">
+                      <span class="base">10</span><sup>8</sup>
+                    </span>
+                  </li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.5 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Completa el término que falta —base, exponente o resultado— en cada expresión:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="4 elevado a x" class="power" role="math">
+                      <span class="base">4</span><sup>x</sup>
+                    </span>
+                    = 64
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="x elevado a 3" class="power" role="math">
+                      <span class="base">x</span><sup>3</sup>
+                    </span>
+                    = 125
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="10 elevado a x" class="power" role="math">
+                      <span class="base">10</span><sup>x</sup>
+                    </span>
+                    = 1 000 000
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="7 elevado a 3" class="power" role="math">
+                      <span class="base">7</span><sup>3</sup>
+                    </span>
+                    = x
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.6 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Identifica la base y el exponente de cada potencia y calcula su resultado final:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="3 elevado a 5" class="power" role="math">
+                      <span class="base">3</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="2 elevado a 7" class="power" role="math">
+                      <span class="base">2</span><sup>7</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="10 elevado a 4" class="power" role="math">
+                      <span class="base">10</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="5 elevado a 3" class="power" role="math">
+                      <span class="base">5</span><sup>3</sup>
+                    </span>
+                  </li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.7 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 7
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve las siguientes potencias atendiendo a los casos especiales de exponente 0,
+                  exponente 1 o base 1. Explica con una frase qué regla has aplicado:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="18 elevado a 1" class="power" role="math">
+                      <span class="base">18</span><sup>1</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="9 elevado a 0" class="power" role="math">
+                      <span class="base">9</span><sup>0</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="1 elevado a 15" class="power" role="math">
+                      <span class="base">1</span><sup>15</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="12 elevado a 0" class="power" role="math">
+                      <span class="base">12</span><sup>0</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.1.8 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 8
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Expresa cada enunciado en forma de potencia y halla su resultado:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> El cuadrado del número 8.</li>
+                  <li><strong>b)</strong> El cubo del número 5.</li>
+                  <li><strong>c)</strong> Dos elevado a la sexta potencia.</li>
+                  <li><strong>d)</strong> Diez elevado a la cuarta potencia.</li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECCIÓN 5.2
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100"
+          id="sec-2"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              5.2
+            </span>
+
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+              Divisibilidad: múltiplos, divisores, números primos y reglas
+            </h2>
+          </div>
+
+
+          <!-- EXPLICACIÓN 5.2 -->
+
+          <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+
+            <h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+              <span>🧩</span>
+              Conceptos clave de la divisibilidad
+            </h3>
+
+            <ul class="text-sm md:text-base text-slate-700 leading-relaxed space-y-2 mb-5">
+
+              <li>
+                <strong class="text-junta-dark">Múltiplo:</strong>
+                resultado de multiplicar un número por cualquier número natural. Son infinitos.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    Algunos múltiplos de 3 --> 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36...
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong class="text-junta-dark">Divisor:</strong>
+                número que divide a otro de forma exacta, con resto cero. Son finitos.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    Los divisores de 24 --> 1, 2, 3, 4, 6, 8, 12 y 24.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong class="text-junta-dark">Número primo:</strong>
+                solo tiene dos divisores: el 1 y él mismo. Deberías aprenderte de memoria los números primos, al menos, hasta el 19.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    Los números primos hasta el 100 son: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
+                    41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 y 97.
+                    Recuerda: el 1 no es primo ni compuesto.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong class="text-junta-dark">Número compuesto:</strong>
+                tiene más de dos divisores. El 1 no es primo ni compuesto.
+                Recuerda que las divisiones que hagas SIEMPRE tienen que ser exactas.
+              </li>
+
+            </ul>
+
+            <h4 class="text-sm font-bold text-junta-dark mb-2">
+              Reglas de divisibilidad principales
+            </h4>
+
+            <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5">
+
+              <li>
+                <strong>Por 2:</strong>
+                Cualquier número par es divisible por 2.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    36 es divisible por 2 porque 36 es par. 36:2 = 18 y resto 0.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong>Por 3:</strong>
+                Cualquier número que la suma de sus cifras sea múltiplo de 3 es divisible por 3.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    36 es divisible por 3 porque la suma de las cifras de 36 son 3 + 6 = 9.
+                    Y 9 es múltiplo de 3. 36:3 = 12 y resto 0.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong>Por 5:</strong>
+                Cualquier número terminado en 0 o en 5 es divisible por 5.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    15 es divisible por 5 porque 15 acaba en 5. 15:5 = 3 y resto 0.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong>Por 10:</strong>
+                Cualquier número terminado en 0 es divisible por 10.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    450 es divisible por 10 porque 450 acaba en 0. 450:10 = 45 y resto 0.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong>Por 7:</strong>
+                Separamos la última cifra, la multiplicamos por 2 y restamos ese resultado al número que queda delante.
+                Si el resultado es 0 o un múltiplo de 7, el número inicial es divisible por 7.
+                Podemos repetir el proceso si hace falta.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    203 es divisible por 7 porque 20 − (3 × 2) = 14, y 14 es múltiplo de 7.
+                  </span>
+                </div>
+              </li>
+
+              <li>
+                <strong>Por 11:</strong>
+                Sumamos las cifras que ocupan posiciones alternas y calculamos la diferencia entre las dos sumas.
+                Si esa diferencia es 0 o un múltiplo de 11, el número es divisible por 11.
+
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-emerald-200 text-sm">
+                  <span>
+                    2 728 es divisible por 11 porque (2 + 2) − (7 + 8) = −11, que es múltiplo de 11.
+                  </span>
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- EJERCICIOS 5.2 -->
+
+          <div class="space-y-6">
+
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+              Ejercicios de práctica
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+              <!-- EJERCICIO 5.2.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula los 5 primeros múltiplos de cada uno de los siguientes números naturales:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 6</li>
+                  <li><strong>b)</strong> 9</li>
+                  <li><strong>c)</strong> 14</li>
+                  <li><strong>d)</strong> 25</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Halla todos los divisores de los siguientes números:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 12</li>
+                  <li><strong>b)</strong> 20</li>
+                  <li><strong>c)</strong> 35</li>
+                  <li><strong>d)</strong> 48</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Indica si las siguientes afirmaciones son verdaderas (V) o falsas (F),
+                  justificando tu respuesta mediante múltiplos, divisores o reglas de divisibilidad:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 77 es divisible por 11.</li>
+                  <li><strong>b)</strong> 203 es divisible por 7.</li>
+                  <li><strong>c)</strong> 91 es un número primo.</li>
+                  <li><strong>d)</strong> 1 es divisor de cualquier número natural.</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Encuentra dos múltiplos comunes para cada pareja de números:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 4 y 6</li>
+                  <li><strong>b)</strong> 7 y 14</li>
+                  <li><strong>c)</strong> 11 y 22</li>
+                  <li><strong>d)</strong> 8 y 12</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.5 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula todos los divisores comunes de las siguientes parejas de números:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 18 y 24</li>
+                  <li><strong>b)</strong> 20 y 30</li>
+                  <li><strong>c)</strong> 15 y 45</li>
+                  <li><strong>d)</strong> 16 y 40</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.6 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Selecciona en cada apartado los números que cumplen simultáneamente las dos condiciones indicadas:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> Divisibles por 3 y por 5: 45, 60, 75, 90, 105.</li>
+                  <li><strong>b)</strong> Divisibles por 2 y por 7: 28, 35, 42, 56, 70.</li>
+                  <li><strong>c)</strong> Divisibles por 7 y por 11: 77, 121, 154, 203, 231.</li>
+                  <li><strong>d)</strong> Divisibles por 3 y por 11: 99, 132, 165, 198, 220.</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.7 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 7
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Clasifica los siguientes números en primos o compuestos.
+                  En los compuestos, indica al menos un divisor distinto de 1 y del propio número:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 13</li>
+                  <li><strong>b)</strong> 49</li>
+                  <li><strong>c)</strong> 77</li>
+                  <li><strong>d)</strong> 97</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.8 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 8
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Escribe todos los números primos comprendidos entre el 10 y el 40.
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    Números primos: ________________________________________________
+                  </li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.9 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 9
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Aplica las reglas de divisibilidad e indica por cuáles de los divisores
+                  2, 5, 7 y 10 es divisible cada número:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 350</li>
+                  <li><strong>b)</strong> 770</li>
+                  <li><strong>c)</strong> 1 470</li>
+                  <li><strong>d)</strong> 2 205</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.10 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 10
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Determina si cada número es divisible por 3, por 7 y por 11.
+                  Justifica cada respuesta aplicando la regla correspondiente:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 462</li>
+                  <li><strong>b)</strong> 245</li>
+                  <li><strong>c)</strong> 517</li>
+                  <li><strong>d)</strong> 310</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.11 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 11
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Escribe la cifra que falta en el hueco para que el número cumpla la condición indicada:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 42_ para que sea divisible por 5 y no por 10.</li>
+                  <li><strong>b)</strong> 1_4 para que sea divisible por 7.</li>
+                  <li><strong>c)</strong> 5_2 para que sea divisible por 11.</li>
+                  <li><strong>d)</strong> 9_0 para que sea divisible por 3 y por 11 a la vez.</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.2.12 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 md:col-span-2">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 12
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-4 leading-relaxed">
+                  Copia y completa la siguiente tabla de divisibilidad indicando
+                  <strong>SÍ</strong> o <strong>NO</strong> en cada casilla.
+                  Aplica las reglas sin realizar todas las divisiones.
+                </p>
+
+                <div class="overflow-x-auto">
+
+                  <table class="w-full min-w-[980px] text-xs md:text-sm text-center bg-white rounded-lg overflow-hidden border border-slate-200">
+
+                    <thead class="bg-junta text-white">
+                      <tr>
+                        <th class="p-3">Número</th>
+                        <th class="p-3">Por 2</th>
+                        <th class="p-3">Por 3</th>
+                        <th class="p-3">Por 5</th>
+                        <th class="p-3">Por 7</th>
+                        <th class="p-3">Por 9</th>
+                        <th class="p-3">Por 10</th>
+                        <th class="p-3">Por 11</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-slate-200">
+                      <tr>
+                        <td class="p-3 font-bold bg-emerald-50">231</td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                      </tr>
+
+                      <tr>
+                        <td class="p-3 font-bold bg-emerald-50">330</td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                      </tr>
+
+                      <tr>
+                        <td class="p-3 font-bold bg-emerald-50">441</td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                      </tr>
+
+                      <tr>
+                        <td class="p-3 font-bold bg-emerald-50">770</td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                        <td class="p-3"></td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECCIÓN 5.3
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100"
+          id="sec-3"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+
+            <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              5.3
+            </span>
+
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+              Productos y cocientes de potencias de igual base y potencia de una potencia
+            </h2>
+
+          </div>
+
+
+          <!-- EXPLICACIÓN 5.3 -->
+
+          <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+
+            <h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+              <span>⚙️</span>
+              Reglas para operar con potencias
+            </h3>
+
+            <div class="space-y-4 text-sm md:text-base text-slate-700 leading-relaxed">
+
+
+              <!-- PRODUCTO DE POTENCIAS -->
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+
+                <p>
+                  <strong class="text-junta-dark">
+                    Producto de potencias de igual base:
+                  </strong>
+                  mantenemos la base y
+                  <strong>sumamos los exponentes</strong>.
+                </p>
+
+                <p class="mt-2">
+
+                  <span
+                    aria-label="2 elevado a 3"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>3</sup>
+                  </span>
+
+                  ×
+
+                  <span
+                    aria-label="2 elevado a 4"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>4</sup>
+                  </span>
+
+                  =
+
+                  <span
+                    aria-label="2 elevado a 7"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>7</sup>
+                  </span>
+
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-600 mt-1">
+                  Al desarrollar las dos potencias aparecen 3 factores 2
+                  y otros 4 factores 2: en total hay 7 factores iguales.
+                </p>
+
+              </div>
+
+
+              <!-- COCIENTE DE POTENCIAS -->
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+
+                <p>
+                  <strong class="text-junta-dark">
+                    Cociente de potencias de igual base:
+                  </strong>
+                  mantenemos la base y
+                  <strong>restamos los exponentes</strong>.
+                </p>
+
+                <p class="mt-2">
+
+                  <span
+                    aria-label="5 elevado a 6"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">5</span>
+                    <sup>6</sup>
+                  </span>
+
+                  :
+
+                  <span
+                    aria-label="5 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">5</span>
+                    <sup>2</sup>
+                  </span>
+
+                  =
+
+                  <span
+                    aria-label="5 elevado a 4"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">5</span>
+                    <sup>4</sup>
+                  </span>
+
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-600 mt-1">
+                  Esta regla se aplica cuando la base es distinta de 0
+                  y el exponente del dividendo es igual o mayor que el del divisor.
+                </p>
+
+              </div>
+
+
+              <!-- POTENCIA DE UNA POTENCIA -->
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+
+                <p>
+                  <strong class="text-junta-dark">
+                    Potencia de una potencia:
+                  </strong>
+                  mantenemos la base y
+                  <strong>multiplicamos los exponentes</strong>.
+                </p>
+
+                <p class="mt-2">
+
+                  (
+                  <span
+                    aria-label="3 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">3</span>
+                    <sup>2</sup>
+                  </span>
+                  )<sup>4</sup>
+
+                  =
+
+                  <span
+                    aria-label="3 elevado a 8"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">3</span>
+                    <sup>8</sup>
+                  </span>
+
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-600 mt-1">
+                  La potencia
+                  <span
+                    aria-label="3 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">3</span>
+                    <sup>2</sup>
+                  </span>
+                  se repite 4 veces como factor:
+                  2 + 2 + 2 + 2 = 8.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- EJERCICIOS 5.3 -->
+
+          <div class="space-y-6">
+
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+              Ejercicios de práctica
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+              <!-- EJERCICIO 5.3.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Escribe cada producto como una sola potencia de la misma base
+                  y calcula el resultado cuando sea sencillo:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="2 elevado a 3" class="power" role="math">
+                      <span class="base">2</span><sup>3</sup>
+                    </span>
+                    ×
+                    <span aria-label="2 elevado a 4" class="power" role="math">
+                      <span class="base">2</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="5 elevado a 2" class="power" role="math">
+                      <span class="base">5</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="5 elevado a 3" class="power" role="math">
+                      <span class="base">5</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="10 elevado a 2" class="power" role="math">
+                      <span class="base">10</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="10 elevado a 4" class="power" role="math">
+                      <span class="base">10</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="3 elevado a 1" class="power" role="math">
+                      <span class="base">3</span><sup>1</sup>
+                    </span>
+                    ×
+                    <span aria-label="3 elevado a 5" class="power" role="math">
+                      <span class="base">3</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Aplica la regla del producto de potencias de igual base,
+                  prestando atención a los exponentes 0 y 1:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="7 elevado a 0" class="power" role="math">
+                      <span class="base">7</span><sup>0</sup>
+                    </span>
+                    ×
+                    <span aria-label="7 elevado a 5" class="power" role="math">
+                      <span class="base">7</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="4 elevado a 1" class="power" role="math">
+                      <span class="base">4</span><sup>1</sup>
+                    </span>
+                    ×
+                    <span aria-label="4 elevado a 3" class="power" role="math">
+                      <span class="base">4</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="9 elevado a 2" class="power" role="math">
+                      <span class="base">9</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="9 elevado a 0" class="power" role="math">
+                      <span class="base">9</span><sup>0</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="6 elevado a 3" class="power" role="math">
+                      <span class="base">6</span><sup>3</sup>
+                    </span>
+                    ×
+                    <span aria-label="6 elevado a 2" class="power" role="math">
+                      <span class="base">6</span><sup>2</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Completa el exponente que falta para que cada igualdad sea correcta:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="3 elevado a 2" class="power" role="math">
+                      <span class="base">3</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="3 elevado a __" class="power" role="math">
+                      <span class="base">3</span><sup>__</sup>
+                    </span>
+                    =
+                    <span aria-label="3 elevado a 7" class="power" role="math">
+                      <span class="base">3</span><sup>7</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="5 elevado a __" class="power" role="math">
+                      <span class="base">5</span><sup>__</sup>
+                    </span>
+                    ×
+                    <span aria-label="5 elevado a 4" class="power" role="math">
+                      <span class="base">5</span><sup>4</sup>
+                    </span>
+                    =
+                    <span aria-label="5 elevado a 9" class="power" role="math">
+                      <span class="base">5</span><sup>9</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="10 elevado a 3" class="power" role="math">
+                      <span class="base">10</span><sup>3</sup>
+                    </span>
+                    ×
+                    <span aria-label="10 elevado a __" class="power" role="math">
+                      <span class="base">10</span><sup>__</sup>
+                    </span>
+                    =
+                    <span aria-label="10 elevado a 8" class="power" role="math">
+                      <span class="base">10</span><sup>8</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="2 elevado a __" class="power" role="math">
+                      <span class="base">2</span><sup>__</sup>
+                    </span>
+                    ×
+                    <span aria-label="2 elevado a 1" class="power" role="math">
+                      <span class="base">2</span><sup>1</sup>
+                    </span>
+                    =
+                    <span aria-label="2 elevado a 6" class="power" role="math">
+                      <span class="base">2</span><sup>6</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Escribe cada cociente como una sola potencia de la misma base:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="2 elevado a 7" class="power" role="math">
+                      <span class="base">2</span><sup>7</sup>
+                    </span>
+                    :
+                    <span aria-label="2 elevado a 3" class="power" role="math">
+                      <span class="base">2</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="5 elevado a 6" class="power" role="math">
+                      <span class="base">5</span><sup>6</sup>
+                    </span>
+                    :
+                    <span aria-label="5 elevado a 2" class="power" role="math">
+                      <span class="base">5</span><sup>2</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="10 elevado a 8" class="power" role="math">
+                      <span class="base">10</span><sup>8</sup>
+                    </span>
+                    :
+                    <span aria-label="10 elevado a 5" class="power" role="math">
+                      <span class="base">10</span><sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="3 elevado a 5" class="power" role="math">
+                      <span class="base">3</span><sup>5</sup>
+                    </span>
+                    :
+                    <span aria-label="3 elevado a 1" class="power" role="math">
+                      <span class="base">3</span><sup>1</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.5 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve los cocientes. Observa qué ocurre cuando los exponentes son iguales:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="7 elevado a 4" class="power" role="math">
+                      <span class="base">7</span><sup>4</sup>
+                    </span>
+                    :
+                    <span aria-label="7 elevado a 4" class="power" role="math">
+                      <span class="base">7</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="9 elevado a 5" class="power" role="math">
+                      <span class="base">9</span><sup>5</sup>
+                    </span>
+                    :
+                    <span aria-label="9 elevado a 3" class="power" role="math">
+                      <span class="base">9</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="4 elevado a 6" class="power" role="math">
+                      <span class="base">4</span><sup>6</sup>
+                    </span>
+                    :
+                    <span aria-label="4 elevado a 2" class="power" role="math">
+                      <span class="base">4</span><sup>2</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="10 elevado a 3" class="power" role="math">
+                      <span class="base">10</span><sup>3</sup>
+                    </span>
+                    :
+                    <span aria-label="10 elevado a 3" class="power" role="math">
+                      <span class="base">10</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.6 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Simplifica cada expresión aplicando primero productos y cocientes
+                  de potencias de igual base:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    (
+                    <span aria-label="2 elevado a 3" class="power" role="math">
+                      <span class="base">2</span><sup>3</sup>
+                    </span>
+                    ×
+                    <span aria-label="2 elevado a 5" class="power" role="math">
+                      <span class="base">2</span><sup>5</sup>
+                    </span>
+                    )
+                    :
+                    <span aria-label="2 elevado a 4" class="power" role="math">
+                      <span class="base">2</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    (
+                    <span aria-label="5 elevado a 6" class="power" role="math">
+                      <span class="base">5</span><sup>6</sup>
+                    </span>
+                    :
+                    <span aria-label="5 elevado a 2" class="power" role="math">
+                      <span class="base">5</span><sup>2</sup>
+                    </span>
+                    )
+                    ×
+                    <span aria-label="5 elevado a 1" class="power" role="math">
+                      <span class="base">5</span><sup>1</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="3 elevado a 7" class="power" role="math">
+                      <span class="base">3</span><sup>7</sup>
+                    </span>
+                    :
+                    (
+                    <span aria-label="3 elevado a 2" class="power" role="math">
+                      <span class="base">3</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="3 elevado a 3" class="power" role="math">
+                      <span class="base">3</span><sup>3</sup>
+                    </span>
+                    )
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    (
+                    <span aria-label="10 elevado a 2" class="power" role="math">
+                      <span class="base">10</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="10 elevado a 5" class="power" role="math">
+                      <span class="base">10</span><sup>5</sup>
+                    </span>
+                    )
+                    :
+                    <span aria-label="10 elevado a 4" class="power" role="math">
+                      <span class="base">10</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.7 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 7
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Expresa cada potencia de una potencia como una sola potencia
+                  y calcula el exponente final:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    (
+                    <span aria-label="2 elevado a 3" class="power" role="math">
+                      <span class="base">2</span><sup>3</sup>
+                    </span>
+                    )<sup>2</sup>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    (
+                    <span aria-label="5 elevado a 2" class="power" role="math">
+                      <span class="base">5</span><sup>2</sup>
+                    </span>
+                    )<sup>3</sup>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    (
+                    <span aria-label="3 elevado a 4" class="power" role="math">
+                      <span class="base">3</span><sup>4</sup>
+                    </span>
+                    )<sup>2</sup>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    (
+                    <span aria-label="10 elevado a 2" class="power" role="math">
+                      <span class="base">10</span><sup>2</sup>
+                    </span>
+                    )<sup>4</sup>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.8 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 8
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Aplica la regla de la potencia de una potencia en estos casos especiales:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    (
+                    <span aria-label="7 elevado a 3" class="power" role="math">
+                      <span class="base">7</span><sup>3</sup>
+                    </span>
+                    )<sup>0</sup>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    (
+                    <span aria-label="4 elevado a 0" class="power" role="math">
+                      <span class="base">4</span><sup>0</sup>
+                    </span>
+                    )<sup>5</sup>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    (
+                    <span aria-label="6 elevado a 2" class="power" role="math">
+                      <span class="base">6</span><sup>2</sup>
+                    </span>
+                    )<sup>1</sup>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    (
+                    <span aria-label="3 elevado a 1" class="power" role="math">
+                      <span class="base">3</span><sup>1</sup>
+                    </span>
+                    )<sup>4</sup>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.9 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 9
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Reduce cada expresión a una sola potencia de la base indicada:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    (
+                    <span aria-label="2 elevado a 2" class="power" role="math">
+                      <span class="base">2</span><sup>2</sup>
+                    </span>
+                    )<sup>3</sup>
+                    ×
+                    <span aria-label="2 elevado a 1" class="power" role="math">
+                      <span class="base">2</span><sup>1</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    (
+                    <span aria-label="5 elevado a 3" class="power" role="math">
+                      <span class="base">5</span><sup>3</sup>
+                    </span>
+                    )<sup>2</sup>
+                    :
+                    <span aria-label="5 elevado a 4" class="power" role="math">
+                      <span class="base">5</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    (
+                    <span aria-label="3 elevado a 2" class="power" role="math">
+                      <span class="base">3</span><sup>2</sup>
+                    </span>
+                    ×
+                    <span aria-label="3 elevado a 4" class="power" role="math">
+                      <span class="base">3</span><sup>4</sup>
+                    </span>
+                    )
+                    :
+                    <span aria-label="3 elevado a 3" class="power" role="math">
+                      <span class="base">3</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    (
+                    <span aria-label="10 elevado a 2" class="power" role="math">
+                      <span class="base">10</span><sup>2</sup>
+                    </span>
+                    )<sup>3</sup>
+                    :
+                    <span aria-label="10 elevado a 4" class="power" role="math">
+                      <span class="base">10</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.3.10 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 10
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Halla el valor del exponente desconocido x:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="2 elevado a 3" class="power" role="math">
+                      <span class="base">2</span><sup>3</sup>
+                    </span>
+                    ×
+                    <span aria-label="2 elevado a x" class="power" role="math">
+                      <span class="base">2</span><sup>x</sup>
+                    </span>
+                    =
+                    <span aria-label="2 elevado a 9" class="power" role="math">
+                      <span class="base">2</span><sup>9</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="5 elevado a 8" class="power" role="math">
+                      <span class="base">5</span><sup>8</sup>
+                    </span>
+                    :
+                    <span aria-label="5 elevado a x" class="power" role="math">
+                      <span class="base">5</span><sup>x</sup>
+                    </span>
+                    =
+                    <span aria-label="5 elevado a 3" class="power" role="math">
+                      <span class="base">5</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    (
+                    <span aria-label="3 elevado a 2" class="power" role="math">
+                      <span class="base">3</span><sup>2</sup>
+                    </span>
+                    )<sup>x</sup>
+                    =
+                    <span aria-label="3 elevado a 8" class="power" role="math">
+                      <span class="base">3</span><sup>8</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="10 elevado a x" class="power" role="math">
+                      <span class="base">10</span><sup>x</sup>
+                    </span>
+                    :
+                    <span aria-label="10 elevado a 2" class="power" role="math">
+                      <span class="base">10</span><sup>2</sup>
+                    </span>
+                    =
+                    <span aria-label="10 elevado a 4" class="power" role="math">
+                      <span class="base">10</span><sup>4</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECCIÓN 5.4
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100"
+          id="sec-4"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+
+            <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              5.4
+            </span>
+
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+              La raíz cuadrada
+            </h2>
+
+          </div>
+
+
+          <!-- EXPLICACIÓN 5.4 -->
+
+          <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+
+            <h3 class="text-base font-bold text-junta-dark mb-3 flex items-center gap-2 text-heading">
+              <span>√</span>
+              ¿Qué significa calcular una raíz cuadrada?
+            </h3>
+
+            <div class="space-y-4 text-sm md:text-base text-slate-700 leading-relaxed">
+
+              <p class="text-justify">
+                Calcular la <strong>raíz cuadrada</strong> de un número consiste
+                en encontrar otro número que, multiplicado por sí mismo,
+                produzca el número inicial. Por ejemplo,
+
+                <span
+                  aria-label="raíz cuadrada de 49"
+                  class="sqrt"
+                  role="math"
+                >
+                  <span class="radical">√</span>
+                  <span class="radicand">49</span>
+                </span>
+
+                = 7 porque 7 × 7 = 49.
+              </p>
+
+
+              <!-- ELEMENTOS DE UNA RAÍZ -->
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+
+                <p class="font-bold text-junta-dark mb-2">
+                  Elementos de una raíz cuadrada
+                </p>
+
+                <ul class="space-y-1.5">
+
+                  <li>
+                    <strong>Signo radical (√):</strong>
+                    indica que vamos a calcular una raíz.
+                  </li>
+
+                  <li>
+                    <strong>Índice:</strong>
+                    indica el tipo de raíz.
+                    En la raíz cuadrada el índice es 2 y normalmente no se escribe.
+                  </li>
+
+                  <li>
+                    <strong>Radicando:</strong>
+                    es el número situado dentro del radical.
+                    En
+
+                    <span
+                      aria-label="raíz cuadrada de 81"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">81</span>
+                    </span>,
+
+                    el radicando es 81.
+                  </li>
+
+                  <li>
+                    <strong>Raíz:</strong>
+                    es el resultado.
+                    En
+
+                    <span
+                      aria-label="raíz cuadrada de 81"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">81</span>
+                    </span>
+
+                    = 9, la raíz es 9.
+                  </li>
+
+                  <li>
+                    <strong>Resto:</strong>
+                    aparece cuando el radicando no es un cuadrado perfecto
+                    y buscamos la raíz cuadrada entera.
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <p class="text-justify">
+
+                <strong class="text-junta-dark">
+                  Raíz exacta:
+                </strong>
+
+                el radicando es un cuadrado perfecto. Por ejemplo,
+
+                <span
+                  aria-label="raíz cuadrada de 144"
+                  class="sqrt"
+                  role="math"
+                >
+                  <span class="radical">√</span>
+                  <span class="radicand">144</span>
+                </span>
+
+                = 12 porque
+
+                <span
+                  aria-label="12 elevado a 2"
+                  class="power"
+                  role="math"
+                >
+                  <span class="base">12</span>
+                  <sup>2</sup>
+                </span>
+
+                = 144.
+
+              </p>
+
+
+              <!-- RAÍZ ENTERA Y RESTO -->
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+
+                <p class="font-bold text-junta-dark mb-2">
+                  Raíz cuadrada entera y resto
+                </p>
+
+                <p class="text-justify">
+                  Si el número no tiene raíz cuadrada exacta,
+                  buscamos el mayor cuadrado perfecto que no lo supere.
+                  Por ejemplo, para 50:
+                </p>
+
+                <div class="mt-2 font-semibold text-slate-800">
+
+                  <span
+                    aria-label="7 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">7</span>
+                    <sup>2</sup>
+                  </span>
+
+                  = 49 &lt; 50 &lt; 64 =
+
+                  <span
+                    aria-label="8 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">8</span>
+                    <sup>2</sup>
+                  </span>
+
+                </div>
+
+                <div class="mt-1">
+                  Por tanto, la raíz cuadrada entera de 50 es
+                  <strong>7</strong>
+                  y el resto es
+                  <strong>1</strong>,
+                  porque 50 = 49 + 1.
+                </div>
+
+              </div>
+
+
+              <p class="text-xs md:text-sm text-slate-600">
+                Conviene memorizar algunos cuadrados perfectos:
+                1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225...
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- EJERCICIOS 5.4 -->
+
+          <div class="space-y-6">
+
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+              Ejercicios de práctica
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+              <!-- EJERCICIO 5.4.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula las siguientes raíces cuadradas exactas:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="raíz cuadrada de 49" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">49</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="raíz cuadrada de 81" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">81</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="raíz cuadrada de 144" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">144</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="raíz cuadrada de 225" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">225</span>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.4.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Completa el número que falta en cada igualdad:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="raíz cuadrada de 64" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">64</span>
+                    </span>
+                    = ______
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="raíz cuadrada de 169" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">169</span>
+                    </span>
+                    = ______
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="raíz cuadrada de ______" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">______</span>
+                    </span>
+                    = 12
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="raíz cuadrada de ______" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">______</span>
+                    </span>
+                    = 15
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.4.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Halla la raíz cuadrada entera y el resto de cada radicando:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="raíz cuadrada de 65" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">65</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="raíz cuadrada de 101" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">101</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="raíz cuadrada de 130" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">130</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="raíz cuadrada de 170" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">170</span>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.4.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Un cuadrado tiene el área indicada.
+                  Calcula la longitud de su lado:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> Área = 196 cm²</li>
+                  <li><strong>b)</strong> Área = 324 m²</li>
+                  <li><strong>c)</strong> Área = 625 dm²</li>
+                  <li><strong>d)</strong> Área = 900 cm²</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.4.5 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve las siguientes expresiones combinando potencias y raíces cuadradas:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    <span aria-label="raíz cuadrada de 64" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">64</span>
+                    </span>
+                    +
+                    <span aria-label="2 elevado a 3" class="power" role="math">
+                      <span class="base">2</span><sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    <span aria-label="raíz cuadrada de 144" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">144</span>
+                    </span>
+                    −
+                    <span aria-label="3 elevado a 2" class="power" role="math">
+                      <span class="base">3</span><sup>2</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    <span aria-label="raíz cuadrada de 225" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">225</span>
+                    </span>
+                    : 3 +
+                    <span aria-label="5 elevado a 0" class="power" role="math">
+                      <span class="base">5</span><sup>0</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    <span aria-label="raíz cuadrada de 400" class="sqrt" role="math">
+                      <span class="radical">√</span>
+                      <span class="radicand">400</span>
+                    </span>
+                    +
+                    (
+                    <span aria-label="2 elevado a 2" class="power" role="math">
+                      <span class="base">2</span><sup>2</sup>
+                    </span>
+                    × 5)
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECCIÓN 5.5
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-editorial-amber/40"
+          id="sec-5"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+
+            <span class="bg-editorial-amber text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              5.5
+            </span>
+
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+              Problemas y Desafíos
+            </h2>
+
+          </div>
+
+
+          <!-- PARTE A: OPERACIONES Y PROBLEMAS -->
+
+          <div class="mb-10">
+
+            <h3 class="text-base font-bold text-junta mb-4 flex items-center gap-2 text-heading">
+              🧮 Parte A: Operaciones y problemas
+            </h3>
+
+
+            <!-- OPERACIONES -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+
+              <!-- EJERCICIO 5.5.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula respetando la jerarquía de las operaciones:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="2 elevado a 5"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>5</sup>
+                    </span>
+
+                    +
+
+                    <span
+                      aria-label="7 elevado a 0"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">7</span>
+                      <sup>0</sup>
+                    </span>
+
+                    × 9
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    (
+                    <span
+                      aria-label="3 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>2</sup>
+                    </span>
+                    )<sup>2</sup>
+
+                    −
+
+                    <span
+                      aria-label="raíz cuadrada de 64"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">64</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    <span
+                      aria-label="5 elevado a 4"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>4</sup>
+                    </span>
+
+                    :
+
+                    <span
+                      aria-label="5 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>2</sup>
+                    </span>
+
+                    + 17
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 225"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">225</span>
+                    </span>
+
+                    +
+
+                    <span
+                      aria-label="10 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>2</sup>
+                    </span>
+
+                    :
+
+                    <span
+                      aria-label="10 elevado a 1"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>1</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.5.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Aplica las reglas de divisibilidad e indica todos los divisores de la lista
+                  por los que es divisible cada número: 2, 3, 5, 7, 9, 10 y 11.
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> 462</li>
+                  <li><strong>b)</strong> 770</li>
+                  <li><strong>c)</strong> 1 386</li>
+                  <li><strong>d)</strong> 2 310</li>
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.5.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Reduce a una sola potencia:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="3 elevado a 4"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>4</sup>
+                    </span>
+
+                    ×
+
+                    <span
+                      aria-label="3 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>2</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="10 elevado a 7"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>7</sup>
+                    </span>
+
+                    :
+
+                    <span
+                      aria-label="10 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    (
+                    <span
+                      aria-label="2 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>3</sup>
+                    </span>
+                    )<sup>4</sup>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+
+                    (
+                    <span
+                      aria-label="5 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>2</sup>
+                    </span>
+
+                    ×
+
+                    <span
+                      aria-label="5 elevado a 4"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>4</sup>
+                    </span>
+                    )
+
+                    :
+
+                    <span
+                      aria-label="5 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>3</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- EJERCICIO 5.5.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula la raíz exacta o, si no es exacta,
+                  indica la raíz cuadrada entera y el resto:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 256"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">256</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 200"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">200</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 361"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">361</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 500"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">500</span>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+
+            <!-- PROBLEMAS -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+
+              <!-- PROBLEMA 5.5.5 -->
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+
+                <p class="font-bold text-junta mb-1">
+                  Problema 5
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Una plaza cuadrada tiene una superficie de 1 296 m².
+                  ¿Cuántos metros mide cada lado?
+                  Expresa el cálculo mediante una raíz cuadrada.
+                </p>
+
+              </div>
+
+
+              <!-- PROBLEMA 5.5.6 -->
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+
+                <p class="font-bold text-junta mb-1">
+                  Problema 6
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Un sistema informático organiza datos en
+
+                  <span
+                    aria-label="2 elevado a 3"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>3</sup>
+                  </span>
+
+                  grupos y cada grupo contiene
+
+                  <span
+                    aria-label="2 elevado a 4"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>4</sup>
+                  </span>
+
+                  registros. Expresa el número total de registros
+                  como una sola potencia de base 2 y calcula su valor.
+                </p>
+
+              </div>
+
+
+              <!-- PROBLEMA 5.5.7 -->
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+
+                <p class="font-bold text-junta mb-1">
+                  Problema 7
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Una empresa dispone de 2 310 piezas y quiere preparar
+                  lotes iguales de 7, 10 u 11 piezas.
+                  Sin efectuar las tres divisiones completas,
+                  determina qué tamaños de lote son posibles
+                  aplicando las reglas de divisibilidad.
+                </p>
+
+              </div>
+
+
+              <!-- PROBLEMA 5.5.8 -->
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+
+                <p class="font-bold text-junta mb-1">
+                  Problema 8
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Un mosaico cuadrado contiene 625 azulejos colocados
+                  en el mismo número de filas que de columnas.
+                  ¿Cuántos azulejos hay en cada fila?
+                </p>
+
+              </div>
+
+
+              <!-- PROBLEMA 5.5.9 -->
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+
+                <p class="font-bold text-junta mb-1">
+                  Problema 9
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Una máquina multiplica por 5 la cantidad de piezas en cada etapa.
+                  Tras 6 etapas hay una cantidad proporcional a
+
+                  <span
+                    aria-label="5 elevado a 6"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">5</span>
+                    <sup>6</sup>
+                  </span>.
+
+                  Si otra máquina ha alcanzado
+
+                  <span
+                    aria-label="5 elevado a 3"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">5</span>
+                    <sup>3</sup>
+                  </span>
+
+                  veces la cantidad inicial,
+                  ¿cuántas veces mayor es la producción de la primera que la de la segunda?
+                  Resuelve usando un cociente de potencias de igual base.
+                </p>
+
+              </div>
+
+
+              <!-- PROBLEMA 5.5.10 -->
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+
+                <p class="font-bold text-junta mb-1">
+                  Problema 10
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Un terreno cuadrado tiene 1 000 m².
+                  Calcula su raíz cuadrada entera y el resto.
+                  Explica entre qué dos longitudes enteras consecutivas
+                  se encontraría el lado exacto del terreno.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PARTE B: DESAFÍOS -->
+
+          <div>
+
+            <h3 class="text-base font-bold text-editorial-amber mb-6 flex items-center gap-2 text-heading">
+              🌟 Parte B: Desafíos
+            </h3>
+
+
+            <!-- DESAFÍO 5.5.1 -->
+
+            <div class="bg-amber-50/50 rounded-2xl p-6 mb-6 border border-amber-200">
+
+              <h4 class="text-sm md:text-base font-bold text-amber-900 mb-3">
+                Desafío 1: El centro de datos del colegio
+              </h4>
+
+              <p class="text-xs md:text-sm text-slate-700 mb-4 leading-relaxed text-justify">
+                Un servidor organiza sus archivos en
+
+                <span
+                  aria-label="4 elevado a 3"
+                  class="power"
+                  role="math"
+                >
+                  <span class="base">4</span>
+                  <sup>3</sup>
+                </span>
+
+                carpetas principales. Dentro de cada una se crean
+
+                <span
+                  aria-label="4 elevado a 2"
+                  class="power"
+                  role="math"
+                >
+                  <span class="base">4</span>
+                  <sup>2</sup>
+                </span>
+
+                subcarpetas. Además, el panel de control muestra
+                una cuadrícula cuadrada con 1 024 indicadores.
+              </p>
+
+              <ul class="text-xs md:text-sm space-y-2 text-slate-800 leading-relaxed">
+
+                <li>
+                  <strong>Pregunta 1:</strong>
+                  Expresa el número total de subcarpetas mediante un producto
+                  de potencias de base 4 y redúcelo a una sola potencia.
+                </li>
+
+                <li>
+                  <strong>Pregunta 2:</strong>
+                  Si el sistema elimina un bloque equivalente a
+
+                  <span
+                    aria-label="4 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">4</span>
+                    <sup>2</sup>
+                  </span>
+
+                  carpetas, representa el cociente de potencias
+                  que permite saber cuántos bloques de ese tamaño hay.
+                </li>
+
+                <li>
+                  <strong>Pregunta 3:</strong>
+                  ¿Cuántos indicadores hay en cada fila del panel cuadrado?
+                  Utiliza una raíz cuadrada.
+                </li>
+
+                <li>
+                  <strong>Pregunta 4:</strong>
+                  Comprueba si 1 024 es divisible por 2, 7 y 11
+                  aplicando las reglas estudiadas.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- DESAFÍO 5.5.2 -->
+
+            <div class="bg-amber-50/50 rounded-2xl p-6 mb-6 border border-amber-200">
+
+              <h4 class="text-sm md:text-base font-bold text-amber-900 mb-3">
+                Desafío 2: El almacén robotizado
+              </h4>
+
+              <p class="text-xs md:text-sm text-slate-700 mb-4 leading-relaxed text-justify">
+                Un almacén dispone de 4 620 paquetes.
+                El sistema puede agruparlos en cajas de 7, de 10 o de 11 paquetes.
+                En otra zona se apilan cajas formando un cuadrado con 900 unidades.
+              </p>
+
+              <ul class="text-xs md:text-sm space-y-2 text-slate-800 leading-relaxed">
+
+                <li>
+                  <strong>Pregunta 1:</strong>
+                  Determina, mediante reglas de divisibilidad,
+                  cuáles de los tres tamaños de caja permiten repartir
+                  los 4 620 paquetes sin resto.
+                </li>
+
+                <li>
+                  <strong>Pregunta 2:</strong>
+                  ¿Cuántas cajas caben en cada lado del apilamiento cuadrado de 900 unidades?
+                </li>
+
+                <li>
+                  <strong>Pregunta 3:</strong>
+                  Una cinta procesa
+
+                  <span
+                    aria-label="3 elevado a 5"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">3</span>
+                    <sup>5</sup>
+                  </span>
+
+                  paquetes y otra
+
+                  <span
+                    aria-label="3 elevado a 2"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">3</span>
+                    <sup>2</sup>
+                  </span>.
+
+                  ¿Cuántas veces más procesa la primera?
+                  Usa un cociente de potencias de igual base.
+                </li>
+
+                <li>
+                  <strong>Pregunta 4:</strong>
+                  Una tercera cinta trabaja con bloques de
+
+                  <span
+                    aria-label="2 elevado a 4"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>4</sup>
+                  </span>
+
+                  posibilidades y combina tres bloques independientes.
+                  Representa el número de combinaciones como una potencia
+                  de una potencia y simplifícala.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- DESAFÍO 5.5.3 -->
+
+            <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200">
+
+              <h4 class="text-sm md:text-base font-bold text-amber-900 mb-3">
+                Desafío 3: La feria de ciencias
+              </h4>
+
+              <p class="text-xs md:text-sm text-slate-700 mb-4 leading-relaxed text-justify">
+                Para una exposición se colocan 1 089 tarjetas formando un gran cuadrado.
+                Cada equipo prepara además secuencias de luces que se repiten
+                según potencias de base 2.
+              </p>
+
+              <ul class="text-xs md:text-sm space-y-2 text-slate-800 leading-relaxed">
+
+                <li>
+                  <strong>Pregunta 1:</strong>
+                  Calcula cuántas tarjetas hay en cada lado del cuadrado.
+                </li>
+
+                <li>
+                  <strong>Pregunta 2:</strong>
+                  Comprueba si 1 089 es divisible por 3, 9 y 11.
+                </li>
+
+                <li>
+                  <strong>Pregunta 3:</strong>
+                  Simplifica
+
+                  <span
+                    aria-label="2 elevado a 7"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>7</sup>
+                  </span>
+
+                  ×
+
+                  <span
+                    aria-label="2 elevado a 3"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>3</sup>
+                  </span>
+
+                  :
+
+                  <span
+                    aria-label="2 elevado a 5"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">2</span>
+                    <sup>5</sup>
+                  </span>
+
+                  como una sola potencia.
+                </li>
+
+                <li>
+                  <strong>Pregunta 4:</strong>
+                  Explica por qué
+
+                  <span
+                    aria-label="33 elevado a 0"
+                    class="power"
+                    role="math"
+                  >
+                    <span class="base">33</span>
+                    <sup>0</sup>
+                  </span>
+
+                  = 1 utilizando la idea de disminuir el exponente
+                  y dividir sucesivamente entre 33.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             REPASAMOS LO APRENDIDO
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-junta"
+          id="sec-repaso"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+
+            <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              🔄
+            </span>
+
+            <div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Repasamos lo aprendido
+              </h2>
+
+              <p class="text-xs text-slate-500">
+                Bloque de consolidación y repaso global de la Situación de Aprendizaje
+              </p>
+            </div>
+
+          </div>
+
+
+          <!-- FICHA DE REFUERZO -->
+
+          <div class="mb-10">
+
+            <div class="bg-emerald-50 border-l-4 border-junta p-4 rounded-r-xl mb-6">
+
+              <h3 class="text-base font-bold text-junta-dark flex items-center gap-2 text-heading">
+                🟢 Ficha de Refuerzo
+              </h3>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+              <!-- REFUERZO 5.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Refuerzo 5.1 • Potencias
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Repasa las potencias y los casos especiales:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="4 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">4</span>
+                      <sup>3</sup>
+                    </span>
+
+                    = ______
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="18 elevado a 0"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">18</span>
+                      <sup>0</sup>
+                    </span>
+
+                    = ______
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    <span
+                      aria-label="10 elevado a 5"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>5</sup>
+                    </span>
+
+                    = ______
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    Explica con una frase por qué cualquier base
+                    distinta de 0 elevada a 0 vale 1.
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- REFUERZO 5.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Refuerzo 5.2 • Divisibilidad
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Aplica las reglas de divisibilidad:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> ¿Es 203 divisible por 7? Justifica.</li>
+                  <li><strong>b)</strong> ¿Es 2 728 divisible por 11? Justifica.</li>
+                  <li><strong>c)</strong> Indica si 630 es divisible por 2, 3, 5, 7 y 10.</li>
+                  <li><strong>d)</strong> Clasifica 29 y 77 como primos o compuestos.</li>
+                </ul>
+
+              </div>
+
+
+              <!-- REFUERZO 5.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Refuerzo 5.3 • Operaciones con potencias
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Opera con potencias de igual base:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="2 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>3</sup>
+                    </span>
+
+                    ×
+
+                    <span
+                      aria-label="2 elevado a 4"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>4</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="5 elevado a 6"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>6</sup>
+                    </span>
+
+                    :
+
+                    <span
+                      aria-label="5 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>2</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    (
+                    <span
+                      aria-label="3 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>2</sup>
+                    </span>
+                    )<sup>3</sup>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+
+                    (
+                    <span
+                      aria-label="10 elevado a 4"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>4</sup>
+                    </span>
+
+                    ×
+
+                    <span
+                      aria-label="10 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>2</sup>
+                    </span>
+                    )
+
+                    :
+
+                    <span
+                      aria-label="10 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>3</sup>
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- REFUERZO 5.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Refuerzo 5.4 • Raíz cuadrada
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula las raíces:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 81"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">81</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 196"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">196</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 50"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">50</span>
+                    </span>
+
+                    : raíz entera y resto
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    Un cuadrado tiene 324 cm² de área.
+                    ¿Cuánto mide su lado?
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- REFUERZO 5.5 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Refuerzo 5.5 • Repaso global
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve el problema integrado:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+                    Simplifica
+
+                    <span
+                      aria-label="4 elevado a 5"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">4</span>
+                      <sup>5</sup>
+                    </span>
+
+                    :
+
+                    <span
+                      aria-label="4 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">4</span>
+                      <sup>2</sup>
+                    </span>.
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    Comprueba si 693 es divisible por 7 y por 11.
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    Calcula la raíz cuadrada entera de 200 y su resto.
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+
+                    Calcula
+
+                    <span
+                      aria-label="6 elevado a 0"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">6</span>
+                      <sup>0</sup>
+                    </span>
+
+                    +
+
+                    <span
+                      aria-label="raíz cuadrada de 121"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">121</span>
+                    </span>.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FICHA DE AMPLIACIÓN -->
+
+          <div class="mb-10">
+
+            <div class="bg-amber-50 border-l-4 border-editorial-amber p-4 rounded-r-xl mb-6">
+
+              <h3 class="text-base font-bold text-editorial-amber flex items-center gap-2 text-heading">
+                🟠 Ficha de Ampliación
+              </h3>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+              <!-- AMPLIACIÓN 5.1 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Ampliación 5.1 • Potencias
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Razona sobre las potencias:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="2 elevado a x"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>x</sup>
+                    </span>
+
+                    = 256 ➔ x = ______
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="7 elevado a 0"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">7</span>
+                      <sup>0</sup>
+                    </span>
+
+                    +
+
+                    <span
+                      aria-label="1 elevado a 50"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">1</span>
+                      <sup>50</sup>
+                    </span>
+
+                    = ______
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+                    Escribe 1 000 000 000 como potencia de base 10.
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    Explica por qué
+
+                    <span
+                      aria-label="15 elevado a 0"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">15</span>
+                      <sup>0</sup>
+                    </span>
+
+                    = 1 usando la secuencia
+
+                    <span
+                      aria-label="15 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">15</span>
+                      <sup>2</sup>
+                    </span>,
+
+                    <span
+                      aria-label="15 elevado a 1"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">15</span>
+                      <sup>1</sup>
+                    </span>,
+
+                    <span
+                      aria-label="15 elevado a 0"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">15</span>
+                      <sup>0</sup>
+                    </span>.
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- AMPLIACIÓN 5.2 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Ampliación 5.2 • Divisibilidad
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve retos de divisibilidad:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li><strong>a)</strong> Busca una cifra para que 8_4 sea divisible por 7.</li>
+                  <li><strong>b)</strong> Busca una cifra para que 6_6 sea divisible por 11.</li>
+                  <li><strong>c)</strong> Indica cuáles de 1 155, 1 386, 1 540 y 1 617 son divisibles por 7 y por 11.</li>
+                  <li><strong>d)</strong> Escribe un número de tres cifras divisible simultáneamente por 3, 7 y 11.</li>
+                </ul>
+
+              </div>
+
+
+              <!-- AMPLIACIÓN 5.3 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Ampliación 5.3 • Operaciones con potencias
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Simplifica al máximo:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    (
+                    <span
+                      aria-label="2 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>3</sup>
+                    </span>
+                    )<sup>4</sup>
+
+                    :
+
+                    <span
+                      aria-label="2 elevado a 5"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">2</span>
+                      <sup>5</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    (
+                    <span
+                      aria-label="5 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>2</sup>
+                    </span>
+
+                    ×
+
+                    <span
+                      aria-label="5 elevado a 6"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>6</sup>
+                    </span>
+                    )
+
+                    :
+
+                    <span
+                      aria-label="5 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">5</span>
+                      <sup>3</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    (
+                    <span
+                      aria-label="3 elevado a 4"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>4</sup>
+                    </span>
+                    )<sup>2</sup>
+
+                    ×
+
+                    <span
+                      aria-label="3 elevado a 1"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>1</sup>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+
+                    <span
+                      aria-label="10 elevado a 9"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>9</sup>
+                    </span>
+
+                    :
+
+                    (
+                    <span
+                      aria-label="10 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>2</sup>
+                    </span>
+
+                    ×
+
+                    <span
+                      aria-label="10 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">10</span>
+                      <sup>3</sup>
+                    </span>
+                    )
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- AMPLIACIÓN 5.4 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Ampliación 5.4 • Raíz cuadrada
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula o aproxima mediante raíz cuadrada entera:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 576"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">576</span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 350"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">350</span>
+                    </span>
+
+                    : raíz entera y resto
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    <span
+                      aria-label="raíz cuadrada de 999"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">999</span>
+                    </span>
+
+                    : raíz entera y resto
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    Un cuadrado tiene 2 025 m² de área.
+                    Calcula la longitud del lado.
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- AMPLIACIÓN 5.5 -->
+
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+
+                <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                  Ampliación 5.5 • Desafío integrado
+                </span>
+
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Desafío integrado:
+                </p>
+
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+
+                  <li>
+                    <strong>a)</strong>
+
+                    Simplifica
+
+                    (
+                    <span
+                      aria-label="3 elevado a 2"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>2</sup>
+                    </span>
+                    )<sup>4</sup>
+
+                    :
+
+                    <span
+                      aria-label="3 elevado a 3"
+                      class="power"
+                      role="math"
+                    >
+                      <span class="base">3</span>
+                      <sup>3</sup>
+                    </span>.
+                  </li>
+
+                  <li>
+                    <strong>b)</strong>
+                    Comprueba si 2 541 es divisible por 7 y 11.
+                  </li>
+
+                  <li>
+                    <strong>c)</strong>
+
+                    Calcula
+
+                    <span
+                      aria-label="raíz cuadrada de 729"
+                      class="sqrt"
+                      role="math"
+                    >
+                      <span class="radical">√</span>
+                      <span class="radicand">729</span>
+                    </span>.
+                  </li>
+
+                  <li>
+                    <strong>d)</strong>
+                    Una cuadrícula cuadrada tiene 1 600 casillas.
+                    Si cada lado se duplica, ¿cuántas casillas tendrá la nueva cuadrícula?
+                    Expresa el factor de aumento mediante una potencia.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA
+             ================================================= -->
+
+        <section
+          class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-indigo-200"
+          id="sec-diana"
+        >
+
+          <div class="flex items-center gap-3 mb-6">
+
+            <span class="bg-indigo-600 text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              🎯
+            </span>
+
+            <div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Diana de Autoevaluación Interactiva
+              </h2>
+
+              <p class="text-xs text-slate-500">
+                Reflexiona sobre tu aprendizaje haciendo clic
+                en la opción que mejor te defina
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="space-y-4">
+
+
+            <!-- CRITERIO DE AUTOEVALUACIÓN 5.1 -->
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
+              <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                <span class="font-bold text-junta mr-1">5.1</span>
+                Interpreto potencias, calculo su valor y comprendo por qué una potencia
+                de base distinta de 0 con exponente 0 vale 1.
+              </div>
+
+              <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi nunca
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  A veces
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi siempre
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Siempre
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CRITERIO DE AUTOEVALUACIÓN 5.2 -->
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
+              <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                <span class="font-bold text-junta mr-1">5.2</span>
+                Reconozco múltiplos, divisores, primos y compuestos,
+                y aplico las reglas de divisibilidad por 2, 3, 5, 7, 9, 10 y 11.
+              </div>
+
+              <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi nunca
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  A veces
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi siempre
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Siempre
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CRITERIO DE AUTOEVALUACIÓN 5.3 -->
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
+              <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                <span class="font-bold text-junta mr-1">5.3</span>
+                Aplico correctamente las reglas del producto y cociente
+                de potencias de igual base y de la potencia de una potencia.
+              </div>
+
+              <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi nunca
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  A veces
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi siempre
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Siempre
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CRITERIO DE AUTOEVALUACIÓN 5.4 -->
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
+              <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                <span class="font-bold text-junta mr-1">5.4</span>
+                Calculo raíces cuadradas exactas y raíces cuadradas enteras,
+                identificando radicando, raíz y resto.
+              </div>
+
+              <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi nunca
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  A veces
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi siempre
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Siempre
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CRITERIO DE AUTOEVALUACIÓN 5.5 -->
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
+              <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                <span class="font-bold text-junta mr-1">5.5</span>
+                Selecciono y combino potencias, divisibilidad y raíces cuadradas
+                para resolver problemas y desafíos de varias etapas.
+              </div>
+
+              <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi nunca
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  A veces
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Casi siempre
+                </button>
+
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+                  onclick="selectEval(this)"
+                  type="button"
+                >
+                  Siempre
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
+      </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ======================================================
+       JAVASCRIPT DEL MATERIAL
+       ====================================================== -->
+
+  <script>
+
+    function scrollToSec(id, event) {
+
+      if (event) {
+        event.preventDefault();
+      }
+
+      const target =
+        document.getElementById(id);
+
+      if (target) {
+
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+
+      }
+
+    }
+
+
+    function selectEval(button) {
+
+      const container =
+        button.parentElement;
+
+      const buttons =
+        container.querySelectorAll('button');
+
+
+      buttons.forEach((item) => {
+
+        item.className =
+          'px-3 py-1.5 rounded-lg border border-slate-200 bg-white ' +
+          'text-xs font-bold text-slate-600 hover:bg-slate-100 transition';
+
+      });
+
+
+      button.className =
+        'px-3 py-1.5 rounded-lg border border-junta bg-junta text-white ' +
+        'text-xs font-bold shadow-sm transition transform scale-105';
+
+    }
+
+  </script>
+
+
+  <!-- ======================================================
+       JAVASCRIPT GENERAL DE LA WEB
+       ====================================================== -->
+
+  <script src="/js/main.js"></script>
+
+
+</body>
+
+</html>
