@@ -1,0 +1,3256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Geometría plana y espacial de Matemáticas de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Geometría | Matemáticas 6.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+
+  <!-- TAILWIND: se mantiene provisionalmente para conservar el diseño -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CONFIGURACIÓN TAILWIND DEL MATERIAL -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: '#007A33',
+              dark: '#005724',
+              light: '#e6f4ea',
+              accent: '#00a847',
+            },
+            editorial: {
+              bg: '#f8faf9',
+              card: '#ffffff',
+              border: '#d1e7dd',
+              text: '#1e293b',
+              subtext: '#475569',
+              amber: '#d97706',
+              amberBg: '#fef3c7',
+            }
+          },
+          fontFamily: {
+            sans: ['system-ui', 'sans-serif'],
+            heading: ['system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ESTILOS ESPECÍFICOS DE LA SITUACIÓN DE APRENDIZAJE -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-page .text-heading,
+    .section-number,
+    .section-number-amber,
+    .section-title,
+    .theory-title,
+    .svg-title,
+    .svg-heading,
+    .svg-quadrant,
+    .formula-card strong {
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+    }
+
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 122, 51, 0.08);
+    }
+
+    /* FRACCIÓN VERTICAL */
+    .frac {
+      display: inline-grid;
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-items: stretch;
+      min-width: 1.45em;
+      margin: 0 0.12em;
+      font-size: 0.92em;
+      font-weight: 600;
+      line-height: 1;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .frac .num {
+      display: block;
+      padding: 0 0.18em 0.09em;
+      border-bottom: 1.5px solid currentColor;
+    }
+
+    .frac .den {
+      display: block;
+      padding: 0.09em 0.18em 0;
+    }
+
+    /* POTENCIA */
+    .power {
+      display: inline-flex;
+      align-items: flex-start;
+      white-space: nowrap;
+      font-weight: 600;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+
+    .power sup {
+      position: relative;
+      top: -0.35em;
+      margin-left: 0.04em;
+      font-size: 0.7em;
+      line-height: 1;
+    }
+
+    /* SVG DIDÁCTICOS */
+    .svg-card {
+      border: 1px solid #d1e7dd;
+      border-radius: 1rem;
+      background: #ffffff;
+      padding: 1rem;
+    }
+
+    .svg-title {
+      margin-bottom: 0.75rem;
+      color: #005724;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .geometry-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      color: #007A33;
+    }
+
+    .mini-svg {
+      width: 100%;
+      max-height: 100px;
+      color: #007A33;
+    }
+
+    .svg-line {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .svg-line-strong {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-width: 3;
+    }
+
+    .svg-diagonal {
+      fill: none;
+      stroke: #d97706;
+      stroke-dasharray: 7 5;
+      stroke-width: 2.5;
+    }
+
+    .svg-symmetry {
+      fill: none;
+      stroke: #6366f1;
+      stroke-dasharray: 7 5;
+      stroke-width: 3;
+    }
+
+    .svg-arc {
+      fill: none;
+      stroke: #d97706;
+      stroke-width: 3;
+    }
+
+    .svg-arc-strong {
+      fill: none;
+      stroke: #d97706;
+      stroke-linecap: round;
+      stroke-width: 7;
+    }
+
+    .svg-circle {
+      fill: #e6f4ea;
+      fill-opacity: 0.65;
+      stroke: currentColor;
+      stroke-width: 3;
+    }
+
+    .svg-shape {
+      fill: #e6f4ea;
+      stroke: currentColor;
+      stroke-linejoin: round;
+      stroke-width: 3;
+    }
+
+    .svg-shape-light {
+      fill: #fef3c7;
+      fill-opacity: 0.75;
+      stroke: #d97706;
+      stroke-linejoin: round;
+      stroke-width: 2.5;
+    }
+
+    .svg-fill-dark {
+      fill: #007A33;
+      stroke: #005724;
+      stroke-width: 1;
+    }
+
+    .svg-fill-light {
+      fill: #ffffff;
+      stroke: #005724;
+      stroke-width: 1;
+    }
+
+    .svg-point {
+      fill: #d97706;
+    }
+
+    .svg-angle-box {
+      fill: none;
+      stroke: #d97706;
+      stroke-width: 2;
+    }
+
+    .svg-heading {
+      fill: #005724;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .svg-label {
+      fill: #334155;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .svg-text-small {
+      fill: #64748b;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+      font-size: 14px;
+    }
+
+    .svg-quadrant {
+      fill: #007A33;
+      font-size: 30px;
+      font-weight: 800;
+      opacity: 0.65;
+    }
+
+    .formula-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      border: 1px solid #d1e7dd;
+      border-radius: 1rem;
+      background: #ffffff;
+      padding: 0.75rem;
+      color: #475569;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    .formula-card strong {
+      color: #005724;
+    }
+
+    /* BLOQUES COMUNES */
+    .section-number {
+      border-radius: 0.75rem;
+      background: #007A33;
+      padding: 0.375rem 0.875rem;
+      color: #ffffff;
+      font-size: 1.125rem;
+      font-weight: 800;
+    }
+
+    .section-number-amber {
+      border-radius: 0.75rem;
+      background: #d97706;
+      padding: 0.375rem 0.875rem;
+      color: #ffffff;
+      font-size: 1.125rem;
+      font-weight: 800;
+    }
+
+    .section-title {
+      color: #1e293b;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .theory-box {
+      margin-bottom: 2rem;
+      border-left: 4px solid #007A33;
+      border-radius: 0 1rem 1rem 0;
+      background: #e6f4ea;
+      padding: 1.25rem;
+      color: #475569;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .theory-box p + p {
+      margin-top: 0.75rem;
+    }
+
+    .theory-box ul {
+      margin-top: 0.75rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .theory-title {
+      margin-bottom: 0.75rem;
+      color: #005724;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .nav-link {
+      border-radius: 0.5rem;
+      background: #f1f5f9;
+      padding: 0.375rem 0.75rem;
+      color: #334155;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .nav-link:hover {
+      background: #007A33;
+      color: #ffffff;
+    }
+
+    /* INTEGRACIÓN CON LA WEB PRINCIPAL */
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+  </style>
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link rel="stylesheet" href="/css/base.css">
+</head>
+
+
+<body>
+
+  <!-- ENLACE DE ACCESIBILIDAD -->
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+
+  <!-- BANNER PRINCIPAL -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- MENÚ PRINCIPAL -->
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span>
+              Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-principal" class="topic-page">
+
+    <div class="topic-shell">
+
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/matematicas6/">Matemáticas</a></li>
+          <li aria-current="page">Geometría</li>
+        </ol>
+      </nav>
+
+
+      <!-- PORTADA DE LA SITUACIÓN DE APRENDIZAJE -->
+      <section class="bg-gradient-to-r from-junta-dark via-junta to-junta-accent text-white rounded-3xl p-8 md:p-12 mb-10 shadow-lg relative overflow-hidden">
+
+        <div class="absolute -right-8 -bottom-12 opacity-10 text-white font-extrabold text-8xl sm:text-9xl select-none text-heading">
+          △ ○ □
+        </div>
+
+        <div class="relative z-20 max-w-3xl md:pr-40 lg:pr-52">
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-heading leading-tight mb-4">
+            8. GEOMETRÍA PLANA Y ESPACIAL
+          </h1>
+
+          <p class="text-emerald-100 text-base md:text-lg leading-relaxed text-justify">
+            Aprende a orientarte mediante planos, cuadrículas, coordenadas y escalas;
+            analiza ángulos, simetrías y construcciones geométricas; estudia los
+            elementos y centros de los triángulos, aplica el teorema de Pitágoras
+            y calcula perímetros, áreas y volúmenes en situaciones reales.
+          </p>
+        </div>
+
+        <img
+          src="/img/tomatito/tomatito-geometria.png"
+          alt=""
+          class="relative z-10 block w-52 sm:w-64 h-auto object-contain mx-auto mt-6 pointer-events-none select-none md:absolute md:right-[60px] lg:right-[80px] md:bottom-0 md:w-80 lg:w-96 md:mx-0 md:mt-0"
+        >
+
+      </section>
+
+
+      <!-- ÍNDICE DE NAVEGACIÓN -->
+      <nav class="bg-white rounded-2xl p-5 mb-10 shadow-sm border border-emerald-100">
+
+        <h3 class="text-xs font-bold uppercase tracking-wider text-junta mb-3 flex items-center gap-2">
+          <span>📍</span>
+          Contenidos de la Situación de Aprendizaje
+        </h3>
+
+        <div class="flex flex-wrap gap-2 text-xs md:text-sm">
+          <a class="nav-link" href="#sec-1" onclick="scrollToSec('sec-1', event)">8.1 Escalas</a>
+          <a class="nav-link" href="#sec-2" onclick="scrollToSec('sec-2', event)">8.2 Coordenadas</a>
+          <a class="nav-link" href="#sec-3" onclick="scrollToSec('sec-3', event)">8.3 Ángulos y transformaciones</a>
+          <a class="nav-link" href="#sec-4" onclick="scrollToSec('sec-4', event)">8.4 Puntos, líneas y curvas</a>
+          <a class="nav-link" href="#sec-5" onclick="scrollToSec('sec-5', event)">8.5 Figuras planas</a>
+          <a class="nav-link" href="#sec-6" onclick="scrollToSec('sec-6', event)">8.6 Cuerpos geométricos</a>
+          <a class="nav-link" href="#sec-7" onclick="scrollToSec('sec-7', event)">8.7 Perímetros y áreas</a>
+
+          <a
+            class="px-3 py-1.5 bg-editorial-amberBg text-editorial-amber hover:bg-amber-600 hover:text-white font-bold rounded-lg transition"
+            href="#sec-8"
+            onclick="scrollToSec('sec-8', event)"
+          >
+            8.8 Problemas y desafíos
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-emerald-100 text-junta-dark hover:bg-junta hover:text-white rounded-lg transition font-bold"
+            href="#sec-repaso"
+            onclick="scrollToSec('sec-repaso', event)"
+          >
+            🔄 Repasamos lo aprendido
+          </a>
+
+          <a
+            class="px-3 py-1.5 bg-indigo-100 text-indigo-800 hover:bg-indigo-600 hover:text-white rounded-lg transition font-bold"
+            href="#sec-diana"
+            onclick="scrollToSec('sec-diana', event)"
+          >
+            🎯 Autoevaluación
+          </a>
+        </div>
+
+      </nav>
+
+
+      <div class="space-y-12 topic-content">
+
+        <!-- SECCIÓN 8.1 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-1">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.1</span>
+            <h2 class="section-title">Localización, desplazamientos y escalas</h2>
+          </div>
+
+          <div class="theory-box">
+            <h3 class="theory-title">Orientación espacial y escala gráfica</h3>
+
+            <p>
+              Para orientarnos sobre un plano o mapa representamos el espacio mediante
+              un sistema de referencia o una cuadrícula. La <strong>escala</strong>
+              relaciona las medidas del dibujo con las medidas reales.
+            </p>
+
+            <ul>
+              <li><strong>Escala numérica:</strong> expresa la relación mediante dos números, por ejemplo 1:100 000.</li>
+              <li><strong>Escala gráfica:</strong> utiliza una barra dividida en segmentos con su equivalencia real.</li>
+            </ul>
+
+            
+<div class="svg-card">
+  <h4 class="svg-title">Escala gráfica y escala numérica</h4>
+  <svg aria-label="Ejemplo de escala gráfica donde un centímetro representa cinco kilómetros"
+       class="geometry-svg" role="img" viewBox="0 0 720 220">
+    <text class="svg-heading" text-anchor="middle" x="360" y="35">Escala 1 : 500 000</text>
+    <rect class="svg-fill-dark" height="42" width="90" x="135" y="75"></rect>
+    <rect class="svg-fill-light" height="42" width="90" x="225" y="75"></rect>
+    <rect class="svg-fill-dark" height="42" width="90" x="315" y="75"></rect>
+    <rect class="svg-fill-light" height="42" width="90" x="405" y="75"></rect>
+    <rect class="svg-fill-dark" height="42" width="90" x="495" y="75"></rect>
+    <g class="svg-text-small">
+      <text text-anchor="middle" x="135" y="140">0</text>
+      <text text-anchor="middle" x="225" y="140">5 km</text>
+      <text text-anchor="middle" x="315" y="140">10 km</text>
+      <text text-anchor="middle" x="405" y="140">15 km</text>
+      <text text-anchor="middle" x="495" y="140">20 km</text>
+      <text text-anchor="middle" x="585" y="140">25 km</text>
+    </g>
+    <line class="svg-line-strong" x1="225" x2="315" y1="178" y2="178"></line>
+    <text class="svg-text-small" text-anchor="middle" x="270" y="205">1 cm en el mapa = 5 km reales</text>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class="text-sm font-medium text-slate-800 leading-relaxed text-justify">
+En un mapa oficial de Andalucía elaborado a escala 1:200 000, la distancia en línea recta entre dos municipios de la Vega de Granada mide exactamente 8,5 cm. ¿Cuál es la distancia real que separa a ambas localidades expresada en kilómetros?
+</p>
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class="text-sm font-medium text-slate-800 leading-relaxed text-justify">
+Un plano del Parque Natural de Cazorla, Segura y Las Villas está diseñado a escala 1:50 000. Si una ruta senderista tiene una longitud real de 14,5 km, ¿cuántos centímetros medirá dicha ruta sobre el plano?
+</p>
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Un grupo de escolares analiza un mapa turístico de Córdoba a escala 1:10 000. Parten de la Mezquita-Catedral y caminan 4 cm hacia el norte sobre el mapa, luego 2,5 cm hacia el este y finalmente 1,5 cm hacia el sur para llegar al Palacio de Viana.
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> ¿Cuántos centímetros han recorrido en total sobre el mapa?</li>
+<li><strong>b)</strong> ¿A cuántos metros reales equivale ese desplazamiento total?</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Observa la escala gráfica de un mapa regional donde un segmento de 2 cm representa una distancia real de 10 km.
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Determina la escala numérica correspondiente a dicho mapa.</li>
+<li><strong>b)</strong> Si la distancia en el mapa entre Antequera y Ronda es de 11,2 cm, calcula la distancia real en kilómetros.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class="text-sm font-medium text-slate-800 leading-relaxed text-justify">
+En el plano de un trazado ferroviario entre Sevilla y Cádiz a escala 1:250 000, dos estaciones distan entre sí 18,4 cm. Un tren de alta velocidad recorre esa distancia a una velocidad media de 180 km/h. ¿Cuántos minutos tardará el tren en realizar ese trayecto?
+</p>
+          </div>
+    
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 md:col-span-2">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-4 leading-relaxed text-justify">
+Observa este mapa esquemático de la península ibérica. La cuadrícula funciona como un sistema de referencia: las columnas se identifican con letras mayúsculas y las filas con números. Utiliza también la escala gráfica para interpretar distancias aproximadas.
+</p>
+<div class="svg-card mb-4">
+  <svg aria-label="Mapa esquemático de la península ibérica sobre una cuadrícula de letras y números con escala gráfica"
+       class="geometry-svg" role="img" viewBox="0 0 820 570">
+    <defs>
+      <pattern height="65" id="grid-iberia" patternUnits="userSpaceOnUse" width="80">
+        <rect fill="#ffffff" height="65" width="80"></rect>
+        <path d="M80 0 H0 V65" fill="none" stroke="#cbd5e1" stroke-width="1.2"></path>
+      </pattern>
+    </defs>
+    <rect fill="url(#grid-iberia)" height="390" stroke="#64748b" stroke-width="2" width="640" x="70" y="60"></rect>
+    <g class="svg-label" text-anchor="middle">
+      <text x="110" y="478">A</text><text x="190" y="478">B</text><text x="270" y="478">C</text><text x="350" y="478">D</text>
+      <text x="430" y="478">E</text><text x="510" y="478">F</text><text x="590" y="478">G</text><text x="670" y="478">H</text>
+      <text x="45" y="98">1</text><text x="45" y="163">2</text><text x="45" y="228">3</text>
+      <text x="45" y="293">4</text><text x="45" y="358">5</text><text x="45" y="423">6</text>
+    </g>
+    <polygon fill="#e6f4ea"
+      points="150,135 178,116 212,104 250,97 300,94 350,99 398,104 445,101 492,97 540,104 586,122 626,148 652,176 651,206 640,236 626,270 612,304 592,340 568,374 540,400 506,419 470,430 434,429 402,419 375,404 349,401 323,410 292,420 258,419 226,407 196,386 171,358 152,325 138,289 129,252 122,216 121,185 127,160"
+      stroke="#007A33" stroke-width="4"></polygon>
+    <g>
+      <circle cx="175" cy="150" fill="#d97706" r="7"></circle><text class="svg-text-small" x="189" y="145">Cabo Finisterre</text>
+      <circle cx="420" cy="245" fill="#d97706" r="7"></circle><text class="svg-text-small" x="433" y="240">Madrid</text>
+      <circle cx="520" cy="368" fill="#d97706" r="7"></circle><text class="svg-text-small" x="533" y="363">Sierra Nevada</text>
+      <circle cx="590" cy="145" fill="#d97706" r="7"></circle><text class="svg-text-small" x="603" y="140">Pirineos</text>
+      <circle cx="295" cy="365" fill="#d97706" r="7"></circle><text class="svg-text-small" x="308" y="360">Sevilla</text>
+    </g>
+    <g transform="translate(735,92)">
+      <line class="svg-line-strong" x1="0" x2="0" y1="35" y2="-25"></line>
+      <polygon fill="#007A33" points="0,-40 -8,-20 8,-20"></polygon>
+      <text class="svg-label" text-anchor="middle" x="0" y="-48">N</text>
+    </g>
+    <g transform="translate(535,490)">
+      <text class="svg-text-small" x="0" y="-12">Escala gráfica</text>
+      <rect fill="#007A33" height="18" width="70" x="0" y="0"></rect>
+      <rect fill="#ffffff" height="18" stroke="#005724" width="70" x="70" y="0"></rect>
+      <rect fill="#007A33" height="18" width="70" x="140" y="0"></rect>
+      <text class="svg-text-small" text-anchor="middle" x="0" y="42">0</text>
+      <text class="svg-text-small" text-anchor="middle" x="70" y="42">100 km</text>
+      <text class="svg-text-small" text-anchor="middle" x="140" y="42">200 km</text>
+      <text class="svg-text-small" text-anchor="middle" x="210" y="42">300 km</text>
+    </g>
+  </svg>
+</div>
+
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> ¿En qué casilla de la cuadrícula se localizan aproximadamente Madrid y Sierra Nevada?</li>
+<li><strong>b)</strong> ¿Qué elemento se encuentra aproximadamente en la casilla B2? ¿Y cuál ocupa la zona G2?</li>
+<li><strong>c)</strong> Si partes de Madrid, ¿en qué dirección general tendrías que desplazarte para llegar a Sevilla? ¿Y para llegar a los Pirineos?</li>
+<li><strong>d)</strong> Mide con una regla la distancia aproximada entre Madrid y Sierra Nevada en el dibujo y utiliza la escala gráfica para estimar la distancia real.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 7 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 md:col-span-2">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 7
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Crea en tu cuaderno un mapa propio inspirado en el ejercicio anterior. Puede representar una isla imaginaria, un parque natural, una ciudad o una comarca.
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dibuja una cuadrícula de 8 columnas y 6 filas. Nombra las columnas de A a H y las filas del 1 al 6.</li>
+<li><strong>b)</strong> Dibuja el contorno de tu territorio y sitúa al menos seis elementos diferentes: poblaciones, ríos, montes, carreteras, puertos, monumentos u otros lugares de interés.</li>
+<li><strong>c)</strong> Añade una escala gráfica en la parte inferior derecha e indica cuántos kilómetros representa cada segmento.</li>
+<li><strong>d)</strong> Escribe cuatro preguntas para que un compañero interprete tu mapa utilizando las casillas de la cuadrícula, las direcciones y la escala.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.2 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-2">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.2</span>
+            <h2 class="section-title">Ejes cartesianos y cuadrantes</h2>
+          </div>
+
+          <div class="theory-box">
+            <h3 class="theory-title">El sistema de coordenadas cartesianas</h3>
+            <ul>
+              <li><strong>Eje X o de abscisas:</strong> recta horizontal.</li>
+              <li><strong>Eje Y o de ordenadas:</strong> recta vertical.</li>
+              <li><strong>Origen O(0, 0):</strong> punto en el que se cruzan los dos ejes.</li>
+              <li><strong>Coordenadas (x, y):</strong> indican primero la posición horizontal y después la vertical.</li>
+            </ul>
+
+            
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+  <div class="svg-card">
+    <h4 class="svg-title">Plano cartesiano y sus cuadrantes</h4>
+    <svg aria-label="Plano cartesiano con los cuatro cuadrantes" class="geometry-svg" role="img" viewBox="0 0 620 420">
+      <defs>
+        <pattern height="30" id="grid-cartesian" patternUnits="userSpaceOnUse" width="30">
+          <path d="M30 0 L0 0 0 30" fill="none" stroke="#d8e8dd" stroke-width="1"></path>
+        </pattern>
+      </defs>
+      <rect fill="url(#grid-cartesian)" height="340" width="540" x="40" y="30"></rect>
+      <line class="svg-line-strong" x1="55" x2="570" y1="200" y2="200"></line>
+      <line class="svg-line-strong" x1="310" x2="310" y1="360" y2="40"></line>
+      <text class="svg-label" x="570" y="188">X</text><text class="svg-label" x="324" y="48">Y</text>
+      <text class="svg-text-small" x="322" y="218">O</text>
+      <text class="svg-quadrant" x="440" y="105">I</text><text class="svg-quadrant" x="175" y="105">II</text>
+      <text class="svg-quadrant" x="175" y="305">III</text><text class="svg-quadrant" x="440" y="305">IV</text>
+      <g class="svg-text-small">
+        <text x="420" y="125">(+ , +)</text><text x="145" y="125">(- , +)</text>
+        <text x="145" y="325">(- , -)</text><text x="420" y="325">(+ , -)</text>
+      </g>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <h4 class="svg-title">Ejemplo de localización de puntos</h4>
+    <svg aria-label="Plano cartesiano con cuatro puntos de ejemplo" class="geometry-svg" role="img" viewBox="0 0 620 420">
+      <rect fill="#f8fafc" height="340" width="540" x="40" y="30"></rect>
+      <line class="svg-line-strong" x1="55" x2="570" y1="200" y2="200"></line>
+      <line class="svg-line-strong" x1="310" x2="310" y1="360" y2="40"></line>
+      <g class="svg-point">
+        <circle cx="430" cy="80" r="7"></circle><circle cx="220" cy="140" r="7"></circle>
+        <circle cx="130" cy="320" r="7"></circle><circle cx="460" cy="290" r="7"></circle>
+      </g>
+      <g class="svg-label">
+        <text x="444" y="73">A(4, 4)</text><text x="150" y="132">B(-3, 2)</text>
+        <text x="68" y="315">C(-6, -4)</text><text x="474" y="285">D(5, -3)</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Escribe las coordenadas cartesianas (x, y) de los siguientes puntos e indica en qué cuadrante se sitúan:
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Punto A: 4 unidades a la derecha del origen y 5 unidades hacia arriba.</li>
+<li><strong>b)</strong> Punto B: 3 unidades a la izquierda del origen y 2 unidades hacia arriba.</li>
+<li><strong>c)</strong> Punto C: 6 unidades a la izquierda del origen y 4 unidades hacia abajo.</li>
+<li><strong>d)</strong> Punto D: 5 unidades a la derecha del origen y 3 unidades hacia abajo.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Dibuja unos ejes cartesianos en papel cuadriculado y representa los siguientes puntos. Indica el cuadrante al que pertenece cada uno:
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> A(2, 6)</li>
+<li><strong>b)</strong> B(-4, 3)</li>
+<li><strong>c)</strong> C(-5, -2)</li>
+<li><strong>d)</strong> D(3, -4)</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Dados los puntos A(1, 2), B(5, 2), C(5, 6) y D(1, 6):
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Representa los cuatro puntos en un plano cartesiano y únelos en orden alfabético cerrado.</li>
+<li><strong>b)</strong> ¿Qué figura geométrica plana se obtiene?</li>
+<li><strong>c)</strong> ¿En qué cuadrante se encuentra completamente ubicada esta figura?</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Un barco pesquero parte del puerto ubicado en el origen O(0, 0). Se desplaza 4 unidades a la izquierda y 6 hacia arriba hasta un punto A. Luego se desplaza 7 unidades a la derecha y 8 hacia abajo hasta el punto B.
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula las coordenadas de la posición final B.</li>
+<li><strong>b)</strong> Indica en qué cuadrante se encuentra el barco en su posición final B.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class="text-sm font-medium text-slate-800 leading-relaxed text-justify">
+Determina las coordenadas del vértice D que falta para completar un rectángulo cuyos tres primeros vértices son A(-3, 1), B(2, 1) y C(2, 5). Dibuja la figura en el plano cartesiano.
+</p>
+          </div>
+    
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+Analiza las siguientes coordenadas sin dibujarlas y determina el cuadrante basándote en sus signos:
+</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> A(-12, 45)</li>
+<li><strong>b)</strong> B(34, -18)</li>
+<li><strong>c)</strong> C(-8, -50)</li>
+<li><strong>d)</strong> D(15, 20)</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.3 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-3">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.3</span>
+            <h2 class="section-title">Ángulos, medición y transformaciones geométricas</h2>
+          </div>
+
+          <!-- ÁNGULOS -->
+          <div class="theory-box">
+            <h3 class="theory-title">Los ángulos y su medición</h3>
+            <p>
+              Un ángulo es la región comprendida entre dos semirrectas que tienen un origen
+              común llamado <strong>vértice</strong>. Se mide en grados sexagesimales con un transportador.
+            </p>
+            <p>
+              Dos ángulos son <strong>complementarios</strong> cuando suman 90° y
+              <strong>suplementarios</strong> cuando suman 180°.
+            </p>
+            
+<div class="svg-card mt-5">
+  <h4 class="svg-title">Clasificación visual de los ángulos</h4>
+  <svg aria-label="Ejemplos de ángulo agudo, recto, obtuso, llano y completo" class="geometry-svg" role="img" viewBox="0 0 920 250">
+    <g transform="translate(95,145)">
+      <line class="svg-line-strong" x1="0" x2="75" y1="0" y2="0"></line><line class="svg-line-strong" x1="0" x2="58" y1="0" y2="-50"></line>
+      <path class="svg-arc" d="M35 0 A35 35 0 0 0 26 -23"></path><text class="svg-label" x="15" y="55">Agudo</text><text class="svg-text-small" x="15" y="75">&lt; 90°</text>
+    </g>
+    <g transform="translate(275,145)">
+      <line class="svg-line-strong" x1="0" x2="75" y1="0" y2="0"></line><line class="svg-line-strong" x1="0" x2="0" y1="0" y2="-75"></line>
+      <rect class="svg-angle-box" height="25" width="25" x="0" y="-25"></rect><text class="svg-label" x="10" y="55">Recto</text><text class="svg-text-small" x="10" y="75">90°</text>
+    </g>
+    <g transform="translate(455,145)">
+      <line class="svg-line-strong" x1="0" x2="75" y1="0" y2="0"></line><line class="svg-line-strong" x1="0" x2="-45" y1="0" y2="-55"></line>
+      <path class="svg-arc" d="M35 0 A35 35 0 0 0 -22 -27"></path><text class="svg-label" x="-5" y="55">Obtuso</text><text class="svg-text-small" x="-5" y="75">90°–180°</text>
+    </g>
+    <g transform="translate(645,145)">
+      <line class="svg-line-strong" x1="-70" x2="70" y1="0" y2="0"></line><path class="svg-arc" d="M-45 0 A45 45 0 0 1 45 0"></path>
+      <text class="svg-label" x="-15" y="55">Llano</text><text class="svg-text-small" x="-15" y="75">180°</text>
+    </g>
+    <g transform="translate(825,120)">
+      <circle class="svg-circle" cx="0" cy="0" r="48"></circle><path class="svg-arc" d="M0 -48 A48 48 0 1 1 -2 -48"></path>
+      <text class="svg-label" x="-32" y="80">Completo</text><text class="svg-text-small" x="-15" y="100">360°</text>
+    </g>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Clasifica los siguientes ángulos:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 45°</li>
+<li><strong>b)</strong> 90°</li>
+<li><strong>c)</strong> 135°</li>
+<li><strong>d)</strong> 180°</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Utiliza el transportador para dibujar e indicar el tipo:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 30°</li>
+<li><strong>b)</strong> 75°</li>
+<li><strong>c)</strong> 120°</li>
+<li><strong>d)</strong> 150°</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Observa las agujas de un reloj y calcula el ángulo exacto:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 3:00</li>
+<li><strong>b)</strong> 1:00</li>
+<li><strong>c)</strong> 4:00</li>
+<li><strong>d)</strong> 6:00</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula el ángulo que falta:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Complementario de 35°.</li>
+<li><strong>b)</strong> Complementario de 60°.</li>
+<li><strong>c)</strong> Suplementario de 110°.</li>
+<li><strong>d)</strong> Suplementario de 45°.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <!-- TRANSFORMACIONES -->
+          <div class="theory-box">
+            <h3 class="theory-title">Transformaciones geométricas sencillas</h3>
+            <ul>
+              <li><strong>Traslación:</strong> desplaza una figura sin modificar su forma ni tamaño.</li>
+              <li><strong>Giro:</strong> rota una figura alrededor de un punto fijo.</li>
+              <li><strong>Simetría axial:</strong> refleja una figura respecto a un eje.</li>
+              <li><strong>Semejanza:</strong> conserva la forma, pero cambia proporcionalmente el tamaño.</li>
+            </ul>
+            
+<div class="svg-card mt-5">
+  <h4 class="svg-title">Traslación, giro, simetría y semejanza</h4>
+  <svg aria-label="Ejemplos de cuatro transformaciones geométricas" class="geometry-svg" role="img" viewBox="0 0 920 270">
+    <g transform="translate(60,55)">
+      <polygon class="svg-shape" points="0,100 45,20 90,100"></polygon>
+      <polygon class="svg-shape-light" points="105,100 150,20 195,100"></polygon>
+      <line class="svg-line" x1="85" x2="112" y1="55" y2="55"></line><text class="svg-label" x="58" y="145">Traslación</text>
+    </g>
+    <g transform="translate(285,55)">
+      <rect class="svg-shape" height="75" width="75" x="0" y="25"></rect>
+      <rect class="svg-shape-light" height="75" width="75" x="105" y="25" transform="rotate(45 142 62)"></rect>
+      <path class="svg-arc" d="M80 45 Q100 20 120 45"></path><text class="svg-label" x="65" y="145">Giro</text>
+    </g>
+    <g transform="translate(490,55)">
+      <polygon class="svg-shape" points="0,100 45,20 90,100"></polygon>
+      <line class="svg-symmetry" x1="112" x2="112" y1="5" y2="115"></line>
+      <polygon class="svg-shape-light" points="224,100 179,20 134,100"></polygon><text class="svg-label" x="60" y="145">Simetría axial</text>
+    </g>
+    <g transform="translate(725,55)">
+      <polygon class="svg-shape" points="0,90 35,30 70,90"></polygon>
+      <polygon class="svg-shape-light" points="80,105 135,10 190,105"></polygon><text class="svg-label" x="45" y="145">Semejanza</text>
+    </g>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja un triángulo y realiza las traslaciones:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Trasládalo 4 cm a la derecha.</li>
+<li><strong>b)</strong> Trasládalo 3 cm hacia arriba.</li>
+<li><strong>c)</strong> ¿Ha cambiado el tamaño o la forma del triángulo?</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja un cuadrado de 5 cm de lado:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dibuja el cuadrado girado a la derecha.</li>
+<li><strong>b)</strong> Dibuja el cuadrado girado a la izquierda.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja un eje de simetría y completa figuras simétricas:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un corazón.</li>
+<li><strong>b)</strong> Una estrella.</li>
+<li><strong>c)</strong> Una mariposa.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 7 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 7
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja un triángulo de lados 3 cm, 4 cm y 5 cm:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dibuja otro semejante con lados del doble.</li>
+<li><strong>b)</strong> ¿Tienen la misma forma?</li>
+<li><strong>c)</strong> ¿Son iguales sus ángulos?</li>
+<li><strong>d)</strong> ¿Qué relación hay entre los lados?</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 8 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 8
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Indica qué transformación se ha aplicado:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Una figura girada 180° alrededor de un punto.</li>
+<li><strong>b)</strong> Una figura igual pero más grande.</li>
+<li><strong>c)</strong> Una figura que se ha movido hacia la derecha.</li>
+<li><strong>d)</strong> Una figura reflejada como en un espejo.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 9 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 md:col-span-2">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 9
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-4 leading-relaxed text-justify">
+Completa cada cenefa dibujando, al otro lado del eje, la parte que falta para que el diseño sea simétrico.
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div class="svg-card">
+    <p class="text-xs font-bold text-junta-dark mb-2">a) Corazón</p>
+    <svg aria-label="Mitad de un corazón para completar por simetría" class="geometry-svg" role="img" viewBox="0 0 360 130">
+      <line class="svg-symmetry" x1="180" x2="180" y1="10" y2="120"></line>
+      <path class="svg-line-strong" d="M180 92 C163 112 130 108 118 83 C108 62 122 43 143 43 C161 43 172 54 180 66"></path>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <p class="text-xs font-bold text-junta-dark mb-2">b) Casa</p>
+    <svg aria-label="Mitad de una casa para completar por simetría" class="geometry-svg" role="img" viewBox="0 0 360 130">
+      <line class="svg-symmetry" x1="180" x2="180" y1="10" y2="120"></line>
+      <path class="svg-line-strong" d="M180 96 L180 56 L145 30 L100 56 L100 96 L180 96"></path>
+      <rect class="svg-shape-light" height="28" width="26" x="118" y="68"></rect>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <p class="text-xs font-bold text-junta-dark mb-2">c) Mariposa</p>
+    <svg aria-label="Mitad de una mariposa para completar por simetría" class="geometry-svg" role="img" viewBox="0 0 360 130">
+      <line class="svg-symmetry" x1="180" x2="180" y1="10" y2="120"></line>
+      <line class="svg-line-strong" x1="180" x2="180" y1="40" y2="95"></line>
+      <path class="svg-line-strong" d="M180 57 C160 25 123 28 114 56 C108 78 127 92 152 87 C164 84 172 77 180 70"></path>
+      <path class="svg-line-strong" d="M180 74 C164 82 147 100 152 112 C159 124 173 114 180 100"></path>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <p class="text-xs font-bold text-junta-dark mb-2">d) Gato</p>
+    <svg aria-label="Mitad de la cara de un gato para completar por simetría" class="geometry-svg" role="img" viewBox="0 0 360 130">
+      <line class="svg-symmetry" x1="180" x2="180" y1="10" y2="120"></line>
+      <path class="svg-line-strong" d="M180 92 C166 103 145 102 130 93 C114 82 110 60 118 41 L138 18 L158 40 C170 39 176 44 180 50"></path>
+      <circle class="svg-point" cx="150" cy="63" r="3.5"></circle>
+    </svg>
+  </div>
+</div>
+
+          </div>
+    
+          </div>
+
+          <!-- SUMAS Y RESTAS -->
+          <div class="theory-box">
+            <h3 class="theory-title">Sumas y restas de ángulos</h3>
+            <p>
+              Para medir ángulos con mayor precisión utilizamos el sistema sexagesimal:
+              <strong>1 grado (°) = 60 minutos (′)</strong> y
+              <strong>1 minuto (′) = 60 segundos (″)</strong>.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                <strong class="text-junta-dark">Suma con transformación</strong>
+                <p class="text-xs mt-2">35° 48′ 40″ + 22° 25′ 35″</p>
+                <p class="text-xs mt-1">= 57° 73′ 75″ = 58° 14′ 15″</p>
+              </div>
+
+              <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                <strong class="text-junta-dark">Resta con préstamo</strong>
+                <p class="text-xs mt-2">72° 15′ 20″ − 38° 42′ 45″</p>
+                <p class="text-xs mt-1">Resultado: 33° 32′ 35″</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 10 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 10
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula las siguientes sumas de ángulos:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 25° 18′ + 14° 27′</li>
+<li><strong>b)</strong> 38° 45′ + 27° 35′</li>
+<li><strong>c)</strong> 42° 36′ 28″ + 19° 35′ 47″</li>
+<li><strong>d)</strong> 75° 52′ 55″ + 28° 18′ 36″</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 11 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 11
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula las siguientes restas de ángulos:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 68° 40′ − 24° 15′</li>
+<li><strong>b)</strong> 90° − 37° 28′</li>
+<li><strong>c)</strong> 74° 12′ 20″ − 35° 48′ 45″</li>
+<li><strong>d)</strong> 120° 5′ 10″ − 58° 37′ 52″</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 12 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 12
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula el ángulo que falta:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 32° 25′ + ___ = 90°</li>
+<li><strong>b)</strong> 118° 40′ + ___ = 180°</li>
+<li><strong>c)</strong> 45° 18′ 30″ + ___ = 100°</li>
+<li><strong>d)</strong> ___ − 26° 37′ = 52° 15′</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 13 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 13
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Resuelve las situaciones:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dos giros consecutivos miden 38° 25′ y 46° 50′. ¿Cuánto se ha girado en total?</li>
+<li><strong>b)</strong> De un ángulo llano se ha recorrido 127° 35′. ¿Qué ángulo queda?</li>
+<li><strong>c)</strong> Un robot gira 25° 40′, luego 18° 55′ y después 32° 30′. Calcula el giro total.</li>
+<li><strong>d)</strong> Una abertura de 135° se reduce en 47° 38′ 20″. Calcula la nueva abertura.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <!-- BISECTRIZ Y MEDIATRIZ -->
+          <div class="theory-box">
+            <h3 class="theory-title">Bisectriz de un ángulo y mediatriz de un segmento</h3>
+
+            <p>
+              La <strong>bisectriz</strong> es la semirrecta que divide un ángulo en dos ángulos iguales.
+              Cualquier punto situado sobre ella está a la misma distancia de los dos lados del ángulo.
+            </p>
+
+            <p>
+              La <strong>mediatriz</strong> es la recta perpendicular a un segmento que pasa por su punto medio.
+              Cualquier punto de la mediatriz está a la misma distancia de los dos extremos del segmento.
+            </p>
+
+            
+<div class="svg-card mt-5">
+  <svg aria-label="Comparación entre la bisectriz de un ángulo y la mediatriz de un segmento" class="geometry-svg" role="img" viewBox="0 0 820 310">
+    <g transform="translate(70,55)">
+      <text class="svg-heading" x="95" y="0">Bisectriz</text>
+      <line class="svg-line-strong" x1="40" x2="250" y1="190" y2="190"></line>
+      <line class="svg-line-strong" x1="40" x2="205" y1="190" y2="45"></line>
+      <line class="svg-symmetry" x1="40" x2="245" y1="190" y2="90"></line>
+      <text class="svg-text-small" x="85" y="218">divide el ángulo en dos partes iguales</text>
+    </g>
+    <line class="svg-line" x1="410" x2="410" y1="35" y2="275"></line>
+    <g transform="translate(470,55)">
+      <text class="svg-heading" x="90" y="0">Mediatriz</text>
+      <line class="svg-line-strong" x1="20" x2="270" y1="175" y2="175"></line>
+      <circle class="svg-point" cx="20" cy="175" r="6"></circle><circle class="svg-point" cx="270" cy="175" r="6"></circle>
+      <line class="svg-symmetry" x1="145" x2="145" y1="35" y2="250"></line>
+      <rect class="svg-angle-box" height="22" width="22" x="145" y="153"></rect>
+      <text class="svg-text-small" x="72" y="275">perpendicular por el punto medio del segmento</text>
+    </g>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+          <!-- EJERCICIO 14 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 14
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Responde sobre la bisectriz:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> ¿En cuántos ángulos divide al ángulo original?</li>
+<li><strong>b)</strong> ¿Cuánto mide cada parte de un ángulo de 84°?</li>
+<li><strong>c)</strong> ¿Cuánto mide cada parte de un ángulo de 135°?</li>
+<li><strong>d)</strong> Dibuja la bisectriz de un ángulo de 70°.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 15 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 15
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Responde sobre la mediatriz:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> ¿Por qué punto del segmento debe pasar?</li>
+<li><strong>b)</strong> ¿Qué ángulo forma con el segmento?</li>
+<li><strong>c)</strong> Si AB mide 12 cm, ¿a qué distancia de A y B está su punto medio?</li>
+<li><strong>d)</strong> Dibuja la mediatriz de un segmento de 6 cm.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 16 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 16
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Construye con regla y compás:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> La bisectriz de un ángulo de 60°.</li>
+<li><strong>b)</strong> La bisectriz de un ángulo de 110°.</li>
+<li><strong>c)</strong> La mediatriz de un segmento de 8 cm.</li>
+<li><strong>d)</strong> La mediatriz de un segmento de 11 cm.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 17 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 17
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Elige bisectriz o mediatriz en cada situación:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dividir exactamente en dos partes un ángulo de una parcela.</li>
+<li><strong>b)</strong> Colocar una fuente a igual distancia de dos puertas A y B.</li>
+<li><strong>c)</strong> Trazar la dirección que queda exactamente a mitad entre dos calles que forman un ángulo.</li>
+<li><strong>d)</strong> Localizar puntos que estén a la misma distancia de los extremos de un puente.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.4 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-4">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.4</span>
+            <h2 class="section-title">Elementos geométricos básicos: puntos, líneas y curvas</h2>
+          </div>
+
+          <div class="theory-box">
+            <h3 class="theory-title">Definición de elementos fundamentales</h3>
+            <ul>
+              <li><strong>Punto:</strong> lugar exacto representado mediante una marca y una letra.</li>
+              <li><strong>Recta:</strong> línea sin principio ni fin.</li>
+              <li><strong>Semirrecta:</strong> tiene un origen, pero no tiene final.</li>
+              <li><strong>Segmento:</strong> está limitado por dos puntos extremos.</li>
+              <li><strong>Rectas paralelas:</strong> nunca se cortan.</li>
+              <li><strong>Rectas secantes:</strong> se cortan en un punto.</li>
+              <li><strong>Rectas perpendiculares:</strong> se cortan formando cuatro ángulos rectos.</li>
+            </ul>
+            
+<div class="svg-card mt-5">
+  <h4 class="svg-title">Puntos, rectas, semirrectas, segmentos y curvas</h4>
+  <svg aria-label="Ejemplos de elementos geométricos básicos" class="geometry-svg" role="img" viewBox="0 0 920 390">
+    <g transform="translate(70,70)"><circle class="svg-point" cx="0" cy="0" r="7"></circle><text class="svg-label" x="15" y="5">Punto A</text></g>
+    <g transform="translate(260,70)"><line class="svg-line-strong" x1="-75" x2="75" y1="0" y2="0"></line><text class="svg-label" x="-25" y="35">Recta</text></g>
+    <g transform="translate(505,70)"><circle class="svg-point" cx="-70" cy="0" r="6"></circle><line class="svg-line-strong" x1="-70" x2="80" y1="0" y2="0"></line><text class="svg-label" x="-30" y="35">Semirrecta</text></g>
+    <g transform="translate(760,70)"><circle class="svg-point" cx="-70" cy="0" r="6"></circle><circle class="svg-point" cx="70" cy="0" r="6"></circle><line class="svg-line-strong" x1="-70" x2="70" y1="0" y2="0"></line><text class="svg-label" x="-25" y="35">Segmento</text></g>
+    <g transform="translate(110,205)"><line class="svg-line-strong" x1="-60" x2="60" y1="-25" y2="-25"></line><line class="svg-line-strong" x1="-60" x2="60" y1="25" y2="25"></line><text class="svg-label" x="-35" y="65">Paralelas</text></g>
+    <g transform="translate(330,205)"><line class="svg-line-strong" x1="-65" x2="65" y1="-50" y2="50"></line><line class="svg-line-strong" x1="-65" x2="65" y1="50" y2="-50"></line><text class="svg-label" x="-30" y="85">Secantes</text></g>
+    <g transform="translate(550,205)"><line class="svg-line-strong" x1="-70" x2="70" y1="0" y2="0"></line><line class="svg-line-strong" x1="0" x2="0" y1="-70" y2="70"></line><rect class="svg-angle-box" height="20" width="20" x="0" y="-20"></rect><text class="svg-label" x="-55" y="95">Perpendiculares</text></g>
+    <g transform="translate(760,200)"><path class="svg-line-strong" d="M-75 20 C-30 -60 30 80 75 -10"></path><path class="svg-line-strong" d="M-65 65 C-65 5 65 5 65 65 C65 120 -65 120 -65 65 Z"></path><text class="svg-label" x="-35" y="145">Curvas</text></g>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Identifica el elemento geométrico:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Una línea recta que tiene un origen en P pero no tiene final.</li>
+<li><strong>b)</strong> Un trozo de recta delimitado entre A y B.</li>
+<li><strong>c)</strong> Una línea sin principio ni fin que pasa por dos puntos.</li>
+<li><strong>d)</strong> Dos rectas que se cruzan formando cuatro ángulos rectos.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja en tu cuaderno empleando regla:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dos rectas paralelas r y s separadas 3 cm.</li>
+<li><strong>b)</strong> Dos rectas secantes que se corten en O.</li>
+<li><strong>c)</strong> Un segmento AB de 6 cm.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Traza tres puntos A, B y C:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dibuja todas las rectas posibles que pasen por dos de esos puntos. ¿Cuántas obtienes?</li>
+<li><strong>b)</strong> Une A, B y C mediante segmentos consecutivos cerrados. ¿Qué figura se forma?</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Indica si las calles descritas son paralelas, secantes o perpendiculares:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dos calles rectas que avanzan en la misma dirección y nunca se cruzan.</li>
+<li><strong>b)</strong> Un cruce en forma de cruz perfecta creando cuatro esquinas iguales.</li>
+<li><strong>c)</strong> Dos calles que se unen formando una esquina en diagonal.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.5 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-5">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.5</span>
+            <h2 class="section-title">Figuras de dos dimensiones</h2>
+          </div>
+
+          <!-- POLÍGONOS -->
+          <div class="theory-box">
+            <h3 class="theory-title">Polígonos y sus elementos</h3>
+            <p>
+              Un polígono es una figura plana cerrada formada por segmentos rectos.
+              Sus elementos principales son lados, vértices, ángulos y diagonales.
+              Es regular cuando todos sus lados y ángulos son iguales.
+            </p>
+
+            <p class="mt-3">
+              3: triángulo · 4: cuadrilátero · 5: pentágono · 6: hexágono ·
+              7: heptágono · 8: octógono · 9: eneágono · 10: decágono.
+            </p>
+
+            
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+  <div class="svg-card">
+    <h4 class="svg-title">Elementos de un polígono</h4>
+    <svg aria-label="Pentágono con lados, vértices, ángulos y diagonales" class="geometry-svg" role="img" viewBox="0 0 520 330">
+      <polygon class="svg-shape" points="260,45 430,165 365,285 155,285 90,165"></polygon>
+      <line class="svg-diagonal" x1="260" x2="365" y1="45" y2="285"></line><line class="svg-diagonal" x1="430" x2="155" y1="165" y2="285"></line>
+      <g class="svg-point"><circle cx="260" cy="45" r="6"></circle><circle cx="430" cy="165" r="6"></circle><circle cx="365" cy="285" r="6"></circle><circle cx="155" cy="285" r="6"></circle><circle cx="90" cy="165" r="6"></circle></g>
+      <text class="svg-label" x="280" y="38">vértice</text><text class="svg-label" x="350" y="100">lado</text><text class="svg-label" x="245" y="210">diagonal</text>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <h4 class="svg-title">Clasificación de triángulos</h4>
+    <svg aria-label="Triángulos clasificados por lados y ángulos" class="geometry-svg" role="img" viewBox="0 0 620 360">
+      <text class="svg-heading" text-anchor="middle" x="310" y="30">Según sus lados</text>
+      <g transform="translate(55,60)"><polygon class="svg-shape" points="75,0 0,110 150,110"></polygon><text class="svg-label" x="35" y="140">Equilátero</text></g>
+      <g transform="translate(235,60)"><polygon class="svg-shape" points="75,0 15,110 135,110"></polygon><text class="svg-label" x="38" y="140">Isósceles</text></g>
+      <g transform="translate(415,60)"><polygon class="svg-shape" points="105,5 0,110 150,110"></polygon><text class="svg-label" x="40" y="140">Escaleno</text></g>
+      <text class="svg-heading" text-anchor="middle" x="310" y="235">Según sus ángulos</text>
+      <text class="svg-label" x="80" y="300">Acutángulo</text><text class="svg-label" x="265" y="300">Rectángulo</text><text class="svg-label" x="450" y="300">Obtusángulo</text>
+    </svg>
+  </div>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Completa los datos de los polígonos regulares:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Lados, vértices y ángulos de un pentágono regular.</li>
+<li><strong>b)</strong> Lados, vértices y ángulos de un octógono regular.</li>
+<li><strong>c)</strong> Lados, vértices y ángulos de un decágono regular.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Dibuja un hexágono regular y señala con rojo los vértices, azul los lados, verde los ángulos interiores y dos diagonales con línea discontinua.</p>
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Clasifica los polígonos e indica si son regulares o irregulares:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Polígono de 3 lados de diferente medida.</li>
+<li><strong>b)</strong> Polígono de 6 lados iguales y ángulos de 120°.</li>
+<li><strong>c)</strong> Polígono de 4 lados donde dos miden 8 cm y dos miden 5 cm.</li>
+<li><strong>d)</strong> Polígono de 8 lados iguales y 8 ángulos iguales.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Determina si las afirmaciones son verdaderas o falsas:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un triángulo es un polígono que no tiene ninguna diagonal.</li>
+<li><strong>b)</strong> Un cuadrado es un cuadrilátero irregular porque sus lados forman ángulos de 90°.</li>
+<li><strong>c)</strong> Un polígono regular de 5 lados se llama pentágono regular.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <!-- TRIÁNGULOS -->
+          <div class="theory-box">
+            <h3 class="theory-title">Tipos de triángulos</h3>
+            <p>
+              Según sus lados, los triángulos pueden ser equiláteros, isósceles o escalenos.
+              Según sus ángulos, pueden ser acutángulos, rectángulos u obtusángulos.
+              La suma de sus tres ángulos interiores siempre es 180°.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Clasifica según lados y ángulos:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Lados 5, 5 y 8 cm, y un ángulo de 110°.</li>
+<li><strong>b)</strong> Tres lados de 6 cm y tres ángulos de 60°.</li>
+<li><strong>c)</strong> Lados de 3, 4 y 5 cm, y un ángulo de 90°.</li>
+<li><strong>d)</strong> Lados de 7, 8 y 9 cm, y tres ángulos agudos.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula el ángulo que falta:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Triángulo con ángulos 45° y 65°.</li>
+<li><strong>b)</strong> Triángulo rectángulo con un ángulo agudo de 38°.</li>
+<li><strong>c)</strong> Triángulo isósceles con ángulo obtuso de 120° en el vértice superior; calcula cada uno de los otros dos.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja con regla:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Triángulo rectángulo con base de 4 cm y altura de 3 cm.</li>
+<li><strong>b)</strong> Triángulo equilátero de 5 cm de lado.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 7 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 7
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Responde verdadero o falso justificando:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un triángulo equilátero siempre tiene tres ángulos de 60°, por lo que es acutángulo.</li>
+<li><strong>b)</strong> Un triángulo rectángulo puede tener dos ángulos rectos de 90°.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <!-- CENTROS -->
+          <div class="theory-box">
+            <h3 class="theory-title">Medianas, alturas y centros notables de un triángulo</h3>
+            <p>
+              Una <strong>mediana</strong> une un vértice con el punto medio del lado opuesto.
+              Una <strong>altura</strong> parte de un vértice y es perpendicular al lado opuesto o a su prolongación.
+            </p>
+            <ul>
+              <li><strong>Baricentro:</strong> punto donde se cortan las tres medianas.</li>
+              <li><strong>Ortocentro:</strong> punto donde se cortan las tres alturas.</li>
+              <li><strong>Circuncentro:</strong> punto donde se cortan las tres mediatrices.</li>
+              <li><strong>Incentro:</strong> punto donde se cortan las tres bisectrices.</li>
+            </ul>
+            
+<div class="svg-card mt-5">
+  <svg aria-label="Centros notables del triángulo" class="geometry-svg" role="img" viewBox="0 0 920 430">
+    <g transform="translate(45,55)">
+      <text class="svg-heading" x="70" y="0">Baricentro</text><polygon class="svg-shape" points="105,25 10,190 205,190"></polygon>
+      <line class="svg-diagonal" x1="105" x2="108" y1="25" y2="190"></line><line class="svg-diagonal" x1="10" x2="155" y1="190" y2="108"></line>
+      <circle class="svg-point" cx="106" cy="135" r="7"></circle><text class="svg-text-small" x="45" y="222">intersección de medianas</text>
+    </g>
+    <g transform="translate(275,55)">
+      <text class="svg-heading" x="70" y="0">Ortocentro</text><polygon class="svg-shape-light" points="60,25 10,190 205,190"></polygon>
+      <line class="svg-symmetry" x1="60" x2="60" y1="25" y2="190"></line><line class="svg-symmetry" x1="10" x2="165" y1="190" y2="75"></line>
+      <circle class="svg-point" cx="60" cy="139" r="7"></circle><text class="svg-text-small" x="45" y="222">intersección de alturas</text>
+    </g>
+    <g transform="translate(505,55)">
+      <text class="svg-heading" x="65" y="0">Circuncentro</text><polygon class="svg-shape" points="105,25 10,190 205,190"></polygon>
+      <line class="svg-symmetry" x1="108" x2="108" y1="65" y2="220"></line><line class="svg-symmetry" x1="35" x2="180" y1="70" y2="170"></line>
+      <circle class="svg-point" cx="107" cy="120" r="7"></circle><text class="svg-text-small" x="35" y="222">intersección de mediatrices</text>
+    </g>
+    <g transform="translate(735,55)">
+      <text class="svg-heading" x="80" y="0">Incentro</text><polygon class="svg-shape-light" points="105,25 10,190 205,190"></polygon>
+      <line class="svg-diagonal" x1="105" x2="105" y1="25" y2="125"></line><line class="svg-diagonal" x1="10" x2="105" y1="190" y2="125"></line>
+      <circle class="svg-point" cx="105" cy="125" r="7"></circle><text class="svg-text-small" x="40" y="222">intersección de bisectrices</text>
+    </g>
+    <text class="svg-text-small" text-anchor="middle" x="460" y="360">Medianas → baricentro · Alturas → ortocentro · Mediatrices → circuncentro · Bisectrices → incentro</text>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 8 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 8
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Relaciona cada línea notable con su descripción:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Une un vértice con el punto medio del lado opuesto.</li>
+<li><strong>b)</strong> Parte de un vértice y es perpendicular al lado opuesto.</li>
+<li><strong>c)</strong> Es perpendicular a un lado por su punto medio.</li>
+<li><strong>d)</strong> Divide un ángulo del triángulo en dos partes iguales.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 9 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 9
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Relaciona cada centro con las rectas que lo determinan:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Baricentro.</li>
+<li><strong>b)</strong> Ortocentro.</li>
+<li><strong>c)</strong> Circuncentro.</li>
+<li><strong>d)</strong> Incentro.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 10 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 10
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja un triángulo escaleno y realiza:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Dos medianas y señala el baricentro.</li>
+<li><strong>b)</strong> Dos alturas y señala el ortocentro.</li>
+<li><strong>c)</strong> Dos mediatrices y señala el circuncentro.</li>
+<li><strong>d)</strong> Dos bisectrices y señala el incentro.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 11 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 11
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Razona qué centro utilizarías:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Para localizar el centro de una circunferencia que pase por los tres vértices.</li>
+<li><strong>b)</strong> Para encontrar el centro de una circunferencia tangente a los tres lados.</li>
+<li><strong>c)</strong> Para buscar el punto de equilibrio de una lámina triangular.</li>
+<li><strong>d)</strong> Para localizar el punto donde se cortan las alturas.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <!-- PITÁGORAS -->
+          <div class="theory-box">
+            <h3 class="theory-title">Teorema de Pitágoras</h3>
+            <p>
+              El teorema de Pitágoras se aplica <strong>solo a los triángulos rectángulos</strong>.
+              Los lados que forman el ángulo recto son los <strong>catetos</strong> y el lado opuesto,
+              que es el más largo, es la <strong>hipotenusa</strong>.
+            </p>
+            <p>
+              Si llamamos <strong>a</strong> y <strong>b</strong> a los catetos y <strong>c</strong>
+              a la hipotenusa, se cumple: <strong>a² + b² = c²</strong>.
+            </p>
+            
+<div class="svg-card mt-5">
+  <svg aria-label="Triángulo rectángulo de lados 3, 4 y 5 que ejemplifica el teorema de Pitágoras" class="geometry-svg" role="img" viewBox="0 0 760 330">
+    <polygon class="svg-shape" points="90,260 90,80 330,260"></polygon><rect class="svg-angle-box" height="28" width="28" x="90" y="232"></rect>
+    <text class="svg-label" x="45" y="175">a = 3</text><text class="svg-label" x="190" y="290">b = 4</text><text class="svg-label" x="220" y="155">c = 5</text>
+    <g transform="translate(420,80)">
+      <text class="svg-heading" x="0" y="0">a² + b² = c²</text><text class="svg-label" x="0" y="60">3² + 4² = 5²</text>
+      <text class="svg-label" x="0" y="105">9 + 16 = 25</text><text class="svg-label" x="0" y="150">25 = 25 ✓</text>
+      <text class="svg-text-small" x="0" y="205">La hipotenusa siempre está frente al ángulo recto.</text>
+    </g>
+  </svg>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 12 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 12
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Aplica el teorema de Pitágoras:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Catetos de 6 cm y 8 cm. Calcula la hipotenusa.</li>
+<li><strong>b)</strong> Catetos de 5 cm y 12 cm. Calcula la hipotenusa.</li>
+<li><strong>c)</strong> Hipotenusa de 10 cm y un cateto de 6 cm. Calcula el otro cateto.</li>
+<li><strong>d)</strong> Hipotenusa de 13 cm y un cateto de 5 cm. Calcula el otro cateto.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 13 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 13
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Resuelve:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Una escalera llega a una ventana situada a 8 m de altura y su base está a 6 m de la pared. ¿Cuánto mide la escalera?</li>
+<li><strong>b)</strong> Un rectángulo mide 9 cm por 12 cm. ¿Cuánto mide su diagonal?</li>
+<li><strong>c)</strong> Una cometa está a 12 m de altura y el niño está a 5 m en horizontal del punto bajo ella. Calcula la longitud aproximada del hilo tenso.</li>
+<li><strong>d)</strong> Un cable de 17 m une la parte superior de un poste con un punto del suelo a 8 m del pie. Calcula la altura del poste.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <!-- CUADRILÁTEROS Y CIRCUNFERENCIA -->
+          <div class="theory-box">
+            <h3 class="theory-title">Cuadriláteros, circunferencia y círculo</h3>
+            <p>
+              Los paralelogramos tienen dos pares de lados opuestos paralelos:
+              cuadrado, rectángulo, rombo y romboide. El trapecio tiene un solo par
+              de lados paralelos y el trapezoide no tiene ninguno.
+            </p>
+            <p>
+              La circunferencia es la línea curva cerrada cuyos puntos están a la misma distancia
+              del centro. El círculo incluye la circunferencia y la superficie interior.
+              Utilizamos normalmente <strong>π ≈ 3,14</strong>.
+            </p>
+            
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+  <div class="svg-card">
+    <h4 class="svg-title">Clasificación de cuadriláteros</h4>
+    <svg aria-label="Cuadrado, rectángulo, rombo, romboide, trapecio y trapezoide" class="geometry-svg" role="img" viewBox="0 0 620 340">
+      <rect class="svg-shape" height="80" width="80" x="35" y="35"></rect><text class="svg-text-small" x="45" y="140">Cuadrado</text>
+      <rect class="svg-shape" height="60" width="110" x="165" y="45"></rect><text class="svg-text-small" x="180" y="140">Rectángulo</text>
+      <polygon class="svg-shape" points="350,35 405,75 350,115 295,75"></polygon><text class="svg-text-small" x="325" y="140">Rombo</text>
+      <polygon class="svg-shape" points="455,45 575,45 545,110 425,110"></polygon><text class="svg-text-small" x="480" y="140">Romboide</text>
+      <polygon class="svg-shape-light" points="100,200 220,200 255,285 65,285"></polygon><text class="svg-text-small" x="120" y="315">Trapecio</text>
+      <polygon class="svg-shape-light" points="370,200 525,220 495,290 340,270"></polygon><text class="svg-text-small" x="405" y="315">Trapezoide</text>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <h4 class="svg-title">Circunferencia y círculo</h4>
+    <svg aria-label="Elementos de la circunferencia y del círculo" class="geometry-svg" role="img" viewBox="0 0 620 340">
+      <circle class="svg-circle" cx="240" cy="165" r="120"></circle><circle class="svg-point" cx="240" cy="165" r="7"></circle>
+      <line class="svg-line-strong" x1="240" y1="165" x2="330" y2="95"></line><line class="svg-line-strong" x1="120" y1="165" x2="360" y2="165"></line>
+      <line class="svg-line-strong" x1="145" y1="85" x2="335" y2="85"></line>
+      <text class="svg-label" x="335" y="92">radio</text><text class="svg-label" x="190" y="200">diámetro</text><text class="svg-label" x="200" y="75">cuerda</text>
+      <text class="svg-heading" x="400" y="115">π ≈ 3,14</text><text class="svg-label" x="400" y="170">L = π × d</text><text class="svg-label" x="400" y="210">L = 2 × π × r</text>
+    </svg>
+  </div>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            
+          <!-- EJERCICIO 14 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 14
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Clasifica los cuadriláteros:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Cuatro lados iguales de 6 cm y ángulos 60°, 120°, 60° y 120°.</li>
+<li><strong>b)</strong> Dos lados paralelos de 10 cm y 6 cm, y dos no paralelos.</li>
+<li><strong>c)</strong> Lados opuestos iguales de 12 cm y 7 cm y cuatro ángulos rectos.</li>
+<li><strong>d)</strong> Cuatro lados desiguales sin ningún par de lados paralelos.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 15 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 15
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula los ángulos desconocidos:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un romboide que tiene un ángulo de 50°.</li>
+<li><strong>b)</strong> Un rombo que tiene un ángulo obtuso de 130°.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 16 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 16
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Indica en cuál las diagonales son iguales y perpendiculares entre sí:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Cuadrado.</li>
+<li><strong>b)</strong> Rectángulo.</li>
+<li><strong>c)</strong> Rombo.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 17 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 17
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un trapecio con lados paralelos de 8 cm y 5 cm.</li>
+<li><strong>b)</strong> Un rombo cuyas diagonales midan 6 cm y 4 cm.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+          <!-- EJERCICIO 18 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 18
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula la longitud de la circunferencia:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Radio de 5 cm.</li>
+<li><strong>b)</strong> Diámetro de 10 cm.</li>
+<li><strong>c)</strong> Rueda de bicicleta infantil de 20 cm de radio.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 19 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 19
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Dibuja con compás una circunferencia de 4 cm de radio y traza el centro O, un radio, un diámetro, una cuerda y un arco usando distintos colores.</p>
+          </div>
+    
+          <!-- EJERCICIO 20 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 20
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Indica si las rectas son exteriores, tangentes o secantes:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Recta a 8 cm del centro de una circunferencia de radio 5 cm.</li>
+<li><strong>b)</strong> Recta a 5 cm del centro de una circunferencia de radio 5 cm.</li>
+<li><strong>c)</strong> Recta que atraviesa una circunferencia a 2 cm de su centro.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 21 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 21
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Completa:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> El segmento que une dos puntos de la circunferencia pasando por el centro se llama ___.</li>
+<li><strong>b)</strong> La figura plana que comprende la circunferencia y su interior es el ___.</li>
+<li><strong>c)</strong> Si un radio mide 6 cm, el diámetro mide ___ cm.</li>
+            </ul>
+    
+          </div>
+    
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.6 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-6">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.6</span>
+            <h2 class="section-title">Cuerpos geométricos tridimensionales</h2>
+          </div>
+
+          <div class="theory-box">
+            <h3 class="theory-title">Poliedros y cuerpos redondos</h3>
+            <p>
+              Los poliedros están limitados por caras planas y tienen caras, aristas y vértices.
+              Los prismas poseen dos bases iguales y paralelas; las pirámides tienen una base
+              y caras laterales triangulares.
+            </p>
+            <p>
+              Los cuerpos redondos tienen al menos una superficie curva.
+              Los principales son el cilindro, el cono y la esfera.
+            </p>
+            
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+  <div class="svg-card">
+    <h4 class="svg-title">Prismas y pirámides</h4>
+    <svg aria-label="Prisma cuadrangular y pirámide cuadrangular" class="geometry-svg" role="img" viewBox="0 0 620 360">
+      <g transform="translate(70,55)">
+        <rect class="svg-shape" x="40" y="15" width="110" height="140"></rect><rect class="svg-shape-light" x="0" y="55" width="110" height="140"></rect>
+        <line class="svg-diagonal" x1="40" y1="15" x2="0" y2="55"></line><line class="svg-diagonal" x1="150" y1="15" x2="110" y2="55"></line>
+        <line class="svg-diagonal" x1="40" y1="155" x2="0" y2="195"></line><line class="svg-diagonal" x1="150" y1="155" x2="110" y2="195"></line>
+        <text class="svg-label" x="10" y="245">Prisma cuadrangular</text>
+      </g>
+      <g transform="translate(370,55)">
+        <polygon class="svg-shape-light" points="0,145 115,145 165,195 50,195"></polygon><circle class="svg-point" cx="85" cy="10" r="5"></circle>
+        <line class="svg-diagonal" x1="85" y1="10" x2="0" y2="145"></line><line class="svg-diagonal" x1="85" y1="10" x2="115" y2="145"></line>
+        <line class="svg-diagonal" x1="85" y1="10" x2="165" y2="195"></line><line class="svg-diagonal" x1="85" y1="10" x2="50" y2="195"></line>
+        <text class="svg-label" x="5" y="245">Pirámide cuadrangular</text>
+      </g>
+    </svg>
+  </div>
+  <div class="svg-card">
+    <h4 class="svg-title">Cuerpos redondos</h4>
+    <svg aria-label="Cilindro, cono y esfera" class="geometry-svg" role="img" viewBox="0 0 620 360">
+      <g transform="translate(55,65)">
+        <ellipse class="svg-shape" cx="65" cy="20" rx="65" ry="20"></ellipse><rect class="svg-shape-light" x="0" y="20" width="130" height="120"></rect>
+        <ellipse class="svg-shape" cx="65" cy="140" rx="65" ry="20"></ellipse><text class="svg-label" x="35" y="195">Cilindro</text>
+      </g>
+      <g transform="translate(245,50)">
+        <ellipse class="svg-shape" cx="70" cy="155" rx="70" ry="22"></ellipse><path class="svg-shape-light" d="M0 155 L70 10 L140 155"></path>
+        <text class="svg-label" x="45" y="210">Cono</text>
+      </g>
+      <g transform="translate(500,150)">
+        <circle class="svg-shape" cx="0" cy="0" r="75"></circle><ellipse class="svg-diagonal" cx="0" cy="0" rx="75" ry="22"></ellipse>
+        <circle class="svg-point" cx="0" cy="0" r="4"></circle><text class="svg-label" x="-28" y="125">Esfera</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+          </div>
+
+          <div class="mb-10">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-junta mb-4">
+              8.6.1 Ejercicios de poliedros
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Cuenta caras, vértices y aristas:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Prisma cuadrangular.</li>
+<li><strong>b)</strong> Pirámide cuadrangular.</li>
+<li><strong>c)</strong> Prisma triangular.</li>
+<li><strong>d)</strong> Pirámide pentagonal.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Identifica el poliedro:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> 2 bases octogonales y 8 caras laterales rectangulares.</li>
+<li><strong>b)</strong> 1 base hexagonal y 6 caras laterales triangulares.</li>
+<li><strong>c)</strong> Poliedro regular compuesto por 6 caras que son cuadrados iguales.</li>
+<li><strong>d)</strong> Poliedro regular compuesto por 12 caras que son pentágonos regulares.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Clasifica los 5 poliedros regulares indicando el número de caras que tiene cada uno y la forma del polígono de sus caras.</p>
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Dibuja:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un prisma cuadrangular de base 3 cm × 3 cm y altura 6 cm.</li>
+<li><strong>b)</strong> Una pirámide cuadrangular señalando su base y su cúspide.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Si cortamos una barra de pan con forma de prisma recto mediante 4 cortes rectos e independientes paralelos a la base, ¿cuántos prismas más pequeños obtenemos?</p>
+          </div>
+    
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-junta mb-4">
+              8.6.2 Ejercicios de cuerpos redondos
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Identifica qué cuerpo redondo se genera:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Un rectángulo que gira sobre uno de sus lados.</li>
+<li><strong>b)</strong> Un triángulo rectángulo que gira sobre uno de sus catetos.</li>
+<li><strong>c)</strong> Un semicírculo que gira sobre su diámetro.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 7 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 7
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Compara un cilindro y un cono. Escribe dos semejanzas y dos diferencias.</p>
+          </div>
+    
+          <!-- EJERCICIO 8 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 8
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Nombra los elementos de la esfera:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> La línea imaginaria circular que divide la esfera en dos hemisferios.</li>
+<li><strong>b)</strong> El segmento que une el centro con cualquier punto de la superficie exterior.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 9 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 9
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Relaciona cada objeto con su cuerpo redondo:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Una lata cilíndrica de conservas de melocotón.</li>
+<li><strong>b)</strong> Un cucurucho de helado en Granada.</li>
+<li><strong>c)</strong> Una naranja de las huertas del Guadalquivir.</li>
+<li><strong>d)</strong> Un bidón de agua para el riego.</li>
+            </ul>
+    
+          </div>
+    
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.7 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-7">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8.7</span>
+            <h2 class="section-title">Perímetros y áreas de figuras planas</h2>
+          </div>
+
+          <div class="theory-box">
+            <h3 class="theory-title">Fórmulas fundamentales</h3>
+            <p>
+              El perímetro es la suma de todos los lados de una figura.
+              El área mide la superficie interior y se expresa en unidades cuadradas.
+            </p>
+            
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
+  <div class="formula-card"><strong>Cuadrado</strong><span>A = lado²</span></div>
+  <div class="formula-card"><strong>Rectángulo</strong><span>A = base × altura</span></div>
+  <div class="formula-card"><strong>Triángulo</strong><span>A = (base × altura) / 2</span></div>
+  <div class="formula-card"><strong>Rombo</strong><span>A = (D × d) / 2</span></div>
+  <div class="formula-card"><strong>Romboide</strong><span>A = base × altura</span></div>
+  <div class="formula-card"><strong>Trapecio</strong><span>A = [(B + b) × h] / 2</span></div>
+  <div class="formula-card"><strong>Polígono regular</strong><span>A = (P × apotema) / 2</span></div>
+  <div class="formula-card"><strong>Círculo</strong><span>A = π × radio²</span></div>
+</div>
+
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Calcula el perímetro:</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Octógono regular de 6,5 cm de lado.</li>
+<li><strong>b)</strong> Triángulo isósceles con dos lados de 8,4 cm y un lado de 5,2 cm.</li>
+<li><strong>c)</strong> Romboide de base 12,5 cm y lado inclinado 7,8 cm.</li>
+<li><strong>d)</strong> Decágono regular de 4,2 cm de lado.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Una parcela rectangular tiene un perímetro de 360 m. Si la base mide 110 m, ¿cuánto mide la altura?</p>
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Calcula el área de una plaza cuadrada cuyo lado mide 24 m.</p>
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un paño de azulejos rectangulares mide 3 m de largo y 2 m de alto. Calcula su superficie.</p>
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class='text-sm font-medium text-slate-800'>El frontal triangular de una ermita tiene base 8 m y altura 5 m. Halla su área.</p>
+          </div>
+    
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Una vidriera en forma de rombo tiene diagonales de 2,4 m y 1,5 m. ¿Cuál es su superficie?</p>
+          </div>
+    
+          <!-- EJERCICIO 7 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 7
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un patio en forma de romboide tiene base 9 m y altura 6 m. Calcula su área.</p>
+          </div>
+    
+          <!-- EJERCICIO 8 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 8
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un terreno de fresas en Almonte tiene forma de trapecio con bases 120 m y 80 m y altura 40 m. Calcula su superficie.</p>
+          </div>
+    
+          <!-- EJERCICIO 9 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 9
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un cenador pentagonal regular tiene lado 6 m y apotema 4,1 m. Calcula el área.</p>
+          </div>
+    
+          <!-- EJERCICIO 10 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 10
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Una fuente circular de Jaén tiene radio 4 m. Calcula su superficie usando π = 3,14.</p>
+          </div>
+    
+          <!-- EJERCICIO 11 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 11
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Una figura está formada por un rectángulo de 10 cm × 6 cm y un triángulo apoyado de base 10 cm y altura 4 cm. Calcula el área total.</p>
+          </div>
+    
+          <!-- EJERCICIO 12 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 12
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un tablero cuadrado de 20 cm de lado tiene recortado en el centro un círculo de 5 cm de radio. Calcula la superficie de madera sobrante.</p>
+          </div>
+    
+          </div>
+        </section>
+
+
+        <!-- SECCIÓN 8.8 -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-editorial-amber/40" id="sec-8">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number-amber">8.8</span>
+            <h2 class="section-title">Problemas y desafíos</h2>
+          </div>
+
+          <!-- PARTE A -->
+          <div class="mb-10">
+            <h3 class="text-base font-bold text-junta mb-5 text-heading">
+              🧮 Parte A: Problemas y ejercicios de repaso
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+          <!-- EJERCICIO 1 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 1
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>Resuelve respetando la jerarquía:</p><p class='text-xs md:text-sm text-slate-700'>(4,2 + 1,8) : 2 + 3,5 × 4 − 10</p>
+          </div>
+    
+          <!-- EJERCICIO 2 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 2
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un terreno rectangular de 120 m de largo y 80 m de ancho se divide en 4 parcelas rectangulares iguales. Calcula el área de cada parcela.</p>
+          </div>
+    
+          <!-- EJERCICIO 3 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 3
+            </span>
+            <p class="text-sm font-medium text-slate-800 leading-relaxed text-justify">
+De un depósito de agua de 1,2 kilolitros de capacidad se han consumido
+<span aria-label="3 partido por 5" class="frac" role="math"><span class="num">3</span><span class="den">5</span></span>
+partes para el riego. ¿Cuántos litros quedan?
+</p>
+          </div>
+    
+          <!-- EJERCICIO 4 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 4
+            </span>
+            <p class='text-sm font-medium text-slate-800'>En una encuesta a 200 turistas en Ronda, el 45 % eligió el Puente Nuevo, el 30 % la Colegiata de Santa María y el resto la Plaza de Toros. Calcula cuántos turistas prefirieron cada monumento.</p>
+          </div>
+    
+          <!-- EJERCICIO 5 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 5
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un camión cisterna transporta 15 toneladas de aceite de oliva. Si la masa del camión vacío es de 6 500 kg, calcula la masa neta del aceite expresada en kilogramos.</p>
+          </div>
+    
+          <!-- EJERCICIO 6 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 6
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un polígono regular tiene perímetro 48 cm y cada lado mide 6 cm. ¿Cuántos lados tiene y cómo se llama?</p>
+          </div>
+    
+          <!-- EJERCICIO 7 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 7
+            </span>
+            <p class="text-sm font-medium text-slate-800 mb-3">Realiza y simplifica:</p>
+<p class="text-xs md:text-sm text-slate-700">
+(<span class="frac" role="math" aria-label="5 partido por 6"><span class="num">5</span><span class="den">6</span></span>
++ <span class="frac" role="math" aria-label="1 partido por 6"><span class="num">1</span><span class="den">6</span></span>)
+×
+(<span class="frac" role="math" aria-label="8 partido por 5"><span class="num">8</span><span class="den">5</span></span>
+− <span class="frac" role="math" aria-label="3 partido por 5"><span class="num">3</span><span class="den">5</span></span>)
+</p>
+          </div>
+    
+          <!-- EJERCICIO 8 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 8
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un atleta corre alrededor de un parque circular de 50 m de radio. Si da 10 vueltas, ¿cuántos metros recorre? Usa π = 3,14.</p>
+          </div>
+    
+          <!-- EJERCICIO 9 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 9
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Un prisma rectangular de base 8 cm por 5 cm tiene altura 10 cm. Calcula su volumen.</p>
+          </div>
+    
+          <!-- EJERCICIO 10 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 10
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Se colocan cajas cúbicas de 10 cm de lado dentro de una caja de 40 × 30 × 20 cm. ¿Cuántas cajas pequeñas caben?</p>
+          </div>
+    
+          <!-- EJERCICIO 11 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 11
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>En un mapa cuadriculado, el refugio está en C4, el lago en F2 y el mirador en G5. Cada lado de una casilla representa 2 km.</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Describe el desplazamiento aproximado desde el refugio hasta el lago.</li>
+<li><strong>b)</strong> ¿Qué elemento está más al norte?</li>
+<li><strong>c)</strong> ¿Qué elemento está más al este?</li>
+<li><strong>d)</strong> Dibuja el mapa y crea una escala gráfica adecuada.</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 12 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 12
+            </span>
+            <p class='text-sm font-medium text-slate-800'>En el diseño de una plaza se suman dos giros de 48° 35′ y 76° 50′. Calcula el giro total y el ángulo que faltaría para completar 180°.</p>
+          </div>
+    
+          <!-- EJERCICIO 13 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 13
+            </span>
+            <p class='text-sm font-medium text-slate-800 mb-3'>En un terreno triangular se quiere situar un depósito a la misma distancia de los tres vértices y una fuente interior a la misma distancia de los tres lados.</p>
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> ¿Qué centro notable debe usarse para situar el depósito?</li>
+<li><strong>b)</strong> ¿Qué rectas deben trazarse para obtenerlo?</li>
+<li><strong>c)</strong> ¿Qué centro debe usarse para la fuente?</li>
+<li><strong>d)</strong> ¿Qué rectas deben trazarse para localizarlo?</li>
+            </ul>
+    
+          </div>
+    
+          <!-- EJERCICIO 14 -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 ">
+            <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              Ejercicio 14
+            </span>
+            <p class='text-sm font-medium text-slate-800'>Una rampa forma un triángulo rectángulo: salva una altura de 1,5 m y ocupa 2 m en horizontal. Calcula mediante Pitágoras la longitud de la rampa.</p>
+          </div>
+    
+            </div>
+          </div>
+
+          <!-- PARTE B -->
+          <div>
+            <h3 class="text-base font-bold text-editorial-amber mb-5 text-heading">
+              🌟 Parte B: Desafíos competenciales
+            </h3>
+
+            <div class="space-y-6">
+
+              <!-- DESAFÍO 1 -->
+              <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+                <h4 class="text-sm md:text-base font-bold text-amber-900">
+                  Desafío 1: El Plano de la Alhambra y los Jardines del Generalife
+                </h4>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Un equipo de arquitectos e historiadores trabaja en la restauración de un sector
+                  de los jardines del Generalife en la Alhambra de Granada. Disponen de un plano
+                  detallado a escala 1:500, donde 1 cm del plano equivale a 500 cm = 5 metros en la realidad.
+                </p>
+
+                <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                  <li>Un parterre rectangular dedicado a los naranjos con dimensiones reales de 15 m × 10 m.</li>
+                  <li>Una fuente circular central de 2 m de radio.</li>
+                </ul>
+
+                
+<svg aria-label="Plano simplificado del sector de restauración del Generalife"
+     class="geometry-svg bg-white rounded-xl border border-amber-200" role="img" viewBox="0 0 760 330">
+  <rect class="svg-shape-light" height="250" rx="12" width="690" x="35" y="35"></rect>
+  <text class="svg-heading" text-anchor="middle" x="380" y="70">SECTOR DE RESTAURACIÓN</text>
+  <rect class="svg-shape" height="130" width="350" x="95" y="105"></rect>
+  <text class="svg-label" text-anchor="middle" x="270" y="155">Jardín de los Naranjos</text>
+  <text class="svg-text-small" text-anchor="middle" x="270" y="185">15 m × 10 m</text>
+  <circle class="svg-shape" cx="575" cy="170" r="65"></circle>
+  <line class="svg-diagonal" x1="575" x2="640" y1="170" y2="170"></line>
+  <text class="svg-label" text-anchor="middle" x="575" y="165">Fuente</text>
+  <text class="svg-text-small" text-anchor="middle" x="575" y="190">r = 2 m</text>
+</svg>
+
+
+                <p class="text-xs md:text-sm text-slate-700"><strong>1. Trabajo sobre el plano y escala:</strong></p>
+                
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula las dimensiones en centímetros que tendrá el parterre rectangular dibujado a escala 1:500.</li>
+<li><strong>b)</strong> ¿Qué área en cm² ocupará dicho parterre en el papel del plano?</li>
+            </ul>
+    
+
+                <p class="text-xs md:text-sm text-slate-700"><strong>2. Áreas y costes de embaldosado real:</strong></p>
+                
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula el área real en metros cuadrados ocupada por el parterre rectangular de los naranjos.</li>
+<li><strong>b)</strong> Si el metro cuadrado de losa de barro cocido cuesta 35 €, calcula el coste total del material.</li>
+            </ul>
+    
+              </div>
+
+
+              <!-- DESAFÍO 2 -->
+              <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+                <h4 class="text-sm md:text-base font-bold text-amber-900">
+                  Desafío 2: Restauración de Mosaicos Romanos en Itálica
+                </h4>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  En el Conjunto Arqueológico de Itálica (Santiponce, Sevilla),
+                  los restauradores analizan un mosaico romano compuesto por la repetición de figuras poligonales.
+                </p>
+
+                <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                  <li>Octógonos regulares de 10 cm de lado y 12 cm de apotema.</li>
+                  <li>Cuadrados de 10 cm de lado que rellenan los espacios entre octógonos.</li>
+                </ul>
+
+                
+<svg aria-label="Octógono regular rodeado de cuadrados en un mosaico"
+     class="geometry-svg bg-white rounded-xl border border-amber-200" role="img" viewBox="0 0 760 330">
+  <defs>
+    <pattern id="mosaic-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#f8fafc"></rect>
+      <path d="M0 0 H80 V80 H0 Z" fill="none" stroke="#d6e7dc"></path>
+    </pattern>
+  </defs>
+  <rect x="25" y="25" width="710" height="280" rx="12" fill="url(#mosaic-grid)"></rect>
+  <polygon class="svg-shape" points="330,44.29 430,44.29 500.71,115 500.71,215 430,285.71 330,285.71 259.29,215 259.29,115"></polygon>
+  <text class="svg-heading" x="380" y="160" text-anchor="middle">OCTÓGONO REGULAR</text>
+  <text class="svg-text-small" x="380" y="190" text-anchor="middle">lado = 10 cm · apotema = 12 cm</text>
+  <rect class="svg-shape-light" x="80" y="70" width="85" height="85"></rect>
+  <rect class="svg-shape-light" x="595" y="70" width="85" height="85"></rect>
+  <rect class="svg-shape-light" x="80" y="200" width="85" height="85"></rect>
+  <rect class="svg-shape-light" x="595" y="200" width="85" height="85"></rect>
+</svg>
+
+
+                <p class="text-xs md:text-sm text-slate-700"><strong>1. Análisis geométrico del octógono:</strong></p>
+                
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula el perímetro de uno de los octógonos regulares del mosaico.</li>
+<li><strong>b)</strong> Calcula el área de uno de los octógonos aplicando A = (Perímetro × apotema) / 2.</li>
+            </ul>
+    
+
+                <p class="text-xs md:text-sm text-slate-700"><strong>2. Estudio de materiales:</strong></p>
+                
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula el área de uno de los cuadrados pequeños de enlace.</li>
+<li><strong>b)</strong> Si un panel está formado por 10 octógonos y 8 cuadrados, calcula la superficie total en cm².</li>
+            </ul>
+    
+              </div>
+
+
+              <!-- DESAFÍO 3 -->
+              <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+                <h4 class="text-sm md:text-base font-bold text-amber-900">
+                  Desafío 3: Diseño de Cajas de Polvorones Tradicionales de Estepa
+                </h4>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Una fábrica artesanal de dulces en Estepa (Sevilla) diseña dos modelos de cajas promocionales para sus polvorones:
+                </p>
+
+                <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                  <li>Modelo A: prisma hexagonal, base de 8 cm de lado, apotema 6,9 cm y altura 15 cm.</li>
+                  <li>Modelo B: cilindro, base circular de 8 cm de radio y altura 15 cm.</li>
+                </ul>
+
+                
+<svg aria-label="Comparación entre un prisma hexagonal y un cilindro"
+     class="geometry-svg bg-white rounded-xl border border-amber-200" role="img" viewBox="0 0 820 360">
+  <g transform="translate(85,55)">
+    <polygon class="svg-shape" points="80,0 155,42 155,128 80,170 5,128 5,42"></polygon>
+    <polygon class="svg-shape-light" points="80,90 155,132 155,218 80,260 5,218 5,132"></polygon>
+    <line class="svg-line" x1="80" x2="80" y1="0" y2="90"></line>
+    <line class="svg-line" x1="155" x2="155" y1="42" y2="132"></line>
+    <line class="svg-line" x1="5" x2="5" y1="42" y2="132"></line>
+    <text class="svg-heading" text-anchor="middle" x="80" y="300">Modelo A</text>
+    <text class="svg-text-small" text-anchor="middle" x="80" y="325">Prisma hexagonal · l = 8 cm · h = 15 cm</text>
+  </g>
+  <g transform="translate(500,55)">
+    <ellipse class="svg-shape" cx="90" cy="35" rx="90" ry="30"></ellipse>
+    <rect class="svg-shape-light" height="205" width="180" x="0" y="35"></rect>
+    <ellipse class="svg-shape" cx="90" cy="240" rx="90" ry="30"></ellipse>
+    <line class="svg-diagonal" x1="90" x2="180" y1="35" y2="35"></line>
+    <text class="svg-heading" text-anchor="middle" x="90" y="300">Modelo B</text>
+    <text class="svg-text-small" text-anchor="middle" x="90" y="325">Cilindro · r = 8 cm · h = 15 cm</text>
+  </g>
+</svg>
+
+
+                <p class="text-xs md:text-sm text-slate-700"><strong>1. Análisis del Modelo A:</strong></p>
+                
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula el perímetro de la base hexagonal, que tiene 6 lados de 8 cm.</li>
+<li><strong>b)</strong> Calcula el área de una base aplicando A = (Perímetro × apotema) / 2.</li>
+            </ul>
+    
+
+                <p class="text-xs md:text-sm text-slate-700"><strong>2. Análisis del Modelo B:</strong></p>
+                
+            <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+              <li><strong>a)</strong> Calcula el área de una base circular aplicando A = π × radio², con π = 3,14.</li>
+<li><strong>b)</strong> Compara el área de la base del Modelo A con la del Modelo B e indica cuál es mayor.</li>
+            </ul>
+    
+              </div>
+
+
+              <!-- DESAFÍO 4 -->
+              <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+                <h4 class="text-sm md:text-base font-bold text-amber-900">
+                  Desafío 4: Diseño de una ruta de orientación y un mirador triangular
+                </h4>
+
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                  Un parque natural prepara una ruta educativa sobre un mapa cuadriculado de columnas A–H y filas 1–6.
+                  El centro de visitantes se sitúa en B5, el mirador en F2 y una fuente en E4.
+                  La escala indica que 1 cm del mapa representa 1,5 km reales.
+                  Junto al mirador se construirá una plataforma triangular rectángula cuyos catetos miden 9 m y 12 m.
+                </p>
+
+                <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                  <li><strong>a)</strong> Dibuja una cuadrícula de referencia y sitúa los tres lugares. Describe el desplazamiento general desde B5 hasta F2.</li>
+                  <li><strong>b)</strong> Si en el mapa el camino directo B5–F2 mide 6,4 cm, calcula la distancia real.</li>
+                  <li><strong>c)</strong> Calcula la longitud del lado mayor de la plataforma aplicando el teorema de Pitágoras.</li>
+                  <li><strong>d)</strong> En la plataforma se trazan las tres medianas. ¿Qué punto notable se obtiene y qué significado puede tener para equilibrar una escultura?</li>
+                  <li><strong>e)</strong> Dos senderos forman un ángulo de 86° 40′. Se quiere trazar un camino exactamente a mitad. ¿Qué construcción geométrica se necesita y cuánto medirá cada ángulo resultante?</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+        <!-- REPASAMOS LO APRENDIDO -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-junta" id="sec-repaso">
+
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">🔄</span>
+
+            <div>
+              <h2 class="section-title">Repasamos lo aprendido</h2>
+              <p class="text-xs text-slate-500">
+                Consolidación y ampliación de los contenidos de geometría
+              </p>
+            </div>
+          </div>
+
+          <!-- FICHA DE REFUERZO -->
+          <div class="mb-10">
+            <div class="bg-emerald-50 border-l-4 border-junta p-4 rounded-r-xl mb-6">
+              <h3 class="text-base font-bold text-junta-dark text-heading">
+                🟢 Ficha de Refuerzo
+              </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.1 • Escalas y lectura de mapas
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Repasa escalas y localización mediante cuadrículas:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> En una escala 1:100 000, ¿cuántos kilómetros representa 1 cm?</li>
+<li><strong>b)</strong> Convierte 6,5 cm del mapa en distancia real.</li>
+<li><strong>c)</strong> Dibuja una cuadrícula A–D y 1–4 y sitúa un punto en C2.</li>
+<li><strong>d)</strong> Explica cómo utilizarías una escala gráfica para estimar la distancia entre dos puntos del mapa.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.2 • Coordenadas
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Localiza y analiza los puntos:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Indica el cuadrante de A(4, 3).</li>
+<li><strong>b)</strong> Indica el cuadrante de B(-5, 2).</li>
+<li><strong>c)</strong> Representa C(-3, -4) y D(2, -5).</li>
+<li><strong>d)</strong> Escribe las coordenadas del origen.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.3 • Ángulos, simetría y construcciones
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Consolida los contenidos fundamentales:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Calcula 42° 35′ + 28° 40′.</li>
+<li><strong>b)</strong> Calcula 90° − 37° 25′.</li>
+<li><strong>c)</strong> Completa una figura simétrica respecto a un eje vertical y explica qué se conserva.</li>
+<li><strong>d)</strong> Diferencia bisectriz y mediatriz indicando una propiedad de cada una.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.4 • Puntos, líneas y curvas
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Identifica los elementos:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Diferencia recta, semirrecta y segmento.</li>
+<li><strong>b)</strong> Dibuja dos rectas paralelas.</li>
+<li><strong>c)</strong> Dibuja dos rectas perpendiculares.</li>
+<li><strong>d)</strong> Pon un ejemplo de curva cerrada.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.5 • Figuras planas y triángulos
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Repasa figuras y relaciones fundamentales:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Clasifica un triángulo de lados 5 cm, 5 cm y 8 cm.</li>
+<li><strong>b)</strong> Relaciona medianas, alturas, mediatrices y bisectrices con sus centros notables.</li>
+<li><strong>c)</strong> Calcula la hipotenusa de un triángulo rectángulo de catetos 6 cm y 8 cm.</li>
+<li><strong>d)</strong> Calcula la longitud de una circunferencia de diámetro 10 cm usando π = 3,14.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.6 • Cuerpos geométricos
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Reconoce cuerpos geométricos:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Identifica un prisma triangular y sus dos bases.</li>
+<li><strong>b)</strong> Indica caras, vértices y aristas de un cubo.</li>
+<li><strong>c)</strong> Explica una diferencia entre cilindro y cono.</li>
+<li><strong>d)</strong> Nombra dos elementos de una esfera.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.7 • Perímetros y áreas
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Calcula:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Perímetro de un cuadrado de lado 7 cm.</li>
+<li><strong>b)</strong> Área de un rectángulo de 8 cm × 5 cm.</li>
+<li><strong>c)</strong> Área de un triángulo de base 10 cm y altura 6 cm.</li>
+<li><strong>d)</strong> Área de un círculo de radio 3 cm usando π = 3,14.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Refuerzo 8.8 • Repaso integrado
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Resuelve un problema de varias etapas:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Calcula el área de una parcela de 20 m × 15 m.</li>
+<li><strong>b)</strong> Halla su perímetro.</li>
+<li><strong>c)</strong> Representa la parcela a escala 1:500.</li>
+<li><strong>d)</strong> Calcula el coste de vallarla a 12 € por metro.</li>
+        </ul>
+      </div>
+    
+            </div>
+          </div>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <div>
+            <div class="bg-amber-50 border-l-4 border-editorial-amber p-4 rounded-r-xl mb-6">
+              <h3 class="text-base font-bold text-editorial-amber text-heading">
+                🟠 Ficha de Ampliación
+              </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.1 • Cartografía y escalas
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Diseña e interpreta un mapa:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Dibuja una cuadrícula A–H y 1–6.</li>
+<li><strong>b)</strong> Sitúa cinco elementos y crea una leyenda.</li>
+<li><strong>c)</strong> Añade una escala gráfica en la que 2 cm representen 5 km.</li>
+<li><strong>d)</strong> Formula y resuelve una pregunta de distancia entre dos elementos usando esa escala.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.2 • Coordenadas
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Construye una figura:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Representa A(-4, 1), B(3, 1), C(3, 5) y D(-4, 5).</li>
+<li><strong>b)</strong> Une los puntos.</li>
+<li><strong>c)</strong> Identifica la figura.</li>
+<li><strong>d)</strong> Calcula su perímetro en unidades.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.3 • Transformaciones y ángulos
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Combina transformaciones y operaciones angulares:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Dibuja una figura y realiza una traslación de 5 unidades a la derecha.</li>
+<li><strong>b)</strong> Construye su simétrica respecto a un eje vertical.</li>
+<li><strong>c)</strong> Calcula 68° 45′ + 37° 30′.</li>
+<li><strong>d)</strong> Traza la bisectriz de un ángulo de 124° y calcula la medida de cada mitad.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.4 • Rectas y construcciones
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Organiza tres rectas:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Dibuja tres rectas: r, s y t.</li>
+<li><strong>b)</strong> Haz que r y s sean paralelas.</li>
+<li><strong>c)</strong> Haz que t sea perpendicular a ambas.</li>
+<li><strong>d)</strong> Señala todos los puntos de corte.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.5 • Centros y Pitágoras
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Resuelve un reto de geometría del triángulo:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Dibuja un triángulo y localiza aproximadamente baricentro y circuncentro.</li>
+<li><strong>b)</strong> Explica qué rectas has utilizado en cada caso.</li>
+<li><strong>c)</strong> Un triángulo rectángulo tiene hipotenusa 25 cm y un cateto 15 cm. Calcula el otro cateto.</li>
+<li><strong>d)</strong> Calcula la longitud de una circunferencia de diámetro 18 cm usando π = 3,14.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.6 • Cuerpos geométricos
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Compara dos envases:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Un prisma rectangular de 8 × 5 × 12 cm.</li>
+<li><strong>b)</strong> Un cilindro de radio 4 cm y altura 12 cm.</li>
+<li><strong>c)</strong> Indica qué datos necesitarías para comparar sus volúmenes.</li>
+<li><strong>d)</strong> Explica cuál aprovecharía mejor una caja rectangular.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.7 • Área compuesta
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Calcula una superficie combinada:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Rectángulo de 12 × 8 cm.</li>
+<li><strong>b)</strong> Semicírculo de radio 4 cm unido a un lado.</li>
+<li><strong>c)</strong> Calcula el área total.</li>
+<li><strong>d)</strong> Calcula el perímetro exterior.</li>
+        </ul>
+      </div>
+    
+      <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+        <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+          Ampliación 8.8 • Desafío competencial
+        </span>
+        <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+          Diseña un jardín a escala:
+        </p>
+        <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+          <li><strong>a)</strong> Rectángulo real de 30 × 20 m.</li>
+<li><strong>b)</strong> Fuente circular de radio 3 m.</li>
+<li><strong>c)</strong> Dibuja a escala 1:500.</li>
+<li><strong>d)</strong> Calcula el área libre del jardín.</li>
+        </ul>
+      </div>
+    
+            </div>
+          </div>
+        </section>
+
+
+        <!-- DIANA DE AUTOEVALUACIÓN -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-indigo-200" id="sec-diana">
+
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-indigo-600 text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+              🎯
+            </span>
+
+            <div>
+              <h2 class="section-title">Diana de Autoevaluación Interactiva</h2>
+              <p class="text-xs text-slate-500">
+                Selecciona la opción que mejor representa tu aprendizaje
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.1 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.1</span>
+            Interpreto escalas numéricas y gráficas, localizo elementos en mapas cuadriculados y calculo distancias reales o representadas.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.2 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.2</span>
+            Localizo puntos mediante coordenadas y reconozco los cuatro cuadrantes.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.3 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.3</span>
+            Mido, sumo y resto ángulos; aplico transformaciones y simetrías; y construyo bisectrices y mediatrices.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.4 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.4</span>
+            Distingo puntos, rectas, semirrectas, segmentos, posiciones relativas y tipos de curvas.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.5 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.5</span>
+            Clasifico figuras planas, identifico líneas y centros notables de triángulos, aplico Pitágoras y comprendo el significado de π en la circunferencia.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.6 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.6</span>
+            Identifico poliedros, prismas, pirámides y cuerpos redondos mediante sus elementos.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.7 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.7</span>
+            Calculo perímetros y áreas de figuras planas simples y compuestas.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+            
+        <!-- CRITERIO DE AUTOEVALUACIÓN 8.8 -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+            <span class="font-bold text-junta mr-1">8.8</span>
+            Integro mapas y escalas, operaciones con ángulos, construcciones geométricas, centros del triángulo, Pitágoras, figuras y medidas para resolver problemas.
+          </div>
+          <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+            <button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi nunca</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >A veces</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Casi siempre</button>
+<button
+              class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
+              onclick="selectEval(this)"
+              type="button"
+            >Siempre</button>
+          </div>
+        </div>
+    
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>
+          © <span id="current-year"></span> CEIP Joaquín Tena Artigas
+        </p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT DEL MATERIAL -->
+  <script>
+    function scrollToSec(id, event) {
+      if (event) {
+        event.preventDefault();
+      }
+
+      const target = document.getElementById(id);
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+
+
+    function selectEval(button) {
+      const container = button.parentElement;
+      const buttons = container.querySelectorAll('button');
+
+      buttons.forEach((item) => {
+        item.className =
+          'px-3 py-1.5 rounded-lg border border-slate-200 bg-white ' +
+          'text-xs font-bold text-slate-600 hover:bg-slate-100 transition';
+      });
+
+      button.className =
+        'px-3 py-1.5 rounded-lg border border-junta bg-junta text-white ' +
+        'text-xs font-bold shadow-sm transition transform scale-105';
+    }
+  </script>
+
+
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
