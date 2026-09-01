@@ -1,0 +1,2861 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- DESTINO: /recursos/quinto/matematicas5/estadistica-probabilidad/index.html -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estadística y probabilidad de Matemáticas de 5.º de Educación Primaria del CEIP Joaquín Tena Artigas." >
+    <title>
+      Estadística y probabilidad | Matemáticas 5.º | CEIP Joaquín Tena Artigas
+    </title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/img/logo-centro.png" >
+    <!-- TAILWIND: se mantiene para conservar el diseño del material -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <!-- CONFIGURACIÓN TAILWIND DEL MATERIAL -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              junta: {
+                DEFAULT: '#007A33',
+                dark: '#005724',
+                light: '#e6f4ea',
+                accent: '#00a847',
+              },
+              editorial: {
+                bg: '#f8faf9',
+                card: '#ffffff',
+                border: '#d1e7dd',
+                text: '#1e293b',
+                subtext: '#475569',
+                amber: '#d97706',
+                amberBg: '#fef3c7',
+              }
+            },
+            fontFamily: {
+              sans: ['system-ui', 'sans-serif'],
+              heading: ['system-ui', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <!-- ESTILOS ESPECÍFICOS DE LA SITUACIÓN DE APRENDIZAJE -->
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+      
+        .topic-page {
+          background-color: #f4f7f5;
+          color: #1e293b;
+        }
+      
+        .topic-page .text-heading {
+          font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Arial,
+            sans-serif;
+        }
+      
+        .custom-shadow {
+          box-shadow:
+            0 4px 20px -2px
+            rgba(0, 122, 51, 0.08);
+        }
+      
+        /* =========================================================
+           FRACCIÓN VERTICAL REUTILIZABLE
+           ========================================================= */
+      
+        .frac {
+          display: inline-grid;
+          grid-template-rows: auto auto;
+          align-items: center;
+          justify-items: stretch;
+      
+          min-width: 1.45em;
+          margin: 0 0.12em;
+      
+          color: inherit;
+      
+          font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Arial,
+            sans-serif;
+      
+          font-size: 0.92em;
+          font-weight: 600;
+          line-height: 1;
+      
+          text-align: center;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+      
+        .frac .num {
+          display: block;
+      
+          padding:
+            0
+            0.18em
+            0.09em;
+      
+          border-bottom:
+            1.5px solid
+            currentColor;
+        }
+      
+        .frac .den {
+          display: block;
+      
+          padding:
+            0.09em
+            0.18em
+            0;
+        }
+      
+        /* =========================================================
+           INTEGRACIÓN CON LA WEB PRINCIPAL
+           ========================================================= */
+      
+        .topic-shell {
+          width: min(94%, 1280px);
+      
+          margin: 0 auto;
+      
+          padding:
+            1.5rem
+            0
+            2.5rem;
+        }
+      
+        .topic-content section[id] {
+          scroll-margin-top: 90px;
+        }
+      
+        /* POTENCIAS Y DISTRIBUCIÓN DE LA PORTADA */
+        .power {
+          display: inline-flex;
+          align-items: flex-start;
+          white-space: nowrap;
+          font-family: system-ui, sans-serif;
+          font-weight: 600;
+          line-height: 1;
+          vertical-align: baseline;
+        }
+      
+        .power sup {
+          position: relative;
+          top: -0.35em;
+          margin-left: 0.04em;
+          font-size: 0.7em;
+          line-height: 1;
+        }
+      
+      
+        .topic-hero {
+          display: grid;
+          gap: 1.5rem;
+          align-items: center;
+        }
+        .topic-hero-copy {
+          min-width: 0;
+        }
+        .topic-hero-image {
+          width: min(100%, 18rem);
+          justify-self: center;
+        }
+        @media (min-width: 768px) {
+          .topic-hero {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
+          }
+        }
+      
+      /* COLOR DE LOS GRÁFICOS DEL MATERIAL */
+      .topic-content svg {
+        color: #007A33;
+      }
+    </style>
+    <!-- ESTILOS GENERALES DE LA WEB -->
+    <link rel="stylesheet" href="/css/base.css" >
+  </head>
+  <body>
+    <!-- ======================================================
+    ENLACE DE ACCESIBILIDAD
+    ====================================================== -->
+    <a class="skip-link" href="#contenido-principal" >
+      Ir al contenido principal
+    </a>
+    <!-- ======================================================
+    BANNER PRINCIPAL
+    ====================================================== -->
+    <header class="site-banner">
+      <a href="/" aria-label="Ir a la página de inicio" >
+        <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" >
+      </a>
+    </header>
+    <!-- ======================================================
+    NAVEGACIÓN PRINCIPAL
+    ====================================================== -->
+    <div class="navigation-wrapper">
+      <div class="navigation-container">
+        <!-- LOGO DEL CENTRO -->
+        <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio" >
+          <img src="/img/logo-centro.png" alt="" >
+        </a>
+        <!-- BOTÓN MENÚ MÓVIL -->
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation" >
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+        </button>
+        <!-- MENÚ PRINCIPAL -->
+        <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal" >
+          <ul>
+            <li class="nav-green">
+              <a href="/">
+                Inicio
+              </a>
+            </li>
+            <li class="nav-yellow">
+              <a href="/familias/">
+                Familias
+              </a>
+            </li>
+            <li class="nav-blue">
+              <a href="/recursos/" aria-current="page" >
+                Recursos educativos
+              </a>
+            </li>
+            <li class="nav-red">
+              <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer" >
+                <span aria-hidden="true">
+                  🔒
+                </span>
+                Área privada Profesorado
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- ======================================================
+    CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main id="contenido-principal" class="topic-page" >
+      <div class="topic-shell">
+        <!-- MIGAS DE PAN -->
+        <nav class="breadcrumbs" aria-label="Migas de pan" >
+          <ol>
+            <li>
+              <a href="/">
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="/recursos/">
+                Recursos educativos
+              </a>
+            </li>
+            <li>
+              <a href="/recursos/quinto/">
+                5.º de Primaria
+              </a>
+            </li>
+            <li>
+              <a href="/recursos/quinto/matematicas5/">
+                Matemáticas
+              </a>
+            </li>
+            <li aria-current="page">
+              Estadística y probabilidad
+            </li>
+          </ol>
+        </nav>
+        <!-- ==================================================
+        PORTADA DE LA SITUACIÓN DE APRENDIZAJE
+        ================================================== -->
+        <section class="topic-hero bg-gradient-to-r from-junta-dark via-junta to-junta-accent text-white rounded-3xl p-8 md:p-12 mb-10 shadow-lg relative overflow-hidden">
+          <!-- SÍMBOLOS DECORATIVOS -->
+          <div class="absolute -right-10 -bottom-10 opacity-10 text-white font-extrabold text-7xl sm:text-8xl lg:text-9xl select-none text-heading tracking-tight" aria-hidden="true">
+            % 🎲
+          </div>
+          <!-- TEXTO -->
+          <div class="topic-hero-copy relative z-20">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-heading leading-tight mb-4">
+              6. ESTADÍSTICA Y PROBABILIDAD
+            </h1>
+            <p class="text-emerald-100 text-base md:text-lg leading-relaxed text-justify">
+              Aprende a interpretar el azar, calcular probabilidades, organizar datos, obtener medidas estadísticas y representar la información mediante gráficos.
+            </p>
+          </div>
+          <!-- TOMATITO ESTADÍSTICA -->
+          <img src="/img/tomatito/tomatito-estadistica.png" alt="" class="topic-hero-image relative z-10 block h-auto object-contain pointer-events-none select-none" >
+        </section>
+        <!-- ÍNDICE DE NAVEGACIÓN -->
+        <nav aria-label="Contenidos de la situación de aprendizaje" class="bg-white rounded-2xl p-5 mb-10 shadow-sm border border-emerald-100">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-junta mb-3 flex items-center gap-2">
+            <span>
+              📍
+            </span>
+            Contenidos de la Situación de Aprendizaje
+          </h3>
+          <div class="flex flex-wrap gap-2 text-xs md:text-sm">
+            <!-- ENLACE 6.1 -->
+            <a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-1" onclick="scrollToSec('sec-1', event)">
+              6.1 Probabilidad de sucesos
+            </a>
+            <!-- ENLACE 6.2 -->
+            <a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-2" onclick="scrollToSec('sec-2', event)">
+              6.2 Regla de Laplace
+            </a>
+            <!-- ENLACE 6.3 -->
+            <a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-3" onclick="scrollToSec('sec-3', event)">
+              6.3 Frecuencias y medidas
+            </a>
+            <!-- ENLACE 6.4 -->
+            <a class="px-3 py-1.5 bg-slate-100 hover:bg-junta hover:text-white text-slate-700 font-medium rounded-lg transition" href="#sec-4" onclick="scrollToSec('sec-4', event)">
+              6.4 Representación gráfica
+            </a>
+            <!-- ENLACE 6.5 -->
+            <a class="px-3 py-1.5 bg-editorial-amberBg text-editorial-amber hover:bg-amber-600 hover:text-white font-bold rounded-lg transition" href="#sec-5" onclick="scrollToSec('sec-5', event)">
+              6.5 Problemas y desafíos
+            </a>
+            <!-- ENLACE REPASO -->
+            <a class="px-3 py-1.5 bg-emerald-100 text-junta-dark hover:bg-junta hover:text-white rounded-lg transition font-bold" href="#sec-repaso" onclick="scrollToSec('sec-repaso', event)">
+              🔄 Repasamos lo aprendido
+            </a>
+            <!-- ENLACE AUTOEVALUACIÓN -->
+            <a class="px-3 py-1.5 bg-indigo-100 text-indigo-800 hover:bg-indigo-600 hover:text-white rounded-lg transition font-bold" href="#sec-diana" onclick="scrollToSec('sec-diana', event)">
+              🎯 Autoevaluación
+            </a>
+          </div>
+        </nav>
+        <!-- BLOQUE PRINCIPAL DE CONTENIDOS -->
+        <div class="space-y-12 topic-content">
+          <!-- =========================================================== -->
+          <!-- SECCIÓN 6.1 -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-1">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                6.1
+              </span>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Probabilidad de sucesos
+              </h2>
+            </div>
+            <!-- EXPLICACIÓN 6.1 -->
+            <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+              <h3 class="text-base font-bold text-junta-dark mb-3 text-heading">
+                ¿Qué es el azar y cómo clasificamos los sucesos?
+              </h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-3">
+                En la vida cotidiana hay situaciones cuyo resultado no podemos predecir con certeza. Los acontecimientos que pueden ocurrir en un experimento aleatorio se llaman
+                <strong>
+                  sucesos
+                </strong>
+                .
+              </p>
+              <ul class="text-sm md:text-base text-slate-700 leading-relaxed space-y-2">
+                <li>
+                  <strong>
+                    Suceso seguro:
+                  </strong>
+                  ocurre siempre.
+                </li>
+                <li>
+                  <strong>
+                    Suceso posible:
+                  </strong>
+                  puede ocurrir, pero no es seguro.
+                </li>
+                <li>
+                  <strong>
+                    Suceso imposible:
+                  </strong>
+                  no puede ocurrir nunca.
+                </li>
+              </ul>
+            </div>
+            <!-- ACTIVIDADES 6.1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- EJERCICIO 6.1.1 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Clasifica cada uno de los siguientes sucesos en seguro, posible o imposible:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Sacar una carta de oros al destapar una carta de una baraja española completa.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Lanzar una moneda al aire y que caiga mostrando cara o cruz.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Tirar un dado de seis caras numeradas del 1 al 6 y obtener un número mayor que 8.
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Sacar una ficha verde de una caja que contiene 10 fichas verdes.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.1.2 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Indica en cada caso si el suceso es muy probable, poco probable o equiprobable (misma probabilidad de que suceda o no):
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Sacar un premio en una tómbola escolar donde hay 90 boletos ganadores y 10 boletos en blanco.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Sacar una bola azul de una urna con 2 bolas azules y 18 bolas rojas.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Obtener cara al lanzar una moneda no trucada.
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Acertar el número ganador de la lotería comprando un único décimo.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.1.3 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En una caseta de la Feria de Jerez hay una urna con 15 pañuelos flamencos: 8 son rojos, 5 son verdes y 2 son amarillos. Determina qué tipo de suceso es cada afirmación al extraer un pañuelo sin mirar:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Sacar un pañuelo de color rojo.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Sacar un pañuelo de color azul.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Sacar un pañuelo que sea rojo, verde o amarillo.
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Sacar un pañuelo de color amarillo.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.1.4 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Determina la posibilidad de los siguientes sucesos al girar una ruleta dividida en 8 sectores iguales pintados de la siguiente forma: 4 sectores azules, 3 sectores rojos y 1 sector blanco.
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Obtener el color azul.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Obtener el color blanco.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Obtener el color verde.
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Obtener un color que no sea negro.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.1.5 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5: Repasamos
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Resuelve en tu cuaderno las siguientes multiplicaciones con números decimales:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    435,86 x 3,47
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    108,257 x 642
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    293,405 x 128
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    0,7635 x 2,896
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.1.6 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6: Repasamos
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Calcula el cociente de las siguientes divisiones con decimales:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    73 585,5 : 87
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    15 424,854 : 8,5
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    45 567 586 : 0,5
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    15 345,75 : 2,9
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- =========================================================== -->
+          <!-- SECCIÓN 6.2 -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-2">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                6.2
+              </span>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Cálculo de probabilidades: la Regla de Laplace
+              </h2>
+            </div>
+            <!-- EXPLICACIÓN 6.2 -->
+            <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+              <h3 class="text-base font-bold text-junta-dark mb-3 text-heading">
+                ¿Cómo calculamos la probabilidad de un suceso?
+              </h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-4">
+                Cuando todos los resultados tienen la misma oportunidad de ocurrir, aplicamos la
+                <strong>
+                  Regla de Laplace
+                </strong>
+                .
+              </p>
+              <!-- FÓRMULA DE LAPLACE -->
+              <div class="inline-flex flex-wrap items-center gap-3 bg-white p-4 rounded-xl border border-emerald-200 text-sm md:text-base">
+                <strong>
+                  Probabilidad =
+                </strong>
+                <span aria-label="casos favorables partido por casos posibles" class="frac" role="math">
+                  <span class="num">
+                    casos favorables
+                  </span>
+                  <span class="den">
+                    casos posibles
+                  </span>
+                </span>
+              </div>
+              <div class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mt-4">
+                La probabilidad puede expresarse mediante una fracción, un número decimal o un porcentaje. Cuanto más se aproxima a 1 o al 100 %, más probable es el suceso.
+                <div class="inline-flex flex-wrap items-center gap-3 bg-white p-4 rounded-xl border border-emerald-200 text-sm md:text-base">
+                  <strong>
+                    Probabilidad de que salga un 3 en un dado equilibrado =
+                  </strong>
+                  <span aria-label="1 partido por 6" class="frac" role="math">
+                    <span class="num">
+                      1
+                    </span>
+                    <span class="den">
+                      6
+                    </span>
+                  </span>
+                  = 1 : 6 = 0,1666… ≈ 0,167.
+                  <span>
+                    Para obtener el porcentaje, multiplicamos por 100: (1 : 6) × 100 = 16,6666… %. Redondeado a una cifra decimal: ≈ 16,7 %.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- ACTIVIDADES 6.2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- EJERCICIO 6.2.1 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Expresa en forma de fracción la probabilidad de obtener los siguientes resultados al lanzar un dado común de 6 caras:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Obtener el número 4.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Obtener un número par (2, 4 o 6).
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Obtener un número menor que 3 (1 o 2).
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Obtener un múltiplo de 5.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.2.2 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Una ruleta de la suerte en una fiesta infantil de Antequera está dividida en 10 sectores iguales numerados del 1 al 10. Calcula la probabilidad de:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Sacar un número impar.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Sacar un número mayor que 7.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Sacar un número primo (2, 3, 5, 7).
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Sacar el número 12.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.2.3 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En una bolsa opaca hay 4 bolas rojas, 3 bolas verdes y 5 bolas azules. Se extrae una bola al azar.
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Calcula la probabilidad de extraer una bola roja.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Calcula la probabilidad de extraer una bola verde.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    ¿Qué es más probable: extraer una bola azul o una bola roja? Compara ambas probabilidades expresándolas en forma de fracción.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.2.4 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  De una baraja española de 40 cartas (1-7, sota, caballo y rey) se extrae una carta al azar. Halla la probabilidad de obtener:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    El 1.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Una carta del palo de oros.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Una figura (sota, caballo o rey).
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    El rey de bastos.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.2.5 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Se analizan dos cajas de dulces de Écija para un sorteo:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    Caja A: contiene 3 yemas con azúcar y 7 yemas sin azúcar.
+                  </li>
+                  <li>
+                    Caja B: contiene 6 yemas con azúcar y 4 yemas sin azúcar.
+                  </li>
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿En cuál de las dos cajas es más probable extraer a ciegas una yema con azúcar?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Justifica la respuesta calculando la fracción y el número decimal de la probabilidad en cada caja.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.2.6 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En un colegio de Almería se sortean 3 bicicletas entre los alumnos de 5º y 6º de Primaria. En total se han vendido 200 papeletas. Para adjudicar la primera bicicleta se extrae una sola papeleta, y todas tienen la misma probabilidad de salir.
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Si Lucía ha comprado 5 papeletas, ¿qué probabilidad tiene de ganar la primera bicicleta? Expresa el resultado en forma de fracción y decimal.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Si su compañero Pablo ha comprado 8 papeletas, ¿quién tiene mayor probabilidad de ganar la primera bicicleta? Expresa ambas probabilidades en forma de porcentaje.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- =========================================================== -->
+          <!-- SECCIÓN 6.3 -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-3">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                6.3
+              </span>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Frecuencias y medidas de centralización y dispersión
+              </h2>
+            </div>
+            <!-- EXPLICACIÓN 6.3 -->
+            <div class="bg-junta-light border-l-4 border-junta rounded-r-2xl p-5 mb-8">
+              <h3 class="text-base font-bold text-junta-dark mb-3 text-heading">
+                Conceptos clave de estadística
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-700 leading-relaxed">
+                <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                  <strong class="text-junta-dark">
+                    Frecuencia absoluta:
+                  </strong>
+                  número de veces que se repite un dato. Ejemplo, en una muestra de edades tenemos: 10, 11, 10, 11, 12, 12, 9, 10. La frecuencia absoluta de 9 años sería 1 y la de 10 años, 3.
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                  <strong class="text-junta-dark">
+                    Frecuencia relativa:
+                  </strong>
+                  frecuencia absoluta dividida entre el total de datos. En el ejemplo anterior, la frecuencia relativa de 9 años sería 1:8 = 0,125 = 12,5%.
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                  <strong class="text-junta-dark">
+                    Media:
+                  </strong>
+                  suma de todos los datos dividida entre el número de datos. Sumaríamos 10 + 11 + 10 + 11 + 12 + 12 + 9 + 10 = 85. A continuación, dividimos 85:8 = 10,625.
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                  <strong class="text-junta-dark">
+                    Moda:
+                  </strong>
+                  dato que aparece con mayor frecuencia. En nuestro ejemplo, sería el 10 el número que más se repite.
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                  <strong class="text-junta-dark">
+                    Mediana:
+                  </strong>
+                  valor central una vez ordenados los datos. En nuestro ejemplo, ordenamos de menor a mayor los datos: 9, 10, 10,
+                  <u>
+                    10
+                  </u>
+                  ,
+                  <u>
+                    11
+                  </u>
+                  , 11, 12, 12. En este caso, al haber 8 datos (número par), hay dos valores centrales, el 10 y el 11. En estos casos, le hacemos la media para saber su mediana:
+                  <span aria-label="10 más 11, dividido entre 2" class="frac" role="math">
+                    <span class="num">
+                      10 + 11
+                    </span>
+                    <span class="den">
+                      2
+                    </span>
+                  </span>
+                  <strong>
+                    = 10,5
+                  </strong>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                  <strong class="text-junta-dark">
+                    Rango:
+                  </strong>
+                  diferencia entre el dato mayor y el dato menor. En el ejemplo, seleccionamos el dato mayor (12) y el dato menor (9), restando 12 - 9 = 3.
+                </div>
+              </div>
+              <!-- TABLA DE EJEMPLO -->
+              <div class="overflow-x-auto mt-5">
+                <table class="w-full min-w-[560px] text-xs md:text-sm text-center bg-white border border-emerald-200 rounded-xl overflow-hidden">
+                  <thead class="bg-junta text-white">
+                    <tr>
+                      <th class="p-3">
+                        N.º de hermanos
+                      </th>
+                      <th class="p-3">
+                        Frecuencia absoluta
+                      </th>
+                      <th class="p-3">
+                        Frecuencia relativa
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="p-3 border-t">
+                        0
+                      </td>
+                      <td class="p-3 border-t">
+                        3
+                      </td>
+                      <td class="p-3 border-t">
+                        <span aria-label="3 partido por 20" class="frac" role="math">
+                          <span class="num">
+                            3
+                          </span>
+                          <span class="den">
+                            20
+                          </span>
+                        </span>
+                        = 0,15 = 15 %
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border-t">
+                        1
+                      </td>
+                      <td class="p-3 border-t">
+                        7
+                      </td>
+                      <td class="p-3 border-t">
+                        <span aria-label="7 partido por 20" class="frac" role="math">
+                          <span class="num">
+                            7
+                          </span>
+                          <span class="den">
+                            20
+                          </span>
+                        </span>
+                        = 0,35 = 35 %
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border-t">
+                        2
+                      </td>
+                      <td class="p-3 border-t">
+                        6
+                      </td>
+                      <td class="p-3 border-t">
+                        <span aria-label="6 partido por 20" class="frac" role="math">
+                          <span class="num">
+                            6
+                          </span>
+                          <span class="den">
+                            20
+                          </span>
+                        </span>
+                        = 0,30 = 30 %
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border-t">
+                        3
+                      </td>
+                      <td class="p-3 border-t">
+                        4
+                      </td>
+                      <td class="p-3 border-t">
+                        <span aria-label="4 partido por 20" class="frac" role="math">
+                          <span class="num">
+                            4
+                          </span>
+                          <span class="den">
+                            20
+                          </span>
+                        </span>
+                        = 0,20 = 20 %
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- ACTIVIDADES 6.3 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- EJERCICIO 6.3.1 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Se realiza una encuesta a 20 estudiantes de Córdoba sobre su plato preferido y se obtienen los siguientes datos: Salmorejo (8), Flamenquín (6), Gazpacho (4), Tortilla (2).
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Construye una tabla indicando la frecuencia absoluta de cada plato.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Calcula la frecuencia relativa en forma de fracción para cada opción.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Comprueba que la suma de todas las frecuencias absolutas es igual al total de encuestados.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.2 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Expresa en forma decimal las frecuencias relativas obtenidas al registrar el color de los ojos de 50 personas en una clínica de Granada:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Ojos marrones: 25 personas.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Ojos azules: 10 personas.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Ojos verdes: 15 personas.
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Comprueba que la suma de las frecuencias relativas decimales es igual a 1.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.3 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En un entrenamiento del equipo de baloncesto de Linares se registran las tallas de calzado de 10 jugadores: 38, 39, 38, 40, 41, 39, 38, 40, 38, 39.
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Elabora la tabla de frecuencias absolutas para las distintas tallas.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Determina qué fracción representa la frecuencia relativa de la talla 38.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.4 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Completa los datos que faltan en la siguiente tabla de frecuencias sobre las mascotas de 25 familias de un barrio de Huelva:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Perro: Frecuencia absoluta = 12. Frecuencia relativa = ___ / 25 = ___ %
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Gato: Frecuencia absoluta = 8. Frecuencia relativa = ___ / 25 = ___ %
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Pájaro: Frecuencia absoluta = ___ . Frecuencia relativa =
+                    <span aria-label="5 partido por 25" class="frac" role="math">
+                      <span class="num">
+                        5
+                      </span>
+                      <span class="den">
+                        25
+                      </span>
+                    </span>
+                    = ___ %
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Escribe la frecuencia relativa decimal correspondiente a los gatos. Pásalo después a porcentaje.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.5 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Expresa en porcentaje (%) las siguientes frecuencias relativas decimales correspondientes al tipo de vehículo que entra en un aparcamiento de Sevilla:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Turismos: 0,55
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Motocicletas: 0,25
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Bicicletas: 0,12
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    Furgonetas: 0,08
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.6 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6
+                </span>
+                <div class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Cada apartado muestra las notas de uno de los cuatro alumnos de Málaga en Matemáticas durante el trimestre. Calcula la media aritmética de cada alumno:
+                  <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      7, 8, 6, 9, 10.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      4, 5, 3, 7, 8.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      7, 10, 5, 8.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      2, 5, 9, 6, 8, 7.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- EJERCICIO 6.3.7 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 7
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Halla la moda en cada una de las siguientes series de datos:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Horas semanales de deporte: 3, 5, 2, 5, 4, 5, 6, 2
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Temperatura máxima en grados Celsius: 22, 24, 22, 25, 26, 22, 24
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Puntos conseguidos en un juego: 10, 15, 20, 15, 10, 15, 25
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.8 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 8
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Ordena de menor a mayor y calcula la mediana de las siguientes series de números:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    12, 15, 11, 18, 14, 13, 17
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      5, 8, 2, 9, 6
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      4, 10, 8, 6, 12, 14
+                    </li>
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.9 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 9
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Obtén el rango de los siguientes conjuntos de datos medidos en Andalucía:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Alturas en metros de cinco palmeras en el Parque María Luisa: 12, 18, 15, 22, 10
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Precipitaciones en litros por metro cuadrado (L/m²) registradas en Grazalema en cuatro días: 45, 120, 85, 30
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Edades de los miembros de una agrupación musical: 12, 45, 18, 60, 25, 34
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.10 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 10
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Un grupo de 7 atletas andaluces ha registrado los siguientes pesos en kilogramos: 62, 58, 65, 62, 70, 62, 63. Calcula:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    La media aritmética del peso del grupo.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    La moda de los pesos.
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    La mediana.
+                  </li>
+                  <li>
+                    <strong>
+                      d)
+                    </strong>
+                    El rango de la distribución.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.11 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 11
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En una almazara de Jaén se miden los litros de aceite producidos por hora durante un turno de trabajo: 450, 500, 480, 520, 500.
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Calcula la media de litros producidos por hora.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Determina el rango de producción en ese turno.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.12 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 12
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Las faltas de asistencia registradas en un colegio durante una semana fueron: Lunes (4), Martes (2), Miércoles (2), Jueves (5), Viernes (7).
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Halla la media de faltas de asistencia al día.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Determina la mediana de las faltas observadas.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.13 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 13
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Se mide el tiempo en minutos que tardan 5 estudiantes de Úbeda en llegar al colegio: 10, 15, 12, 20, 8. Calcula la media aritmética del tiempo de recorrido.
+                </p>
+              </div>
+              <!-- EJERCICIO 6.3.14 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 14
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Dada la serie de datos de temperaturas registradas en Sierra Nevada (1, 3, 2, 5, 4):
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    Calcula la media aritmética.
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Si al día siguiente se registra una temperatura extraordinaria de 15 grados, vuelve a calcular la media y explica qué le ha ocurrido al resultado.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.3.15 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 15
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Se registran las ventas diarias de kg de fresas en una frutería de Moguer durante seis días: 40, 50, 45, 50, 60, 55. Calcula la media, la moda, la mediana y el rango de las ventas.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- =========================================================== -->
+          <!-- SECCIÓN 6.4 -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100" id="sec-4">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                6.4
+              </span>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Representación gráfica de datos estadísticos
+              </h2>
+            </div>
+            <!-- TIPOS DE GRÁFICOS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <!-- EJEMPLO GRÁFICO 6.4.1: DIAGRAMA DE PUNTOS -->
+              <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                <h4 class="font-bold text-junta-dark mb-2">
+                  Diagrama de puntos
+                </h4>
+                <p class="text-xs md:text-sm text-slate-700 mb-4">
+                  Representa cada dato mediante un punto sobre una recta numérica.
+                </p>
+                <svg aria-label="Ejemplo de diagrama de puntos" class="w-full h-40 bg-white rounded-xl border border-slate-200" role="img" viewBox="0 0 320 150">
+                  <line stroke="currentColor" stroke-width="2" x1="35" x2="290" y1="120" y2="120">
+                  </line>
+                  <g fill="currentColor">
+                    <circle cx="80" cy="105" r="6">
+                    </circle>
+                    <circle cx="80" cy="88" r="6">
+                    </circle>
+                    <circle cx="140" cy="105" r="6">
+                    </circle>
+                    <circle cx="140" cy="88" r="6">
+                    </circle>
+                    <circle cx="140" cy="71" r="6">
+                    </circle>
+                    <circle cx="200" cy="105" r="6">
+                    </circle>
+                    <circle cx="200" cy="88" r="6">
+                    </circle>
+                    <circle cx="260" cy="105" r="6">
+                    </circle>
+                  </g>
+                  <g fill="currentColor" font-size="12" text-anchor="middle">
+                    <text x="80" y="140">
+                      1
+                    </text>
+                    <text x="140" y="140">
+                      2
+                    </text>
+                    <text x="200" y="140">
+                      3
+                    </text>
+                    <text x="260" y="140">
+                      4
+                    </text>
+                  </g>
+                </svg>
+              </div>
+              <!-- EJEMPLO GRÁFICO 6.4.2: GRÁFICO DE LÍNEAS -->
+              <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                <h4 class="font-bold text-junta-dark mb-2">
+                  Gráfico de líneas
+                </h4>
+                <p class="text-xs md:text-sm text-slate-700 mb-4">
+                  Une puntos mediante segmentos para mostrar la evolución de una variable.
+                </p>
+                <svg aria-label="Ejemplo de gr&aacute;fico de l&iacute;neas" class="w-full h-40 bg-white rounded-xl border border-slate-200" role="img" viewBox="0 0 320 150">
+                  <line stroke="currentColor" stroke-width="2" x1="40" x2="290" y1="120" y2="120">
+                  </line>
+                  <line stroke="currentColor" stroke-width="2" x1="40" x2="40" y1="25" y2="120">
+                  </line>
+                  <polyline fill="none" points="55,100 120,70 185,85 250,40" stroke="currentColor" stroke-width="3">
+                  </polyline>
+                  <g fill="currentColor">
+                    <circle cx="55" cy="100" r="5">
+                    </circle>
+                    <circle cx="120" cy="70" r="5">
+                    </circle>
+                    <circle cx="185" cy="85" r="5">
+                    </circle>
+                    <circle cx="250" cy="40" r="5">
+                    </circle>
+                  </g>
+                </svg>
+              </div>
+              <!-- EJEMPLO GRÁFICO 6.4.3: DIAGRAMA DE BARRAS -->
+              <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                <h4 class="font-bold text-junta-dark mb-2">
+                  Diagrama de barras
+                </h4>
+                <p class="text-xs md:text-sm text-slate-700 mb-4">
+                  Emplea barras cuya altura es proporcional a la frecuencia.
+                </p>
+                <svg aria-label="Ejemplo de diagrama de barras" class="w-full h-40 bg-white rounded-xl border border-slate-200" role="img" viewBox="0 0 320 150">
+                  <line stroke="currentColor" stroke-width="2" x1="40" x2="290" y1="120" y2="120">
+                  </line>
+                  <rect fill="currentColor" height="45" opacity="0.75" width="35" x="65" y="75">
+                  </rect>
+                  <rect fill="currentColor" height="75" opacity="0.75" width="35" x="125" y="45">
+                  </rect>
+                  <rect fill="currentColor" height="60" opacity="0.75" width="35" x="185" y="60">
+                  </rect>
+                  <rect fill="currentColor" height="30" opacity="0.75" width="35" x="245" y="90">
+                  </rect>
+                </svg>
+              </div>
+              <!-- EJEMPLO GRÁFICO 6.4.4: GRÁFICO DE SECTORES -->
+              <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                <h4 class="font-bold text-junta-dark mb-2">
+                  Gráfico de sectores
+                </h4>
+                <p class="text-xs md:text-sm text-slate-700 mb-4">
+                  Divide un círculo en sectores proporcionales al porcentaje del total.
+                </p>
+                <svg aria-labelledby="sectores-titulo sectores-descripcion" class="w-full h-40 bg-white rounded-xl border border-slate-200" role="img" viewBox="0 0 320 150">
+                  <title id="sectores-titulo">
+                    Ejemplo de gráfico de sectores
+                  </title>
+                  <desc id="sectores-descripcion">
+                    Un círculo completo repartido en cuatro sectores del 50 %, 25 %, 15 % y 10 %, identificados en la leyenda.
+                  </desc>
+                  <path d="M 90 75 L 90.0000 19.0000 A 56 56 0 0 1 90.0000 131.0000 Z" fill="#005724" stroke="white" stroke-width="1">
+                  </path>
+                  <rect x="183" y="22" width="15" height="15" rx="2" fill="#005724">
+                  </rect>
+                  <text x="207" y="34" font-family="sans-serif" font-size="15" fill="#1e293b">
+                    50 %
+                  </text>
+                  <path d="M 90 75 L 90.0000 131.0000 A 56 56 0 0 1 34.0000 75.0000 Z" fill="#007A33" stroke="white" stroke-width="1">
+                  </path>
+                  <rect x="183" y="49" width="15" height="15" rx="2" fill="#007A33">
+                  </rect>
+                  <text x="207" y="61" font-family="sans-serif" font-size="15" fill="#1e293b">
+                    25 %
+                  </text>
+                  <path d="M 90 75 L 34.0000 75.0000 A 56 56 0 0 1 57.0840 29.6950 Z" fill="#49A96C" stroke="white" stroke-width="1">
+                  </path>
+                  <rect x="183" y="76" width="15" height="15" rx="2" fill="#49A96C">
+                  </rect>
+                  <text x="207" y="88" font-family="sans-serif" font-size="15" fill="#1e293b">
+                    15 %
+                  </text>
+                  <path d="M 90 75 L 57.0840 29.6950 A 56 56 0 0 1 90.0000 19.0000 Z" fill="#A4D8B1" stroke="white" stroke-width="1">
+                  </path>
+                  <rect x="183" y="103" width="15" height="15" rx="2" fill="#A4D8B1">
+                  </rect>
+                  <text x="207" y="115" font-family="sans-serif" font-size="15" fill="#1e293b">
+                    10 %
+                  </text>
+                </svg>
+              </div>
+              <!-- EJEMPLO GRÁFICO 6.4.5: HISTOGRAMA -->
+              <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 md:col-span-2">
+                <h4 class="font-bold text-junta-dark mb-2">
+                  Histograma
+                </h4>
+                <p class="text-xs md:text-sm text-slate-700 mb-4">
+                  Representa frecuencias de datos agrupados en intervalos continuos, sin separación entre las barras.
+                </p>
+                <svg aria-label="Ejemplo de histograma" class="w-full h-44 bg-white rounded-xl border border-slate-200" role="img" viewBox="0 0 520 170">
+                  <line stroke="currentColor" stroke-width="2" x1="55" x2="470" y1="135" y2="135">
+                  </line>
+                  <rect fill="currentColor" height="40" opacity="0.35" width="75" x="90" y="95">
+                  </rect>
+                  <rect fill="currentColor" height="80" opacity="0.55" width="75" x="165" y="55">
+                  </rect>
+                  <rect fill="currentColor" height="100" opacity="0.75" width="75" x="240" y="35">
+                  </rect>
+                  <rect fill="currentColor" height="65" opacity="0.55" width="75" x="315" y="70">
+                  </rect>
+                  <rect fill="currentColor" height="30" opacity="0.35" width="75" x="390" y="105">
+                  </rect>
+                </svg>
+              </div>
+            </div>
+            <!-- SECCIÓN DEL VÍDEO -->
+            <div class="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm mb-8">
+              <!-- Título -->
+              <h3 class="text-base md:text-lg font-bold text-junta-dark text-heading mb-4">
+                GRÁFICOS ESTADÍSTICOS
+              </h3>
+              <!-- Descripción -->
+              <p class="mt-3 text-xs md:text-sm text-slate-600">
+                Observa el vídeo y aprende más sobre los gráficos estadísticos.
+                <br>
+              </p>
+              <br>
+              <!-- Vídeo -->
+              <div class="overflow-hidden rounded-xl bg-black">
+                <video aria-label="Vídeo sobre gráficos estadísticos" controls preload="metadata" class="block w-full h-auto" >
+                  <source src="https://formacion.ceipjta.com/videos/graficos-estadistica-final.mp4" type="video/mp4" >
+                  Tu navegador no puede reproducir este vídeo.
+                </video>
+              </div>
+            </div>
+            <!-- ACTIVIDADES 6.4 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- EJERCICIO 6.4.1 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 1
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En un diagrama de puntos se han anotado los libros leídos por un grupo de alumnos durante el verano:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    0 libros: 2 puntos.
+                  </li>
+                  <li>
+                    1 libro: 5 puntos.
+                  </li>
+                  <li>
+                    2 libros: 8 puntos.
+                  </li>
+                  <li>
+                    3 libros: 3 puntos.
+                  </li>
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿Cuántos alumnos leyeron exactamente 2 libros?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    ¿Cuántos alumnos fueron encuestados en total?
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Dibuja el diagrama de puntos.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.4.2 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 2
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Un gráfico de líneas muestra la evolución de la temperatura en una estación meteorológica de Granada a lo largo de un día: 8:00 (5 °C), 12:00 (15 °C), 16:00 (22 °C), 20:00 (14 °C).
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿En qué tramo horario se produjo el mayor aumento de temperatura?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    ¿Cuál fue la temperatura máxima alcanzada según la gráfica?
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Dibuja el diagrama de líneas.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.4.3 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 3
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Observa los datos de un diagrama de barras sobre los medios de transporte utilizados por los escolares de Cádiz: Autobús (120), A pie (180), Bicicleta (60), Coche particular (40).
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿Cuál es el medio de transporte más utilizado?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    ¿Cuántos alumnos más van a pie que en autobús?
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Dibuja el diagrama de barras.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.4.4 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 4
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En un gráfico de sectores sobre la superficie dedicada a distintos cultivos en la comarca de la Axarquía, el 50 % del círculo corresponde a aguacates, el 25 % a mangos, el 15 % a cítricos y el 10 % a hortalizas.
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿Qué cultivo ocupa exactamente la mitad del gráfico?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Si la finca total mide 200 hectáreas, ¿cuántas hectáreas están dedicadas a los mangos?
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Dibuja el diagrama de sectores.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.4.5 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 5
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Un histograma representa las edades de los asistentes a un taller de artesanía en Ronda organizados en intervalos: De 10 a menos de 20 años (8 personas), de 20 a menos de 30 años (15 personas), de 30 a menos de 40 años (12 personas) y de 40 a menos de 50 años (5 personas).
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿Qué grupo de edad es el más numeroso?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    ¿Cuántas personas menores de 30 años asistieron al taller?
+                  </li>
+                  <li>
+                    <strong>
+                      c)
+                    </strong>
+                    Dibuja el histograma.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.4.6 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 6
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Dibuja en tu cuaderno un diagrama de barras vertical con los datos de las frutas preferidas por los alumnos de una clase: Manzana (6), Plátano (10), Fresa (8), Naranja (4). Recuerda rotular los ejes y dar un título al gráfico.
+                </p>
+              </div>
+              <!-- EJERCICIO 6.4.7 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 7
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Elabora un gráfico de líneas que represente las ventas semanales de botellas de aceite de oliva en una tienda de productos locales: Semana 1 (100 botellas), Semana 2 (150 botellas), Semana 3 (120 botellas), Semana 4 (200 botellas).
+                </p>
+              </div>
+              <!-- EJERCICIO 6.4.8 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 8
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  En un partido de entrenamiento, el entrenador de baloncesto anota los encestes de tres puntos logrados por cada jugador mediante un diagrama de puntos: Jugador A (3), Jugador B (5), Jugador C (1), Jugador D (5), Jugador E (2).
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿Qué valor representa la moda de los aciertos en el diagrama de puntos?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Dibuja el diagrama de puntos equivalente en tu cuaderno.
+                  </li>
+                </ul>
+              </div>
+              <!-- EJERCICIO 6.4.9 -->
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                  Ejercicio 9
+                </span>
+                <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                  Un gráfico combinado compara las precipitaciones medias mensuales en milímetros entre dos ciudades andaluzas (Sevilla y Jaén) durante el otoño:
+                </p>
+                <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                  <li>
+                    Sevilla: Octubre (60 mm), Noviembre (80 mm), Diciembre (90 mm).
+                  </li>
+                  <li>
+                    Jaén: Octubre (70 mm), Noviembre (85 mm), Diciembre (100 mm).
+                  </li>
+                  <li>
+                    <strong>
+                      a)
+                    </strong>
+                    ¿En qué ciudad llovió más durante el mes de diciembre?
+                  </li>
+                  <li>
+                    <strong>
+                      b)
+                    </strong>
+                    Calcula la precipitación media mensual en Jaén durante esos tres meses.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- =========================================================== -->
+          <!-- SECCIÓN 6.5 -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-editorial-amber/40" id="sec-5">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-editorial-amber text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                6.5
+              </span>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                Problemas y Desafíos
+              </h2>
+            </div>
+            <!-- PARTE A -->
+            <div class="mb-10">
+              <h3 class="text-base font-bold text-junta mb-5 text-heading">
+                🧮 Parte A: Operaciones y problemas de repaso
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- EJERCICIO 6.5.1 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 1
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Resuelve la siguiente operación combinada con potencias y números decimales respetando la jerarquía:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                    <li>
+                      <span aria-label="(3,5 + 2,5) elevado a 2" class="power" role="math">
+                        <span class="base">
+                          (3,5 + 2,5)
+                        </span>
+                        <sup>
+                          2
+                        </sup>
+                      </span>
+                      : 10 + 4,2 x 3
+                    </li>
+                  </ul>
+                </div>
+                <!-- EJERCICIO 6.5.2 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 2
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    En un depósito de agua de una comunidad de regantes en Almería hay 1 500,5 litros. Por la mañana se consumen
+                    <span aria-label="2 partido por 5" class="frac" role="math">
+                      <span class="num">
+                        2
+                      </span>
+                      <span class="den">
+                        5
+                      </span>
+                    </span>
+                    del total para el riego por goteo. ¿Cuántos litros de agua quedan en el depósito?
+                  </p>
+                </div>
+                <!-- EJERCICIO 6.5.3 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 3
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Un comerciante compra 100 cajas de tortas de aceite de Castilleja de la Cuesta por un importe total de 325,00 €. Si vende cada caja a 4,50 €, ¿cuál es el beneficio total obtenido por la venta de todas las cajas?
+                  </p>
+                </div>
+                <!-- EJERCICIO 6.5.4 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 4
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Las toneladas de trigo cosechadas en cinco parcelas de la campiña cordobesa han sido: 12,4 t; 15,8 t; 10,2 t; 14,6 t y 17,0 t. Teniendo en cuenta que una tonelada (t) es igual a 1000 kg,
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Calcula la media de toneladas cosechadas por parcela.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Halla el rango de la cosecha entre las distintas parcelas.
+                    </li>
+                  </ul>
+                </div>
+                <!-- EJERCICIO 6.5.5 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 5
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Se empaquetan 245,5 kg de harina de almortas en bolsas de 0,5 kg cada una. ¿Cuántas bolsas completas se llenarán?
+                  </p>
+                </div>
+                <!-- EJERCICIO 6.5.6 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 6
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    De un mazo de 40 cartas españolas se extrae una carta.
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Calcula la probabilidad de extraer una figura expresada en forma de fracción irreducible.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Convierte dicha fracción en número decimal con dos cifras decimales.
+                    </li>
+                  </ul>
+                </div>
+                <!-- EJERCICIO 6.5.7 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 7
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Realiza la siguiente operación combinada de fracciones y simplifica el resultado final:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-2 text-slate-700 leading-relaxed">
+                    <li>
+                      (
+                      <span aria-label="5 partido por 12" class="frac" role="math">
+                        <span class="num">
+                          5
+                        </span>
+                        <span class="den">
+                          12
+                        </span>
+                      </span>
+                      +
+                      <span aria-label="4 partido por 12" class="frac" role="math">
+                        <span class="num">
+                          4
+                        </span>
+                        <span class="den">
+                          12
+                        </span>
+                      </span>
+                      ) - (
+                      <span aria-label="2 partido por 12" class="frac" role="math">
+                        <span class="num">
+                          2
+                        </span>
+                        <span class="den">
+                          12
+                        </span>
+                      </span>
+                      +
+                      <span aria-label="1 partido por 12" class="frac" role="math">
+                        <span class="num">
+                          1
+                        </span>
+                        <span class="den">
+                          12
+                        </span>
+                      </span>
+                      )
+                    </li>
+                  </ul>
+                </div>
+                <!-- EJERCICIO 6.5.8 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 8
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Expresa el número 450 000 utilizando la notación con potencia de base 10 correspondiente.
+                  </p>
+                </div>
+                <!-- EJERCICIO 6.5.9 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 9
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    Un autobús escolar realiza cinco rutas diarias registrando las siguientes distancias en kilómetros: 12, 18, 15, 20, 15. Halla la moda y la mediana de los kilómetros recorridos.
+                  </p>
+                </div>
+                <!-- EJERCICIO 6.5.10 -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+                    Ejercicio 10
+                  </span>
+                  <p class="text-sm font-medium text-slate-800 mb-3 leading-relaxed text-justify">
+                    María compra 3,5 kg de naranjas de Palma del Río a 1,40 €/kg y 2 kg de fresas a 2,80 €/kg. Paga con un billete de 20 €. ¿Cuánto dinero le devuelven?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- PARTE B -->
+            <div>
+              <h3 class="text-base font-bold text-editorial-amber mb-5 text-heading">
+                🌟 Parte B: Desafíos estadísticos
+              </h3>
+              <div class="space-y-6">
+                <!-- DESAFÍO 6.5.1 -->
+                <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+                  <h4 class="text-sm md:text-base font-bold text-amber-900">
+                    Desafío 1: Estudio sobre los hábitos de desayuno saludable en el colegio
+                  </h4>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    La comisión de salud del colegio organiza un estudio estadístico para analizar el consumo de frutas en el desayuno entre los 30 alumnos de la clase de 6º de Primaria durante una semana escolar (de lunes a viernes).
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Los datos recopilados sobre el número de días que cada alumno consume fruta en el desayuno son los siguientes:
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    3, 5, 2, 4, 5, 1, 0, 4, 3, 5, 2, 4, 5, 5, 3, 2, 4, 1, 5, 4, 3, 5, 2, 4, 5, 3, 4, 5, 1, 2
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Fases del trabajo (a realizar en el cuaderno o mediante hoja de cálculo):
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      1. Organización y recuento de datos:
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Construye en tu cuaderno o en una hoja de cálculo (Libreoffice o Google Sheets) una tabla de frecuencias completa que incluya:
+                  </p>
+                  <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                    <li>
+                      Variable estadística (Días de fruta: 0, 1, 2, 3, 4, 5).
+                    </li>
+                    <li>
+                      Frecuencia absoluta.
+                    </li>
+                    <li>
+                      Frecuencia relativa (en forma de fracción y decimal).
+                    </li>
+                    <li>
+                      Porcentaje (%).
+                    </li>
+                  </ul>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      2. Medidas estadísticas:
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Calcula las principales medidas de centralización y dispersión de la distribución:
+                  </p>
+                  <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                    <li>
+                      Media aritmética: Promedio de días que consumen fruta los alumnos de la clase.
+                    </li>
+                    <li>
+                      Moda: El valor de días más frecuente.
+                    </li>
+                    <li>
+                      Mediana: El valor central de la serie ordenada.
+                    </li>
+                    <li>
+                      Rango: La diferencia entre el número máximo y mínimo de días observados.
+                    </li>
+                  </ul>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      3. Representación gráfica:
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Elabora un diagrama de barras (en papel pautado o insertando un gráfico en la hoja de cálculo) donde el eje horizontal represente los días de consumo de fruta y el eje vertical la frecuencia absoluta de alumnos.
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      4. Interpretación y conclusiones:
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    A partir de los resultados obtenidos, redacta un breve informe (2 o 3 líneas) evaluando si los hábitos de desayuno de la clase son saludables o si se debe proponer una campaña de fomento de la fruta en el recreo.
+                  </p>
+                </div>
+                <!-- DESAFÍO 6.5.2 -->
+                <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 space-y-4">
+                  <h4 class="text-sm md:text-base font-bold text-amber-900">
+                    Desafío 2: Análisis del consumo de aceite de oliva en los hogares andaluces
+                  </h4>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Una asociación de consumidores realiza un muestreo sobre el volumen mensual de Aceite de Oliva Virgen Extra (AOVE) consumido por 20 familias de una comarca de Jaén. Los litros consumidos al mes por cada familia han sido:
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    4, 5, 3, 6, 4, 5, 5, 2, 4, 6, 5, 3, 4, 5, 7, 4, 5, 3, 6, 4
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Fases del trabajo (a realizar en el cuaderno o mediante hoja de cálculo):
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      1. Organización de la información:
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Elabora la tabla de frecuencias absolutas y relativas correspondiente a los litros de consumo mensual.
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      2. Cálculos estadísticos:
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Calcula en tu cuaderno o utilizando las fórmulas automáticas de la hoja de cálculo:
+                  </p>
+                  <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                    <li>
+                      La media exacta de litros consumidos al mes por familia.
+                    </li>
+                    <li>
+                      La moda del consumo.
+                    </li>
+                    <li>
+                      La mediana.
+                    </li>
+                    <li>
+                      El rango de consumo entre la familia que más consume y la que menos.
+                    </li>
+                  </ul>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      3. Gráficos estadísticos comparativos:
+                    </strong>
+                  </p>
+                  <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                    <li>
+                      Crea un diagrama de puntos o de líneas para mostrar la distribución de los consumos.
+                    </li>
+                    <li>
+                      Diseña un gráfico de sectores agrupando las familias en tres categorías: Consumo bajo (1 a 3 litros), Consumo medio (4 a 5 litros) y Consumo alto (6 a 7 litros).
+                    </li>
+                  </ul>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    <strong>
+                      4. Análisis de costes (Integración operacional):
+                    </strong>
+                  </p>
+                  <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Si el litro de AOVE tiene un precio de 7,50 €:
+                  </p>
+                  <ul class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-1.5 bg-white p-4 rounded-xl border border-amber-200">
+                    <li>
+                      Calcula el gasto medio mensual por familia en aceite de oliva.
+                    </li>
+                    <li>
+                      ¿Cuál es el gasto total mensual conjunto de las 20 familias encuestadas? Exprésalo mediante una operación combinada.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- =========================================================== -->
+          <!-- REPASAMOS LO APRENDIDO -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-junta" id="sec-repaso">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-junta text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                🔄
+              </span>
+              <div>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                  Repasamos lo aprendido
+                </h2>
+                <p class="text-xs text-slate-500">
+                  Bloque de consolidación y repaso global de la Situación de Aprendizaje
+                </p>
+              </div>
+            </div>
+            <!-- FICHA DE REFUERZO -->
+            <div class="mb-10">
+              <div class="bg-emerald-50 border-l-4 border-junta p-4 rounded-r-xl mb-6">
+                <h3 class="text-base font-bold text-junta-dark text-heading">
+                  🟢 Ficha de Refuerzo
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- REFUERZO 6.1 • TIPOS DE SUCESOS -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Refuerzo 6.1 • Tipos de sucesos
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Clasifica y justifica cada situación:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Obtener un número menor que 7 al lanzar un dado.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Obtener un 9 al lanzar un dado de seis caras.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Sacar una bola roja de una bolsa con 8 rojas y 2 azules.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Obtener cara al lanzar una moneda equilibrada.
+                    </li>
+                  </ul>
+                </div>
+                <!-- REFUERZO 6.2 • REGLA DE LAPLACE -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Refuerzo 6.2 • Regla de Laplace
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Calcula las probabilidades en forma de fracción, decimal y porcentaje:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Sacar un número par al lanzar un dado.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Sacar una bola verde de una bolsa con 3 verdes y 7 rojas.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Extraer un as de una baraja española de 40 cartas.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Obtener cara al lanzar una moneda.
+                    </li>
+                  </ul>
+                </div>
+                <!-- REFUERZO 6.3 • MEDIDAS ESTADÍSTICAS -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Refuerzo 6.3 • Medidas estadísticas
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Utiliza la serie 4, 6, 6, 7, 9:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Calcula la media.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Determina la moda.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Halla la mediana.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Calcula el rango.
+                    </li>
+                  </ul>
+                </div>
+                <!-- REFUERZO 6.4 • REPRESENTACIÓN GRÁFICA -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Refuerzo 6.4 • Representación gráfica
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Elige el gráfico más adecuado para cada situación:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Evolución mensual de la temperatura.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Reparto porcentual de cultivos.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Número de alumnos por deporte favorito.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Edades agrupadas en intervalos.
+                    </li>
+                  </ul>
+                </div>
+                <!-- REFUERZO 6.5 • REPASO GLOBAL -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-junta text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Refuerzo 6.5 • Repaso global
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Resuelve las siguientes actividades:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Calcula
+                      <span aria-label="2 partido por 5" class="frac" role="math">
+                        <span class="num">
+                          2
+                        </span>
+                        <span class="den">
+                          5
+                        </span>
+                      </span>
+                      de 350.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Halla la media de 12, 15, 18, 15 y 20.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Calcula la probabilidad de sacar un número primo en un dado.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Convierte 0,35 en porcentaje.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- FICHA DE AMPLIACIÓN -->
+            <div class="mb-10">
+              <div class="bg-amber-50 border-l-4 border-editorial-amber p-4 rounded-r-xl mb-6">
+                <h3 class="text-base font-bold text-editorial-amber text-heading">
+                  🟠 Ficha de Ampliación
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- AMPLIACIÓN 6.1 • COMPARACIÓN DE SUCESOS -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Ampliación 6.1 • Comparación de sucesos
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Ordena los sucesos desde el menos probable hasta el más probable:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Sacar una bola roja de una bolsa con 1 roja y 9 azules.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Obtener un número menor que 6 al lanzar un dado.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Obtener cara al lanzar una moneda.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Sacar una bola verde de una bolsa formada solo por bolas verdes.
+                    </li>
+                  </ul>
+                </div>
+                <!-- AMPLIACIÓN 6.2 • PROBABILIDADES COMPARADAS -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Ampliación 6.2 • Probabilidades comparadas
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Compara las probabilidades de las cajas A y B:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Caja A: 4 premios y 16 boletos sin premio.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Caja B: 7 premios y 13 boletos sin premio.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Expresa ambas probabilidades como fracción y porcentaje.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Determina en qué caja conviene participar.
+                    </li>
+                  </ul>
+                </div>
+                <!-- AMPLIACIÓN 6.3 • EFECTO DE UN VALOR EXTREMO -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Ampliación 6.3 • Efecto de un valor extremo
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Analiza la serie 8, 9, 9, 10, 11 y después añade el valor 30:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Calcula la media inicial.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Calcula la nueva media.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Compara las medianas.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Explica qué medida se ve más afectada.
+                    </li>
+                  </ul>
+                </div>
+                <!-- AMPLIACIÓN 6.4 • DISEÑO DE GRÁFICOS -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Ampliación 6.4 • Diseño de gráficos
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    Representa los datos 5, 8, 12, 9 y 6:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Dibuja un diagrama de barras.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Construye un gráfico de líneas.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Indica qué información destaca mejor cada uno.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Escribe un título y rotula los ejes.
+                    </li>
+                  </ul>
+                </div>
+                <!-- AMPLIACIÓN 6.5 • DESAFÍO INTEGRADO -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                  <span class="inline-block bg-editorial-amber text-white text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                    Ampliación 6.5 • Desafío integrado
+                  </span>
+                  <p class="text-xs md:text-sm text-slate-700 mb-2 leading-relaxed">
+                    En una encuesta de 40 alumnos, 18 prefieren fútbol, 12 baloncesto y 10 atletismo:
+                  </p>
+                  <ul class="text-xs md:text-sm space-y-1.5 text-slate-700 leading-relaxed">
+                    <li>
+                      <strong>
+                        a)
+                      </strong>
+                      Calcula las frecuencias relativas.
+                    </li>
+                    <li>
+                      <strong>
+                        b)
+                      </strong>
+                      Exprésalas como porcentajes.
+                    </li>
+                    <li>
+                      <strong>
+                        c)
+                      </strong>
+                      Determina la moda.
+                    </li>
+                    <li>
+                      <strong>
+                        d)
+                      </strong>
+                      Explica qué gráfico utilizarías para representarlas.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- =========================================================== -->
+          <!-- DIANA DE AUTOEVALUACIÓN -->
+          <!-- =========================================================== -->
+          <section class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-indigo-200" id="sec-diana">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-indigo-600 text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg text-heading">
+                🎯
+              </span>
+              <div>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-heading">
+                  Diana de Autoevaluación Interactiva
+                </h2>
+                <p class="text-xs text-slate-500">
+                  Reflexiona sobre tu aprendizaje haciendo clic en la opción que mejor te defina
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <!-- CRITERIO DE AUTOEVALUACIÓN 6.1 -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                  <span class="font-bold text-junta mr-1">
+                    6.1
+                  </span>
+                  Distingo sucesos seguros, posibles e imposibles y comparo su grado de probabilidad.
+                </div>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi nunca
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    A veces
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi siempre
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Siempre
+                  </button>
+                </div>
+              </div>
+              <!-- CRITERIO DE AUTOEVALUACIÓN 6.2 -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                  <span class="font-bold text-junta mr-1">
+                    6.2
+                  </span>
+                  Aplico la Regla de Laplace y expreso probabilidades mediante fracciones, decimales y porcentajes.
+                </div>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi nunca
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    A veces
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi siempre
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Siempre
+                  </button>
+                </div>
+              </div>
+              <!-- CRITERIO DE AUTOEVALUACIÓN 6.3 -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                  <span class="font-bold text-junta mr-1">
+                    6.3
+                  </span>
+                  Calculo frecuencias absolutas y relativas, media, moda, mediana y rango.
+                </div>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi nunca
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    A veces
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi siempre
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Siempre
+                  </button>
+                </div>
+              </div>
+              <!-- CRITERIO DE AUTOEVALUACIÓN 6.4 -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                  <span class="font-bold text-junta mr-1">
+                    6.4
+                  </span>
+                  Interpreto y elaboro diagramas de puntos, líneas, barras, sectores e histogramas.
+                </div>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi nunca
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    A veces
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi siempre
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Siempre
+                  </button>
+                </div>
+              </div>
+              <!-- CRITERIO DE AUTOEVALUACIÓN 6.5 -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed">
+                  <span class="font-bold text-junta mr-1">
+                    6.5
+                  </span>
+                  Integro estadística, probabilidad y contenidos anteriores para resolver problemas y extraer conclusiones.
+                </div>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-2 auto-eval-group">
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi nunca
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    A veces
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Casi siempre
+                  </button>
+                  <button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-100 transition" onclick="selectEval(this)" type="button" aria-pressed="false">
+                    Siempre
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!-- ======================================================
+    PIE DE PÁGINA
+    ====================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- JUNTA DE ANDALUCÍA -->
+        <div class="footer-junta">
+          <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación" >
+        </div>
+        <!-- CENTRO -->
+        <div class="footer-school">
+          <p class="footer-school-name">
+            CEIP Joaquín Tena Artigas
+          </p>
+          <p>
+            Alcolea · Córdoba
+          </p>
+          <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer" >
+            Web oficial del Centro
+            <span aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        </div>
+      </div>
+      <!-- PARTE INFERIOR DEL FOOTER -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <p>
+            ©
+            <span id="current-year">
+            </span>
+            CEIP Joaquín Tena Artigas
+          </p>
+          <a href="#">
+            Volver arriba ↑
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- ======================================================
+    JAVASCRIPT DEL MATERIAL
+    ====================================================== -->
+    <script>
+      function scrollToSec(id, event) {
+      
+        if (event) {
+          event.preventDefault();
+        }
+      
+        const target =
+          document.getElementById(id);
+      
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      
+      }
+      
+      
+      function selectEval(button) {
+      
+        const container =
+          button.parentElement;
+      
+        const buttons =
+          container.querySelectorAll('button');
+      
+      
+        buttons.forEach((item) => {
+          item.setAttribute('aria-pressed', 'false');
+      
+          item.className =
+            'px-3 py-1.5 rounded-lg border border-slate-200 bg-white ' +
+            'text-xs font-bold text-slate-600 hover:bg-slate-100 transition';
+      
+        });
+      
+      
+        button.setAttribute('aria-pressed', 'true');
+      
+        button.className =
+          'px-3 py-1.5 rounded-lg border border-junta bg-junta text-white ' +
+          'text-xs font-bold shadow-sm transition transform scale-105';
+      
+      }
+    </script>
+    <!-- ======================================================
+    JAVASCRIPT GENERAL DE LA WEB
+    ====================================================== -->
+    <script src="/js/main.js">
+    </script>
+  </body>
+</html>
