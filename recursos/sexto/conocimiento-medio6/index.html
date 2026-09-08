@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- DESTINO: /recursos/sexto/conocimiento-medio6/index.html -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Recursos educativos de Conocimiento del Medio de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Conocimiento del Medio 6.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+
+  <!-- ESTILOS ESPECÍFICOS DE LA PÁGINA -->
+  <style>
+    .subject-page {
+      background: var(--background-soft);
+    }
+
+    .subject-shell {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    .subject-intro {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      padding: 2rem 2rem 0;
+      overflow: hidden;
+      border: 1px solid #c8e2d3;
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          #edf8f1 0%,
+          #ffffff 70%
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-intro-text {
+      padding-bottom: 2rem;
+    }
+
+    .subject-label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: var(--pencil-green, #278354);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subject-intro h1 {
+      margin: 0 0 0.75rem;
+      color: var(--text-main);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    .subject-intro p {
+      max-width: 790px;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .subject-mascot {
+      display: block;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .learning-heading {
+      margin: 0 0 0.45rem;
+      color: var(--text-main);
+      font-size: 1.45rem;
+    }
+
+    .learning-intro {
+      margin: 0 0 1.25rem;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .learning-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      min-height: 170px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-3px);
+      border-color: #add5bd;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .learning-card:focus-visible {
+      outline: 3px solid rgba(39, 131, 84, 0.28);
+      outline-offset: 3px;
+    }
+
+    .learning-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pencil-green, #278354);
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    .learning-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .learning-content h2 {
+      margin: 0 0 0.55rem;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .learning-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .learning-count {
+      align-self: flex-start;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: #edf8f1;
+      color: #246a47;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .subject-intro {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .subject-intro-text {
+        padding-bottom: 0;
+      }
+
+      .subject-mascot {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subject-shell {
+        width: min(94%, var(--max-width));
+        padding-top: 1.25rem;
+      }
+
+      .subject-intro {
+        border-radius: 20px;
+      }
+
+      .learning-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 160px;
+      }
+
+      .learning-number {
+        font-size: 1.05rem;
+      }
+
+      .learning-content {
+        padding: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
+  <header class="site-banner">
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
+  </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
+  <div class="navigation-wrapper">
+
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- MENÚ PRINCIPAL -->
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+
+        <ul>
+
+          <li class="nav-green">
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li class="nav-yellow">
+            <a href="/familias/">
+              Familias
+            </a>
+          </li>
+
+          <li class="nav-blue">
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+          </li>
+
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">
+                🔒
+              </span>
+              Área privada Profesorado
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="subject-page"
+  >
+
+    <div class="subject-shell">
+
+
+      <!-- MIGAS DE PAN -->
+
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+
+        <ol>
+
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/">
+              Recursos educativos
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/sexto/">
+              6.º de Primaria
+            </a>
+          </li>
+
+          <li aria-current="page">
+            Conocimiento del Medio
+          </li>
+
+        </ol>
+
+      </nav>
+
+
+      <!-- ==================================================
+           PRESENTACIÓN DE LA MATERIA
+           ================================================== -->
+
+      <section class="subject-intro">
+
+        <div class="subject-intro-text">
+
+          <span class="subject-label">
+            Conocimiento del Medio · 6.º de Primaria
+          </span>
+
+          <h1>
+            Conocimiento del Medio
+          </h1>
+
+          <p>
+            Explora el territorio y la sociedad, comprende cómo se
+            organizan las instituciones, analiza la economía y la
+            sostenibilidad, recorre la historia de España y descubre
+            cómo funcionan el cuerpo humano, la materia y la energía.
+          </p>
+
+        </div>
+
+
+        <!-- TOMATITO CONOCIMIENTO DEL MEDIO -->
+
+        <img
+          src="/img/tomatito/conocimiento-medio.png"
+          alt="Tomatito presentando los recursos de Conocimiento del Medio"
+          class="subject-mascot"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           SITUACIONES DE APRENDIZAJE
+           ================================================== -->
+
+      <section aria-labelledby="situaciones-aprendizaje">
+
+        <h2
+          id="situaciones-aprendizaje"
+          class="learning-heading"
+        >
+          Elige una situación de aprendizaje
+        </h2>
+
+        <p class="learning-intro">
+          Selecciona el bloque que quieras aprender, practicar o repasar.
+        </p>
+
+
+        <div class="learning-grid">
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 1 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/conocimiento-medio6/geografia-demografia/"
+          >
+
+            <div class="learning-number">
+              01
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Geografía política y demografía
+              </h2>
+
+              <p>
+                Localidades de Andalucía, provincias y comunidades
+                autónomas de España, países del mundo, población,
+                variables demográficas y movimientos migratorios.
+              </p>
+
+              <span class="learning-count">
+                5 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 2 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/conocimiento-medio6/politica/"
+          >
+
+            <div class="learning-number">
+              02
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Política
+              </h2>
+
+              <p>
+                Poderes del Estado, derechos humanos y de la infancia,
+                Constitución y Estatuto de Autonomía, cultura de paz,
+                organización política y España en la Unión Europea.
+              </p>
+
+              <span class="learning-count">
+                6 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 3 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/conocimiento-medio6/economia-ecologia/"
+          >
+
+            <div class="learning-number">
+              03
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Economía y ecología
+              </h2>
+
+              <p>
+                Sectores económicos, distribución de la riqueza,
+                mercados, ingresos y gastos, publicidad, consumo
+                responsable, agenda urbana y responsabilidad ecosocial.
+              </p>
+
+              <span class="learning-count">
+                6 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 4 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/conocimiento-medio6/historia-arte/"
+          >
+
+            <div class="learning-number">
+              04
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Historia y arte
+              </h2>
+
+              <p>
+                De la España visigoda a la actualidad: Al-Ándalus,
+                reinos cristianos, Edad Moderna y Contemporánea,
+                Transición, patrimonio, arte y diversidad cultural.
+              </p>
+
+              <span class="learning-count">
+                10 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 5 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/conocimiento-medio6/cuerpo-humano/"
+          >
+
+            <div class="learning-number">
+              05
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                El cuerpo humano
+              </h2>
+
+              <p>
+                Funciones de nutrición, relación y reproducción,
+                aparatos y sistemas del organismo, pubertad y
+                adolescencia y diseño de una maqueta científica.
+              </p>
+
+              <span class="learning-count">
+                4 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE 6 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/conocimiento-medio6/materia-fuerza-energia/"
+          >
+
+            <div class="learning-number">
+              06
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Materia, fuerza y energía
+              </h2>
+
+              <p>
+                Masa, volumen, densidad y flotabilidad, energía
+                eléctrica y circuitos, formas y transformaciones de
+                la energía y fuentes renovables y no renovables.
+              </p>
+
+              <span class="learning-count">
+                3 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
+      </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>
