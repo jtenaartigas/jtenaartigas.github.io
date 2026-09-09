@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Recursos educativos de Conocimiento del Medio de 5.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+
+  <title>
+    Conocimiento del Medio 5.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+
+  <!-- ESTILOS ESPECÍFICOS DE LA PÁGINA -->
+  <style>
+    .subject-page {
+      background: var(--background-soft);
+    }
+
+    .subject-shell {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    .subject-intro {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      padding: 2rem 2rem 0;
+      overflow: hidden;
+      border: 1px solid #c8e2d1;
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          #eef8f1 0%,
+          #ffffff 70%
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-intro-text {
+      padding-bottom: 2rem;
+    }
+
+    .subject-label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: #2f7d4a;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subject-intro h1 {
+      margin: 0 0 0.75rem;
+      color: var(--text-main);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    .subject-intro p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .subject-mascot {
+      display: block;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .learning-heading {
+      margin: 0 0 1.25rem;
+      color: var(--text-main);
+      font-size: 1.45rem;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .learning-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      min-height: 165px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-3px);
+      border-color: #b9d9c4;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .learning-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2f7d4a;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    .learning-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .learning-content h2 {
+      margin: 0 0 0.55rem;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .learning-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .learning-count {
+      align-self: flex-start;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: #eef8f1;
+      color: #2f6d43;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .subject-intro {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .subject-intro-text {
+        padding-bottom: 0;
+      }
+
+      .subject-mascot {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subject-shell {
+        width: min(94%, var(--max-width));
+        padding-top: 1.25rem;
+      }
+
+      .subject-intro {
+        border-radius: 20px;
+      }
+
+      .learning-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 150px;
+      }
+
+      .learning-number {
+        font-size: 1.05rem;
+      }
+
+      .learning-content {
+        padding: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
+  <header class="site-banner">
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
+  </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
+  <div class="navigation-wrapper">
+
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- MENÚ PRINCIPAL -->
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+
+        <ul>
+
+          <li class="nav-green">
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li class="nav-yellow">
+            <a href="/familias/">
+              Familias
+            </a>
+          </li>
+
+          <li class="nav-blue">
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+          </li>
+
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">
+                🔒
+              </span>
+              Área privada Profesorado
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       DESTINO:
+       /recursos/quinto/conocimiento-medio5/index.html
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="subject-page"
+  >
+
+    <div class="subject-shell">
+
+
+      <!-- MIGAS DE PAN -->
+
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+
+        <ol>
+
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/">
+              Recursos educativos
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/quinto/">
+              5.º de Primaria
+            </a>
+          </li>
+
+          <li aria-current="page">
+            Conocimiento del Medio
+          </li>
+
+        </ol>
+
+      </nav>
+
+
+      <!-- ==================================================
+           PRESENTACIÓN DE LA MATERIA
+           ================================================== -->
+
+      <section class="subject-intro">
+
+        <div class="subject-intro-text">
+
+          <span class="subject-label">
+            Conocimiento del Medio · 5.º de Primaria
+          </span>
+
+          <h1>
+            Conocimiento del Medio
+          </h1>
+
+          <p>
+            En este espacio encontrarás explicaciones, actividades,
+            proyectos y recursos para comprender el planeta, el universo,
+            el clima, los seres vivos, el relieve y los hábitos saludables
+            desde una mirada científica, crítica y cercana al entorno.
+          </p>
+
+        </div>
+
+
+        <!-- TOMATITO CONOCIMIENTO DEL MEDIO -->
+
+        <img
+          src="/img/tomatito/conocimiento-medio.png"
+          alt=""
+          class="subject-mascot"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           SITUACIONES DE APRENDIZAJE
+           ================================================== -->
+
+      <section aria-labelledby="situaciones-aprendizaje">
+
+        <h2
+          id="situaciones-aprendizaje"
+          class="learning-heading"
+        >
+          Elige una Situación de Aprendizaje
+        </h2>
+
+
+        <div class="learning-grid">
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE CM5.1 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/conocimiento-medio5/tierra-universo/"
+          >
+
+            <div class="learning-number">
+              01
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                La Tierra y el universo
+              </h2>
+
+              <p>
+                Observación del cielo, astronomía, cuerpos celestes,
+                exploración espacial, Universo, Sistema Solar,
+                movimientos de la Tierra y la Luna y futuro del planeta.
+              </p>
+
+              <span class="learning-count">
+                6 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE CM5.2 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/conocimiento-medio5/clima/"
+          >
+
+            <div class="learning-number">
+              02
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                El clima
+              </h2>
+
+              <p>
+                Tiempo y clima, variables meteorológicas, dinámica
+                atmosférica, zonas climáticas, ecosistemas y paisajes
+                y análisis científico del cambio climático.
+              </p>
+
+              <span class="learning-count">
+                5 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE CM5.3 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/conocimiento-medio5/ecosistemas-seres-vivos/"
+          >
+
+            <div class="learning-number">
+              03
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Ecosistemas y seres vivos
+              </h2>
+
+              <p>
+                Reinos de los seres vivos, clasificación de animales
+                y plantas, funciones vitales, relaciones en los
+                ecosistemas y biodiversidad de Andalucía.
+              </p>
+
+              <span class="learning-count">
+                5 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE CM5.4 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/conocimiento-medio5/geografia-fisica-relieve/"
+          >
+
+            <div class="learning-number">
+              04
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Geografía física y relieve
+              </h2>
+
+              <p>
+                Entorno natural, rocas y minerales, formación del
+                relieve, accidentes geográficos, cordilleras, ríos,
+                cuencas hidrográficas y modelado del relieve andaluz.
+              </p>
+
+              <span class="learning-count">
+                5 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE CM5.5 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/conocimiento-medio5/habitos-saludables/"
+          >
+
+            <div class="learning-number">
+              05
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Hábitos saludables
+              </h2>
+
+              <p>
+                Alimentación y prevención, lectura de etiquetas,
+                necesidades energéticas, diseño de dietas y recetas,
+                hábitos de vida, primeros auxilios y análisis de datos.
+              </p>
+
+              <span class="learning-count">
+                11 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
+      </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>
