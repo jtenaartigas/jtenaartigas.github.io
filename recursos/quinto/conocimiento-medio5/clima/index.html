@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- DESTINO: /recursos/quinto/conocimiento-medio5/clima/index.html -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El clima. Situación de Aprendizaje CM5.2 de Conocimiento del Medio de 5.º de Educación Primaria del CEIP Joaquín Tena Artigas.">
+    <title>El clima | Conocimiento del Medio 5.º | CEIP Joaquín Tena Artigas</title>
+    <link rel="icon" type="image/png" href="/img/logo-centro.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config={theme:{extend:{colors:{junta:{DEFAULT:'#007A33',dark:'#005724',light:'#e6f4ea',accent:'#00a847'},editorial:{amber:'#d97706',amberBg:'#fef3c7'}},fontFamily:{sans:['system-ui','sans-serif'],heading:['system-ui','sans-serif']}}}}
+    </script>
+
+    <style>
+      html{scroll-behavior:smooth}
+      .topic-page{background:#f4f7f5;color:#1e293b}
+      .text-heading{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+      .custom-shadow{box-shadow:0 4px 20px -2px rgba(0,122,51,.08)}
+      .topic-shell{width:min(94%,1280px);margin:0 auto;padding:1.5rem 0 2.5rem}
+      .topic-content section[id]{scroll-margin-top:90px}
+      .topic-hero{display:grid;gap:1.5rem;align-items:center}
+      .topic-hero-image{width:min(100%,18rem);justify-self:center}
+      @media(min-width:768px){.topic-hero{grid-template-columns:minmax(0,1fr) minmax(0,18rem)}}
+      .nav-link{border-radius:.5rem;background:#f1f5f9;padding:.375rem .75rem;color:#334155;font-weight:500;transition:.2s}
+      .nav-link:hover{background:#007A33;color:#fff}
+      .section-number{border-radius:.75rem;background:#007A33;padding:.375rem .875rem;color:#fff;font-size:1.125rem;font-weight:800;white-space:nowrap}
+      .section-title{color:#1e293b;font-size:1.25rem;font-weight:700}
+      @media(min-width:768px){.section-title{font-size:1.5rem}}
+      .theory-box{margin-bottom:1.5rem;border-left:4px solid #007A33;border-radius:0 1rem 1rem 0;background:#e6f4ea;padding:1.25rem;color:#475569;font-size:.9rem;line-height:1.7}
+      .theory-box p+p{margin-top:.75rem}
+      .theory-title{margin-bottom:.75rem;color:#005724;font-size:1rem;font-weight:700}
+      .info-card,.diagram-card,.climate-card{border:1px solid #d1e7dd;border-radius:1rem;background:#fff;padding:1rem}
+      .fact-pill,.criterion-pill{display:inline-flex;border-radius:999px;padding:.28rem .68rem;font-size:.72rem;font-weight:800}
+      .fact-pill{background:#e6f4ea;color:#005724}
+      .criterion-pill{background:#f1f5f9;color:#475569}
+      .activity-list{counter-reset:activity;display:grid;gap:.75rem}
+      .activity-list>li{counter-increment:activity;position:relative;min-height:2.25rem;padding:.85rem .9rem .85rem 3rem;border:1px solid #e2e8f0;border-radius:.9rem;background:#f8fafc;color:#334155;font-size:.9rem;line-height:1.55}
+      .activity-list>li:before{content:counter(activity);position:absolute;left:.8rem;top:.75rem;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;border-radius:50%;background:#007A33;color:#fff;font-size:.75rem;font-weight:800}
+      .eval-row{padding:1rem;border-radius:1rem;background:#f8fafc;border:1px solid #e2e8f0;display:flex;flex-direction:column;justify-content:space-between;gap:1rem}
+      .auto-eval-group{display:flex;flex-wrap:wrap;gap:.35rem}
+      .eval-btn{padding:.375rem .75rem;border-radius:.5rem;border:1px solid #e2e8f0;background:#fff;color:#475569;font-size:.75rem;font-weight:700;transition:.2s}
+      .eval-btn:hover{background:#f1f5f9}
+      .eval-btn[aria-pressed="true"]{border-color:#007A33;background:#007A33;color:#fff}
+      @media(min-width:1024px){.eval-row{flex-direction:row;align-items:center}}
+      @media(max-width:560px){.section-number{padding:.32rem .7rem;font-size:1rem}}
+
+      /* IMÁGENES DEL MATERIAL */
+      .media-frame{margin:1.25rem 0 1.75rem;overflow:hidden;border:1px solid #d1e7dd;border-radius:1rem;background:#fff}
+      .media-frame img{display:block;width:100%;max-height:560px;object-fit:contain;background:#fff}
+      .media-frame figcaption{padding:.7rem 1rem;background:#f8fafc;border-top:1px solid #e2e8f0;color:#64748b;font-size:.78rem;line-height:1.45}
+      .missing-image-note{display:none;padding:2rem 1.25rem;text-align:center;background:#f8fafc;color:#64748b;font-size:.85rem;line-height:1.55}
+      .media-frame.is-missing img{display:none}
+      .media-frame.is-missing .missing-image-note{display:block}
+
+      /* ESQUEMAS SIMPLES */
+      .measure-card{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.75rem;align-items:start;border:1px solid #e2e8f0;border-radius:1rem;background:#fff;padding:1rem}
+      .measure-icon{display:flex;width:2.2rem;height:2.2rem;align-items:center;justify-content:center;border-radius:.75rem;background:#e6f4ea;font-size:1.2rem}
+      .zone-band{border-radius:1rem;padding:1rem}
+      .zone-warm{background:#fff7ed;border:1px solid #fed7aa}
+      .zone-temperate{background:#f0fdf4;border:1px solid #bbf7d0}
+      .zone-polar{background:#eff6ff;border:1px solid #bfdbfe}
+      .timescale{display:grid;grid-template-columns:86px minmax(0,1fr);gap:.85rem;align-items:start}
+      .timescale-label{border-radius:.75rem;background:#005724;color:#fff;padding:.5rem .55rem;text-align:center;font-size:.72rem;font-weight:800}
+      @media(max-width:560px){.timescale{grid-template-columns:68px minmax(0,1fr)}}
+
+      @media print{
+        .navigation-wrapper,.site-banner,.site-footer,.skip-link,.print-hide{display:none!important}
+        .topic-shell{width:100%;padding:0}
+        .custom-shadow{box-shadow:none}
+        section{break-inside:avoid}
+      }
+    </style>
+
+    <link rel="stylesheet" href="/css/base.css">
+  </head>
+
+  <body class="topic-page">
+    <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+    <!-- CABECERA GENERAL -->
+    <header class="site-banner">
+      <a href="/" aria-label="Ir a la página de inicio">
+        <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+      </a>
+    </header>
+
+    <div class="navigation-wrapper">
+      <div class="navigation-container">
+        <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio"><img src="/img/logo-centro.png" alt=""></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+        <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+          <ul>
+            <li class="nav-green"><a href="/">Inicio</a></li>
+            <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+            <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+            <li class="nav-red"><a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🔒</span> Área privada Profesorado</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main id="contenido-principal">
+      <div class="topic-shell">
+
+        <!-- MIGAS DE PAN -->
+        <nav class="breadcrumbs mb-6" aria-label="Migas de pan">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/recursos/">Recursos educativos</a></li>
+            <li><a href="/recursos/quinto/">5.º de Primaria</a></li>
+            <li><a href="/recursos/quinto/conocimiento-medio5/">Conocimiento del Medio</a></li>
+            <li aria-current="page">El clima</li>
+          </ol>
+        </nav>
+
+        <!-- PORTADA -->
+        <section class="topic-hero bg-gradient-to-r from-junta-dark via-junta to-junta-accent text-white rounded-3xl p-7 md:p-10 mb-8 shadow-lg relative overflow-hidden" aria-labelledby="titulo-sda">
+          <div class="absolute -right-6 -bottom-10 opacity-10 text-white font-extrabold text-8xl sm:text-9xl select-none" aria-hidden="true">☀︎ ☁︎ ≋</div>
+          <div class="relative z-20">
+            <span class="inline-block bg-white/15 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-3">Conocimiento del Medio · 5.º de Primaria · CM5.2</span>
+            <h1 id="titulo-sda" class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4">2. EL CLIMA</h1>
+            <p class="text-emerald-50 text-base md:text-lg leading-relaxed text-justify max-w-3xl">Aprende a diferenciar tiempo y clima, conoce cómo funciona la atmósfera, localiza las grandes zonas climáticas del planeta, relaciona clima y ecosistemas y analiza el cambio climático.</p>
+          </div>
+          <img src="/img/tomatito/conocimiento-medio.png" alt="" class="topic-hero-image relative z-10 block h-auto object-contain pointer-events-none select-none">
+        </section>
+
+        <!-- ÍNDICE INTERNO -->
+        <nav aria-label="Contenidos de la situación de aprendizaje" class="bg-white rounded-2xl p-5 mb-10 shadow-sm border border-emerald-100">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-junta mb-3 flex items-center gap-2"><span aria-hidden="true">📍</span> Contenidos de la Situación de Aprendizaje</h2>
+          <div class="flex flex-wrap gap-2 text-xs md:text-sm">
+            <a class="nav-link" href="#sec-1" onclick="scrollToSec('sec-1',event)">2.1 El clima y el planeta</a>
+            <a class="nav-link" href="#sec-2" onclick="scrollToSec('sec-2',event)">2.2 La dinámica atmosférica</a>
+            <a class="nav-link" href="#sec-3" onclick="scrollToSec('sec-3',event)">2.3 Áreas climáticas</a>
+            <a class="nav-link" href="#sec-4" onclick="scrollToSec('sec-4',event)">2.4 Ecosistemas y paisajes</a>
+            <a class="nav-link" href="#sec-5" onclick="scrollToSec('sec-5',event)">2.5 El cambio climático</a>
+            <a class="px-3 py-1.5 bg-emerald-100 text-junta-dark hover:bg-junta hover:text-white rounded-lg transition font-bold" href="#sec-repaso" onclick="scrollToSec('sec-repaso',event)">🔄 Repasamos lo aprendido</a>
+            <a class="px-3 py-1.5 bg-indigo-100 text-indigo-800 hover:bg-indigo-600 hover:text-white rounded-lg transition font-bold" href="#sec-diana" onclick="scrollToSec('sec-diana',event)">🎯 Autoevaluación</a>
+          </div>
+        </nav>
+
+        <div class="space-y-12 topic-content">
+
+          <!-- ===================================================== -->
+          <!-- 2.1 EL CLIMA Y EL PLANETA -->
+          <!-- ===================================================== -->
+          <section id="sec-1" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100">
+            <div class="flex items-start gap-3 mb-6">
+              <span class="section-number">2.1</span>
+              <div>
+                <h2 class="section-title">El clima y el planeta</h2>
+                <span class="criterion-pill mt-2">CMN.5.5.1</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-7">
+              <div class="theory-box !mb-0">
+                <h3 class="theory-title">🌦️ El tiempo</h3>
+                <p class="text-justify">El <strong>tiempo atmosférico</strong> indica cómo está la atmósfera en un lugar y momento concretos: si hace calor o frío, si llueve, hace viento o el cielo está despejado. Puede cambiar en pocas horas o de un día para otro.</p>
+                <p class="text-justify">La <strong>meteorología</strong> es la ciencia que estudia el tiempo atmosférico y trata de predecir cómo evolucionará durante los próximos días.</p>
+              </div>
+              <div class="theory-box !mb-0">
+                <h3 class="theory-title">🌍 El clima</h3>
+                <p class="text-justify">El <strong>clima</strong> describe las condiciones atmosféricas que suelen ser habituales en una región durante un periodo largo, normalmente de varias décadas. Para estudiarlo se utilizan datos de temperatura, precipitación, humedad, viento y otras variables.</p>
+                <p class="text-justify">La <strong>climatología</strong> es la ciencia que estudia el clima.</p>
+              </div>
+            </div>
+
+            <div class="bg-sky-50 border border-sky-200 rounded-2xl p-5 mb-7">
+              <h3 class="font-bold text-sky-900 mb-2">🛰️ ¿Cómo se observa y se predice?</h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify">Los meteorólogos utilizan <strong>estaciones meteorológicas, satélites y radares</strong> para recoger datos de la atmósfera. Además, emplean <strong>modelos matemáticos</strong> para predecir el tiempo que va a hacer.</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">📊 Variables que observamos o medimos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-7">
+              <div class="measure-card"><div class="measure-icon" aria-hidden="true">🌡️</div><div><h4 class="font-bold text-slate-800 mb-1">Temperatura</h4><p class="text-sm text-slate-600 leading-relaxed">Indica el grado de calor o frío del aire. Se mide en grados Celsius (°C) con un termómetro.</p></div></div>
+              <div class="measure-card"><div class="measure-icon" aria-hidden="true">🌧️</div><div><h4 class="font-bold text-slate-800 mb-1">Precipitación</h4><p class="text-sm text-slate-600 leading-relaxed">Es el agua que cae de la atmósfera en forma de lluvia, nieve, granizo o aguanieve. Se mide en milímetros (mm).</p></div></div>
+              <div class="measure-card"><div class="measure-icon" aria-hidden="true">💧</div><div><h4 class="font-bold text-slate-800 mb-1">Humedad</h4><p class="text-sm text-slate-600 leading-relaxed">Es la cantidad de vapor de agua que contiene el aire. Se expresa en porcentaje (%).</p></div></div>
+              <div class="measure-card"><div class="measure-icon" aria-hidden="true">↧</div><div><h4 class="font-bold text-slate-800 mb-1">Presión atmosférica</h4><p class="text-sm text-slate-600 leading-relaxed">Es la fuerza que ejerce el aire de la atmósfera sobre la superficie terrestre. Sus cambios ayudan a prever la evolución del tiempo.</p></div></div>
+              <div class="measure-card"><div class="measure-icon" aria-hidden="true">💨</div><div><h4 class="font-bold text-slate-800 mb-1">Viento</h4><p class="text-sm text-slate-600 leading-relaxed">Es el aire en movimiento. Su velocidad puede expresarse en kilómetros por hora (km/h) o metros por segundo (m/s) y se mide con un anemómetro.</p></div></div>
+              <div class="measure-card"><div class="measure-icon" aria-hidden="true">☀️</div><div><h4 class="font-bold text-slate-800 mb-1">Radiación solar</h4><p class="text-sm text-slate-600 leading-relaxed">Es la energía procedente del Sol que llega a la Tierra. Influye en la temperatura y en procesos como la evaporación.</p></div></div>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">🗺️ Factores que influyen en el clima</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-7">
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">⛰️ Elevación</h4><p class="text-sm text-slate-600 leading-relaxed">Es la altura de un lugar respecto al nivel del mar. En general, a mayor elevación, la temperatura suele ser menor.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">🌐 Latitud</h4><p class="text-sm text-slate-600 leading-relaxed">La distancia de un lugar respecto al ecuador influye en la cantidad de energía solar que recibe y, por tanto, en su clima.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">🌊 Corrientes oceánicas</h4><p class="text-sm text-slate-600 leading-relaxed">Son grandes movimientos de agua del océano que transportan calor y pueden influir en las temperaturas y precipitaciones de las costas.</p></div>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mb-3 text-heading">📈 Representamos los datos</h3>
+            <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-4">Los datos meteorológicos pueden representarse en gráficos para observar cambios y comparar periodos. Los <strong>gráficos de líneas</strong> permiten ver la evolución de una variable a lo largo del tiempo; los <strong>gráficos de barras</strong> facilitan la comparación entre distintos periodos.</p>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: gráfico de temperaturas medias anuales de Córdoba -->
+            <figure class="media-frame">
+              <img src="/img/clima-temperaturas-cordoba.png" alt="Gráfico de líneas con temperaturas medias anuales de Córdoba" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí el gráfico de temperaturas medias anuales de Córdoba con el nombre <strong>clima-temperaturas-cordoba.png</strong>.</div>
+              <figcaption>Ejemplo de gráfico de líneas: evolución de la temperatura a lo largo del tiempo.</figcaption>
+            </figure>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: gráfico de precipitaciones anuales de Córdoba -->
+            <figure class="media-frame">
+              <img src="/img/clima-precipitaciones-cordoba.png" alt="Gráfico de barras con precipitaciones anuales de Córdoba" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí el gráfico de precipitaciones anuales de Córdoba con el nombre <strong>clima-precipitaciones-cordoba.png</strong>.</div>
+              <figcaption>Ejemplo de gráfico de barras: comparación de las precipitaciones de distintos años.</figcaption>
+            </figure>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3 text-heading">🧭 Latitud y longitud</h3>
+            <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-4">La <strong>latitud</strong> indica lo al norte o al sur que se encuentra un lugar respecto al ecuador. La <strong>longitud</strong> indica lo al este o al oeste que se encuentra respecto al meridiano de Greenwich. Los <strong>paralelos</strong> sirven para medir la latitud y los <strong>meridianos</strong> para medir la longitud. Juntos forman una cuadrícula imaginaria que permite localizar cualquier punto del planeta.</p>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: globo con paralelos y meridianos -->
+            <figure class="media-frame">
+              <img src="/img/latitud-longitud.png" alt="Globo terrestre con paralelos, meridianos, ecuador y meridiano de Greenwich" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí la imagen de latitud y longitud con el nombre <strong>latitud-longitud.png</strong>.</div>
+              <figcaption>Los paralelos permiten medir la latitud y los meridianos, la longitud.</figcaption>
+            </figure>
+
+            <div class="border-t border-slate-200 pt-6 mt-7">
+              <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">✏️ Actividades 2.1</h3>
+              <ol class="activity-list">
+                <li>Explica con tus palabras la diferencia entre <strong>tiempo atmosférico</strong> y <strong>clima</strong>.</li>
+                <li>¿Qué ciencias estudian el tiempo y el clima?</li>
+                <li>¿Qué herramientas utilizan los meteorólogos para recoger datos y realizar predicciones?</li>
+                <li>Escribe las principales variables meteorológicas que hemos estudiado.</li>
+                <li>¿Qué es la precipitación? ¿Y la temperatura? ¿Qué unidades utilizamos para medirlas?</li>
+                <li>Explica qué son la elevación, la humedad y el viento.</li>
+                <li>¿Qué dos tipos de gráficos hemos utilizado para representar datos meteorológicos? Explica para qué sirve cada uno.</li>
+                <li>Explica la diferencia entre latitud y longitud.</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- 2.2 LA DINÁMICA ATMOSFÉRICA -->
+          <!-- ===================================================== -->
+          <section id="sec-2" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100">
+            <div class="flex items-start gap-3 mb-6">
+              <span class="section-number">2.2</span>
+              <div><h2 class="section-title">La dinámica atmosférica</h2><span class="criterion-pill mt-2">CMN.5.5.1</span></div>
+            </div>
+
+            <div class="theory-box">
+              <h3 class="theory-title">💧 El ciclo del agua</h3>
+              <p class="text-justify">El <strong>ciclo del agua</strong> es el movimiento continuo del agua entre la superficie terrestre y la atmósfera. La cantidad total de agua del planeta permanece prácticamente constante, aunque cambia de lugar y de estado: sólido, líquido o gaseoso.</p>
+              <p class="text-justify">Este ciclo reparte el agua por el planeta y es esencial para la vida.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              <div class="info-card"><span class="fact-pill mb-2">1</span><h4 class="font-bold text-slate-800 mb-2">Evaporación</h4><p class="text-sm text-slate-600 leading-relaxed">El Sol calienta el agua de mares, ríos y lagos y parte de ella se transforma en vapor que asciende.</p></div>
+              <div class="info-card"><span class="fact-pill mb-2">2</span><h4 class="font-bold text-slate-800 mb-2">Condensación</h4><p class="text-sm text-slate-600 leading-relaxed">El vapor se enfría en la atmósfera y forma pequeñas gotas de agua que originan las nubes.</p></div>
+              <div class="info-card"><span class="fact-pill mb-2">3</span><h4 class="font-bold text-slate-800 mb-2">Precipitación</h4><p class="text-sm text-slate-600 leading-relaxed">El agua cae de las nubes en forma de lluvia, nieve, granizo o aguanieve.</p></div>
+              <div class="info-card"><span class="fact-pill mb-2">4</span><h4 class="font-bold text-slate-800 mb-2">Transpiración</h4><p class="text-sm text-slate-600 leading-relaxed">Las plantas absorben agua por sus raíces y liberan parte de ella a la atmósfera a través de sus hojas.</p></div>
+              <div class="info-card"><span class="fact-pill mb-2">5</span><h4 class="font-bold text-slate-800 mb-2">Sublimación</h4><p class="text-sm text-slate-600 leading-relaxed">En determinadas condiciones, el hielo o la nieve pueden pasar directamente a vapor de agua.</p></div>
+              <div class="info-card"><span class="fact-pill mb-2">↺</span><h4 class="font-bold text-slate-800 mb-2">El agua vuelve a circular</h4><p class="text-sm text-slate-600 leading-relaxed">Una parte del agua que cae vuelve a ríos, lagos y mares y otra parte penetra en el suelo. Desde allí continúa su recorrido y el ciclo vuelve a comenzar.</p></div>
+            </div>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: ciclo del agua -->
+            <figure class="media-frame">
+              <img src="/img/ciclo-agua.png" alt="Esquema del ciclo del agua" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí el esquema del ciclo del agua con el nombre <strong>ciclo-agua.png</strong>.</div>
+              <figcaption>El agua cambia de estado y circula continuamente entre la superficie y la atmósfera.</figcaption>
+            </figure>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3 text-heading">🌿 El ciclo del carbono</h3>
+            <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-5">El <strong>ciclo del carbono</strong> es el movimiento del carbono entre la atmósfera, los seres vivos, los océanos y el suelo. Las plantas toman dióxido de carbono del aire durante la fotosíntesis. Los animales incorporan carbono al alimentarse de plantas o de otros animales. Plantas, animales y microorganismos devuelven parte del carbono a la atmósfera mediante la respiración y su descomposición. Así, el carbono circula continuamente por el planeta.</p>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-7">
+              <h4 class="font-bold text-junta-dark mb-2">🌱 El dióxido de carbono y la vida</h4>
+              <p class="text-sm text-slate-700 leading-relaxed text-justify">Este ciclo es importantísimo para que el clima de la Tierra sea estable y haya vida en el planeta, ya que el dióxido de carbono es necesario para que las plantas realicen la fotosíntesis y sobrevivan todos los seres vivos del planeta.</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mb-3 text-heading">🌎 La atmósfera terrestre</h3>
+            <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-4">La <strong>atmósfera</strong> es la capa de gases que rodea la Tierra. Es esencial para la vida. El aire está formado aproximadamente por un <strong>78 % de nitrógeno</strong>, un <strong>21 % de oxígeno</strong> y cerca de un <strong>1 % de otros gases</strong>, entre ellos argón, dióxido de carbono y vapor de agua.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">Troposfera</h4><p class="text-sm text-slate-600 leading-relaxed">Es la capa más próxima a la superficie. Contiene la mayor parte del aire y casi todo el vapor de agua. En ella se producen las nubes, la lluvia y el viento.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">Estratosfera</h4><p class="text-sm text-slate-600 leading-relaxed">Contiene la capa de ozono, que absorbe gran parte de la radiación ultravioleta procedente del Sol.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">Mesosfera</h4><p class="text-sm text-slate-600 leading-relaxed">En esta capa se desintegran muchos de los meteoroides que entran en la atmósfera.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">Termosfera</h4><p class="text-sm text-slate-600 leading-relaxed">En ella se producen fenómenos como las auroras polares y se encuentra gran parte de la ionosfera.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">Exosfera</h4><p class="text-sm text-slate-600 leading-relaxed">Es la capa más externa. El aire es muy poco denso y se va mezclando progresivamente con el espacio exterior.</p></div>
+            </div>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: capas de la atmósfera -->
+            <figure class="media-frame">
+              <img src="/img/capas-atmosfera.png" alt="Esquema de las capas de la atmósfera terrestre" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí la imagen de las capas de la atmósfera con el nombre <strong>capas-atmosfera.png</strong>.</div>
+              <figcaption>Troposfera, estratosfera, mesosfera, termosfera y exosfera.</figcaption>
+            </figure>
+
+            <div class="border-t border-slate-200 pt-6 mt-7">
+              <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">✏️ Actividades 2.2</h3>
+              <ol class="activity-list">
+                <li>¿Qué es el ciclo del agua?</li>
+                <li>¿Cuáles son los tres estados del agua?</li>
+                <li>Explica las principales etapas del ciclo del agua y acompaña tu explicación con un dibujo.</li>
+                <li>Explica qué es la condensación.</li>
+                <li>¿Qué necesitan las plantas para realizar la fotosíntesis? ¿Qué papel tiene el dióxido de carbono?</li>
+                <li>Explica de forma sencilla el ciclo del carbono.</li>
+                <li>¿Qué es la atmósfera terrestre? ¿Cuáles son sus principales gases?</li>
+                <li>Explica qué son la troposfera y la estratosfera y escribe una característica de cada una.</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- 2.3 ÁREAS CLIMÁTICAS -->
+          <!-- ===================================================== -->
+          <section id="sec-3" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100">
+            <div class="flex items-start gap-3 mb-6">
+              <span class="section-number">2.3</span>
+              <div><h2 class="section-title">Áreas climáticas</h2><span class="criterion-pill mt-2">CMN.5.5.1</span></div>
+            </div>
+
+            <div class="theory-box">
+              <h3 class="theory-title">🌐 Las grandes zonas climáticas</h3>
+              <p class="text-justify">Según la latitud y la cantidad de energía solar recibida, podemos dividir la Tierra en tres grandes zonas: <strong>cálida o tropical</strong>, <strong>templada</strong> y <strong>fría o polar</strong>. Dentro de ellas aparecen diferentes climas.</p>
+            </div>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: mapa de zonas climáticas -->
+            <figure class="media-frame">
+              <img src="/img/zonas-climaticas-mundo.png" alt="Mapa mundial de las grandes zonas climáticas" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí el mapa de zonas climáticas con el nombre <strong>zonas-climaticas-mundo.png</strong>.</div>
+              <figcaption>Distribución aproximada de las grandes zonas climáticas de la Tierra.</figcaption>
+            </figure>
+
+            <div class="zone-band zone-warm mb-7">
+              <h3 class="text-lg font-bold text-orange-900 mb-3">☀️ Zona cálida o tropical</h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-5">Se sitúa alrededor del ecuador y recibe mucha energía solar durante todo el año. Dentro de ella distinguimos varios climas.</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white/80 rounded-xl p-4 border border-orange-200"><h4 class="font-bold text-slate-800 mb-2">Clima ecuatorial</h4><p class="text-sm text-slate-600 leading-relaxed">Es cálido y muy húmedo durante todo el año. Llueve con mucha frecuencia y aparecen selvas con una vegetación muy abundante.</p></div>
+                <div class="bg-white/80 rounded-xl p-4 border border-orange-200"><h4 class="font-bold text-slate-800 mb-2">Clima tropical</h4><p class="text-sm text-slate-600 leading-relaxed">Las temperaturas son altas todo el año y se diferencian una estación lluviosa y otra seca. Un paisaje característico es la sabana.</p></div>
+                <div class="bg-white/80 rounded-xl p-4 border border-orange-200"><h4 class="font-bold text-slate-800 mb-2">Clima desértico cálido</h4><p class="text-sm text-slate-600 leading-relaxed">Las precipitaciones son muy escasas. La vegetación y los animales están adaptados a la falta de agua.</p></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <figure class="media-frame !m-0"><img src="/img/clima-ecuatorial.jpg" alt="Paisaje de selva ecuatorial" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-ecuatorial.jpg</strong>.</div><figcaption>Paisaje ecuatorial.</figcaption></figure>
+              <figure class="media-frame !m-0"><img src="/img/clima-tropical-sabana.jpg" alt="Paisaje de sabana tropical" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-tropical-sabana.jpg</strong>.</div><figcaption>Paisaje tropical de sabana.</figcaption></figure>
+              <figure class="media-frame !m-0"><img src="/img/clima-desertico.jpg" alt="Paisaje desértico cálido" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-desertico.jpg</strong>.</div><figcaption>Paisaje desértico.</figcaption></figure>
+            </div>
+
+            <div class="zone-band zone-temperate mb-7">
+              <h3 class="text-lg font-bold text-green-900 mb-3">🌿 Zona templada</h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify mb-5">Se encuentra entre las zonas cálidas y las zonas polares. Las estaciones del año están bien diferenciadas. Podemos distinguir, entre otros, los climas mediterráneo, oceánico y continental.</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white/80 rounded-xl p-4 border border-green-200"><h4 class="font-bold text-slate-800 mb-2">Mediterráneo</h4><p class="text-sm text-slate-600 leading-relaxed">Los veranos son calurosos y secos; los inviernos suelen ser suaves. Las lluvias son irregulares y se concentran principalmente fuera del verano. Es el clima característico de gran parte de Andalucía.</p></div>
+                <div class="bg-white/80 rounded-xl p-4 border border-green-200"><h4 class="font-bold text-slate-800 mb-2">Oceánico</h4><p class="text-sm text-slate-600 leading-relaxed">Las temperaturas son suaves y las lluvias abundantes y bastante repartidas durante el año. Es frecuente en costas occidentales de continentes de latitudes templadas.</p></div>
+                <div class="bg-white/80 rounded-xl p-4 border border-green-200"><h4 class="font-bold text-slate-800 mb-2">Continental</h4><p class="text-sm text-slate-600 leading-relaxed">Se encuentra en el interior de grandes continentes. Presenta una gran diferencia entre inviernos fríos y veranos cálidos.</p></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <figure class="media-frame !m-0"><img src="/img/clima-mediterraneo.jpg" alt="Paisaje mediterráneo" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-mediterraneo.jpg</strong>.</div><figcaption>Paisaje mediterráneo.</figcaption></figure>
+              <figure class="media-frame !m-0"><img src="/img/clima-oceanico.jpg" alt="Paisaje de clima oceánico" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-oceanico.jpg</strong>.</div><figcaption>Paisaje de clima oceánico.</figcaption></figure>
+              <figure class="media-frame !m-0"><img src="/img/clima-continental.jpg" alt="Paisaje de clima continental" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-continental.jpg</strong>.</div><figcaption>Paisaje de clima continental.</figcaption></figure>
+            </div>
+
+            <div class="zone-band zone-polar mb-7">
+              <h3 class="text-lg font-bold text-blue-900 mb-3">❄️ Zona fría o polar</h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify">Se encuentra en las regiones cercanas a los polos. Las temperaturas son muy bajas y las precipitaciones, escasas y frecuentemente en forma de nieve. Durante parte del invierno puede producirse la <strong>noche polar</strong>, cuando el Sol no llega a salir, y durante parte del verano puede producirse el <strong>día polar</strong>, cuando el Sol permanece sobre el horizonte durante muchas horas o incluso todo el día. La vegetación es escasa y los seres vivos están adaptados al frío.</p>
+            </div>
+
+            <figure class="media-frame">
+              <img src="/img/clima-polar.jpg" alt="Paisaje de zona climática polar" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí la imagen de paisaje polar con el nombre <strong>clima-polar.jpg</strong>.</div>
+              <figcaption>Paisaje de una región polar.</figcaption>
+            </figure>
+
+            <div class="border-t border-slate-200 pt-6 mt-7">
+              <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">✏️ Actividades 2.3</h3>
+              <ol class="activity-list">
+                <li>¿En qué tres grandes zonas climáticas se divide la Tierra?</li>
+                <li>¿Cuáles son los tres climas que hemos estudiado dentro de la zona cálida?</li>
+                <li>Explica la diferencia principal entre el clima ecuatorial y el tropical.</li>
+                <li>Describe el clima mediterráneo.</li>
+                <li>Describe el clima oceánico.</li>
+                <li>Explica el clima continental y señala en qué se diferencia del oceánico.</li>
+                <li>¿Cómo son las temperaturas y las precipitaciones de las regiones polares?</li>
+                <li>Explica qué son la noche polar y el día polar.</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- 2.4 ECOSISTEMAS Y PAISAJES -->
+          <!-- ===================================================== -->
+          <section id="sec-4" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100">
+            <div class="flex items-start gap-3 mb-6">
+              <span class="section-number">2.4</span>
+              <div><h2 class="section-title">Ecosistemas y paisajes naturales</h2><span class="criterion-pill mt-2">CMN.5.5.1</span></div>
+            </div>
+
+            <div class="theory-box">
+              <h3 class="theory-title">🌱 Ecosistema, hábitat y bioma</h3>
+              <p class="text-justify">Un <strong>ecosistema</strong> está formado por los seres vivos de un lugar, los elementos no vivos del medio —agua, aire, suelo, temperatura y luz— y las relaciones que se producen entre todos ellos.</p>
+              <p class="text-justify">El <strong>hábitat</strong> es el lugar donde vive una especie. Un <strong>bioma</strong> es una gran región del planeta que comparte unas condiciones climáticas y una vegetación y fauna características.</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">🌍 Tipos de ecosistemas</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-7">
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">💧 Agua dulce</h4><p class="text-sm text-slate-600 leading-relaxed">Ríos, lagos, lagunas, estanques y humedales. El agua contiene poca sal.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">🌊 Marinos</h4><p class="text-sm text-slate-600 leading-relaxed">Océanos, mares, arrecifes de coral y zonas costeras. El agua tiene una elevada cantidad de sales.</p></div>
+              <div class="info-card"><h4 class="font-bold text-junta-dark mb-2">🌳 Terrestres</h4><p class="text-sm text-slate-600 leading-relaxed">Bosques, matorrales, herbazales, sabanas, tundras, desiertos y ecosistemas urbanos.</p></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-7">
+              <div class="climate-card"><h3 class="font-bold text-slate-800 mb-2">🪸 Arrecife de coral</h3><p class="text-sm text-slate-600 leading-relaxed text-justify">Está formado por colonias de corales, que son animales marinos. Los arrecifes albergan una enorme diversidad de peces, invertebrados, algas y otros organismos. Muchos se encuentran en aguas tropicales y subtropicales cálidas y poco profundas.</p></div>
+              <div class="climate-card"><h3 class="font-bold text-slate-800 mb-2">🌾 Estuario y marisma</h3><p class="text-sm text-slate-600 leading-relaxed text-justify">Un <strong>estuario</strong> es una zona costera donde el agua dulce de un río se mezcla con el agua salada del mar. Las <strong>marismas</strong> pueden formar parte de estos ambientes y ofrecen refugio y zonas de cría para numerosas especies.</p></div>
+              <div class="climate-card"><h3 class="font-bold text-slate-800 mb-2">🌿 Bosque mediterráneo</h3><p class="text-sm text-slate-600 leading-relaxed text-justify">Su vegetación está adaptada a los veranos secos. Son frecuentes encinas, alcornoques, pinos y acebuches, además de matorrales como romero, tomillo y lavanda. Entre la fauna encontramos ciervos, jabalíes, zorros, conejos, reptiles y numerosas aves.</p></div>
+              <div class="climate-card"><h3 class="font-bold text-slate-800 mb-2">🦒 Sabana</h3><p class="text-sm text-slate-600 leading-relaxed text-justify">Es un herbazal tropical con árboles dispersos. Presenta una estación lluviosa y otra seca y alberga una gran variedad de herbívoros y depredadores.</p></div>
+              <div class="climate-card"><h3 class="font-bold text-slate-800 mb-2">🌲 Taiga</h3><p class="text-sm text-slate-600 leading-relaxed text-justify">Es un gran bosque de coníferas situado en regiones frías del hemisferio norte. Son frecuentes abetos y pinos, además de animales como alces, lobos y osos.</p></div>
+              <div class="climate-card"><h3 class="font-bold text-slate-800 mb-2">🧊 Tundra</h3><p class="text-sm text-slate-600 leading-relaxed text-justify">Se caracteriza por temperaturas muy bajas y una vegetación baja y escasa, con musgos, líquenes, hierbas y pequeños arbustos. Aparece cerca del Ártico y también en zonas de alta montaña.</p></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <figure class="media-frame !m-0"><img src="/img/clima-marisma.jpg" alt="Paisaje mediterráneo" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-mediterraneo.jpg</strong>.</div><figcaption>Paisaje mediterráneo.</figcaption></figure>
+              <figure class="media-frame !m-0"><img src="/img/clima-taiga.jpg" alt="Paisaje de clima oceánico" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-oceanico.jpg</strong>.</div><figcaption>Paisaje de clima oceánico.</figcaption></figure>
+              <figure class="media-frame !m-0"><img src="/img/clima-tundra.jpg" alt="Paisaje de clima continental" onerror="markImageMissing(this)"><div class="missing-image-note">Añade <strong>clima-continental.jpg</strong>.</div><figcaption>Paisaje de clima continental.</figcaption></figure>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-7">
+              <h3 class="font-bold text-amber-900 mb-2">🔗 Clima y paisaje están relacionados</h3>
+              <p class="text-sm md:text-base text-slate-700 leading-relaxed text-justify">La temperatura y las precipitaciones condicionan la cantidad de agua disponible y el tipo de vegetación que puede crecer. Por eso, el clima influye mucho en los paisajes y en los ecosistemas que encontramos en cada región del planeta.</p>
+            </div>
+
+            <div class="border-t border-slate-200 pt-6 mt-7">
+              <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">✏️ Actividades 2.4</h3>
+              <ol class="activity-list">
+                <li>¿Qué es un ecosistema?</li>
+                <li>Explica la diferencia entre ecosistema, hábitat y bioma.</li>
+                <li>¿Cuáles son los tres grandes tipos de ecosistemas que hemos estudiado? Escribe dos ejemplos de cada uno.</li>
+                <li>¿Qué es un estuario? ¿Qué relación puede tener con una marisma?</li>
+                <li>Explica las principales características del bosque mediterráneo.</li>
+                <li>¿Qué es un arrecife de coral?</li>
+                <li>Compara la sabana y la tundra: ¿en qué se diferencian su clima y su vegetación?</li>
+                <li>Explica con un ejemplo cómo puede influir el clima en un paisaje.</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- 2.5 EL CAMBIO CLIMÁTICO -->
+          <!-- ===================================================== -->
+          <section id="sec-5" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-slate-100">
+            <div class="flex items-start gap-3 mb-6">
+              <span class="section-number">2.5</span>
+              <div>
+                <h2 class="section-title">El cambio climático</h2>
+                <div class="flex flex-wrap gap-2 mt-2"><span class="criterion-pill">CMN.5.5.2</span><span class="criterion-pill">CMN.5.6.1</span></div>
+              </div>
+            </div>
+
+            <div class="theory-box">
+              <h3 class="theory-title">🌡️ El clima de la Tierra siempre ha cambiado</h3>
+              <p class="text-justify">El <strong>cambio climático</strong> es una modificación duradera de las características del clima. A lo largo de la historia de la Tierra han existido periodos más cálidos y más fríos que el actual. Estos cambios tienen diferentes causas y actuan a lo largo del tiempo, desde algunos años hasta millones o miles de millones de años.</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">🔎 Principales causas del cambio climático</h3>
+            <div class="space-y-4 mb-8">
+              <div class="timescale"><div class="timescale-label">Años y décadas</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">☀️ Variaciones de la actividad solar</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">La cantidad de energía que emite el Sol presenta pequeñas variaciones. A lo largo de la historia se han encontrado periodos de menor actividad solar asociados a épocas más frías y periodos de mayor actividad relacionados con temperaturas más elevadas.</p></div></div>
+
+              <div class="timescale"><div class="timescale-label">Miles de años</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🌍 Cambios orbitales y del eje terrestre</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">La órbita de la Tierra y la inclinación de su eje cambian lentamente. Estas variaciones modifican la distribución de la radiación solar que recibe el planeta y han contribuido a grandes cambios climáticos, como las glaciaciones.</p></div></div>
+
+              <div class="timescale"><div class="timescale-label">Meses y años</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🌋 Grandes erupciones volcánicas</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">Algunas grandes erupciones expulsan partículas y gases a las capas altas de la atmósfera. Estas partículas pueden reflejar parte de la radiación solar y provocar un enfriamiento temporal del planeta.</p></div></div>
+
+              <div class="timescale"><div class="timescale-label">Muy variable</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">☄️ Impactos de grandes asteroides</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">El impacto de un gran asteroide puede lanzar enormes cantidades de polvo y partículas a la atmósfera, reducir durante un tiempo la luz solar que llega a la superficie y producir cambios bruscos en el clima y en los ecosistemas.</p></div></div>
+
+              <div class="timescale"><div class="timescale-label">Millones de años</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🗻 Cambios geológicos de gran escala</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">El movimiento de los continentes, la formación de grandes cordilleras y montañas o cambios en los océanos provocan cambios importantes del clima.</p></div></div>
+
+              <div class="timescale"><div class="timescale-label">Miles de millones de años</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🌞 Aumento de la luminosidad del Sol</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">A medida que el Sol envejece va aumentando lentamente su luminosidad. A muy largo plazo esto elevará la temperatura de la Tierra y terminará haciendo imposible la vida tal y como la conocemos.</p></div></div>
+
+              <div class="timescale"><div class="timescale-label">Desde que hay vida</div><div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🌿 La acción de los seres vivos</h4><p class="text-sm text-slate-600 leading-relaxed text-justify">Los seres vivos participan en ciclos naturales que influyen en la atmósfera y el clima. Las plantas, por ejemplo, toman dióxido de carbono durante la fotosíntesis, mientras que la respiración, la descomposición y la combustión lo devuelven a la atmósfera. A lo largo de la historia de la Tierra, la propia vida ha contribuido a modificar la composición de la atmósfera.</p></div></div>
+            </div>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: actividad solar y temperatura -->
+            <figure class="media-frame">
+              <img src="/img/actividad-solar-temperatura.png" alt="Gráfico que compara una medida de actividad solar y cambios de temperatura" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí la gráfica del borrador que compara actividad solar y temperatura con el nombre <strong>actividad-solar-temperatura.png</strong>. Conviene conservar también su fuente original.</div>
+              <figcaption>Al comparar dos curvas debemos observar si evolucionan de manera parecida, pero una correlación por sí sola no demuestra que un fenómeno sea la única causa del otro.</figcaption>
+            </figure>
+
+            <!-- IMAGEN SUGERIDA DEL BORRADOR: temperatura a escala geológica -->
+            <figure class="media-frame">
+              <img src="/img/temperatura-geologica-tierra.png" alt="Gráfico de la evolución estimada de la temperatura de la Tierra a escala geológica" onerror="markImageMissing(this)">
+              <div class="missing-image-note">Añade aquí la gráfica de temperatura a escala geológica del borrador con el nombre <strong>temperatura-geologica-tierra.png</strong>.</div>
+              <figcaption>Una gráfica geológica permite comprobar que la temperatura de la Tierra ha cambiado mucho antes de la aparición de la especie humana, pero no permite determinar por sí sola la causa del calentamiento de las últimas décadas.</figcaption>
+            </figure>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-4 text-heading">⚠️ Consecuencias del cambio climático</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-7">
+              <div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🌡️ Temperaturas y precipitaciones</h4><p class="text-sm text-slate-600 leading-relaxed">Los cambios climáticos pueden modificar las temperaturas medias, la frecuencia de extremos y la distribución de las precipitaciones.</p></div>
+              <div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🌊 Nivel del mar</h4><p class="text-sm text-slate-600 leading-relaxed">El nivel del mar ha subido y bajado muchas veces. En el calentamiento actual, la tendencia observada es de aumento del nivel medio del mar.</p></div>
+              <div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🦋 Ecosistemas y especies</h4><p class="text-sm text-slate-600 leading-relaxed">Los cambios climáticos pueden dificultar la adaptación de algunas especies, desplazar ecosistemas y favorecer extinciones.</p></div>
+              <div class="info-card"><h4 class="font-bold text-slate-800 mb-2">🚰 Agua y alimentos</h4><p class="text-sm text-slate-600 leading-relaxed">Los cambios de temperatura y precipitación pueden afectar a la disponibilidad de agua y a la producción de alimentos en distintas regiones.</p></div>
+            </div>  
+
+            <div class="border-t border-slate-200 pt-6 mt-7">
+              <h3 class="text-lg font-bold text-slate-800 mb-4 text-heading">✏️ Actividades 2.5</h3>
+              <ol class="activity-list">
+                <li>Explica por qué el aumento de la luminosidad solar provoca que haya cambio climático en la Tierra.</li>
+                <li>Escribe cuatro causas que puedan producir cambios climáticos y señala si actúan a corto, medio o muy largo plazo.</li>
+                <li>¿Qué fenómenos pueden ocasionar glaciaciones y calentamiento global en la Tierra?</li>
+                <li>¿Qué efecto puede producir una gran erupción volcánica sobre la temperatura durante un tiempo?</li>
+                <li>¿Cuáles son las consecuencias principales del cambio climático?</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- REPASAMOS LO APRENDIDO -->
+          <!-- ===================================================== -->
+          <section id="sec-repaso" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-junta">
+            <div class="flex items-center gap-3 mb-6"><span class="section-number">🔄</span><div><h2 class="section-title">Repasamos lo aprendido</h2><p class="text-xs text-slate-500 mt-1">Consolidación y repaso global de la Situación de Aprendizaje</p></div></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200"><span class="fact-pill mb-3">Repaso 2.1</span><h3 class="font-bold text-slate-800 mb-3">Tiempo y clima</h3><ol class="list-[lower-alpha] pl-5 space-y-2 text-sm text-slate-700"><li>Diferencia tiempo y clima.</li><li>¿Qué estudian la meteorología y la climatología?</li><li>Nombra cuatro variables meteorológicas.</li><li>Diferencia latitud y longitud.</li></ol></div>
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200"><span class="fact-pill mb-3">Repaso 2.2</span><h3 class="font-bold text-slate-800 mb-3">Atmósfera y ciclos</h3><ol class="list-[lower-alpha] pl-5 space-y-2 text-sm text-slate-700"><li>Ordena evaporación, condensación y precipitación.</li><li>¿Qué función tiene el CO₂ en la fotosíntesis?</li><li>Nombra las cinco capas de la atmósfera.</li><li>¿En qué capa ocurren los fenómenos meteorológicos?</li></ol></div>
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200"><span class="fact-pill mb-3">Repaso 2.3</span><h3 class="font-bold text-slate-800 mb-3">Zonas climáticas</h3><ol class="list-[lower-alpha] pl-5 space-y-2 text-sm text-slate-700"><li>Nombra las tres grandes zonas climáticas.</li><li>Compara clima ecuatorial y tropical.</li><li>Describe el clima mediterráneo.</li><li>¿Qué caracteriza a las regiones polares?</li></ol></div>
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200"><span class="fact-pill mb-3">Repaso 2.4</span><h3 class="font-bold text-slate-800 mb-3">Ecosistemas</h3><ol class="list-[lower-alpha] pl-5 space-y-2 text-sm text-slate-700"><li>Define ecosistema.</li><li>¿Qué es un hábitat?</li><li>Explica un ecosistema de agua dulce y uno marino.</li><li>Relaciona clima mediterráneo y bosque mediterráneo.</li></ol></div>
+              <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 md:col-span-2"><span class="fact-pill mb-3">Repaso 2.5</span><h3 class="font-bold text-slate-800 mb-3">Cambio climático</h3><ol class="list-[lower-alpha] pl-5 space-y-2 text-sm text-slate-700"><li>Nombra tres causas del cambio climático.</li><li>Explica por qué una erupción volcánica puede cambiar el clima?</li><li>Indica dos consecuencias del cambio climático.</li><li>Explica por qué grandes asteroides y meteoritos pueden modificar el clima y la vida en la Tierra.</li></ol></div>
+            </div>
+
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl mb-5"><h3 class="text-base font-bold text-amber-900 text-heading">🟠 Actividades de ampliación</h3></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div class="bg-white p-5 rounded-2xl border border-amber-200"><h4 class="font-bold text-slate-800 mb-2">1. Meteorólogo por un día</h4><p class="text-sm text-slate-700 leading-relaxed">Busca una predicción meteorológica de tu localidad y anota temperatura, precipitación y viento previstos. Una semana después, compárala con lo que realmente ocurrió.</p></div>
+              <div class="bg-white p-5 rounded-2xl border border-amber-200"><h4 class="font-bold text-slate-800 mb-2">2. Paisaje y clima</h4><p class="text-sm text-slate-700 leading-relaxed">Elige dos paisajes climáticos muy diferentes y explica cómo la temperatura y la precipitación ayudan a entender su vegetación.</p></div>
+              <div class="bg-white p-5 rounded-2xl border border-amber-200"><h4 class="font-bold text-slate-800 mb-2">3. Leemos una gráfica</h4><p class="text-sm text-slate-700 leading-relaxed">Selecciona uno de los gráficos del tema. Escribe qué variables representa, qué periodo abarca y qué conclusiones obtienes de sus datos.</p></div>
+              <div class="bg-white p-5 rounded-2xl border border-amber-200"><h4 class="font-bold text-slate-800 mb-2">4. Analizamos</h4><p class="text-sm text-slate-700 leading-relaxed">Analiza y reflexiona sobre las causas y consecuencias del cambio climático.</p></div>
+            </div>
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- AUTOEVALUACIÓN -->
+          <!-- ===================================================== -->
+          <section id="sec-diana" class="bg-white rounded-3xl p-6 md:p-8 custom-shadow border-2 border-indigo-200">
+            <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-600 text-white font-extrabold px-3.5 py-1.5 rounded-xl text-lg">🎯</span><h2 class="section-title">Diana de Autoevaluación</h2></div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">Piensa en lo que has aprendido y marca la opción que mejor representa tu situación. Puedes cambiar la respuesta pulsando otra opción.</p>
+
+            <div class="space-y-4">
+              <div class="eval-row"><div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed"><span class="font-bold text-junta mr-1">2.1</span> Distingo tiempo y clima, identifico sus principales variables y sé interpretar gráficos sencillos y localizar lugares mediante latitud y longitud.</div><div class="auto-eval-group"><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button></div></div>
+              <div class="eval-row"><div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed"><span class="font-bold text-junta mr-1">2.2</span> Explico el ciclo del agua y del carbono y reconozco las capas y los principales gases de la atmósfera.</div><div class="auto-eval-group"><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button></div></div>
+              <div class="eval-row"><div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed"><span class="font-bold text-junta mr-1">2.3</span> Localizo las grandes zonas climáticas y describo los climas ecuatorial, tropical, desértico, mediterráneo, oceánico, continental y polar.</div><div class="auto-eval-group"><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button></div></div>
+              <div class="eval-row"><div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed"><span class="font-bold text-junta mr-1">2.4</span> Diferencio ecosistema, hábitat y bioma y relaciono el clima con distintos paisajes y ecosistemas.</div><div class="auto-eval-group"><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button></div></div>
+              <div class="eval-row"><div class="text-xs md:text-sm font-medium text-slate-800 leading-relaxed"><span class="font-bold text-junta mr-1">2.5</span> Comprendo que el clima cambia por distintas causas y a diferentes escalas y analizo críticamente qué conclusiones pueden obtenerse de una gráfica.</div><div class="auto-eval-group"><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button><button class="eval-btn" type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button></div></div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-2 print-hide">
+              <button type="button" onclick="resetEvaluation()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">Reiniciar autoevaluación</button>
+              <button type="button" onclick="window.print()" class="px-4 py-2 rounded-xl bg-indigo-100 hover:bg-indigo-200 text-indigo-800 text-xs font-bold transition">Imprimir</button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-junta"><img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación"></div>
+        <div class="footer-school">
+          <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+          <p>Alcolea · Córdoba</p>
+          <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><div class="footer-bottom-container"><p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p><a href="#">Volver arriba ↑</a></div></div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+      function scrollToSec(id,event){if(event){event.preventDefault()}const element=document.getElementById(id);if(element){element.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+id)}}
+      function selectEval(button){const group=button.closest('.auto-eval-group');if(!group){return}group.querySelectorAll('button').forEach(function(item){item.setAttribute('aria-pressed','false')});button.setAttribute('aria-pressed','true')}
+      function resetEvaluation(){document.querySelectorAll('.auto-eval-group button').forEach(function(button){button.setAttribute('aria-pressed','false')})}
+      function markImageMissing(image){const frame=image.closest('.media-frame');if(frame){frame.classList.add('is-missing')}}
+      const yearElement=document.getElementById('current-year');if(yearElement&&!yearElement.textContent.trim()){yearElement.textContent=new Date().getFullYear()}
+    </script>
+  </body>
+</html>
