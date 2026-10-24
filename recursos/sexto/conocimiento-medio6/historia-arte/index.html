@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CM6.4 Historia y arte. Recursos educativos de Conocimiento del Medio para 6.º de Primaria del CEIP Joaquín Tena Artigas.">
+  <title>CM6.4 · Historia y arte | CEIP Joaquín Tena Artigas</title>
+
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: "#2f7d4a",
+            "junta-dark": "#245f39",
+            "junta-accent": "#3f9460"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f6f8f7; }
+
+    .topic-page { background: #f6f8f7; }
+    .topic-shell {
+      width: min(92%, 1180px);
+      margin: 0 auto;
+      padding: 2rem 0 3.75rem;
+    }
+
+    .breadcrumbs {
+      margin-bottom: 1.2rem;
+      font-size: .82rem;
+      color: #64748b;
+    }
+    .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .breadcrumbs li:not(:last-child)::after {
+      content: "›";
+      margin-left: .4rem;
+      color: #94a3b8;
+    }
+    .breadcrumbs a { color: #2f7d4a; text-decoration: none; font-weight: 700; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      align-items: end;
+      gap: 1rem;
+      border-radius: 28px;
+      padding: 2.25rem 2.25rem 0;
+      background:
+        linear-gradient(135deg, #245f39 0%, #2f7d4a 55%, #3f9460 100%);
+      box-shadow: 0 18px 45px rgba(36, 95, 57, .18);
+      margin-bottom: 1.4rem;
+      min-height: 320px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      right: -105px;
+      top: -125px;
+      background: rgba(255,255,255,.07);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 2.2rem;
+    }
+    .hero-kicker {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .36rem .75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      color: #ecfdf3;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 0 0 .85rem;
+      color: white;
+      font-size: clamp(2.2rem, 6vw, 4.3rem);
+      line-height: .98;
+      font-weight: 900;
+      letter-spacing: -.035em;
+    }
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: #dcfce7;
+      font-size: clamp(.98rem, 2vw, 1.12rem);
+      line-height: 1.75;
+    }
+    .hero img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 220px;
+      max-height: 285px;
+      object-fit: contain;
+      justify-self: center;
+    }
+
+    .topic-index {
+      background: white;
+      border: 1px solid #dce8e0;
+      border-radius: 22px;
+      padding: 1.15rem 1.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .045);
+    }
+    .topic-index h2 {
+      margin: 0 0 .8rem;
+      color: #2f7d4a;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .topic-index-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+    }
+    .topic-index a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: .48rem .78rem;
+      border-radius: 10px;
+      background: #f1f5f3;
+      color: #4b5563;
+      font-size: .8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .topic-index a:hover, .topic-index a:focus-visible {
+      color: white;
+      background: #2f7d4a;
+      outline: none;
+    }
+
+    .content-stack { display: grid; gap: 1.5rem; }
+    .lesson-section {
+      scroll-margin-top: 1rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .045);
+    }
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 54px;
+      height: 42px;
+      padding: 0 .65rem;
+      border-radius: 13px;
+      color: white;
+      background: #2f7d4a;
+      font-size: .86rem;
+      font-weight: 900;
+      letter-spacing: .03em;
+    }
+    .section-heading h2 {
+      margin: 0;
+      color: #0f172a;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      line-height: 1.2;
+    }
+    .section-heading p {
+      margin: .28rem 0 0;
+      color: #64748b;
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+
+    .lead {
+      color: #334155;
+      font-size: .98rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .lead + .lead { margin-top: .8rem; }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: .8rem;
+      margin: 1rem 0;
+    }
+    .concept-card {
+      border: 1px solid #dce8e0;
+      border-radius: 18px;
+      padding: 1rem;
+      background: #f9fcfa;
+    }
+    .concept-card h3 {
+      margin: 0 0 .45rem;
+      color: #245f39;
+      font-size: .98rem;
+    }
+    .concept-card p, .concept-card li {
+      color: #475569;
+      font-size: .87rem;
+      line-height: 1.58;
+    }
+    .concept-card ul { margin: .45rem 0 0; padding-left: 1.05rem; }
+
+    .note {
+      margin: 1rem 0;
+      padding: 1rem 1.05rem;
+      border-left: 4px solid #2f7d4a;
+      border-radius: 0 16px 16px 0;
+      background: #eff8f2;
+      color: #315b3e;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+    .note strong { color: #245f39; }
+
+    .green-note {
+      margin: 1rem 0;
+      padding: 1rem 1.05rem;
+      border-left: 4px solid #2f7d4a;
+      border-radius: 0 16px 16px 0;
+      background: #eff8f2;
+      color: #315b3e;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .warning {
+      margin: 1rem 0;
+      padding: 1rem 1.05rem;
+      border-left: 4px solid #d97706;
+      border-radius: 0 16px 16px 0;
+      background: #fff8e8;
+      color: #7c4a03;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 1.15rem 0;
+      padding-left: 1.15rem;
+      border-left: 3px solid #b9d9c4;
+    }
+    .timeline-item {
+      position: relative;
+      margin: 0 0 .9rem;
+      padding: .78rem .9rem;
+      border: 1px solid #dce8e0;
+      border-radius: 15px;
+      background: #f9fcfa;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.53rem;
+      top: 1.05rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #2f7d4a;
+      box-shadow: 0 0 0 4px #f1f5f3;
+    }
+    .timeline-item strong {
+      display: block;
+      color: #245f39;
+      font-size: .86rem;
+      margin-bottom: .2rem;
+    }
+    .timeline-item span {
+      color: #475569;
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 1rem 0; }
+    .edu-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: .85rem;
+    }
+    .edu-table th, .edu-table td {
+      border: 1px solid #dbe3df;
+      padding: .72rem .78rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    .edu-table th { background: #eef7f1; color: #245f39; font-weight: 900; }
+    .edu-table td { color: #475569; background: white; }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: .8rem;
+      margin: 1rem 0;
+    }
+    .source-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 1rem;
+      background: #f8fafc;
+    }
+    .source-card h3 {
+      margin: 0 0 .45rem;
+      color: #334155;
+      font-size: .95rem;
+    }
+    .source-card p {
+      margin: 0;
+      color: #64748b;
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .art-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: .65rem;
+      margin: 1rem 0;
+    }
+    .art-chip {
+      min-height: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: .25rem;
+      border-radius: 16px;
+      border: 1px solid #dce8e0;
+      background: linear-gradient(180deg, #fff 0%, #f9fcfa 100%);
+      padding: .8rem;
+    }
+    .art-chip span:first-child { font-size: 1.6rem; }
+    .art-chip strong { color: #245f39; font-size: .82rem; }
+    .art-chip small { color: #64748b; font-size: .72rem; line-height: 1.4; }
+
+    .activities-title {
+      margin: 1.35rem 0 .7rem;
+      color: #64748b;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: .8rem;
+    }
+    .exercise-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 1rem;
+      background: #f8fafc;
+    }
+    .exercise-label {
+      display: inline-block;
+      margin-bottom: .6rem;
+      padding: .28rem .58rem;
+      border-radius: 8px;
+      background: #2f7d4a;
+      color: white;
+      font-size: .7rem;
+      font-weight: 900;
+    }
+    .exercise-text {
+      color: #334155;
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+    .exercise-text ol, .exercise-text ul { padding-left: 1.15rem; margin: .55rem 0 0; }
+    .exercise-text li + li { margin-top: .3rem; }
+
+    .project {
+      border: 1px solid #d8e5dc;
+      background: linear-gradient(135deg, #f3faf5 0%, #ffffff 72%);
+    }
+    .project .section-number { background: #2f7d4a; }
+    .project-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .project-step {
+      padding: 1rem;
+      border: 1px solid #d6e6da;
+      border-radius: 18px;
+      background: white;
+    }
+    .project-step span {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #e7f4ea;
+      color: #2f7d4a;
+      font-weight: 900;
+      font-size: .78rem;
+      margin-bottom: .55rem;
+    }
+    .project-step h3 {
+      margin: 0 0 .35rem;
+      color: #245f39;
+      font-size: .9rem;
+    }
+    .project-step p {
+      margin: 0;
+      color: #475569;
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .repaso-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
+    }
+    .repaso-card {
+      border: 1px solid #dbe3df;
+      border-radius: 18px;
+      padding: 1.15rem;
+      background: #fbfdfc;
+    }
+    .repaso-card h3 {
+      margin: 0 0 .65rem;
+      color: #245f39;
+      font-size: 1rem;
+    }
+    .repaso-card ol { margin: 0; padding-left: 1.2rem; color: #475569; }
+    .repaso-card li { font-size: .86rem; line-height: 1.6; }
+    .repaso-card li + li { margin-top: .35rem; }
+
+    .eval-stack { display: grid; gap: .75rem; }
+    .eval-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+    .eval-text {
+      flex: 1 1 520px;
+      color: #334155;
+      font-size: .86rem;
+      line-height: 1.55;
+    }
+    .eval-code { color: #2f7d4a; font-weight: 900; margin-right: .35rem; }
+    .auto-eval-group {
+      flex: 0 1 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+    .auto-eval-group button {
+      border: 1px solid #d5dee0;
+      border-radius: 9px;
+      background: white;
+      color: #475569;
+      padding: .42rem .62rem;
+      font-size: .72rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .15s ease;
+    }
+    .auto-eval-group button:hover { background: #edf5ef; }
+    .auto-eval-group button.selected {
+      background: #2f7d4a;
+      border-color: #2f7d4a;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 1.7rem 1.6rem 0; }
+      .hero-copy { padding-bottom: .3rem; }
+      .hero img { width: 170px; }
+      .concept-grid, .source-grid { grid-template-columns: 1fr; }
+      .project-steps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .art-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .eval-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 700px) {
+      .topic-shell { width: min(94%, 1180px); padding-top: 1.2rem; }
+      .hero { border-radius: 22px; min-height: unset; }
+      .exercise-grid, .repaso-grid, .project-steps, .art-strip { grid-template-columns: 1fr; }
+      .section-heading { gap: .65rem; }
+      .section-number { min-width: 48px; height: 38px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+              aria-expanded="false" aria-controls="main-navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/conocimiento-medio6/">Conocimiento del Medio</a></li>
+          <li aria-current="page">CM6.4 Historia y arte</li>
+        </ol>
+      </nav>
+
+      <section class="hero" aria-labelledby="titulo-sda">
+        <div class="hero-copy">
+          <span class="hero-kicker">Conocimiento del Medio · 6.º de Primaria · SdA 4</span>
+          <h1 id="titulo-sda">HISTORIA Y ARTE</h1>
+          <p>
+            Recorreremos más de mil quinientos años de historia de la Península Ibérica y de España. Aprenderemos a
+            utilizar fuentes históricas, ordenar hechos en el tiempo, explicar causas y consecuencias y comprender cómo
+            el arte, la cultura y la diversidad forman parte de nuestro patrimonio.
+          </p>
+        </div>
+        <img src="/img/tomatito/tomatito-historia.png" alt="" aria-hidden="true">
+      </section>
+
+      <nav class="topic-index" aria-label="Índice de la Situación de Aprendizaje">
+        <h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="topic-index-links">
+          <a href="#sec-1" onclick="scrollToSec('sec-1', event)">4.1 La Hispania visigoda</a>
+<a href="#sec-2" onclick="scrollToSec('sec-2', event)">4.2 Al-Ándalus</a>
+<a href="#sec-3" onclick="scrollToSec('sec-3', event)">4.3 Los reinos cristianos y la conquista de Granada</a>
+<a href="#sec-4" onclick="scrollToSec('sec-4', event)">4.4 La llegada a América y el siglo XVI</a>
+<a href="#sec-5" onclick="scrollToSec('sec-5', event)">4.5 El siglo XVII</a>
+<a href="#sec-6" onclick="scrollToSec('sec-6', event)">4.6 El siglo XVIII</a>
+<a href="#sec-7" onclick="scrollToSec('sec-7', event)">4.7 El siglo XIX</a>
+<a href="#sec-8" onclick="scrollToSec('sec-8', event)">4.8 El siglo XX</a>
+<a href="#sec-9" onclick="scrollToSec('sec-9', event)">4.9 La Transición y la democracia</a>
+<a href="#sec-10" onclick="scrollToSec('sec-10', event)">4.10 Diversidad, patrimonio e igualdad</a>
+<a href="#sec-proyecto" onclick="scrollToSec('sec-proyecto', event)">Proyecto final Exposición de un tema histórico</a>
+<a href="#sec-repaso" onclick="scrollToSec('sec-repaso', event)">Repaso Repasamos lo aprendido</a>
+<a href="#sec-diana" onclick="scrollToSec('sec-diana', event)">Autoevaluación Diana de autoevaluación</a>
+        </div>
+      </nav>
+
+      <div class="content-stack">
+
+        <section id="sec-1" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.1</span>
+            <div>
+              <h2>La Hispania visigoda</h2>
+              <p>Fuentes históricas, llegada de los visigodos, reino de Toledo, sociedad, cultura y arte.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Para conocer el pasado utilizamos <strong>fuentes históricas</strong>. Son testimonios que nos permiten
+            reconstruir cómo vivían las personas, qué ocurrió y cómo cambiaron las sociedades. Una fuente no “habla”
+            por sí sola: debe interpretarse, compararse con otras y situarse en su contexto.
+          </p>
+
+          <div class="source-grid">
+            <article class="source-card">
+              <h3>🗣️ Fuentes orales</h3>
+              <p>Relatos, entrevistas, canciones y recuerdos transmitidos por personas.</p>
+            </article>
+            <article class="source-card">
+              <h3>📜 Fuentes escritas</h3>
+              <p>Leyes, cartas, crónicas, inscripciones, libros, periódicos y documentos.</p>
+            </article>
+            <article class="source-card">
+              <h3>🏛️ Fuentes materiales y patrimoniales</h3>
+              <p>Edificios, monedas, herramientas, esculturas, restos arqueológicos y obras de arte.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            Tras la desaparición del Imperio romano de Occidente, distintos pueblos germánicos se asentaron en la
+            Península. Entre ellos destacaron los <strong>visigodos</strong>, que establecieron su capital en Toledo.
+            También hubo presencia de suevos y bizantinos en determinados territorios. Los vándalos permanecieron poco
+            tiempo antes de trasladarse al norte de África.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>Siglo V</strong><span>Se debilita el poder romano en Hispania y se establecen diferentes pueblos germánicos.</span></div>
+            <div class="timeline-item"><strong>Siglo VI</strong><span>El reino visigodo consolida Toledo como centro político y avanza en la unificación territorial.</span></div>
+            <div class="timeline-item"><strong>589</strong><span>El rey Recaredo adopta el catolicismo, favoreciendo la unidad religiosa entre élites visigodas e hispanorromanas.</span></div>
+            <div class="timeline-item"><strong>654</strong><span>El Liber Iudiciorum reúne leyes aplicables al conjunto de la población del reino.</span></div>
+            <div class="timeline-item"><strong>711</strong><span>La invasión musulmana derrota al reino visigodo y comienza una nueva etapa histórica.</span></div>
+          </div>
+
+          <div class="note">
+            <strong>Una precisión importante:</strong> el reino visigodo no fue todavía “España” en el sentido del Estado
+            actual. Sí contribuyó a una mayor unificación política de buena parte de la Península, pero la formación de
+            España fue un proceso histórico mucho más largo.
+          </div>
+
+          <p class="lead">
+            Entre los monarcas visigodos destacaron Leovigildo, Recaredo y Recesvinto. La sociedad estaba muy
+            jerarquizada y la agricultura era la actividad económica principal. En el arte sobresalen pequeñas iglesias
+            de piedra, arcos de herradura y piezas de orfebrería.
+          </p>
+
+          <div class="art-strip">
+            <div class="art-chip"><span>⛪</span><strong>Arquitectura</strong><small>Iglesias de piedra de dimensiones reducidas.</small></div>
+            <div class="art-chip"><span>🧱</span><strong>Arco de herradura</strong><small>Utilizado antes y durante la época visigoda y más tarde por el arte andalusí.</small></div>
+            <div class="art-chip"><span>👑</span><strong>Orfebrería</strong><small>Coronas votivas, cruces y objetos de metales preciosos.</small></div>
+            <div class="art-chip"><span>📜</span><strong>Cultura escrita</strong><small>Destaca Isidoro de Sevilla y sus <em>Etimologías</em>.</small></div>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Clasifica estas fuentes como orales, escritas o materiales: una moneda, una entrevista a una persona mayor, una ley, una iglesia antigua, una crónica y una canción tradicional.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Ordena cronológicamente: llegada musulmana, conversión de Recaredo, consolidación del reino visigodo y desaparición del Imperio romano de Occidente.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Explica por qué los historiadores deben comparar varias fuentes antes de llegar a una conclusión sobre el pasado.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Escribe dos rasgos políticos o culturales de la Hispania visigoda y explica por qué son importantes.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-2" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.2</span>
+            <div>
+              <h2>Al-Ándalus</h2>
+              <p>Llegada de los musulmanes, emirato y califato de Córdoba, reinos cristianos, taifas y cultura andalusí.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            En el año <strong>711</strong>, tropas musulmanas procedentes del norte de África cruzaron el estrecho de
+            Gibraltar y derrotaron al ejército visigodo. En pocos años ocuparon gran parte de la Península. El territorio
+            bajo dominio musulmán recibió el nombre de <strong>Al-Ándalus</strong>.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>711</strong><span>Comienza la conquista musulmana de gran parte de la Península.</span></div>
+            <div class="timeline-item"><strong>756</strong><span>Abderramán I establece el Emirato independiente de Córdoba.</span></div>
+            <div class="timeline-item"><strong>929</strong><span>Abderramán III proclama el Califato de Córdoba.</span></div>
+            <div class="timeline-item"><strong>1031</strong><span>El califato se fragmenta en varios reinos de taifas.</span></div>
+            <div class="timeline-item"><strong>1236</strong><span>Fernando III conquista Córdoba para la Corona de Castilla.</span></div>
+            <div class="timeline-item"><strong>1492</strong><span>El reino nazarí de Granada pasa a manos de los Reyes Católicos.</span></div>
+          </div>
+
+          <p class="lead">
+            Durante el Emirato y, sobre todo, el Califato de Córdoba, Al-Ándalus alcanzó un gran desarrollo urbano,
+            agrícola, comercial, científico y cultural. Córdoba fue una de las ciudades más importantes de Europa
+            occidental. Tras la desaparición del califato surgieron los <strong>reinos de taifas</strong>, políticamente
+            más débiles y frecuentemente enfrentados entre sí.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🌾 Agricultura</h3>
+              <p>Se perfeccionaron sistemas de regadío y se difundieron cultivos como cítricos, arroz o caña de azúcar.</p>
+            </article>
+            <article class="concept-card">
+              <h3>📚 Ciencia y cultura</h3>
+              <p>Se desarrollaron conocimientos en medicina, astronomía, matemáticas, filosofía y traducción de textos.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🏙️ Ciudades</h3>
+              <p>Córdoba, Sevilla y Granada fueron centros de comercio, artesanía, administración y cultura.</p>
+            </article>
+          </div>
+
+          <div class="green-note">
+            <strong>Las “tres culturas”.</strong> En distintos momentos convivieron en ciudades y territorios peninsulares
+            comunidades musulmanas, cristianas y judías. Hubo intercambio cultural y científico, pero la convivencia no
+            fue siempre pacífica ni igualitaria. También existieron conflictos, discriminaciones y periodos de persecución.
+          </div>
+
+          <div class="art-strip">
+            <div class="art-chip"><span>🕌</span><strong>Mezquita de Córdoba</strong><small>Uno de los grandes monumentos del arte andalusí.</small></div>
+            <div class="art-chip"><span>🏰</span><strong>Alhambra</strong><small>Conjunto palaciego nazarí de Granada.</small></div>
+            <div class="art-chip"><span>💧</span><strong>Agua y jardines</strong><small>Fuentes, albercas y acequias forman parte del diseño arquitectónico.</small></div>
+            <div class="art-chip"><span>🔷</span><strong>Decoración</strong><small>Geometría, motivos vegetales y caligrafía.</small></div>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Explica la diferencia entre Emirato independiente, Califato de Córdoba y reinos de taifas.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Señala dos causas que facilitaron la rápida conquista musulmana y dos consecuencias de la formación de Al-Ándalus.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Investiga en el contenido de este apartado y escribe tres aportaciones económicas, científicas o culturales de Al-Ándalus.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Explica por qué la expresión “convivencia de las tres culturas” debe entenderse con matices y no como una convivencia siempre pacífica.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-3" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.3</span>
+            <div>
+              <h2>Los reinos cristianos y la conquista de Granada</h2>
+              <p>Castilla y León, Navarra, Aragón, Portugal, los Reyes Católicos y el arte medieval cristiano.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            En las zonas del norte peninsular se consolidaron distintos <strong>reinos cristianos</strong>. A lo largo de
+            varios siglos ampliaron sus territorios hacia el sur, mediante guerras, pactos, alianzas y procesos de
+            repoblación. Este largo proceso se ha denominado tradicionalmente <strong>Reconquista</strong>.
+          </p>
+
+          <div class="note">
+            <strong>Reconquista es un término tradicional.</strong> Resulta útil para referirse al avance de los reinos
+            cristianos sobre territorios de Al-Ándalus, pero no fue una campaña continua de ocho siglos ni un proceso
+            simple. Hubo alianzas entre cristianos y musulmanes, conflictos internos y cambios de fronteras muy frecuentes.
+          </div>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>👑 Corona de Castilla</h3>
+              <p>Se convirtió en la principal potencia de la Península y avanzó especialmente por el centro y el sur.</p>
+            </article>
+            <article class="concept-card">
+              <h3>⚔️ Corona de Aragón</h3>
+              <p>Integró diversos territorios y desarrolló una importante expansión por el Mediterráneo.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🛡️ Navarra y Portugal</h3>
+              <p>Navarra mantuvo su propio reino y Portugal se consolidó como reino independiente en el oeste peninsular.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            En <strong>1469</strong> contrajeron matrimonio Isabel de Castilla y Fernando de Aragón. Cada corona mantuvo
+            sus leyes e instituciones, pero ambos monarcas coordinaron gran parte de su política. En <strong>1492</strong>
+            conquistaron el reino nazarí de Granada, último territorio musulmán de la Península. Ese mismo año decretaron
+            la expulsión de los judíos que no se convirtieran al cristianismo.
+          </p>
+
+          <div class="art-strip">
+            <div class="art-chip"><span>⛪</span><strong>Románico</strong><small>Muros gruesos, arcos de medio punto y edificios de aspecto sólido.</small></div>
+            <div class="art-chip"><span>🏰</span><strong>Castillos</strong><small>Fortificaciones vinculadas al control del territorio.</small></div>
+            <div class="art-chip"><span>⛪</span><strong>Gótico</strong><small>Arcos apuntados, mayor altura y grandes vidrieras.</small></div>
+            <div class="art-chip"><span>🎨</span><strong>Arte mudéjar</strong><small>Combina tradiciones artísticas cristianas e islámicas.</small></div>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Sitúa en una línea del tiempo: matrimonio de Isabel y Fernando, conquista de Granada, formación de Portugal y expansión de los reinos cristianos.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica por qué el matrimonio de los Reyes Católicos no significó que Castilla y Aragón se convirtieran inmediatamente en un único Estado con las mismas leyes.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Compara dos características del arte románico y dos del gótico.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Explica qué muestra el arte mudéjar sobre los intercambios culturales de la Península medieval.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-4" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.4</span>
+            <div>
+              <h2>La llegada a América y el siglo XVI</h2>
+              <p>Colón, expansión ultramarina, consecuencias de la colonización y monarquía de los Austrias.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            A finales del siglo XV las monarquías europeas buscaban nuevas rutas comerciales hacia Asia. Cristóbal Colón,
+            financiado por los Reyes Católicos, propuso llegar navegando hacia el oeste. El <strong>12 de octubre de
+            1492</strong> su expedición llegó a tierras americanas, aunque Colón creyó haber alcanzado Asia.
+          </p>
+
+          <div class="warning">
+            Durante mucho tiempo se habló simplemente de “descubrimiento de América”. Hoy sabemos que el continente
+            estaba habitado por millones de personas y numerosas civilizaciones. Por eso conviene hablar también de
+            <strong>llegada de los europeos, encuentro entre sociedades y conquista y colonización</strong>, procesos que
+            tuvieron consecuencias muy profundas para los pueblos indígenas.
+          </div>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🌍 Consecuencias territoriales</h3>
+              <p>La Monarquía Hispánica incorporó extensos territorios americanos a sus dominios.</p>
+            </article>
+            <article class="concept-card">
+              <h3>💱 Intercambios</h3>
+              <p>Productos como patata, tomate, cacao o maíz llegaron a Europa; otros productos, animales y cultivos viajaron a América.</p>
+            </article>
+            <article class="concept-card">
+              <h3>⚠️ Consecuencias humanas</h3>
+              <p>Guerras, enfermedades, explotación y trabajos forzados provocaron un enorme descenso de poblaciones indígenas en muchas regiones.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            En el siglo XVI reinaron <strong>Carlos I</strong> y <strong>Felipe II</strong>, pertenecientes a la dinastía
+            de los Habsburgo o Austrias. Sus dominios se extendieron por Europa, América y otros territorios. La monarquía
+            participó en numerosos conflictos europeos y mediterráneos, mientras la llegada de metales preciosos de
+            América tuvo importantes efectos económicos.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>1492</strong><span>Primera expedición de Colón llega a América.</span></div>
+            <div class="timeline-item"><strong>1516</strong><span>Carlos I comienza su reinado.</span></div>
+            <div class="timeline-item"><strong>1556</strong><span>Felipe II accede al trono.</span></div>
+            <div class="timeline-item"><strong>1571</strong><span>Batalla de Lepanto contra el Imperio otomano.</span></div>
+            <div class="timeline-item"><strong>1580</strong><span>Felipe II incorpora la corona de Portugal a sus dominios durante varias décadas.</span></div>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Explica dos causas que impulsaron los viajes oceánicos europeos a finales del siglo XV.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Escribe dos consecuencias del contacto entre Europa y América para Europa y dos para los pueblos americanos.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">¿Por qué resulta más preciso hablar también de conquista y colonización, además de “descubrimiento”?</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Compara a Carlos I y Felipe II: señala una semejanza y una diferencia en sus reinados.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-5" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.5</span>
+            <div>
+              <h2>El siglo XVII</h2>
+              <p>Los últimos Austrias, crisis política y económica y el Siglo de Oro.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Durante el siglo XVII gobernaron Felipe III, Felipe IV y Carlos II. La Monarquía Hispánica continuó siendo una
+            gran potencia, pero tuvo que afrontar guerras costosas, problemas financieros, pérdida de población en algunas
+            zonas y una disminución progresiva de su influencia en Europa.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🏛️ Política interior</h3>
+              <p>Los reyes delegaron parte del gobierno en validos. Hubo dificultades fiscales, revueltas y tensiones entre territorios.</p>
+            </article>
+            <article class="concept-card">
+              <h3>⚔️ Política exterior</h3>
+              <p>La monarquía intervino en conflictos europeos como la Guerra de los Treinta Años y perdió parte de su predominio.</p>
+            </article>
+            <article class="concept-card">
+              <h3>📉 Economía</h3>
+              <p>El endeudamiento, las guerras y otros problemas provocaron fuertes dificultades, aunque afectaron de forma desigual a los territorios.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            A pesar de esas dificultades, los siglos XVI y XVII fueron una etapa de extraordinaria creación artística y
+            literaria conocida como <strong>Siglo de Oro</strong>. En literatura destacaron Miguel de Cervantes, Lope de
+            Vega, Francisco de Quevedo y Calderón de la Barca. En pintura sobresalieron Velázquez, Zurbarán y Murillo.
+          </p>
+
+          <div class="art-strip">
+            <div class="art-chip"><span>📖</span><strong>Cervantes</strong><small><em>Don Quijote de la Mancha</em> es una de las obras fundamentales de la literatura universal.</small></div>
+            <div class="art-chip"><span>🎭</span><strong>Teatro</strong><small>Lope de Vega y Calderón renovaron el teatro del Barroco.</small></div>
+            <div class="art-chip"><span>🖼️</span><strong>Velázquez</strong><small>Pintor de la corte de Felipe IV y autor de <em>Las meninas</em>.</small></div>
+            <div class="art-chip"><span>⛪</span><strong>Barroco</strong><small>Arte de gran expresividad, contraste y riqueza decorativa.</small></div>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Nombra los tres reyes Habsburgo del siglo XVII y ordénalos cronológicamente.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica dos problemas internos y uno exterior de la Monarquía Hispánica durante el siglo XVII.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">¿Por qué puede hablarse de crisis política y económica y, al mismo tiempo, de un gran esplendor cultural?</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Elige una figura del Siglo de Oro y escribe tres datos que permitan explicar su importancia.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-6" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.6</span>
+            <div>
+              <h2>El siglo XVIII</h2>
+              <p>Los Borbones, centralización política, reformas e Ilustración.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Carlos II murió en 1700 sin descendencia. La disputa por la sucesión provocó la
+            <strong>Guerra de Sucesión</strong>. Tras el conflicto se instaló en el trono la dinastía de los
+            <strong>Borbones</strong>, con Felipe V.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>1700</strong><span>Muere Carlos II y comienza la nueva etapa borbónica.</span></div>
+            <div class="timeline-item"><strong>1701–1714</strong><span>Guerra de Sucesión española.</span></div>
+            <div class="timeline-item"><strong>Siglo XVIII</strong><span>Reformas administrativas y económicas inspiradas en parte por las ideas ilustradas.</span></div>
+            <div class="timeline-item"><strong>Carlos III</strong><span>Su reinado representa uno de los momentos de mayor impulso reformista del despotismo ilustrado.</span></div>
+          </div>
+
+          <p class="lead">
+            Los Decretos de Nueva Planta suprimieron gran parte de las instituciones propias de los territorios de la
+            Corona de Aragón y reforzaron la centralización. Al mismo tiempo, los gobiernos borbónicos promovieron
+            reformas para mejorar la administración, el comercio, las comunicaciones y algunas actividades productivas.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>💡 Ilustración</h3>
+              <p>Defendía la razón, la educación y el conocimiento como herramientas para mejorar la sociedad.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🔬 Ciencia</h3>
+              <p>Se impulsaron expediciones científicas, academias, jardines botánicos y estudios sobre el territorio.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🏛️ Neoclasicismo</h3>
+              <p>Buscó inspiración en el arte clásico grecorromano, con equilibrio, proporción y formas más sobrias.</p>
+            </article>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Explica qué provocó el cambio de dinastía de los Austrias a los Borbones.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">¿Qué relación existe entre la Ilustración, la educación y las reformas del siglo XVIII?</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Explica con tus palabras qué significa centralización política y pon un ejemplo de este siglo.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Compara el Barroco y el Neoclasicismo mediante dos características de cada estilo.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-7" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.7</span>
+            <div>
+              <h2>El siglo XIX</h2>
+              <p>Guerra de la Independencia, liberalismo, cambios políticos, industrialización y nuevos estilos artísticos.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            El siglo XIX fue un periodo de grandes cambios políticos. La invasión napoleónica provocó la
+            <strong>Guerra de la Independencia</strong> (1808–1814). Durante la guerra, las Cortes reunidas en Cádiz
+            aprobaron la <strong>Constitución de 1812</strong>, que defendía principios liberales como la soberanía
+            nacional y la división de poderes.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>1808</strong><span>Comienza la Guerra de la Independencia frente a la ocupación napoleónica.</span></div>
+            <div class="timeline-item"><strong>1812</strong><span>Las Cortes de Cádiz aprueban la primera Constitución española.</span></div>
+            <div class="timeline-item"><strong>1833</strong><span>Muere Fernando VII y comienza el reinado de Isabel II, acompañado de guerras carlistas y conflictos políticos.</span></div>
+            <div class="timeline-item"><strong>1868</strong><span>La Revolución de 1868 abre un periodo de cambios que incluye la monarquía de Amadeo I y la Primera República.</span></div>
+            <div class="timeline-item"><strong>1874</strong><span>Comienza la Restauración borbónica.</span></div>
+            <div class="timeline-item"><strong>1898</strong><span>España pierde Cuba, Puerto Rico y Filipinas tras la guerra con Estados Unidos.</span></div>
+          </div>
+
+          <p class="lead">
+            También se produjeron cambios económicos y sociales. La industrialización avanzó más lentamente y de forma
+            desigual que en otros países europeos, concentrándose especialmente en algunas regiones. Crecieron las
+            ciudades, se extendió el ferrocarril y surgieron nuevos grupos sociales vinculados a la industria.
+          </p>
+
+          <div class="art-strip">
+            <div class="art-chip"><span>🎨</span><strong>Goya</strong><small>Su obra enlaza el final del siglo XVIII con los conflictos y transformaciones del XIX.</small></div>
+            <div class="art-chip"><span>🌄</span><strong>Romanticismo</strong><small>Valora emoción, libertad, naturaleza e identidad.</small></div>
+            <div class="art-chip"><span>👥</span><strong>Realismo</strong><small>Representa con atención la sociedad y la vida cotidiana.</small></div>
+            <div class="art-chip"><span>🏙️</span><strong>Arquitectura urbana</strong><small>Estaciones, mercados y nuevos ensanches reflejan la modernización de las ciudades.</small></div>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Ordena: Constitución de Cádiz, Restauración, Guerra de la Independencia, Primera República y crisis de 1898.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica por qué la Constitución de 1812 fue un cambio importante respecto al absolutismo.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Indica tres transformaciones económicas o sociales relacionadas con la industrialización del siglo XIX.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Observa las características del Romanticismo y el Realismo y explica una diferencia entre ambos.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-8" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.8</span>
+            <div>
+              <h2>El siglo XX</h2>
+              <p>Crisis de la Restauración, Segunda República, Guerra Civil, dictadura franquista y transformación social.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            El siglo XX español estuvo marcado por grandes cambios y conflictos. Tras la crisis del sistema de la
+            Restauración y la dictadura de Primo de Rivera, en <strong>1931</strong> se proclamó la
+            <strong>Segunda República</strong>, que impulsó diversas reformas y reconoció, entre otros avances, el derecho
+            al voto de las mujeres.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>1923–1930</strong><span>Dictadura de Miguel Primo de Rivera.</span></div>
+            <div class="timeline-item"><strong>1931</strong><span>Se proclama la Segunda República.</span></div>
+            <div class="timeline-item"><strong>1936–1939</strong><span>Guerra Civil española.</span></div>
+            <div class="timeline-item"><strong>1939–1975</strong><span>Dictadura de Francisco Franco.</span></div>
+            <div class="timeline-item"><strong>Décadas de 1960 y 1970</strong><span>Industrialización, emigración interior y exterior y fuerte crecimiento urbano en muchas zonas.</span></div>
+          </div>
+
+          <p class="lead">
+            La Guerra Civil comenzó tras el fracaso parcial de un golpe de Estado militar contra el gobierno republicano.
+            El conflicto causó una enorme pérdida de vidas, destrucción, exilio y una profunda división social. La victoria
+            del bando sublevado dio paso a la dictadura de Francisco Franco, un régimen sin elecciones democráticas libres,
+            con censura y represión política.
+          </p>
+
+          <div class="note">
+            <strong>Memoria democrática.</strong> Estudiar este periodo permite comprender el valor de los derechos
+            fundamentales, el pluralismo político, las elecciones libres y la resolución pacífica de los conflictos.
+            También ayuda a reconocer el sufrimiento de las víctimas de la violencia y la represión.
+          </div>
+
+          <p class="lead">
+            En arte y cultura, el siglo XX produjo movimientos muy innovadores. Figuras españolas como Pablo Picasso,
+            Salvador Dalí, Joan Miró, Federico García Lorca o María Zambrano alcanzaron gran importancia internacional,
+            aunque algunos desarrollaron parte de su obra en el exilio.
+          </p>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Elabora una línea del tiempo con Segunda República, Guerra Civil, dictadura franquista y comienzo de la Transición.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica dos diferencias fundamentales entre una dictadura y una democracia.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">¿Por qué el sufragio femenino aprobado durante la Segunda República fue un avance importante en la igualdad política?</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Explica por qué estudiar la Guerra Civil y la dictadura ayuda a valorar los derechos y libertades democráticos actuales.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-9" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.9</span>
+            <div>
+              <h2>La Transición y la democracia</h2>
+              <p>De 1975 a la Constitución de 1978, construcción democrática y movimiento andalucista.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Tras la muerte de Francisco Franco en <strong>1975</strong> comenzó la
+            <strong>Transición democrática</strong>. Fue un proceso de cambio político que permitió pasar de una dictadura
+            a un sistema democrático. Participaron instituciones, partidos políticos, sindicatos, movimientos ciudadanos
+            y una sociedad que reclamaba libertades y participación.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item"><strong>1975</strong><span>Muere Franco y Juan Carlos I es proclamado rey.</span></div>
+            <div class="timeline-item"><strong>1977</strong><span>Se celebran las primeras elecciones democráticas generales desde 1936.</span></div>
+            <div class="timeline-item"><strong>1978</strong><span>La ciudadanía aprueba en referéndum la Constitución española.</span></div>
+            <div class="timeline-item"><strong>28 de febrero de 1980</strong><span>Referéndum sobre la iniciativa autonómica andaluza.</span></div>
+            <div class="timeline-item"><strong>1981</strong><span>Se aprueba el primer Estatuto de Autonomía de Andalucía.</span></div>
+          </div>
+
+          <p class="lead">
+            La Constitución de 1978 establece que España es un <strong>Estado social y democrático de Derecho</strong>.
+            Reconoce derechos y libertades, la soberanía nacional, la división de poderes y la organización territorial en
+            comunidades autónomas, provincias y municipios.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🗳️ Participación</h3>
+              <p>Votar, informarse, debatir, asociarse y participar en iniciativas ciudadanas son formas de intervenir en la vida pública.</p>
+            </article>
+            <article class="concept-card">
+              <h3>⚖️ Derechos y deberes</h3>
+              <p>La democracia protege libertades y derechos, pero también exige respetar las leyes y los derechos de los demás.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🤝 Convivencia</h3>
+              <p>El diálogo, la escucha activa y la resolución pacífica de conflictos son esenciales para una sociedad democrática.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            El <strong>andalucismo</strong> tuvo antecedentes anteriores a la Transición. La Asamblea de Ronda de 1918,
+            vinculada al movimiento regionalista andaluz, adoptó símbolos y planteamientos autonomistas. La figura más
+            conocida es <strong>Blas Infante</strong>, considerado oficialmente Padre de la Patria Andaluza. Durante la
+            Transición, amplias movilizaciones ciudadanas reclamaron la autonomía andaluza.
+          </p>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Ordena los principales acontecimientos de la Transición entre 1975 y 1981.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica tres características que diferencian una democracia constitucional de una dictadura.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">¿Qué importancia tuvo el 28 de febrero de 1980 para Andalucía?</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Explica tres formas pacíficas y democráticas mediante las que la ciudadanía puede participar en la vida pública.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-10" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">4.10</span>
+            <div>
+              <h2>Diversidad, patrimonio e igualdad</h2>
+              <p>Diversidad cultural y lingüística, pueblo gitano, comunidad judía, flamenco y papel de las mujeres en la historia.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            España es un país con una gran <strong>diversidad cultural y lingüística</strong>. El castellano es la lengua
+            oficial del Estado y otras lenguas, como catalán/valenciano, gallego y euskera, son también oficiales en sus
+            respectivos territorios. Además, existen otras lenguas y variedades que forman parte del patrimonio cultural.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🎶 Pueblo gitano</h3>
+              <p>Presente en la Península desde el siglo XV, ha contribuido de forma decisiva a la cultura española y andaluza, especialmente al flamenco, pese a siglos de persecución y discriminación.</p>
+            </article>
+            <article class="concept-card">
+              <h3>✡️ Comunidades judías</h3>
+              <p>Tuvieron una importante presencia en la Península medieval y contribuyeron a la cultura, la medicina, el comercio y la traducción. En 1492 se decretó su expulsión si no se convertían al cristianismo.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🌍 Diversidad actual</h3>
+              <p>Las migraciones y la movilidad contemporánea han añadido nuevas culturas, lenguas y tradiciones a una sociedad ya diversa.</p>
+            </article>
+          </div>
+
+          <div class="green-note">
+            <strong>El flamenco</strong> es una manifestación cultural estrechamente vinculada a Andalucía y resultado de
+            múltiples influencias históricas. En 2010 fue inscrito por la UNESCO en la Lista Representativa del Patrimonio
+            Cultural Inmaterial de la Humanidad. Cuidar el patrimonio significa conocerlo, respetarlo, transmitirlo y
+            evitar su deterioro.
+          </div>
+
+          <p class="lead">
+            Durante gran parte de la historia, las mujeres tuvieron menos derechos y oportunidades que los hombres y
+            quedaron frecuentemente fuera de los relatos históricos tradicionales. Sin embargo, participaron en todos los
+            ámbitos de la sociedad: trabajo, ciencia, cultura, política, educación, cuidados y movimientos sociales.
+          </p>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Ámbito</th><th>Ejemplos de cambios hacia la igualdad</th><th>Retos pendientes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Educación</td><td>Acceso generalizado de niñas y mujeres a todos los niveles educativos.</td><td>Romper estereotipos que condicionan elecciones académicas y profesionales.</td></tr>
+                <tr><td>Trabajo</td><td>Reconocimiento legal de la igualdad y mayor presencia femenina en profesiones antes masculinizadas.</td><td>Reducir desigualdades, discriminación y dificultades de conciliación.</td></tr>
+                <tr><td>Política</td><td>Derecho al voto y creciente participación en instituciones.</td><td>Avanzar hacia una representación equilibrada y libre de violencia o discriminación.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="note">
+            Estudiar la diversidad no significa separar a las personas en grupos, sino comprender que una sociedad
+            democrática puede compartir derechos y normas comunes al mismo tiempo que protege diferentes identidades,
+            lenguas, creencias y tradiciones.
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Explica por qué la diversidad lingüística puede considerarse un patrimonio cultural.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Escribe dos aportaciones del pueblo gitano o de las comunidades judías a la historia y la cultura de España.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Explica por qué el flamenco puede considerarse un ejemplo de patrimonio cultural vivo.</div>
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Elige una mujer relevante de la historia, la ciencia, el arte o la política española. Resume su aportación y explica qué obstáculos tuvo que superar si los hubo.</div>
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-proyecto" class="lesson-section project">
+          <div class="section-heading">
+            <span class="section-number">PROYECTO</span>
+            <div>
+              <h2>Exposición de un tema histórico</h2>
+              <p>Producto final: investigar, seleccionar fuentes fiables, explicar causas y consecuencias y comunicar con claridad.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Elige uno de los periodos, acontecimientos, personajes o manifestaciones artísticas trabajados en esta SdA y
+            prepara una exposición breve. El objetivo es demostrar que sabes <strong>investigar, ordenar información,
+            interpretar fuentes y explicar el pasado</strong>, no simplemente copiar datos.
+          </p>
+
+          <div class="project-steps">
+            <article class="project-step">
+              <span>1</span>
+              <h3>Elige y delimita</h3>
+              <p>Formula una pregunta concreta: por ejemplo, “¿Por qué fue importante el Califato de Córdoba?” o “¿Qué cambió con la Constitución de 1812?”.</p>
+            </article>
+            <article class="project-step">
+              <span>2</span>
+              <h3>Busca y contrasta</h3>
+              <p>Consulta varias fuentes y distingue entre hechos, interpretaciones y opiniones.</p>
+            </article>
+            <article class="project-step">
+              <span>3</span>
+              <h3>Organiza</h3>
+              <p>Incluye contexto, fechas principales, protagonistas, causas, consecuencias y una manifestación artística o fuente histórica.</p>
+            </article>
+            <article class="project-step">
+              <span>4</span>
+              <h3>Expón</h3>
+              <p>Presenta la información con tus palabras, utilizando una línea del tiempo, mapa, imagen o esquema que ayude a comprenderla.</p>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Parte de la exposición</th><th>Qué debe contener</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Introducción</td><td>Tema, periodo histórico y pregunta que vas a responder.</td></tr>
+                <tr><td>Desarrollo</td><td>Hechos principales ordenados, causas, consecuencias y protagonistas.</td></tr>
+                <tr><td>Fuente histórica o arte</td><td>Una imagen, obra, documento o monumento explicado y contextualizado.</td></tr>
+                <tr><td>Conclusión</td><td>Qué has aprendido y por qué ese tema es importante para comprender la historia.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="sec-repaso" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">REPASO</span>
+            <div>
+              <h2>Repasamos lo aprendido</h2>
+              <p>Actividades de refuerzo y ampliación de toda la Situación de Aprendizaje.</p>
+            </div>
+          </div>
+
+          <div class="repaso-grid">
+            <article class="repaso-card">
+              <h3>🟢 Refuerzo</h3>
+              <ol>
+                <li>Explica qué es una fuente histórica y nombra tres tipos.</li>
+                <li>Ordena: visigodos, Al-Ándalus, Reyes Católicos, Austrias, Borbones, Segunda República y Transición.</li>
+                <li>Indica una característica del arte visigodo, andalusí, románico, gótico, barroco y neoclásico.</li>
+                <li>Explica qué ocurrió en 711, 1492, 1812, 1931, 1936, 1978 y 1980.</li>
+                <li>Define con tus palabras monarquía, califato, constitución, dictadura y democracia.</li>
+                <li>Explica una aportación cultural del pueblo gitano y otra de la comunidad judía.</li>
+                <li>Indica dos avances históricos relacionados con la igualdad entre mujeres y hombres.</li>
+                <li>Explica por qué debemos conservar el patrimonio histórico y cultural.</li>
+              </ol>
+            </article>
+
+            <article class="repaso-card">
+              <h3>🔵 Ampliación</h3>
+              <ol>
+                <li>Explica por qué la historia no puede estudiarse solo memorizando fechas.</li>
+                <li>Compara Al-Ándalus y los reinos cristianos en un mismo siglo señalando diferencias y relaciones.</li>
+                <li>Analiza una obra de arte histórica: autor o cultura, época, función, materiales y qué nos cuenta sobre su sociedad.</li>
+                <li>Explica tres causas y tres consecuencias de la llegada europea a América.</li>
+                <li>Compara la Constitución de 1812 con la de 1978 señalando el contexto en que surgió cada una.</li>
+                <li>Redacta un texto breve: “¿Por qué la diversidad cultural forma parte de la historia de España?”.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section id="sec-diana" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">AUTO</span>
+            <div>
+              <h2>Diana de autoevaluación</h2>
+              <p>Marca la opción que mejor describa cómo te ves al finalizar la SdA.</p>
+            </div>
+          </div>
+
+          <div class="eval-stack">
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.1</span>
+                Identifico distintos tipos de fuentes históricas y sé explicar para qué sirven.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.1">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.2</span>
+                Ordeno los principales periodos históricos trabajados y sitúo hechos importantes en una línea del tiempo.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.2">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.3</span>
+                Explico causas y consecuencias de acontecimientos históricos sin limitarme a memorizar fechas.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.3">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.4</span>
+                Reconozco características básicas del arte y la cultura de las épocas estudiadas.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.4">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.5</span>
+                Comprendo que la historia presenta distintas perspectivas y evito explicaciones simplistas o anacrónicas.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.5">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.6</span>
+                Valoro la democracia, los derechos y la resolución pacífica de los conflictos a partir del conocimiento histórico.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.6">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.7</span>
+                Reconozco el valor de la diversidad cultural, lingüística y étnica y rechazo actitudes discriminatorias.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.7">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.8</span>
+                Comprendo la importancia de la igualdad entre mujeres y hombres y del papel de las mujeres en la historia.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.8">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">4.9</span>
+                Sé preparar una exposición histórica utilizando información ordenada y fuentes contrastadas.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.9">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverrores.juntadeandalucia.es/ceipjoaquintenaartigas/"
+           target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    function scrollToSec(id, event) {
+      if (event) event.preventDefault();
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function selectEval(button) {
+      const group = button.closest(".auto-eval-group");
+      if (!group) return;
+      group.querySelectorAll("button").forEach((b) => {
+        b.classList.remove("selected");
+        b.setAttribute("aria-pressed", "false");
+      });
+      button.classList.add("selected");
+      button.setAttribute("aria-pressed", "true");
+    }
+
+    const yearTarget = document.getElementById("current-year");
+    if (yearTarget && !yearTarget.textContent.trim()) {
+      yearTarget.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
