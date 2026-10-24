@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CM6.3 Economía y ecología. Recursos educativos de Conocimiento del Medio para 6.º de Primaria del CEIP Joaquín Tena Artigas.">
+  <title>CM6.3 · Economía y ecología | CEIP Joaquín Tena Artigas</title>
+
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: "#2f7d4a",
+            "junta-dark": "#245f39",
+            "junta-accent": "#3f9460"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f6f8f7; }
+
+    .topic-page { background: #f6f8f7; }
+    .topic-shell {
+      width: min(92%, 1180px);
+      margin: 0 auto;
+      padding: 2rem 0 3.75rem;
+    }
+
+    .breadcrumbs {
+      margin-bottom: 1.2rem;
+      font-size: .82rem;
+      color: #64748b;
+    }
+    .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .breadcrumbs li:not(:last-child)::after {
+      content: "›";
+      margin-left: .4rem;
+      color: #94a3b8;
+    }
+    .breadcrumbs a { color: #2f7d4a; text-decoration: none; font-weight: 700; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      align-items: end;
+      gap: 1rem;
+      border-radius: 28px;
+      padding: 2.25rem 2.25rem 0;
+      background: linear-gradient(135deg, #245f39 0%, #2f7d4a 55%, #3f9460 100%);
+      box-shadow: 0 18px 45px rgba(36, 95, 57, .18);
+      margin-bottom: 1.4rem;
+      min-height: 320px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      right: -100px;
+      top: -110px;
+      background: rgba(255,255,255,.07);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 2.2rem;
+    }
+    .hero-kicker {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .36rem .75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      color: #ecfdf3;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 0 0 .85rem;
+      color: white;
+      font-size: clamp(2.2rem, 6vw, 4.3rem);
+      line-height: .98;
+      font-weight: 900;
+      letter-spacing: -.035em;
+    }
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: #dcfce7;
+      font-size: clamp(.98rem, 2vw, 1.12rem);
+      line-height: 1.75;
+    }
+    .hero img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 220px;
+      max-height: 285px;
+      object-fit: contain;
+      justify-self: center;
+    }
+
+    .topic-index {
+      background: white;
+      border: 1px solid #dce8e0;
+      border-radius: 22px;
+      padding: 1.15rem 1.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .045);
+    }
+    .topic-index h2 {
+      margin: 0 0 .8rem;
+      color: #2f7d4a;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .topic-index-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+    }
+    .topic-index a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: .48rem .78rem;
+      border-radius: 10px;
+      background: #f1f5f3;
+      color: #334155;
+      font-size: .8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .topic-index a:hover, .topic-index a:focus-visible {
+      color: white;
+      background: #2f7d4a;
+      outline: none;
+    }
+
+    .content-stack { display: grid; gap: 1.5rem; }
+    .lesson-section {
+      scroll-margin-top: 1rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .045);
+    }
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 54px;
+      height: 42px;
+      padding: 0 .65rem;
+      border-radius: 13px;
+      color: white;
+      background: #2f7d4a;
+      font-size: .86rem;
+      font-weight: 900;
+      letter-spacing: .03em;
+    }
+    .section-heading h2 {
+      margin: 0;
+      color: #0f172a;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      line-height: 1.2;
+    }
+    .section-heading p {
+      margin: .28rem 0 0;
+      color: #64748b;
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+
+    .lead {
+      color: #334155;
+      font-size: .98rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .lead + .lead { margin-top: .8rem; }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: .8rem;
+      margin: 1rem 0;
+    }
+    .concept-card {
+      border: 1px solid #dce8e0;
+      border-radius: 18px;
+      padding: 1rem;
+      background: #f9fcfa;
+    }
+    .concept-card h3 {
+      margin: 0 0 .45rem;
+      color: #245f39;
+      font-size: .98rem;
+    }
+    .concept-card p, .concept-card li {
+      color: #475569;
+      font-size: .87rem;
+      line-height: 1.58;
+    }
+    .concept-card ul { margin: .45rem 0 0; padding-left: 1.05rem; }
+
+    .note {
+      margin: 1rem 0;
+      padding: 1rem 1.05rem;
+      border-left: 4px solid #2f7d4a;
+      border-radius: 0 16px 16px 0;
+      background: #eff8f2;
+      color: #315b3e;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+    .note strong { color: #245f39; }
+
+    .warning {
+      margin: 1rem 0;
+      padding: 1rem 1.05rem;
+      border-left: 4px solid #d97706;
+      border-radius: 0 16px 16px 0;
+      background: #fff8e8;
+      color: #7c4a03;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .visual-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: .5rem;
+      align-items: center;
+      margin: 1.1rem 0;
+    }
+    .flow-box {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: .8rem;
+      border-radius: 16px;
+      border: 1px solid #dce8e0;
+      background: #fff;
+      color: #334155;
+      font-size: .82rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .flow-arrow { text-align: center; color: #2f7d4a; font-size: 1.4rem; font-weight: 900; }
+
+    .table-wrap { overflow-x: auto; margin: 1rem 0; }
+    .edu-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: .85rem;
+    }
+    .edu-table th, .edu-table td {
+      border: 1px solid #dbe3df;
+      padding: .72rem .78rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    .edu-table th { background: #eef7f1; color: #245f39; font-weight: 900; }
+    .edu-table td { color: #475569; background: white; }
+
+    .activities-title {
+      margin: 1.35rem 0 .7rem;
+      color: #64748b;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: .8rem;
+    }
+    .exercise-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 1rem;
+      background: #f8fafc;
+    }
+    .exercise-label {
+      display: inline-block;
+      margin-bottom: .6rem;
+      padding: .28rem .58rem;
+      border-radius: 8px;
+      background: #2f7d4a;
+      color: white;
+      font-size: .7rem;
+      font-weight: 900;
+    }
+    .exercise-text {
+      color: #334155;
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+    .exercise-text ol, .exercise-text ul { padding-left: 1.15rem; margin: .55rem 0 0; }
+    .exercise-text li + li { margin-top: .3rem; }
+
+    .project {
+      border: 1px solid #f1d49a;
+      background: linear-gradient(135deg, #fffaf0 0%, #ffffff 72%);
+    }
+    .project .section-number { background: #b66b07; }
+    .project-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .project-step {
+      padding: 1rem;
+      border: 1px solid #f0d8ab;
+      border-radius: 18px;
+      background: white;
+    }
+    .project-step span {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff0cf;
+      color: #a45f05;
+      font-weight: 900;
+      font-size: .78rem;
+      margin-bottom: .55rem;
+    }
+    .project-step h3 {
+      margin: 0 0 .35rem;
+      color: #8a5208;
+      font-size: .9rem;
+    }
+    .project-step p {
+      margin: 0;
+      color: #5f5141;
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .repaso-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
+    }
+    .repaso-card {
+      border: 1px solid #dbe3df;
+      border-radius: 18px;
+      padding: 1.15rem;
+      background: #fbfdfc;
+    }
+    .repaso-card h3 {
+      margin: 0 0 .65rem;
+      color: #245f39;
+      font-size: 1rem;
+    }
+    .repaso-card ol { margin: 0; padding-left: 1.2rem; color: #475569; }
+    .repaso-card li { font-size: .86rem; line-height: 1.6; }
+    .repaso-card li + li { margin-top: .35rem; }
+
+    .eval-stack { display: grid; gap: .75rem; }
+    .eval-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+    .eval-text {
+      flex: 1 1 520px;
+      color: #334155;
+      font-size: .86rem;
+      line-height: 1.55;
+    }
+    .eval-code { color: #2f7d4a; font-weight: 900; margin-right: .35rem; }
+    .auto-eval-group {
+      flex: 0 1 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+    .auto-eval-group button {
+      border: 1px solid #d5dee0;
+      border-radius: 9px;
+      background: white;
+      color: #475569;
+      padding: .42rem .62rem;
+      font-size: .72rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .15s ease;
+    }
+    .auto-eval-group button:hover { background: #edf5ef; }
+    .auto-eval-group button.selected {
+      background: #2f7d4a;
+      border-color: #2f7d4a;
+      color: white;
+    }
+
+    .mini-bars {
+      margin: 1rem 0;
+      display: grid;
+      gap: .55rem;
+    }
+    .mini-bar-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 54px;
+      gap: .65rem;
+      align-items: center;
+      font-size: .8rem;
+      color: #475569;
+    }
+    .mini-bar-track {
+      height: 15px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e9efeb;
+    }
+    .mini-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #2f7d4a, #61a875);
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 1.7rem 1.6rem 0; }
+      .hero-copy { padding-bottom: .3rem; }
+      .hero img { width: 170px; }
+      .concept-grid { grid-template-columns: 1fr; }
+      .project-steps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .visual-flow { grid-template-columns: 1fr; }
+      .flow-arrow { transform: rotate(90deg); }
+      .eval-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 700px) {
+      .topic-shell { width: min(94%, 1180px); padding-top: 1.2rem; }
+      .hero { border-radius: 22px; min-height: unset; }
+      .exercise-grid, .repaso-grid, .project-steps { grid-template-columns: 1fr; }
+      .section-heading { gap: .65rem; }
+      .section-number { min-width: 48px; height: 38px; }
+      .mini-bar-row { grid-template-columns: 105px 1fr 44px; gap: .45rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+              aria-expanded="false" aria-controls="main-navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/conocimiento-medio6/">Conocimiento del Medio</a></li>
+          <li aria-current="page">CM6.3 Economía y ecología</li>
+        </ol>
+      </nav>
+
+      <section class="hero" aria-labelledby="titulo-sda">
+        <div class="hero-copy">
+          <span class="hero-kicker">Conocimiento del Medio · 6.º de Primaria · SdA 3</span>
+          <h1 id="titulo-sda">ECONOMÍA Y ECOLOGÍA</h1>
+          <p>
+            Comprenderemos cómo se organizan las actividades económicas, por qué la riqueza no se reparte de la misma
+            forma, cómo funcionan los mercados y qué decisiones pueden ayudarnos a consumir, ahorrar y vivir de un modo
+            más responsable con las personas y con el planeta.
+          </p>
+        </div>
+        <img src="/img/tomatito/tomatito-economia.png" alt="" aria-hidden="true">
+      </section>
+
+      <nav class="topic-index" aria-label="Índice de la Situación de Aprendizaje">
+        <h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="topic-index-links">
+          <a href="#sec-1" onclick="scrollToSec('sec-1', event)">3.1 Sectores económicos</a>
+<a href="#sec-2" onclick="scrollToSec('sec-2', event)">3.2 Distribución de la riqueza</a>
+<a href="#sec-3" onclick="scrollToSec('sec-3', event)">3.3 Los mercados</a>
+<a href="#sec-4" onclick="scrollToSec('sec-4', event)">3.4 Ingresos, gastos y ahorro</a>
+<a href="#sec-5" onclick="scrollToSec('sec-5', event)">3.5 Publicidad y consumo</a>
+<a href="#sec-6" onclick="scrollToSec('sec-6', event)">3.6 Agenda urbana y ecología</a>
+<a href="#sec-proyecto" onclick="scrollToSec('sec-proyecto', event)">Proyecto final Análisis de la distribución de la riqueza</a>
+<a href="#sec-repaso" onclick="scrollToSec('sec-repaso', event)">Repaso Repasamos lo aprendido</a>
+<a href="#sec-diana" onclick="scrollToSec('sec-diana', event)">Autoevaluación Diana de autoevaluación</a>
+        </div>
+      </nav>
+
+      <div class="content-stack">
+
+        <section id="sec-1" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">3.1</span>
+            <div>
+              <h2>Sectores económicos</h2>
+              <p>Actividades económicas y sectores productivos de Andalucía, España y Europa.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Llamamos <strong>actividad económica</strong> al conjunto de trabajos y decisiones que permiten obtener
+            bienes y servicios para satisfacer las necesidades de las personas. Para producirlos hacen falta recursos
+            naturales, trabajo, conocimientos, herramientas, energía y organización. Las actividades económicas se
+            agrupan tradicionalmente en <strong>tres grandes sectores</strong>.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🌾 Sector primario</h3>
+              <p>Obtiene recursos directamente de la naturaleza.</p>
+              <ul>
+                <li>Agricultura y ganadería.</li>
+                <li>Pesca.</li>
+                <li>Aprovechamientos forestales.</li>
+              </ul>
+            </article>
+            <article class="concept-card">
+              <h3>🏭 Sector secundario</h3>
+              <p>Transforma materias primas en productos elaborados.</p>
+              <ul>
+                <li>Industria alimentaria.</li>
+                <li>Construcción.</li>
+                <li>Fabricación de maquinaria y otros bienes.</li>
+              </ul>
+            </article>
+            <article class="concept-card">
+              <h3>🛒 Sector terciario</h3>
+              <p>Ofrece servicios a las personas y a las empresas.</p>
+              <ul>
+                <li>Comercio y transporte.</li>
+                <li>Educación y sanidad.</li>
+                <li>Turismo, banca y comunicaciones.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="note">
+            <strong>Los sectores están conectados.</strong> Para que un yogur llegue a una tienda, primero se obtiene
+            leche en una explotación ganadera, después se transforma y envasa en una industria y, finalmente, se
+            transporta y vende. Un mismo producto puede implicar actividades de los tres sectores.
+          </div>
+
+          <div class="visual-flow" aria-label="Cadena económica de un producto alimentario">
+            <div class="flow-box">🌱 Materia prima<br>sector primario</div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-box">🏭 Transformación<br>sector secundario</div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-box">🚚 Venta y servicios<br>sector terciario</div>
+          </div>
+
+          <p class="lead">
+            Andalucía cuenta con actividades importantes de los tres sectores: agricultura, ganadería y pesca; industrias
+            agroalimentarias y energéticas; y un amplio conjunto de servicios como comercio, transporte, educación,
+            sanidad y turismo. España y la Unión Europea presentan también economías muy diversificadas, en las que los
+            sectores dependen unos de otros y se relacionan mediante redes de transporte, comercio y comunicaciones.
+          </p>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Clasifica estas actividades en sector primario, secundario o terciario: cultivo de olivos, fábrica de aceite, hotel, pesca, taller de muebles, hospital, transporte de mercancías y construcción de viviendas.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Elige un producto de uso cotidiano (pan, camiseta, cuaderno, zumo…). Describe su recorrido desde la materia prima hasta que llega al consumidor e indica qué sectores económicos participan.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Explica por qué una sequía prolongada puede afectar no solo al sector primario, sino también a industrias y servicios relacionados con la agricultura.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Escribe dos ejemplos de actividades económicas que puedas encontrar en Andalucía para cada uno de los tres sectores.</div>
+                
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-2" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">3.2</span>
+            <div>
+              <h2>Distribución de la riqueza</h2>
+              <p>Desigualdad social y regional, agentes económicos, derechos laborales y papel de los impuestos.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            La <strong>riqueza</strong> y los <strong>ingresos</strong> no se distribuyen de forma igual entre todas las
+            personas ni entre todos los territorios. Los ingresos son los recursos económicos que una persona o familia
+            recibe durante un periodo de tiempo. La riqueza incluye también bienes y patrimonio acumulados, como una
+            vivienda, ahorros o propiedades.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>👥 Desigualdad social</h3>
+              <p>Existe cuando unas personas disponen de muchas más oportunidades, ingresos o recursos que otras.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🗺️ Desigualdad regional</h3>
+              <p>Se produce cuando diferentes territorios presentan niveles distintos de empleo, servicios, infraestructuras o renta.</p>
+            </article>
+            <article class="concept-card">
+              <h3>⚖️ Igualdad de oportunidades</h3>
+              <p>Busca que todas las personas puedan acceder a derechos básicos como educación, sanidad, vivienda digna y trabajo.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            Las causas de la desigualdad pueden ser muy variadas: diferencias en el acceso a la educación y al empleo,
+            paro, salarios distintos, disponibilidad de recursos, localización de empresas, infraestructuras, decisiones
+            económicas o situaciones familiares. Entre sus consecuencias pueden aparecer pobreza, exclusión social,
+            dificultades para acceder a servicios básicos y menor capacidad para desarrollar proyectos de vida.
+          </p>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Agente económico</th><th>Qué hace</th><th>Ejemplo</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Familias</td><td>Trabajan, consumen, ahorran y pagan impuestos.</td><td>Una familia compra alimentos y paga una factura.</td></tr>
+                <tr><td>Empresas</td><td>Producen bienes y servicios, contratan trabajadores e invierten.</td><td>Una cooperativa produce aceite de oliva.</td></tr>
+                <tr><td>Administraciones públicas</td><td>Prestan servicios, construyen infraestructuras y redistribuyen recursos.</td><td>Un ayuntamiento mantiene parques y calles.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="note">
+            <strong>Los impuestos tienen un valor social.</strong> Permiten financiar servicios e infraestructuras
+            públicos —como centros educativos, hospitales, carreteras, bibliotecas o ayudas sociales— y contribuyen a
+            reducir algunas desigualdades.
+          </div>
+
+          <p class="lead">
+            En el mercado laboral, las personas trabajadoras tienen derechos que protegen su dignidad y seguridad:
+            remuneración conforme a las normas aplicables, descanso, protección frente a riesgos laborales, no
+            discriminación y posibilidad de conciliar su vida personal y laboral, entre otros. También existen deberes,
+            como cumplir las tareas acordadas y respetar las normas de seguridad.
+          </p>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Explica con tus palabras la diferencia entre <strong>ingresos</strong> y <strong>riqueza</strong>. Pon un ejemplo sencillo de cada concepto.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Indica dos posibles causas y dos posibles consecuencias de la desigualdad social o regional.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Relaciona cada acción con el agente económico principal: pagar un salario, comprar material escolar, construir un centro de salud, ahorrar parte de la paga, fabricar bicicletas.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Imagina un municipio con mucho desempleo y pocos servicios públicos. Propón dos medidas que podrían mejorar las oportunidades de sus habitantes y explica por qué.</div>
+                
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-3" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">3.3</span>
+            <div>
+              <h2>Los mercados</h2>
+              <p>Mercado de bienes, financiero y laboral. Economía verde y responsabilidad social y ambiental.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Un <strong>mercado</strong> es el conjunto de relaciones mediante las que se intercambian bienes, servicios,
+            trabajo o recursos financieros. No tiene que ser necesariamente un lugar físico: también puede funcionar a
+            través de internet, bancos, empresas, bolsas de empleo o plataformas de compraventa.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>📦 Mercado de bienes y servicios</h3>
+              <p>Relaciona a quienes producen y venden con quienes compran productos o contratan servicios.</p>
+            </article>
+            <article class="concept-card">
+              <h3>💶 Mercado financiero</h3>
+              <p>Canaliza ahorro y financiación mediante bancos y otras entidades. Permite, por ejemplo, guardar dinero o solicitar un préstamo.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🧑‍🔧 Mercado laboral</h3>
+              <p>Relaciona a empresas y administraciones que necesitan trabajadores con personas que buscan empleo.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            Los mercados influyen en la vida cotidiana: afectan a los precios, a las oportunidades de empleo, a la
+            disponibilidad de productos y a las decisiones de ahorro e inversión. Por eso es importante que funcionen con
+            normas que protejan a consumidores y trabajadores y que eviten prácticas abusivas.
+          </p>
+
+          <div class="note">
+            <strong>Economía verde.</strong> Es una forma de organizar la actividad económica tratando de mejorar el
+            bienestar de las personas y, al mismo tiempo, reducir los daños ambientales. Favorece el ahorro de energía y
+            agua, las energías renovables, la movilidad sostenible, la reparación y reutilización de productos, la
+            reducción de residuos y empleos relacionados con la protección del medio.
+          </div>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Decisión</th><th>Impacto económico</th><th>Impacto ambiental</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Reparar un aparato</td><td>Mantiene empleos de reparación y evita comprar otro inmediatamente.</td><td>Reduce residuos y uso de nuevas materias primas.</td></tr>
+                <tr><td>Comprar un producto local</td><td>Puede apoyar a productores y comercios cercanos.</td><td>Puede reducir parte del transporte si la cadena es más corta.</td></tr>
+                <tr><td>Ahorrar energía</td><td>Disminuye el gasto de hogares y empresas.</td><td>Reduce el consumo de recursos y, según la fuente, las emisiones.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Indica a qué mercado pertenece principalmente cada situación: una familia compra fruta; una persona solicita un préstamo; una empresa publica una oferta de empleo; alguien contrata internet.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica por qué reparar, reutilizar o reciclar pueden formar parte de una economía más verde.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Piensa en una empresa ficticia que fabrica mochilas. Propón tres decisiones para que sea más responsable social y ambientalmente.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Describe una decisión de consumo que pueda beneficiar al mismo tiempo a la economía local y al medio ambiente. Justifica tu respuesta.</div>
+                
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-4" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">3.4</span>
+            <div>
+              <h2>Ingresos, gastos y ahorro</h2>
+              <p>Planificación económica familiar y valor social de los impuestos.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Para organizar bien el dinero conviene elaborar un <strong>presupuesto</strong>: una planificación de los
+            ingresos que se esperan recibir y de los gastos que se prevé realizar. Así es más fácil evitar gastos
+            innecesarios, reservar dinero para necesidades futuras y mantener un ahorro.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>💰 Ingresos</h3>
+              <p>Dinero que entra: salarios, pensiones, becas, ayudas, ventas o rendimientos, entre otros.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🧾 Gastos</h3>
+              <p>Dinero que sale para pagar vivienda, alimentación, energía, transporte, ocio u otros bienes y servicios.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🐷 Ahorro</h3>
+              <p>Parte de los ingresos que no se gasta y se reserva para objetivos futuros o imprevistos.</p>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Presupuesto mensual ficticio</th><th>Importe</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Ingresos</td><td>2 000 €</td></tr>
+                <tr><td>Vivienda y suministros</td><td>850 €</td></tr>
+                <tr><td>Alimentación</td><td>450 €</td></tr>
+                <tr><td>Transporte</td><td>180 €</td></tr>
+                <tr><td>Otros gastos</td><td>320 €</td></tr>
+                <tr><td><strong>Ahorro previsto</strong></td><td><strong>200 €</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="warning">
+            <strong>Necesidad y deseo no son lo mismo.</strong> Una necesidad es algo importante para vivir o desarrollarnos
+            adecuadamente. Un deseo es algo que nos gustaría tener, pero del que podemos prescindir. Distinguirlos ayuda a
+            tomar mejores decisiones cuando el dinero es limitado.
+          </div>
+
+          <p class="lead">
+            Parte del dinero que las personas y las empresas aportan mediante impuestos se utiliza para sostener servicios
+            públicos y actuaciones colectivas. Por eso el presupuesto familiar y el presupuesto público están conectados
+            con la vida en sociedad: ambos exigen decidir cómo se utilizan recursos que son limitados.
+          </p>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Con los datos del presupuesto ficticio anterior, comprueba que los gastos y el ahorro suman los ingresos. ¿Qué porcentaje aproximado de los ingresos se destina al ahorro?</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Clasifica estos gastos como más próximos a una necesidad o a un deseo: alimentos básicos, una segunda consola, medicinas, agua, una prenda de moda que no necesitas, transporte para ir a trabajar.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Una familia quiere ahorrar para una reparación inesperada. Propón tres medidas razonables para reducir gastos sin eliminar necesidades básicas.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Explica con un ejemplo cómo los impuestos que paga la ciudadanía pueden volver a la sociedad en forma de servicios o infraestructuras.</div>
+                
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-5" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">3.5</span>
+            <div>
+              <h2>Publicidad y consumo</h2>
+              <p>Publicidad, consumo responsable, riesgos del consumo impulsivo y derechos del consumidor.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            La <strong>publicidad</strong> busca dar a conocer productos, servicios o marcas y convencer a posibles
+            compradores. Utiliza imágenes, música, emociones, ofertas, personajes conocidos o mensajes breves para llamar
+            nuestra atención. Por eso conviene analizarla de manera crítica antes de tomar una decisión.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🎯 Necesidad o deseo</h3>
+              <p>Preguntarnos si realmente necesitamos el producto evita compras impulsivas.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🔎 Información</h3>
+              <p>Comparar precio, calidad, duración, garantía, composición y condiciones permite elegir mejor.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🌍 Impacto</h3>
+              <p>También podemos valorar embalaje, distancia de transporte, reparabilidad, reutilización y residuos.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            El <strong>consumo responsable</strong> consiste en elegir y utilizar bienes y servicios teniendo en cuenta no
+            solo el precio, sino también nuestras necesidades reales, la duración del producto, las condiciones de
+            producción y sus efectos sobre otras personas y sobre el medio ambiente.
+          </p>
+
+          <div class="note">
+            <strong>Antes de comprar:</strong> detente, compara, pregunta y piensa. Las promociones con tiempo limitado,
+            los mensajes que crean urgencia o la presión social pueden favorecer decisiones poco reflexivas. Una compra
+            responsable no depende de comprar mucho, sino de elegir de forma consciente.
+          </div>
+
+          <p class="lead">
+            Las personas consumidoras tienen derecho, entre otros aspectos, a recibir información clara y veraz, a que los
+            productos sean seguros, a recibir justificante de compra y a utilizar los mecanismos de reclamación previstos.
+            También tienen responsabilidades: usar correctamente los productos, conservar documentación cuando sea
+            necesaria y actuar de buena fe.
+          </p>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Mensaje publicitario</th><th>Pregunta crítica</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>“¡Solo hoy! ¡No te quedes sin él!”</td><td>¿Lo necesito realmente o me están creando sensación de urgencia?</td></tr>
+                <tr><td>“El mejor del mercado”</td><td>¿Hay datos objetivos que permitan comparar esa afirmación?</td></tr>
+                <tr><td>“Ahora con envase ecológico”</td><td>¿Qué significa exactamente “ecológico”? ¿Se explica de forma concreta?</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Elige un anuncio real o inventado. Identifica qué producto ofrece, a quién se dirige, qué emoción intenta provocar y qué información necesitarías antes de comprar.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Haz una lista de cinco decisiones que conviertan una compra cotidiana en una compra más responsable.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Una tienda anuncia “2 × 1” en un producto que no necesitas. Explica por qué pagar menos por unidad no significa necesariamente ahorrar dinero.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Imagina que compras un objeto y llega roto. Explica qué documentos o información conviene conservar y qué pasos razonables seguirías para reclamar.</div>
+                
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-6" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">3.6</span>
+            <div>
+              <h2>Agenda urbana y ecología</h2>
+              <p>Desarrollo urbano sostenible, responsabilidad ecosocial, ecodependencia e interdependencia.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Las ciudades concentran población, viviendas, comercios, centros educativos, hospitales, carreteras y muchos
+            otros servicios. Su diseño influye en la calidad de vida. El <strong>desarrollo urbano sostenible</strong>
+            busca que las ciudades permitan vivir bien hoy sin deteriorar las posibilidades de las generaciones futuras.
+          </p>
+
+          <div class="concept-grid">
+            <article class="concept-card">
+              <h3>🚶 Movilidad sostenible</h3>
+              <p>Favorece caminar, usar bicicleta y transporte público, y reduce desplazamientos innecesarios.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🌳 Espacios verdes</h3>
+              <p>Parques, arbolado y zonas naturales aportan sombra, biodiversidad, bienestar y regulación térmica.</p>
+            </article>
+            <article class="concept-card">
+              <h3>🏘️ Ciudad inclusiva</h3>
+              <p>Debe facilitar el acceso a vivienda, servicios, espacios públicos y movilidad a todas las personas.</p>
+            </article>
+          </div>
+
+          <p class="lead">
+            La <strong>Agenda Urbana</strong> reúne orientaciones para mejorar la forma en la que planificamos pueblos y
+            ciudades: reducir contaminación, utilizar mejor la energía y el agua, recuperar espacios públicos, mejorar la
+            movilidad, favorecer la convivencia y hacer los barrios más resilientes y accesibles.
+          </p>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr><th>Concepto</th><th>Qué significa</th><th>Ejemplo</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Ecodependencia</td><td>Las personas dependemos de la naturaleza para obtener agua, alimentos, aire limpio, materias primas y energía.</td><td>Una ciudad necesita agua de ecosistemas y cuencas situados fuera de sus calles.</td></tr>
+                <tr><td>Interdependencia</td><td>Las personas dependemos unas de otras para vivir, aprender, trabajar y cuidarnos.</td><td>Una familia utiliza servicios producidos por agricultores, sanitarios, docentes, transportistas y muchas otras personas.</td></tr>
+                <tr><td>Responsabilidad ecosocial</td><td>Tomar decisiones teniendo en cuenta a las personas y al medio ambiente.</td><td>Reducir residuos, cuidar espacios comunes y apoyar soluciones que no trasladen los daños a otros lugares.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="note">
+            <strong>Objetivos de Desarrollo Sostenible (ODS).</strong> Muchos problemas económicos, sociales y
+            ambientales están relacionados. Por eso los ODS proponen metas conectadas: reducir la pobreza y las
+            desigualdades, mejorar las ciudades, promover producción y consumo responsables y proteger el planeta.
+          </div>
+
+          <h3 class="activities-title">Ejercicios de práctica</h3>
+          <div class="exercise-grid">
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 1</span>
+                <div class="exercise-text">Observa tu barrio o localidad. Señala dos aspectos que favorezcan una vida urbana sostenible y dos que podrían mejorarse.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 2</span>
+                <div class="exercise-text">Explica la diferencia entre <strong>ecodependencia</strong> e <strong>interdependencia</strong> mediante un ejemplo de la vida diaria.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 3</span>
+                <div class="exercise-text">Diseña tres propuestas para hacer más sostenible el entorno de un colegio: una sobre movilidad, otra sobre energía o agua y otra sobre residuos o zonas verdes.</div>
+                
+              </div>
+    
+            
+              <div class="exercise-card">
+                <span class="exercise-label">Ejercicio 4</span>
+                <div class="exercise-text">Relaciona estas acciones con uno o varios ODS: reducir desperdicio de alimentos, mejorar el transporte público, ahorrar agua, facilitar acceso a vivienda digna, reutilizar materiales.</div>
+                
+              </div>
+    
+          </div>
+        </section>
+
+        <section id="sec-proyecto" class="lesson-section project">
+          <div class="section-heading">
+            <span class="section-number">PROYECTO</span>
+            <div>
+              <h2>Análisis de la distribución de la riqueza</h2>
+              <p>Producto final de la SdA: interpretar datos, detectar desigualdades y proponer respuestas razonadas.</p>
+            </div>
+          </div>
+
+          <p class="lead">
+            Vas a realizar un pequeño estudio sobre cómo se distribuyen los recursos entre varios territorios ficticios.
+            El objetivo no es decidir qué territorio es “mejor”, sino aprender a interpretar datos, relacionarlos con las
+            oportunidades de las personas y proponer medidas que puedan mejorar el bienestar colectivo.
+          </p>
+
+          <div class="table-wrap">
+            <table class="edu-table">
+              <thead>
+                <tr>
+                  <th>Territorio ficticio</th><th>Ingreso medio mensual</th><th>Desempleo</th>
+                  <th>Acceso cercano a servicios públicos</th><th>Actividad principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Valleverde</td><td>1 650 €</td><td>8 %</td><td>Alto</td><td>Industria y servicios</td></tr>
+                <tr><td>Sierra Clara</td><td>1 280 €</td><td>15 %</td><td>Medio</td><td>Agricultura y turismo</td></tr>
+                <tr><td>Puerto Azul</td><td>1 520 €</td><td>11 %</td><td>Alto</td><td>Comercio, pesca y servicios</td></tr>
+                <tr><td>Campollano</td><td>1 120 €</td><td>21 %</td><td>Bajo</td><td>Agricultura</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mini-bars" aria-label="Representación visual del ingreso medio de los territorios ficticios">
+            <div class="mini-bar-row"><span>Valleverde</span><div class="mini-bar-track"><div class="mini-bar-fill" style="width:100%"></div></div><strong>1650</strong></div>
+            <div class="mini-bar-row"><span>Sierra Clara</span><div class="mini-bar-track"><div class="mini-bar-fill" style="width:78%"></div></div><strong>1280</strong></div>
+            <div class="mini-bar-row"><span>Puerto Azul</span><div class="mini-bar-track"><div class="mini-bar-fill" style="width:92%"></div></div><strong>1520</strong></div>
+            <div class="mini-bar-row"><span>Campollano</span><div class="mini-bar-track"><div class="mini-bar-fill" style="width:68%"></div></div><strong>1120</strong></div>
+          </div>
+
+          <div class="project-steps">
+            <article class="project-step">
+              <span>1</span>
+              <h3>Observa y compara</h3>
+              <p>Ordena los territorios según ingreso, desempleo y acceso a servicios. Señala diferencias importantes.</p>
+            </article>
+            <article class="project-step">
+              <span>2</span>
+              <h3>Relaciona</h3>
+              <p>Explica qué relaciones podrían existir entre empleo, actividad económica, ingresos y acceso a servicios.</p>
+            </article>
+            <article class="project-step">
+              <span>3</span>
+              <h3>Interpreta</h3>
+              <p>Redacta tres conclusiones. Evita afirmar causas que los datos no permitan demostrar.</p>
+            </article>
+            <article class="project-step">
+              <span>4</span>
+              <h3>Propón</h3>
+              <p>Plantea medidas realistas relacionadas con empleo, servicios públicos, formación, impuestos o economía verde.</p>
+            </article>
+          </div>
+
+          <div class="warning">
+            <strong>Importante:</strong> los datos de esta actividad son ficticios y se utilizan exclusivamente para
+            aprender a interpretar información económica y social.
+          </div>
+        </section>
+
+        <section id="sec-repaso" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">REPASO</span>
+            <div>
+              <h2>Repasamos lo aprendido</h2>
+              <p>Actividades de refuerzo y ampliación de toda la Situación de Aprendizaje.</p>
+            </div>
+          </div>
+
+          <div class="repaso-grid">
+            <article class="repaso-card">
+              <h3>🟢 Refuerzo</h3>
+              <ol>
+                <li>Define actividad económica y nombra los tres sectores productivos.</li>
+                <li>Escribe un ejemplo de desigualdad social y otro de desigualdad regional.</li>
+                <li>Distingue mercado de bienes, mercado financiero y mercado laboral.</li>
+                <li>Explica qué son ingresos, gastos y ahorro.</li>
+                <li>Indica tres preguntas que convenga hacerse antes de comprar.</li>
+                <li>Explica qué significa ecodependencia.</li>
+                <li>Escribe dos ejemplos de servicios que pueden financiarse mediante impuestos.</li>
+                <li>Propón una medida para hacer más sostenible una ciudad.</li>
+              </ol>
+            </article>
+
+            <article class="repaso-card">
+              <h3>🔵 Ampliación</h3>
+              <ol>
+                <li>Explica cómo un mismo producto conecta los tres sectores económicos.</li>
+                <li>Razona por qué un territorio puede tener un ingreso medio alto y, aun así, mantener desigualdades.</li>
+                <li>Diseña una empresa ficticia que aplique principios de economía verde.</li>
+                <li>Elabora un pequeño presupuesto con ingresos, gastos necesarios, gastos prescindibles y ahorro.</li>
+                <li>Analiza una estrategia publicitaria y explica qué técnica usa para persuadir.</li>
+                <li>Relaciona consumo responsable, economía verde y ODS en un texto de unas diez líneas.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section id="sec-diana" class="lesson-section">
+          <div class="section-heading">
+            <span class="section-number">AUTO</span>
+            <div>
+              <h2>Diana de autoevaluación</h2>
+              <p>Marca la opción que mejor describa cómo te ves al finalizar la SdA.</p>
+            </div>
+          </div>
+
+          <div class="eval-stack">
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.1</span>
+                Distingo los sectores económicos y explico cómo se relacionan entre sí.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.1">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.2</span>
+                Comprendo que la riqueza y los ingresos se distribuyen de forma desigual y puedo explicar algunas causas y consecuencias.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.2">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.3</span>
+                Diferencio los principales tipos de mercado y entiendo qué busca una economía verde.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.3">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.4</span>
+                Sé organizar un presupuesto sencillo diferenciando ingresos, gastos, ahorro y necesidades.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.4">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.5</span>
+                Analizo de forma crítica la publicidad y tomo decisiones de consumo más responsables.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.5">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.6</span>
+                Comprendo la ecodependencia, la interdependencia y algunas medidas para lograr ciudades más sostenibles.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.6">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+            
+            <div class="eval-row">
+              <div class="eval-text">
+                <span class="eval-code">3.7</span>
+                Interpreto datos económicos sencillos, comparo territorios y formulo conclusiones sin confundir datos con opiniones.
+              </div>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.7">
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi nunca</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">A veces</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Casi siempre</button>
+                <button type="button" aria-pressed="false" onclick="selectEval(this)">Siempre</button>
+              </div>
+            </div>
+    
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+           target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    function scrollToSec(id, event) {
+      if (event) event.preventDefault();
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function selectEval(button) {
+      const group = button.closest(".auto-eval-group");
+      if (!group) return;
+      group.querySelectorAll("button").forEach((b) => {
+        b.classList.remove("selected");
+        b.setAttribute("aria-pressed", "false");
+      });
+      button.classList.add("selected");
+      button.setAttribute("aria-pressed", "true");
+    }
+
+    const yearTarget = document.getElementById("current-year");
+    if (yearTarget && !yearTarget.textContent.trim()) {
+      yearTarget.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
