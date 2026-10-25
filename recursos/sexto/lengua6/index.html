@@ -3,19 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Recursos educativos de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+    content="Recursos educativos de Lengua Castellana y Literatura de 6.º de Educación Primaria del CEIP Joaquín Tena Artigas."
   >
 
   <title>
-    6.º de Primaria | CEIP Joaquín Tena Artigas
+    Lengua Castellana y Literatura 6.º | CEIP Joaquín Tena Artigas
   </title>
 
   <!-- FAVICON -->
@@ -25,11 +21,202 @@
     href="/img/logo-centro.png"
   >
 
-  <!-- ESTILOS GENERALES -->
+  <!-- ESTILOS GENERALES DE LA WEB -->
   <link
     rel="stylesheet"
     href="/css/base.css"
   >
+
+  <!-- ESTILOS ESPECÍFICOS DE LA PÁGINA -->
+  <style>
+    .subject-page {
+      background: var(--background-soft);
+    }
+
+    .subject-shell {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    .subject-intro {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      padding: 2rem 2rem 0;
+      overflow: hidden;
+      border: 1px solid #efcbc8;
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          #fff1f0 0%,
+          #ffffff 70%
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-intro-text {
+      padding-bottom: 2rem;
+    }
+
+    .subject-label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: var(--pencil-red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subject-intro h1 {
+      margin: 0 0 0.75rem;
+      color: var(--text-main);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    .subject-intro p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .subject-mascot {
+      display: block;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .learning-heading {
+      margin: 0 0 1.25rem;
+      color: var(--text-main);
+      font-size: 1.45rem;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .learning-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      min-height: 165px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-3px);
+      border-color: #e7b2ae;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .learning-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pencil-red);
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    .learning-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .learning-content h2 {
+      margin: 0 0 0.55rem;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .learning-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .learning-count {
+      align-self: flex-start;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: #fff0ef;
+      color: #a52e28;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .subject-intro {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .subject-intro-text {
+        padding-bottom: 0;
+      }
+
+      .subject-mascot {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subject-shell {
+        width: min(94%, var(--max-width));
+        padding-top: 1.25rem;
+      }
+
+      .subject-intro {
+        border-radius: 20px;
+      }
+
+      .learning-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 150px;
+      }
+
+      .learning-number {
+        font-size: 1.05rem;
+      }
+
+      .learning-content {
+        padding: 1.05rem;
+      }
+    }
+  </style>
 </head>
 
 
@@ -121,51 +308,37 @@
         <ul>
 
           <li class="nav-green">
-
             <a href="/">
               Inicio
             </a>
-
           </li>
 
-
           <li class="nav-yellow">
-
             <a href="/familias/">
               Familias
             </a>
-
           </li>
 
-
           <li class="nav-blue">
-
             <a
               href="/recursos/"
               aria-current="page"
             >
               Recursos educativos
             </a>
-
           </li>
 
-
           <li class="nav-red">
-
             <a
               href="https://profesorado.ceipjta.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-
               <span aria-hidden="true">
                 🔒
               </span>
-
               Área privada Profesorado
-
             </a>
-
           </li>
 
         </ul>
@@ -179,413 +352,346 @@
 
   <!-- ======================================================
        CONTENIDO PRINCIPAL
+       DESTINO:
+       /recursos/sexto/lengua6/index.html
        ====================================================== -->
 
-  <main id="contenido-principal">
+  <main
+    id="contenido-principal"
+    class="subject-page"
+  >
+
+    <div class="subject-shell">
 
 
-    <!-- ====================================================
-         CABECERA DE 6.º DE PRIMARIA
-         ==================================================== -->
+      <!-- MIGAS DE PAN -->
 
-    <section class="page-intro">
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
 
-      <div class="page-intro-container">
+        <ol>
 
-        <!-- MIGAS DE PAN -->
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
 
-        <nav
-          class="breadcrumbs"
-          aria-label="Migas de pan"
-        >
+          <li>
+            <a href="/recursos/">
+              Recursos educativos
+            </a>
+          </li>
 
-          <ol>
-
-            <li>
-              <a href="/">
-                Inicio
-              </a>
-            </li>
-
-            <li>
-              <a href="/recursos/">
-                Recursos educativos
-              </a>
-            </li>
-
-            <li aria-current="page">
+          <li>
+            <a href="/recursos/sexto/">
               6.º de Primaria
-            </li>
-
-          </ol>
-
-        </nav>
-
-
-        <!-- PRESENTACIÓN -->
-
-        <p class="section-label">
-          Educación Primaria
-        </p>
-
-        <h1>
-          6.º de Primaria
-        </h1>
-
-        <p class="page-intro-text">
-          Selecciona una materia para acceder a sus explicaciones,
-          actividades, materiales de refuerzo y recursos educativos.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ====================================================
-         MATERIAS
-         ==================================================== -->
-
-    <section class="subjects-section">
-
-      <div class="section-container">
-
-        <div class="subjects-grid">
-
-
-          <!-- ==============================================
-               MATEMÁTICAS
-               ============================================== -->
-
-          <article class="subject-card subject-maths">
-
-            <a href="/recursos/sexto/matematicas6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/matematicas.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>     
-
-              <div class="subject-content">
-
-                <h2>
-                  Matemáticas
-                </h2>
-
-                <p>
-                  Numeración, operaciones, decimales, fracciones,
-                  medidas, geometría y resolución de problemas.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Matemáticas →
-                </span>
-
-              </div>
-
             </a>
+          </li>
 
-          </article>
+          <li aria-current="page">
+            Lengua Castellana y Literatura
+          </li>
 
+        </ol>
 
-          <!-- ==============================================
-               LENGUA CASTELLANA Y LITERATURA
-               ============================================== -->
+      </nav>
 
-          <article class="subject-card subject-language">
 
-            <a href="/recursos/sexto/lengua6/">
+      <!-- ==================================================
+           PRESENTACIÓN DE LA MATERIA
+           ================================================== -->
 
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/lengua.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
+      <section class="subject-intro">
 
-              </div>
+        <div class="subject-intro-text">
 
-              <div class="subject-content">
+          <span class="subject-label">
+            Lengua Castellana y Literatura · 6.º de Primaria
+          </span>
 
-                <h2>
-                  Lengua Castellana y Literatura
-                </h2>
+          <h1>
+            Lengua Castellana y Literatura
+          </h1>
 
-                <p>
-                  Lectura, comprensión, vocabulario, ortografía,
-                  gramática y expresión oral y escrita.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Lengua →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
-
-          <!-- ==============================================
-               CONOCIMIENTO DEL MEDIO
-               ============================================== -->
-
-          <article class="subject-card subject-science">
-
-            <a href="/recursos/sexto/conocimiento-medio6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/conocimiento-medio.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>
-
-              <div class="subject-content">
-
-                <h2>
-                  Conocimiento del Medio
-                </h2>
-
-                <p>
-                  Recursos para conocer el medio natural,
-                  social y cultural y comprender nuestro entorno.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Conocimiento del Medio →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
-
-          <!-- ==============================================
-               INGLÉS
-               ============================================== -->
-
-          <article class="subject-card subject-english">
-
-            <a href="/recursos/sexto/ingles6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/ingles.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>
-
-              <div class="subject-content">
-
-                <h2>
-                  Inglés
-                </h2>
-
-                <p>
-                  Vocabulario, comprensión, expresión
-                  y actividades para practicar la lengua inglesa.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Inglés →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
-
-          <!-- ==============================================
-               FRANCÉS
-               ============================================== -->
-
-          <article class="subject-card subject-french">
-
-            <a href="/recursos/sexto/frances6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/frances.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>
-
-              <div class="subject-content">
-
-                <h2>
-                  Francés
-                </h2>
-
-                <p>
-                  Recursos de vocabulario, comprensión
-                  y comunicación en lengua francesa.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Francés →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
-
-          <!-- ==============================================
-               EDUCACIÓN FÍSICA
-               ============================================== -->
-
-          <article class="subject-card subject-pe">
-
-            <a href="/recursos/sexto/educacion-fisica6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/educacion-fisica.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>
-
-              <div class="subject-content">
-
-                <h2>
-                  Educación Física
-                </h2>
-
-                <p>
-                  Actividad física, hábitos saludables,
-                  juegos, deportes y expresión corporal.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Educación Física →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
-
-          <!-- ==============================================
-               EDUCACIÓN ARTÍSTICA
-               ============================================== -->
-
-          <article class="subject-card subject-art">
-
-            <a href="/recursos/sexto/educacion-artistica6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/educacion-artistica.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>
-
-              <div class="subject-content">
-
-                <h2>
-                  Educación Artística
-                </h2>
-
-                <p>
-                  Expresión plástica, música, creatividad
-                  y diferentes formas de comunicación artística.
-                </p>
-
-                <span class="subject-access">
-                  Entrar en Educación Artística →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
-
-          <!-- ==============================================
-               RELIGIÓN / ATENCIÓN EDUCATIVA
-               ============================================== -->
-
-          <article class="subject-card subject-values">
-
-            <a href="/recursos/sexto/religion-atencion-educativa6/">
-
-              <div class="subject-icon"> 
-                <img
-                    src="/img/tomatito/religion.png"
-                    alt=""
-                    loading="lazy"
-                    width="82"
-                    height="110"
-                >
-
-              </div>
-
-              <div class="subject-content">
-
-                <h2>
-                  Religión y Atención Educativa
-                </h2>
-
-                <p>
-                  Materiales y propuestas correspondientes
-                  a estos espacios educativos.
-                </p>
-
-                <span class="subject-access">
-                  Ver recursos →
-                </span>
-
-              </div>
-
-            </a>
-
-          </article>
-
+          <p>
+            En este espacio encontrarás lecturas, explicaciones,
+            actividades, materiales de refuerzo y ampliación y recursos
+            para afianzar la comprensión lectora, ampliar el vocabulario,
+            dominar la ortografía y la gramática y desarrollar una
+            expresión oral, escrita y literaria cada vez más precisa.
+          </p>
 
         </div>
 
-      </div>
 
-    </section>
+        <!-- TOMATITO LENGUA -->
+
+        <img
+          src="/img/tomatito/lengua.png"
+          alt=""
+          class="subject-mascot"
+        >
+
+      </section>
+
+
+      <!-- ==================================================
+           SITUACIONES DE APRENDIZAJE
+           ================================================== -->
+
+      <section aria-labelledby="situaciones-aprendizaje">
+
+        <h2
+          id="situaciones-aprendizaje"
+          class="learning-heading"
+        >
+          Elige una Situación de Aprendizaje
+        </h2>
+
+
+        <div class="learning-grid">
+
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.1 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/comunicacion/"
+          >
+
+            <div class="learning-number">
+              01
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Nos comunicamos con palabras
+              </h2>
+
+              <p>
+                Comprensión lectora, vocabulario, sonidos y sílabas, sustantivos, artículos, ortografía y recursos para comunicarnos con claridad de forma oral y escrita.
+              </p>
+
+              <span class="learning-count">
+                9 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.2 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/palabras-historias/"
+          >
+
+            <div class="learning-number">
+              02
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Palabras que forman historias
+              </h2>
+
+              <p>
+                Formación de palabras, acentuación, adjetivos, demostrativos, posesivos y estrategias para comprender, organizar y producir narraciones más elaboradas.
+              </p>
+
+              <span class="learning-count">
+                9 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.3 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/descripciones/"
+          >
+
+            <div class="learning-number">
+              03
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Describimos con precisión
+              </h2>
+
+              <p>
+                Vocabulario preciso, formación léxica, diptongos, hiatos y triptongos, determinantes y técnicas para describir personas, lugares y escenas con riqueza expresiva.
+              </p>
+
+              <span class="learning-count">
+                11 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.4 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/dialogo/"
+          >
+
+            <div class="learning-number">
+              04
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Hablamos y dialogamos
+              </h2>
+
+              <p>
+                Diálogo, comunicación oral, pronombres, preposiciones, ortografía, expresión escrita y recursos teatrales para conversar, interpretar y crear escenas.
+              </p>
+
+              <span class="learning-count">
+                12 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.5 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/textos-expositivos/"
+          >
+
+            <div class="learning-number">
+              05
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Explicamos el mundo
+              </h2>
+
+              <p>
+                Vocabulario, verbos, puntuación, textos expositivos y estrategias para buscar, contrastar, organizar y comunicar información con precisión y sentido crítico.
+              </p>
+
+              <span class="learning-count">
+                13 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.6 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/argumentacion/"
+          >
+
+            <div class="learning-number">
+              06
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Opinamos y argumentamos
+              </h2>
+
+              <p>
+                Siglas y acrónimos, signos de puntuación, conjugación verbal, modos y tiempos, adverbios, conjunciones y producción de textos y discursos argumentativos.
+              </p>
+
+              <span class="learning-count">
+                14 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.7 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/oraciones-lengua/"
+          >
+
+            <div class="learning-number">
+              07
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Construimos oraciones y conocemos nuestra lengua
+              </h2>
+
+              <p>
+                Sintagmas, sujeto y predicado, análisis sintáctico, historia de la lengua, diversidad lingüística de España, RAE, signos y sistemas de comunicación como el braille.
+              </p>
+
+              <span class="learning-count">
+                15 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE LNL6.8 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/sexto/lengua6/nuestra-lengua-literatura/"
+          >
+
+            <div class="learning-number">
+              08
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Nuestra lengua, nuestra literatura
+              </h2>
+
+              <p>
+                Complementos de la oración, modalidad lingüística andaluza, literatura popular, poesía, verso, métrica, rima, estrofas y principales recursos literarios.
+              </p>
+
+              <span class="learning-count">
+                19 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
 
   </main>
 
@@ -597,6 +703,7 @@
   <footer class="site-footer">
 
     <div class="footer-container">
+
 
       <!-- JUNTA DE ANDALUCÍA -->
 
@@ -623,12 +730,14 @@
         </p>
 
         <a
-          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          href="https://blogsaverrores.juntadeandalucia.es/ceipjoaquintenaartigas/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Web oficial del Centro
-          <span aria-hidden="true">↗</span>
+          <span aria-hidden="true">
+            ↗
+          </span>
         </a>
 
       </div>
@@ -659,9 +768,7 @@
   </footer>
 
 
-  <!-- ======================================================
-       JAVASCRIPT
-       ====================================================== -->
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
 
   <script src="/js/main.js"></script>
 
