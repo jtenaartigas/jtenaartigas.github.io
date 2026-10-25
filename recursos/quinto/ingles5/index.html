@@ -1,1216 +1,720 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Inglés de 5.º de Primaria. SdA ING5.1: All about me and my school. Listening, reading, speaking, writing, vocabulario, gramática, repaso y autoevaluación interactiva.">
-  <title>All about me and my school | Inglés 5.º | CEIP Joaquín Tena Artigas</title>
-  <link rel="icon" type="image/png" href="/img/logo-centro.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            junta: { DEFAULT: '#007A33', dark: '#005724', light: '#e6f4ea', accent: '#00a847' }
-          }
-        }
-      }
-    };
-  </script>
-  <link rel="stylesheet" href="/css/base.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Recursos educativos de Inglés de 5.º de Educación Primaria del CEIP Joaquín Tena Artigas. Seis Situaciones de Aprendizaje con comprensión oral y escrita, vocabulario, gramática y expresión en inglés."
+  >
+
+  <title>
+    Inglés 5.º | CEIP Joaquín Tena Artigas
+  </title>
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/logo-centro.png"
+  >
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link
+    rel="stylesheet"
+    href="/css/base.css"
+  >
+
+  <!-- ESTILOS ESPECÍFICOS DE LA PÁGINA -->
   <style>
-    /* Estilo propio de la SdA, sin modificaciones de /css/base.css. */
-    html { scroll-behavior: smooth; }
-    .topic-page { background: #f4f7f5; color: #1e293b; }
-    .topic-shell { width: min(94%, 1280px); margin: 0 auto; padding: 1.5rem 0 2.5rem; }
-    .topic-content section[id] { scroll-margin-top: 90px; }
-    .text-heading { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
-    .topic-hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1.25rem;
-      align-items: center;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 1.5rem;
-      background: linear-gradient(100deg, #005724, #007a33 62%, #00a847);
-      box-shadow: 0 14px 30px rgba(0, 87, 36, .18);
-      color: white;
+    .subject-page {
+      background: var(--background-soft);
+    }
+
+    .subject-shell {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    .subject-intro {
       position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      padding: 2rem 2rem 0;
       overflow: hidden;
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(
+          135deg,
+          #eff6ff 0%,
+          #ffffff 70%
+        );
+      box-shadow: var(--shadow-soft);
     }
-    .topic-hero-copy { position: relative; z-index: 2; min-width: 0; }
-    .topic-hero-image { display: block; width: min(100%, 18rem); max-height: 260px; height: auto; object-fit: contain; justify-self: center; position: relative; z-index: 2; }
-    .topic-hero::after { content: 'ABC'; position: absolute; right: -.15em; bottom: -.26em; color: rgba(255, 255, 255, .09); font-size: clamp(5rem, 17vw, 12rem); line-height: 1; font-weight: 900; pointer-events: none; }
-    @media (min-width: 768px) {
-      .topic-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 18rem); padding: 2.5rem 3rem; min-height: 315px; }
-      .topic-hero-image { max-height: 290px; }
+
+    .subject-intro-text {
+      padding-bottom: 2rem;
     }
-    .toc-card { background: white; border: 1px solid #d1e7dd; border-radius: 1.15rem; padding: 1.3rem; margin-bottom: 2.5rem; box-shadow: 0 3px 12px rgba(0, 122, 51, .035); }
-    .toc-list { display: flex; flex-wrap: wrap; gap: .45rem; }
-    .toc-list a { display: inline-block; padding: .4rem .7rem; border-radius: .55rem; background: #f1f5f9; color: #334155; font-size: .83rem; font-weight: 600; line-height: 1.4; text-decoration: none; }
-    .toc-list a:hover, .toc-list a:focus-visible { background: #007a33; color: white; }
-    .toc-list .highlight-revision { background: #fef3c7; color: #92400e; }
-    .toc-list .highlight-eval { background: #e0e7ff; color: #3730a3; }
-    .topic-content { display: grid; gap: 2.7rem; }
-    .learning-section { padding: 1.55rem; border: 1px solid #e2e8f0; border-radius: 1.5rem; background: white; box-shadow: 0 4px 20px -2px rgba(0,122,51,.08); min-width: 0; }
-    .section-heading { display: flex; gap: .85rem; align-items: center; margin-bottom: 1.5rem; }
-    .section-number { display: inline-block; background: #007a33; color: white; font-size: 1.1rem; font-weight: 800; border-radius: .8rem; padding: .45rem .85rem; flex-shrink: 0; }
-    .section-heading h2 { font-size: clamp(1.2rem, 2.2vw, 1.65rem); font-weight: 800; line-height: 1.3; color: #1e293b; }
-    .explanation { padding: 1.1rem 1.3rem; border-left: 4px solid #007a33; background: #e6f4ea; border-radius: 0 1rem 1rem 0; margin-bottom: 1.5rem; }
-    .explanation h3 { color: #005724; font-weight: 800; margin-bottom: .7rem; }
-    .explanation-text { font-size: .95rem; line-height: 1.8; color: #334155; }
-    .explanation-text p { margin-bottom: .85rem; }
-    .explanation-text p:last-child { margin-bottom: 0; }
-    .explanation-text h4 { font-size: 1rem; }
-    .explanation-text strong, .explanation-text b { color: #134e2a; }
-    .reading-box { padding: 1.35rem 1.5rem; border: 1px solid #bae6cc; background: linear-gradient(135deg,#f0fdf4,#fff); border-radius: 1.25rem; margin-bottom: 1.4rem; }
-    .reading-prose { font-size: .99rem; line-height: 1.92; max-width: 83ch; color: #334155; text-align: justify; hyphens: auto; }
-    .reading-prose p { margin: 0 0 .8rem; }
-    .reading-prose p:last-child { margin-bottom: 0; }
-    .example-box { margin: 1rem 0; background: white; border: 1px solid #bbf7d0; color: #16532c; border-radius: .85rem; padding: .9rem 1.1rem; line-height: 1.8; }
-    .practice-title { margin: 1.4rem 0 1rem; text-transform: uppercase; font-size: .77rem; font-weight: 800; letter-spacing: .08em; color: #64748b; }
-    .exercise-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
-    .exercise-card { background: #f8fafc; border: 1px solid #dbe3ec; border-radius: 1rem; padding: 1.2rem; min-width: 0; }
-    .exercise-pill { display: inline-block; background: #007a33; color: white; border-radius: .4rem; padding: .36rem .6rem; font-size: .74rem; font-weight: 750; margin-bottom: .9rem; }
-    .exercise-body { font-size: .88rem; line-height: 1.75; color: #334155; }
-    .exercise-list { list-style: lower-alpha; margin: .25rem 0 0; padding-left: 1.5rem; }
-    .exercise-list li { margin-bottom: .55rem; padding-left: .08rem; }
-    .insight { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 1rem; color: #475569; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: .88rem; line-height: 1.7; }
-    .insight strong { color: #92400e; }
-    .wordgrid { display: grid; grid-template-columns: repeat(auto-fit,minmax(145px,1fr)); gap: .5rem; margin-top: 1rem; }
-    .wordgrid span { padding: .55rem; text-align: center; border: 1px solid #d1e7dd; border-radius: .55rem; background: white; font-size: .85rem; }
-    .learning-table { width: 100%; border-collapse: collapse; background: white; font-size: .85rem; min-width: 420px; }
-    .learning-table th, .learning-table td { text-align: left; padding: .68rem; border: 1px solid #d1e7dd; vertical-align: top; }
-    .learning-table th { background: #e6f4ea; color: #005724; font-weight: 800; }
-    .audio-card { border: 1px solid #bbf7d0; padding: 1rem; border-radius: 1rem; background: white; }
-    .listen-btn { color: white; background: #007a33; border: 1px solid #007a33; border-radius: .65rem; padding: .65rem 1rem; font-size: .86rem; font-weight: 750; cursor: pointer; margin: .35rem 0 .8rem; }
-    .listen-btn:hover { background: #005724; }
-    .listen-btn:focus-visible, .eval-btn:focus-visible, .quiz-option:focus-visible, .action-btn:focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }
-    .transcript { font-size: .84rem; color: #334155; line-height: 1.8; }
-    .transcript summary { cursor: pointer; color: #005724; font-weight: 700; }
-    .transcript p { padding: .6rem 0; }
-    .check-list { padding-left: 1.5rem; list-style: disc; color: #334155; line-height: 1.9; font-size: .91rem; }
-    .auto-eval-item { display: flex; flex-direction: column; gap: 1rem; justify-content: space-between; padding: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1rem; }
-    .auto-eval-item p { font-size: .86rem; font-weight: 600; color: #334155; }
-    .eval-group { display: flex; flex-wrap: wrap; gap: .32rem; }
-    .eval-btn { padding: .48rem .65rem; border: 1px solid #cbd5e1; border-radius: .55rem; background: white; color: #475569; font-size: .74rem; font-weight: 750; cursor: pointer; }
-    .eval-btn[aria-pressed="true"] { background: #007a33; border-color: #007a33; color: white; }
-    .quiz-question { border: 1px solid #dbe3ec; border-radius: .8rem; padding: 1rem; background: #f8fafc; }
-    .quiz-question p:first-child { font-size: .88rem; font-weight: 700; margin-bottom: .6rem; }
-    .quiz-option { display: block; width: 100%; text-align: left; padding: .62rem .8rem; border: 1px solid #cbd5e1; border-radius: .58rem; background: white; color: #334155; font-size: .87rem; margin: .45rem 0; cursor: pointer; }
-    .quiz-option[aria-pressed="true"] { background: #e6f4ea; border-color: #007a33; font-weight: 700; }
-    .quiz-result { font-size: .8rem; font-weight: 700; margin-top: .5rem; min-height: 1.1em; }
-    .action-btn { cursor: pointer; font-weight: 750; font-size: .9rem; border-radius: .7rem; padding: .65rem 1rem; background: #007a33; color: white; }
-    .action-btn.secondary { background: white; color: #005724; border: 1px solid #bbf7d0; }
-    .action-btn:hover { filter: brightness(.95); }
-    .result-panel { margin-top: 1rem; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: .85rem; padding: 1rem; font-size: .9rem; font-weight: 700; color: #065f46; }
-    @media (min-width: 1024px) { .auto-eval-item { flex-direction: row; align-items: center; } .auto-eval-item p { max-width: 46%; } }
-    @media (min-width: 768px) { .learning-section { padding: 2rem; } }
-    @media (max-width: 700px) { .exercise-grid { grid-template-columns: 1fr; } .reading-prose { text-align: left; font-size: .94rem; } .topic-hero { padding: 1.5rem; } .learning-section { padding: 1rem; } .reading-box { padding: 1rem; } .explanation { padding: 1rem; } .section-heading { align-items: flex-start; } .topic-shell { padding-top: 1rem; } }
-    @media print { .site-banner, .navigation-wrapper, .breadcrumbs, .toc-card, .auto-eval-controls, .quiz-controls, .listen-btn, .back-to-top { display: none; } .topic-page { background: white; } .learning-section { page-break-inside: avoid; box-shadow: none; } .exercise-body { font-size: 10pt; } .topic-hero { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+
+    .subject-label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: #2563eb;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subject-intro h1 {
+      margin: 0 0 0.75rem;
+      color: var(--text-main);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    .subject-intro p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .subject-mascot {
+      display: block;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .learning-heading {
+      margin: 0 0 1.25rem;
+      color: var(--text-main);
+      font-size: 1.45rem;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .learning-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      min-height: 165px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-3px);
+      border-color: #93c5fd;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .learning-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    .learning-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .learning-content h2 {
+      margin: 0 0 0.55rem;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .learning-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .learning-count {
+      align-self: flex-start;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .subject-intro {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .subject-intro-text {
+        padding-bottom: 0;
+      }
+
+      .subject-mascot {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subject-shell {
+        width: min(94%, var(--max-width));
+        padding-top: 1.25rem;
+      }
+
+      .subject-intro {
+        border-radius: 20px;
+      }
+
+      .learning-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 150px;
+      }
+
+      .learning-number {
+        font-size: 1.05rem;
+      }
+
+      .learning-content {
+        padding: 1.05rem;
+      }
+    }
   </style>
 </head>
+
+
 <body>
-  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#contenido-principal"
+  >
+    Ir al contenido principal
+  </a>
+
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+
   <header class="site-banner">
-    <a href="/" aria-label="Ir a la página de inicio"><img class="banner-image" src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"></a>
+
+    <a
+      href="/"
+      aria-label="Ir a la página de inicio"
+    >
+
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+
+    </a>
+
   </header>
+
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+
   <div class="navigation-wrapper">
+
     <div class="navigation-container">
-      <a class="navigation-logo" href="/" aria-label="Ir a la página de inicio"><img src="/img/logo-centro.png" alt=""></a>
-      <button class="menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación"><span></span><span></span><span></span></button>
-      <nav class="main-navigation" id="main-navigation" aria-label="Navegación principal">
+
+      <!-- LOGO DEL CENTRO -->
+
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+
+        <img
+          src="/img/logo-centro.png"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- MENÚ PRINCIPAL -->
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+
         <ul>
-          <li class="nav-green"><a href="/">Inicio</a></li>
-          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
-          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
-          <li class="nav-red"><a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🔒</span> Área privada Profesorado</a></li>
+
+          <li class="nav-green">
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li class="nav-yellow">
+            <a href="/familias/">
+              Familias
+            </a>
+          </li>
+
+          <li class="nav-blue">
+            <a
+              href="/recursos/"
+              aria-current="page"
+            >
+              Recursos educativos
+            </a>
+          </li>
+
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">
+                🔒
+              </span>
+              Área privada Profesorado
+            </a>
+          </li>
+
         </ul>
+
       </nav>
+
     </div>
+
   </div>
-  <main id="contenido-principal" class="topic-page">
-    <div class="topic-shell">
-      <nav class="breadcrumbs" aria-label="Migas de pan">
+
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       DESTINO:
+       /recursos/quinto/ingles5/index.html
+       ====================================================== -->
+
+  <main
+    id="contenido-principal"
+    class="subject-page"
+  >
+
+    <div class="subject-shell">
+
+
+      <!-- MIGAS DE PAN -->
+
+      <nav
+        class="breadcrumbs"
+        aria-label="Migas de pan"
+      >
+
         <ol>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/recursos/">Recursos educativos</a></li>
-          <li><a href="/recursos/quinto/">5.º de Primaria</a></li>
-          <li><a href="/recursos/quinto/ingles5/">Inglés</a></li>
-          <li aria-current="page">All about me and my school</li>
+
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/">
+              Recursos educativos
+            </a>
+          </li>
+
+          <li>
+            <a href="/recursos/quinto/">
+              5.º de Primaria
+            </a>
+          </li>
+
+          <li aria-current="page">
+            Inglés
+          </li>
+
         </ol>
+
       </nav>
-      <header class="topic-hero">
-        <div class="topic-hero-copy">
-          <p class="text-emerald-100 text-sm font-bold uppercase tracking-wider mb-2">Inglés · 5.º de Primaria · ING5.1</p>
-          <h1 class="text-3xl sm:text-5xl font-extrabold text-heading leading-tight mb-4">1. ALL ABOUT ME AND MY SCHOOL</h1>
-          <p class="text-emerald-100 text-base md:text-lg leading-relaxed">We learn to introduce ourselves, describe people and talk about school. ¡Escucha, lee, habla y escribe en inglés!</p>
+
+
+      <!-- ==================================================
+           PRESENTACIÓN DE LA MATERIA
+           ================================================== -->
+
+      <section class="subject-intro">
+
+        <div class="subject-intro-text">
+
+          <span class="subject-label">
+            Inglés · 5.º de Primaria
+          </span>
+
+          <h1>
+            Inglés
+          </h1>
+
+          <p>
+            En este espacio encontrarás actividades de comprensión oral
+            (<em>listening</em>) y escrita (<em>reading</em>), explicaciones
+            de vocabulario y gramática, prácticas de expresión oral
+            (<em>speaking</em>) y escrita (<em>writing</em>), así como materiales
+            de refuerzo, ampliación y autoevaluación para aprender inglés
+            de forma práctica y progresiva.
+          </p>
+
         </div>
-        <img class="topic-hero-image" src="/img/tomatito/tomatito-ing5.1.png" alt="Tomatito, la mascota del colegio, acompañando la primera situación de aprendizaje de Inglés" loading="eager" decoding="async">
-      </header>
-      <nav class="toc-card" aria-label="Contenidos de la Situación de Aprendizaje">
-        <h2 class="text-xs uppercase tracking-wider text-junta font-extrabold mb-3">📍 Contenidos de la Situación de Aprendizaje</h2>
-        <div class="toc-list">
 
-          <a href="#sec-1">1.1 Listening: meeting new friends</a>
-          <a href="#sec-2">1.2 Reading: welcome to the English club</a>
-          <a href="#sec-3">1.3 Greetings and introductions</a>
-          <a href="#sec-4">1.4 Personal pronouns, to be and have got</a>
-          <a href="#sec-5">1.5 Vocabulary and learning strategies</a>
-          <a href="#sec-6">1.6 Describing myself and my family</a>
-          <a href="#sec-7">1.7 Speaking with classmates</a>
-          <a href="#sec-8">1.8 School life in English-speaking countries</a>
-          <a href="#sec-9">1.9 Sharing information: helping others understand</a>
-          <a href="#sec-10">1.10 Planning my English profile</a>
-          <a href="#sec-11">1.11 My English profile: final product</a>
-          <a href="#sec-12">1.12 Reviewing my learning</a>
-          <a class="highlight-revision" href="#sec-repaso">🔄 Repasamos lo aprendido</a>
-          <a class="highlight-eval" href="#sec-diana">🎯 Autoevaluación</a>
-  </div>
-</nav>
-<div class="topic-content">
 
-<!-- =========================================================
-     APARTADO 1.1: Listening: meeting new friends
-     ========================================================= -->
-<section id="sec-1" class="learning-section" aria-labelledby="sec-1-title">
-  <header class="section-heading">
-    <span class="section-number">1.1</span>
-    <h2 id="sec-1-title">Listening: meeting new friends</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Al escuchar un diálogo en inglés, no es necesario comprender <strong>todas las palabras</strong>. Primero identifica de qué trata; después escucha de nuevo para localizar datos concretos: <em>name, age, country, family, favourite subject</em>.</p>
-<p>Observa estas preguntas: <strong>What’s your name?</strong> (¿Cómo te llamas?), <strong>How old are you?</strong> (¿Cuántos años tienes?) y <strong>Where are you from?</strong> (¿De dónde eres?).</p>
-<p>Escucha los dos diálogos <strong>sin abrir la transcripción</strong>. Puedes repetir cada audio; después comprueba tus respuestas con el texto.</p>
-<div class="grid md:grid-cols-2 gap-4 mt-4">
-  <article class="audio-card">
-    <h4 class="font-bold text-junta-dark mb-2">🎧 Dialogue A · Emma and Ben</h4>
-    <button type="button" class="listen-btn" data-audio="/media/ingles5/ing-5.1-EmmaBen.mp3">▶ Escuchar diálogo A</button>
-    <details class="transcript"><summary>Ver transcripción del diálogo A</summary><p><b>Emma:</b> Hello! My name is Emma. What’s your name?<br><b>Ben:</b> Hi, Emma. I’m Ben. How old are you?<br><b>Emma:</b> I’m ten years old. I’m from Bristol, in England. And you?<br><b>Ben:</b> I’m eleven. I’m from Cardiff, in Wales.<br><b>Emma:</b> Have you got any brothers or sisters?<br><b>Ben:</b> Yes, I’ve got one brother. His name is Jack.<br><b>Emma:</b> My favourite subject is Science.<br><b>Ben:</b> I love Art! See you later, Emma.<br><b>Emma:</b> Goodbye, Ben!</p></details>
-  </article>
-  <article class="audio-card">
-    <h4 class="font-bold text-junta-dark mb-2">🎧 Dialogue B · Lucy and Daniel</h4>
-    <button type="button" class="listen-btn" data-speak="Good morning! I'm Lucy. I'm from London. Are you new here? Yes, I am. My name is Daniel. I'm from Dublin, in Ireland. I'm eleven. Nice to meet you, Daniel. Have you got a sister? Yes, I've got a little sister. Her name is Mia. What's your favourite subject? My favourite subject is Music. Mine is English. See you in class! See you!" aria-label="Escuchar el diálogo B en inglés">▶ Escuchar diálogo B</button>
-    <details class="transcript"><summary>Ver transcripción del diálogo B</summary><p><b>Lucy:</b> Good morning! I’m Lucy. I’m from London. Are you new here?<br><b>Daniel:</b> Yes, I am. My name is Daniel. I’m from Dublin, in Ireland. I’m eleven.<br><b>Lucy:</b> Nice to meet you, Daniel. Have you got a sister?<br><b>Daniel:</b> Yes, I’ve got a little sister. Her name is Mia.<br><b>Lucy:</b> What’s your favourite subject?<br><b>Daniel:</b> My favourite subject is Music.<br><b>Lucy:</b> Mine is English. See you in class!<br><b>Daniel:</b> See you!</p></details>
-  </article>
-</div>
-<p id="audio-status" class="text-sm mt-3 text-slate-600" aria-live="polite">Los audios utilizan las voces inglesas disponibles en el dispositivo. Si no hay voz compatible, utiliza la transcripción.</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Identify the situation</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>¿Cuántas personas intervienen en el diálogo A?</li><li>¿Están comprando en una tienda o conociéndose?</li><li>¿Qué fórmulas de saludo y despedida reconoces?</li><li>Escucha una segunda vez: ¿qué información pregunta Emma a Ben?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Listen for details</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>¿Cuántos años tiene Emma? ¿Y Ben?</li><li>¿De qué ciudad y país es cada uno?</li><li>¿Cómo se llama el hermano de Ben?</li><li>¿Qué asignatura prefiere Emma y cuál Ben?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · True or false?</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Emma is from Cardiff.</li><li>Ben is eleven years old.</li><li>Jack is Ben’s brother.</li><li>Emma’s favourite subject is Art. Corrige en inglés las oraciones falsas.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Dialogue B</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Where is Daniel from?</li><li>How old is Daniel?</li><li>What is Daniel’s sister’s name?</li><li>What is Daniel’s favourite subject?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Compare the dialogues</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Anota dos preguntas que aparezcan en los audios.</li><li>Escribe una fórmula de saludo y otra de despedida.</li><li>Explica qué te ayudó más a comprender: palabras conocidas, nombres propios o repetir la audición.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Antes de pulsar «Ver transcripción», intenta identificar al menos dos datos de cada personaje. No confundas Bristol (England), Cardiff (Wales) y Dublin (Ireland).</div>
-</section>
+        <!-- TOMATITO INGLÉS -->
 
-<!-- =========================================================
-     APARTADO 1.2: Reading: welcome to the English club
-     ========================================================= -->
-<section id="sec-2" class="learning-section" aria-labelledby="sec-2-title">
-  <header class="section-heading">
-    <span class="section-number">1.2</span>
-    <h2 id="sec-2-title">Reading: welcome to the English club</h2>
-  </header>
-  <article class="reading-box" aria-label="Primera lectura: Welcome to the English Club">
-  <div class="flex items-center gap-2 mb-3"><span class="text-2xl" aria-hidden="true">📖</span><h3 class="text-lg font-bold text-junta-dark">Welcome to the English Club</h3></div>
-  <div class="reading-prose" lang="en">
-    <p>It is Monday morning at Oak Tree School. Three children are waiting outside the English Club classroom. They do not know one another yet. Sofía looks at the door and holds her blue notebook. She is a little nervous because it is her first day.</p>
-    <p>“Hello! My name is Sofía,” she says. “I am ten years old and I am from Córdoba, in Spain. I love Art and English.” A boy with short brown hair smiles at her. “Hi, Sofía! I’m Liam. I’m eleven and I’m from Manchester, in England. I’ve got a younger sister. Her name is Ruby. My favourite subject is Science.”</p>
-    <p>A girl with curly hair arrives. “Good morning! I’m Zoe. I’m ten and I’m from Edinburgh, in Scotland. I’ve got a little brother and a red pencil case. I like Music.”</p>
-    <p>The teacher, Mr Brown, opens the door. “Welcome, everyone! Today we are learning about our new friends. Please write your names on these small cards. Then ask a classmate three questions: What’s your name? How old are you? Where are you from?”</p>
-    <p>Sofía speaks to Zoe. At first she forgets one question, but Zoe helps her. Liam listens carefully and says, “Can you repeat, please?” when he does not understand. Nobody laughs at mistakes. The teacher says that trying again is part of learning a language.</p>
-    <p>At the end of the lesson, the children put their cards on a colourful board. There are names and cities from different places. Sofía is not nervous now. She has got two new friends, and she knows three useful questions in English. She smiles and says, “See you tomorrow!”</p>
-  </div>
-  <p class="text-xs text-slate-500 mt-4">Lectura original para trabajar comprensión global, información explícita, inferencias y vocabulario contextual.</p>
-</article>
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Para comprender un perfil o una historia breve, comienza por el <strong>sentido general</strong>: quién interviene, dónde sucede y cuál es su propósito. Después localiza nombres, edades, ciudades y relaciones familiares.</p>
-<p>Las palabras <em>classroom, favourite, teacher, family</em> y <em>friend</em> aparecen con frecuencia en textos sobre la escuela. Si no conoces una palabra, utiliza las pistas de las oraciones cercanas antes de consultar un diccionario.</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Main idea</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Where are the children?</li><li>What is the club’s first activity?</li><li>Choose a title in English for the text and explain why.</li><li>Escribe en español la idea principal en una o dos oraciones.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Find the information</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Where is Sofía from?</li><li>How old is Liam?</li><li>Which city is Zoe from?</li><li>Who has got a younger sister?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · True or false?</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Sofía loves Art.</li><li>Liam is from London.</li><li>Zoe has got a red pencil case.</li><li>The children write their names on small cards. Corrige las frases falsas.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Read between the lines</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Why does the teacher give the children name cards?</li><li>Why does Sofía feel less nervous at the end?</li><li>How do the children show respect for new classmates?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Useful words</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Busca en la lectura la palabra inglesa para «compañero de clase».</li><li>Explica el significado de <em>nervous</em> a partir del contexto.</li><li>Localiza dos palabras relacionadas con el colegio.</li><li>Escribe una pregunta que podrías hacer a Liam.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 6 · Talk about the text</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Describe a Sofía usando dos oraciones sencillas en inglés.</li><li>Compara a Sofía y Zoe: escribe una semejanza y una diferencia.</li><li>Escribe dos frases sobre lo que tú harías en un club de inglés.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> En lectura comprensiva, la respuesta suele encontrarse en una frase concreta. Para inferir, debes unir varias pistas del texto.</div>
-</section>
+        <img
+          src="/img/tomatito/ingles.png"
+          alt=""
+          class="subject-mascot"
+        >
 
-<!-- =========================================================
-     APARTADO 1.3: Greetings and introductions
-     ========================================================= -->
-<section id="sec-3" class="learning-section" aria-labelledby="sec-3-title">
-  <header class="section-heading">
-    <span class="section-number">1.3</span>
-    <h2 id="sec-3-title">Greetings and introductions</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Los <strong>saludos</strong> cambian según el momento y la situación. <em>Hi</em> es informal; <em>Good morning</em> es apropiado por la mañana. Para presentarte, puedes decir <strong>My name is …</strong> o <strong>I’m …</strong>.</p>
-<div class="overflow-x-auto my-4"><table class="learning-table"><thead><tr><th>English</th><th>Español / uso</th><th>Posible respuesta</th></tr></thead><tbody>
-<tr><td>Hello! / Hi!</td><td>Hola</td><td>Hello! / Hi!</td></tr>
-<tr><td>Good morning!</td><td>Buenos días</td><td>Good morning!</td></tr>
-<tr><td>Good afternoon!</td><td>Buenas tardes</td><td>Good afternoon!</td></tr>
-<tr><td>What’s your name?</td><td>¿Cómo te llamas?</td><td>My name is Alex.</td></tr>
-<tr><td>How old are you?</td><td>¿Cuántos años tienes?</td><td>I’m ten years old.</td></tr>
-<tr><td>Where are you from?</td><td>¿De dónde eres?</td><td>I’m from Spain.</td></tr>
-<tr><td>Nice to meet you.</td><td>Encantado/a de conocerte</td><td>Nice to meet you too.</td></tr>
-<tr><td>Goodbye! / See you!</td><td>Adiós / Hasta luego</td><td>See you!</td></tr>
-</tbody></table></div>
-<p>Fíjate en el orden de las preguntas: <strong>What + is + your + name?</strong>; <strong>How old + are + you?</strong>; <strong>Where + are + you + from?</strong> En inglés no se suele omitir el sujeto como en español.</p>
-<div class="example-box" lang="en"><b>A:</b> Hi! What’s your name?<br><b>B:</b> I’m Alex. What’s your name?<br><b>A:</b> My name is Sam. Where are you from?<br><b>B:</b> I’m from Spain. Nice to meet you!<br><b>A:</b> Nice to meet you too!</div></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Match</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Relaciona <em>Good morning</em>, <em>How old are you?</em>, <em>See you!</em> y <em>Nice to meet you</em> con sus equivalentes en español.</li><li>Escribe una posible respuesta a cada expresión.</li><li>Indica cuál usarías por la mañana y cuál al despedirte.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Put the words in order</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>name / your / What’s / ?</li><li>old / How / are / you / ?</li><li>from / Where / you / are / ?</li><li>meet / Nice / you / to / .</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Complete the dialogue</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>A: Hello! ______ your name?</li><li>B: My ______ is Julia.</li><li>A: How ______ are you?</li><li>B: I’m ten ______ old.</li><li>A: Nice to ______ you!</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Choose the correct expression</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Acabas de llegar a clase por la mañana. ¿Qué dices?</li><li>Quieres saber de qué país es alguien. ¿Qué preguntas?</li><li>Alguien se presenta. ¿Cómo respondes con cortesía?</li><li>Te marchas. Escribe dos despedidas posibles.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Create and practise</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Redacta un diálogo de ocho intervenciones entre dos personajes inventados.</li><li>Incluye saludo, nombre, edad, procedencia y despedida.</li><li>Practícalo en voz alta prestando atención a las preguntas y a la cortesía.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> En inglés, “I’m ten years old” expresa la edad; no digas “I have ten years”.</div>
-</section>
+      </section>
 
-<!-- =========================================================
-     APARTADO 1.4: Personal pronouns, to be and have got
-     ========================================================= -->
-<section id="sec-4" class="learning-section" aria-labelledby="sec-4-title">
-  <header class="section-heading">
-    <span class="section-number">1.4</span>
-    <h2 id="sec-4-title">Personal pronouns, to be and have got</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Los <strong>pronombres personales</strong> sustituyen a un nombre. El verbo <strong>to be</strong> significa <em>ser</em> o <em>estar</em> según el contexto, y <strong>have got</strong> expresa normalmente <em>tener</em> o posesión.</p>
-<div class="overflow-x-auto my-4"><table class="learning-table"><thead><tr><th>Pronombre</th><th>To be</th><th>Have got</th><th>Posesivo</th></tr></thead><tbody>
-<tr><td>I (yo)</td><td>am / ’m</td><td>have got / ’ve got</td><td>my</td></tr>
-<tr><td>you (tú / vosotros)</td><td>are / ’re</td><td>have got / ’ve got</td><td>your</td></tr>
-<tr><td>he (él)</td><td>is / ’s</td><td>has got / ’s got</td><td>his</td></tr>
-<tr><td>she (ella)</td><td>is / ’s</td><td>has got / ’s got</td><td>her</td></tr>
-<tr><td>it (ello, animal u objeto)</td><td>is / ’s</td><td>has got / ’s got</td><td>its</td></tr>
-<tr><td>we (nosotros)</td><td>are / ’re</td><td>have got / ’ve got</td><td>our</td></tr>
-<tr><td>they (ellos)</td><td>are / ’re</td><td>have got / ’ve got</td><td>their</td></tr>
-</tbody></table></div>
-<h4 class="font-bold text-junta-dark mt-4 mb-2">To be: afirmación, negación y pregunta</h4>
-<div class="overflow-x-auto"><table class="learning-table"><thead><tr><th>Afirmativa</th><th>Negativa</th><th>Interrogativa / respuesta</th></tr></thead><tbody>
-<tr><td>I am ten.</td><td>I am not ten.</td><td>Am I ten? — Yes, I am. / No, I’m not.</td></tr>
-<tr><td>She is British.</td><td>She isn’t British.</td><td>Is she British? — Yes, she is. / No, she isn’t.</td></tr>
-<tr><td>They are at school.</td><td>They aren’t at school.</td><td>Are they at school? — Yes, they are. / No, they aren’t.</td></tr>
-</tbody></table></div>
-<h4 class="font-bold text-junta-dark mt-5 mb-2">Have got: afirmación, negación y pregunta</h4>
-<div class="overflow-x-auto"><table class="learning-table"><thead><tr><th>Afirmativa</th><th>Negativa</th><th>Interrogativa / respuesta</th></tr></thead><tbody>
-<tr><td>I have got a sister.</td><td>I haven’t got a sister.</td><td>Have you got a sister? — Yes, I have. / No, I haven’t.</td></tr>
-<tr><td>He has got blue eyes.</td><td>He hasn’t got blue eyes.</td><td>Has he got blue eyes? — Yes, he has. / No, he hasn’t.</td></tr>
-</tbody></table></div>
-<p class="mt-4"><strong>Adjetivos posesivos:</strong> van delante de un sustantivo: <em>my book, her school, our classroom</em>. No confundas <em>he → his</em> y <em>she → her</em>; <em>its</em> significa «su» para <em>it</em> y no lleva apóstrofo. Compara <em>She is happy</em> (Ella está contenta) con <em>She has got a dog</em> (Ella tiene un perro).</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Pronouns and to be</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Completa: I ___ eleven.</li><li>Completa: She ___ from Scotland.</li><li>Completa: They ___ at school.</li><li>Sustituye «Liam and Zoe» por el pronombre adecuado.</li><li>Sustituye «My brother» por un pronombre.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Negatives and questions</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Transforma «He is tall» en negativa.</li><li>Transforma «We are pupils» en interrogativa.</li><li>Responde brevemente: «Is she ten?» (afirmativamente).</li><li>Responde brevemente: «Are they from Spain?» (negativamente).</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Have got</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Completa: I ___ got brown eyes.</li><li>Completa: She ___ got a sister.</li><li>Transforma «He has got a pencil» en negativa.</li><li>Escribe una pregunta con «you / have got / a ruler».</li><li>Responde afirmativamente a «Has she got a brother?».</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Possessive adjectives</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Completa: I am Emma. This is ___ bag.</li><li>He is Liam. ___ sister is Ruby.</li><li>We are pupils. This is ___ classroom.</li><li>They are friends. ___ teacher is Mr Brown.</li><li>She is Zoe. ___ pencil case is red.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Spot the mistake</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Corrige: «She have got a dog».</li><li>Corrige: «I is eleven».</li><li>Corrige: «He are my brother».</li><li>Corrige: «Has you got a book?».</li><li>Corrige: «My brother is got brown hair».</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 6 · Compare English and Spanish</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Explica por qué «I am ten» se traduce como «Tengo diez años».</li><li>Traduce «She is in the classroom» y explica el uso de <em>to be</em>.</li><li>Traduce «I have got a blue notebook».</li><li>Escribe una diferencia entre la presencia del sujeto en inglés y en español.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Recuerda: he/she/it → <strong>is / has got</strong>; I → <strong>am / have got</strong>; we/you/they → <strong>are / have got</strong>.</div>
-</section>
 
-<!-- =========================================================
-     APARTADO 1.5: Vocabulary and learning strategies
-     ========================================================= -->
-<section id="sec-5" class="learning-section" aria-labelledby="sec-5-title">
-  <header class="section-heading">
-    <span class="section-number">1.5</span>
-    <h2 id="sec-5-title">Vocabulary and learning strategies</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Organizar las palabras en <strong>familias de significado</strong> facilita recordarlas. Una estrategia útil es crear una tarjeta con la palabra, su traducción, un ejemplo y, cuando ayude, un dibujo. No basta con memorizar una lista: conviene utilizar las palabras en oraciones.</p>
-<div class="grid md:grid-cols-2 gap-4 my-4">
-<div class="overflow-x-auto"><table class="learning-table"><thead><tr><th>Country</th><th>Nationality</th></tr></thead><tbody>
-<tr><td>Spain</td><td>Spanish</td></tr><tr><td>the United Kingdom</td><td>British</td></tr><tr><td>England</td><td>English</td></tr><tr><td>Scotland</td><td>Scottish</td></tr><tr><td>Wales</td><td>Welsh</td></tr><tr><td>Ireland</td><td>Irish</td></tr><tr><td>France</td><td>French</td></tr><tr><td>Italy</td><td>Italian</td></tr>
-</tbody></table></div>
-<div class="overflow-x-auto"><table class="learning-table"><thead><tr><th>Family</th><th>School and subjects</th></tr></thead><tbody>
-<tr><td>mother / mum · father / dad</td><td>school · classroom · teacher · pupil</td></tr><tr><td>brother · sister</td><td>Maths · English · Science</td></tr><tr><td>grandmother · grandfather</td><td>Art · Music · PE · History</td></tr><tr><td>parents · cousin</td><td>book · notebook · ruler · pencil case</td></tr>
-</tbody></table></div>
-</div>
-<div class="wordgrid" lang="en"><span>tall — alto/a</span><span>short — bajo/a / corto</span><span>young — joven</span><span>old — mayor / viejo</span><span>long hair — pelo largo</span><span>curly hair — pelo rizado</span><span>straight hair — pelo liso</span><span>brown eyes — ojos marrones</span></div>
-<p class="mt-4"><strong>Palabras transparentes:</strong> <em>music/música, family/familia</em>. ¡Cuidado con los falsos amigos!: <em>library</em> significa «biblioteca», no «librería». Los nombres de países, nacionalidades y asignaturas suelen escribirse con mayúscula inicial en inglés.</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Countries and nationalities</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Completa: Spain → ___.</li><li>Completa: Ireland → ___.</li><li>Completa: France → ___.</li><li>Explica la diferencia entre <em>British</em> y <em>English</em>.</li><li>Construye dos oraciones con «I’m from…» y «I’m…» usando una persona ficticia.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · My family</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Dibuja un árbol familiar de personajes inventados y escribe <em>mother, father, sister, brother</em>.</li><li>Traduce <em>grandmother</em> y <em>cousin</em>.</li><li>Escribe «This is my sister» y cámbiala para referirte a un primo.</li><li>Escribe dos oraciones con los posesivos <em>his</em> y <em>her</em>.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · School objects and subjects</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Clasifica: ruler, Music, pencil case, Maths, notebook, Science, book, Art.</li><li>Escribe cuatro objetos que podrían estar en una mochila.</li><li>Escribe tres asignaturas en inglés y la que más te gusta.</li><li>Completa: «My favourite subject is ______.»</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Physical description</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Traduce: tall, short, curly hair, brown eyes.</li><li>Relaciona «long» y «short» con <em>hair</em> en dos ejemplos.</li><li>Escribe una descripción con «He is…» y «He has got…».</li><li>Distingue qué expresiones describen la estatura y cuáles el cabello.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Use a dictionary</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Busca dos palabras escolares que desconozcas y escribe un ejemplo inglés con cada una.</li><li>Escribe en tu glosario su traducción y categoría (objeto, persona o asignatura).</li><li>Anota una palabra transparente y un falso amigo.</li><li>Explica cómo comprobarías si una traducción tiene sentido en una oración.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 6 · Make your word bank</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Organiza diez palabras nuevas en tres categorías.</li><li>Elige cuatro palabras y crea tarjetas con un ejemplo cada una.</li><li>Repasa las tarjetas e identifica cuáles recuerdas sin mirar.</li><li>Escribe dos oraciones utilizando el vocabulario revisado.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> En inglés decimos <strong>I’m Spanish</strong> para una nacionalidad, pero <strong>I’m from Spain</strong> para indicar procedencia.</div>
-</section>
+      <!-- ==================================================
+           SITUACIONES DE APRENDIZAJE
+           ================================================== -->
 
-<!-- =========================================================
-     APARTADO 1.6: Describing myself and my family
-     ========================================================= -->
-<section id="sec-6" class="learning-section" aria-labelledby="sec-6-title">
-  <header class="section-heading">
-    <span class="section-number">1.6</span>
-    <h2 id="sec-6-title">Describing myself and my family</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Para describir a una persona, combina dos estructuras: <strong>to be</strong> para edad, estatura o estado (<em>She is young. He is tall.</em>) y <strong>have got</strong> para el cabello, los ojos y otras características (<em>She has got curly hair. He has got green eyes.</em>).</p>
-<div class="example-box" lang="en"><strong>Model · My cousin:</strong> This is my cousin Eva. She is eleven years old. She is tall and friendly. She has got long brown hair and green eyes. Her favourite subject is Music. She has got one brother.</div>
-<p>La pronunciación requiere práctica: escucha, repite y lee en voz alta oraciones completas; presta atención al ritmo de las preguntas y al sonido final de <em>has got</em>. En este apartado se practica la <strong>expresión oral</strong>, no se busca una descripción escrita perfecta.</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Choose the right structure</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Completa: My uncle ___ tall.</li><li>Completa: She ___ got curly hair.</li><li>Completa: My sister ___ eleven.</li><li>Completa: He ___ got blue eyes.</li><li>Explica por qué en unos casos utilizamos <em>is</em> y en otros <em>has got</em>.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Describe a fictional character</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Imagina una niña llamada Olivia de diez años, con cabello corto y ojos marrones.</li><li>Escribe cuatro oraciones modelo para presentarla.</li><li>Léelas en voz alta sin correr.</li><li>Cambia uno de los rasgos y vuelve a hacer la presentación.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · My family talk</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Selecciona dos personajes de una familia inventada.</li><li>Preséntalos con «This is my…».</li><li>Añade una característica con <em>to be</em> y otra con <em>have got</em> por persona.</li><li>Incluye los posesivos <em>his</em> y <em>her</em>.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Pronunciation practice</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Escucha y repite: «He is tall. She has got brown eyes».</li><li>Pronuncia dos veces una pregunta con <em>Is she…?</em>.</li><li>Pronuncia dos veces una pregunta con <em>Has he got…?</em>.</li><li>Explica si tu voz sube o baja al formular estas preguntas.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Mini-presentation</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Organiza una intervención de 40–60 segundos con nombre, edad y descripción de dos personajes ficticios.</li><li>Utiliza al menos una oración con <em>is</em> y otra con <em>has got</em>.</li><li>Comprueba si el público identifica a quién te refieres.</li><li>Repite la presentación mejorando la claridad y la entonación.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Una presentación oral gana claridad cuando utilizas oraciones cortas, pronunciación pausada y un orden lógico de ideas.</div>
-</section>
+      <section aria-labelledby="situaciones-aprendizaje">
 
-<!-- =========================================================
-     APARTADO 1.7: Speaking with classmates
-     ========================================================= -->
-<section id="sec-7" class="learning-section" aria-labelledby="sec-7-title">
-  <header class="section-heading">
-    <span class="section-number">1.7</span>
-    <h2 id="sec-7-title">Speaking with classmates</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>En una conversación no basta con responder: también hay que <strong>preguntar, escuchar, esperar el turno</strong> y pedir aclaraciones cuando sea necesario. Puedes utilizar personajes ficticios para practicar los datos personales.</p>
-<div class="example-box" lang="en"><b>A:</b> Hello! Can I ask you some questions?<br><b>B:</b> Yes, of course.<br><b>A:</b> Where are you from?<br><b>B:</b> I’m from Spain.<br><b>A:</b> Have you got any brothers or sisters?<br><b>B:</b> Yes, I’ve got one brother.<br><b>A:</b> Sorry, can you repeat, please?<br><b>B:</b> I’ve got one brother.<br><b>A:</b> Thank you!<br><b>B:</b> You’re welcome.</div>
-<div class="overflow-x-auto mt-4"><table class="learning-table"><thead><tr><th>Useful expression</th><th>Para qué sirve</th></tr></thead><tbody><tr><td>Can I ask you a question?</td><td>Iniciar una conversación de forma cortés.</td></tr><tr><td>Can you repeat, please?</td><td>Pedir una repetición.</td></tr><tr><td>Sorry, I don’t understand.</td><td>Expresar que necesitas ayuda.</td></tr><tr><td>Thank you. / You’re welcome.</td><td>Dar las gracias y responder.</td></tr></tbody></table></div></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Prepare an interview</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Escribe cinco preguntas: nombre, edad, procedencia, familia y asignatura favorita.</li><li>Comprueba que cada pregunta contiene su verbo.</li><li>Practica preguntas y respuestas con un personaje ficticio.</li><li>Incluye «Thank you» al terminar.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Role cards</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Personaje A: Sam, 11, Cardiff, one sister, Music.</li><li>Personaje B: Nina, 10, Granada, two brothers, Science.</li><li>Escribe un diálogo entre A y B con al menos seis intervenciones.</li><li>Intercambia los papeles y repite el diálogo.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Choose polite language</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>¿Qué dices si no has entendido la edad de tu interlocutor?</li><li>¿Cómo pides permiso para hacer una pregunta?</li><li>¿Cómo agradeces una respuesta?</li><li>Escribe un ejemplo de interrupción poco adecuada y reformúlala con cortesía.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Question or answer?</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Escribe una pregunta apropiada para «I’m from Ireland».</li><li>Escribe una respuesta apropiada para «How old are you?».</li><li>Pregunta por los hermanos o hermanas.</li><li>Responde negativamente a «Have you got a sister?».</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Check a conversation</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Representa una entrevista de un minuto.</li><li>Comprueba si hubo saludo y despedida.</li><li>Identifica una pregunta bien formulada y una que conviene mejorar.</li><li>Repite el diálogo utilizando una expresión de aclaración.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Hablar inglés incluye también escuchar con atención, respetar los turnos y volver a formular un mensaje si la otra persona no lo comprende.</div>
-</section>
+        <h2
+          id="situaciones-aprendizaje"
+          class="learning-heading"
+        >
+          Elige una Situación de Aprendizaje
+        </h2>
 
-<!-- =========================================================
-     APARTADO 1.8: School life in English-speaking countries
-     ========================================================= -->
-<section id="sec-8" class="learning-section" aria-labelledby="sec-8-title">
-  <header class="section-heading">
-    <span class="section-number">1.8</span>
-    <h2 id="sec-8-title">School life in English-speaking countries</h2>
-  </header>
-  <article class="reading-box" aria-label="Segunda lectura: A school day in London">
-  <div class="flex items-center gap-2 mb-3"><span class="text-2xl" aria-hidden="true">📖</span><h3 class="text-lg font-bold text-junta-dark">A School Day in London</h3></div>
-  <div class="reading-prose" lang="en">
-    <p>Hello! My name is Aisha and I’m eleven years old. I live in London, in England. This is a description of <em>my</em> school. Other schools can be different.</p>
-    <p>On weekdays I get ready for school in the morning. At my school, pupils wear a uniform. My school jumper is blue and my shirt is white. I put my notebook, pencil case and reading book in my bag. Then I meet my friends at the school gate.</p>
-    <p>Our teacher says “Good morning!” and we go to the classroom. We have different subjects during the day. My favourite subject is English because I enjoy reading stories, and I also like Science because we ask questions and do experiments. My friend Oliver loves Maths.</p>
-    <p>At break time, I talk to my friends and play outside when the weather is good. At lunchtime, I eat with other pupils. Sometimes we have sandwiches, fruit or a hot meal. After lunch we go back to our lessons.</p>
-    <p>On Friday afternoons our class sometimes does a creative project. Last week we made posters about our favourite books. We wrote short descriptions and shared them with other classes.</p>
-    <p>My cousin goes to another school. She has got different lessons and her school does not use the same uniform. I think schools can be interesting in many different ways. I would like to learn about school life in Spain too. What is your school day like?</p>
-  </div>
-  <p class="text-xs text-slate-500 mt-4">Texto original aplicado a vocabulario escolar, vida cotidiana y diversidad cultural.</p>
-</article>
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Existen muchas formas de organizar la vida escolar. En <strong>algunos</strong> colegios del Reino Unido se utiliza uniforme y se almuerza en el centro; en otros, las costumbres son distintas. No debemos pensar que todas las escuelas de un país funcionan igual.</p>
-<p>Palabras útiles: <em>uniform</em> (uniforme), <em>timetable</em> (horario), <em>break</em> (recreo o descanso), <em>lunch</em> (almuerzo), <em>subject</em> (asignatura), <em>pupil</em> (alumno/a).</p>
-<p>Lee la descripción de una jornada escolar y compárala con tu experiencia. Reconoce las semejanzas sin juzgar qué costumbre es «mejor».</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Read for understanding</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Where does Aisha go to school?</li><li>Does she wear a uniform?</li><li>What is her favourite subject?</li><li>What does she do at lunchtime?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Locate details</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>What does Aisha do before the first lesson?</li><li>Name two subjects in her school day.</li><li>How does Aisha spend her break?</li><li>What does her class do on Friday afternoons?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Compare cultures</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Anota dos semejanzas entre el colegio de Aisha y el tuyo.</li><li>Indica dos aspectos que pueden ser diferentes.</li><li>Explica por qué no podemos generalizar a todos los colegios ingleses.</li><li>Escribe dos preguntas respetuosas que harías a Aisha.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · School vocabulary</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Traduce <em>timetable</em>, <em>break</em>, <em>uniform</em> y <em>subject</em>.</li><li>Escribe una oración con <em>classroom</em> y otra con <em>teacher</em>.</li><li>Busca en el texto un objeto escolar y dos asignaturas.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · True or false?</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Aisha is eleven years old.</li><li>She lives in Manchester.</li><li>All pupils in England wear the same uniform.</li><li>She enjoys reading books.</li><li>Corrige las afirmaciones falsas con datos de la lectura.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 6 · Respect and curiosity</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>¿Por qué es importante preguntar antes de hacer suposiciones sobre otra cultura?</li><li>Escribe tres normas para hablar con respeto de las costumbres de otros colegios.</li><li>Redacta dos oraciones en inglés presentando un aspecto positivo de tu escuela.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> No confundas “different” con “worse”: una costumbre escolar distinta merece comprenderse antes de valorarla.</div>
-</section>
 
-<!-- =========================================================
-     APARTADO 1.9: Sharing information: helping others understand
-     ========================================================= -->
-<section id="sec-9" class="learning-section" aria-labelledby="sec-9-title">
-  <header class="section-heading">
-    <span class="section-number">1.9</span>
-    <h2 id="sec-9-title">Sharing information: helping others understand</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p><strong>Mediar</strong> es ayudar a otra persona a comprender información. En este tema aprenderás a escuchar datos básicos y explicárselos a alguien de forma sencilla, sin cambiar el sentido del mensaje.</p>
-<p>Utiliza la tercera persona y los posesivos adecuados: <strong>His name is…</strong> (su nombre, de él), <strong>Her name is…</strong> (su nombre, de ella), <strong>He is from…</strong>, <strong>She has got…</strong>.</p>
-<article class="audio-card mt-4">
-  <h4 class="font-bold text-junta-dark mb-2">🎧 Audio · Meet Oliver</h4>
-  <button type="button" class="listen-btn" data-speak="Hello! My name is Oliver. I'm ten years old. I'm from Belfast, in Northern Ireland. I've got one older sister. Her name is Grace. I've got short black hair and brown eyes. My favourite subjects are Maths and Music. My best friend is Hannah. She is eleven. She has got long curly hair. Thank you!" aria-label="Escuchar la presentación de Oliver">▶ Escuchar presentación</button>
-  <details class="transcript"><summary>Ver transcripción de Oliver</summary><p lang="en">Hello! My name is Oliver. I’m ten years old. I’m from Belfast, in Northern Ireland. I’ve got one older sister. Her name is Grace. I’ve got short black hair and brown eyes. My favourite subjects are Maths and Music. My best friend is Hannah. She is eleven. She has got long curly hair. Thank you!</p></details>
-</article>
-<div class="example-box" lang="en"><strong>Example of mediation:</strong> Oliver is ten years old. He is from Belfast. He has got a sister. Her name is Grace. His favourite subjects are Maths and Music.</div></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Select the essential information</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>What is the boy’s name?</li><li>How old is he?</li><li>Where is he from?</li><li>Who is Grace?</li><li>What are his favourite subjects?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Change to third person</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Transforma «My name is Oliver» en una frase sobre Oliver.</li><li>Transforma «I’m ten» en una frase con <em>he</em>.</li><li>Transforma «I’ve got a sister» en una frase con <em>he</em>.</li><li>Transforma «My favourite subjects are…» usando <em>his</em>.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Pass on the message</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Prepara una presentación de Oliver de cuatro oraciones.</li><li>Incluye solo información que realmente aparece en el audio.</li><li>Explica a otra persona quién es Hannah.</li><li>Utiliza <em>her</em> correctamente cuando hables de Grace.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Spot the incorrect message</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Compara «Oliver is from Belfast» con «Oliver is from Dublin». ¿Cuál respeta el audio?</li><li>Compara «Grace is his sister» con «Grace is his teacher».</li><li>Explica por qué no debemos añadir datos que no conocemos.</li><li>Reescribe una información incorrecta de forma fiel al audio.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Use your own words</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Resume oralmente la presentación de Oliver en tres frases sencillas.</li><li>Haz un pequeño esquema con <em>name, age, home, family, school</em>.</li><li>Explica en español los datos principales a una persona que aún no domina el inglés.</li><li>Comprueba que tu mensaje sigue siendo fiel al original.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Transmitir información correctamente no significa traducir cada palabra: significa conservar los datos esenciales sin inventarlos.</div>
-</section>
+        <div class="learning-grid">
 
-<!-- =========================================================
-     APARTADO 1.10: Planning my English profile
-     ========================================================= -->
-<section id="sec-10" class="learning-section" aria-labelledby="sec-10-title">
-  <header class="section-heading">
-    <span class="section-number">1.10</span>
-    <h2 id="sec-10-title">Planning my English profile</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Antes de escribir un texto, planifica sus <strong>apartados</strong>, elige el vocabulario y revisa las estructuras que vas a necesitar. Tu producto final será <em>My English profile</em>. Puedes utilizar <strong>información inventada</strong> para practicar sin compartir datos personales.</p>
-<div class="overflow-x-auto my-4"><table class="learning-table"><thead><tr><th>Section</th><th>Question to answer</th><th>Model</th></tr></thead><tbody>
-<tr><td>Introduction</td><td>What’s your name? How old are you?</td><td>My name is … I’m … years old.</td></tr>
-<tr><td>Country / nationality</td><td>Where are you from?</td><td>I’m from … I’m …</td></tr>
-<tr><td>Family</td><td>Have you got brothers or sisters?</td><td>I’ve got … / I haven’t got …</td></tr>
-<tr><td>Appearance</td><td>What do you look like?</td><td>I’ve got … hair and … eyes.</td></tr>
-<tr><td>School</td><td>What is your favourite subject?</td><td>My favourite subject is …</td></tr>
-</tbody></table></div>
-<p><strong>Proceso:</strong> selecciona → organiza → redacta un borrador → revisa → publica la versión definitiva. Para enlazar ideas, utiliza <em>and</em> (y), <em>but</em> (pero) y <em>also</em> (también), evitando oraciones excesivamente largas.</p></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Choose your information</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Decide si utilizarás un personaje real o ficticio.</li><li>Completa una tabla con nombre, edad, lugar, familia, aspecto y asignaturas.</li><li>Comprueba qué datos puedes expresar en inglés sin ayuda.</li><li>Marca dos palabras que necesitas consultar.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Organise your notes</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Ordena: «My family», «About me», «My school», «My appearance».</li><li>Indica qué sección debe ir primero.</li><li>Escribe una frase breve para cada bloque.</li><li>Comprueba que no repites la misma información.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Select useful grammar</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Escribe dos oraciones con <em>to be</em>.</li><li>Escribe dos oraciones con <em>have got</em>.</li><li>Incluye al menos dos adjetivos posesivos.</li><li>Subraya los verbos y comprueba su concordancia.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Create the first draft</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Redacta entre 8 y 10 oraciones sencillas siguiendo los apartados.</li><li>Utiliza <em>and</em> para unir dos ideas relacionadas.</li><li>Revisa mayúsculas en nombres, países y nacionalidades.</li><li>Marca las frases sobre las que tienes dudas.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Improve the draft</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Comprueba que cada apartado contiene información relevante.</li><li>Elimina una repetición innecesaria.</li><li>Corrige una frase con ayuda de un modelo o glosario.</li><li>Escribe una meta concreta antes de preparar la versión final.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Un buen borrador puede tener errores: lo importante es detectarlos, corregirlos y mejorar el mensaje antes de presentarlo.</div>
-</section>
 
-<!-- =========================================================
-     APARTADO 1.11: My English profile: final product
-     ========================================================= -->
-<section id="sec-11" class="learning-section" aria-labelledby="sec-11-title">
-  <header class="section-heading">
-    <span class="section-number">1.11</span>
-    <h2 id="sec-11-title">My English profile: final product</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>El <strong>producto final</strong> incluye una presentación escrita organizada y una breve exposición oral. Debe reunir los contenidos de la SdA: datos personales, procedencia, familia, descripción, vida escolar, <em>to be</em>, <em>have got</em> y posesivos.</p>
-<div class="reading-box"><h3 class="font-bold text-junta-dark mb-3">✍️ Model · My English Profile</h3><div class="reading-prose" lang="en"><p>Hello! My name is Maya and I’m eleven years old. I’m from Seville, in Spain, and I’m Spanish. I am friendly and curious.</p><p>I’ve got long dark hair and brown eyes. I’ve got a brother. His name is Leo and he is eight. My mother is a teacher and my father loves music. We have got a small dog. Its name is Coco.</p><p>I’m a pupil at a primary school. My favourite subjects are English and Science, but I also like Art. I’ve got a blue notebook and a green pencil case. I enjoy learning new words and meeting new friends.</p><p>That’s my English profile. Nice to meet you!</p></div><p class="text-xs text-slate-500 mt-4">Modelo con datos ficticios; no es necesario publicar información personal real.</p></div>
-<div class="bg-slate-50 border border-slate-200 rounded-2xl p-5"><h4 class="font-bold text-slate-800 mb-3">Revisión de mi perfil</h4><ul class="check-list"><li>Incluye nombre, edad, procedencia y nacionalidad.</li><li>Presenta a alguien de la familia y describe rasgos físicos.</li><li>Menciona alguna asignatura u objeto escolar.</li><li>Utiliza correctamente <em>am/is/are</em> y <em>have got/has got</em>.</li><li>Emplea <em>my, his, her, our</em> donde corresponda.</li><li>Usa mayúsculas, puntos y frases comprensibles.</li><li>Puede presentarse oralmente con claridad.</li></ul></div></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · Study the model</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Localiza cinco datos personales del personaje Maya.</li><li>Encuentra tres formas distintas del verbo <em>to be</em>.</li><li>Busca dos ejemplos de <em>have got</em>.</li><li>Subraya tres adjetivos posesivos.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Write your profile</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Elabora un texto de unas 80–110 palabras sobre ti o un personaje inventado.</li><li>Organiza el texto en tres pequeños párrafos: presentación, familia y escuela.</li><li>Incluye al menos tres estructuras trabajadas en la unidad.</li><li>Escribe una despedida o frase final adecuada.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Check and correct</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Revisa si utilizas <em>he/she</em> correctamente.</li><li>Comprueba <em>is/are</em> y <em>have/has got</em>.</li><li>Comprueba las mayúsculas de nombres propios, países y nacionalidades.</li><li>Corrige errores de ortografía y puntuación.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Present your profile</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Prepara una presentación oral de 45–60 segundos.</li><li>Ensaya las preguntas y las pausas.</li><li>Utiliza un esquema breve como apoyo; evita leer cada palabra.</li><li>Finaliza con «Thank you» o «Nice to meet you».</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Reflect on your work</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Explica dos cambios entre el borrador y el texto final.</li><li>Indica qué parte de tu presentación oral te salió mejor.</li><li>Identifica una palabra o estructura que ya manejas con autonomía.</li><li>Anota un objetivo concreto para la próxima SdA.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> El perfil puede ser de un personaje inventado. Antes de compartir o publicar trabajos escolares, evita incluir dirección, teléfono u otros datos privados.</div>
-</section>
+          <!-- SITUACIÓN DE APRENDIZAJE ING5.1 -->
 
-<!-- =========================================================
-     APARTADO 1.12: Reviewing my learning
-     ========================================================= -->
-<section id="sec-12" class="learning-section" aria-labelledby="sec-12-title">
-  <header class="section-heading">
-    <span class="section-number">1.12</span>
-    <h2 id="sec-12-title">Reviewing my learning</h2>
-  </header>
-  
-  <div class="explanation">
-    <h3>💡 Para comprender y practicar</h3>
-    <div class="explanation-text"><p>Revisar significa comprobar <strong>qué sabemos hacer</strong>, identificar las dificultades y decidir cómo mejorar. Equivocarse en inglés forma parte del aprendizaje: podemos comparar la respuesta con un modelo y volver a intentarlo.</p>
-<div class="example-box" lang="en"><b>Useful reflection sentences:</b><br>I can introduce myself.<br>I can ask questions about age and country.<br>I can describe a person.<br>I need to practise <em>has got</em>.<br>Next time, I will speak more slowly.</div></div>
-  </div>
-  
-  <h3 class="practice-title">Ejercicios de práctica</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 1 · My strengths</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Escribe tres cosas que ahora puedes decir en inglés.</li><li>Pon un ejemplo breve de cada una.</li><li>Señala la tarea de la que estás más satisfecho.</li><li>Explica qué te ayudó a aprenderla.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 2 · Find the error</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Corrige: «She are Spanish».</li><li>Corrige: «He have got a sister».</li><li>Corrige: «I am from Spanish».</li><li>Corrige: «Her name are Zoe».</li><li>Explica al menos dos correcciones.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 3 · Choose a strategy</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Si olvidas <em>nationality</em>, ¿qué recurso puedes consultar?</li><li>Si no entiendes una pregunta oral, ¿qué expresión utilizas?</li><li>Si te cuesta recordar el vocabulario de familia, ¿cómo puedes organizarlo?</li><li>Si tu descripción es demasiado larga, ¿cómo puedes simplificarla?</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 4 · Peer review</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Revisa un perfil de un personaje ficticio elaborado por un compañero.</li><li>Señala dos aspectos que están bien expresados.</li><li>Propón una mejora concreta y respetuosa.</li><li>Comprueba que la sugerencia mantiene la intención del autor.</li></ol></div>
-    </article>
-    <article class="exercise-card">
-      <span class="exercise-pill">Ejercicio 5 · Next steps</span>
-      <div class="exercise-body"><ol class="exercise-list"><li>Redacta un objetivo personal alcanzable para la siguiente unidad.</li><li>Elige dos palabras que quieras practicar.</li><li>Escribe una pregunta con <em>to be</em> y otra con <em>have got</em>.</li><li>Anota cómo comprobarás dentro de una semana si has mejorado.</li></ol></div>
-    </article>
-  </div>
-  <div class="insight"><strong>⭐ Observa, razona y aplica.</strong> Autoevaluarse no es ponerse una nota: es reconocer avances, pedir ayuda cuando hace falta y planificar una mejora realista.</div>
-</section>
-<!-- =========================================================
-     REPASO Y REFUERZO / AMPLIACIÓN
-     ========================================================= -->
-<section id="sec-repaso" class="learning-section" aria-labelledby="repaso-title">
-  <header class="section-heading"><span class="section-number" aria-hidden="true">🔄</span><h2 id="repaso-title">Repasamos lo aprendido</h2></header>
-  <p class="text-slate-600 mb-6">Consolidación de ING5.1. Resuelve primero la ficha de refuerzo y después el desafío de ampliación.</p>
-  <h3 class="text-lg font-bold text-junta-dark mb-4">🟢 Ficha de refuerzo</h3>
-  <div class="exercise-grid">
-    <article class="exercise-card"><strong class="text-junta-dark">1. Greetings</strong><p>Escribe dos saludos, dos despedidas y una pregunta para conocer el nombre de otra persona.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">2. Personal information</strong><p>Completa cinco frases de una presentación ficticia con nombre, edad, procedencia, familia y asignatura favorita.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">3. To be</strong><p>Completa: I ___ ten; he ___ tall; they ___ at school; we ___ friends; she ___ English.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">4. Have got</strong><p>Completa: He ___ got blue eyes; I ___ got a sister; they ___ got books. Convierte una oración en pregunta y otra en negativa.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">5. Possessives</strong><p>Elige: This is (my / his) pencil; She loves (her / their) dog; We like (our / your) teacher.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">6. Vocabulary</strong><p>Traduce: Irish, grandfather, pencil case, curly hair, Science, classroom.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">7. Reading</strong><p>Escribe un resumen en español de la lectura «Welcome to the English Club» y tres datos sobre sus protagonistas.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">8. Speaking and listening</strong><p>Escucha otra vez el diálogo A. Haz tres preguntas a un personaje ficticio y responde a otras tres.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">9. School culture</strong><p>Escribe cuatro palabras de la lectura sobre Aisha y compara una costumbre de su colegio con la del tuyo.</p></article>
-    <article class="exercise-card"><strong class="text-junta-dark">10. Mini-profile</strong><p>Redacta cinco oraciones sobre un personaje inventado utilizando <em>to be</em>, <em>have got</em> y un adjetivo posesivo.</p></article>
-  </div>
-  <h3 class="text-lg font-bold text-amber-800 mt-8 mb-4">🟡 Actividad de ampliación · A new pupil at our school</h3>
-  <div class="explanation"><h3>⭐ Un desafío que reúne lo aprendido</h3>
-    <div class="explanation-text"><p>Imagina que llega a clase una alumna nueva, <strong>Chloe</strong>, de once años, procedente de <strong>Edinburgh, Scotland</strong>. Tiene un hermano, cabello largo y rizado, ojos verdes, y su asignatura favorita es <strong>Science</strong>.</p>
-      <ol class="exercise-list">
-        <li>Escribe cinco preguntas educadas para conocerla.</li>
-        <li>Redacta su perfil en tercera persona (70–90 palabras) sin añadir datos inventados que contradigan los ofrecidos.</li>
-        <li>Explica a otro compañero, en español o inglés sencillo, lo esencial de su presentación.</li>
-        <li>Compara una característica de su vida escolar con la tuya, evitando generalizaciones culturales.</li>
-        <li>Prepara una breve bienvenida oral con saludo, información importante y despedida.</li>
-      </ol>
+          <a
+            class="learning-card"
+            href="/recursos/quinto/ingles5/all-about-me-and-my-school/"
+          >
+
+            <div class="learning-number">
+              01
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                All about me and my school
+              </h2>
+
+              <p>
+                Saludos y presentaciones, información personal, familia, descripciones, países y nacionalidades, asignaturas, <em>to be</em> y <em>have got</em>.
+              </p>
+
+              <span class="learning-count">
+                12 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE ING5.2 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/ingles5/my-daily-life/"
+          >
+
+            <div class="learning-number">
+              02
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                My daily life
+              </h2>
+
+              <p>
+                Rutinas diarias, horarios, días de la semana, aficiones y deportes. <em>Present simple</em>, tercera persona y adverbios de frecuencia.
+              </p>
+
+              <span class="learning-count">
+                13 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE ING5.3 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/ingles5/my-home-and-my-town/"
+          >
+
+            <div class="learning-number">
+              03
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                My home and my town
+              </h2>
+
+              <p>
+                La casa, los muebles y los lugares de la localidad. <em>There is / there are</em>, preposiciones, <em>some / any</em> e indicaciones para orientarse.
+              </p>
+
+              <span class="learning-count">
+                13 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE ING5.4 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/ingles5/food-and-healthy-habits/"
+          >
+
+            <div class="learning-number">
+              04
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Food and healthy habits
+              </h2>
+
+              <p>
+                Alimentos, comidas, hábitos saludables, gustos y preferencias. Sustantivos contables e incontables, cantidades y pedidos en inglés.
+              </p>
+
+              <span class="learning-count">
+                13 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE ING5.5 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/ingles5/nature-and-our-planet/"
+          >
+
+            <div class="learning-number">
+              05
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Nature and our planet
+              </h2>
+
+              <p>
+                Animales, hábitats, paisajes, estaciones y tiempo atmosférico. <em>Can / can’t</em>, comparativos y propuestas para cuidar la naturaleza.
+              </p>
+
+              <span class="learning-count">
+                13 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE ING5.6 -->
+
+          <a
+            class="learning-card"
+            href="/recursos/quinto/ingles5/special-days-and-stories/"
+          >
+
+            <div class="learning-number">
+              06
+            </div>
+
+            <div class="learning-content">
+
+              <h2>
+                Special days and stories
+              </h2>
+
+              <p>
+                Celebraciones, acontecimientos y experiencias pasadas. <em>Was / were</em>, primeros usos del <em>past simple</em> y pequeñas narraciones.
+              </p>
+
+              <span class="learning-count">
+                13 apartados
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
     </div>
-  </div>
-</section>
 
-<!-- =========================================================
-     AUTOEVALUACIÓN Y TEST INTERACTIVO
-     ========================================================= -->
-<section id="sec-diana" class="learning-section" aria-labelledby="eval-title">
-  <header class="section-heading"><span class="section-number" aria-hidden="true">🎯</span><h2 id="eval-title">Autoevaluación</h2></header>
-  <p class="text-slate-600 mb-3">Valora cuánto has aprendido en cada apartado. Esta actividad es personal: no se envían datos ni se asigna una calificación.</p>
-  <p class="text-xs text-slate-600 mb-5"><strong>Escala:</strong> 1 · Casi nunca &nbsp; 2 · A veces &nbsp; 3 · Casi siempre &nbsp; 4 · Siempre</p>
-  <div id="self-assessment" class="space-y-3">
-    <div class="auto-eval-item" data-item="1">
-      <p><strong class="text-junta mr-1">1.1</strong>Comprendo el sentido general y los datos concretos de diálogos breves.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.1">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="2">
-      <p><strong class="text-junta mr-1">1.2</strong>Comprendo perfiles e historias breves y localizo información explícita e implícita.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.2">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="3">
-      <p><strong class="text-junta mr-1">1.3</strong>Saludo, me presento y formulo preguntas personales sencillas.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.3">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="4">
-      <p><strong class="text-junta mr-1">1.4</strong>Utilizo pronombres, to be, have got y adjetivos posesivos.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.4">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="5">
-      <p><strong class="text-junta mr-1">1.5</strong>Organizo y empleo vocabulario de países, familia, aspecto físico y escuela.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.5">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="6">
-      <p><strong class="text-junta mr-1">1.6</strong>Describo oralmente personas con frases comprensibles y pronunciación cuidada.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.6">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="7">
-      <p><strong class="text-junta mr-1">1.7</strong>Participo en conversaciones respetando turnos y pidiendo aclaraciones.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.7">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="8">
-      <p><strong class="text-junta mr-1">1.8</strong>Conozco aspectos de la vida escolar en países anglófonos y respeto sus diferencias.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.8">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="9">
-      <p><strong class="text-junta mr-1">1.9</strong>Transmito datos esenciales de una presentación a otra persona sin alterarlos.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.9">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="10">
-      <p><strong class="text-junta mr-1">1.10</strong>Organizo y reviso un borrador de mi perfil en inglés.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.10">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="11">
-      <p><strong class="text-junta mr-1">1.11</strong>Escribo y presento un perfil personal utilizando los contenidos de la unidad.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.11">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div>
-    <div class="auto-eval-item" data-item="12">
-      <p><strong class="text-junta mr-1">1.12</strong>Identifico mis avances, dificultades y próximos objetivos de aprendizaje.</p>
-      <div class="eval-group" role="group" aria-label="Valoración del aprendizaje 1.12">
-        <button type="button" class="eval-btn" data-rating="1" aria-pressed="false">Casi nunca</button><button type="button" class="eval-btn" data-rating="2" aria-pressed="false">A veces</button><button type="button" class="eval-btn" data-rating="3" aria-pressed="false">Casi siempre</button><button type="button" class="eval-btn" data-rating="4" aria-pressed="false">Siempre</button>
-      </div>
-    </div></div>
-<div class="result-panel auto-eval-controls flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-  <p id="eval-score" role="status" aria-live="polite">Has valorado 0 de 12 aprendizajes.</p>
-  <button type="button" id="reset-eval" class="action-btn secondary">Reiniciar valoración</button>
-</div>
-<div class="mt-10">
-  <h3 class="text-lg font-bold text-slate-800 mb-2">🧩 Comprueba lo aprendido</h3>
-  <p class="text-sm text-slate-600 mb-5">Responde a las 20 preguntas y pulsa «Corregir respuestas». Puedes repetir el cuestionario las veces que necesites.</p>
-  <div id="mini-quiz" class="grid md:grid-cols-2 gap-4">
-      <div class="quiz-question" data-answer="1">
-        <p>1. What does “How old are you?” mean?</p>
-        <div role="group" aria-label="Pregunta 1">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">¿De dónde eres?</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">¿Cuántos años tienes?</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">¿Cómo te llamas?</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>2. Where is Emma from in Dialogue A?</p>
-        <div role="group" aria-label="Pregunta 2">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Bristol</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Dublin</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Cardiff</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>3. What is the main activity in “Welcome to the English Club”?</p>
-        <div role="group" aria-label="Pregunta 3">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Learning about new friends</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Buying food</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Playing football</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>4. Choose the correct answer: “What’s your name?”</p>
-        <div role="group" aria-label="Pregunta 4">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">I’m ten.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">My name is Zoe.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">I’m from Spain.</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="2">
-        <p>5. Complete: I ___ eleven years old.</p>
-        <div role="group" aria-label="Pregunta 5">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">are</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">is</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">am</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>6. Complete: She ___ from Scotland.</p>
-        <div role="group" aria-label="Pregunta 6">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">is</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">are</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">am</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>7. Choose the negative form of “They are at school.”</p>
-        <div role="group" aria-label="Pregunta 7">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">They not at school.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">They aren’t at school.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">They hasn’t at school.</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="2">
-        <p>8. Complete: He ___ got curly hair.</p>
-        <div role="group" aria-label="Pregunta 8">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">have</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">are</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">has</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>9. Choose the correct question:</p>
-        <div role="group" aria-label="Pregunta 9">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Has you got a brother?</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Have you got a brother?</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">You have got a brother?</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>10. Complete: “He is Liam. ___ sister is Ruby.”</p>
-        <div role="group" aria-label="Pregunta 10">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">His</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Her</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Their</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>11. Choose the correct nationality for Spain:</p>
-        <div role="group" aria-label="Pregunta 11">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Spainish</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Spanish</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Spain</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>12. What does “pencil case” mean?</p>
-        <div role="group" aria-label="Pregunta 12">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Estuche</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Lápiz</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Libro</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>13. Choose the correct description:</p>
-        <div role="group" aria-label="Pregunta 13">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">She is got brown eyes.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">She has got brown eyes.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">She have got brown eyes.</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="2">
-        <p>14. Which expression asks for repetition politely?</p>
-        <div role="group" aria-label="Pregunta 14">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Nice to meet you.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Goodbye.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Can you repeat, please?</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>15. What is a “subject” at school?</p>
-        <div role="group" aria-label="Pregunta 15">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Un uniforme</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Una asignatura</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Un aula</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>16. In the reading about Aisha, what is her favourite subject?</p>
-        <div role="group" aria-label="Pregunta 16">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">English</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">History</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">PE</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>17. Change to third person: “My name is Oliver.”</p>
-        <div role="group" aria-label="Pregunta 17">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">His name is Oliver.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Her name are Oliver.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">He name is Oliver.</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="2">
-        <p>18. Which sentence correctly expresses nationality?</p>
-        <div role="group" aria-label="Pregunta 18">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">I’m from Spanish.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">I have Spanish.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">I’m Spanish.</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="0">
-        <p>19. What should you do before finishing your profile?</p>
-        <div role="group" aria-label="Pregunta 19">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Check grammar and spelling</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Delete all family information</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Write everything in one sentence</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>
-      <div class="quiz-question" data-answer="1">
-        <p>20. Which sentence shows a learning goal?</p>
-        <div role="group" aria-label="Pregunta 20">
-          <button type="button" class="quiz-option" data-option="0" aria-pressed="false">I never make mistakes.</button>
-          <button type="button" class="quiz-option" data-option="1" aria-pressed="false">I will practise has got.</button>
-          <button type="button" class="quiz-option" data-option="2" aria-pressed="false">I cannot improve.</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"></p>
-      </div>    </div>
-    <div class="quiz-controls flex flex-wrap gap-3 mt-5">
-      <button type="button" id="check-quiz" class="action-btn">Corregir respuestas</button>
-      <button type="button" id="reset-quiz" class="action-btn secondary">Volver a intentarlo</button>
-    </div>
-    <p id="quiz-summary" class="result-panel" role="status" aria-live="polite">Selecciona una respuesta en cada pregunta para comenzar.</p>
-  </div>
-</section>
-
-      </div><!-- /topic-content -->
-    </div><!-- /topic-shell -->
   </main>
+
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+
   <footer class="site-footer">
+
     <div class="footer-container">
-      <div class="footer-junta"><img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación"></div>
-      <div class="footer-school">
-        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
-        <p>Alcolea · Córdoba</p>
-        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro <span aria-hidden="true">↗</span></a>
+
+
+      <!-- JUNTA DE ANDALUCÍA -->
+
+      <div class="footer-junta">
+
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+
       </div>
+
+
+      <!-- CENTRO -->
+
+      <div class="footer-school">
+
+        <p class="footer-school-name">
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <p>
+          Alcolea · Córdoba
+        </p>
+
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">
+            ↗
+          </span>
+        </a>
+
+      </div>
+
     </div>
-    <div class="footer-bottom"><div class="footer-bottom-container"><p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p><a href="#">Volver arriba ↑</a></div></div>
+
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-container">
+
+        <p>
+          ©
+          <span id="current-year"></span>
+          CEIP Joaquín Tena Artigas
+        </p>
+
+        <a href="#">
+          Volver arriba ↑
+        </a>
+
+      </div>
+
+    </div>
+
   </footer>
-  <script>
-    (function () {
-      'use strict';
-      const items = Array.from(document.querySelectorAll('.auto-eval-item'));
-      const evalScore = document.getElementById('eval-score');
 
-      function updateAssessment() {
-        const answered = items.filter(item => item.querySelector('.eval-btn[aria-pressed="true"]')).length;
-        if (answered === items.length) {
-          evalScore.textContent = `Has valorado los ${items.length} aprendizajes. Revisa los que has marcado como «Casi nunca» o «A veces».`;
-        } else {
-          evalScore.textContent = `Has valorado ${answered} de ${items.length} aprendizajes.`;
-        }
-      }
 
-      document.querySelectorAll('.eval-group').forEach(group => {
-        group.addEventListener('click', event => {
-          const button = event.target.closest('.eval-btn');
-          if (!button || !group.contains(button)) return;
-          group.querySelectorAll('.eval-btn').forEach(candidate => {
-            candidate.setAttribute('aria-pressed', String(candidate === button));
-          });
-          updateAssessment();
-        });
-      });
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
 
-      document.getElementById('reset-eval').addEventListener('click', () => {
-        document.querySelectorAll('.eval-btn').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
-        updateAssessment();
-      });
+  <script src="/js/main.js"></script>
 
-      const questions = Array.from(document.querySelectorAll('.quiz-question'));
-      const quizSummary = document.getElementById('quiz-summary');
-      questions.forEach(question => {
-        question.addEventListener('click', event => {
-          const button = event.target.closest('.quiz-option');
-          if (!button || !question.contains(button)) return;
-          question.querySelectorAll('.quiz-option').forEach(candidate => {
-            candidate.setAttribute('aria-pressed', String(candidate === button));
-          });
-          question.querySelector('.quiz-result').textContent = '';
-          quizSummary.textContent = 'Puedes corregir o modificar tus respuestas.';
-        });
-      });
-
-      document.getElementById('check-quiz').addEventListener('click', () => {
-        let correct = 0;
-        let answered = 0;
-        questions.forEach(question => {
-          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
-          const result = question.querySelector('.quiz-result');
-          if (!selected) {
-            result.textContent = 'Sin responder.';
-            result.style.color = '#a16207';
-            return;
-          }
-          answered++;
-          if (Number(selected.dataset.option) === Number(question.dataset.answer)) {
-            correct++;
-            result.textContent = '✓ Respuesta correcta.';
-            result.style.color = '#166534';
-          } else {
-            const right = question.querySelector(`.quiz-option[data-option="${question.dataset.answer}"]`);
-            result.textContent = `✗ Repasa el apartado. Respuesta correcta: ${right.textContent}`;
-            result.style.color = '#b91c1c';
-          }
-        });
-        quizSummary.textContent = `Resultado: ${correct} de ${questions.length} correctas. Respuestas contestadas: ${answered} de ${questions.length}.`;
-      });
-
-      document.getElementById('reset-quiz').addEventListener('click', () => {
-        document.querySelectorAll('.quiz-option').forEach(button => button.setAttribute('aria-pressed', 'false'));
-        document.querySelectorAll('.quiz-result').forEach(result => { result.textContent = ''; });
-        quizSummary.textContent = 'Puedes intentarlo de nuevo.';
-      });
-
-      // Audio local mediante síntesis de voz inglesa del navegador; sin enlaces externos.
-      const audioStatus = document.getElementById('audio-status');
-      const listeningButtons = Array.from(document.querySelectorAll('.listen-btn'));
-      function updateListeningButtons(activeButton) {
-        listeningButtons.forEach(btn => {
-          btn.textContent = btn === activeButton ? '■ Detener audio' : '▶ Escuchar ' + (btn.closest('.audio-card')?.querySelector('h4')?.textContent?.replace(/^🎧\s*Audio · /, '')?.replace(/^🎧\s*/, '') || 'audio');
-          btn.setAttribute('aria-pressed', String(btn === activeButton));
-        });
-      }
-      listeningButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
-            if (audioStatus) audioStatus.textContent = 'La síntesis de voz no está disponible en este navegador. Utiliza la transcripción del diálogo.';
-            return;
-          }
-          const wasActive = btn.getAttribute('aria-pressed') === 'true';
-          window.speechSynthesis.cancel();
-          if (wasActive) { updateListeningButtons(null); if (audioStatus) audioStatus.textContent = 'Audio detenido.'; return; }
-          const utterance = new SpeechSynthesisUtterance(btn.dataset.speak || '');
-          utterance.lang = 'en-GB';
-          utterance.rate = 0.86;
-          utterance.pitch = 1;
-          const voices = window.speechSynthesis.getVoices();
-          const englishVoice = voices.find(voice => /^en-GB/i.test(voice.lang)) || voices.find(voice => /^en/i.test(voice.lang));
-          if (englishVoice) utterance.voice = englishVoice;
-          utterance.onend = () => { updateListeningButtons(null); if (audioStatus) audioStatus.textContent = 'Reproducción finalizada. Puedes volver a escucharla.'; };
-          utterance.onerror = () => { updateListeningButtons(null); if (audioStatus) audioStatus.textContent = 'No se ha podido reproducir el audio. Puedes leer su transcripción.'; };
-          updateListeningButtons(btn);
-          if (audioStatus) audioStatus.textContent = 'Reproduciendo voz inglesa. Pulsa «Detener audio» para interrumpir.';
-          window.speechSynthesis.speak(utterance);
-        });
-      });
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden && 'speechSynthesis' in window) { window.speechSynthesis.cancel(); updateListeningButtons(null); }
-      });
-
-      const currentYear = document.getElementById('current-year');
-      if (currentYear) currentYear.textContent = new Date().getFullYear();
-    })();
-  </script>
-  <script defer src="/js/main.js"></script>
 </body>
+
 </html>
