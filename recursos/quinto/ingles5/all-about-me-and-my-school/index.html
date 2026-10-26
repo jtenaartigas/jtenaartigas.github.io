@@ -18,14 +18,6 @@
       }
     };
   </script>
-  <script>
-  document.querySelectorAll(".listen-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const audio = new Audio(button.dataset.audio);
-      audio.play();
-    });
-  });
-</script>
   <link rel="stylesheet" href="/css/base.css">
   <style>
     /* Estilo propio de la SdA, sin modificaciones de /css/base.css. */
@@ -95,6 +87,7 @@
     .audio-card { border: 1px solid #bbf7d0; padding: 1rem; border-radius: 1rem; background: white; }
     .listen-btn { color: white; background: #007a33; border: 1px solid #007a33; border-radius: .65rem; padding: .65rem 1rem; font-size: .86rem; font-weight: 750; cursor: pointer; margin: .35rem 0 .8rem; }
     .listen-btn:hover { background: #005724; }
+    .audio-feedback { min-height: 1rem; margin: 0 0 .5rem; font-size: .78rem; color: #475569; }
     .listen-btn:focus-visible, .eval-btn:focus-visible, .quiz-option:focus-visible, .action-btn:focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }
     .transcript { font-size: .84rem; color: #334155; line-height: 1.8; }
     .transcript summary { cursor: pointer; color: #005724; font-weight: 700; }
@@ -197,16 +190,18 @@
 <div class="grid md:grid-cols-2 gap-4 mt-4">
   <article class="audio-card">
     <h4 class="font-bold text-junta-dark mb-2">🎧 Dialogue A · Emma and Ben</h4>
-    <button type="button" class="listen-btn" data-audio="/audio/ingles5/ing-5.1-EmmaBen.mp3" aria-label="Escuchar el diálogo A en inglés">▶ Escuchar diálogo A</button>
+    <button type="button" class="listen-btn" data-audio="/media/ing-5.1-EmmaBen.mp3" aria-label="Escuchar el diálogo A en inglés">▶ Escuchar diálogo A</button>
+    <p class="audio-feedback" role="status" aria-live="polite"></p>
     <details class="transcript"><summary>Ver transcripción del diálogo A</summary><p><b>Emma:</b> Hello! My name is Emma. What’s your name?<br><b>Ben:</b> Hi, Emma. I’m Ben. How old are you?<br><b>Emma:</b> I’m ten years old. I’m from Bristol, in England. And you?<br><b>Ben:</b> I’m eleven. I’m from Cardiff, in Wales.<br><b>Emma:</b> Have you got any brothers or sisters?<br><b>Ben:</b> Yes, I’ve got one brother. His name is Jack.<br><b>Emma:</b> My favourite subject is Science.<br><b>Ben:</b> I love Art! See you later, Emma.<br><b>Emma:</b> Goodbye, Ben!</p></details>
   </article>
   <article class="audio-card">
     <h4 class="font-bold text-junta-dark mb-2">🎧 Dialogue B · Lucy and Daniel</h4>
-    <button type="button" class="listen-btn" data-speak="Good morning! I'm Lucy. I'm from London. Are you new here? Yes, I am. My name is Daniel. I'm from Dublin, in Ireland. I'm eleven. Nice to meet you, Daniel. Have you got a sister? Yes, I've got a little sister. Her name is Mia. What's your favourite subject? My favourite subject is Music. Mine is English. See you in class! See you!" aria-label="Escuchar el diálogo B en inglés">▶ Escuchar diálogo B</button>
+    <button type="button" class="listen-btn" data-audio="/media/ing-5.1-LucyDaniel.mp3" aria-label="Escuchar el diálogo B en inglés">▶ Escuchar diálogo B</button>
+    <p class="audio-feedback" role="status" aria-live="polite"></p>
     <details class="transcript"><summary>Ver transcripción del diálogo B</summary><p><b>Lucy:</b> Good morning! I’m Lucy. I’m from London. Are you new here?<br><b>Daniel:</b> Yes, I am. My name is Daniel. I’m from Dublin, in Ireland. I’m eleven.<br><b>Lucy:</b> Nice to meet you, Daniel. Have you got a sister?<br><b>Daniel:</b> Yes, I’ve got a little sister. Her name is Mia.<br><b>Lucy:</b> What’s your favourite subject?<br><b>Daniel:</b> My favourite subject is Music.<br><b>Lucy:</b> Mine is English. See you in class!<br><b>Daniel:</b> See you!</p></details>
   </article>
 </div>
-<p id="audio-status" class="text-sm mt-3 text-slate-600" aria-live="polite">Los audios utilizan las voces inglesas disponibles en el dispositivo. Si no hay voz compatible, utiliza la transcripción.</p></div>
+<p id="audio-status" class="text-sm mt-3 text-slate-600" aria-live="polite">Pulsa «Escuchar» para reproducir los audios MP3. Si un archivo todavía no está disponible, puedes consultar su transcripción.</p></div>
   </div>
   
   <h3 class="practice-title">Ejercicios de práctica</h3>
@@ -618,7 +613,8 @@
 <p>Utiliza la tercera persona y los posesivos adecuados: <strong>His name is…</strong> (su nombre, de él), <strong>Her name is…</strong> (su nombre, de ella), <strong>He is from…</strong>, <strong>She has got…</strong>.</p>
 <article class="audio-card mt-4">
   <h4 class="font-bold text-junta-dark mb-2">🎧 Audio · Meet Oliver</h4>
-  <button type="button" class="listen-btn" data-speak="Hello! My name is Oliver. I'm ten years old. I'm from Belfast, in Northern Ireland. I've got one older sister. Her name is Grace. I've got short black hair and brown eyes. My favourite subjects are Maths and Music. My best friend is Hannah. She is eleven. She has got long curly hair. Thank you!" aria-label="Escuchar la presentación de Oliver">▶ Escuchar presentación</button>
+  <button type="button" class="listen-btn" data-audio="/media/ing-5.1-Oliver.mp3" aria-label="Escuchar la presentación de Oliver">▶ Escuchar presentación</button>
+    <p class="audio-feedback" role="status" aria-live="polite"></p>
   <details class="transcript"><summary>Ver transcripción de Oliver</summary><p lang="en">Hello! My name is Oliver. I’m ten years old. I’m from Belfast, in Northern Ireland. I’ve got one older sister. Her name is Grace. I’ve got short black hair and brown eyes. My favourite subjects are Maths and Music. My best friend is Hannah. She is eleven. She has got long curly hair. Thank you!</p></details>
 </article>
 <div class="example-box" lang="en"><strong>Example of mediation:</strong> Oliver is ten years old. He is from Belfast. He has got a sister. Her name is Grace. His favourite subjects are Maths and Music.</div></div>
@@ -1180,40 +1176,84 @@
       });
 
       // Audio local mediante síntesis de voz inglesa del navegador; sin enlaces externos.
-      const audioStatus = document.getElementById('audio-status');
-      const listeningButtons = Array.from(document.querySelectorAll('.listen-btn'));
-      function updateListeningButtons(activeButton) {
-        listeningButtons.forEach(btn => {
-          btn.textContent = btn === activeButton ? '■ Detener audio' : '▶ Escuchar ' + (btn.closest('.audio-card')?.querySelector('h4')?.textContent?.replace(/^🎧\s*Audio · /, '')?.replace(/^🎧\s*/, '') || 'audio');
-          btn.setAttribute('aria-pressed', String(btn === activeButton));
-        });
+      // Audios MP3 externos. No se utiliza síntesis de voz del navegador.
+      const listeningButtons = Array.from(document.querySelectorAll('.listen-btn[data-audio]'));
+      let currentAudio = null;
+      let currentButton = null;
+
+      function setAudioMessage(button, message) {
+        const feedback = button.closest('.audio-card')?.querySelector('.audio-feedback');
+        if (feedback) feedback.textContent = message;
       }
-      listeningButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
-            if (audioStatus) audioStatus.textContent = 'La síntesis de voz no está disponible en este navegador. Utiliza la transcripción del diálogo.';
+
+      function restoreAudioButton(button) {
+        if (!button) return;
+        button.textContent = button.dataset.originalLabel || '▶ Escuchar audio';
+        button.setAttribute('aria-pressed', 'false');
+      }
+
+      function stopAudio() {
+        const audio = currentAudio;
+        const button = currentButton;
+        currentAudio = null;
+        currentButton = null;
+        if (audio) {
+          audio.pause();
+          try { audio.currentTime = 0; } catch (_) { /* Audio aún no cargado */ }
+        }
+        restoreAudioButton(button);
+      }
+
+      listeningButtons.forEach(button => {
+        button.dataset.originalLabel = button.textContent.trim();
+        button.setAttribute('aria-pressed', 'false');
+
+        button.addEventListener('click', async () => {
+          // Pulsar otra vez detiene el audio activo.
+          if (currentButton === button) {
+            stopAudio();
+            setAudioMessage(button, 'Audio detenido.');
             return;
           }
-          const wasActive = btn.getAttribute('aria-pressed') === 'true';
-          window.speechSynthesis.cancel();
-          if (wasActive) { updateListeningButtons(null); if (audioStatus) audioStatus.textContent = 'Audio detenido.'; return; }
-          const utterance = new SpeechSynthesisUtterance(btn.dataset.speak || '');
-          utterance.lang = 'en-GB';
-          utterance.rate = 0.86;
-          utterance.pitch = 1;
-          const voices = window.speechSynthesis.getVoices();
-          const englishVoice = voices.find(voice => /^en-GB/i.test(voice.lang)) || voices.find(voice => /^en/i.test(voice.lang));
-          if (englishVoice) utterance.voice = englishVoice;
-          utterance.onend = () => { updateListeningButtons(null); if (audioStatus) audioStatus.textContent = 'Reproducción finalizada. Puedes volver a escucharla.'; };
-          utterance.onerror = () => { updateListeningButtons(null); if (audioStatus) audioStatus.textContent = 'No se ha podido reproducir el audio. Puedes leer su transcripción.'; };
-          updateListeningButtons(btn);
-          if (audioStatus) audioStatus.textContent = 'Reproduciendo voz inglesa. Pulsa «Detener audio» para interrumpir.';
-          window.speechSynthesis.speak(utterance);
+
+          // Solamente se reproduce un archivo a la vez.
+          stopAudio();
+          const audio = new Audio(button.dataset.audio);
+          audio.preload = 'none';
+          currentAudio = audio;
+          currentButton = button;
+          button.textContent = '■ Detener audio';
+          button.setAttribute('aria-pressed', 'true');
+          setAudioMessage(button, 'Cargando audio…');
+
+          audio.addEventListener('ended', () => {
+            if (currentAudio !== audio) return;
+            stopAudio();
+            setAudioMessage(button, 'Reproducción finalizada. Puedes escucharlo de nuevo.');
+          });
+
+          audio.addEventListener('error', () => {
+            if (currentAudio !== audio) return;
+            stopAudio();
+            setAudioMessage(button, 'No se ha podido cargar el MP3. Comprueba que existe en ' + button.dataset.audio + '.');
+          });
+
+          try {
+            await audio.play();
+            if (currentAudio === audio) setAudioMessage(button, 'Reproduciendo audio.');
+          } catch (_) {
+            if (currentAudio !== audio) return;
+            stopAudio();
+            setAudioMessage(button, 'No se ha podido reproducir el MP3. Comprueba el archivo ' + button.dataset.audio + '.');
+          }
         });
       });
+
+      // Al cambiar de página/pestaña se detiene el sonido.
       document.addEventListener('visibilitychange', () => {
-        if (document.hidden && 'speechSynthesis' in window) { window.speechSynthesis.cancel(); updateListeningButtons(null); }
+        if (document.hidden) stopAudio();
       });
+      window.addEventListener('pagehide', stopAudio);
 
       const currentYear = document.getElementById('current-year');
       if (currentYear) currentYear.textContent = new Date().getFullYear();
