@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FRA6.6. Notre magazine en français. Francés de 6.º de Primaria. Recursos de aprendizaje del CEIP Joaquín Tena Artigas.">
+  <title>FRA6.6 · Notre magazine en français | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!-- Estilos propios de la SdA, con cabeceras .lesson-section-heading. -->
+  <style>
+    /* Colores de Francés; no modifican /css/base.css. */
+    :root {
+      --fr-blue: #405ca8;
+      --fr-dark: #30477f;
+      --fr-soft: #eff4ff;
+      --fr-line: #cbd7f0;
+      --fr-ink: #233047;
+      --fr-muted: #506077;
+    }
+
+    html { scroll-behavior: smooth; }
+    .subject-page { background: var(--background-soft, #f6f8fb); }
+    .lesson-shell { width: min(92%, 1080px); margin: 0 auto; padding: 2rem 0 3.5rem; }
+    .lesson-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 1.4rem;
+      align-items: center;
+      padding: 1.8rem;
+      border: 1px solid var(--fr-line);
+      border-radius: 24px;
+      background: linear-gradient(125deg, var(--fr-soft), #fff 76%);
+      box-shadow: var(--shadow-soft, 0 4px 18px #213c6212);
+      margin-bottom: 1.7rem;
+    }
+    .lesson-code { font-size: .8rem; color: var(--fr-blue); font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .lesson-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.15; color: var(--fr-ink); margin: .45rem 0 1rem; text-align: left; }
+    .lesson-hero p { color: var(--fr-muted); max-width: 680px; line-height: 1.65; margin: 0; }
+    .lesson-hero img { width: 160px; max-width: 100%; height: auto; justify-self: center; }
+    .lesson-meta { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 0; }
+    .lesson-meta span { background: #fff; color: var(--fr-dark); border: 1px solid var(--fr-line); border-radius: 30px; padding: .3rem .65rem; font-size: .78rem; font-weight: 700; }
+    .lesson-nav { padding: 1.2rem; margin-bottom: 1.8rem; background: #fff; border: 1px solid var(--fr-line); border-radius: 16px; }
+    .lesson-nav h2 { text-align: left; margin: 0 0 .9rem; font-size: 1.05rem; color: var(--fr-ink); }
+    .lesson-nav ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem .8rem; padding: 0; margin: 0; list-style: none; }
+    .lesson-nav a { display: block; padding: .4rem .45rem; text-decoration: none; color: var(--fr-dark); border-radius: 6px; font-size: .9rem; }
+    .lesson-nav a:hover, .lesson-nav a:focus-visible { background: var(--fr-soft); text-decoration: underline; }
+    .lesson-section {
+      background: #fff;
+      margin: 1.6rem 0;
+      padding: 1.5rem;
+      border: 1px solid #e1e7f0;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px #2638580a;
+      scroll-margin-top: 1.5rem;
+    }
+    /* Clase específica: evita que los estilos globales centren los encabezados. */
+    .subject-page .lesson-section h2.lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .8rem;
+      width: 100%;
+      text-align: left;
+      margin: 0 0 1rem;
+      color: var(--fr-ink);
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+    .section-number { display: inline-block; flex-shrink: 0; background: var(--fr-blue); color: #fff; font-weight: 800; font-size: .86rem; padding: .48rem .58rem; border-radius: 9px; }
+    .section-intro { line-height: 1.7; margin: 0 0 1.2rem; color: var(--fr-ink); }
+    .vocabulary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; margin-bottom: 1.4rem; }
+    .word-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .4rem; align-items: center; border: 1px solid #dce5f7; border-radius: 9px; overflow: hidden; }
+    .word-pair span { padding: .65rem .7rem; font-size: .92rem; }
+    .word-fr { font-weight: 700; color: var(--fr-dark); background: #f2f5ff; }
+    .word-es { color: var(--fr-ink); }
+    .example-box, .model-box { background: var(--fr-soft); padding: 1rem 1.2rem; border-left: 4px solid var(--fr-blue); border-radius: 0 12px 12px 0; margin-bottom: 1.35rem; color: var(--fr-ink); }
+    .example-box h3, .model-box h3 { font-size: 1rem; margin: 0 0 .7rem; color: var(--fr-dark); text-align: left; }
+    .example-box ul { margin: 0; padding-left: 1.3rem; }
+    .example-box li { margin: .45rem 0; line-height: 1.6; }
+    .model-box p { margin: .45rem 0; line-height: 1.7; }
+    .exercise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+    .exercise-card { min-width: 0; padding: 1rem; border: 1px solid #e0e7f1; border-radius: 12px; background: #fbfcff; }
+    .exercise-label { display: inline-block; padding: .22rem .6rem; border-radius: 5px; font-size: .76rem; font-weight: 800; background: var(--fr-blue); color: #fff; }
+    .exercise-card p { color: var(--fr-ink); margin: .65rem 0 0; line-height: 1.58; font-size: .95rem; }
+    .audio-panel { background: #f6f9ff; border: 1px solid var(--fr-line); padding: 1.1rem; border-radius: 13px; margin-bottom: 1.35rem; }
+    .listen-btn { background: var(--fr-blue); border: 0; color: #fff; border-radius: 9px; cursor: pointer; font-size: .95rem; font-weight: 800; padding: .8rem 1rem; }
+    .listen-btn:hover, .listen-btn:focus-visible { background: var(--fr-dark); }
+    .listen-btn:focus-visible { outline: 3px solid #8a9ed6; outline-offset: 3px; }
+    .audio-status { font-size: .86rem; color: var(--fr-muted); margin: .65rem 0 0; }
+    .transcript { margin-top: .9rem; border-top: 1px solid var(--fr-line); padding-top: .8rem; }
+    .transcript summary { cursor: pointer; font-weight: 700; color: var(--fr-dark); }
+    .transcript p { margin: .7rem 0 .15rem; line-height: 1.65; }
+    .section-project { border-color: #badbc9; }
+    .section-project .section-number { background: #27774c; }
+    .section-reinforce .section-number { background: #6b4db1; }
+    .section-extend .section-number { background: #a76917; }
+    .section-check .section-number { background: #275887; }
+    .lesson-back { margin-top: 1.6rem; }
+    .lesson-back a { display: inline-block; padding: .8rem 1rem; border-radius: 8px; background: var(--fr-soft); color: var(--fr-dark); font-weight: 700; text-decoration: none; }
+    .lesson-back a:hover { text-decoration: underline; }
+    @media (max-width: 800px) {
+      .lesson-hero { grid-template-columns: minmax(0,1fr) 110px; padding: 1.2rem; }
+      .lesson-hero img { width: 105px; }
+      .lesson-nav ul { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 620px) {
+      .lesson-shell { width: 94%; }
+      .lesson-hero { grid-template-columns: 1fr; }
+      .lesson-hero img { width: 110px; }
+      .lesson-section { padding: 1rem; }
+      .lesson-nav ul, .vocabulary-grid, .exercise-grid { grid-template-columns: 1fr; }
+      .word-pair { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Enlace de accesibilidad -->
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- Banner institucional -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+
+  <!-- Navegación principal de la web -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Contenido de la SdA -->
+  <main id="contenido-principal" class="subject-page">
+    <div class="lesson-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/frances6/">Francés</a></li>
+          <li aria-current="page">FRA6.6</li>
+        </ol>
+      </nav>
+
+      <!-- Presentación de la unidad -->
+      <section class="lesson-hero" aria-labelledby="titulo-unidad">
+        <div>
+          <span class="lesson-code">Francés · 6.º de Primaria · FRA6.6</span>
+          <h1 id="titulo-unidad">Notre magazine en français</h1>
+          <p>Integrar lo aprendido en una revista con artículos y presentaciones breves.</p>
+          <div class="lesson-meta">
+            <span>3.º trimestre</span>
+            <span>Situación de Aprendizaje 6</span>
+            <span>13 apartados</span>
+          </div>
+        </div>
+        <img src="/img/tomatito/frances.png" alt="" width="160" height="160" loading="lazy">
+      </section>
+
+      <!-- Índice interno -->
+      <nav class="lesson-nav" aria-label="Índice de la Situación de Aprendizaje">
+        <h2>Contenido de esta Situación de Aprendizaje</h2>
+        <ul>
+          <li><a href="#apartado-6-1">6.1 Secciones de una revista</a></li>
+          <li><a href="#apartado-6-2">6.2 Expresiones para comunicar</a></li>
+          <li><a href="#apartado-6-3">6.3 Repasamos los verbos más útiles</a></li>
+          <li><a href="#apartado-6-4">6.4 Preguntar, negar y enlazar</a></li>
+          <li><a href="#apartado-6-5">6.5 Reunión de redacción</a></li>
+          <li><a href="#apartado-6-6">6.6 La entonación de una presentación</a></li>
+          <li><a href="#apartado-6-7">6.7 Comprensión oral · Écoute !</a></li>
+          <li><a href="#apartado-6-8">6.8 Comprensión escrita · Lis et comprends</a></li>
+          <li><a href="#apartado-6-9">6.9 Una revista intercultural</a></li>
+          <li><a href="#apartado-6-10">6.10 Producto final · Nuestra revista en francés</a></li>
+          <li><a href="#apartado-6-11">6.11 Ficha de refuerzo</a></li>
+          <li><a href="#apartado-6-12">6.12 Ficha de ampliación</a></li>
+          <li><a href="#apartado-6-13">6.13 Comprueba lo aprendido</a></li>
+        </ul>
+      </nav>
+
+      <!-- APARTADO 6.1: Secciones de una revista -->
+      <section id="apartado-6-1" class="lesson-section section-normal" aria-labelledby="titulo-6-1">
+        <h2
+          id="titulo-6-1"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.1</span>
+          <span>Secciones de una revista</span>
+        </h2>
+        <p class="section-intro">Una revista necesita títulos, textos, imágenes y fuentes de información.</p>
+        <div class="vocabulary-grid">
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le titre</span>
+            <span class="word-es">el título</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">l’article</span>
+            <span class="word-es">el artículo</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">la rubrique</span>
+            <span class="word-es">la sección</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une interview</span>
+            <span class="word-es">una entrevista</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une photo</span>
+            <span class="word-es">una fotografía</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une légende</span>
+            <span class="word-es">un pie de foto</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le sommaire</span>
+            <span class="word-es">el sumario</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le lecteur / la lectrice</span>
+            <span class="word-es">el lector / la lectora</span>
+          </div>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al español: le titre; l’article; la rubrique; une interview.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe en francés: una fotografía; un pie de foto; el sumario; el lector / la lectora.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona estas cuatro expresiones con su significado: une photo; une légende; le sommaire; le lecteur / la lectrice.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Propón un sumario con cuatro secciones en francés.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.2: Expresiones para comunicar -->
+      <section id="apartado-6-2" class="lesson-section section-normal" aria-labelledby="titulo-6-2">
+        <h2
+          id="titulo-6-2"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.2</span>
+          <span>Expresiones para comunicar</span>
+        </h2>
+        <p class="section-intro">Para escribir textos podemos describir, opinar y presentar proyectos.</p>
+        <div class="vocabulary-grid">
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">je pense que</span>
+            <span class="word-es">pienso que</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">parce que</span>
+            <span class="word-es">porque</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">mais</span>
+            <span class="word-es">pero</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">et</span>
+            <span class="word-es">y</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">d’abord</span>
+            <span class="word-es">primero</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">ensuite</span>
+            <span class="word-es">después</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">enfin</span>
+            <span class="word-es">finalmente</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">je vais</span>
+            <span class="word-es">voy a</span>
+          </div>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al español: je pense que; parce que; mais; et.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe en francés: primero; después; finalmente; voy a.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona estas cuatro expresiones con su significado: d’abord; ensuite; enfin; je vais.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe un texto corto enlazando cuatro frases con conectores.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.3: Repasamos los verbos más útiles -->
+      <section id="apartado-6-3" class="lesson-section section-normal" aria-labelledby="titulo-6-3">
+        <h2
+          id="titulo-6-3"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.3</span>
+          <span>Repasamos los verbos más útiles</span>
+        </h2>
+        <p class="section-intro">Con être, avoir y aller damos información personal, edad y planes; los verbos en -er expresan acciones habituales.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Nous sommes élèves. — Somos alumnos.</li>
+            <li>Elle a douze ans. — Tiene doce años.</li>
+            <li>Je vais écrire un article. — Voy a escribir un artículo.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Completa frases con «sommes», «a» o «vais».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe una frase con un verbo en -er en presente.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Convierte «Je vais écrire» en una frase con «nous».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Redacta cuatro oraciones para presentar a un personaje.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.4: Preguntar, negar y enlazar -->
+      <section id="apartado-6-4" class="lesson-section section-normal" aria-labelledby="titulo-6-4">
+        <h2
+          id="titulo-6-4"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.4</span>
+          <span>Preguntar, negar y enlazar</span>
+        </h2>
+        <p class="section-intro">Utilizamos preguntas sencillas, «ne… pas» y conectores para organizar los textos.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Tu aimes voyager ? — ¿Te gusta viajar?</li>
+            <li>Je n’aime pas le froid. — No me gusta el frío.</li>
+            <li>J’aime lire parce que c’est amusant. — Me gusta leer porque es divertido.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Transforma una frase afirmativa en negativa con «ne… pas».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe dos preguntas para entrevistar a un compañero.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Une dos ideas con «mais» y dos con «parce que».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Revisa las mayúsculas, puntuación y conectores de un texto inventado.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.5: Reunión de redacción -->
+      <section id="apartado-6-5" class="lesson-section section-normal" aria-labelledby="titulo-6-5">
+        <h2
+          id="titulo-6-5"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.5</span>
+          <span>Reunión de redacción</span>
+        </h2>
+        <p class="section-intro">Leemos un modelo breve. Después practicamos y adaptamos las expresiones a una situación propia.</p>
+        <div class="model-box">
+          <p lang="fr">A: On prépare notre magazine ?</p>
+          <p lang="fr">B: Oui ! Je vais écrire un article sur les loisirs.</p>
+          <p lang="fr">A: Moi, je vais présenter une ville francophone.</p>
+          <p lang="fr">B: Et nous allons faire une interview !</p>
+          <p lang="fr">A: Parfait. D’abord, le sommaire; ensuite, les textes.</p>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué dos temas se proponen?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Qué otra sección quieren incluir?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Identifica dos expresiones de futuro próximo.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Representa una reunión de redacción con nuevas ideas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.6: La entonación de una presentación -->
+      <section id="apartado-6-6" class="lesson-section section-normal" aria-labelledby="titulo-6-6">
+        <h2
+          id="titulo-6-6"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.6</span>
+          <span>La entonación de una presentación</span>
+        </h2>
+        <p class="section-intro">Al presentar una revista, las pausas, las preguntas y la pronunciación clara ayudan a comprender.</p>
+        <div class="audio-panel">
+          <button type="button" class="listen-btn" data-audio="/media/frances6/fra6-6-pronunciacion.mp3" data-status-target="estado-6-pron">
+            ▶ Escuchar pronunciación
+          </button>
+          <p id="estado-6-pron" class="audio-status" role="status" aria-live="polite">Pulsa el botón para escuchar.</p>
+          <details class="transcript">
+            <summary>Leer la transcripción en francés</summary>
+            <p lang="fr">Bonjour à tous ! Voici notre magazine. D’abord… Ensuite… Enfin… Merci !</p>
+          </details>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Escucha y repite la presentación modelo.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Marca pausas naturales después de «d’abord» y «ensuite».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Lee un titular y una entradilla con buena entonación.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Prepara una introducción oral de treinta segundos.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.7: Comprensión oral · Écoute ! -->
+      <section id="apartado-6-7" class="lesson-section section-normal" aria-labelledby="titulo-6-7">
+        <h2
+          id="titulo-6-7"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.7</span>
+          <span>Comprensión oral · Écoute !</span>
+        </h2>
+        <p class="section-intro">Escucha sin leer la transcripción en la primera reproducción; vuelve a escuchar para responder.</p>
+        <div class="audio-panel">
+          <button type="button" class="listen-btn" data-audio="/media/frances6/fra6-6-dialogo.mp3" data-status-target="estado-6-dialogo">
+            ▶ Escuchar el diálogo
+          </button>
+          <p id="estado-6-dialogo" class="audio-status" role="status" aria-live="polite">Pulsa el botón para escuchar.</p>
+          <details class="transcript">
+            <summary>Leer la transcripción en francés</summary>
+            <p lang="fr">Bonjour à tous ! Bienvenue dans notre magazine en français. Aujourd’hui, nous présentons trois rubriques : les loisirs, les voyages et la santé. Lina va parler de ses sports préférés. Karim va décrire Bruxelles. Enfin, Zoé va donner trois conseils pour bien dormir. Bonne lecture !</p>
+          </details>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Cuántas secciones se presentan?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿De qué hablará Lina?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Qué ciudad describirá Karim?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>¿Qué tema abordará Zoé?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.8: Comprensión escrita · Lis et comprends -->
+      <section id="apartado-6-8" class="lesson-section section-normal" aria-labelledby="titulo-6-8">
+        <h2
+          id="titulo-6-8"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.8</span>
+          <span>Comprensión escrita · Lis et comprends</span>
+        </h2>
+        <p class="section-intro">Lee el texto. Busca las ideas principales y revisa las palabras que ya conoces.</p>
+        <div class="model-box">
+          <p lang="fr">Notre école publie un petit magazine en français. Dans la rubrique « Portraits », nous présentons nos amis. Dans « Voyages », nous décrivons des villes francophones. Dans « Bien-être », nous donnons des conseils simples. Le magazine a un sommaire, des articles courts et des dessins. Nous écrivons ensemble, mais chacun relit son texte.</p>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué tres secciones aparecen?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Qué información incluye «Voyages»?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Por qué se releen los textos?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Inventa un título atractivo para una nueva sección.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.9: Una revista intercultural -->
+      <section id="apartado-6-9" class="lesson-section section-normal" aria-labelledby="titulo-6-9">
+        <h2
+          id="titulo-6-9"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.9</span>
+          <span>Una revista intercultural</span>
+        </h2>
+        <p class="section-intro">Los medios de comunicación muestran múltiples perspectivas. Una publicación escolar debe contrastar datos, citar fuentes y respetar las lenguas y culturas de las personas.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>En diferentes regiones francófonas conviven distintas lenguas y costumbres.</li>
+            <li>Aprender una lengua también significa comunicarse con respeto.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Por qué es útil revisar los datos antes de publicarlos?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe una norma de respeto para imágenes y entrevistas.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Cómo señalarías la fuente de una fotografía?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Propón dos temas sobre diversidad cultural sin estereotipos.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.10: Producto final · Nuestra revista en francés -->
+      <section id="apartado-6-10" class="lesson-section section-project" aria-labelledby="titulo-6-10">
+        <h2
+          id="titulo-6-10"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.10</span>
+          <span>Producto final · Nuestra revista en francés</span>
+        </h2>
+        <p class="section-intro">Compón una revista breve que reúna los aprendizajes de 5.º y 6.º.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Planifica tu trabajo antes de redactar.</li>
+            <li>Revisa la expresión francesa y las fórmulas de cortesía.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Elabora un sumario de al menos cuatro secciones.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe una presentación, un reportaje breve y una entrevista.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Incluye una sección sobre una ciudad francófona y otra sobre hábitos cotidianos.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Revisa ortografía, fuentes y maquetación; presenta una sección oralmente.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.11: Ficha de refuerzo -->
+      <section id="apartado-6-11" class="lesson-section section-reinforce" aria-labelledby="titulo-6-11">
+        <h2
+          id="titulo-6-11"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.11</span>
+          <span>Ficha de refuerzo</span>
+        </h2>
+        <p class="section-intro">Repasa los contenidos imprescindibles y comprueba los ejemplos si lo necesitas.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Puedes apoyarte en las tablas de vocabulario.</li>
+            <li>Vuelve a escuchar los modelos antes de responder.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Recuerda cinco verbos frecuentes y escribe una frase con cada uno.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Completa frases con «et», «mais» y «parce que».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Transforma cuatro afirmaciones en preguntas o negaciones.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe una entradilla de tres líneas para una revista.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.12: Ficha de ampliación -->
+      <section id="apartado-6-12" class="lesson-section section-extend" aria-labelledby="titulo-6-12">
+        <h2
+          id="titulo-6-12"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.12</span>
+          <span>Ficha de ampliación</span>
+        </h2>
+        <p class="section-intro">Profundiza, relaciona ideas y crea mensajes un poco más elaborados.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Revisa las frases antes de compartirlas.</li>
+            <li>Busca información fiable para los ejemplos culturales.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Crea un glosario bilingüe de veinte palabras útiles.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Compara dos ciudades francófonas con datos comprobables.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Prepara una entrevista de ocho preguntas sobre intereses y planes.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Revisa un borrador completo e incluye mejoras justificadas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 6.13: Comprueba lo aprendido -->
+      <section id="apartado-6-13" class="lesson-section section-check" aria-labelledby="titulo-6-13">
+        <h2
+          id="titulo-6-13"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">6.13</span>
+          <span>Comprueba lo aprendido</span>
+        </h2>
+        <p class="section-intro">Responde sin mirar los apartados anteriores y vuelve a revisar lo que necesites.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Aplica vocabulario, gramática y comunicación.</li>
+            <li>Comprueba las mayúsculas, concordancias y pronunciación.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué significa «sommaire»?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Traduce «Vamos a escribir un artículo».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Une dos frases mediante «parce que».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Redacta una presentación breve para tu revista en francés.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="lesson-back">
+        <a href="/recursos/sexto/frances6/">← Volver a las Situaciones de Aprendizaje de Francés</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pie institucional -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <!-- Audio local en /media: no se utiliza síntesis de voz externa. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentAudio = null;
+      let currentButton = null;
+
+      document.querySelectorAll('.listen-btn').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const status = document.getElementById(button.dataset.statusTarget);
+          const source = button.dataset.audio;
+
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            if (currentButton) {
+              currentButton.textContent = '▶ Escuchar audio';
+            }
+          }
+
+          if (currentButton === button && currentAudio && currentAudio._frPlaying) {
+            currentAudio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+            status.textContent = 'Reproducción detenida.';
+            return;
+          }
+
+          const audio = new Audio(source);
+          audio.preload = 'none';
+          currentAudio = audio;
+          currentButton = button;
+          status.textContent = 'Cargando audio…';
+          button.textContent = '■ Detener audio';
+
+          audio.addEventListener('ended', () => {
+            status.textContent = 'Reproducción finalizada.';
+            button.textContent = '▶ Escuchar audio';
+            audio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+          });
+
+          audio.addEventListener('error', () => {
+            status.textContent = 'Audio no disponible. Comprueba que el MP3 esté publicado en /media.';
+            button.textContent = '▶ Escuchar audio';
+            audio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+          });
+
+          try {
+            await audio.play();
+            audio._frPlaying = true;
+            status.textContent = 'Reproduciendo audio…';
+          } catch (error) {
+            status.textContent = 'No se ha podido reproducir el audio. Revisa la ruta /media y el archivo MP3.';
+            button.textContent = '▶ Escuchar audio';
+            currentAudio = null;
+            currentButton = null;
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
