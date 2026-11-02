@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Recursos educativos de Francés de 5.º de Educación Primaria del CEIP Joaquín Tena Artigas. Seis situaciones de aprendizaje con vocabulario, comprensión oral y escrita y expresión en francés."
+  >
+
+  <title>Francés 5.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+
+  <!-- ESTILOS GENERALES DE LA WEB -->
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!-- ESTILOS ESPECÍFICOS DE ESTA PÁGINA (SIN MODIFICAR BASE.CSS) -->
+  <style>
+    :root {
+      --french-color: #405ca8;
+      --french-dark: #30477f;
+      --french-soft: #f0f4ff;
+      --french-border: #cbd7f0;
+    }
+
+    .subject-page {
+      background: var(--background-soft);
+    }
+
+    .subject-shell {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    .subject-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      padding: 2rem 2rem 0;
+      overflow: hidden;
+      border: 1px solid var(--french-border);
+      border-radius: var(--radius-large);
+      background: linear-gradient(135deg, var(--french-soft) 0%, #ffffff 70%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subject-intro-text {
+      padding-bottom: 2rem;
+    }
+
+    .subject-label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: var(--french-color);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .subject-intro h1 {
+      margin: 0 0 0.75rem;
+      color: var(--text-main);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+    }
+
+    .subject-intro p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .subject-mascot {
+      display: block;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .learning-heading {
+      margin: 0 0 1.25rem;
+      color: var(--text-main);
+      font-size: 1.45rem;
+      text-align: left;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .learning-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      min-height: 165px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .learning-card:hover,
+    .learning-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--french-color);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .learning-card:focus-visible {
+      outline: 3px solid var(--french-color);
+      outline-offset: 3px;
+    }
+
+    .learning-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--french-color);
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    .learning-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .learning-content h3 {
+      margin: 0 0 0.55rem;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .learning-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .learning-count {
+      align-self: flex-start;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: var(--french-soft);
+      color: var(--french-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 800px) {
+      .subject-intro {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .subject-intro-text {
+        padding-bottom: 0;
+      }
+
+      .subject-mascot {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subject-shell {
+        width: min(94%, var(--max-width));
+        padding-top: 1.25rem;
+      }
+
+      .subject-intro {
+        border-radius: 20px;
+      }
+
+      .learning-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 150px;
+      }
+
+      .learning-number {
+        font-size: 1.05rem;
+      }
+
+      .learning-content {
+        padding: 1.05rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .learning-card {
+        transition: none;
+      }
+
+      .learning-card:hover,
+      .learning-card:focus-visible {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================================================
+       ENLACE DE ACCESIBILIDAD
+       ====================================================== -->
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       BANNER PRINCIPAL
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <!-- ======================================================
+       NAVEGACIÓN PRINCIPAL
+       ====================================================== -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+
+      <!-- LOGO DEL CENTRO -->
+      <a
+        href="/"
+        class="navigation-logo"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- MENÚ PRINCIPAL -->
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green">
+            <a href="/">Inicio</a>
+          </li>
+          <li class="nav-yellow">
+            <a href="/familias/">Familias</a>
+          </li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span>
+              Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       DESTINO: /recursos/quinto/frances5/index.html
+       ====================================================== -->
+  <main id="contenido-principal" class="subject-page">
+    <div class="subject-shell">
+
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li>
+            <a href="/recursos/quinto/">5.º de Primaria</a>
+          </li>
+          <li aria-current="page">Francés</li>
+        </ol>
+      </nav>
+
+      <!-- ==================================================
+           PRESENTACIÓN DE LA MATERIA
+           ================================================== -->
+      <section class="subject-intro" aria-labelledby="titulo-frances">
+        <div class="subject-intro-text">
+          <span class="subject-label">Francés · 5.º de Primaria</span>
+          <h1 id="titulo-frances">Francés</h1>
+          <p>
+            En este espacio encontrarás actividades para practicar la comprensión
+            oral y escrita, aprender vocabulario y expresiones sencillas, mejorar
+            la pronunciación y comunicarte en francés. Cada situación de aprendizaje
+            incluye explicaciones, ejercicios y propuestas de refuerzo,
+            ampliación y autoevaluación para avanzar a tu ritmo.
+          </p>
+        </div>
+
+        <!-- TOMATITO FRANCÉS -->
+        <img
+          src="/img/tomatito/frances.png"
+          alt=""
+          class="subject-mascot"
+        >
+      </section>
+
+      <!-- ==================================================
+           SITUACIONES DE APRENDIZAJE
+           ================================================== -->
+      <section aria-labelledby="situaciones-aprendizaje">
+        <h2 id="situaciones-aprendizaje" class="learning-heading">
+          Elige una Situación de Aprendizaje
+        </h2>
+
+        <div class="learning-grid">
+          <!-- SITUACIÓN DE APRENDIZAJE FRA5.1 -->
+          <a
+            class="learning-card"
+            href="/recursos/quinto/frances5/bonjour-je-me-presente/"
+          >
+            <div class="learning-number" aria-hidden="true">
+              01
+            </div>
+
+            <div class="learning-content">
+              <h3>Bonjour ! Je me présente</h3>
+              <p>Saludos, presentaciones, alfabeto, números del 0 al 20, edad, países y nacionalidades. Primeros usos de <em>être</em>, <em>avoir</em> y <em>s’appeler</em>.</p>
+              <span class="learning-count">FRA5.1 · 1.º trimestre</span>
+            </div>
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE FRA5.2 -->
+          <a
+            class="learning-card"
+            href="/recursos/quinto/frances5/ma-famille-et-mes-amis/"
+          >
+            <div class="learning-number" aria-hidden="true">
+              02
+            </div>
+
+            <div class="learning-content">
+              <h3>Ma famille et mes amis</h3>
+              <p>Familia, amistades y descripciones físicas. Artículos, posesivos, adjetivos y expresiones sencillas con <em>être</em> y <em>avoir</em>.</p>
+              <span class="learning-count">FRA5.2 · 1.º trimestre</span>
+            </div>
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE FRA5.3 -->
+          <a
+            class="learning-card"
+            href="/recursos/quinto/frances5/a-lecole/"
+          >
+            <div class="learning-number" aria-hidden="true">
+              03
+            </div>
+
+            <div class="learning-content">
+              <h3>À l’école !</h3>
+              <p>Objetos y espacios del colegio, asignaturas, colores, instrucciones y números hasta el 60. <em>C’est</em>, <em>ce sont</em>, <em>il y a</em> y preposiciones de lugar.</p>
+              <span class="learning-count">FRA5.3 · 2.º trimestre</span>
+            </div>
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE FRA5.4 -->
+          <a
+            class="learning-card"
+            href="/recursos/quinto/frances5/mes-journees-et-mes-loisirs/"
+          >
+            <div class="learning-number" aria-hidden="true">
+              04
+            </div>
+
+            <div class="learning-content">
+              <h3>Mes journées et mes loisirs</h3>
+              <p>Días, meses, fechas, horas, deportes y actividades de ocio. Gustos y preferencias, verbos habituales y conectores para contar nuestras rutinas.</p>
+              <span class="learning-count">FRA5.4 · 2.º trimestre</span>
+            </div>
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE FRA5.5 -->
+          <a
+            class="learning-card"
+            href="/recursos/quinto/frances5/bon-appetit/"
+          >
+            <div class="learning-number" aria-hidden="true">
+              05
+            </div>
+
+            <div class="learning-content">
+              <h3>Bon appétit !</h3>
+              <p>Alimentos, comidas del día, bebidas y precios. Cómo expresar gustos, pedir con cortesía y utilizar <em>je voudrais</em>, <em>je mange</em> y <em>je bois</em>.</p>
+              <span class="learning-count">FRA5.5 · 3.º trimestre</span>
+            </div>
+          </a>
+
+          <!-- SITUACIÓN DE APRENDIZAJE FRA5.6 -->
+          <a
+            class="learning-card"
+            href="/recursos/quinto/frances5/bienvenue-dans-ma-ville/"
+          >
+            <div class="learning-number" aria-hidden="true">
+              06
+            </div>
+
+            <div class="learning-content">
+              <h3>Bienvenue dans ma ville !</h3>
+              <p>Lugares, tiendas, edificios y transportes de la localidad. Preguntar dónde está algo y dar indicaciones con <em>à droite</em>, <em>à gauche</em> y <em>tout droit</em>.</p>
+              <span class="learning-count">FRA5.6 · 3.º trimestre</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE DE PÁGINA
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- JUNTA DE ANDALUCÍA -->
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+
+      <!-- CENTRO -->
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- PARTE INFERIOR DEL FOOTER -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>
+          © <span id="current-year"></span> CEIP Joaquín Tena Artigas
+        </p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT GENERAL DE LA WEB -->
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
