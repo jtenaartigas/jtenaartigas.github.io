@@ -172,11 +172,13 @@
       padding: clamp(1.2rem, 3vw, 2rem);
       box-shadow: 0 10px 30px rgba(15,23,42,.045);
     }
-    .section-heading {
+    .lesson-section-heading {
       display: flex;
       align-items: flex-start;
       gap: .9rem;
       margin-bottom: 1.25rem;
+      justify-content: flex-start;
+      text-align: left;
     }
     .section-number {
       flex: 0 0 auto;
@@ -193,17 +195,19 @@
       font-weight: 900;
       letter-spacing: .03em;
     }
-    .section-heading h2 {
+    .lesson-section-heading h2 {
       margin: 0;
       color: #0f172a;
       font-size: clamp(1.35rem, 3vw, 1.85rem);
       line-height: 1.2;
+      text-align: left;
     }
-    .section-heading p {
+    .lesson-section-heading p {
       margin: .28rem 0 0;
       color: #64748b;
       font-size: .9rem;
       line-height: 1.55;
+      text-align: left;
     }
 
     .lead {
@@ -530,10 +534,55 @@
       .topic-shell { width: min(94%, 1180px); padding-top: 1.2rem; }
       .hero { border-radius: 22px; min-height: unset; }
       .system-grid, .exercise-grid, .repaso-grid, .health-grid, .project-steps, .process-flow { grid-template-columns: 1fr; }
-      .section-heading { gap: .65rem; }
+      .lesson-section-heading { gap: .65rem; }
       .section-number { min-width: 48px; height: 38px; }
     }
-  </style>
+  
+    .lesson-section-heading > div { min-width: 0; flex: 1 1 auto; text-align: left; }
+    /* IMÁGENES */
+      .media-frame {
+        margin: 1.25rem 0 1.75rem;
+        overflow: hidden;
+        border: 1px solid #d1e7dd;
+        border-radius: 1rem;
+        background: #ffffff;
+      }
+
+      .media-frame img {
+        display: block;
+        width: 100%;
+        max-height: 560px;
+        object-fit: contain;
+        background: #ffffff;
+      }
+
+      .media-frame figcaption {
+        padding: 0.7rem 1rem;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        color: #64748b;
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+
+      .missing-image-note {
+        display: none;
+        padding: 2rem 1.25rem;
+        text-align: center;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 0.85rem;
+        line-height: 1.55;
+      }
+
+      .media-frame.is-missing img {
+        display: none;
+      }
+
+      .media-frame.is-missing .missing-image-note {
+        display: block;
+      }
+</style>
 </head>
 
 <body>
@@ -594,7 +643,7 @@
             el bienestar físico, emocional y social.
           </p>
         </div>
-        <img src="/img/tomatito/tomatito-cuerpo-humano.png" alt="" aria-hidden="true">
+        <img src="/img/tomatito/conocimiento-medio.png" alt="" aria-hidden="true">
       </section>
 
       <nav class="topic-index" aria-label="Índice de la Situación de Aprendizaje">
@@ -612,7 +661,7 @@
       <div class="content-stack">
 
         <section id="sec-1" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">5.1</span>
             <div>
               <h2>La función de nutrición</h2>
@@ -644,6 +693,19 @@
             </article>
           </div>
 
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/funcion-nutricion.webp"
+                alt="funcion-nutricion"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La función de nutrición.
+              </figcaption>
+            </figure>
+
           <div class="system-grid">
             <article class="system-card">
               <div class="system-card-head">🥗 Aparato digestivo</div>
@@ -673,6 +735,28 @@
               </div>
             </article>
 
+            <figure class="media-frame">
+              <img
+                src="/img/aparato-digestivo.webp"
+                alt="aparato-digestivo"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato digestivo.
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/aparato-respiratorio.webp"
+                alt="aparato-respiratorio"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato respiratorio.
+              </figcaption>
+            </figure>
+
             <article class="system-card">
               <div class="system-card-head">❤️ Aparato circulatorio</div>
               <div class="system-card-body">
@@ -698,6 +782,29 @@
                 </ul>
               </div>
             </article>
+
+            <figure class="media-frame">
+              <img
+                src="/img/aparato-circulatorio.webp"
+                alt="aparato-circulatorio"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato circulatorio.
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/aparato-excretor.webp"
+                alt="aparato-excretor"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato excretor.
+              </figcaption>
+            </figure>
+
           </div>
 
           <h3 class="activities-title">Así trabajan juntos</h3>
@@ -752,7 +859,7 @@
         </section>
 
         <section id="sec-2" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">5.2</span>
             <div>
               <h2>La función de relación</h2>
@@ -788,6 +895,17 @@
             </table>
           </div>
 
+          <figure class="media-frame">
+              <img
+                src="/img/funcion-relacion.webp"
+                alt="funcion-relacion"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La función de relación.
+              </figcaption>
+            </figure>
+
           <div class="system-grid">
             <article class="system-card">
               <div class="system-card-head">🧠 Sistema nervioso</div>
@@ -815,6 +933,50 @@
               </div>
             </article>
           </div>
+
+          <figure class="media-frame">
+              <img
+                src="/img/sistema-nervioso.webp"
+                alt="sistema-nervioso"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El sistema nervioso.
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/aparato-locomotor.webp"
+                alt="aparato-locomotor"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato locomotor.
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/esqueleto-humano.webp"
+                alt="esqueleto-humano"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El esqueleto humano.
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/musculos-humanos.webp"
+                alt="musculos-humanos"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                Los músculos humanos.
+              </figcaption>
+            </figure>
 
           <div class="blue-note">
             <strong>¿Qué ocurre en un acto reflejo?</strong> Algunas respuestas rápidas de protección pueden organizarse
@@ -866,7 +1028,7 @@
         </section>
 
         <section id="sec-3" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">5.3</span>
             <div>
               <h2>La función de reproducción</h2>
@@ -879,6 +1041,17 @@
             la reproducción es sexual: intervienen dos tipos de células reproductoras, el <strong>óvulo</strong> y el
             <strong>espermatozoide</strong>. Los aparatos reproductores maduran durante la pubertad.
           </p>
+
+          <figure class="media-frame">
+              <img
+                src="/img/funcion-reproduccion.webp"
+                alt="funcion-reproduccion"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La función de reproducción.
+              </figcaption>
+            </figure>
 
           <div class="system-grid">
             <article class="system-card">
@@ -909,6 +1082,28 @@
               </div>
             </article>
           </div>
+
+          <figure class="media-frame">
+              <img
+                src="/img/aparato-reproductor-femenino.webp"
+                alt="aparato-reproductor-femenino"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato reproductor femenino.
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/aparato-reproductor-masculino.webp"
+                alt="aparato-reproductor-masculino"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El aparato reproductor masculino.
+              </figcaption>
+            </figure>
 
           <div class="note">
             <strong>Importante:</strong> conocer el aparato reproductor forma parte del conocimiento científico del propio
@@ -981,7 +1176,7 @@
         </section>
 
         <section id="sec-proyecto" class="lesson-section project">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">PROYECTO</span>
             <div>
               <h2>Maqueta de un aparato del cuerpo humano</h2>
@@ -1046,7 +1241,7 @@
         </section>
 
         <section id="sec-repaso" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">REPASO</span>
             <div>
               <h2>Repasamos lo aprendido</h2>
@@ -1084,7 +1279,7 @@
         </section>
 
         <section id="sec-diana" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">AUTO</span>
             <div>
               <h2>Diana de autoevaluación</h2>
