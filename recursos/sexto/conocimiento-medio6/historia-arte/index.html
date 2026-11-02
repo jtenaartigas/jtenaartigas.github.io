@@ -173,11 +173,13 @@
       padding: clamp(1.2rem, 3vw, 2rem);
       box-shadow: 0 10px 30px rgba(15, 23, 42, .045);
     }
-    .section-heading {
+    .lesson-section-heading {
       display: flex;
       align-items: flex-start;
       gap: .9rem;
       margin-bottom: 1.25rem;
+      justify-content: flex-start;
+      text-align: left;
     }
     .section-number {
       flex: 0 0 auto;
@@ -194,17 +196,19 @@
       font-weight: 900;
       letter-spacing: .03em;
     }
-    .section-heading h2 {
+    .lesson-section-heading h2 {
       margin: 0;
       color: #0f172a;
       font-size: clamp(1.35rem, 3vw, 1.85rem);
       line-height: 1.2;
+      text-align: left;
     }
-    .section-heading p {
+    .lesson-section-heading p {
       margin: .28rem 0 0;
       color: #64748b;
       font-size: .9rem;
       line-height: 1.55;
+      text-align: left;
     }
 
     .lead {
@@ -527,10 +531,56 @@
       .topic-shell { width: min(94%, 1180px); padding-top: 1.2rem; }
       .hero { border-radius: 22px; min-height: unset; }
       .exercise-grid, .repaso-grid, .project-steps, .art-strip { grid-template-columns: 1fr; }
-      .section-heading { gap: .65rem; }
+      .lesson-section-heading { gap: .65rem; }
       .section-number { min-width: 48px; height: 38px; }
     }
-  </style>
+  
+    .lesson-section-heading > div { min-width: 0; flex: 1 1 auto; text-align: left; }
+
+    /* IMÁGENES */
+      .media-frame {
+        margin: 1.25rem 0 1.75rem;
+        overflow: hidden;
+        border: 1px solid #d1e7dd;
+        border-radius: 1rem;
+        background: #ffffff;
+      }
+
+      .media-frame img {
+        display: block;
+        width: 100%;
+        max-height: 560px;
+        object-fit: contain;
+        background: #ffffff;
+      }
+
+      .media-frame figcaption {
+        padding: 0.7rem 1rem;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        color: #64748b;
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+
+      .missing-image-note {
+        display: none;
+        padding: 2rem 1.25rem;
+        text-align: center;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 0.85rem;
+        line-height: 1.55;
+      }
+
+      .media-frame.is-missing img {
+        display: none;
+      }
+
+      .media-frame.is-missing .missing-image-note {
+        display: block;
+      }
+</style>
 </head>
 
 <body>
@@ -591,7 +641,7 @@
             el arte, la cultura y la diversidad forman parte de nuestro patrimonio.
           </p>
         </div>
-        <img src="/img/tomatito/tomatito-historia.png" alt="" aria-hidden="true">
+        <img src="/img/tomatito/conocimiento-medio.png" alt="" aria-hidden="true">
       </section>
 
       <nav class="topic-index" aria-label="Índice de la Situación de Aprendizaje">
@@ -616,7 +666,7 @@
       <div class="content-stack">
 
         <section id="sec-1" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.1</span>
             <div>
               <h2>La Hispania visigoda</h2>
@@ -679,6 +729,19 @@
             <div class="art-chip"><span>📜</span><strong>Cultura escrita</strong><small>Destaca Isidoro de Sevilla y sus <em>Etimologías</em>.</small></div>
           </div>
 
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/hispania-visigoda.webp"
+                alt="sociedad-hispania-visigoda"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La sociedad en la Hipania visigoda.
+              </figcaption>
+            </figure>
+
           <h3 class="activities-title">Ejercicios de práctica</h3>
           <div class="exercise-grid">
             
@@ -709,7 +772,7 @@
         </section>
 
         <section id="sec-2" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.2</span>
             <div>
               <h2>Al-Ándalus</h2>
@@ -739,6 +802,19 @@
             más débiles y frecuentemente enfrentados entre sí.
           </p>
 
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/al-andalus-reinos-cristianos.webp"
+                alt="sociedades-al-andalus-reinos-cristianos"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La sociedad en Al-Andalus y en los reinos cristianos.
+              </figcaption>
+            </figure>
+
           <div class="concept-grid">
             <article class="concept-card">
               <h3>🌾 Agricultura</h3>
@@ -766,6 +842,19 @@
             <div class="art-chip"><span>💧</span><strong>Agua y jardines</strong><small>Fuentes, albercas y acequias forman parte del diseño arquitectónico.</small></div>
             <div class="art-chip"><span>🔷</span><strong>Decoración</strong><small>Geometría, motivos vegetales y caligrafía.</small></div>
           </div>
+
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/monumentos-cordoba-alhambra-burgos.webp"
+                alt="monumentos-cordoba-alhambra-burgos"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                Tres monumentos de la España medieval.
+              </figcaption>
+            </figure>
 
           <h3 class="activities-title">Ejercicios de práctica</h3>
           <div class="exercise-grid">
@@ -797,7 +886,7 @@
         </section>
 
         <section id="sec-3" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.3</span>
             <div>
               <h2>Los reinos cristianos y la conquista de Granada</h2>
@@ -816,6 +905,19 @@
             cristianos sobre territorios de Al-Ándalus, pero no fue una campaña continua de ocho siglos ni un proceso
             simple. Hubo alianzas entre cristianos y musulmanes, conflictos internos y cambios de fronteras muy frecuentes.
           </div>
+
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/reconquista.webp"
+                alt="La Reconquista en España"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La Reconquista en España
+              </figcaption>
+            </figure>
 
           <div class="concept-grid">
             <article class="concept-card">
@@ -845,6 +947,19 @@
             <div class="art-chip"><span>⛪</span><strong>Gótico</strong><small>Arcos apuntados, mayor altura y grandes vidrieras.</small></div>
             <div class="art-chip"><span>🎨</span><strong>Arte mudéjar</strong><small>Combina tradiciones artísticas cristianas e islámicas.</small></div>
           </div>
+
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/arte-romanico.webp"
+                alt="arte-romanico"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                Características principales del arte románico.
+              </figcaption>
+            </figure>
 
           <h3 class="activities-title">Ejercicios de práctica</h3>
           <div class="exercise-grid">
@@ -876,7 +991,7 @@
         </section>
 
         <section id="sec-4" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.4</span>
             <div>
               <h2>La llegada a América y el siglo XVI</h2>
@@ -912,6 +1027,30 @@
             </article>
           </div>
 
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/rutas-colon-mesoamerica.webp"
+                alt="rutas-colon-mesoamerica"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                Las rutas de Cristobal Colón y las rutas de la conquista de Aztecas y Mayas. 
+              </figcaption>
+            </figure>
+
+            <figure class="media-frame">
+              <img
+                src="/img/ruta-conquista-inca.webp"
+                alt="ruta-conquista-inca"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                Las rutas de la conquista de los incas. 
+              </figcaption>
+            </figure>
+
           <p class="lead">
             En el siglo XVI reinaron <strong>Carlos I</strong> y <strong>Felipe II</strong>, pertenecientes a la dinastía
             de los Habsburgo o Austrias. Sus dominios se extendieron por Europa, América y otros territorios. La monarquía
@@ -926,6 +1065,17 @@
             <div class="timeline-item"><strong>1571</strong><span>Batalla de Lepanto contra el Imperio otomano.</span></div>
             <div class="timeline-item"><strong>1580</strong><span>Felipe II incorpora la corona de Portugal a sus dominios durante varias décadas.</span></div>
           </div>
+
+          <figure class="media-frame">
+              <img
+                src="/img/imperio-espanol.webp"
+                alt="imperio-espanol"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El imperio español en su máxima expansión durante el reinado de Felipe II. 
+              </figcaption>
+            </figure>
 
           <h3 class="activities-title">Ejercicios de práctica</h3>
           <div class="exercise-grid">
@@ -957,7 +1107,7 @@
         </section>
 
         <section id="sec-5" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.5</span>
             <div>
               <h2>El siglo XVII</h2>
@@ -999,6 +1149,17 @@
             <div class="art-chip"><span>⛪</span><strong>Barroco</strong><small>Arte de gran expresividad, contraste y riqueza decorativa.</small></div>
           </div>
 
+          <figure class="media-frame">
+              <img
+                src="/img/siglo-de-oro-espanol.webp"
+                alt="siglo-de-oro-espanol"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El siglo de oro español. 
+              </figcaption>
+            </figure>
+
           <h3 class="activities-title">Ejercicios de práctica</h3>
           <div class="exercise-grid">
             
@@ -1029,7 +1190,7 @@
         </section>
 
         <section id="sec-6" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.6</span>
             <div>
               <h2>El siglo XVIII</h2>
@@ -1042,6 +1203,19 @@
             <strong>Guerra de Sucesión</strong>. Tras el conflicto se instaló en el trono la dinastía de los
             <strong>Borbones</strong>, con Felipe V.
           </p>
+
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/guerra-sucesion-espanola.webp"
+                alt="guerra-sucesion-espanola"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La guerra de Sucesión española. 
+              </figcaption>
+            </figure>
 
           <div class="timeline">
             <div class="timeline-item"><strong>1700</strong><span>Muere Carlos II y comienza la nueva etapa borbónica.</span></div>
@@ -1101,7 +1275,7 @@
         </section>
 
         <section id="sec-7" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.7</span>
             <div>
               <h2>El siglo XIX</h2>
@@ -1124,6 +1298,19 @@
             <div class="timeline-item"><strong>1874</strong><span>Comienza la Restauración borbónica.</span></div>
             <div class="timeline-item"><strong>1898</strong><span>España pierde Cuba, Puerto Rico y Filipinas tras la guerra con Estados Unidos.</span></div>
           </div>
+
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/siglo-xix-espanol.webp"
+                alt="siglo-xix-espanol"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El siglo XIX en España.
+              </figcaption>
+            </figure>
 
           <p class="lead">
             También se produjeron cambios económicos y sociales. La industrialización avanzó más lentamente y de forma
@@ -1168,7 +1355,7 @@
         </section>
 
         <section id="sec-8" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.8</span>
             <div>
               <h2>El siglo XX</h2>
@@ -1210,6 +1397,19 @@
             aunque algunos desarrollaron parte de su obra en el exilio.
           </p>
 
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/espana-siglo-xx.webp"
+                alt="espana-siglo-xx"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                El siglo XX en España. 
+              </figcaption>
+            </figure>
+
           <h3 class="activities-title">Ejercicios de práctica</h3>
           <div class="exercise-grid">
             
@@ -1240,7 +1440,7 @@
         </section>
 
         <section id="sec-9" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.9</span>
             <div>
               <h2>La Transición y la democracia</h2>
@@ -1262,6 +1462,19 @@
             <div class="timeline-item"><strong>28 de febrero de 1980</strong><span>Referéndum sobre la iniciativa autonómica andaluza.</span></div>
             <div class="timeline-item"><strong>1981</strong><span>Se aprueba el primer Estatuto de Autonomía de Andalucía.</span></div>
           </div>
+
+          <!-- IMAGEN SUGERIDA -->
+
+            <figure class="media-frame">
+              <img
+                src="/img/transicion-espanola.webp"
+                alt="transicion-espanola"
+                onerror="markImageMissing(this)"
+              >
+              <figcaption>
+                La transición española (1975-1978).
+              </figcaption>
+            </figure>
 
           <p class="lead">
             La Constitución de 1978 establece que España es un <strong>Estado social y democrático de Derecho</strong>.
@@ -1321,7 +1534,7 @@
         </section>
 
         <section id="sec-10" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">4.10</span>
             <div>
               <h2>Diversidad, patrimonio e igualdad</h2>
@@ -1412,7 +1625,7 @@
         </section>
 
         <section id="sec-proyecto" class="lesson-section project">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">PROYECTO</span>
             <div>
               <h2>Exposición de un tema histórico</h2>
@@ -1465,7 +1678,7 @@
         </section>
 
         <section id="sec-repaso" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">REPASO</span>
             <div>
               <h2>Repasamos lo aprendido</h2>
@@ -1503,7 +1716,7 @@
         </section>
 
         <section id="sec-diana" class="lesson-section">
-          <div class="section-heading">
+          <div class="lesson-section-heading">
             <span class="section-number">AUTO</span>
             <div>
               <h2>Diana de autoevaluación</h2>
