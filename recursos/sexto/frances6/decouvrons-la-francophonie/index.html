@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FRA6.4. Découvrons la francophonie !. Francés de 6.º de Primaria. Recursos de aprendizaje del CEIP Joaquín Tena Artigas.">
+  <title>FRA6.4 · Découvrons la francophonie ! | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!-- Estilos propios de la SdA, con cabeceras .lesson-section-heading. -->
+  <style>
+    /* Colores de Francés; no modifican /css/base.css. */
+    :root {
+      --fr-blue: #405ca8;
+      --fr-dark: #30477f;
+      --fr-soft: #eff4ff;
+      --fr-line: #cbd7f0;
+      --fr-ink: #233047;
+      --fr-muted: #506077;
+    }
+
+    html { scroll-behavior: smooth; }
+    .subject-page { background: var(--background-soft, #f6f8fb); }
+    .lesson-shell { width: min(92%, 1080px); margin: 0 auto; padding: 2rem 0 3.5rem; }
+    .lesson-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 1.4rem;
+      align-items: center;
+      padding: 1.8rem;
+      border: 1px solid var(--fr-line);
+      border-radius: 24px;
+      background: linear-gradient(125deg, var(--fr-soft), #fff 76%);
+      box-shadow: var(--shadow-soft, 0 4px 18px #213c6212);
+      margin-bottom: 1.7rem;
+    }
+    .lesson-code { font-size: .8rem; color: var(--fr-blue); font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .lesson-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.15; color: var(--fr-ink); margin: .45rem 0 1rem; text-align: left; }
+    .lesson-hero p { color: var(--fr-muted); max-width: 680px; line-height: 1.65; margin: 0; }
+    .lesson-hero img { width: 160px; max-width: 100%; height: auto; justify-self: center; }
+    .lesson-meta { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 0; }
+    .lesson-meta span { background: #fff; color: var(--fr-dark); border: 1px solid var(--fr-line); border-radius: 30px; padding: .3rem .65rem; font-size: .78rem; font-weight: 700; }
+    .lesson-nav { padding: 1.2rem; margin-bottom: 1.8rem; background: #fff; border: 1px solid var(--fr-line); border-radius: 16px; }
+    .lesson-nav h2 { text-align: left; margin: 0 0 .9rem; font-size: 1.05rem; color: var(--fr-ink); }
+    .lesson-nav ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem .8rem; padding: 0; margin: 0; list-style: none; }
+    .lesson-nav a { display: block; padding: .4rem .45rem; text-decoration: none; color: var(--fr-dark); border-radius: 6px; font-size: .9rem; }
+    .lesson-nav a:hover, .lesson-nav a:focus-visible { background: var(--fr-soft); text-decoration: underline; }
+    .lesson-section {
+      background: #fff;
+      margin: 1.6rem 0;
+      padding: 1.5rem;
+      border: 1px solid #e1e7f0;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px #2638580a;
+      scroll-margin-top: 1.5rem;
+    }
+    /* Clase específica: evita que los estilos globales centren los encabezados. */
+    .subject-page .lesson-section h2.lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .8rem;
+      width: 100%;
+      text-align: left;
+      margin: 0 0 1rem;
+      color: var(--fr-ink);
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+    .section-number { display: inline-block; flex-shrink: 0; background: var(--fr-blue); color: #fff; font-weight: 800; font-size: .86rem; padding: .48rem .58rem; border-radius: 9px; }
+    .section-intro { line-height: 1.7; margin: 0 0 1.2rem; color: var(--fr-ink); }
+    .vocabulary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; margin-bottom: 1.4rem; }
+    .word-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .4rem; align-items: center; border: 1px solid #dce5f7; border-radius: 9px; overflow: hidden; }
+    .word-pair span { padding: .65rem .7rem; font-size: .92rem; }
+    .word-fr { font-weight: 700; color: var(--fr-dark); background: #f2f5ff; }
+    .word-es { color: var(--fr-ink); }
+    .example-box, .model-box { background: var(--fr-soft); padding: 1rem 1.2rem; border-left: 4px solid var(--fr-blue); border-radius: 0 12px 12px 0; margin-bottom: 1.35rem; color: var(--fr-ink); }
+    .example-box h3, .model-box h3 { font-size: 1rem; margin: 0 0 .7rem; color: var(--fr-dark); text-align: left; }
+    .example-box ul { margin: 0; padding-left: 1.3rem; }
+    .example-box li { margin: .45rem 0; line-height: 1.6; }
+    .model-box p { margin: .45rem 0; line-height: 1.7; }
+    .exercise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+    .exercise-card { min-width: 0; padding: 1rem; border: 1px solid #e0e7f1; border-radius: 12px; background: #fbfcff; }
+    .exercise-label { display: inline-block; padding: .22rem .6rem; border-radius: 5px; font-size: .76rem; font-weight: 800; background: var(--fr-blue); color: #fff; }
+    .exercise-card p { color: var(--fr-ink); margin: .65rem 0 0; line-height: 1.58; font-size: .95rem; }
+    .audio-panel { background: #f6f9ff; border: 1px solid var(--fr-line); padding: 1.1rem; border-radius: 13px; margin-bottom: 1.35rem; }
+    .listen-btn { background: var(--fr-blue); border: 0; color: #fff; border-radius: 9px; cursor: pointer; font-size: .95rem; font-weight: 800; padding: .8rem 1rem; }
+    .listen-btn:hover, .listen-btn:focus-visible { background: var(--fr-dark); }
+    .listen-btn:focus-visible { outline: 3px solid #8a9ed6; outline-offset: 3px; }
+    .audio-status { font-size: .86rem; color: var(--fr-muted); margin: .65rem 0 0; }
+    .transcript { margin-top: .9rem; border-top: 1px solid var(--fr-line); padding-top: .8rem; }
+    .transcript summary { cursor: pointer; font-weight: 700; color: var(--fr-dark); }
+    .transcript p { margin: .7rem 0 .15rem; line-height: 1.65; }
+    .section-project { border-color: #badbc9; }
+    .section-project .section-number { background: #27774c; }
+    .section-reinforce .section-number { background: #6b4db1; }
+    .section-extend .section-number { background: #a76917; }
+    .section-check .section-number { background: #275887; }
+    .lesson-back { margin-top: 1.6rem; }
+    .lesson-back a { display: inline-block; padding: .8rem 1rem; border-radius: 8px; background: var(--fr-soft); color: var(--fr-dark); font-weight: 700; text-decoration: none; }
+    .lesson-back a:hover { text-decoration: underline; }
+    @media (max-width: 800px) {
+      .lesson-hero { grid-template-columns: minmax(0,1fr) 110px; padding: 1.2rem; }
+      .lesson-hero img { width: 105px; }
+      .lesson-nav ul { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 620px) {
+      .lesson-shell { width: 94%; }
+      .lesson-hero { grid-template-columns: 1fr; }
+      .lesson-hero img { width: 110px; }
+      .lesson-section { padding: 1rem; }
+      .lesson-nav ul, .vocabulary-grid, .exercise-grid { grid-template-columns: 1fr; }
+      .word-pair { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Enlace de accesibilidad -->
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- Banner institucional -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+
+  <!-- Navegación principal de la web -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Contenido de la SdA -->
+  <main id="contenido-principal" class="subject-page">
+    <div class="lesson-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/frances6/">Francés</a></li>
+          <li aria-current="page">FRA6.4</li>
+        </ol>
+      </nav>
+
+      <!-- Presentación de la unidad -->
+      <section class="lesson-hero" aria-labelledby="titulo-unidad">
+        <div>
+          <span class="lesson-code">Francés · 6.º de Primaria · FRA6.4</span>
+          <h1 id="titulo-unidad">Découvrons la francophonie !</h1>
+          <p>Descubrir espacios francófonos y describir lugares y viajes.</p>
+          <div class="lesson-meta">
+            <span>2.º trimestre</span>
+            <span>Situación de Aprendizaje 4</span>
+            <span>13 apartados</span>
+          </div>
+        </div>
+        <img src="/img/tomatito/frances.png" alt="" width="160" height="160" loading="lazy">
+      </section>
+
+      <!-- Índice interno -->
+      <nav class="lesson-nav" aria-label="Índice de la Situación de Aprendizaje">
+        <h2>Contenido de esta Situación de Aprendizaje</h2>
+        <ul>
+          <li><a href="#apartado-4-1">4.1 Países y territorios francófonos</a></li>
+          <li><a href="#apartado-4-2">4.2 Ciudades, paisajes y transporte</a></li>
+          <li><a href="#apartado-4-3">4.3 Viajar a un país: en, au, aux</a></li>
+          <li><a href="#apartado-4-4">4.4 Describir: c’est, il y a, aller</a></li>
+          <li><a href="#apartado-4-5">4.5 Preparar un viaje</a></li>
+          <li><a href="#apartado-4-6">4.6 El sonido de «on» y la r francesa</a></li>
+          <li><a href="#apartado-4-7">4.7 Comprensión oral · Écoute !</a></li>
+          <li><a href="#apartado-4-8">4.8 Comprensión escrita · Lis et comprends</a></li>
+          <li><a href="#apartado-4-9">4.9 Una francofonía plural</a></li>
+          <li><a href="#apartado-4-10">4.10 Producto final · Pasaporte francófono</a></li>
+          <li><a href="#apartado-4-11">4.11 Ficha de refuerzo</a></li>
+          <li><a href="#apartado-4-12">4.12 Ficha de ampliación</a></li>
+          <li><a href="#apartado-4-13">4.13 Comprueba lo aprendido</a></li>
+        </ul>
+      </nav>
+
+      <!-- APARTADO 4.1: Países y territorios francófonos -->
+      <section id="apartado-4-1" class="lesson-section section-normal" aria-labelledby="titulo-4-1">
+        <h2
+          id="titulo-4-1"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.1</span>
+          <span>Países y territorios francófonos</span>
+        </h2>
+        <p class="section-intro">El francés se utiliza en distintos continentes, junto con muchas otras lenguas.</p>
+        <div class="vocabulary-grid">
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">la France</span>
+            <span class="word-es">Francia</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">la Belgique</span>
+            <span class="word-es">Bélgica</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">la Suisse</span>
+            <span class="word-es">Suiza</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le Sénégal</span>
+            <span class="word-es">Senegal</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le Canada</span>
+            <span class="word-es">Canadá</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le Maroc</span>
+            <span class="word-es">Marruecos</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le Québec</span>
+            <span class="word-es">Quebec</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">la francophonie</span>
+            <span class="word-es">la francofonía</span>
+          </div>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al español: la France; la Belgique; la Suisse; le Sénégal.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe en francés: Canadá; Marruecos; Quebec; la francofonía.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona estas cuatro expresiones con su significado: le Canada; le Maroc; le Québec; la francophonie.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Localiza cuatro de estos lugares en un mapa y anota su continente.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.2: Ciudades, paisajes y transporte -->
+      <section id="apartado-4-2" class="lesson-section section-normal" aria-labelledby="titulo-4-2">
+        <h2
+          id="titulo-4-2"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.2</span>
+          <span>Ciudades, paisajes y transporte</span>
+        </h2>
+        <p class="section-intro">Podemos describir lugares turísticos y desplazamientos con vocabulario sencillo.</p>
+        <div class="vocabulary-grid">
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un monument</span>
+            <span class="word-es">un monumento</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un fleuve</span>
+            <span class="word-es">un río caudaloso</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une montagne</span>
+            <span class="word-es">una montaña</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un musée</span>
+            <span class="word-es">un museo</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une gare</span>
+            <span class="word-es">una estación</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un quartier</span>
+            <span class="word-es">un barrio</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">en train</span>
+            <span class="word-es">en tren</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">en avion</span>
+            <span class="word-es">en avión</span>
+          </div>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al español: un monument; un fleuve; une montagne; un musée.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe en francés: una estación; un barrio; en tren; en avión.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona estas cuatro expresiones con su significado: une gare; un quartier; en train; en avion.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Crea cuatro etiquetas descriptivas para un folleto de viaje.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.3: Viajar a un país: en, au, aux -->
+      <section id="apartado-4-3" class="lesson-section section-normal" aria-labelledby="titulo-4-3">
+        <h2
+          id="titulo-4-3"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.3</span>
+          <span>Viajar a un país: en, au, aux</span>
+        </h2>
+        <p class="section-intro">Con nombres de países se usan habitualmente «en» ante muchos femeninos, «au» ante masculinos y «aux» ante plurales.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Je vais en France. — Voy a Francia.</li>
+            <li>Je vais au Canada. — Voy a Canadá.</li>
+            <li>Je vais aux États-Unis. — Voy a Estados Unidos.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Elige «en» o «au»: «___ Suisse», «___ Sénégal».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Traduce «Voy a Canadá».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Explica la diferencia de forma entre «au» y «aux».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe tres destinos con la preposición adecuada.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.4: Describir: c’est, il y a, aller -->
+      <section id="apartado-4-4" class="lesson-section section-normal" aria-labelledby="titulo-4-4">
+        <h2
+          id="titulo-4-4"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.4</span>
+          <span>Describir: c’est, il y a, aller</span>
+        </h2>
+        <p class="section-intro">C’est identifica; il y a indica existencia; aller expresa desplazamiento.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>C’est Dakar. — Es Dakar.</li>
+            <li>Il y a un grand marché. — Hay un gran mercado.</li>
+            <li>Nous allons au musée. — Vamos al museo.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Relaciona cada expresión con identificar, describir o desplazarse.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Completa: «Dans cette ville, ___ un fleuve».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Cambia «Je vais au musée» para usar «nous».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe una descripción de tres líneas de una ciudad.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.5: Preparar un viaje -->
+      <section id="apartado-4-5" class="lesson-section section-normal" aria-labelledby="titulo-4-5">
+        <h2
+          id="titulo-4-5"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.5</span>
+          <span>Preparar un viaje</span>
+        </h2>
+        <p class="section-intro">Leemos un modelo breve. Después practicamos y adaptamos las expresiones a una situación propia.</p>
+        <div class="model-box">
+          <p lang="fr">A: Tu vas où pendant les vacances ?</p>
+          <p lang="fr">B: Je vais au Canada, à Montréal.</p>
+          <p lang="fr">A: C’est comment ?</p>
+          <p lang="fr">B: Il y a des musées et un grand fleuve.</p>
+          <p lang="fr">A: Tu voyages comment ?</p>
+          <p lang="fr">B: En avion !</p>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué país y ciudad visita B?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Qué dos elementos menciona de Montreal?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Qué medio de transporte utiliza?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Cambia el destino y adapta las respuestas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.6: El sonido de «on» y la r francesa -->
+      <section id="apartado-4-6" class="lesson-section section-normal" aria-labelledby="titulo-4-6">
+        <h2
+          id="titulo-4-6"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.6</span>
+          <span>El sonido de «on» y la r francesa</span>
+        </h2>
+        <p class="section-intro">Las vocales nasales aparecen en nombres como Montréal; la pronunciación de la r francesa difiere de la española.</p>
+        <div class="audio-panel">
+          <button type="button" class="listen-btn" data-audio="/media/frances6/fra6-4-pronunciacion.mp3" data-status-target="estado-4-pron">
+            ▶ Escuchar pronunciación
+          </button>
+          <p id="estado-4-pron" class="audio-status" role="status" aria-live="polite">Pulsa el botón para escuchar.</p>
+          <details class="transcript">
+            <summary>Leer la transcripción en francés</summary>
+            <p lang="fr">Montréal ; bonjour ; francophonie ; Maroc ; musée.</p>
+          </details>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Repite «Montréal» y «bonjour».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Lee «Je vais au Canada, à Montréal».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Practica el nombre de tres países francófonos.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Formula una pregunta de destino con entonación adecuada.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.7: Comprensión oral · Écoute ! -->
+      <section id="apartado-4-7" class="lesson-section section-normal" aria-labelledby="titulo-4-7">
+        <h2
+          id="titulo-4-7"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.7</span>
+          <span>Comprensión oral · Écoute !</span>
+        </h2>
+        <p class="section-intro">Escucha sin leer la transcripción en la primera reproducción; vuelve a escuchar para responder.</p>
+        <div class="audio-panel">
+          <button type="button" class="listen-btn" data-audio="/media/frances6/fra6-4-dialogo.mp3" data-status-target="estado-4-dialogo">
+            ▶ Escuchar el diálogo
+          </button>
+          <p id="estado-4-dialogo" class="audio-status" role="status" aria-live="polite">Pulsa el botón para escuchar.</p>
+          <details class="transcript">
+            <summary>Leer la transcripción en francés</summary>
+            <p lang="fr">Bonjour ! Je suis Anaïs et j’habite à Bruxelles, en Belgique. Ma cousine vit à Dakar, au Sénégal. Nous parlons français, mais aussi d’autres langues dans nos familles. À Bruxelles, il y a beaucoup de musées. À Dakar, il y a des marchés et l’océan Atlantique.</p>
+          </details>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿En qué ciudad vive Anaïs?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Dónde vive su prima?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Qué lugares se mencionan en Bruselas?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>¿Hablan solamente francés en sus familias?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.8: Comprensión escrita · Lis et comprends -->
+      <section id="apartado-4-8" class="lesson-section section-normal" aria-labelledby="titulo-4-8">
+        <h2
+          id="titulo-4-8"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.8</span>
+          <span>Comprensión escrita · Lis et comprends</span>
+        </h2>
+        <p class="section-intro">Lee el texto. Busca las ideas principales y revisa las palabras que ya conoces.</p>
+        <div class="model-box">
+          <p lang="fr">La langue française est présente dans plusieurs régions du monde. À Montréal, au Canada, on parle français et d’autres langues. À Dakar, au Sénégal, le français coexiste avec des langues locales. À Bruxelles, en Belgique, on entend plusieurs langues. La francophonie est diverse et chaque région possède son histoire.</p>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Nombra tres ciudades del texto.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿En qué país está Dakar?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Qué indica el texto sobre la diversidad lingüística?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe una breve ficha sobre una de las ciudades citadas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.9: Una francofonía plural -->
+      <section id="apartado-4-9" class="lesson-section section-normal" aria-labelledby="titulo-4-9">
+        <h2
+          id="titulo-4-9"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.9</span>
+          <span>Una francofonía plural</span>
+        </h2>
+        <p class="section-intro">«Francofonía» se refiere a personas y territorios donde se utiliza el francés, con tradiciones e identidades diversas. La lengua no sustituye a las demás lenguas de cada lugar.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>En diferentes regiones francófonas conviven distintas lenguas y costumbres.</li>
+            <li>Aprender una lengua también significa comunicarse con respeto.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Por qué no son iguales cultura y lengua?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Cita dos lugares francófonos fuera de Europa.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Explica por qué el francés convive con otras lenguas.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe una norma de respeto para una presentación cultural.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.10: Producto final · Pasaporte francófono -->
+      <section id="apartado-4-10" class="lesson-section section-project" aria-labelledby="titulo-4-10">
+        <h2
+          id="titulo-4-10"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.10</span>
+          <span>Producto final · Pasaporte francófono</span>
+        </h2>
+        <p class="section-intro">Elabora un pequeño pasaporte de tres destinos.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Planifica tu trabajo antes de redactar.</li>
+            <li>Revisa la expresión francesa y las fórmulas de cortesía.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Selecciona tres destinos de continentes o regiones diferentes.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe país, ciudad y un lugar de interés de cada destino.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Incluye correctamente en, au o aux en tres frases.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Presenta oralmente el pasaporte sin estereotipos culturales.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.11: Ficha de refuerzo -->
+      <section id="apartado-4-11" class="lesson-section section-reinforce" aria-labelledby="titulo-4-11">
+        <h2
+          id="titulo-4-11"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.11</span>
+          <span>Ficha de refuerzo</span>
+        </h2>
+        <p class="section-intro">Repasa los contenidos imprescindibles y comprueba los ejemplos si lo necesitas.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Puedes apoyarte en las tablas de vocabulario.</li>
+            <li>Vuelve a escuchar los modelos antes de responder.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Ubica seis países y sus nombres franceses.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Completa frases con «en» y «au».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Distingue en ejemplos «c’est» e «il y a».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Describe dos lugares con tres frases breves.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.12: Ficha de ampliación -->
+      <section id="apartado-4-12" class="lesson-section section-extend" aria-labelledby="titulo-4-12">
+        <h2
+          id="titulo-4-12"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.12</span>
+          <span>Ficha de ampliación</span>
+        </h2>
+        <p class="section-intro">Profundiza, relaciona ideas y crea mensajes un poco más elaborados.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Revisa las frases antes de compartirlas.</li>
+            <li>Busca información fiable para los ejemplos culturales.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Investiga otras lenguas presentes en dos regiones francófonas.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe un itinerario entre dos ciudades usando transportes.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Prepara un diálogo para pedir información turística.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Crea una ficha cultural con información comprobada y fuente indicada.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 4.13: Comprueba lo aprendido -->
+      <section id="apartado-4-13" class="lesson-section section-check" aria-labelledby="titulo-4-13">
+        <h2
+          id="titulo-4-13"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">4.13</span>
+          <span>Comprueba lo aprendido</span>
+        </h2>
+        <p class="section-intro">Responde sin mirar los apartados anteriores y vuelve a revisar lo que necesites.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Aplica vocabulario, gramática y comunicación.</li>
+            <li>Comprueba las mayúsculas, concordancias y pronunciación.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué significa «francophonie»?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Completa «Je vais ___ Canada».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿En qué país está la ciudad de Bruselas?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Describe una ciudad francófona en cuatro frases.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="lesson-back">
+        <a href="/recursos/sexto/frances6/">← Volver a las Situaciones de Aprendizaje de Francés</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pie institucional -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <!-- Audio local en /media: no se utiliza síntesis de voz externa. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentAudio = null;
+      let currentButton = null;
+
+      document.querySelectorAll('.listen-btn').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const status = document.getElementById(button.dataset.statusTarget);
+          const source = button.dataset.audio;
+
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            if (currentButton) {
+              currentButton.textContent = '▶ Escuchar audio';
+            }
+          }
+
+          if (currentButton === button && currentAudio && currentAudio._frPlaying) {
+            currentAudio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+            status.textContent = 'Reproducción detenida.';
+            return;
+          }
+
+          const audio = new Audio(source);
+          audio.preload = 'none';
+          currentAudio = audio;
+          currentButton = button;
+          status.textContent = 'Cargando audio…';
+          button.textContent = '■ Detener audio';
+
+          audio.addEventListener('ended', () => {
+            status.textContent = 'Reproducción finalizada.';
+            button.textContent = '▶ Escuchar audio';
+            audio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+          });
+
+          audio.addEventListener('error', () => {
+            status.textContent = 'Audio no disponible. Comprueba que el MP3 esté publicado en /media.';
+            button.textContent = '▶ Escuchar audio';
+            audio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+          });
+
+          try {
+            await audio.play();
+            audio._frPlaying = true;
+            status.textContent = 'Reproduciendo audio…';
+          } catch (error) {
+            status.textContent = 'No se ha podido reproducir el audio. Revisa la ruta /media y el archivo MP3.';
+            button.textContent = '▶ Escuchar audio';
+            currentAudio = null;
+            currentButton = null;
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
