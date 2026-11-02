@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FRA5.5. Bon appétit !. Francés de 5.º de Primaria. Recursos de aprendizaje del CEIP Joaquín Tena Artigas.">
+  <title>FRA5.5 · Bon appétit ! | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!-- Estilos propios de la SdA, con cabeceras .lesson-section-heading. -->
+  <style>
+    /* Colores de Francés; no modifican /css/base.css. */
+    :root {
+      --fr-blue: #405ca8;
+      --fr-dark: #30477f;
+      --fr-soft: #eff4ff;
+      --fr-line: #cbd7f0;
+      --fr-ink: #233047;
+      --fr-muted: #506077;
+    }
+
+    html { scroll-behavior: smooth; }
+    .subject-page { background: var(--background-soft, #f6f8fb); }
+    .lesson-shell { width: min(92%, 1080px); margin: 0 auto; padding: 2rem 0 3.5rem; }
+    .lesson-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 1.4rem;
+      align-items: center;
+      padding: 1.8rem;
+      border: 1px solid var(--fr-line);
+      border-radius: 24px;
+      background: linear-gradient(125deg, var(--fr-soft), #fff 76%);
+      box-shadow: var(--shadow-soft, 0 4px 18px #213c6212);
+      margin-bottom: 1.7rem;
+    }
+    .lesson-code { font-size: .8rem; color: var(--fr-blue); font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .lesson-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.15; color: var(--fr-ink); margin: .45rem 0 1rem; text-align: left; }
+    .lesson-hero p { color: var(--fr-muted); max-width: 680px; line-height: 1.65; margin: 0; }
+    .lesson-hero img { width: 160px; max-width: 100%; height: auto; justify-self: center; }
+    .lesson-meta { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 0; }
+    .lesson-meta span { background: #fff; color: var(--fr-dark); border: 1px solid var(--fr-line); border-radius: 30px; padding: .3rem .65rem; font-size: .78rem; font-weight: 700; }
+    .lesson-nav { padding: 1.2rem; margin-bottom: 1.8rem; background: #fff; border: 1px solid var(--fr-line); border-radius: 16px; }
+    .lesson-nav h2 { text-align: left; margin: 0 0 .9rem; font-size: 1.05rem; color: var(--fr-ink); }
+    .lesson-nav ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem .8rem; padding: 0; margin: 0; list-style: none; }
+    .lesson-nav a { display: block; padding: .4rem .45rem; text-decoration: none; color: var(--fr-dark); border-radius: 6px; font-size: .9rem; }
+    .lesson-nav a:hover, .lesson-nav a:focus-visible { background: var(--fr-soft); text-decoration: underline; }
+    .lesson-section {
+      background: #fff;
+      margin: 1.6rem 0;
+      padding: 1.5rem;
+      border: 1px solid #e1e7f0;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px #2638580a;
+      scroll-margin-top: 1.5rem;
+    }
+    /* Clase específica: evita que los estilos globales centren los encabezados. */
+    .subject-page .lesson-section h2.lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .8rem;
+      width: 100%;
+      text-align: left;
+      margin: 0 0 1rem;
+      color: var(--fr-ink);
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+    .section-number { display: inline-block; flex-shrink: 0; background: var(--fr-blue); color: #fff; font-weight: 800; font-size: .86rem; padding: .48rem .58rem; border-radius: 9px; }
+    .section-intro { line-height: 1.7; margin: 0 0 1.2rem; color: var(--fr-ink); }
+    .vocabulary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; margin-bottom: 1.4rem; }
+    .word-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .4rem; align-items: center; border: 1px solid #dce5f7; border-radius: 9px; overflow: hidden; }
+    .word-pair span { padding: .65rem .7rem; font-size: .92rem; }
+    .word-fr { font-weight: 700; color: var(--fr-dark); background: #f2f5ff; }
+    .word-es { color: var(--fr-ink); }
+    .example-box, .model-box { background: var(--fr-soft); padding: 1rem 1.2rem; border-left: 4px solid var(--fr-blue); border-radius: 0 12px 12px 0; margin-bottom: 1.35rem; color: var(--fr-ink); }
+    .example-box h3, .model-box h3 { font-size: 1rem; margin: 0 0 .7rem; color: var(--fr-dark); text-align: left; }
+    .example-box ul { margin: 0; padding-left: 1.3rem; }
+    .example-box li { margin: .45rem 0; line-height: 1.6; }
+    .model-box p { margin: .45rem 0; line-height: 1.7; }
+    .exercise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+    .exercise-card { min-width: 0; padding: 1rem; border: 1px solid #e0e7f1; border-radius: 12px; background: #fbfcff; }
+    .exercise-label { display: inline-block; padding: .22rem .6rem; border-radius: 5px; font-size: .76rem; font-weight: 800; background: var(--fr-blue); color: #fff; }
+    .exercise-card p { color: var(--fr-ink); margin: .65rem 0 0; line-height: 1.58; font-size: .95rem; }
+    .audio-panel { background: #f6f9ff; border: 1px solid var(--fr-line); padding: 1.1rem; border-radius: 13px; margin-bottom: 1.35rem; }
+    .listen-btn { background: var(--fr-blue); border: 0; color: #fff; border-radius: 9px; cursor: pointer; font-size: .95rem; font-weight: 800; padding: .8rem 1rem; }
+    .listen-btn:hover, .listen-btn:focus-visible { background: var(--fr-dark); }
+    .listen-btn:focus-visible { outline: 3px solid #8a9ed6; outline-offset: 3px; }
+    .audio-status { font-size: .86rem; color: var(--fr-muted); margin: .65rem 0 0; }
+    .transcript { margin-top: .9rem; border-top: 1px solid var(--fr-line); padding-top: .8rem; }
+    .transcript summary { cursor: pointer; font-weight: 700; color: var(--fr-dark); }
+    .transcript p { margin: .7rem 0 .15rem; line-height: 1.65; }
+    .section-project { border-color: #badbc9; }
+    .section-project .section-number { background: #27774c; }
+    .section-reinforce .section-number { background: #6b4db1; }
+    .section-extend .section-number { background: #a76917; }
+    .section-check .section-number { background: #275887; }
+    .lesson-back { margin-top: 1.6rem; }
+    .lesson-back a { display: inline-block; padding: .8rem 1rem; border-radius: 8px; background: var(--fr-soft); color: var(--fr-dark); font-weight: 700; text-decoration: none; }
+    .lesson-back a:hover { text-decoration: underline; }
+    @media (max-width: 800px) {
+      .lesson-hero { grid-template-columns: minmax(0,1fr) 110px; padding: 1.2rem; }
+      .lesson-hero img { width: 105px; }
+      .lesson-nav ul { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 620px) {
+      .lesson-shell { width: 94%; }
+      .lesson-hero { grid-template-columns: 1fr; }
+      .lesson-hero img { width: 110px; }
+      .lesson-section { padding: 1rem; }
+      .lesson-nav ul, .vocabulary-grid, .exercise-grid { grid-template-columns: 1fr; }
+      .word-pair { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Enlace de accesibilidad -->
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- Banner institucional -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+
+  <!-- Navegación principal de la web -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Contenido de la SdA -->
+  <main id="contenido-principal" class="subject-page">
+    <div class="lesson-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/quinto/">5.º de Primaria</a></li>
+          <li><a href="/recursos/quinto/frances5/">Francés</a></li>
+          <li aria-current="page">FRA5.5</li>
+        </ol>
+      </nav>
+
+      <!-- Presentación de la unidad -->
+      <section class="lesson-hero" aria-labelledby="titulo-unidad">
+        <div>
+          <span class="lesson-code">Francés · 5.º de Primaria · FRA5.5</span>
+          <h1 id="titulo-unidad">Bon appétit !</h1>
+          <p>Hablar de alimentos, gustos y compras sencillas.</p>
+          <div class="lesson-meta">
+            <span>3.º trimestre</span>
+            <span>Situación de Aprendizaje 5</span>
+            <span>13 apartados</span>
+          </div>
+        </div>
+        <img src="/img/tomatito/frances.png" alt="" width="160" height="160" loading="lazy">
+      </section>
+
+      <!-- Índice interno -->
+      <nav class="lesson-nav" aria-label="Índice de la Situación de Aprendizaje">
+        <h2>Contenido de esta Situación de Aprendizaje</h2>
+        <ul>
+          <li><a href="#apartado-5-1">5.1 Alimentos y bebidas</a></li>
+          <li><a href="#apartado-5-2">5.2 Comidas y precios</a></li>
+          <li><a href="#apartado-5-3">5.3 Querer algo con cortesía</a></li>
+          <li><a href="#apartado-5-4">5.4 Los partitivos y los gustos</a></li>
+          <li><a href="#apartado-5-5">5.5 En la cafetería</a></li>
+          <li><a href="#apartado-5-6">5.6 Las vocales nasales en «pain» y «vin»</a></li>
+          <li><a href="#apartado-5-7">5.7 Comprensión oral · Écoute !</a></li>
+          <li><a href="#apartado-5-8">5.8 Comprensión escrita · Lis et comprends</a></li>
+          <li><a href="#apartado-5-9">5.9 Comidas y diversidad alimentaria</a></li>
+          <li><a href="#apartado-5-10">5.10 Producto final · Menú y pedido en francés</a></li>
+          <li><a href="#apartado-5-11">5.11 Ficha de refuerzo</a></li>
+          <li><a href="#apartado-5-12">5.12 Ficha de ampliación</a></li>
+          <li><a href="#apartado-5-13">5.13 Comprueba lo aprendido</a></li>
+        </ul>
+      </nav>
+
+      <!-- APARTADO 5.1: Alimentos y bebidas -->
+      <section id="apartado-5-1" class="lesson-section section-normal" aria-labelledby="titulo-5-1">
+        <h2
+          id="titulo-5-1"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.1</span>
+          <span>Alimentos y bebidas</span>
+        </h2>
+        <p class="section-intro">Para comprar o pedir comida necesitamos nombres de productos y sus artículos.</p>
+        <div class="vocabulary-grid">
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une pomme</span>
+            <span class="word-es">una manzana</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une banane</span>
+            <span class="word-es">un plátano</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une orange</span>
+            <span class="word-es">una naranja</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">du pain</span>
+            <span class="word-es">pan</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">du fromage</span>
+            <span class="word-es">queso</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">de l’eau</span>
+            <span class="word-es">agua</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">du lait</span>
+            <span class="word-es">leche</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une carotte</span>
+            <span class="word-es">una zanahoria</span>
+          </div>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al español: une pomme; une banane; une orange; du pain.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe en francés: queso; agua; leche; una zanahoria.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona estas cuatro expresiones con su significado: du fromage; de l’eau; du lait; une carotte.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Prepara una lista de la compra con seis alimentos de la unidad.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.2: Comidas y precios -->
+      <section id="apartado-5-2" class="lesson-section section-normal" aria-labelledby="titulo-5-2">
+        <h2
+          id="titulo-5-2"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.2</span>
+          <span>Comidas y precios</span>
+        </h2>
+        <p class="section-intro">En una cafetería podemos pedir con cortesía y preguntar el precio.</p>
+        <div class="vocabulary-grid">
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le petit déjeuner</span>
+            <span class="word-es">el desayuno</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le déjeuner</span>
+            <span class="word-es">la comida del mediodía</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">le dîner</span>
+            <span class="word-es">la cena</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un jus</span>
+            <span class="word-es">un zumo</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un sandwich</span>
+            <span class="word-es">un bocadillo</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">combien ?</span>
+            <span class="word-es">¿cuánto?</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">un euro</span>
+            <span class="word-es">un euro</span>
+          </div>
+          <div class="word-pair">
+            <span class="word-fr" lang="fr">une bouteille</span>
+            <span class="word-es">una botella</span>
+          </div>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al español: le petit déjeuner; le déjeuner; le dîner; un jus.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Escribe en francés: un bocadillo; ¿cuánto?; un euro; una botella.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona estas cuatro expresiones con su significado: un sandwich; combien ?; un euro; une bouteille.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Imagina una cafetería y escribe cuatro productos para su carta.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.3: Querer algo con cortesía -->
+      <section id="apartado-5-3" class="lesson-section section-normal" aria-labelledby="titulo-5-3">
+        <h2
+          id="titulo-5-3"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.3</span>
+          <span>Querer algo con cortesía</span>
+        </h2>
+        <p class="section-intro">Je voudrais significa «quisiera» y resulta útil al pedir comida o bebida.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Je voudrais une pomme. — Quisiera una manzana.</li>
+            <li>Je voudrais de l’eau. — Quisiera agua.</li>
+            <li>Combien ça coûte ? — ¿Cuánto cuesta?</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Traduce al francés «Quisiera un zumo».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Cambia «une pomme» por «une banane» en una petición.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Escribe la pregunta para conocer el precio de un alimento.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Redacta tres pedidos educados para una cafetería.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.4: Los partitivos y los gustos -->
+      <section id="apartado-5-4" class="lesson-section section-normal" aria-labelledby="titulo-5-4">
+        <h2
+          id="titulo-5-4"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.4</span>
+          <span>Los partitivos y los gustos</span>
+        </h2>
+        <p class="section-intro">Du, de la y de l’ ayudan a expresar cantidades no contadas de comida; en negaciones se usa a menudo de/d’.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Je mange du pain. — Como pan.</li>
+            <li>Je bois de l’eau. — Bebo agua.</li>
+            <li>Je n’aime pas le lait. — No me gusta la leche.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Completa «Je mange ___ fromage».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Elige entre «du» y «de l’» para hablar de pan y agua.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Transforma «J’aime le fromage» en una frase negativa.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe una frase con «je mange» y otra con «je bois».</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.5: En la cafetería -->
+      <section id="apartado-5-5" class="lesson-section section-normal" aria-labelledby="titulo-5-5">
+        <h2
+          id="titulo-5-5"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.5</span>
+          <span>En la cafetería</span>
+        </h2>
+        <p class="section-intro">Leemos un modelo breve. Después practicamos y adaptamos las expresiones a una situación propia.</p>
+        <div class="model-box">
+          <p lang="fr">A: Bonjour ! Je voudrais un sandwich, s’il vous plaît.</p>
+          <p lang="fr">B: Très bien. Et comme boisson ?</p>
+          <p lang="fr">A: De l’eau, merci. Combien ça coûte ?</p>
+          <p lang="fr">B: Cinq euros.</p>
+          <p lang="fr">A: Voilà. Merci, au revoir !</p>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué comida solicita el cliente?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Qué bebida pide?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Cuál es el precio indicado?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Representa una compra con otros dos alimentos.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.6: Las vocales nasales en «pain» y «vin» -->
+      <section id="apartado-5-6" class="lesson-section section-normal" aria-labelledby="titulo-5-6">
+        <h2
+          id="titulo-5-6"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.6</span>
+          <span>Las vocales nasales en «pain» y «vin»</span>
+        </h2>
+        <p class="section-intro">Los sonidos escritos ain y an pueden pronunciarse de forma nasal en francés; escucha antes de repetir.</p>
+        <div class="audio-panel">
+          <button type="button" class="listen-btn" data-audio="/media/frances5/fra5-5-pronunciacion.mp3" data-status-target="estado-5-pron">
+            ▶ Escuchar pronunciación
+          </button>
+          <p id="estado-5-pron" class="audio-status" role="status" aria-live="polite">Pulsa el botón para escuchar.</p>
+          <details class="transcript">
+            <summary>Leer la transcripción en francés</summary>
+            <p lang="fr">pain ; faim ; banane ; bon ; fromage ; déjeuner.</p>
+          </details>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Repite «pain» y «faim» tras escuchar.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Distingue «bon» de «banane» por sus sonidos iniciales.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Lee «Je voudrais du pain, s’il vous plaît».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Practica una petición cortés con entonación interrogativa.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.7: Comprensión oral · Écoute ! -->
+      <section id="apartado-5-7" class="lesson-section section-normal" aria-labelledby="titulo-5-7">
+        <h2
+          id="titulo-5-7"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.7</span>
+          <span>Comprensión oral · Écoute !</span>
+        </h2>
+        <p class="section-intro">Escucha sin leer la transcripción en la primera reproducción; vuelve a escuchar para responder.</p>
+        <div class="audio-panel">
+          <button type="button" class="listen-btn" data-audio="/media/frances5/fra5-5-dialogo.mp3" data-status-target="estado-5-dialogo">
+            ▶ Escuchar el diálogo
+          </button>
+          <p id="estado-5-dialogo" class="audio-status" role="status" aria-live="polite">Pulsa el botón para escuchar.</p>
+          <details class="transcript">
+            <summary>Leer la transcripción en francés</summary>
+            <p lang="fr">À la cafétéria, Ana commande un sandwich au fromage et un jus d’orange. Son ami Louis voudrait une banane et de l’eau. Le sandwich coûte quatre euros. Le jus coûte deux euros. Ana dit « Merci » et Louis dit « Au revoir ! ».</p>
+          </details>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué pide Ana para comer?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Qué bebida prefiere Louis?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Cuánto cuesta el zumo?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>¿Qué fórmulas de cortesía escuchas?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.8: Comprensión escrita · Lis et comprends -->
+      <section id="apartado-5-8" class="lesson-section section-normal" aria-labelledby="titulo-5-8">
+        <h2
+          id="titulo-5-8"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.8</span>
+          <span>Comprensión escrita · Lis et comprends</span>
+        </h2>
+        <p class="section-intro">Lee el texto. Busca las ideas principales y revisa las palabras que ya conoces.</p>
+        <div class="model-box">
+          <p lang="fr">Je m’appelle Émile. Au petit déjeuner, je mange du pain et je bois du lait. À midi, j’aime les légumes et le fromage. Pour le goûter, je préfère une pomme. Ma sœur aime les bananes, mais elle n’aime pas les carottes. Nous buvons souvent de l’eau.</p>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué toma Émile en el desayuno?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Qué fruta prefiere para la merienda?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Qué alimento no le gusta a su hermana?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe tres frases sobre un menú que te gustaría preparar.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.9: Comidas y diversidad alimentaria -->
+      <section id="apartado-5-9" class="lesson-section section-normal" aria-labelledby="titulo-5-9">
+        <h2
+          id="titulo-5-9"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.9</span>
+          <span>Comidas y diversidad alimentaria</span>
+        </h2>
+        <p class="section-intro">Los horarios y platos cambian de un lugar francófono a otro. También varían las preferencias y necesidades alimentarias individuales.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>En diferentes regiones francófonas conviven distintas lenguas y costumbres.</li>
+            <li>Aprender una lengua también significa comunicarse con respeto.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Explica el significado de «petit déjeuner» y «dîner».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>¿Por qué debemos respetar las distintas costumbres alimentarias?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Escribe dos preguntas respetuosas sobre preferencias de comida.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Compara dos comidas cotidianas sin calificarlas como mejores o peores.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.10: Producto final · Menú y pedido en francés -->
+      <section id="apartado-5-10" class="lesson-section section-project" aria-labelledby="titulo-5-10">
+        <h2
+          id="titulo-5-10"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.10</span>
+          <span>Producto final · Menú y pedido en francés</span>
+        </h2>
+        <p class="section-intro">Crea una carta sencilla y simula un pedido.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Planifica tu trabajo antes de redactar.</li>
+            <li>Revisa la expresión francesa y las fórmulas de cortesía.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Escribe seis productos en francés y asigna precios sencillos.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Incluye dos comidas y dos bebidas con sus artículos.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Prepara un diálogo de cliente y camarero con «je voudrais».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Representa el pedido e incluye saludo, precio y despedida.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.11: Ficha de refuerzo -->
+      <section id="apartado-5-11" class="lesson-section section-reinforce" aria-labelledby="titulo-5-11">
+        <h2
+          id="titulo-5-11"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.11</span>
+          <span>Ficha de refuerzo</span>
+        </h2>
+        <p class="section-intro">Repasa los contenidos imprescindibles y comprueba los ejemplos si lo necesitas.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Puedes apoyarte en las tablas de vocabulario.</li>
+            <li>Vuelve a escuchar los modelos antes de responder.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Clasifica seis alimentos en frutas, verduras y bebidas.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Completa cuatro frases con «je voudrais» y «j’aime».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Relaciona «du», «de la» y «de l’» con ejemplos de alimentos.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Escribe un pedido de tres líneas usando «s’il vous plaît».</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.12: Ficha de ampliación -->
+      <section id="apartado-5-12" class="lesson-section section-extend" aria-labelledby="titulo-5-12">
+        <h2
+          id="titulo-5-12"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.12</span>
+          <span>Ficha de ampliación</span>
+        </h2>
+        <p class="section-intro">Profundiza, relaciona ideas y crea mensajes un poco más elaborados.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Revisa las frases antes de compartirlas.</li>
+            <li>Busca información fiable para los ejemplos culturales.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>Diseña un menú equilibrado con vocabulario francés.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Calcula oralmente el precio de dos productos y dilo en francés.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>Escribe un diálogo de ocho intervenciones en un mercado.</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Compara el vocabulario de una comida familiar y el de una cafetería.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- APARTADO 5.13: Comprueba lo aprendido -->
+      <section id="apartado-5-13" class="lesson-section section-check" aria-labelledby="titulo-5-13">
+        <h2
+          id="titulo-5-13"
+          class="lesson-section-heading"
+        >
+          <span class="section-number">5.13</span>
+          <span>Comprueba lo aprendido</span>
+        </h2>
+        <p class="section-intro">Responde sin mirar los apartados anteriores y vuelve a revisar lo que necesites.</p>
+        <div class="example-box">
+          <h3>Observa estos ejemplos</h3>
+          <ul>
+            <li>Aplica vocabulario, gramática y comunicación.</li>
+            <li>Comprueba las mayúsculas, concordancias y pronunciación.</li>
+          </ul>
+        </div>
+        <div class="exercise-grid" aria-label="Actividades del apartado">
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 1</span>
+            <p>¿Qué significa «Je voudrais»?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 2</span>
+            <p>Traduce «Bebo agua».</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 3</span>
+            <p>¿Cómo preguntas el precio?</p>
+          </article>
+          <article class="exercise-card">
+            <span class="exercise-label">Actividad 4</span>
+            <p>Redacta un pedido de comida y bebida con cortesía.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="lesson-back">
+        <a href="/recursos/quinto/frances5/">← Volver a las Situaciones de Aprendizaje de Francés</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pie institucional -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <!-- Audio local en /media: no se utiliza síntesis de voz externa. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentAudio = null;
+      let currentButton = null;
+
+      document.querySelectorAll('.listen-btn').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const status = document.getElementById(button.dataset.statusTarget);
+          const source = button.dataset.audio;
+
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            if (currentButton) {
+              currentButton.textContent = '▶ Escuchar audio';
+            }
+          }
+
+          if (currentButton === button && currentAudio && currentAudio._frPlaying) {
+            currentAudio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+            status.textContent = 'Reproducción detenida.';
+            return;
+          }
+
+          const audio = new Audio(source);
+          audio.preload = 'none';
+          currentAudio = audio;
+          currentButton = button;
+          status.textContent = 'Cargando audio…';
+          button.textContent = '■ Detener audio';
+
+          audio.addEventListener('ended', () => {
+            status.textContent = 'Reproducción finalizada.';
+            button.textContent = '▶ Escuchar audio';
+            audio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+          });
+
+          audio.addEventListener('error', () => {
+            status.textContent = 'Audio no disponible. Comprueba que el MP3 esté publicado en /media.';
+            button.textContent = '▶ Escuchar audio';
+            audio._frPlaying = false;
+            currentAudio = null;
+            currentButton = null;
+          });
+
+          try {
+            await audio.play();
+            audio._frPlaying = true;
+            status.textContent = 'Reproduciendo audio…';
+          } catch (error) {
+            status.textContent = 'No se ha podido reproducir el audio. Revisa la ruta /media y el archivo MP3.';
+            button.textContent = '▶ Escuchar audio';
+            currentAudio = null;
+            currentButton = null;
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
