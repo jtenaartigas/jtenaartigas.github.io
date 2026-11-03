@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Educación Artística de 5.º de Primaria. Situación de Aprendizaje 1: Música, voz humana, lenguaje musical, música de cámara, tempo y signos de repetición."
+  >
+  <title>Descubrimos el lenguaje de la música | EA5.1 | CEIP Joaquín Tena Artigas</title>
+
+  <!-- RECURSOS CORPORATIVOS DEL CENTRO -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- AVISO PARA IMÁGENES NO DISPONIBLES EN EL SERVIDOR -->
+  <script>
+    // Si una imagen todavía no está publicada, mostrar un aviso accesible.
+    function markImageMissing(image) {
+      image.onerror = null;
+      image.style.display = 'none';
+
+      const figure = image.closest('.media-frame');
+      if (!figure) return;
+
+      figure.classList.add('image-missing');
+      const note = document.createElement('p');
+      note.className = 'missing-image-note';
+      note.setAttribute('role', 'status');
+      note.textContent = 'Imagen no disponible: ' + image.getAttribute('src');
+      figure.insertBefore(note, figure.querySelector('figcaption'));
+    }
+
+  </script>
+
+  <!-- ==========================================================
+       ESTILOS ESPECÍFICOS DE EA5.1
+       Presentación coherente con Lengua y Conocimiento del Medio.
+       No se utilizan clases generales como .section-heading para
+       evitar conflictos con los estilos de /css/base.css.
+       ========================================================== -->
+  <style>
+    :root {
+      --primary: #007a33;
+      --primary-light: #00a847;
+      --primary-dark: #005724;
+      --accent: #a94865;
+      --accent-bg: #fff0f4;
+      --secondary: #007a33;
+      --light-bg: #f4f7f5;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #475569;
+      --border-color: #d1e7dd;
+      --warning-bg: #fffbeb;
+      --warning-border: #d97706;
+      --success-bg: #dcfce7;
+      --success-color: #166534;
+      --shadow-sm: 0 2px 8px rgb(0 80 45 / 0.06);
+      --shadow-md: 0 4px 20px rgb(0 122 51 / 0.08);
+      --radius: 18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .topic-page {
+      background: var(--light-bg);
+      color: var(--text-dark);
+      font-family: 'Outfit', system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page * { box-sizing: border-box; }
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    /* CABECERA DE LA SITUACIÓN DE APRENDIZAJE */
+    .topic-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 240px;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding: 2.5rem 3rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 62%, #00a847 100%);
+      border-radius: 26px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      color: white;
+    }
+
+    .topic-hero-content { z-index: 1; max-width: 790px; }
+    .topic-hero-kicker {
+      margin: 0 0 .6rem;
+      color: #d1fae5;
+      font-weight: 700;
+      font-size: .83rem;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      color: #fff;
+      margin: 0 0 .8rem;
+      font: 800 clamp(1.8rem, 4vw, 3rem)/1.14 'Montserrat', system-ui, sans-serif;
+      text-align: left;
+    }
+
+    .topic-hero-subtitle {
+      margin: 0;
+      color: #e6f7ec;
+      line-height: 1.6;
+      font-size: 1.01rem;
+    }
+
+    .topic-hero-school {
+      margin: .85rem 0 0;
+      font-size: .81rem;
+      color: #e8f8ed;
+      opacity: .9;
+    }
+
+    .topic-hero-image {
+      display: block;
+      flex: 0 0 auto;
+      width: min(24%, 190px);
+      height: auto;
+      max-height: 220px;
+      object-fit: contain;
+      align-self: end;
+    }
+
+    /* ÍNDICE DE APARTADOS, COMO EN LAS DEMÁS SdA */
+    .lesson-toc {
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2.25rem;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .lesson-toc h2 {
+      margin: 0 0 .85rem;
+      font-size: .81rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-align: left;
+    }
+
+    .lesson-toc-links { display: flex; flex-wrap: wrap; gap: .55rem; }
+
+    .lesson-toc a {
+      display: inline-block;
+      padding: .48rem .76rem;
+      border-radius: 9px;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .85rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+
+    .lesson-toc a:hover,
+    .lesson-toc a:focus-visible { background: var(--primary); color: #fff; }
+    .lesson-toc .repaso-link { background: #fce7f3; color: #831843; }
+    .lesson-toc .repaso-link:hover { background: var(--accent); color: #fff; }
+
+    .topic-content { display: flex; flex-direction: column; gap: 2.25rem; }
+    .topic-content section[id] { scroll-margin-top: 2rem; }
+
+    .section-card,
+    .review-section {
+      padding: clamp(1.2rem, 3.6vw, 2.15rem);
+      border: 1px solid #e2eee5;
+      border-radius: 23px;
+      background: #fff;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Cabecera exclusiva, evitando el centrado de .section-heading */
+    .lesson-section-heading {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.05rem;
+      border-bottom: 1px solid #dbede3;
+      text-align: left;
+    }
+
+    .section-number {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      min-width: 46px;
+      height: 44px;
+      padding: 0 .45rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 11px;
+      font: 800 1.25rem 'Montserrat', sans-serif;
+    }
+
+    .lesson-section-heading .section-title {
+      margin: 0;
+      color: var(--text-dark);
+      text-align: left;
+      font: 700 clamp(1.1rem, 2.6vw, 1.55rem)/1.3 'Montserrat', sans-serif;
+    }
+
+    .review-section .section-number { background: var(--accent); }
+    .section-card > h3,
+    .review-section > h3 {
+      margin: 1.75rem 0 .85rem;
+      color: var(--primary-dark);
+      font: 700 1.13rem/1.4 'Montserrat', sans-serif;
+      text-align: left;
+    }
+
+    .section-card > h3:first-of-type { margin-top: .4rem; }
+    .section-card > p,
+    .review-section > p { margin: 0 0 .85rem; }
+
+    /* EXPLICACIONES, TABLAS E IMÁGENES */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+      gap: .95rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    .concept-box {
+      background: #f0fdf4;
+      border: 1px solid #d1e7dd;
+      border-left: 4px solid var(--primary);
+      border-radius: 13px;
+      padding: 1.15rem;
+    }
+
+    .concept-box h4 { color: var(--primary-dark); font-weight: 700; margin: 0 0 .45rem; font-size: 1rem; }
+    .concept-box p { margin: 0; color: #334155; font-size: .94rem; }
+
+    .table-responsive { overflow-x: auto; margin: 1.4rem 0 2rem; border-radius: 12px; }
+    table.data-table { width: 100%; border-collapse: collapse; min-width: 540px; font-size: .91rem; }
+    table.data-table th {
+      padding: .82rem .95rem;
+      background: #e6f4ea;
+      color: #005724;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #bddbc7;
+    }
+    table.data-table td { padding: .8rem .95rem; border: 1px solid #d1e7dd; vertical-align: top; }
+    table.data-table tbody tr:nth-child(even) { background: #f8faf9; }
+
+    /* IMÁGENES CON PIE Y AVISO DE ARCHIVOS NO ENCONTRADOS */
+    .media-frame {
+      margin: 1.5rem auto;
+      padding: 1rem;
+      max-width: 960px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .media-frame img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .media-frame figcaption {
+      margin-top: .8rem;
+      color: #475569;
+      font-size: .89rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .media-frame.image-missing {
+      border-style: dashed;
+      background: #f8fafc;
+    }
+
+    .missing-image-note {
+      padding: 1rem;
+      color: #64748b;
+      font-size: .9rem;
+    }
+
+    /* SÍMBOLOS MUSICALES VECTORIALES: SIN DEPENDER DE FUENTES EXTERNAS */
+    .music-figure-cell {
+      text-align: center;
+      vertical-align: middle !important;
+    }
+
+    .music-symbol {
+      display: inline-block;
+      width: 58px;
+      height: 62px;
+      color: #1e293b;
+      vertical-align: middle;
+    }
+
+    .music-symbol--beamed {
+      width: 96px;
+    }
+
+    .visual-diagram {
+      padding: 1.3rem;
+      margin: 1.4rem 0;
+      text-align: center;
+      background: #f8faf9;
+      border: 1px dashed #aacdb7;
+      border-radius: 15px;
+    }
+    .visual-diagram h4 { margin: 0 0 1rem; font-size: .89rem; text-transform: uppercase; color: #334155; }
+    .diagram-flex { display: flex; flex-wrap: wrap; gap: .65rem; justify-content: center; }
+    .badge-tag {
+      padding: .48rem .8rem;
+      border: 1px solid #bddbc7;
+      border-radius: 100px;
+      background: white;
+      color: #005724;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    /* ACTIVIDADES DE COMPRENSIÓN */
+    .activities-container {
+      margin-top: 2rem;
+      padding: 1.35rem;
+      background: #f8faf9;
+      border: 1px solid #e2eee5;
+      border-radius: 17px;
+    }
+    .activities-title {
+      margin: 0 0 1.3rem;
+      text-align: left;
+      color: var(--text-dark);
+      font: 700 1.08rem/1.4 'Montserrat', sans-serif;
+    }
+    .activity-card {
+      padding: 1.25rem;
+      margin-bottom: .95rem;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--primary);
+      border-radius: 13px;
+      background: white;
+    }
+    .activity-header { margin-bottom: .65rem; color: var(--primary-dark); font-weight: 800; }
+    .activity-content { color: #334155; font-size: .96rem; }
+    .activity-content p { margin: .5rem 0; }
+    .activity-content ul { list-style: none; padding: 0; margin: .65rem 0; }
+    .activity-content li { margin: .65rem 0; }
+    .activity-content input[type="text"],
+    .activity-content textarea,
+    .activity-content select {
+      display: block;
+      width: 100%;
+      margin-top: .45rem;
+      padding: .65rem .8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #fff;
+      color: #1e293b;
+      font: inherit;
+    }
+    .activity-content input:focus,
+    .activity-content textarea:focus { outline: 2px solid #86efac; outline-offset: 1px; }
+    .tip-box {
+      margin-top: 1rem;
+      padding: 1.2rem;
+      background: var(--warning-bg);
+      border-left: 4px solid var(--warning-border);
+      border-radius: 12px;
+    }
+    .tip-header { margin-bottom: .45rem; color: #92400e; font-weight: 800; }
+    .tip-box p { margin: 0; }
+
+    /* HERRAMIENTAS ORIGINALES: TECLADO Y METRÓNOMO */
+    .tool-box {
+      margin: 1.7rem 0;
+      padding: 1.25rem;
+      border: 1px solid #bae6cc;
+      border-radius: 14px;
+      background: #f0fdf4;
+      text-align: center;
+    }
+    .tool-box h4 { margin: 0 0 .35rem; color: var(--primary-dark); font-weight: 800; }
+    .tool-box p { margin: .3rem 0; }
+    .tool-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: .48rem; }
+    .tool-box button,
+    .btn-submit {
+      display: inline-block;
+      border: 0;
+      border-radius: 9px;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      padding: .65rem 1rem;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: .93rem;
+      transition: background .2s;
+    }
+    .tool-box button:hover,
+    .btn-submit:hover { background: var(--primary-dark); }
+    .tool-box button:focus-visible,
+    .btn-submit:focus-visible { outline: 3px solid #86efac; outline-offset: 2px; }
+
+    /* REPASO Y CUESTIONARIO */
+    .review-section > .lesson-section-heading { border-bottom-color: #f0c9d4; }
+    .quiz-question {
+      margin-bottom: 1rem;
+      padding: 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 13px;
+      background: #f8fafc;
+    }
+    .quiz-question p { margin: 0 0 .75rem; color: var(--text-dark); font-weight: 700; }
+    .quiz-options { display: grid; gap: .55rem; }
+    .quiz-options label {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+      padding: .7rem .9rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 9px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .quiz-options label:hover { border-color: #86efac; background: #f0fdf4; }
+    .quiz-options input { flex: 0 0 auto; margin-top: .4rem; accent-color: var(--primary); }
+    .btn-submit { margin: .5rem 0 1rem; padding: .8rem 1.5rem; }
+    .feedback { display: none; padding: 1rem; border-radius: 12px; font-weight: 700; }
+    .feedback.success { display: block; color: var(--success-color); background: var(--success-bg); }
+    .final-project { margin-top: 1rem; border-left-color: var(--accent); background: #fff8fa; }
+    .final-project .activity-header { color: #81334b; }
+    .final-project ol { padding-left: 1.2rem; }
+    .final-project li { margin: .35rem 0; }
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .glossary-item { padding: 1rem; background: #f8faf9; border: 1px solid #d1e7dd; border-radius: 12px; }
+    .glossary-item strong { display: block; margin-bottom: .3rem; color: var(--primary-dark); }
+    .glossary-item span { font-size: .94rem; }
+
+    @media (max-width: 800px) {
+      .topic-hero { padding: 1.7rem; }
+      .topic-hero-image { width: 145px; }
+    }
+    @media (max-width: 560px) {
+      .topic-hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .topic-hero-image { align-self: center; width: 140px; }
+      .topic-shell { width: min(94%, 1280px); padding-top: 1rem; }
+      .section-card, .review-section { border-radius: 18px; }
+      .lesson-section-heading { align-items: flex-start; }
+      .section-number { min-width: 40px; height: 40px; font-size: 1rem; }
+      .activities-container { padding: 1rem; }
+      .table-responsive { margin-left: -.3rem; margin-right: -.3rem; }
+    }
+    @media print {
+      .site-banner, .navigation-wrapper, .breadcrumbs, .lesson-toc, .tool-box { display: none; }
+      .topic-hero { color: black; background: white; padding: 1rem 0; }
+      .topic-hero h1, .topic-hero p { color: black; }
+      .topic-content { gap: 1rem; }
+      .section-card, .review-section { box-shadow: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ENLACE DE ACCESIBILIDAD -->
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- BANNER PRINCIPAL DEL CEIP -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <!-- NAVEGACIÓN PRINCIPAL DEL CEIP -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       SITUACIÓN DE APRENDIZAJE 1: EDUCACIÓN ARTÍSTICA, MÚSICA
+       DESTINO: /recursos/quinto/educacion-artistica5/sda-1/index.html
+       ========================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/quinto/">5.º de Primaria</a></li>
+          <li><a href="/recursos/quinto/educacion-artistica5/">Educación Artística</a></li>
+          <li aria-current="page">Situación de Aprendizaje 1</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA, COHERENTE CON OTRAS SdA -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <h1 id="titulo-sda">1. Descubrimos el lenguaje de la música</h1>
+          <p class="topic-hero-subtitle">
+            La voz humana y los coros, el lenguaje musical, la escala de Do mayor, la música de cámara, el tempo y los signos de repetición.
+            Actividades prácticas y repaso interactivo.
+          </p>
+          <p class="topic-hero-school">Situación de aprendizaje EA5.1 · Educación Artística · 5.º de Primaria</p>
+        </div>
+        <img
+          class="topic-hero-image"
+          src="/img/tomatito/educacion-artistica.png"
+          alt=""
+        >
+      </section>
+
+      <!-- ENLACES A LOS SEIS APARTADOS DEL DOCUMENTO -->
+      <nav class="lesson-toc" aria-label="Contenidos de la situación de aprendizaje">
+        <h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="lesson-toc-links">
+          <a href="#tema1">1. La voz humana y coros</a>
+          <a href="#tema2">2. Lenguaje musical</a>
+          <a href="#tema3">3. Música de cámara</a>
+          <a href="#tema4">4. El tempo musical</a>
+          <a href="#tema5">5. Signos de repetición</a>
+          <a class="repaso-link" href="#repaso">6. Repasamos lo aprendido</a>
+        </div>
+      </nav>
+
+      <!-- LOS CINCO APARTADOS Y SU REPASO: TEXTO ORIGINAL -->
+      <div class="topic-content">
+        <!-- ============================================================
+             EA5.1 · CONTENIDO PEDAGÓGICO ORIGINAL
+             Se conserva el texto, las actividades y los enlaces a las imágenes.
+             Únicamente se cambia la presentación CSS y el marco de navegación.
+             ============================================================ -->
+
+        <!-- BLOQUE 1 -->
+        <section id="tema1" class="section-card">
+          <div class="lesson-section-heading">
+            <span class="section-number">1</span>
+            <h2 class="section-title">La voz humana y las agrupaciones vocales</h2>
+          </div>
+
+          <h3>La voz: Nuestro primer instrumento</h3>
+          <p>La voz es el instrumento más antiguo, natural y cercano que posee el ser humano. Se produce mediante la vibración de las cuerdas vocales al pasar el aire de los pulmones, por lo que pertenece a la familia de los <strong>instrumentos de viento</strong>. Cada voz es única e irrepetible, como una huella dactilar, y nos sirve para expresarnos, cantar y comunicarnos con los demás.</p>
+
+          <div class="concept-grid">
+            <div class="concept-box">
+              <h4>🌱 El origen</h4>
+              <p>La voz es el primer instrumento musical de la humanidad, anterior a cualquier objeto fabricado.</p>
+            </div>
+            <div class="concept-box">
+              <h4>✨ Unicidad</h4>
+              <p>Cada persona posee un timbre vocal único determinado por la anatomía de sus cuerdas vocales y resonadores.</p>
+            </div>
+            <div class="concept-box">
+              <h4>💨 Tipo de instrumento</h4>
+              <p>Es un instrumento de viento (aerófono natural) producido por la corriente de aire pulmonar.</p>
+            </div>
+            <div class="concept-box">
+              <h4>🗣️ Función</h4>
+              <p>Principal medio de comunicación humana, emoción artística y expresión musical.</p>
+            </div>
+          </div>
+
+          <h3>Clasificación de las voces por su rango vocal (Tesitura)</h3>
+          <p>Las voces humanas se clasifican según el registro de notas (desde las más agudas hasta las más graves) que pueden emitir cómodamente:</p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Categoría</th>
+                  <th>Tipo de Voz</th>
+                  <th>Registro / Altura Vocal</th>
+                  <th>Carácter y Características</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3"><strong>Voces Femeninas (y de niños)</strong></td>
+                  <td><strong>Soprano</strong></td>
+                  <td>Aguda (Alta)</td>
+                  <td>La voz femenina más brillante y aguda.</td>
+                </tr>
+                <tr>
+                  <td><strong>Mezzosoprano</strong></td>
+                  <td>Media</td>
+                  <td>Registro intermedio de la voz femenina.</td>
+                </tr>
+                <tr>
+                  <td><strong>Contralto</strong></td>
+                  <td>Grave (Baja)</td>
+                  <td>La voz femenina más grave y profunda.</td>
+                </tr>
+                <tr>
+                  <td rowspan="3"><strong>Voces Masculinas</strong></td>
+                  <td><strong>Tenor</strong></td>
+                  <td>Aguda (Alta)</td>
+                  <td>La voz masculina más aguda.</td>
+                </tr>
+                <tr>
+                  <td><strong>Barítono</strong></td>
+                  <td>Media</td>
+                  <td>Registro medio masculino, muy común.</td>
+                </tr>
+                <tr>
+                  <td><strong>Bajo</strong></td>
+                  <td>Grave (Baja)</td>
+                  <td>La voz masculina más profunda y grave.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Las agrupaciones vocales (Los coros)</h3>
+          <p>Cuando varias personas cantan juntas forman un coro. Según la cantidad de intérpretes y los tipos de voz, distinguimos:</p>
+
+          <div class="visual-diagram">
+            <h4>Guía visual de agrupar voces</h4>
+            <div class="diagram-flex">
+              <span class="badge-tag">Coro de cámara (5 a 20 voces)</span>
+              <span class="badge-tag">Coro sinfónico / Coral (&gt; 20 voces)</span>
+              <span class="badge-tag">A capela (Sin instrumentos)</span>
+              <span class="badge-tag">Coro Mixto (Voces M + F)</span>
+              <span class="badge-tag">Voces Blancas (Solo niños/as)</span>
+              <span class="badge-tag">Voces Iguales (Un único tipo)</span>
+            </div>
+          </div>
+
+          <!-- Imagen del Apartado 1: se mantiene la ruta original. -->
+          <figure class="media-frame">
+            <img src="/img/voz-humana5.png" alt="Explorando la voz humana: El primer instrumento" onerror="markImageMissing(this)">
+            <figcaption>Explorando la voz humana: El primer instrumento.</figcaption>
+          </figure>
+
+          <div class="activities-container">
+            <h3 class="activities-title">📝 Actividades de comprensión: La Voz y los Coros</h3>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 1. Clasificación por tesitura vocal</div>
+              <div class="activity-content">
+                <p>Relaciona cada tipo de voz con su registro correspondiente escribiendo si es Aguda, Media o Grave:</p>
+                <ul>
+                  <li>a) Soprano: <input type="text" placeholder="Escribe aquí..."></li>
+                  <li>b) Bajo: <input type="text" placeholder="Escribe aquí..."></li>
+                  <li>c) Mezzosoprano: <input type="text" placeholder="Escribe aquí..."></li>
+                  <li>d) Tenor: <input type="text" placeholder="Escribe aquí..."></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 2. Tipos de Coros y Agrupaciones</div>
+              <div class="activity-content">
+                <p>Responde brevemente a las siguientes preguntas sobre coros:</p>
+                <p>1. ¿En qué se diferencia un coro de cámara de un coro sinfónico o coral?</p>
+                <input type="text" placeholder="Escribe la diferencia según el número de integrantes...">
+                <p style="margin-top:0.5rem;">2. ¿Qué significa interpretar una pieza musical "A capela"?</p>
+                <input type="text" placeholder="Explicación del término a capela...">
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 3. Análisis de conceptos vocales</div>
+              <div class="activity-content">
+                <p>¿Qué es un coro de <strong>voces blancas</strong> y por qué recibe este nombre tradicionalmente?</p>
+                <textarea rows="2" placeholder="Explica qué tipo de cantantes forman las voces blancas..."></textarea>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 4. Identificación de voces por género</div>
+              <div class="activity-content">
+                <p>Completa el siguiente cuadro indicando si la voz es femenina/infantil o masculina:</p>
+                <ul>
+                  <li>• Contralto: <input type="text" placeholder="Femenina / Masculina"></li>
+                  <li>• Barítono: <input type="text" placeholder="Femenina / Masculina"></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-header">💡 Tip vocal y experimento práctico</div>
+              <p>Coloca la mano suavemente sobre tu garganta y pronuncia una nota grave y luego una muy aguda. ¿Notas cómo cambia la vibración? Al cantar notas graves la vibración se siente en el pecho, mientras que en las notas agudas el sonido resuena hacia la cabeza.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOQUE 2 -->
+        <section id="tema2" class="section-card">
+          <div class="lesson-section-heading">
+            <span class="section-number">2</span>
+            <h2 class="section-title">Elementos del lenguaje musical</h2>
+          </div>
+
+          <h3>1. Las figuras rítmicas</h3>
+          <p>Las figuras rítmicas son los símbolos gráficos que indican la duración temporal de los sonidos musicales. La unidad básica de medida en el ritmo es el <strong>pulso</strong> o tiempo.</p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Figura</th>
+                  <th>Nombre</th>
+                  <th>Duración en pulsos</th>
+                  <th>Equivalencia y división</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="music-figure-cell">
+                    <svg class="music-symbol" viewBox="0 0 60 64" role="img" aria-label="Redonda" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="30" cy="37" rx="13" ry="9" transform="rotate(-20 30 37)" fill="none" stroke="currentColor" stroke-width="4"/>
+                    </svg>
+                  </td>
+                  <td><strong>Redonda</strong></td>
+                  <td>4 pulsos</td>
+                  <td>Es la figura más larga. Equivale a 2 blancas.</td>
+                </tr>
+                <tr>
+                  <td class="music-figure-cell">
+                    <svg class="music-symbol" viewBox="0 0 60 64" role="img" aria-label="Blanca" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="25" cy="45" rx="11" ry="7.5" transform="rotate(-22 25 45)" fill="white" stroke="currentColor" stroke-width="3"/>
+                      <path d="M35 42 V5" fill="none" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                  </td>
+                  <td><strong>Blanca</strong></td>
+                  <td>2 pulsos</td>
+                  <td>Equivale a la mitad de una redonda (2 negras).</td>
+                </tr>
+                <tr>
+                  <td class="music-figure-cell">
+                    <svg class="music-symbol" viewBox="0 0 60 64" role="img" aria-label="Negra" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="25" cy="45" rx="11" ry="7.5" transform="rotate(-22 25 45)" fill="currentColor"/>
+                      <path d="M35 42 V5" fill="none" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                  </td>
+                  <td><strong>Negra</strong></td>
+                  <td>1 pulso</td>
+                  <td>Unidad de medida básica de pulso.</td>
+                </tr>
+                <tr>
+                  <td class="music-figure-cell">
+                    <svg class="music-symbol music-symbol--beamed" viewBox="0 0 90 64" role="img" aria-label="Dos corcheas unidas por una barra" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="20" cy="47" rx="10" ry="7" transform="rotate(-22 20 47)" fill="currentColor"/>
+                      <ellipse cx="64" cy="47" rx="10" ry="7" transform="rotate(-22 64 47)" fill="currentColor"/>
+                      <path d="M29 44 V11 M73 44 V11" fill="none" stroke="currentColor" stroke-width="3"/>
+                      <path d="M28 9 H74 V17 H28 Z" fill="currentColor"/>
+                    </svg>
+                  </td>
+                  <td><strong>Dos corcheas</strong></td>
+                  <td>1 pulso total (1/2 c/u)</td>
+                  <td>Dividen el tiempo en 2 partes iguales.</td>
+                </tr>
+                <tr>
+                  <td class="music-figure-cell">
+                    <svg class="music-symbol music-symbol--beamed" viewBox="0 0 108 64" role="img" aria-label="Cuatro semicorcheas unidas por dos barras" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="13" cy="48" rx="9" ry="6" transform="rotate(-22 13 48)" fill="currentColor"/>
+                      <ellipse cx="39" cy="48" rx="9" ry="6" transform="rotate(-22 39 48)" fill="currentColor"/>
+                      <ellipse cx="65" cy="48" rx="9" ry="6" transform="rotate(-22 65 48)" fill="currentColor"/>
+                      <ellipse cx="91" cy="48" rx="9" ry="6" transform="rotate(-22 91 48)" fill="currentColor"/>
+                      <path d="M21 45 V11 M47 45 V11 M73 45 V11 M99 45 V11" fill="none" stroke="currentColor" stroke-width="2.8"/>
+                      <path d="M20 9 H100 V15 H20 Z M20 19 H100 V25 H20 Z" fill="currentColor"/>
+                    </svg>
+                  </td>
+                  <td><strong>Cuatro semicorcheas</strong></td>
+                  <td>1 pulso total (1/4 c/u)</td>
+                  <td>Dividen el tiempo en 4 partes iguales.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>2. Las líneas adicionales</h3>
+          <p>El pentagrama clásico consta de <strong>5 líneas y 4 espacios</strong>. Sin embargo, cuando una nota musical es extremadamente grave o aguda y se sale de los límites del pentagrama, utilizamos las <strong>líneas adicionales</strong>.</p>
+          <div class="concept-grid">
+            <div class="concept-box">
+              <h4>¿Qué son?</h4>
+              <p>Son pequeñas líneas horizontales que se añaden por encima o por debajo del pentagrama para ubicar notas fuera de sus 5 líneas.</p>
+            </div>
+            <div class="concept-box">
+              <h4>Notas graves ⬇️</h4>
+              <p>Se escriben por debajo del pentagrama (por ejemplo, el <strong>Do grave</strong> lleva una línea adicional que lo atraviesa centralmente).</p>
+            </div>
+            <div class="concept-box">
+              <h4>Notas agudas ⬆️</h4>
+              <p>Se escriben por encima de la quinta línea del pentagrama para registrar sonidos más elevados.</p>
+            </div>
+          </div>
+
+          <h3>3. La escala de Do mayor</h3>
+          <p>Una <strong>escala musical</strong> es una sucesión ordenada de notas que suben (ascendente) o bajan (descendente) como los peldaños de una escalera.</p>
+          <p>La escala de <strong>Do mayor</strong> contiene 8 notas: <strong>Do → Re → Mi → Fa → Sol → La → Si → Do' (agudo)</strong>. En el piano, todas estas notas corresponden exactamente a las <strong>teclas blancas</strong> consecutivas.</p>
+
+          <div class="tool-box">
+            <h4>🎹 Escucha la escala de Do mayor y sus notas</h4>
+            <p>Haz clic en los botones para reproducir los tonos con el sintetizador de tu navegador:</p>
+            <div class="tool-controls" style="margin-top: 0.75rem;">
+              <button type="button" onclick="playNote(261.63)">Do</button>
+              <button type="button" onclick="playNote(293.66)">Re</button>
+              <button type="button" onclick="playNote(329.63)">Mi</button>
+              <button type="button" onclick="playNote(349.23)">Fa</button>
+              <button type="button" onclick="playNote(392.00)">Sol</button>
+              <button type="button" onclick="playNote(440.00)">La</button>
+              <button type="button" onclick="playNote(493.88)">Si</button>
+              <button type="button" onclick="playNote(523.25)">Do'</button>
+            </div>
+          </div>
+
+          <figure class="media-frame">
+            <img src="/img/figuras-ritmicas5.png" alt="Guía visual de las figuras rítmicas fundamentales" onerror="markImageMissing(this)">
+            <figcaption>Guía visual de las figuras rítmicas fundamentales.</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <img src="/img/escala-do-mayor5.png" alt="¡Descubre la escala de Do mayor!" onerror="markImageMissing(this)">
+            <figcaption>¡Descubre la escala de Do mayor!.</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <img src="/img/escala-lineas-adicionales5.png" alt="La escala de Do mayor y las líneas adicionales" onerror="markImageMissing(this)">
+            <figcaption>La escala de Do mayor y las líneas adicionales.</figcaption>
+          </figure>
+
+          <div class="activities-container">
+            <h3 class="activities-title">📝 Actividades de comprensión: Ritmo y Pentagrama</h3>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 1. Suma rítmica de pulsos</div>
+              <div class="activity-content">
+                <p>Calcula el total de pulsos en las siguientes combinaciones:</p>
+                <ul>
+                  <li>a) 1 Blanca + 2 Negras = <input type="text" placeholder="¿Cuántos pulsos?"></li>
+                  <li>b) 1 Redonda + 1 Blanca = <input type="text" placeholder="¿Cuántos pulsos?"></li>
+                  <li>c) 2 Corcheas + 1 Negra = <input type="text" placeholder="¿Cuántos pulsos?"></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 2. Orden de la escala de Do mayor</div>
+              <div class="activity-content">
+                <p>Escribe en orden descendente (de la más aguda a la más grave) las 8 notas de la escala de Do mayor:</p>
+                <input type="text" placeholder="Do', Si, ...">
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 3. Uso de las líneas adicionales</div>
+              <div class="activity-content">
+                <p>Explica para qué sirve añadir una línea adicional por debajo de la primera línea del pentagrama y pon un ejemplo de nota que la utilice.</p>
+                <textarea rows="2" placeholder="Escribe tu respuesta sobre el Do grave..."></textarea>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 4. Equivalencias rítmicas</div>
+              <div class="activity-content">
+                <p>Responde a la siguiente equivalencia: ¿Cuántas semicorcheas hacen falta para igualar la duración de 1 Negra?</p>
+                <input type="text" placeholder="Número de semicorcheas...">
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-header">💡 Truquito musical para la escala</div>
+              <p>Para recordar la escala de Do mayor en el teclado del piano, fíjate en que no necesitas tocar ninguna tecla negra: ¡las 8 notas de la escala de Do mayor son consecutivas y todas se tocan en las teclas blancas!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOQUE 3 -->
+        <section id="tema3" class="section-card">
+          <div class="lesson-section-heading">
+            <span class="section-number">3</span>
+            <h2 class="section-title">La música de cámara</h2>
+          </div>
+
+          <h3>¿Qué es la música de cámara?</h3>
+          <p>La música de cámara es aquella música escrita para ser interpretada por un <strong>grupo reducido de músicos</strong> (ya sean instrumentales o vocales). Recibe este nombre histórico porque originariamente no se tocaba en grandes teatros ni iglesias, sino en las salas o habitaciones (llamadas "cámaras") de los palacios y residencias de la nobleza durante el Renacimiento y el Barroco.</p>
+
+          <h3>Nombres de las agrupaciones según el número de intérpretes</h3>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Número de Intérpretes</th>
+                  <th>Nombre de la Agrupación</th>
+                  <th>Ejemplo habitual de combinación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2 Intérpretes</td>
+                  <td><strong>Dúo</strong></td>
+                  <td>Violín y Piano / Flauta y Guitarra</td>
+                </tr>
+                <tr>
+                  <td>3 Intérpretes</td>
+                  <td><strong>Trío</strong></td>
+                  <td>Violín, Violonchelo y Piano</td>
+                </tr>
+                <tr>
+                  <td>4 Intérpretes</td>
+                  <td><strong>Cuarteto</strong></td>
+                  <td>Cuarteto de Cuerda (2 Violines, Viola, Violonchelo)</td>
+                </tr>
+                <tr>
+                  <td>5 Intérpretes</td>
+                  <td><strong>Quinteto</strong></td>
+                  <td>Quinteto de Viento (Flauta, Oboe, Clarinete, Trompa, Fagot)</td>
+                </tr>
+                <tr>
+                  <td>6 Intérpretes</td>
+                  <td><strong>Sexteto</strong></td>
+                  <td>Sexteto de Cuerdas o Mixto</td>
+                </tr>
+                <tr>
+                  <td>7 Intérpretes</td>
+                  <td><strong>Septimino</strong></td>
+                  <td>Septeto instrumental mixto (viento y cuerda)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>"Todos son solistas": El secreto de la música de cámara</h3>
+          <div class="concept-grid">
+            <div class="concept-box">
+              <h4>🎼 Melodías diferentes</h4>
+              <p>A diferencia de una gran orquesta donde muchos violines tocan la misma parte, en la música de cámara cada músico interpreta su propia línea melódica independiente.</p>
+            </div>
+            <div class="concept-box">
+              <h4>🤝 Gran coordinación</h4>
+              <p>Dado que todos actúan como solistas de su parte, exige una compenetración, escucha atenta y comunicación visual perfecta entre los intérpretes.</p>
+            </div>
+          </div>
+
+          <figure class="media-frame">
+            <img src="/img/musica-camara5.png" alt="Guía visual de la música de cámara" onerror="markImageMissing(this)">
+            <figcaption>Guía visual de la música de cámara.</figcaption>
+          </figure>
+
+          <div class="activities-container">
+            <h3 class="activities-title">📝 Actividades de comprensión: Música de Cámara</h3>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 1. Empareja número con agrupación</div>
+              <div class="activity-content">
+                <p>Escribe el nombre de la agrupación que corresponde a cada número de músicos:</p>
+                <ul>
+                  <li>• 4 músicos: <input type="text" placeholder="Ej: Cuarteto"></li>
+                  <li>• 2 músicos: <input type="text" placeholder="..."></li>
+                  <li>• 7 músicos: <input type="text" placeholder="..."></li>
+                  <li>• 5 músicos: <input type="text" placeholder="..."></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 2. Origen histórico del nombre</div>
+              <div class="activity-content">
+                <p> Explica con tus palabras por qué esta música recibe el nombre de música de "cámara". ¿Dónde se interpretaba en sus orígenes?</p>
+                <textarea rows="2" placeholder="Describe el origen palaciego de la palabra cámara..."></textarea>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 3. Diferencia con la orquesta</div>
+              <div class="activity-content">
+                <p>¿Qué significa que en la música de cámara "todos los miembros son solistas"? ¿En qué se diferencia de una gran orquesta sinfónica?</p>
+                <textarea rows="2" placeholder="Explica las líneas melódicas independientes..."></textarea>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 4. El Cuarteto de Cuerda</div>
+              <div class="activity-content">
+                <p>Investiga y escribe los 4 instrumentos tradicionales que componen el famoso <strong>Cuarteto de Cuerda clásico</strong>:</p>
+                <input type="text" placeholder="Instrumento 1, Instrumento 2, Instrumento 3, Instrumento 4">
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-header">💡 Tip de audición en directo</div>
+              <p>Cuando veas un cuarteto de cuerda en directo, fíjate en las miradas y la respiración de los músicos. Como no hay un director con batuta frente a ellos, se coordinan mediante pequeños gestos de la cabeza y respirando juntos al empezar cada frase.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOQUE 4 -->
+        <section id="tema4" class="section-card">
+          <div class="lesson-section-heading">
+            <span class="section-number">4</span>
+            <h2 class="section-title">El tempo: La velocidad de la música</h2>
+          </div>
+
+          <h3>¿Qué es el tempo?</h3>
+          <p>El <strong>tempo</strong> es el grado de velocidad con el que se debe interpretar una obra musical. Nos marca si la música camina despacio como una tortuga o avanza veloz como un cohete espacial.</p>
+
+          <h3>Términos italianos para medir la velocidad</h3>
+          <p>En el lenguaje musical internacional se emplean tradicionalmente términos en <strong>italiano</strong> para especificar la velocidad y el carácter del tempo. Aquí los tienes ordenados de menor a mayor velocidad:</p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Término Italiano</th>
+                  <th>Significado / Traducción</th>
+                  <th>Rango BPM (Pulsos/min)</th>
+                  <th>Sensación o Carácter</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lento</strong></td>
+                  <td>Muy lento</td>
+                  <td>40 - 60 BPM</td>
+                  <td>Solemne, pesado, pausado</td>
+                </tr>
+                <tr>
+                  <td><strong>Adagio</strong></td>
+                  <td>Lento y despejado</td>
+                  <td>60 - 76 BPM</td>
+                  <td>Tranquilo, expresivo, relajado</td>
+                </tr>
+                <tr>
+                  <td><strong>Andante</strong></td>
+                  <td>Tranquilo ("a paso de paseo")</td>
+                  <td>76 - 108 BPM</td>
+                  <td>Natural, ritmo fluido al caminar</td>
+                </tr>
+                <tr>
+                  <td><strong>Allegro</strong></td>
+                  <td>Rápido y animado</td>
+                  <td>120 - 156 BPM</td>
+                  <td>Energético, alegre, jovial</td>
+                </tr>
+                <tr>
+                  <td><strong>Presto</strong></td>
+                  <td>Muy rápido</td>
+                  <td>&gt; 168 BPM</td>
+                  <td>Virtuósico, veloz, excitado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tool-box">
+            <h4>⏱️ Simulador de Metrónomo de Tempo</h4>
+            <p>Haz clic en cada botón para sentir la diferencia de pulso:</p>
+            <div class="tool-controls" style="margin-top: 0.75rem;">
+              <button type="button" onclick="triggerPulse(50, 'Lento')">🐢 Lento (50 BPM)</button>
+              <button type="button" onclick="triggerPulse(70, 'Adagio')">🌿 Adagio (70 BPM)</button>
+              <button type="button" onclick="triggerPulse(92, 'Andante')">🚶 Andante (92 BPM)</button>
+              <button type="button" onclick="triggerPulse(130, 'Allegro')">🏃 Allegro (130 BPM)</button>
+              <button type="button" onclick="triggerPulse(180, 'Presto')">🚀 Presto (180 BPM)</button>
+            </div>
+            <div id="metronome-display" style="margin-top:0.75rem; font-weight:700; color:var(--primary);">Selecciona un tempo arriba</div>
+          </div>
+
+          <figure class="media-frame">
+            <img src="/img/tempo-musical5.png" alt="El tempo musical: La velocidad de la música" onerror="markImageMissing(this)">
+            <figcaption>El tempo musical: La velocidad de la música.</figcaption>
+          </figure>
+
+          <div class="activities-container">
+            <h3 class="activities-title">📝 Actividades de comprensión: El Tempo</h3>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 1. Ordena de menor a mayor velocidad</div>
+              <div class="activity-content">
+                <p>Ordena los siguientes 5 términos de tempo desde el más lento (1) hasta el más rápido (5):</p>
+                <p><em>Allegro, Lento, Presto, Adagio, Andante</em></p>
+                <input type="text" placeholder="1. ___, 2. ___, 3. ___, 4. ___, 5. ___">
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 2. Traducción de términos de tempo</div>
+              <div class="activity-content">
+                <p>Relaciona la palabra en italiano con su significado en español:</p>
+                <ul>
+                  <li>• Andante: <input type="text" placeholder="..."></li>
+                  <li>• Presto: <input type="text" placeholder="..."></li>
+                  <li>• Adagio: <input type="text" placeholder="..."></li>
+                  <li>• Allegro: <input type="text" placeholder="..."></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 3. Asociación con situaciones reales</div>
+              <div class="activity-content">
+                <p>¿Qué término de tempo elegirías para interpretar una marcha fúnebre muy solemne? ¿Y para una carrera deportiva a toda velocidad?</p>
+                <textarea rows="2" placeholder="Escribe tu respuesta justificando el carácter..."></textarea>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 4. El aparato del Tempo</div>
+              <div class="activity-content">
+                <p>¿Cómo se llama el instrumento o aparato de medición que utilizan los músicos para marcar el pulso y mantener un tempo constante?</p>
+                <input type="text" placeholder="Nombre del aparato...">
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-header">💡 Tip de tempo: El latido del corazón</div>
+              <p>¿Sabías que el término <em>Andante</em> (entorno a 80-90 BPM) coincide muy de cerca con la frecuencia cardíaca media de una persona al caminar despacio? La música guarda una estrecha relación con los ritmos biológicos de nuestro propio cuerpo.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOQUE 5 -->
+        <section id="tema5" class="section-card">
+          <div class="lesson-section-heading">
+            <span class="section-number">5</span>
+            <h2 class="section-title">Los signos de repetición</h2>
+          </div>
+
+          <h3>¿Qué son los signos de repetición?</h3>
+          <p>Los <strong>signos de repetición</strong> son símbolos gráficos e indicaciones escritas que nos señalan qué fragmento o sección de una partitura debemos volver a interpretar. Su función principal es economizar espacio en el papel y evitar tener que escribir dos veces la misma música.</p>
+
+          <h3>1. Casillas de 1.ª y 2.ª vez</h3>
+          <p>Se utilizan cuando un fragmento musical se repite, pero tiene un final diferente la segunda vez que se toca:</p>
+          <div class="concept-grid">
+            <div class="concept-box">
+              <h4>1️⃣ Casilla de 1.ª vez</h4>
+              <p>La primera vez que tocamos el fragmento, entramos en esta casilla y al llegar al signo de repetición, volvemos atrás para repetir el pasaje.</p>
+            </div>
+            <div class="concept-box">
+              <h4>2️⃣ Casilla de 2.ª vez</h4>
+              <p>La segunda vez que interpretamos la sección, <strong>nos saltamos la casilla 1</strong> y tocamos directamente la casilla 2 para continuar o finalizar la pieza.</p>
+            </div>
+          </div>
+
+          <h3>2. Indicación D. C. al Fine (Da Capo al Fine)</h3>
+          <p>Es una indicación abreviada en italiano compuesta por dos instrucciones clave:</p>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Abreviatura</th>
+                  <th>Término Italiano</th>
+                  <th>Significado Literal</th>
+                  <th>Instrucción de Lectura</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>D. C.</strong></td>
+                  <td>Da Capo</td>
+                  <td>"Desde la cabeza"</td>
+                  <td>Volver al principio absoluto de la partitura.</td>
+                </tr>
+                <tr>
+                  <td><strong>Fine</strong></td>
+                  <td>Fine</td>
+                  <td>"Final"</td>
+                  <td>Punto exacto donde concluye la obra.</td>
+                </tr>
+                <tr>
+                  <td><strong>D.C. al Fine</strong></td>
+                  <td>Da Capo al Fine</td>
+                  <td>"Desde el principio hasta el final"</td>
+                  <td>Regresar al inicio y tocar hasta encontrar la palabra Fine.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <figure class="media-frame">
+            <img src="/img/signos-repeticion5.png" alt="Los signos de repetición en la música" onerror="markImageMissing(this)">
+            <figcaption>Los signos de repetición en la música.</figcaption>
+          </figure>
+
+          <div class="activities-container">
+            <h3 class="activities-title">📝 Actividades de comprensión: Signos de Repetición</h3>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 1. Significado literal de Da Capo</div>
+              <div class="activity-content">
+                <p>¿Qué significa literalmente en italiano la palabra "Capo" en la expresión <em>Da Capo</em> y qué instrucción da al músico?</p>
+                <input type="text" placeholder="Significado literal e instrucción...">
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 2. Recorrido de lectura con casillas</div>
+              <div class="activity-content">
+                <p>Describe paso a paso qué hace un músico cuando llega a la casilla de 1ª vez y qué ocurre la segunda vez que pasa por ese mismo compás.</p>
+                <textarea rows="2" placeholder="Explica el salto de la casilla 1 a la casilla 2..."></textarea>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 3. Utilidad de los signos de repetición</div>
+              <div class="activity-content">
+                <p>¿Cuál es la ventaja principal de utilizar signos de repetición en lugar de escribir toda la música repetida en el papel?</p>
+                <input type="text" placeholder="Ventajas de espacio, papel y lectura...">
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-header">Actividad 4. Esquema de dirección musical</div>
+              <div class="activity-content">
+                <p>Si una obra tiene 20 compases, y en el compás 20 pone <em>D.C. al Fine</em>, estando la palabra <em>Fine</em> en el compás 10, ¿cuántos compases se tocan en total?</p>
+                <input type="text" placeholder="Calcula el total de compases interpretados...">
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-header">💡 Tip de lectura de partituras</div>
+              <p>Piensa en los signos de repetición como si fueran las señales de tráfico o un GPS de la música. Nos guían con atajos para saber cuándo dar la vuelta o saltar un tramo sin perder la cuenta de la música.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOQUE 6: REPASAMOS LO APRENDIDO -->
+        <section id="repaso" class="review-section">
+          <div class="lesson-section-heading">
+            <span class="section-number">6</span>
+            <h2 class="section-title">Repasamos lo aprendido</h2>
+          </div>
+
+          <p style="margin-bottom: 1.5rem;">En esta sección final consolidaremos todos los saberes aprendidos durante el trimestre: la voz, las figuras rítmicas, la escala de Do mayor, la música de cámara, el tempo y los signos de repetición.</p>
+
+          <!-- 1. RESUMEN ESQUEMÁTICO INTEGRAL -->
+          <h3>📊 1. Resumen esquemático de la unidad</h3>
+          <div class="concept-grid" style="margin-bottom: 2rem;">
+            <div class="concept-box" style="border-left-color: #3b82f6;">
+              <h4>🎤 La Voz Humana</h4>
+              <p>Instrumento de viento único. Tesituras: Soprano, Mezzo, Contralto (femeninas) / Tenor, Barítono, Bajo (masculinas). Coros: Cámara, Sinfónico, A capela, Voces blancas.</p>
+            </div>
+            <div class="concept-box" style="border-left-color: #10b981;">
+              <h4>🎼 Lenguaje Musical</h4>
+              <p>Figuras (Redonda 4t, Blanca 2t, Negra 1t, 2 Corcheas 1t, 4 Semicorcheas 1t). Líneas adicionales. Escala de Do mayor (8 notas en teclas blancas).</p>
+            </div>
+            <div class="concept-box" style="border-left-color: #f59e0b;">
+              <h4>🎻 Música de Cámara</h4>
+              <p>Pequeñas agrupaciones en palacios (Dúo a Septimino). Todos los integrantes son solistas con líneas melódicas independientes.</p>
+            </div>
+            <div class="concept-box" style="border-left-color: #ef4444;">
+              <h4>⏱️ El Tempo</h4>
+              <p>Velocidad musical en italiano: Lento &lt; Adagio &lt; Andante &lt; Allegro &lt; Presto. Medido en BPM mediante metrónomo.</p>
+            </div>
+            <div class="concept-box" style="border-left-color: #8b5cf6;">
+              <h4>𝄇 Signos de Repetición</h4>
+              <p>Ahorran espacio. Casillas 1.ª y 2.ª vez (se salta la 1.ª en la repetición) y <em>D.C. al Fine</em> (volver al inicio hasta la palabra Fine).</p>
+            </div>
+          </div>
+
+          <!-- 2. TEST DE AUTOEVALUACIÓN INTERACTIVO -->
+          <h3>✅ 2. Cuestionario de Autoevaluación Interactivo</h3>
+          <form id="quiz-form" onsubmit="evaluateQuiz(event)">
+
+            <div class="quiz-question">
+              <p>1. ¿A qué familia instrumental pertenece la voz humana?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> A) Percusión</label>
+                <label><input type="radio" name="q1" value="b"> B) Viento</label>
+                <label><input type="radio" name="q1" value="c"> C) Cuerda pulsada</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>2. ¿Cuál es la voz femenina más aguda?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> A) Contralto</label>
+                <label><input type="radio" name="q2" value="b"> B) Mezzosoprano</label>
+                <label><input type="radio" name="q2" value="c"> C) Soprano</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>3. ¿Cómo se denomina a un coro formado por entre 5 y 20 cantantes?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> A) Coro de cámara</label>
+                <label><input type="radio" name="q3" value="b"> B) Coro sinfónico</label>
+                <label><input type="radio" name="q3" value="c"> C) Coral</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>4. ¿Cuántos pulsos o tiempos dura una Blanca?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> A) 4 pulsos</label>
+                <label><input type="radio" name="q4" value="b"> B) 1 pulso</label>
+                <label><input type="radio" name="q4" value="c"> C) 2 pulsos</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>5. ¿Qué nota de la escala de Do mayor lleva una línea adicional por debajo del pentagrama?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> A) Sol agudo</label>
+                <label><input type="radio" name="q5" value="b"> B) Do grave</label>
+                <label><input type="radio" name="q5" value="c"> C) Mi</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>6. ¿Cuántos músicos forman un Septimino?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> A) 5 músicos</label>
+                <label><input type="radio" name="q6" value="b"> B) 6 músicos</label>
+                <label><input type="radio" name="q6" value="c"> C) 7 músicos</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>7. En la música de cámara, ¿por qué se dice que todos son solistas?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q7" value="a"> A) Porque cantan a capela</label>
+                <label><input type="radio" name="q7" value="b"> B) Porque cada uno toca una melodía diferente e independiente</label>
+                <label><input type="radio" name="q7" value="c"> C) Porque solo toca una persona</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>8. ¿Qué indica el término italiano "Andante"?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q8" value="a"> A) Muy rápido (cohete)</label>
+                <label><input type="radio" name="q8" value="b"> B) Tranquilo ("a paso de paseo")</label>
+                <label><input type="radio" name="q8" value="c"> C) Lento como una tortuga</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>9. ¿Qué debemos hacer cuando al repetir un fragmento encontramos la casilla 2?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q9" value="a"> A) Repetir la casilla 1</label>
+                <label><input type="radio" name="q9" value="b"> B) Saltarnos la casilla 1 y tocar la casilla 2</label>
+                <label><input type="radio" name="q9" value="c"> C) Parar la música inmediatamente</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>10. ¿Qué significa "D.C. al Fine"?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q10" value="a"> A) Volver al principio y tocar hasta la palabra Fine</label>
+                <label><input type="radio" name="q10" value="b"> B) Tocar rápido hasta el final</label>
+                <label><input type="radio" name="q10" value="c"> C) Ir directamente a la casilla de 2ª vez</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Comprobar Respuestas</button>
+          </form>
+
+          <div id="quiz-feedback" class="feedback" role="status" aria-live="polite"></div>
+
+          <!-- 3. RETO PRACTICO INTEGRADOR -->
+          <h3 style="margin-top: 2.5rem;">🏆 3. Reto de Síntesis e Integración</h3>
+          <div class="activity-card final-project">
+            <div class="activity-header">Proyecto Final: El Director de Agrupación Musical</div>
+            <div class="activity-content">
+              <p>Imagina que eres el director o directora de un concierto en el <strong>CEIP Joaquín Tena Artigas</strong>. Debes organizar una obra con las siguientes especificaciones:</p>
+              <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <li>Elige un <strong>Cuarteto de Cámara</strong> o un <strong>Coro de Voces Blancas</strong>.</li>
+                <li>Indica qué voces o instrumentos participarán.</li>
+                <li>Define el <strong>tempo</strong> inicial en italiano (ej. Allegro o Andante).</li>
+                <li>Escribe cómo utilizarás la estructura <em>D.C. al Fine</em> para repetir el estribillo principal.</li>
+              </ol>
+              <textarea rows="4" placeholder="Escribe aquí tu propuesta completa de concierto de síntesis..."></textarea>
+            </div>
+          </div>
+
+          <!-- 4. GLOSARIO DE TÉRMINOS CLAVE -->
+          <h3 style="margin-top: 2.5rem;">📚 4. Glosario de Términos Musicales</h3>
+          <div class="glossary-grid">
+            <div class="glossary-item">
+              <strong>A capela</strong>
+              <span>Forma de cantar únicamente con la voz humana, sin ningún acompañamiento instrumental.</span>
+            </div>
+            <div class="glossary-item">
+              <strong>Líneas adicionales</strong>
+              <span>Líneas cortas auxiliares que se agregan arriba o abajo del pentagrama para escribir notas muy agudas o muy graves.</span>
+            </div>
+            <div class="glossary-item">
+              <strong>Tesitura</strong>
+              <span>Rango o extensión de notas musicales que una voz puede cantar con comodidad.</span>
+            </div>
+            <div class="glossary-item">
+              <strong>Música de cámara</strong>
+              <span>Música compuesta para pequeñas agrupaciones donde cada intérprete es un solista.</span>
+            </div>
+            <div class="glossary-item">
+              <strong>Tempo</strong>
+              <span>Velocidad de ejecución de una obra musical expresada mediante términos italianos o BPM.</span>
+            </div>
+            <div class="glossary-item">
+              <strong>Da Capo (D.C.)</strong>
+              <span>Indicación en italiano que ordena regresar al inicio ("cabeza") de la obra musical.</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA DEL CENTRO, IDÉNTICO AL DE OTRAS ÁREAS -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACCIONES ORIGINALES: SINTETIZADOR, METRÓNOMO Y TEST -->
+  <script>
+    // Web Audio API Sound Synthesizer for Notes
+    function playNote(freq) {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 1.2);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 1.2);
+      } catch(e) {
+        console.log('Audio Context error or not supported');
+      }
+    }
+
+    // Metronome pulse simulator
+    let metronomeInterval = null;
+    function triggerPulse(bpm, name) {
+      const display = document.getElementById('metronome-display');
+      display.innerText = 'Pulso activo: ' + name + ' (' + bpm + ' BPM)';
+
+      if(metronomeInterval) clearInterval(metronomeInterval);
+
+      let count = 0;
+      const ms = (60 / bpm) * 1000;
+
+      playNote(600);
+
+      metronomeInterval = setInterval(() => {
+        count++;
+        playNote(count % 4 === 0 ? 800 : 500);
+        if(count >= 8) {
+          clearInterval(metronomeInterval);
+          display.innerText = 'Fin de demostración de ' + name + '. Haz clic para repetir.';
+        }
+      }, ms);
+    }
+
+    // Quiz Evaluation Function
+    function evaluateQuiz(event) {
+      event.preventDefault();
+      const answers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'a',
+        q4: 'c',
+        q5: 'b',
+        q6: 'c',
+        q7: 'b',
+        q8: 'b',
+        q9: 'b',
+        q10: 'a'
+      };
+
+      let score = 0;
+      let total = Object.keys(answers).length;
+      const form = document.getElementById('quiz-form');
+      const feedback = document.getElementById('quiz-feedback');
+
+      for (let key in answers) {
+        const selected = form.elements[key].value;
+        if (selected === answers[key]) {
+          score++;
+        }
+      }
+
+      feedback.className = 'feedback success';
+      feedback.innerHTML = '🎯 ¡Has obtenido ' + score + ' de ' + total + ' aciertos! (' + Math.round((score/total)*100) + '%)' +
+        (score === total ? ' ¡Enhorabuena, dominio completo de la unidad!' : ' Revisa las preguntas falladas para seguir aprendiendo.');
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Año del pie de página (el resto de la navegación está en /js/main.js)
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+      currentYear.textContent = new Date().getFullYear();
+    }
+  </script>
+  <script defer src="/js/main.js"></script>
+</body>
+</html>
