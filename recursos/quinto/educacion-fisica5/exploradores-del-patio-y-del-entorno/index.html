@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Educación Física 5.º. SdA 6: Exploradores del patio y del entorno. Planos, orientación, seguridad y sostenibilidad."
+  >
+  <title>EF5.6 · Exploradores del patio y del entorno | CEIP Joaquín Tena Artigas</title>
+  <!-- Identidad visual común de las SdA del centro -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: "#007A33",
+              dark: "#005724",
+              light: "#e6f4ea",
+              accent: "#00a847"
+            },
+            editorial: {
+              bg: "#f8faf9",
+              card: "#ffffff",
+              border: "#d1e7dd",
+              text: "#1e293b",
+              subtext: "#475569",
+              amber: "#d97706",
+              amberBg: "#fef3c7"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --page: #f4f7f5;
+      --surface: #ffffff;
+      --ink: #1e293b;
+      --muted: #475569;
+      --primary: #007A33;
+      --primary-dark: #005724;
+      --primary-soft: #e6f4ea;
+      --secondary: #d97706;
+      --secondary-soft: #fef3c7;
+      --line: #d1e7dd;
+      --shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+      --radius: 1.5rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--primary-dark);
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -5rem;
+      left: 1rem;
+      z-index: 10;
+      padding: .65rem 1rem;
+      background: #ffffff;
+      border-radius: .5rem;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ESTRUCTURA COMPARTIDA CON EL RESTO DE LAS SdA */
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    }
+
+    /* PORTADA DE LA SITUACIÓN DE APRENDIZAJE */
+    .topic-hero {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 245px;
+      margin: 1.4rem 0;
+      border-radius: 1.5rem;
+      background: linear-gradient(90deg, #005724 0%, #007A33 50%, #00a847 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .topic-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -85px;
+      top: -120px;
+      border: 48px solid rgba(255, 255, 255, .07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      font-size: .79rem;
+      font-weight: 750;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      color: #d1fae5;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      line-height: 1.17;
+      letter-spacing: -.025em;
+    }
+
+    .topic-hero p {
+      max-width: 700px;
+      margin: .9rem 0 0;
+      color: #d1fae5;
+      font-size: 1.02rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.1rem;
+    }
+
+    .hero-tags span {
+      padding: .22rem .7rem;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      font-size: .77rem;
+      font-weight: 650;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.3rem 0;
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-note {
+      padding: 1.15rem 1.4rem;
+      border-left: 5px solid var(--secondary);
+    }
+
+    .intro-note p {
+      margin: .4rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1.15rem 0 1.8rem;
+    }
+
+    .lesson-nav a {
+      padding: .45rem .8rem;
+      border: 1px solid #d1e7dd;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-size: .83rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .lesson-nav a:hover {
+      background: var(--primary-soft);
+    }
+
+    .lesson-section {
+      padding: clamp(1.15rem, 3vw, 2rem);
+      scroll-margin-top: 1rem;
+    }
+
+    /* TÍTULOS DE APARTADO: clase específica para evitar estilos globales .section-heading */
+    .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1.2rem;
+      padding-bottom: .9rem;
+      border-bottom: 2px solid #d1e7dd;
+      color: #1e293b;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      line-height: 1.35;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: .65rem;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: .95rem;
+    }
+
+    .lesson-section h3 {
+      margin: 1.6rem 0 .55rem;
+      color: #005724;
+      font-size: 1.13rem;
+      line-height: 1.38;
+    }
+
+    .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .lesson-section ul,
+    .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .lesson-section li {
+      margin-bottom: .35rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-card {
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .info-card h3 {
+      margin: 0 0 .5rem;
+    }
+
+    .info-card p:last-child,
+    .info-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip,
+    .warning,
+    .case-box {
+      margin: 1.2rem 0;
+      padding: 1rem 1.15rem;
+      border-radius: .85rem;
+    }
+
+    .tip {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .warning {
+      border-left: 4px solid #dd943d;
+      background: var(--secondary-soft);
+    }
+
+    .case-box {
+      border: 1px solid #d1e7dd;
+      background: #f0fdf4;
+    }
+
+    .case-box h3 {
+      margin-top: 0;
+    }
+
+    .table-scroll {
+      width: 100%;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .lesson-table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      padding: .75rem .85rem;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .lesson-table thead th {
+      background: #e6f4ea;
+      color: #005724;
+    }
+
+    .lesson-table tbody tr:nth-child(even) {
+      background: #fafdfc;
+    }
+
+    /* IMÁGENES DEL MATERIAL */
+    .media-frame{margin:1.25rem 0 1.75rem;overflow:hidden;border:1px solid #d1e7dd;border-radius:1rem;background:#fff}
+    .media-frame img{display:block;width:100%;max-height:560px;object-fit:contain;background:#fff}
+    .media-frame figcaption{padding:.7rem 1rem;background:#f8fafc;border-top:1px solid #e2e8f0;color:#64748b;font-size:.78rem;line-height:1.45}
+    .missing-image-note{display:none;padding:2rem 1.25rem;text-align:center;background:#f8fafc;color:#64748b;font-size:.85rem;line-height:1.55}
+    .media-frame.is-missing img{display:none}
+    .media-frame.is-missing .missing-image-note{display:block}
+
+    .activity-card {
+      margin: 1.3rem 0;
+      padding: 1.2rem 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 .3rem;
+      color: var(--primary-dark);
+    }
+
+    .activity-category {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .2rem .55rem;
+      border-radius: .4rem;
+      background: #e6f4ea;
+      color: #005724;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .response-lines {
+      width: 100%;
+      min-height: 84px;
+      margin: .5rem 0 1rem;
+      padding: .7rem .8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .6rem;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .response-lines:focus,
+    .routine-input:focus {
+      border-color: var(--primary);
+      outline: 2px solid #a7d8b8;
+      outline-offset: 1px;
+    }
+
+    .routine-input {
+      width: 100%;
+      min-width: 100px;
+      padding: .5rem .55rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      font: inherit;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0 !important;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      margin-bottom: .55rem;
+    }
+
+    .checklist input {
+      flex: 0 0 auto;
+      margin-top: .4rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .quiz-question legend {
+      padding: 0 .35rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .5rem 0;
+      padding: .25rem .5rem;
+      border-radius: .35rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #f0fdf4;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question.is-correct {
+      border-color: #8ccbad;
+      background: #f3fbf7;
+    }
+
+    .quiz-question.is-incorrect {
+      border-color: #e5bd82;
+      background: #fffbf2;
+    }
+
+    .answer-feedback {
+      margin: .55rem 0 0;
+      color: #475569;
+      font-size: .87rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.25rem;
+    }
+
+    .action-button {
+      padding: .65rem 1.1rem;
+      border: 2px solid var(--primary);
+      border-radius: .6rem;
+      background: var(--primary);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 720;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .action-button.secondary {
+      background: #ffffff;
+      color: var(--primary-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--primary-soft);
+    }
+
+    .quiz-result {
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: .7rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .summary-block {
+      padding: 1rem 1.4rem;
+      background: #fffbeb;
+    }
+
+    .summary-block h2 {
+      margin: 0 0 .45rem;
+      color: #92400e;
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 700px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .topic-hero {
+        min-height: 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 10.5pt;
+      }
+
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .site-footer,
+      .skip-link {
+        display: none;
+      }
+
+      .topic-shell {
+        width: 100%;
+        padding-bottom: 0;
+      }
+
+      .topic-hero,
+      .lesson-section,
+      .intro-note,
+      .activity-card,
+      .summary-block {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: #005724;
+        background: #e6f4ea;
+      }
+
+      .topic-hero p,
+      .topic-eyebrow {
+        color: #005724;
+      }
+
+      .lesson-section,
+      .activity-card,
+      .quiz-question,
+      .media-frame {
+        break-inside: avoid;
+      }
+
+      .response-lines {
+        min-height: 58px;
+      }
+    }
+
+    /* PASOS PARA RESOLVER CONFLICTOS */
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 1rem 0 1.35rem;
+    }
+
+    .step {
+      padding: .85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: var(--primary-soft);
+    }
+
+    @media (max-width: 700px) {
+      .step-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/base.css">
+</head>
+<body class="subject-physical-education">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- CABECERA INSTITUCIONAL COMÚN -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png"
+           alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+           class="banner-image">
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+              aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/quinto/">5.º de Primaria</a></li>
+          <li><a href="/recursos/quinto/educacionfisica5/">Educación Física</a></li>
+          <li aria-current="page">Exploradores del patio y del entorno</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA: VERDE INSTITUCIONAL EN TODAS LAS SdA -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Educación Física · 5.º de Primaria · SdA 6</span>
+          <h1 id="titulo-sda">Exploradores del patio y del entorno</h1>
+          <p>Aprendemos a interpretar planos sencillos, reconocer referencias espaciales, preparar recorridos seguros y cuidar el patio y los espacios
+          naturales o urbanos que utilizamos para movernos.</p>
+          <div class="hero-tags" aria-label="Temas principales">
+            <span>Planos</span><span>Orientación</span><span>Seguridad</span><span>Sostenibilidad</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="intro-note" aria-label="Presentación del trabajo">
+        <p><strong>Nuestro reto:</strong> diseñar sobre papel una ruta de orientación por un espacio escolar conocido con puntos de control,
+        instrucciones claras y normas para cuidar el entorno.</p>
+        <p>Trabajaremos con planos, leyendas, casos y fichas de planificación dentro del aula. Los recorridos reales solo se llevarán a cabo con
+        autorización y supervisión del profesorado.</p>
+      </aside>
+
+      <nav class="lesson-nav" aria-label="Índice de la situación de aprendizaje">
+        <a href="#aprendemos">1. Aprendemos</a>
+        <a href="#observamos">2. Observamos y comprendemos</a>
+        <a href="#actividades">3. Actividades de aula</a>
+        <a href="#practica">4. Lo ponemos en práctica</a>
+        <a href="#comprueba">5. Comprueba lo aprendido</a>
+      </nav>
+
+      <!-- ================================================================ -->
+      <!-- 1. APRENDEMOS -->
+      <!-- ================================================================ -->
+      <section id="aprendemos" class="lesson-section" aria-labelledby="titulo-aprendemos">
+        <h2 id="titulo-aprendemos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">1</span>
+          Aprendemos
+        </h2>
+        <h3>6.1. ¿Para qué sirve un plano?</h3>
+        <p>
+          Un <strong>plano</strong> representa un lugar visto desde arriba y permite
+          localizar sus elementos principales. Es útil para orientar un recorrido corto
+          por un espacio conocido, como el patio, una pista o el jardín del centro.
+          No es una fotografía exacta: utiliza dibujos y símbolos para simplificar.
+        </p>
+        <p>
+          La <strong>leyenda</strong> explica qué significa cada símbolo. Las flechas
+          muestran direcciones y los <strong>puntos de control</strong> son lugares
+          donde debemos detenernos para comprobar el recorrido.
+        </p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead><tr><th scope="col">Elemento</th><th scope="col">Significado</th>
+                       <th scope="col">Ejemplo en el colegio</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Punto de inicio</th><td>Lugar donde comienza la ruta.</td>
+                  <td>Puerta del gimnasio.</td></tr>
+              <tr><th scope="row">Leyenda</th><td>Explica símbolos y colores.</td>
+                  <td>Un árbol representado con un círculo verde.</td></tr>
+              <tr><th scope="row">Punto de control</th><td>Parada marcada para revisar el trayecto.</td>
+                  <td>Banco junto al jardín.</td></tr>
+              <tr><th scope="row">Zona no transitable</th><td>Área que se debe evitar.</td>
+                  <td>Espacio de obras señalizado.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- IMAGEN SUGERIDA: El plano representa un espacio mediante símbolos que podemos interpretar. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.6-plano-patio.png"
+            alt="Plano sencillo de un patio escolar visto desde arriba con pistas, jardín, árboles y una leyenda gráfica"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Plano horizontal sencillo con símbolos reconocibles y áreas diferenciadas. Inserta el archivo con el nombre
+            <strong>ef5.6-plano-patio.png</strong> dentro de la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>El plano representa un espacio mediante símbolos que podemos interpretar.</figcaption>
+        </figure>
+        <h3>6.2. Referencias, direcciones y orientación</h3>
+        <p>
+          Orientarse significa reconocer dónde estamos, a dónde queremos llegar y qué
+          camino podemos seguir. Las referencias pueden ser <strong>un edificio,
+          una pista, un banco, un árbol grande o una puerta</strong>. En el patio
+          nos resultan más fáciles que una dirección expresada solo con puntos cardinales.
+        </p>
+        <p>
+          Los puntos cardinales son <strong>norte, sur, este y oeste</strong>. Si un
+          plano incluye una flecha con el norte, podemos utilizarla para describir
+          otras direcciones. No debemos suponer que la parte superior de todos los
+          planos señala el norte: hay que comprobar la orientación indicada.
+        </p>
+        <div class="columns">
+          <div class="info-card"><h3>Una indicación precisa</h3>
+            <p>«Desde la puerta principal, avanza por el camino señalizado hasta el
+               banco y gira a la izquierda hacia la pista».</p></div>
+          <div class="info-card"><h3>Una indicación poco útil</h3>
+            <p>«Ve por allí y después busca algo grande». Sin referencias claras,
+               otras personas no pueden seguir la ruta fácilmente.</p></div>
+        </div>
+        <!-- IMAGEN SUGERIDA: Las referencias del entorno ayudan a localizar puntos y comprobar recorridos. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.6-orientacion-referencias.png"
+            alt="Alumnos revisando referencias de un plano escolar con una flecha de norte y puntos de control"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Ilustración horizontal de orientación con plano y referencias. Inserta el archivo con el nombre
+            <strong>ef5.6-orientacion-referencias.png</strong> dentro de la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Las referencias del entorno ayudan a localizar puntos y comprobar recorridos.</figcaption>
+        </figure>
+        <h3>6.3. Diseñamos rutas seguras</h3>
+        <p>
+          Una ruta debe adaptarse al grupo y al lugar. Antes de prepararla, observamos
+          el <strong>estado del suelo, las pendientes, las zonas de paso, los obstáculos,
+          las condiciones meteorológicas y los espacios restringidos</strong>.
+          Nunca planificamos cruces de calles ni salidas del centro sin la organización
+          y la autorización correspondiente.
+        </p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead><tr><th scope="col">Riesgo observado</th><th scope="col">Decisión prudente</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Suelo mojado o resbaladizo</th><td>Cambiar el trayecto y avisar.</td></tr>
+              <tr><th scope="row">Zona de obras</th><td>No atravesarla; respetar el cierre.</td></tr>
+              <tr><th scope="row">Mucho calor</th><td>Revisar horarios y condiciones con el profesorado.</td></tr>
+              <tr><th scope="row">Paso estrecho</th><td>Evitar aglomeraciones o buscar otra opción.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>Norma de seguridad:</strong> si encuentras una zona
+          cerrada, un peligro o una indicación que no entiendes, te detienes en un lugar
+          seguro y consultas al profesorado. No improvises un atajo.</div>
+        <!-- IMAGEN SUGERIDA: Elegir el recorrido no significa buscar el más corto, sino uno adecuado y seguro. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.6-seguridad-recorridos.png"
+            alt="Comparación de dos rutas de patio escolar, una segura por camino amplio y otra junto a un área cerrada"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Ilustración horizontal de dos posibles recorridos con zonas restringidas señalizadas. Inserta el archivo con el nombre
+            <strong>ef5.6-seguridad-recorridos.png</strong> dentro de la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Elegir el recorrido no significa buscar el más corto, sino uno adecuado y seguro.</figcaption>
+        </figure>
+        <h3>6.4. Orientación y respeto por el entorno</h3>
+        <p>
+          Los espacios naturales y urbanos pueden ser lugares de actividad física,
+          convivencia y observación. Para conservarlos debemos caminar por zonas
+          permitidas, <strong>no arrancar plantas, no molestar animales, no dejar
+          residuos</strong> y evitar deteriorar instalaciones o zonas verdes.
+        </p>
+        <p>
+          También podemos contribuir con pequeñas acciones: utilizar materiales
+          reutilizables, recoger nuestros residuos, avisar si encontramos un elemento
+          dañado y respetar a las personas que usan el mismo espacio.
+        </p>
+        <div class="columns">
+          <div class="info-card"><h3>Una decisión responsable</h3>
+            <p>El grupo da un rodeo por un camino habilitado para evitar pisar un parterre.</p></div>
+          <div class="info-card"><h3>Una decisión perjudicial</h3>
+            <p>El grupo atraviesa una zona ajardinada para ahorrar unos segundos.</p></div>
+        </div>
+        <!-- IMAGEN SUGERIDA: La orientación responsable también exige cuidar los lugares que utilizamos. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.6-cuidado-entorno.png"
+            alt="Escolares siguiendo un sendero permitido y cuidando un jardín sin dejar residuos"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Ilustración horizontal de actividad física respetuosa con jardín y árboles. Inserta el archivo con el nombre
+            <strong>ef5.6-cuidado-entorno.png</strong> dentro de la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>La orientación responsable también exige cuidar los lugares que utilizamos.</figcaption>
+        </figure>
+        <h3>6.5. Una ficha de orientación completa</h3>
+        <p>
+          Antes de proponer una actividad podemos crear una ficha con:
+          <strong>nombre de la ruta, inicio, final, leyenda, puntos de control,
+          materiales, normas de seguridad y compromisos ambientales</strong>.
+          Si la ruta cambia, actualizamos también el plano.
+        </p>
+        <div class="step-list">
+          <div class="step"><strong>Paso 1.</strong> Elegimos un espacio autorizado y conocido.</div>
+          <div class="step"><strong>Paso 2.</strong> Dibujamos un plano con símbolos claros.</div>
+          <div class="step"><strong>Paso 3.</strong> Señalamos puntos de control y zonas a evitar.</div>
+          <div class="step"><strong>Paso 4.</strong> Revisamos seguridad y cuidado del entorno.</div>
+        </div>
+        <!-- IMAGEN SUGERIDA: Una ficha clara recoge los símbolos, controles y normas de un recorrido. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.6-ficha-orientacion.png"
+            alt="Ficha visual de orientación escolar con un mapa, lista de seguridad y símbolos de cuidado ambiental"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Infografía horizontal sin textos pequeños de una ficha de ruta escolar. Inserta el archivo con el nombre
+            <strong>ef5.6-ficha-orientacion.png</strong> dentro de la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Una ficha clara recoge los símbolos, controles y normas de un recorrido.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 2. OBSERVAMOS Y COMPRENDEMOS -->
+      <!-- ================================================================ -->
+      <section id="observamos" class="lesson-section" aria-labelledby="titulo-observamos">
+        <h2 id="titulo-observamos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">2</span>
+          Observamos y comprendemos
+        </h2>
+        <p>Lee estas situaciones. Comenta tus respuestas con tu grupo y justifica qué harías.</p>
+        <div class="columns">
+          <article class="info-card">
+            <h3>Situación A · El atajo del jardín</h3>
+            <p>Un grupo descubre que atravesar un parterre permitiría llegar más rápido al segundo control.</p>
+            <p><strong>Piensa:</strong> ¿Por qué es mejor utilizar un camino autorizado aunque sea más largo?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación B · El plano sin leyenda</h3>
+            <p>En una ficha aparecen tres cuadrados y dos círculos, pero nadie explica qué representan.</p>
+            <p><strong>Piensa:</strong> ¿Qué debe añadirse para que otra persona comprenda la ruta?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación C · Una zona mojada</h3>
+            <p>El plano señala una parada junto a una zona del patio que está resbaladiza después de la lluvia.</p>
+            <p><strong>Piensa:</strong> ¿Qué decisión segura debería tomar el grupo antes de seguir?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación D · No todos reconocen las mismas referencias</h3>
+            <p>La ruta dice «ve hasta el sitio de siempre», pero una alumna nueva no conoce ese lugar.</p>
+            <p><strong>Piensa:</strong> ¿Cómo escribirías indicaciones que sirvan para todas las personas?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 3. ACTIVIDADES DE AULA -->
+      <!-- ================================================================ -->
+      <section id="actividades" class="lesson-section" aria-labelledby="titulo-actividades">
+        <h2 id="titulo-actividades" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">3</span>
+          Actividades de aula
+        </h2>
+        <p>
+          Puedes resolver las actividades en el cuaderno o en un documento digital.
+          Justifica tus decisiones, compara propuestas y revisa tus respuestas.
+        </p>
+        <!-- ACTIVIDAD 1 · CRITERIO ÚNICO: 5.1.a -->
+        <article class="activity-card" data-criterio="5.1.a" aria-labelledby="actividad-1">
+          <span class="activity-category">Actividad 1 · Leemos un plano</span>
+          <h3 id="actividad-1">Del dibujo al recorrido</h3>
+          <p>Observa un plano sencillo del colegio o imagina uno con pista, jardín, fuente y gimnasio.</p>
+          <ol class="activity-questions">
+            <li>Dibuja cuatro elementos del espacio y crea un símbolo para cada uno.</li>
+            <li>Escribe una leyenda para que otra persona comprenda tus símbolos.</li>
+            <li>Marca un punto de inicio y dos puntos de control.</li>
+            <li>Explica qué referencias permitirán comprobar el trayecto.</li>
+          </ol>
+          <p><strong>Resultado:</strong> un plano esquemático con leyenda y puntos de control.</p>
+        </article>
+        <!-- ACTIVIDAD 2 · CRITERIO ÚNICO: 1.3.a -->
+        <article class="activity-card" data-criterio="1.3.a" aria-labelledby="actividad-2">
+          <span class="activity-category">Actividad 2 · Detectives de riesgos</span>
+          <h3 id="actividad-2">¿Es seguro el itinerario?</h3>
+          <p>Imagina una ruta que atraviesa una zona húmeda, un lugar con obras y una pista ocupada.</p>
+          <ol class="activity-questions">
+            <li>Identifica tres riesgos que aparecen en la situación.</li>
+            <li>Asocia una medida preventiva a cada riesgo.</li>
+            <li>Propón un cambio de trayecto que evite una zona peligrosa.</li>
+            <li>Indica qué debe hacer el grupo cuando encuentra un cierre o señal desconocida.</li>
+          </ol>
+          <p><strong>Resultado:</strong> una tabla de riesgos y decisiones seguras.</p>
+        </article>
+        <!-- ACTIVIDAD 3 · CRITERIO ÚNICO: 5.1.a -->
+        <article class="activity-card" data-criterio="5.1.a" aria-labelledby="actividad-3">
+          <span class="activity-category">Actividad 3 · Cuidamos lo que compartimos</span>
+          <h3 id="actividad-3">El impacto de nuestras decisiones</h3>
+          <p>Piensa en una actividad de orientación por el patio con jardín, árboles y papeleras.</p>
+          <ol class="activity-questions">
+            <li>Escribe cuatro normas para evitar daños en los espacios comunes.</li>
+            <li>Explica por qué no debe pisarse una zona ajardinada para acortar.</li>
+            <li>Propón dos materiales reutilizables para la actividad.</li>
+            <li>Decide qué hacer si encuentras un residuo o un elemento deteriorado.</li>
+          </ol>
+          <p><strong>Resultado:</strong> un código de buenas prácticas durante la orientación.</p>
+        </article>
+        <!-- ACTIVIDAD 4 · CRITERIO ÚNICO: 2.1.a -->
+        <article class="activity-card" data-criterio="2.1.a" aria-labelledby="actividad-4">
+          <span class="activity-category">Actividad 4 · Damos instrucciones</span>
+          <h3 id="actividad-4">Una ruta que otro grupo entienda</h3>
+          <p>Prepara por escrito indicaciones para ir desde el gimnasio hasta un punto del patio.</p>
+          <ol class="activity-questions">
+            <li>Escribe cuatro instrucciones breves utilizando referencias visibles.</li>
+            <li>Ordena los pasos sin saltarte ningún cambio de dirección.</li>
+            <li>Pide a un compañero que revise si el itinerario se entiende.</li>
+            <li>Reformula al menos una instrucción que pueda resultar ambigua.</li>
+          </ol>
+          <p><strong>Resultado:</strong> una secuencia clara y revisada de indicaciones de orientación.</p>
+        </article>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 4. LO PONEMOS EN PRÁCTICA -->
+      <!-- ================================================================ -->
+      <section id="practica" class="lesson-section" aria-labelledby="titulo-practica">
+        <h2 id="titulo-practica" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">4</span>
+          Lo ponemos en práctica
+        </h2>
+        <p>En el aula dibujaremos y revisaremos una ruta de orientación. Su posible realización fuera del aula dependerá de la valoración del
+        profesorado y de las condiciones reales de seguridad.</p>
+        <!-- ACTIVIDAD 5 · CRITERIO ÚNICO: 1.3.a -->
+        <article class="activity-card" data-criterio="1.3.a" aria-labelledby="actividad-5">
+          <span class="activity-category">Actividad 5 · Revisamos antes de salir</span>
+          <h3 id="actividad-5">La lista de comprobación</h3>
+          <p>Elabora una lista para revisar una ruta antes de llevarla a cabo.</p>
+          <ol class="activity-questions">
+            <li>Anota cuatro aspectos del recorrido que deben observarse antes de empezar.</li>
+            <li>Escribe una decisión para un día de suelo resbaladizo o calor intenso.</li>
+            <li>Incluye una norma sobre zonas restringidas y otra sobre avisar al profesorado.</li>
+            <li>Explica por qué la revisión debe realizarse antes de empezar y durante el recorrido.</li>
+          </ol>
+          <p><strong>Resultado:</strong> una lista de seguridad para un itinerario escolar.</p>
+        </article>
+        <!-- ACTIVIDAD 6 · CRITERIO ÚNICO: 5.1.a -->
+        <article class="activity-card" data-criterio="5.1.a" aria-labelledby="actividad-6">
+          <span class="activity-category">Actividad 6 · Nuestro recorrido responsable</span>
+          <h3 id="actividad-6">Diseñamos la ruta definitiva</h3>
+          <p>Con toda la información, dibuja una ruta de orientación por un espacio escolar conocido.</p>
+          <ol class="activity-questions">
+            <li>Marca inicio, llegada y tres puntos de control identificables.</li>
+            <li>Añade leyenda, flechas y una zona que no deba atravesarse.</li>
+            <li>Escribe instrucciones que eviten riesgos y respeten el entorno.</li>
+            <li>Revisa el plano con otra persona y justifica un cambio de mejora.</li>
+          </ol>
+          <p><strong>Resultado:</strong> un plano de ruta responsable con su ficha de normas y puntos de control.</p>
+        </article>
+        <!-- IMAGEN SUGERIDA: Un buen recorrido se planifica, se comprueba y se adapta antes de realizarlo. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.6-proyecto-ruta.png"
+            alt="Alumnado presentando un plano de orientación escolar con puntos de control y medidas de cuidado"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Ilustración horizontal de estudiantes mostrando una ruta escolar diseñada en papel. Inserta el archivo con el nombre
+            <strong>ef5.6-proyecto-ruta.png</strong> dentro de la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Un buen recorrido se planifica, se comprueba y se adapta antes de realizarlo.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 5. COMPRUEBA LO APRENDIDO -->
+      <!-- ================================================================ -->
+      <section id="comprueba" class="lesson-section" aria-labelledby="titulo-comprueba">
+        <h2 id="titulo-comprueba" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">5</span>
+          Comprueba lo aprendido
+        </h2>
+        <p>
+          Elige una respuesta en cada pregunta y pulsa
+          <strong>Comprobar respuestas</strong>. Puedes revisar las explicaciones
+          y volver a realizar el cuestionario.
+        </p>
+        <form id="quiz-ef5-6" class="quiz-form">
+          <!-- PREGUNTA 1 · CRITERIO ÚNICO: 5.1.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="5.1.a"
+            data-correct="b"
+            data-explanation="La leyenda nos ayuda a interpretar símbolos y señales."
+          >
+            <legend>1. ¿Qué explica la leyenda de un plano?</legend>
+              <label><input type="radio" name="q1" value="a"> Los premios que recibe el equipo.</label>
+              <label><input type="radio" name="q1" value="b"> El significado de sus símbolos.</label>
+              <label><input type="radio" name="q1" value="c"> La velocidad a la que debemos correr.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 2 · CRITERIO ÚNICO: 5.1.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="5.1.a"
+            data-correct="a"
+            data-explanation="Un punto de control permite verificar una parada dentro del itinerario."
+          >
+            <legend>2. ¿Qué es un punto de control?</legend>
+              <label><input type="radio" name="q2" value="a"> Un lugar señalado para comprobar el recorrido.</label>
+              <label><input type="radio" name="q2" value="b"> Una zona que siempre hay que saltar.</label>
+              <label><input type="radio" name="q2" value="c"> Un espacio donde dejamos residuos.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 3 · CRITERIO ÚNICO: 5.1.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="5.1.a"
+            data-correct="c"
+            data-explanation="Hay que comprobar la flecha o referencia de orientación."
+          >
+            <legend>3. ¿Dónde está el norte en un plano?</legend>
+              <label><input type="radio" name="q3" value="a"> Siempre a la derecha.</label>
+              <label><input type="radio" name="q3" value="b"> Siempre en la parte inferior.</label>
+              <label><input type="radio" name="q3" value="c"> Donde lo indique la orientación del propio plano.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 4 · CRITERIO ÚNICO: 1.3.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.3.a"
+            data-correct="b"
+            data-explanation="Las zonas restringidas no deben atravesarse."
+          >
+            <legend>4. Si hay una zona del recorrido cerrada por obras, debemos…</legend>
+              <label><input type="radio" name="q4" value="a"> Atravesarla deprisa.</label>
+              <label><input type="radio" name="q4" value="b"> Respetar el cierre y consultar al profesorado.</label>
+              <label><input type="radio" name="q4" value="c"> Quitar la señal.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 5 · CRITERIO ÚNICO: 1.3.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.3.a"
+            data-correct="a"
+            data-explanation="Un itinerario seguro se adapta al estado real del terreno."
+          >
+            <legend>5. Tras la lluvia, un tramo del patio está resbaladizo. ¿Qué hacemos?</legend>
+              <label><input type="radio" name="q5" value="a"> Revisar y modificar el recorrido si hace falta.</label>
+              <label><input type="radio" name="q5" value="b"> Correr para terminar antes.</label>
+              <label><input type="radio" name="q5" value="c"> Ignorar el peligro.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 6 · CRITERIO ÚNICO: 5.1.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="5.1.a"
+            data-correct="c"
+            data-explanation="Respetar zonas verdes forma parte del cuidado del entorno."
+          >
+            <legend>6. ¿Qué decisión ayuda a conservar el jardín?</legend>
+              <label><input type="radio" name="q6" value="a"> Arrancar plantas para marcar el camino.</label>
+              <label><input type="radio" name="q6" value="b"> Pasar por los parterres para acortar.</label>
+              <label><input type="radio" name="q6" value="c"> Usar los caminos habilitados y no dejar residuos.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 7 · CRITERIO ÚNICO: 2.1.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="2.1.a"
+            data-correct="b"
+            data-explanation="Las referencias precisas permiten comprender y revisar la ruta."
+          >
+            <legend>7. Una indicación clara de orientación debe incluir…</legend>
+              <label><input type="radio" name="q7" value="a"> Solo la expresión «ve por allí».</label>
+              <label><input type="radio" name="q7" value="b"> Referencias visibles y cambios de dirección ordenados.</label>
+              <label><input type="radio" name="q7" value="c"> Únicamente el nombre del alumno.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 8 · CRITERIO ÚNICO: 5.1.a -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="5.1.a"
+            data-correct="a"
+            data-explanation="La seguridad y la conservación se consideran desde la planificación."
+          >
+            <legend>8. Antes de proponer una ruta conviene…</legend>
+              <label><input type="radio" name="q8" value="a"> Comprobar los riesgos y prever medidas de conservación.</label>
+              <label><input type="radio" name="q8" value="b"> Elegir siempre el trayecto más rápido.</label>
+              <label><input type="radio" name="q8" value="c"> Evitar consultar al profesorado.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>  <div class="button-row">
+            <button type="button" id="check-quiz" class="action-button">
+              Comprobar respuestas
+            </button>
+            <button type="reset" class="action-button secondary">
+              Reiniciar cuestionario
+            </button>
+          </div>
+          <div id="quiz-result" class="quiz-result" role="status"
+               aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <aside class="summary-block" aria-label="Para recordar">
+        <h2>Para recordar</h2>
+        <p>El <strong>plano</strong>, la <strong>leyenda</strong> y los <strong>puntos de control</strong> nos ayudan a orientarnos. Antes de cualquier
+        recorrido debemos <strong>revisar riesgos, seguir instrucciones y respetar los espacios naturales y urbanos</strong>.</p>
+        <p><strong>Producto final:</strong> un plano de orientación por el patio o entorno escolar, con puntos de control, referencias, normas de
+        seguridad y compromisos de conservación.</p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA INSTITUCIONAL COMÚN -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png"
+             alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+           target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Permite que las imágenes pendientes muestren la sugerencia de inserción.
+    function markImageMissing(image) {
+      const frame = image.closest(".media-frame");
+      if (frame) {
+        frame.classList.add("is-missing");
+      }
+    }
+
+    // Si las imágenes llegan a cargarse después, recuperamos su visualización.
+    document.querySelectorAll(".media-frame img").forEach((image) => {
+      if (image.complete && image.naturalWidth === 0) {
+        markImageMissing(image);
+      }
+
+      image.addEventListener("load", () => {
+        const frame = image.closest(".media-frame");
+        if (frame) {
+          frame.classList.remove("is-missing");
+        }
+      });
+    });
+
+    const quiz = document.getElementById("quiz-ef5-6");
+    const quizResult = document.getElementById("quiz-result");
+    const questions = [...quiz.querySelectorAll(".quiz-question")];
+
+    document.getElementById("check-quiz").addEventListener("click", () => {
+      let correct = 0;
+      let answered = 0;
+
+      questions.forEach((question) => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const feedback = question.querySelector(".answer-feedback");
+        const expected = question.dataset.correct;
+        const explanation = question.dataset.explanation;
+
+        question.classList.remove("is-correct", "is-incorrect");
+
+        if (!selected) {
+          feedback.textContent = "Todavía no has contestado esta pregunta.";
+          return;
+        }
+
+        answered += 1;
+
+        if (selected.value === expected) {
+          correct += 1;
+          question.classList.add("is-correct");
+          feedback.textContent = "¡Correcto! " + explanation;
+        } else {
+          question.classList.add("is-incorrect");
+          feedback.textContent = "Revisa tu respuesta. " + explanation;
+        }
+      });
+
+      quizResult.hidden = false;
+      quizResult.textContent =
+        "Has acertado " + correct + " de " + questions.length +
+        " preguntas. Has respondido " + answered +
+        ". Revisa las explicaciones y vuelve a intentarlo si lo necesitas.";
+    });
+
+    quiz.addEventListener("reset", () => {
+      // El evento reset ocurre antes de que el navegador desmarque las opciones.
+      questions.forEach((question) => {
+        question.classList.remove("is-correct", "is-incorrect");
+        question.querySelector(".answer-feedback").textContent = "";
+      });
+      quizResult.hidden = true;
+      quizResult.textContent = "";
+    });
+
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
