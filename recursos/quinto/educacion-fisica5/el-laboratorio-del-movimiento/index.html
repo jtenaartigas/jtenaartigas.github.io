@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Educación Física 5.º. SdA 2: El laboratorio del movimiento. Coordinación, equilibrio y circuitos motores. CCEF."
+  >
+  <title>EF5.2 · El laboratorio del movimiento | CEIP Joaquín Tena Artigas</title>
+  <!-- Identidad visual común de las SdA del centro -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: "#007A33",
+              dark: "#005724",
+              light: "#e6f4ea",
+              accent: "#00a847"
+            },
+            editorial: {
+              bg: "#f8faf9",
+              card: "#ffffff",
+              border: "#d1e7dd",
+              text: "#1e293b",
+              subtext: "#475569",
+              amber: "#d97706",
+              amberBg: "#fef3c7"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --page: #f4f7f5;
+      --surface: #ffffff;
+      --ink: #1e293b;
+      --muted: #475569;
+      --primary: #007A33;
+      --primary-dark: #005724;
+      --primary-soft: #e6f4ea;
+      --secondary: #d97706;
+      --secondary-soft: #fef3c7;
+      --line: #d1e7dd;
+      --shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+      --radius: 1.5rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--primary-dark);
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -5rem;
+      left: 1rem;
+      z-index: 10;
+      padding: .65rem 1rem;
+      background: #ffffff;
+      border-radius: .5rem;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+
+    /* ESTRUCTURA COMPARTIDA CON EL RESTO DE LAS SdA */
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    }
+
+    /* PORTADA DE LA SITUACIÓN DE APRENDIZAJE */
+    .topic-hero {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 245px;
+      margin: 1.4rem 0;
+      border-radius: 1.5rem;
+      background: linear-gradient(90deg, #005724 0%, #007A33 50%, #00a847 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .topic-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -85px;
+      top: -120px;
+      border: 48px solid rgba(255, 255, 255, .07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      font-size: .79rem;
+      font-weight: 750;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      color: #d1fae5;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      line-height: 1.17;
+      letter-spacing: -.025em;
+    }
+
+    .topic-hero p {
+      max-width: 700px;
+      margin: .9rem 0 0;
+      color: #d1fae5;
+      font-size: 1.02rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.1rem;
+    }
+
+    .hero-tags span {
+      padding: .22rem .7rem;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      font-size: .77rem;
+      font-weight: 650;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.3rem 0;
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-note {
+      padding: 1.15rem 1.4rem;
+      border-left: 5px solid var(--secondary);
+    }
+
+    .intro-note p {
+      margin: .4rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1.15rem 0 1.8rem;
+    }
+
+    .lesson-nav a {
+      padding: .45rem .8rem;
+      border: 1px solid #d1e7dd;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-size: .83rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .lesson-nav a:hover {
+      background: var(--primary-soft);
+    }
+
+    .lesson-section {
+      padding: clamp(1.15rem, 3vw, 2rem);
+      scroll-margin-top: 1rem;
+    }
+
+    /* TÍTULOS DE APARTADO: clase específica para evitar estilos globales .section-heading */
+    .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1.2rem;
+      padding-bottom: .9rem;
+      border-bottom: 2px solid #d1e7dd;
+      color: #1e293b;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      line-height: 1.35;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: .65rem;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: .95rem;
+    }
+
+    .lesson-section h3 {
+      margin: 1.6rem 0 .55rem;
+      color: #005724;
+      font-size: 1.13rem;
+      line-height: 1.38;
+    }
+
+    .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .lesson-section ul,
+    .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .lesson-section li {
+      margin-bottom: .35rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-card {
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .info-card h3 {
+      margin: 0 0 .5rem;
+    }
+
+    .info-card p:last-child,
+    .info-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip,
+    .warning,
+    .case-box {
+      margin: 1.2rem 0;
+      padding: 1rem 1.15rem;
+      border-radius: .85rem;
+    }
+
+    .tip {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .warning {
+      border-left: 4px solid #dd943d;
+      background: var(--secondary-soft);
+    }
+
+    .case-box {
+      border: 1px solid #d1e7dd;
+      background: #f0fdf4;
+    }
+
+    .case-box h3 {
+      margin-top: 0;
+    }
+
+    .table-scroll {
+      width: 100%;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .lesson-table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      padding: .75rem .85rem;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .lesson-table thead th {
+      background: #e6f4ea;
+      color: #005724;
+    }
+
+    .lesson-table tbody tr:nth-child(even) {
+      background: #fafdfc;
+    }
+
+    /* IMÁGENES DEL MATERIAL */
+    .media-frame{margin:1.25rem 0 1.75rem;overflow:hidden;border:1px solid #d1e7dd;border-radius:1rem;background:#fff}
+    .media-frame img{display:block;width:100%;max-height:560px;object-fit:contain;background:#fff}
+    .media-frame figcaption{padding:.7rem 1rem;background:#f8fafc;border-top:1px solid #e2e8f0;color:#64748b;font-size:.78rem;line-height:1.45}
+    .missing-image-note{display:none;padding:2rem 1.25rem;text-align:center;background:#f8fafc;color:#64748b;font-size:.85rem;line-height:1.55}
+    .media-frame.is-missing img{display:none}
+    .media-frame.is-missing .missing-image-note{display:block}
+
+    .activity-card {
+      margin: 1.3rem 0;
+      padding: 1.2rem 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 .3rem;
+      color: var(--primary-dark);
+    }
+
+    .activity-category {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .2rem .55rem;
+      border-radius: .4rem;
+      background: #e6f4ea;
+      color: #005724;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .response-lines {
+      width: 100%;
+      min-height: 84px;
+      margin: .5rem 0 1rem;
+      padding: .7rem .8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .6rem;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .response-lines:focus,
+    .routine-input:focus {
+      border-color: var(--primary);
+      outline: 2px solid #a7d8b8;
+      outline-offset: 1px;
+    }
+
+    .routine-input {
+      width: 100%;
+      min-width: 100px;
+      padding: .5rem .55rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      font: inherit;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0 !important;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      margin-bottom: .55rem;
+    }
+
+    .checklist input {
+      flex: 0 0 auto;
+      margin-top: .4rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .quiz-question legend {
+      padding: 0 .35rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .5rem 0;
+      padding: .25rem .5rem;
+      border-radius: .35rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #f0fdf4;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question.is-correct {
+      border-color: #8ccbad;
+      background: #f3fbf7;
+    }
+
+    .quiz-question.is-incorrect {
+      border-color: #e5bd82;
+      background: #fffbf2;
+    }
+
+    .answer-feedback {
+      margin: .55rem 0 0;
+      color: #475569;
+      font-size: .87rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.25rem;
+    }
+
+    .action-button {
+      padding: .65rem 1.1rem;
+      border: 2px solid var(--primary);
+      border-radius: .6rem;
+      background: var(--primary);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 720;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .action-button.secondary {
+      background: #ffffff;
+      color: var(--primary-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--primary-soft);
+    }
+
+    .quiz-result {
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: .7rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .summary-block {
+      padding: 1rem 1.4rem;
+      background: #fffbeb;
+    }
+
+    .summary-block h2 {
+      margin: 0 0 .45rem;
+      color: #92400e;
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 700px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .topic-hero {
+        min-height: 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 10.5pt;
+      }
+
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .site-footer,
+      .skip-link {
+        display: none;
+      }
+
+      .topic-shell {
+        width: 100%;
+        padding-bottom: 0;
+      }
+
+      .topic-hero,
+      .lesson-section,
+      .intro-note,
+      .activity-card,
+      .summary-block {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: #005724;
+        background: #e6f4ea;
+      }
+
+      .topic-hero p,
+      .topic-eyebrow {
+        color: #005724;
+      }
+
+      .lesson-section,
+      .activity-card,
+      .quiz-question,
+      .media-frame {
+        break-inside: avoid;
+      }
+
+      .response-lines {
+        min-height: 58px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/base.css">
+</head>
+<body class="subject-physical-education">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- CABECERA INSTITUCIONAL COMÚN -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png"
+           alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+           class="banner-image">
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+              aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/quinto/">5.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/quinto/educacionfisica5/">Educación Física</a>
+          </li>
+          <li aria-current="page">El laboratorio del movimiento</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA: verde institucional, común a todas las SdA. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Educación Física · 5.º de Primaria · SdA 2</span>
+          <h1 id="titulo-sda">El laboratorio del movimiento</h1>
+          <p>
+            Investigamos cómo se mueve nuestro cuerpo, descubrimos el papel de la
+            coordinación y el equilibrio y aprendemos a planificar, analizar y
+            mejorar un circuito motor para todo el grupo.
+          </p>
+          <div class="hero-tags" aria-label="Temas principales">
+            <span>Capacidades físicas</span>
+            <span>Coordinación</span>
+            <span>Equilibrio</span>
+            <span>Circuitos motores</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="intro-note" aria-label="Cómo utilizar este material">
+        <p>
+          
+          Este material nos permite comprender movimientos, analizar situaciones
+          y diseñar propuestas dentro del aula. Después, podremos probarlas
+          en el patio o el gimnasio con las indicaciones del profesorado.
+        </p>
+        <p>
+          <strong>Nuestro reto:</strong> crear un circuito con estaciones variadas,
+          explicar por qué las hemos elegido y proponer mejoras después de ponerlo
+          en práctica. <strong>Un esquema en papel no demuestra una habilidad motriz:</strong>
+          para conocer nuestros progresos también necesitamos movernos y observar.
+        </p>
+      </aside>
+
+      <nav class="lesson-nav" aria-label="Índice de la situación de aprendizaje">
+        <a href="#aprendemos">1. Aprendemos</a>
+        <a href="#observamos">2. Observamos y comprendemos</a>
+        <a href="#actividades">3. Actividades de aula</a>
+        <a href="#practica">4. Lo ponemos en práctica</a>
+        <a href="#comprueba">5. Comprueba lo aprendido</a>
+      </nav>
+
+      <!-- ================================================================ -->
+      <!-- 1. APRENDEMOS                                                    -->
+      <!-- ================================================================ -->
+      <section id="aprendemos" class="lesson-section" aria-labelledby="titulo-aprendemos">
+        <h2 id="titulo-aprendemos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">1</span>
+          Aprendemos
+        </h2>
+
+        <h3>2.1. Capacidades físicas: lo que nos permite movernos</h3>
+        <p>
+          Cuando jugamos, saltamos o corremos, utilizamos distintas
+          <strong>capacidades físicas</strong>. No funcionan de forma aislada:
+          muchas actividades requieren combinar varias de ellas.
+        </p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead>
+              <tr>
+                <th scope="col">Capacidad</th>
+                <th scope="col">¿En qué consiste?</th>
+                <th scope="col">Situación cotidiana o de juego</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Fuerza</th>
+                <td>Capacidad de nuestros músculos para producir una acción frente a una resistencia.</td>
+                <td>Impulsarse para saltar o transportar un material ligero.</td>
+              </tr>
+              <tr>
+                <th scope="row">Resistencia</th>
+                <td>Capacidad de mantener una actividad durante un tiempo y recuperarse del esfuerzo.</td>
+                <td>Participar en un juego activo de cierta duración, regulando el ritmo.</td>
+              </tr>
+              <tr>
+                <th scope="row">Velocidad</th>
+                <td>Capacidad de realizar acciones o desplazamientos con rapidez.</td>
+                <td>Reaccionar y llegar a una zona señalada durante un juego.</td>
+              </tr>
+              <tr>
+                <th scope="row">Flexibilidad</th>
+                <td>Posibilidad de realizar movimientos con una amplitud articular adecuada.</td>
+                <td>Alcanzar una posición amplia sin forzar ni sentir dolor.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip">
+          <strong>Importante:</strong> las capacidades se desarrollan poco a poco.
+          Cada persona parte de un punto diferente; lo valioso es progresar con
+          seguridad, no compararse con los demás.
+        </div>
+
+        <h3>2.2. Coordinación y equilibrio: movernos con control</h3>
+        <div class="columns">
+          <div class="info-card">
+            <h3>Coordinación</h3>
+            <p>
+              Es la capacidad de organizar diferentes movimientos para realizar
+              una acción de manera eficaz. Por ejemplo, mirar la trayectoria
+              de una pelota mientras preparamos las manos para recibirla.
+            </p>
+            <p>
+              La coordinación <strong>óculo-manual</strong> relaciona vista y manos;
+              la <strong>óculo-pédica</strong> relaciona vista y pies.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Equilibrio</h3>
+            <p>
+              Nos permite controlar la postura. Es <strong>estático</strong>
+              cuando mantenemos una posición, como estar unos segundos sobre
+              un pie, y <strong>dinámico</strong> cuando nos desplazamos
+              manteniendo el control, como caminar por una línea marcada.
+            </p>
+          </div>
+        </div>
+        <p>
+          Para conservar el equilibrio utilizamos información de la vista,
+          el sistema vestibular del oído interno y las sensaciones que recibimos
+          de músculos y articulaciones. Mirar hacia dónde avanzamos y ajustar
+          la postura pueden ayudarnos a movernos con mayor control.
+        </p>
+
+        <!-- IMAGEN SUGERIDA DEL BORRADOR: comparación de equilibrio estático y dinámico. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.2-equilibrio-coordinacion.png"
+            alt="Dos escenas de equilibrio estático y dinámico, y una de coordinación óculo-manual"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Añade aquí una ilustración horizontal sobre equilibrio estático,
+            equilibrio dinámico y coordinación óculo-manual. Nombre:
+            <strong>ef5.2-equilibrio-coordinacion.png</strong>.
+          </div>
+          <figcaption>
+            Equilibrio y coordinación nos ayudan a mantener el control de
+            nuestro cuerpo en situaciones diferentes.
+          </figcaption>
+        </figure>
+
+        <h3>2.3. Habilidades motrices: distintas formas de resolver un reto</h3>
+        <p>
+          Las <strong>habilidades motrices básicas</strong> son acciones que
+          empleamos en muchos juegos y actividades. A partir de ellas aprendemos
+          movimientos más complejos.
+        </p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead>
+              <tr>
+                <th scope="col">Grupo de habilidades</th>
+                <th scope="col">Ejemplos</th>
+                <th scope="col">¿Qué debemos observar?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Desplazamientos</th>
+                <td>Caminar, correr, desplazarse lateralmente o reptar.</td>
+                <td>Dirección, cambios de ritmo, espacio y control.</td>
+              </tr>
+              <tr>
+                <th scope="row">Saltos y giros</th>
+                <td>Saltar un aro, saltar con los pies juntos o girar sobre uno mismo.</td>
+                <td>Impulso, recepción, equilibrio y seguridad.</td>
+              </tr>
+              <tr>
+                <th scope="row">Manejo de objetos</th>
+                <td>Lanzar, recibir, rodar, botar o conducir una pelota.</td>
+                <td>Dirección, precisión, coordinación y ajuste del esfuerzo.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          La mejor solución no siempre es la más rápida. En ocasiones conviene
+          reducir la velocidad, acercarse al objetivo, realizar un paso previo
+          o cambiar la trayectoria para controlar mejor una acción.
+        </p>
+
+        <!-- IMAGEN SUGERIDA DEL BORRADOR: ejemplos de habilidades motrices básicas. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.2-habilidades-motrices.png"
+            alt="Secuencia de alumnado realizando desplazamientos, saltos, giros, lanzamientos y recepciones de manera segura"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Añade aquí una composición horizontal de niñas y niños realizando
+            desplazamientos, saltos, giros y lanzamientos, sin textos pequeños.
+            Nombre: <strong>ef5.2-habilidades-motrices.png</strong>.
+          </div>
+          <figcaption>
+            Las habilidades básicas son la base de muchas actividades físicas y juegos.
+          </figcaption>
+        </figure>
+
+        <h3>2.4. Observar el movimiento para aprender</h3>
+        <p>
+          Analizar un movimiento consiste en prestar atención a aspectos
+          concretos. Podemos estudiar tres momentos: <strong>preparación</strong>,
+          <strong>acción</strong> y <strong>finalización</strong>.
+        </p>
+        <div class="columns">
+          <div class="info-card">
+            <h3>Ejemplo: lanzar una pelota</h3>
+            <ol>
+              <li>Me coloco frente al objetivo y preparo el lanzamiento.</li>
+              <li>Lanzo ajustando dirección y fuerza.</li>
+              <li>Observo dónde ha llegado y pienso qué puedo mejorar.</li>
+            </ol>
+          </div>
+          <div class="info-card">
+            <h3>Ejemplo: superar un pequeño salto</h3>
+            <ol>
+              <li>Observo el espacio y preparo el impulso.</li>
+              <li>Salto el obstáculo adaptando la altura y la distancia.</li>
+              <li>Caigo de forma controlada y recupero el equilibrio.</li>
+            </ol>
+          </div>
+        </div>
+        <p>
+          No podemos saber exactamente cómo se ha ejecutado un movimiento
+          solo leyendo una explicación. Para ello necesitaremos practicar,
+          observar lo sucedido y recibir indicaciones del profesorado.
+        </p>
+
+        <!-- IMAGEN SUGERIDA DEL BORRADOR: tres momentos de un lanzamiento. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.2-secuencia-lanzamiento.png"
+            alt="Tres viñetas de un lanzamiento de pelota: preparación, ejecución y observación del resultado"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Añade aquí una secuencia horizontal de tres viñetas sobre el
+            lanzamiento de una pelota: antes, durante y después. Nombre:
+            <strong>ef5.2-secuencia-lanzamiento.png</strong>.
+          </div>
+          <figcaption>
+            Dividir una acción en fases ayuda a observarla y a proponer ajustes.
+          </figcaption>
+        </figure>
+
+        <h3>2.5. ¿Cómo diseñamos un circuito motor?</h3>
+        <p>
+          Un <strong>circuito motor</strong> es un recorrido formado por varias
+          <strong>estaciones</strong>. En cada estación se plantea una acción o
+          pequeño reto. Se puede diseñar para trabajar habilidades diferentes
+          sin convertirlo necesariamente en una competición.
+        </p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead>
+              <tr>
+                <th scope="col">Paso</th>
+                <th scope="col">Pregunta que debemos responder</th>
+                <th scope="col">Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1. Objetivo</th>
+                <td>¿Qué habilidad queremos practicar?</td>
+                <td>Mejorar el control al desplazarnos y lanzar.</td>
+              </tr>
+              <tr>
+                <th scope="row">2. Estaciones</th>
+                <td>¿Qué haremos y en qué orden?</td>
+                <td>Caminar en línea, saltar marcas, lanzar a una diana.</td>
+              </tr>
+              <tr>
+                <th scope="row">3. Material</th>
+                <td>¿Qué objetos necesitamos?</td>
+                <td>Aros, cintas para marcar el suelo y pelotas blandas.</td>
+              </tr>
+              <tr>
+                <th scope="row">4. Seguridad</th>
+                <td>¿Hay distancia suficiente? ¿Es estable el material?</td>
+                <td>Dejar espacio libre entre estaciones y evitar choques.</td>
+              </tr>
+              <tr>
+                <th scope="row">5. Adaptación</th>
+                <td>¿Cómo participará todo el alumnado?</td>
+                <td>Distintas distancias, tamaños de pelota y tiempos.</td>
+              </tr>
+              <tr>
+                <th scope="row">6. Revisión</th>
+                <td>¿Qué cambiaremos cuando lo probemos?</td>
+                <td>Ajustar dificultad y orden según lo observado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="warning">
+          <strong>Seguridad ante todo:</strong> las actividades físicas se
+          realizan únicamente en espacios adecuados y con supervisión del
+          profesorado. No hace falta ejecutar saltos ni lanzamientos en el aula.
+        </div>
+
+        <!-- IMAGEN SUGERIDA DEL BORRADOR: plano de circuito de cuatro estaciones. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.2-plano-circuito.png"
+            alt="Plano sencillo visto desde arriba de un circuito motor con cuatro estaciones y flechas que muestran el recorrido"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Añade aquí un plano horizontal sencillo de un circuito con cuatro
+            estaciones y flechas de recorrido. Nombre:
+            <strong>ef5.2-plano-circuito.png</strong>.
+          </div>
+          <figcaption>
+            Diseñar sobre papel permite prever materiales, recorridos y riesgos.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 2. OBSERVAMOS Y COMPRENDEMOS                                     -->
+      <!-- ================================================================ -->
+      <section id="observamos" class="lesson-section" aria-labelledby="titulo-observamos">
+        <h2 id="titulo-observamos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">2</span>
+          Observamos y comprendemos
+        </h2>
+
+        <div class="case-box">
+          <h3>Caso A. Dos caminos para alcanzar la diana</h3>
+          <p>
+            Un grupo intenta acertar con una pelota blanda en una diana.
+            Laura lanza con mucha fuerza desde lejos, pero la pelota suele
+            desviarse. Samuel prueba desde una distancia menor, observa el
+            resultado y ajusta poco a poco la dirección.
+          </p>
+          <p>
+            <strong>Para pensar:</strong> ¿quién está usando mejor la
+            información que obtiene? ¿Qué decisión podría tomar Laura
+            antes del siguiente lanzamiento?
+          </p>
+        </div>
+
+        <div class="case-box">
+          <h3>Caso B. Un circuito que hay que mejorar</h3>
+          <p>
+            El grupo ha dibujado una carrera de conos, un salto entre dos
+            marcas, una zona de equilibrio y un lanzamiento. Al revisar el
+            plano se da cuenta de que las personas que saltan podrían
+            cruzarse con quienes están lanzando.
+          </p>
+          <p>
+            <strong>Para pensar:</strong> ¿cómo reorganizarías el circuito?
+            ¿Qué decisión tomarías para evitar cruces y esperas largas?
+          </p>
+        </div>
+
+        <!-- IMAGEN SUGERIDA DEL BORRADOR: plano con cruce de trayectorias. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef5.2-circuito-para-mejorar.png"
+            alt="Plano de circuito escolar con dos recorridos que se cruzan y espacio para buscar una ruta alternativa segura"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Añade aquí un plano comparativo con un recorrido poco seguro
+            y otro reorganizado sin cruces. Nombre:
+            <strong>ef5.2-circuito-para-mejorar.png</strong>.
+          </div>
+          <figcaption>
+            Un circuito bien planificado evita cruces y aprovecha el espacio disponible.
+          </figcaption>
+        </figure>
+
+        <div class="case-box">
+          <h3>Caso C. No siempre vale la misma dificultad</h3>
+          <p>
+            En una estación se propone pasar una pelota por un aro colocado
+            a cierta distancia. A parte del alumnado le resulta demasiado
+            sencillo; otras personas apenas logran que la pelota llegue.
+            El grupo propone dos distancias y dos tamaños de pelota.
+          </p>
+          <p>
+            <strong>Para pensar:</strong> ¿por qué ofrecer opciones mejora
+            la participación? ¿Qué se puede aprender sin comparar los
+            resultados de unas personas con los de otras?
+          </p>
+        </div>
+        <div class="tip">
+          <strong>Idea clave:</strong> observar, decidir, probar y mejorar
+          forman un ciclo. Un buen laboratorio del movimiento no busca que
+          todas las personas hagan lo mismo, sino que cada una encuentre
+          un reto ajustado y pueda progresar.
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 3. ACTIVIDADES DE AULA                                           -->
+      <!-- Una actividad = un criterio, identificado en el código HTML.     -->
+      <!-- Se recuperan las tareas CCEF 4 y 5 de la programación original.  -->
+      <!-- ================================================================ -->
+      <section id="actividades" class="lesson-section" aria-labelledby="titulo-actividades">
+        <h2 id="titulo-actividades" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">3</span>
+          Actividades de aula
+        </h2>
+        <p>
+          Estas actividades pueden hacerse sin desplazarnos por el aula.
+          Analizamos situaciones y elaboramos propuestas que después
+          podremos contrastar durante las sesiones prácticas.
+        </p>
+
+        <!-- ACTIVIDAD 1 · CRITERIO ÚNICO: 2.2.a -->
+        <!-- CCEF: preparación conceptual de decisiones motrices. -->
+        <article class="activity-card" data-criterio="2.2.a" aria-labelledby="actividad-1">
+          <span class="activity-category">Análisis y toma de decisiones</span>
+          <h3 id="actividad-1">Actividad 1. ¿Qué movimiento elegirías?</h3>
+          <p>
+            Lee estas tres situaciones: (A) quieres lanzar una pelota a una
+            diana cercana; (B) debes recorrer un camino con curvas sin
+            tocar las marcas; (C) necesitas pasar por una línea estrecha.
+          </p>
+          <ol type="a">
+            <li>Decide qué habilidad motriz resulta principal en cada situación.</li>
+            <li>Indica dónde es especialmente importante la coordinación o el equilibrio.</li>
+            <li>Explica qué ajustarías si tu primer intento no diese resultado.</li>
+            <li>Propón una variante más fácil para una de las tres situaciones.</li>
+          </ol>
+          <label for="respuesta-1"><strong>Mis decisiones y su explicación:</strong></label>
+          <textarea id="respuesta-1" class="response-lines" rows="4"
+                    placeholder="Razono mis elecciones..."></textarea>
+        </article>
+
+        <!-- ACTIVIDAD 2 · TAREA ORIGINAL 4: PLANIFICAMOS EL RETO. -->
+        <!-- CRITERIO ÚNICO: 2.1.a -->
+        <article class="activity-card" data-criterio="2.1.a" aria-labelledby="actividad-2">
+          <span class="activity-category">CCEF · Tarea 4 · Preparación en el aula</span>
+          <h3 id="actividad-2">Actividad 2. Planificamos el reto</h3>
+          <p>
+            Diseña en el cuaderno un circuito de cuatro estaciones: un
+            desplazamiento, un equilibrio, un salto adaptado y un lanzamiento.
+            No es necesario realizar físicamente ninguna prueba en el aula.
+          </p>
+          <ol type="a">
+            <li>Escribe una meta clara para tu circuito.</li>
+            <li>Dibuja el orden de las estaciones con flechas.</li>
+            <li>Indica qué material requiere cada una.</li>
+            <li>Explica qué observarás para saber si el circuito funciona como esperabas.</li>
+          </ol>
+          <label for="respuesta-2"><strong>Mi meta y mi secuencia de estaciones:</strong></label>
+          <textarea id="respuesta-2" class="response-lines" rows="5"
+                    placeholder="Describe aquí tu plan o explica el dibujo de tu cuaderno..."></textarea>
+        </article>
+
+        <!-- ACTIVIDAD 3 · TAREA ORIGINAL 5: CAMBIAN LAS REGLAS. -->
+        <!-- CRITERIO ÚNICO: 2.2.a -->
+        <article class="activity-card" data-criterio="2.2.a" aria-labelledby="actividad-3">
+          <span class="activity-category">CCEF · Tarea 5 · Decidir ante cambios</span>
+          <h3 id="actividad-3">Actividad 3. Cambian las reglas</h3>
+          <p>
+            Imagina que, antes de comenzar, el profesorado plantea estas
+            modificaciones: solo hay dos pelotas, el espacio de una estación
+            se reduce y un compañero necesita un recorrido más accesible.
+          </p>
+          <ol type="a">
+            <li>Elige qué cambiarías primero y explica el motivo.</li>
+            <li>Propón una manera de compartir las pelotas sin largas esperas.</li>
+            <li>Decide cómo reorganizarías la estación que ha perdido espacio.</li>
+            <li>Plantea una alternativa accesible que mantenga el reto del juego.</li>
+          </ol>
+          <label for="respuesta-3"><strong>Mis nuevas reglas:</strong></label>
+          <textarea id="respuesta-3" class="response-lines" rows="4"
+                    placeholder="Escribe soluciones y justifícalas..."></textarea>
+        </article>
+
+        <!-- ACTIVIDAD 4 · CRITERIO ÚNICO: 2.2.a -->
+        <!-- Ampliación CCEF: comparar anticipaciones antes de la ejecución. -->
+        <article class="activity-card" data-criterio="2.2.a" aria-labelledby="actividad-4">
+          <span class="activity-category">Razonamiento sobre situaciones motrices</span>
+          <h3 id="actividad-4">Actividad 4. Anticipamos problemas</h3>
+          <p>
+            Observa de nuevo el caso B y piensa en un recorrido organizado
+            para que distintos grupos pasen por las estaciones.
+          </p>
+          <ol type="a">
+            <li>Identifica dos momentos en los que podría producirse una aglomeración.</li>
+            <li>Decide qué estaciones deben estar más separadas y por qué.</li>
+            <li>Propón una señal sencilla para indicar cuándo cambiar de estación.</li>
+            <li>Compara dos opciones de recorrido y justifica cuál elegirías.</li>
+          </ol>
+          <label for="respuesta-4"><strong>Así evitaría los problemas:</strong></label>
+          <textarea id="respuesta-4" class="response-lines" rows="4"
+                    placeholder="Explica tu razonamiento..."></textarea>
+        </article>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 4. LO PONEMOS EN PRÁCTICA                                        -->
+      <!-- Actividades mixtas: observación futura + análisis en el aula.    -->
+      <!-- No equivalen a evaluación directa de la ejecución motriz.        -->
+      <!-- ================================================================ -->
+      <section id="practica" class="lesson-section" aria-labelledby="titulo-practica">
+        <h2 id="titulo-practica" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">4</span>
+          Lo ponemos en práctica
+        </h2>
+        <p>
+          Las siguientes fichas pueden <strong>prepararse en clase</strong>.
+          Una vez realizado el circuito en Educación Física, se completan con
+          observaciones reales y se utilizan para decidir mejoras.
+          La observación de las habilidades motrices corresponde a la
+          actividad física, no a estas respuestas escritas.
+        </p>
+
+        <!-- ACTIVIDAD 5 · TAREA ORIGINAL 6: ¿CÓMO VOY AVANZANDO? -->
+        <!-- CRITERIO ÚNICO: 2.1.a -->
+        <article class="activity-card" data-criterio="2.1.a" aria-labelledby="actividad-5">
+          <span class="activity-category">CCEF · Tarea 6 · Seguimiento y reflexión</span>
+          <h3 id="actividad-5">Actividad 5. ¿Cómo voy avanzando?</h3>
+          <p>
+            Antes de probar el circuito, elige un aspecto que puedas observar:
+            seguir el orden de las estaciones, organizar el material, ajustar
+            una decisión o reconocer qué estación conviene modificar.
+            Después de la sesión práctica, completa este registro.
+          </p>
+          <div class="table-scroll">
+            <table class="lesson-table">
+              <thead>
+                <tr>
+                  <th scope="col">Aspecto observado</th>
+                  <th scope="col">¿Qué ocurrió durante la prueba?</th>
+                  <th scope="col">¿Qué podemos mejorar?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Orden y organización</th>
+                  <td><input class="routine-input" aria-label="Observación de orden"></td>
+                  <td><input class="routine-input" aria-label="Mejora de orden"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Adecuación de la dificultad</th>
+                  <td><input class="routine-input" aria-label="Observación de dificultad"></td>
+                  <td><input class="routine-input" aria-label="Mejora de dificultad"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Participación del grupo</th>
+                  <td><input class="routine-input" aria-label="Observación de participación"></td>
+                  <td><input class="routine-input" aria-label="Mejora de participación"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Uso del espacio</th>
+                  <td><input class="routine-input" aria-label="Observación de espacio"></td>
+                  <td><input class="routine-input" aria-label="Mejora de espacio"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <strong>Reflexiona:</strong> ¿qué objetivo se alcanzó y qué aspecto
+            cambiarías en el siguiente intento? Basándote en las observaciones,
+            escribe una conclusión breve.
+          </p>
+          <label for="respuesta-5"><strong>Mi conclusión:</strong></label>
+          <textarea id="respuesta-5" class="response-lines" rows="4"
+                    placeholder="Cuando hayamos probado el circuito, describiré aquí el proceso..."></textarea>
+        </article>
+
+        <!-- ACTIVIDAD 6 · TAREA ORIGINAL 7: AJUSTAMOS EL CIRCUITO. -->
+        <!-- CRITERIO ÚNICO: 2.1.a -->
+        <article class="activity-card" data-criterio="2.1.a" aria-labelledby="actividad-6">
+          <span class="activity-category">CCEF · Tarea 7 · Producto final</span>
+          <h3 id="actividad-6">Actividad 6. Ajustamos el circuito</h3>
+          <p>
+            Presenta una versión mejorada de tu circuito a partir de la
+            experiencia real del grupo. Si todavía no lo habéis probado,
+            puedes redactar una propuesta provisional y revisarla después.
+          </p>
+          <ol type="a">
+            <li>Recupera la meta que escribiste en la actividad 2.</li>
+            <li>Selecciona un problema real o posible y explica cómo lo detectaste.</li>
+            <li>Cambia una estación, el orden o el material, justificando la decisión.</li>
+            <li>Explica qué observarás en el siguiente intento para comprobar si mejora.</li>
+          </ol>
+
+          <!-- IMAGEN SUGERIDA DEL BORRADOR: antes/después de un circuito. -->
+          <figure class="media-frame">
+            <img
+              src="/img/ef5.2-ajustamos-circuito.png"
+              alt="Dos planos de circuito motor, uno inicial y otro reorganizado con estaciones separadas y recorridos seguros"
+              onerror="markImageMissing(this)"
+            >
+            <div class="missing-image-note">
+              Añade aquí una imagen horizontal con dos planos comparativos:
+              «antes» y «después» de mejorar un circuito. Nombre:
+              <strong>ef5.2-ajustamos-circuito.png</strong>.
+            </div>
+            <figcaption>
+              Los cambios tienen sentido cuando responden a lo que hemos observado.
+            </figcaption>
+          </figure>
+
+          <label for="respuesta-6"><strong>Justificación de mi versión mejorada:</strong></label>
+          <textarea id="respuesta-6" class="response-lines" rows="5"
+                    placeholder="¿Qué modifico, por qué y qué espero conseguir?"></textarea>
+          <p><strong>Reviso mi propuesta antes de compartirla:</strong></p>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="plan-check-1">
+              <label for="plan-check-1">Mi circuito tiene un objetivo claro.</label>
+            </li>
+            <li>
+              <input type="checkbox" id="plan-check-2">
+              <label for="plan-check-2">He previsto espacio y material adecuados.</label>
+            </li>
+            <li>
+              <input type="checkbox" id="plan-check-3">
+              <label for="plan-check-3">He pensado en variantes para facilitar la participación.</label>
+            </li>
+            <li>
+              <input type="checkbox" id="plan-check-4">
+              <label for="plan-check-4">Puedo explicar qué he cambiado y por qué.</label>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 5. COMPRUEBA LO APRENDIDO                                        -->
+      <!-- Cuestionario de comprensión, NO prueba de destreza motriz.       -->
+      <!-- Cada ítem tiene UN único criterio asociado.                      -->
+      <!-- ================================================================ -->
+      <section id="comprueba" class="lesson-section" aria-labelledby="titulo-comprueba">
+        <h2 id="titulo-comprueba" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">5</span>
+          Comprueba lo aprendido
+        </h2>
+        <p>
+          Elige una respuesta por pregunta y pulsa <strong>Comprobar respuestas</strong>.
+          Este cuestionario ayuda a revisar lo que sabemos sobre la planificación
+          de movimientos y la toma de decisiones, pero no sustituye la observación
+          de las habilidades motrices en las sesiones prácticas.
+        </p>
+
+        <form id="quiz-movimiento" novalidate>
+          <!-- PREGUNTA 1 · CRITERIO ÚNICO: 2.2.a -->
+          <fieldset class="quiz-question" data-criterio="2.2.a" data-correct="b"
+                    data-explanation="La coordinación ayuda a organizar movimientos y ajustar acciones, como lanzar una pelota hacia un objetivo.">
+            <legend>1. Si quieres lanzar a una diana, ¿qué habilidad te ayudará a ajustar el movimiento?</legend>
+            <label><input type="radio" name="q1" value="a"> Dormir menos la noche anterior.</label>
+            <label><input type="radio" name="q1" value="b"> Coordinar la vista y la mano.</label>
+            <label><input type="radio" name="q1" value="c"> Lanzar siempre con la máxima fuerza.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 2 · CRITERIO ÚNICO: 2.2.a -->
+          <fieldset class="quiz-question" data-criterio="2.2.a" data-correct="c"
+                    data-explanation="El equilibrio dinámico permite mantener el control del cuerpo mientras nos desplazamos.">
+            <legend>2. ¿En qué situación será especialmente importante el equilibrio dinámico?</legend>
+            <label><input type="radio" name="q2" value="a"> Estar sentado en una silla inmóvil.</label>
+            <label><input type="radio" name="q2" value="b"> Leer las reglas antes de jugar.</label>
+            <label><input type="radio" name="q2" value="c"> Caminar por un recorrido marcado sin salirse.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 3 · CRITERIO ÚNICO: 2.1.a -->
+          <fieldset class="quiz-question" data-criterio="2.1.a" data-correct="a"
+                    data-explanation="Definir una meta clara orienta las decisiones y permite revisar posteriormente el resultado del circuito.">
+            <legend>3. ¿Cuál es el primer paso para diseñar un circuito motor?</legend>
+            <label><input type="radio" name="q3" value="a"> Decidir qué queremos practicar.</label>
+            <label><input type="radio" name="q3" value="b"> Colocar material al azar.</label>
+            <label><input type="radio" name="q3" value="c"> Empezar a correr sin revisar el espacio.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 4 · CRITERIO ÚNICO: 2.1.a -->
+          <fieldset class="quiz-question" data-criterio="2.1.a" data-correct="b"
+                    data-explanation="Una secuencia con estaciones diferentes permite organizar el recorrido y trabajar distintos retos.">
+            <legend>4. ¿Qué propuesta está mejor organizada?</legend>
+            <label><input type="radio" name="q4" value="a"> Todas las estaciones en el mismo lugar y sin orden.</label>
+            <label><input type="radio" name="q4" value="b"> Estaciones señaladas, en orden y con materiales previstos.</label>
+            <label><input type="radio" name="q4" value="c"> Un único ejercicio repetido sin revisar su dificultad.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 5 · CRITERIO ÚNICO: 2.2.a -->
+          <fieldset class="quiz-question" data-criterio="2.2.a" data-correct="c"
+                    data-explanation="Anticipar dificultades y ajustar distancias puede facilitar una participación segura y con sentido.">
+            <legend>5. Si una estación es demasiado difícil para parte del grupo, ¿qué conviene hacer?</legend>
+            <label><input type="radio" name="q5" value="a"> Excluir a esas personas.</label>
+            <label><input type="radio" name="q5" value="b"> Obligar a todas a conseguir el mismo resultado.</label>
+            <label><input type="radio" name="q5" value="c"> Ofrecer diferentes distancias o formas de realizarla.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 6 · CRITERIO ÚNICO: 2.2.a -->
+          <fieldset class="quiz-question" data-criterio="2.2.a" data-correct="a"
+                    data-explanation="Si dos recorridos se cruzan, conviene reorganizarlos para prevenir choques y mejorar la circulación.">
+            <legend>6. ¿Qué decisión tomarías si dos estaciones hacen que las personas se crucen?</legend>
+            <label><input type="radio" name="q6" value="a"> Reorganizar el recorrido y separar las zonas.</label>
+            <label><input type="radio" name="q6" value="b"> Pedir a todos que corran más rápido.</label>
+            <label><input type="radio" name="q6" value="c"> Ignorar el problema si todavía no ha ocurrido un choque.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 7 · CRITERIO ÚNICO: 2.1.a -->
+          <fieldset class="quiz-question" data-criterio="2.1.a" data-correct="b"
+                    data-explanation="Observar el proceso ayuda a comparar lo previsto con lo sucedido y a introducir mejoras justificadas.">
+            <legend>7. Después de probar el circuito, ¿para qué sirve revisar las observaciones?</legend>
+            <label><input type="radio" name="q7" value="a"> Para elegir quién merece jugar.</label>
+            <label><input type="radio" name="q7" value="b"> Para saber qué funcionó y qué conviene ajustar.</label>
+            <label><input type="radio" name="q7" value="c"> Para cambiar reglas sin ningún motivo.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- PREGUNTA 8 · CRITERIO ÚNICO: 2.1.a -->
+          <fieldset class="quiz-question" data-criterio="2.1.a" data-correct="c"
+                    data-explanation="Una mejora debe responder a un problema observado y ofrecer la posibilidad de comprobar si ha funcionado.">
+            <legend>8. ¿Qué caracteriza a una buena mejora del circuito?</legend>
+            <label><input type="radio" name="q8" value="a"> Modificar todas las estaciones sin observar nada.</label>
+            <label><input type="radio" name="q8" value="b"> Cambiar el recorrido para que solo ganen los más rápidos.</label>
+            <label><input type="radio" name="q8" value="c"> Justificar el cambio y comprobar su efecto en otra prueba.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <div class="button-row">
+            <button type="button" id="check-quiz" class="action-button">Comprobar respuestas</button>
+            <button type="reset" class="action-button secondary">Reiniciar cuestionario</button>
+          </div>
+          <div id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <aside class="summary-block" aria-label="Para recordar">
+        <h2>Para recordar</h2>
+        <p>
+          El movimiento combina capacidades físicas, coordinación, equilibrio
+          y habilidades motrices. Para aprender no basta con hacer el circuito:
+          también podemos <strong>planificar, observar, tomar decisiones y ajustar</strong>
+          lo que no funciona como esperábamos.
+        </p>
+        <p>
+          <strong>Producto final CCEF:</strong> un plano de circuito motor y
+          una ficha breve que expliquen la meta, la secuencia de estaciones,
+          los materiales, las adaptaciones y las mejoras propuestas.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA INSTITUCIONAL COMÚN -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png"
+             alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+           target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Permite que las imágenes pendientes muestren la sugerencia de inserción.
+    function markImageMissing(image) {
+      const frame = image.closest(".media-frame");
+      if (frame) {
+        frame.classList.add("is-missing");
+      }
+    }
+
+    // Si las imágenes llegan a cargarse después, recuperamos su visualización.
+    document.querySelectorAll(".media-frame img").forEach((image) => {
+      if (image.complete && image.naturalWidth === 0) {
+        markImageMissing(image);
+      }
+
+      image.addEventListener("load", () => {
+        const frame = image.closest(".media-frame");
+        if (frame) {
+          frame.classList.remove("is-missing");
+        }
+      });
+    });
+
+    const quiz = document.getElementById("quiz-movimiento");
+    const quizResult = document.getElementById("quiz-result");
+    const questions = [...quiz.querySelectorAll(".quiz-question")];
+
+    document.getElementById("check-quiz").addEventListener("click", () => {
+      let correct = 0;
+      let answered = 0;
+
+      questions.forEach((question) => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const feedback = question.querySelector(".answer-feedback");
+        const expected = question.dataset.correct;
+        const explanation = question.dataset.explanation;
+
+        question.classList.remove("is-correct", "is-incorrect");
+
+        if (!selected) {
+          feedback.textContent = "Todavía no has contestado esta pregunta.";
+          return;
+        }
+
+        answered += 1;
+
+        if (selected.value === expected) {
+          correct += 1;
+          question.classList.add("is-correct");
+          feedback.textContent = "¡Correcto! " + explanation;
+        } else {
+          question.classList.add("is-incorrect");
+          feedback.textContent = "Revisa tu respuesta. " + explanation;
+        }
+      });
+
+      quizResult.hidden = false;
+      quizResult.textContent =
+        "Has acertado " + correct + " de " + questions.length +
+        " preguntas. Has respondido " + answered +
+        ". Revisa las explicaciones y vuelve a intentarlo si lo necesitas.";
+    });
+
+    quiz.addEventListener("reset", () => {
+      // El evento reset ocurre antes de que el navegador desmarque las opciones.
+      questions.forEach((question) => {
+        question.classList.remove("is-correct", "is-incorrect");
+        question.querySelector(".answer-feedback").textContent = "";
+      });
+      quizResult.hidden = true;
+      quizResult.textContent = "";
+    });
+
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
