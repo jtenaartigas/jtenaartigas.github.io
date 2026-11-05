@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Educación Física 6.º. SdA 3: Deportes modificados: competir con respeto. Descubrimos cómo adaptar reglas, repartir roles, tomar decisiones tácticas y resolver conflictos para que competir sea una experiencia respetuosa."
+  >
+  <title>EF6.3 · Deportes modificados: competir con respeto | CEIP Joaquín Tena Artigas</title>
+  <!-- Identidad visual común de las SdA del centro -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: "#007A33",
+              dark: "#005724",
+              light: "#e6f4ea",
+              accent: "#00a847"
+            },
+            editorial: {
+              bg: "#f8faf9",
+              card: "#ffffff",
+              border: "#d1e7dd",
+              text: "#1e293b",
+              subtext: "#475569",
+              amber: "#d97706",
+              amberBg: "#fef3c7"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --page: #f4f7f5;
+      --surface: #ffffff;
+      --ink: #1e293b;
+      --muted: #475569;
+      --primary: #007A33;
+      --primary-dark: #005724;
+      --primary-soft: #e6f4ea;
+      --secondary: #d97706;
+      --secondary-soft: #fef3c7;
+      --line: #d1e7dd;
+      --shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+      --radius: 1.5rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--primary-dark);
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -5rem;
+      left: 1rem;
+      z-index: 10;
+      padding: .65rem 1rem;
+      background: #ffffff;
+      border-radius: .5rem;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ESTRUCTURA COMPARTIDA CON EL RESTO DE LAS SdA */
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    }
+
+    /* PORTADA DE LA SITUACIÓN DE APRENDIZAJE */
+    .topic-hero {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 245px;
+      margin: 1.4rem 0;
+      border-radius: 1.5rem;
+      background: linear-gradient(90deg, #005724 0%, #007A33 50%, #00a847 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .topic-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -85px;
+      top: -120px;
+      border: 48px solid rgba(255, 255, 255, .07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      font-size: .79rem;
+      font-weight: 750;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      color: #d1fae5;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      line-height: 1.17;
+      letter-spacing: -.025em;
+    }
+
+    .topic-hero p {
+      max-width: 700px;
+      margin: .9rem 0 0;
+      color: #d1fae5;
+      font-size: 1.02rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.1rem;
+    }
+
+    .hero-tags span {
+      padding: .22rem .7rem;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      font-size: .77rem;
+      font-weight: 650;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.3rem 0;
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-note {
+      padding: 1.15rem 1.4rem;
+      border-left: 5px solid var(--secondary);
+    }
+
+    .intro-note p {
+      margin: .4rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1.15rem 0 1.8rem;
+    }
+
+    .lesson-nav a {
+      padding: .45rem .8rem;
+      border: 1px solid #d1e7dd;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-size: .83rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .lesson-nav a:hover {
+      background: var(--primary-soft);
+    }
+
+    .lesson-section {
+      padding: clamp(1.15rem, 3vw, 2rem);
+      scroll-margin-top: 1rem;
+    }
+
+    /* TÍTULOS DE APARTADO: clase específica para evitar estilos globales .section-heading */
+    .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1.2rem;
+      padding-bottom: .9rem;
+      border-bottom: 2px solid #d1e7dd;
+      color: #1e293b;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      line-height: 1.35;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: .65rem;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: .95rem;
+    }
+
+    .lesson-section h3 {
+      margin: 1.6rem 0 .55rem;
+      color: #005724;
+      font-size: 1.13rem;
+      line-height: 1.38;
+    }
+
+    .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .lesson-section ul,
+    .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .lesson-section li {
+      margin-bottom: .35rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-card {
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .info-card h3 {
+      margin: 0 0 .5rem;
+    }
+
+    .info-card p:last-child,
+    .info-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip,
+    .warning,
+    .case-box {
+      margin: 1.2rem 0;
+      padding: 1rem 1.15rem;
+      border-radius: .85rem;
+    }
+
+    .tip {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .warning {
+      border-left: 4px solid #dd943d;
+      background: var(--secondary-soft);
+    }
+
+    .case-box {
+      border: 1px solid #d1e7dd;
+      background: #f0fdf4;
+    }
+
+    .case-box h3 {
+      margin-top: 0;
+    }
+
+    .table-scroll {
+      width: 100%;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .lesson-table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      padding: .75rem .85rem;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .lesson-table thead th {
+      background: #e6f4ea;
+      color: #005724;
+    }
+
+    .lesson-table tbody tr:nth-child(even) {
+      background: #fafdfc;
+    }
+
+    /* IMÁGENES DEL MATERIAL */
+    .media-frame{margin:1.25rem 0 1.75rem;overflow:hidden;border:1px solid #d1e7dd;border-radius:1rem;background:#fff}
+    .media-frame img{display:block;width:100%;max-height:560px;object-fit:contain;background:#fff}
+    .media-frame figcaption{padding:.7rem 1rem;background:#f8fafc;border-top:1px solid #e2e8f0;color:#64748b;font-size:.78rem;line-height:1.45}
+    .missing-image-note{display:none;padding:2rem 1.25rem;text-align:center;background:#f8fafc;color:#64748b;font-size:.85rem;line-height:1.55}
+    .media-frame.is-missing img{display:none}
+    .media-frame.is-missing .missing-image-note{display:block}
+
+    .activity-card {
+      margin: 1.3rem 0;
+      padding: 1.2rem 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 .3rem;
+      color: var(--primary-dark);
+    }
+
+    .activity-category {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .2rem .55rem;
+      border-radius: .4rem;
+      background: #e6f4ea;
+      color: #005724;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .response-lines {
+      width: 100%;
+      min-height: 84px;
+      margin: .5rem 0 1rem;
+      padding: .7rem .8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .6rem;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .response-lines:focus,
+    .routine-input:focus {
+      border-color: var(--primary);
+      outline: 2px solid #a7d8b8;
+      outline-offset: 1px;
+    }
+
+    .routine-input {
+      width: 100%;
+      min-width: 100px;
+      padding: .5rem .55rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      font: inherit;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0 !important;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      margin-bottom: .55rem;
+    }
+
+    .checklist input {
+      flex: 0 0 auto;
+      margin-top: .4rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .quiz-question legend {
+      padding: 0 .35rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .5rem 0;
+      padding: .25rem .5rem;
+      border-radius: .35rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #f0fdf4;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question.is-correct {
+      border-color: #8ccbad;
+      background: #f3fbf7;
+    }
+
+    .quiz-question.is-incorrect {
+      border-color: #e5bd82;
+      background: #fffbf2;
+    }
+
+    .answer-feedback {
+      margin: .55rem 0 0;
+      color: #475569;
+      font-size: .87rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.25rem;
+    }
+
+    .action-button {
+      padding: .65rem 1.1rem;
+      border: 2px solid var(--primary);
+      border-radius: .6rem;
+      background: var(--primary);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 720;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .action-button.secondary {
+      background: #ffffff;
+      color: var(--primary-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--primary-soft);
+    }
+
+    .quiz-result {
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: .7rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .summary-block {
+      padding: 1rem 1.4rem;
+      background: #fffbeb;
+    }
+
+    .summary-block h2 {
+      margin: 0 0 .45rem;
+      color: #92400e;
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 700px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .topic-hero {
+        min-height: 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 10.5pt;
+      }
+
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .site-footer,
+      .skip-link {
+        display: none;
+      }
+
+      .topic-shell {
+        width: 100%;
+        padding-bottom: 0;
+      }
+
+      .topic-hero,
+      .lesson-section,
+      .intro-note,
+      .activity-card,
+      .summary-block {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: #005724;
+        background: #e6f4ea;
+      }
+
+      .topic-hero p,
+      .topic-eyebrow {
+        color: #005724;
+      }
+
+      .lesson-section,
+      .activity-card,
+      .quiz-question,
+      .media-frame {
+        break-inside: avoid;
+      }
+
+      .response-lines {
+        min-height: 58px;
+      }
+    }
+
+    /* PASOS PARA RESOLVER CONFLICTOS */
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 1rem 0 1.35rem;
+    }
+
+    .step {
+      padding: .85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: var(--primary-soft);
+    }
+
+    @media (max-width: 700px) {
+      .step-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/base.css">
+</head>
+<body class="subject-physical-education">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- CABECERA INSTITUCIONAL COMÚN -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png"
+           alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+           class="banner-image">
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+              aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/educacionfisica6/">Educación Física</a></li>
+          <li aria-current="page">Deportes modificados: competir con respeto</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA: VERDE INSTITUCIONAL EN TODAS LAS SdA -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Educación Física · 6.º de Primaria · SdA 3</span>
+          <h1 id="titulo-sda">Deportes modificados: competir con respeto</h1>
+          <p>Descubrimos cómo adaptar reglas, repartir roles, tomar decisiones tácticas y resolver conflictos
+            para que competir sea una experiencia respetuosa.</p>
+          <div class="hero-tags" aria-label="Temas principales">
+            <span>Reglas</span>
+            <span>Juego limpio</span>
+            <span>Inclusión</span>
+            <span>Deporte</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="intro-note" aria-label="Presentación del trabajo">
+        <p><strong>Nuestro reto:</strong> crear el reglamento de un deporte modificado que fomente la
+          participación, la seguridad y el juego limpio.</p>
+        <p>Las reglas, los conflictos y las estrategias se estudian en el aula. La aplicación de la deportividad
+          durante el juego debe observarse también en la práctica real.</p>
+      </aside>
+
+      <nav class="lesson-nav" aria-label="Índice de la situación de aprendizaje">
+        <a href="#aprendemos">1. Aprendemos</a>
+        <a href="#observamos">2. Observamos y comprendemos</a>
+        <a href="#actividades">3. Actividades de aula</a>
+        <a href="#practica">4. Lo ponemos en práctica</a>
+        <a href="#comprueba">5. Comprueba lo aprendido</a>
+      </nav>
+
+      <div class="topic-content">
+      <!-- ================================================================ -->
+      <!-- 1. APRENDEMOS -->
+      <!-- ================================================================ -->
+      <section id="aprendemos" class="lesson-section" aria-labelledby="titulo-aprendemos">
+        <h2 id="titulo-aprendemos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">1</span>
+          Aprendemos
+        </h2>
+        <h3>3.1. ¿Qué es un deporte modificado?</h3>
+        <p>Un <strong>deporte modificado</strong> es una versión de un juego deportivo cuyas reglas, espacio,
+          equipos o materiales se ajustan para alcanzar un propósito educativo. Cambiar una norma no significa
+          jugar peor: puede facilitar que todas las personas aprendan.</p>
+        <p>Por ejemplo, podemos reducir el terreno, permitir varios pases antes de intentar marcar o utilizar un
+          móvil más blando cuando sea apropiado. Cada cambio debe mantener un objetivo claro y unas condiciones
+          seguras.</p>
+        <!-- IMAGEN SUGERIDA: Las reglas y el espacio pueden adaptarse con intención educativa. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.3-deporte-modificado.png"
+            alt="Ilustración horizontal comparando una pista deportiva habitual con una versión reducida y adaptada"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Ilustración horizontal comparando una pista deportiva habitual con una versión reducida y adaptada.
+            Añade el archivo <strong>ef6.3-deporte-modificado.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Las reglas y el espacio pueden adaptarse con intención educativa.</figcaption>
+        </figure>
+        <h3>3.2. Competir y cooperar no son contrarios</h3>
+        <p>Competir significa participar en una actividad con un objetivo y unas reglas comunes. Una competición
+          educativa no justifica burlas, trampas ni humillaciones. Podemos esforzarnos para ganar y, al mismo
+          tiempo, respetar a los equipos rivales.</p>
+        <p>Las personas encargadas de arbitrar deben explicar las decisiones con imparcialidad. El equipo debe
+          aceptar las normas consensuadas y resolver las dudas con diálogo.</p>
+        <!-- IMAGEN SUGERIDA: Competir no impide actuar con respeto. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.3-competir-con-respeto.png"
+            alt="Dos equipos escolares saludándose después de un partido sin mostrar resultados ni vencedores"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Dos equipos escolares saludándose después de un partido sin mostrar resultados ni vencedores.
+            Añade el archivo <strong>ef6.3-competir-con-respeto.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Competir no impide actuar con respeto.</figcaption>
+        </figure>
+        <h3>3.3. Roles para que todo el grupo participe</h3>
+        <p>Un deporte modificado puede incluir distintos <strong>roles</strong>: jugador o jugadora, árbitro o
+          árbitra, persona que observa la participación, responsable de material o mediador en un conflicto.</p>
+        <p>Rotar los roles ayuda a comprender distintas responsabilidades. No es adecuado asignar funciones por
+          género, aspecto físico o por suponer que alguien tiene más o menos habilidad sin escucharlo.</p>
+        <!-- IMAGEN SUGERIDA: La rotación de roles ayuda a comprender el juego desde diferentes perspectivas. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.3-roles-rotativos.png"
+            alt="Esquema visual de cuatro roles deportivos rotativos de arbitraje, juego, observación y materiales"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Esquema visual de cuatro roles deportivos rotativos de arbitraje, juego, observación y materiales.
+            Añade el archivo <strong>ef6.3-roles-rotativos.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>La rotación de roles ayuda a comprender el juego desde diferentes perspectivas.</figcaption>
+        </figure>
+        <h3>3.4. Tomar decisiones deportivas</h3>
+        <p>En los juegos de cooperación-oposición hay que mirar los espacios, anticipar desplazamientos y
+          decidir si conviene pasar, mantener la posesión o buscar apoyo. Una buena decisión depende de la
+          situación, no solo de la velocidad.</p>
+        <p>Después de una jugada, analizar lo ocurrido permite aprender: ¿había alguien libre?, ¿la elección
+          respetó las reglas?, ¿se ofreció ayuda al equipo?</p>
+        <!-- IMAGEN SUGERIDA: Observar opciones es parte de decidir durante el juego. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.3-decision-tactica.png"
+            alt="Diagrama horizontal de juego con balón, zonas libres y opciones de pase señaladas mediante flechas"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Diagrama horizontal de juego con balón, zonas libres y opciones de pase señaladas mediante flechas.
+            Añade el archivo <strong>ef6.3-decision-tactica.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Observar opciones es parte de decidir durante el juego.</figcaption>
+        </figure>
+        <h3>3.5. Emociones y convivencia durante la competición</h3>
+        <p>Los partidos pueden despertar ilusión, enfado o nervios. Reconocer estas emociones permite responder
+          con calma, expresar desacuerdos sin insultos y buscar acuerdos cuando surge un problema.</p>
+        <p>El <strong>juego limpio</strong> consiste en actuar de forma honesta, cumplir las reglas, reconocer
+          los aciertos ajenos y rechazar cualquier discriminación. También importa cómo tratamos a quienes
+          arbitran y a quienes observan.</p>
+        <!-- IMAGEN SUGERIDA: Hablar con respeto permite resolver conflictos. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.3-resolver-conflictos.png"
+            alt="Secuencia de un desacuerdo deportivo resuelto escuchando y acordando una solución"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Secuencia de un desacuerdo deportivo resuelto escuchando y acordando una solución.
+            Añade el archivo <strong>ef6.3-resolver-conflictos.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Hablar con respeto permite resolver conflictos.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 2. OBSERVAMOS Y COMPRENDEMOS -->
+      <!-- ================================================================ -->
+      <section id="observamos" class="lesson-section" aria-labelledby="titulo-observamos">
+        <h2 id="titulo-observamos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">2</span>
+          Observamos y comprendemos
+        </h2>
+        <p>Lee estas situaciones. Comenta las preguntas con tu grupo y justifica qué harías.</p>
+        <div class="columns">
+          <article class="info-card">
+            <h3>Situación A · Un cambio de norma</h3>
+            <p>Durante el partido solo tocan la pelota tres personas; el resto apenas participa.</p>
+            <p><strong>Piensa:</strong> ¿Qué modificación concreta podría aumentar las oportunidades de intervención?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación B · La decisión arbitral</h3>
+            <p>Dos equipos discuten por una acción que no estaba aclarada en las reglas.</p>
+            <p><strong>Piensa:</strong> ¿Cómo debe actuar el grupo para acordar una solución justa?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación C · Un comentario discriminatorio</h3>
+            <p>Alguien afirma que una posición del juego debe reservarse a los niños.</p>
+            <p><strong>Piensa:</strong> ¿Por qué es discriminatorio y cómo lo abordarías?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación D · Perder sin humillaciones</h3>
+            <p>Un equipo pierde y algunas personas culpan a una compañera.</p>
+            <p><strong>Piensa:</strong> ¿Qué alternativas muestran deportividad y apoyo mutuo?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 3. ACTIVIDADES DE AULA -->
+      <!-- ================================================================ -->
+      <section id="actividades" class="lesson-section" aria-labelledby="titulo-actividades">
+        <h2 id="titulo-actividades" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">3</span>
+          Actividades de aula
+        </h2>
+        <p>
+          Puedes resolver estas tareas en tu cuaderno o en un documento digital.
+          Razona tus respuestas y revisa la propuesta antes de compartirla.
+        </p>
+        <!-- ACTIVIDAD 1 · CRITERIO ÚNICO: 3.2.b -->
+        <article class="activity-card" data-criterio="3.2.b" aria-labelledby="actividad-1">
+          <span class="activity-category">Actividad 1 · Revisamos normas</span>
+          <h3 id="actividad-1">¿Qué hace justo a un juego?</h3>
+          <p>Analiza un reglamento ficticio con tres reglas poco claras.</p>
+          <ol class="activity-questions">
+            <li>Identifica las reglas que pueden provocar discusiones.</li>
+            <li>Reescríbelas con un lenguaje claro y comprensible.</li>
+            <li>Propón un procedimiento para resolver empates o dudas.</li>
+            <li>Explica cómo comprobar que todas las personas conocen las normas.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un reglamento breve y sin ambigüedades.</p>
+        </article>
+        <!-- ACTIVIDAD 2 · CRITERIO ÚNICO: 3.3.b -->
+        <article class="activity-card" data-criterio="3.3.b" aria-labelledby="actividad-2">
+          <span class="activity-category">Actividad 2 · Gestionamos conflictos</span>
+          <h3 id="actividad-2">Una discusión en mitad del partido</h3>
+          <p>Una jugadora afirma que otra ha incumplido una norma y ambas se enfadan.</p>
+          <ol class="activity-questions">
+            <li>Describe el conflicto sin insultar ni atribuir intenciones.</li>
+            <li>Escribe una frase de escucha para cada persona.</li>
+            <li>Propón un acuerdo razonable que respete las reglas.</li>
+            <li>Añade una medida para evitar que el problema se repita.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un guion de mediación.</p>
+        </article>
+        <!-- ACTIVIDAD 3 · CRITERIO ÚNICO: 4.2.b -->
+        <article class="activity-card" data-criterio="4.2.b" aria-labelledby="actividad-3">
+          <span class="activity-category">Actividad 3 · Deporte e igualdad</span>
+          <h3 id="actividad-3">Los prejuicios no juegan</h3>
+          <p>Analiza mensajes ficticios sobre qué deportes o posiciones son «para chicos» o «para chicas».</p>
+          <ol class="activity-questions">
+            <li>Localiza el estereotipo de género o capacidad en cada mensaje.</li>
+            <li>Explica qué efecto puede tener sobre el grupo.</li>
+            <li>Reformula dos frases en términos inclusivos.</li>
+            <li>Propón una norma de equipo que rechace esos prejuicios.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un decálogo breve por la igualdad en el deporte.</p>
+        </article>
+        <!-- ACTIVIDAD 4 · CRITERIO ÚNICO: 2.2.b -->
+        <article class="activity-card" data-criterio="2.2.b" aria-labelledby="actividad-4">
+          <span class="activity-category">Actividad 4 · Pensamos una jugada</span>
+          <h3 id="actividad-4">Tres opciones de pase</h3>
+          <p>Observa un esquema con una persona con balón, dos apoyos y un defensor.</p>
+          <ol class="activity-questions">
+            <li>Señala un espacio que podría facilitar el pase.</li>
+            <li>Plantea dos decisiones posibles dentro de las reglas.</li>
+            <li>Razona qué opción elegirías y por qué.</li>
+            <li>Explica qué cambiaría si el defensor se desplazara.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un esquema táctico explicado.</p>
+        </article>
+        <!-- ACTIVIDAD 5 · CRITERIO ÚNICO: 3.1.b -->
+        <article class="activity-card" data-criterio="3.1.b" aria-labelledby="actividad-5">
+          <span class="activity-category">Actividad 5 · Cuidamos las emociones</span>
+          <h3 id="actividad-5">Después del resultado</h3>
+          <p>Un equipo llega al final de un partido con un resultado que le decepciona.</p>
+          <ol class="activity-questions">
+            <li>Nombra dos emociones que pueden aparecer.</li>
+            <li>Propón una estrategia para calmarse antes de hablar.</li>
+            <li>Redacta una frase de reconocimiento del esfuerzo colectivo.</li>
+            <li>Escribe un objetivo de mejora sin señalar culpables.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un compromiso de autorregulación.</p>
+        </article>
+        <!-- ACTIVIDAD 6 · CRITERIO ÚNICO: 3.2.b -->
+        <article class="activity-card" data-criterio="3.2.b" aria-labelledby="actividad-6">
+          <span class="activity-category">Actividad 6 · Producto final</span>
+          <h3 id="actividad-6">Inventamos un deporte modificado</h3>
+          <p>Crea, con tu grupo, una propuesta de juego para practicar cuando el docente lo considere oportuno.</p>
+          <ol class="activity-questions">
+            <li>Define objetivo, espacio, materiales y tiempo orientativo.</li>
+            <li>Escribe seis reglas claras que favorezcan la participación.</li>
+            <li>Explica cómo rotar los roles y solucionar desacuerdos.</li>
+            <li>Incluye dos medidas de seguridad y una manera de evaluar el juego limpio.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un reglamento ilustrado de deporte modificado.</p>
+        </article>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 4. LO PONEMOS EN PRÁCTICA -->
+      <!-- ================================================================ -->
+      <section id="practica" class="lesson-section" aria-labelledby="titulo-practica">
+        <h2 id="titulo-practica" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">4</span>
+          Lo ponemos en práctica
+        </h2>
+        <p>En equipos diseñaremos un reglamento completo y un cuadro de responsabilidades rotativas. Después
+          podrán ensayarse algunas reglas en educación física, para comprobar si realmente aumentan la
+          participación y reducen los conflictos.</p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead>
+              <tr>
+                <th scope="col">Paso</th>
+                <th scope="col">Qué vamos a preparar o comprobar</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">Definimos</th>
+              <td>Acordamos el objetivo y unas reglas comprensibles.</td>
+            </tr>
+            <tr>
+              <th scope="row">Adaptamos</th>
+              <td>Cambiamos espacio, materiales o turnos para favorecer la inclusión.</td>
+            </tr>
+            <tr>
+              <th scope="row">Convivimos</th>
+              <td>Establecemos cómo dialogar ante una duda.</td>
+            </tr>
+            <tr>
+              <th scope="row">Revisamos</th>
+              <td>Preparamos observaciones para mejorar el reglamento tras jugar.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- IMAGEN SUGERIDA: Un reglamento claro facilita la práctica compartida. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.3-reglamento-inclusivo.png"
+            alt="Ficha gráfica de reglas de un juego inventado con iconos de seguridad, turnos y participación"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Ficha gráfica de reglas de un juego inventado con iconos de seguridad, turnos y participación.
+            Añade el archivo <strong>ef6.3-reglamento-inclusivo.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Un reglamento claro facilita la práctica compartida.</figcaption>
+        </figure>
+        <div class="tip">
+          <strong>Antes de compartir tu trabajo:</strong>
+          comprueba que la propuesta se entiende, es segura y permite participar
+          a personas con necesidades diferentes.
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 5. COMPRUEBA LO APRENDIDO -->
+      <!-- ================================================================ -->
+      <section id="comprueba" class="lesson-section" aria-labelledby="titulo-comprueba">
+        <h2 id="titulo-comprueba" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">5</span>
+          Comprueba lo aprendido
+        </h2>
+        <p>
+          Lee cada pregunta y marca una respuesta. Después, pulsa
+          <strong>Comprobar respuestas</strong> para ver la explicación.
+        </p>
+        <form id="quiz-ef6-3" autocomplete="off">
+          <!-- PREGUNTA 1 · CRITERIO ÚNICO: 3.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="3.2.b"
+            data-correct="a"
+            data-explanation="Las reglas compartidas facilitan una práctica justa."
+          >
+            <legend>1. ¿Qué caracteriza un juego con reglas claras?</legend>
+            <label><input type="radio" name="q1" value="a"> Todos comprenden qué se permite y qué no.</label>
+            <label><input type="radio" name="q1" value="b"> Las normas cambian según quién va ganando.</label>
+            <label><input type="radio" name="q1" value="c"> El arbitraje puede improvisar siempre.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 2 · CRITERIO ÚNICO: 3.3.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="3.3.b"
+            data-correct="b"
+            data-explanation="Resolver conflictos exige escucha y respeto."
+          >
+            <legend>2. Ante una discusión es mejor…</legend>
+            <label><input type="radio" name="q2" value="a"> Gritar hasta que alguien ceda.</label>
+            <label><input type="radio" name="q2" value="b"> Escuchar, comprobar la regla y dialogar.</label>
+            <label><input type="radio" name="q2" value="c"> Abandonar al compañero.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 3 · CRITERIO ÚNICO: 4.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="4.2.b"
+            data-correct="c"
+            data-explanation="Los estereotipos no deben limitar quién participa."
+          >
+            <legend>3. ¿Qué afirmación es compatible con la igualdad?</legend>
+            <label><input type="radio" name="q3" value="a"> Los deportes pertenecen a un género.</label>
+            <label><input type="radio" name="q3" value="b"> La habilidad se decide por el aspecto.</label>
+            <label><input type="radio" name="q3" value="c"> Las oportunidades de participación no dependen del género.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 4 · CRITERIO ÚNICO: 2.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="2.2.b"
+            data-correct="a"
+            data-explanation="La toma de decisiones parte de la información del juego."
+          >
+            <legend>4. En un juego con balón, conviene decidir después de…</legend>
+            <label><input type="radio" name="q4" value="a"> Observar posiciones y opciones.</label>
+            <label><input type="radio" name="q4" value="b"> Cerrar los ojos.</label>
+            <label><input type="radio" name="q4" value="c"> Elegir siempre la jugada más vistosa.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 5 · CRITERIO ÚNICO: 3.1.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="3.1.b"
+            data-correct="b"
+            data-explanation="La autorregulación favorece el aprendizaje y la convivencia."
+          >
+            <legend>5. Si una derrota provoca frustración, ayuda…</legend>
+            <label><input type="radio" name="q5" value="a"> Insultar a otros jugadores.</label>
+            <label><input type="radio" name="q5" value="b"> Reconocer la emoción y buscar mejoras.</label>
+            <label><input type="radio" name="q5" value="c"> Romper las reglas.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 6 · CRITERIO ÚNICO: 3.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="3.2.b"
+            data-correct="c"
+            data-explanation="La deportividad reconoce a todas las personas."
+          >
+            <legend>6. ¿Qué acción refleja juego limpio?</legend>
+            <label><input type="radio" name="q6" value="a"> Ocultar una falta voluntaria.</label>
+            <label><input type="radio" name="q6" value="b"> Ridiculizar al rival.</label>
+            <label><input type="radio" name="q6" value="c"> Reconocer una buena jugada del otro equipo.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 7 · CRITERIO ÚNICO: 4.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="4.2.b"
+            data-correct="a"
+            data-explanation="No se deben adjudicar capacidades por género."
+          >
+            <legend>7. ¿Qué frase contiene un estereotipo que debemos rechazar?</legend>
+            <label><input type="radio" name="q7" value="a"> Las niñas no pueden arbitrar igual que los niños.</label>
+            <label><input type="radio" name="q7" value="b"> Los roles pueden rotar.</label>
+            <label><input type="radio" name="q7" value="c"> Cualquier persona puede aprender.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 8 · CRITERIO ÚNICO: 3.3.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="3.3.b"
+            data-correct="b"
+            data-explanation="La rotación ayuda a comprender y compartir responsabilidades."
+          >
+            <legend>8. ¿Para qué sirve rotar roles?</legend>
+            <label><input type="radio" name="q8" value="a"> Para que nadie aprenda a arbitrar.</label>
+            <label><input type="radio" name="q8" value="b"> Para repartir responsabilidades y conocer perspectivas.</label>
+            <label><input type="radio" name="q8" value="c"> Para premiar únicamente a quien gana.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <div class="button-row">
+            <button type="button" id="check-quiz" class="action-button">
+              Comprobar respuestas
+            </button>
+            <button type="reset" class="action-button secondary">
+              Reiniciar cuestionario
+            </button>
+          </div>
+          <div id="quiz-result" class="quiz-result" role="status"
+               aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <aside class="summary-block" aria-label="Para recordar">
+        <h2>Para recordar</h2>
+        <p>Los deportes modificados permiten aprender con reglas adaptadas. Un buen reglamento combina
+          seguridad, decisiones razonadas, roles rotativos, igualdad, diálogo y juego limpio.</p>
+        <p><strong>Producto final:</strong> crear el reglamento de un deporte modificado que fomente la
+          participación, la seguridad y el juego limpio.</p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA INSTITUCIONAL COMÚN -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png"
+             alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+           target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Permite que las imágenes pendientes muestren la sugerencia de inserción.
+    function markImageMissing(image) {
+      const frame = image.closest(".media-frame");
+      if (frame) {
+        frame.classList.add("is-missing");
+      }
+    }
+
+    // Si las imágenes llegan a cargarse después, recuperamos su visualización.
+    document.querySelectorAll(".media-frame img").forEach((image) => {
+      if (image.complete && image.naturalWidth === 0) {
+        markImageMissing(image);
+      }
+
+      image.addEventListener("load", () => {
+        const frame = image.closest(".media-frame");
+        if (frame) {
+          frame.classList.remove("is-missing");
+        }
+      });
+    });
+
+    const quiz = document.getElementById("quiz-ef6-3");
+    const quizResult = document.getElementById("quiz-result");
+    const questions = [...quiz.querySelectorAll(".quiz-question")];
+
+    document.getElementById("check-quiz").addEventListener("click", () => {
+      let correct = 0;
+      let answered = 0;
+
+      questions.forEach((question) => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const feedback = question.querySelector(".answer-feedback");
+        const expected = question.dataset.correct;
+        const explanation = question.dataset.explanation;
+
+        question.classList.remove("is-correct", "is-incorrect");
+
+        if (!selected) {
+          feedback.textContent = "Todavía no has contestado esta pregunta.";
+          return;
+        }
+
+        answered += 1;
+
+        if (selected.value === expected) {
+          correct += 1;
+          question.classList.add("is-correct");
+          feedback.textContent = "¡Correcto! " + explanation;
+        } else {
+          question.classList.add("is-incorrect");
+          feedback.textContent = "Revisa tu respuesta. " + explanation;
+        }
+      });
+
+      quizResult.hidden = false;
+      quizResult.textContent =
+        "Has acertado " + correct + " de " + questions.length +
+        " preguntas. Has respondido " + answered +
+        ". Revisa las explicaciones y vuelve a intentarlo si lo necesitas.";
+    });
+
+    quiz.addEventListener("reset", () => {
+      // El evento reset ocurre antes de que el navegador desmarque las opciones.
+      questions.forEach((question) => {
+        question.classList.remove("is-correct", "is-incorrect");
+        question.querySelector(".answer-feedback").textContent = "";
+      });
+      quizResult.hidden = true;
+      quizResult.textContent = "";
+    });
+
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
