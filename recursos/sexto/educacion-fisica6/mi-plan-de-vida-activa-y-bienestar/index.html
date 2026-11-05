@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Educación Física 6.º. SdA 1: Mi plan de vida activa y bienestar. Aprendemos a organizar una vida activa con hábitos realistas de movimiento, alimentación variada, descanso, higiene y cuidado emocional."
+  >
+  <title>EF6.1 · Mi plan de vida activa y bienestar | CEIP Joaquín Tena Artigas</title>
+  <!-- Identidad visual común de las SdA del centro -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            junta: {
+              DEFAULT: "#007A33",
+              dark: "#005724",
+              light: "#e6f4ea",
+              accent: "#00a847"
+            },
+            editorial: {
+              bg: "#f8faf9",
+              card: "#ffffff",
+              border: "#d1e7dd",
+              text: "#1e293b",
+              subtext: "#475569",
+              amber: "#d97706",
+              amberBg: "#fef3c7"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --page: #f4f7f5;
+      --surface: #ffffff;
+      --ink: #1e293b;
+      --muted: #475569;
+      --primary: #007A33;
+      --primary-dark: #005724;
+      --primary-soft: #e6f4ea;
+      --secondary: #d97706;
+      --secondary-soft: #fef3c7;
+      --line: #d1e7dd;
+      --shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+      --radius: 1.5rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--primary-dark);
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -5rem;
+      left: 1rem;
+      z-index: 10;
+      padding: .65rem 1rem;
+      background: #ffffff;
+      border-radius: .5rem;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ESTRUCTURA COMPARTIDA CON EL RESTO DE LAS SdA */
+    .topic-page {
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+
+    .topic-shell {
+      width: min(94%, 1280px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    }
+
+    /* PORTADA DE LA SITUACIÓN DE APRENDIZAJE */
+    .topic-hero {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 245px;
+      margin: 1.4rem 0;
+      border-radius: 1.5rem;
+      background: linear-gradient(90deg, #005724 0%, #007A33 50%, #00a847 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .topic-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -85px;
+      top: -120px;
+      border: 48px solid rgba(255, 255, 255, .07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      font-size: .79rem;
+      font-weight: 750;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      color: #d1fae5;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      line-height: 1.17;
+      letter-spacing: -.025em;
+    }
+
+    .topic-hero p {
+      max-width: 700px;
+      margin: .9rem 0 0;
+      color: #d1fae5;
+      font-size: 1.02rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.1rem;
+    }
+
+    .hero-tags span {
+      padding: .22rem .7rem;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      font-size: .77rem;
+      font-weight: 650;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.3rem 0;
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-note {
+      padding: 1.15rem 1.4rem;
+      border-left: 5px solid var(--secondary);
+    }
+
+    .intro-note p {
+      margin: .4rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1.15rem 0 1.8rem;
+    }
+
+    .lesson-nav a {
+      padding: .45rem .8rem;
+      border: 1px solid #d1e7dd;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-size: .83rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .lesson-nav a:hover {
+      background: var(--primary-soft);
+    }
+
+    .lesson-section {
+      padding: clamp(1.15rem, 3vw, 2rem);
+      scroll-margin-top: 1rem;
+    }
+
+    /* TÍTULOS DE APARTADO: clase específica para evitar estilos globales .section-heading */
+    .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1.2rem;
+      padding-bottom: .9rem;
+      border-bottom: 2px solid #d1e7dd;
+      color: #1e293b;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      line-height: 1.35;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: .65rem;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: .95rem;
+    }
+
+    .lesson-section h3 {
+      margin: 1.6rem 0 .55rem;
+      color: #005724;
+      font-size: 1.13rem;
+      line-height: 1.38;
+    }
+
+    .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .lesson-section ul,
+    .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .lesson-section li {
+      margin-bottom: .35rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-card {
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .info-card h3 {
+      margin: 0 0 .5rem;
+    }
+
+    .info-card p:last-child,
+    .info-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip,
+    .warning,
+    .case-box {
+      margin: 1.2rem 0;
+      padding: 1rem 1.15rem;
+      border-radius: .85rem;
+    }
+
+    .tip {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .warning {
+      border-left: 4px solid #dd943d;
+      background: var(--secondary-soft);
+    }
+
+    .case-box {
+      border: 1px solid #d1e7dd;
+      background: #f0fdf4;
+    }
+
+    .case-box h3 {
+      margin-top: 0;
+    }
+
+    .table-scroll {
+      width: 100%;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .lesson-table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      padding: .75rem .85rem;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .lesson-table thead th {
+      background: #e6f4ea;
+      color: #005724;
+    }
+
+    .lesson-table tbody tr:nth-child(even) {
+      background: #fafdfc;
+    }
+
+    /* IMÁGENES DEL MATERIAL */
+    .media-frame{margin:1.25rem 0 1.75rem;overflow:hidden;border:1px solid #d1e7dd;border-radius:1rem;background:#fff}
+    .media-frame img{display:block;width:100%;max-height:560px;object-fit:contain;background:#fff}
+    .media-frame figcaption{padding:.7rem 1rem;background:#f8fafc;border-top:1px solid #e2e8f0;color:#64748b;font-size:.78rem;line-height:1.45}
+    .missing-image-note{display:none;padding:2rem 1.25rem;text-align:center;background:#f8fafc;color:#64748b;font-size:.85rem;line-height:1.55}
+    .media-frame.is-missing img{display:none}
+    .media-frame.is-missing .missing-image-note{display:block}
+
+    .activity-card {
+      margin: 1.3rem 0;
+      padding: 1.2rem 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 .3rem;
+      color: var(--primary-dark);
+    }
+
+    .activity-category {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .2rem .55rem;
+      border-radius: .4rem;
+      background: #e6f4ea;
+      color: #005724;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .response-lines {
+      width: 100%;
+      min-height: 84px;
+      margin: .5rem 0 1rem;
+      padding: .7rem .8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .6rem;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .response-lines:focus,
+    .routine-input:focus {
+      border-color: var(--primary);
+      outline: 2px solid #a7d8b8;
+      outline-offset: 1px;
+    }
+
+    .routine-input {
+      width: 100%;
+      min-width: 100px;
+      padding: .5rem .55rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      font: inherit;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0 !important;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      margin-bottom: .55rem;
+    }
+
+    .checklist input {
+      flex: 0 0 auto;
+      margin-top: .4rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .quiz-question legend {
+      padding: 0 .35rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .5rem 0;
+      padding: .25rem .5rem;
+      border-radius: .35rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #f0fdf4;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--primary);
+    }
+
+    .quiz-question.is-correct {
+      border-color: #8ccbad;
+      background: #f3fbf7;
+    }
+
+    .quiz-question.is-incorrect {
+      border-color: #e5bd82;
+      background: #fffbf2;
+    }
+
+    .answer-feedback {
+      margin: .55rem 0 0;
+      color: #475569;
+      font-size: .87rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.25rem;
+    }
+
+    .action-button {
+      padding: .65rem 1.1rem;
+      border: 2px solid var(--primary);
+      border-radius: .6rem;
+      background: var(--primary);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 720;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .action-button.secondary {
+      background: #ffffff;
+      color: var(--primary-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--primary-soft);
+    }
+
+    .quiz-result {
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: .7rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .summary-block {
+      padding: 1rem 1.4rem;
+      background: #fffbeb;
+    }
+
+    .summary-block h2 {
+      margin: 0 0 .45rem;
+      color: #92400e;
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 700px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .topic-hero {
+        min-height: 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 10.5pt;
+      }
+
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .site-footer,
+      .skip-link {
+        display: none;
+      }
+
+      .topic-shell {
+        width: 100%;
+        padding-bottom: 0;
+      }
+
+      .topic-hero,
+      .lesson-section,
+      .intro-note,
+      .activity-card,
+      .summary-block {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: #005724;
+        background: #e6f4ea;
+      }
+
+      .topic-hero p,
+      .topic-eyebrow {
+        color: #005724;
+      }
+
+      .lesson-section,
+      .activity-card,
+      .quiz-question,
+      .media-frame {
+        break-inside: avoid;
+      }
+
+      .response-lines {
+        min-height: 58px;
+      }
+    }
+
+    /* PASOS PARA RESOLVER CONFLICTOS */
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 1rem 0 1.35rem;
+    }
+
+    .step {
+      padding: .85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: var(--primary-soft);
+    }
+
+    @media (max-width: 700px) {
+      .step-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/base.css">
+</head>
+<body class="subject-physical-education">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- CABECERA INSTITUCIONAL COMÚN -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png"
+           alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+           class="banner-image">
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+              aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/sexto/">6.º de Primaria</a></li>
+          <li><a href="/recursos/sexto/educacionfisica6/">Educación Física</a></li>
+          <li aria-current="page">Mi plan de vida activa y bienestar</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA: VERDE INSTITUCIONAL EN TODAS LAS SdA -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Educación Física · 6.º de Primaria · SdA 1</span>
+          <h1 id="titulo-sda">Mi plan de vida activa y bienestar</h1>
+          <p>Aprendemos a organizar una vida activa con hábitos realistas de movimiento, alimentación variada,
+            descanso, higiene y cuidado emocional.</p>
+          <div class="hero-tags" aria-label="Temas principales">
+            <span>Vida activa</span>
+            <span>Autocuidado</span>
+            <span>Descanso</span>
+            <span>Bienestar</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="intro-note" aria-label="Presentación del trabajo">
+        <p><strong>Nuestro reto:</strong> elaborar un plan personal y flexible de vida activa para una semana,
+          con decisiones justificadas y una revisión final.</p>
+        <p>Los planes se preparan en clase. Las propuestas de actividad física se adaptarán a las posibilidades
+          y necesidades de cada persona y se realizarán en condiciones seguras.</p>
+      </aside>
+
+      <nav class="lesson-nav" aria-label="Índice de la situación de aprendizaje">
+        <a href="#aprendemos">1. Aprendemos</a>
+        <a href="#observamos">2. Observamos y comprendemos</a>
+        <a href="#actividades">3. Actividades de aula</a>
+        <a href="#practica">4. Lo ponemos en práctica</a>
+        <a href="#comprueba">5. Comprueba lo aprendido</a>
+      </nav>
+
+      <div class="topic-content">
+      <!-- ================================================================ -->
+      <!-- 1. APRENDEMOS -->
+      <!-- ================================================================ -->
+      <section id="aprendemos" class="lesson-section" aria-labelledby="titulo-aprendemos">
+        <h2 id="titulo-aprendemos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">1</span>
+          Aprendemos
+        </h2>
+        <h3>1.1. Actividad física y bienestar físico y mental</h3>
+        <p>Estar activo no significa competir ni practicar siempre un deporte. Caminar, bailar, desplazarse
+          andando, jugar al aire libre o participar en un juego cooperativo también son formas de
+          <strong>actividad física</strong>. Lo importante es encontrar oportunidades de movimiento que podamos
+          mantener y disfrutar.</p>
+        <p>El movimiento habitual contribuye a fortalecer músculos y huesos, mejora capacidades físicas y puede
+          favorecer el estado de ánimo, la atención y la relación con otras personas. El descanso y la
+          recuperación también forman parte del cuidado del cuerpo.</p>
+        <!-- IMAGEN SUGERIDA: Moverse de distintas maneras también forma parte de una vida activa. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.1-vida-activa.png"
+            alt="Ilustración horizontal de escolares disfrutando de diversas actividades cotidianas como caminar, bailar, jugar y pasear, con distintos niveles de participación"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Ilustración horizontal de escolares disfrutando de diversas actividades cotidianas como caminar, bailar, jugar y pasear, con distintos niveles de participación.
+            Añade el archivo <strong>ef6.1-vida-activa.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Moverse de distintas maneras también forma parte de una vida activa.</figcaption>
+        </figure>
+        <h3>1.2. Reconocemos los distintos tipos de esfuerzo</h3>
+        <p>La <strong>intensidad</strong> expresa cuánto esfuerzo requiere una actividad. En una actividad suave
+          solemos poder conversar con facilidad; cuando la intensidad aumenta, respirar y hablar puede resultar
+          más difícil. No todas las personas perciben la misma intensidad de igual manera.</p>
+        <p>Antes de realizar ejercicio es conveniente preparar el cuerpo con movimientos progresivos. Después,
+          una vuelta a la calma permite reducir el ritmo gradualmente. Los descansos y una hidratación adecuada
+          ayudan a participar con seguridad.</p>
+        <!-- IMAGEN SUGERIDA: La intensidad del esfuerzo puede cambiar de una actividad a otra. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.1-intensidad-esfuerzo.png"
+            alt="Esquema visual de tres esfuerzos de menor a mayor intensidad mediante siluetas y gestos, sin escalas médicas"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Esquema visual de tres esfuerzos de menor a mayor intensidad mediante siluetas y gestos, sin escalas médicas.
+            Añade el archivo <strong>ef6.1-intensidad-esfuerzo.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>La intensidad del esfuerzo puede cambiar de una actividad a otra.</figcaption>
+        </figure>
+        <h3>1.3. Alimentación, hidratación, higiene y sueño</h3>
+        <p>La vida saludable reúne varios hábitos que se complementan: alimentación variada, agua suficiente,
+          sueño reparador, higiene y movimiento regular. Ningún alimento por sí solo garantiza estar sano y no
+          debemos comparar los cuerpos de las personas.</p>
+        <p>Podemos organizar rutinas sencillas: llevar una botella de agua cuando corresponda, lavarse tras la
+          actividad, preparar la ropa necesaria y reservar un horario regular de descanso. Las necesidades
+          concretas pueden ser diferentes para cada persona.</p>
+        <!-- IMAGEN SUGERIDA: Los hábitos saludables se complementan entre sí. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.1-habitos-saludables.png"
+            alt="Composición de iconos escolares sobre agua, descanso, higiene, movimiento y comida variada"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Composición de iconos escolares sobre agua, descanso, higiene, movimiento y comida variada.
+            Añade el archivo <strong>ef6.1-habitos-saludables.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Los hábitos saludables se complementan entre sí.</figcaption>
+        </figure>
+        <h3>1.4. Salud emocional y respeto al cuerpo</h3>
+        <p>La actividad física puede generar alegría, nervios, cansancio o frustración. Reconocer cómo nos
+          sentimos permite pedir ayuda, regular la intensidad y respetar nuestros límites. Evitamos bromas o
+          comentarios sobre el aspecto, el peso o las capacidades de otras personas.</p>
+        <p>Las fotografías editadas y los mensajes en redes sociales pueden presentar expectativas corporales
+          poco realistas. El valor de una persona no depende de su imagen ni de sus resultados deportivos.</p>
+        <!-- IMAGEN SUGERIDA: Todas las personas merecen participar sin comparaciones ni burlas. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.1-emociones-cuerpo.png"
+            alt="Ilustración de alumnado con distintas complexiones corporales compartiendo una actividad física con respeto"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Ilustración de alumnado con distintas complexiones corporales compartiendo una actividad física con respeto.
+            Añade el archivo <strong>ef6.1-emociones-cuerpo.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Todas las personas merecen participar sin comparaciones ni burlas.</figcaption>
+        </figure>
+        <h3>1.5. Planificar, comprobar y ajustar</h3>
+        <p>Un <strong>plan realista</strong> describe qué haremos, cuándo, dónde y con qué apoyos. Conviene
+          combinar distintas formas de movimiento con periodos de recuperación, sin imponerse retos
+          inalcanzables ni utilizar la actividad física como castigo.</p>
+        <p>Al finalizar la semana, el objetivo no es comparar a unas personas con otras, sino revisar nuestras
+          decisiones: ¿qué nos gustó?, ¿qué dificultades hubo?, ¿qué ajuste nos ayudaría a continuar?</p>
+        <!-- IMAGEN SUGERIDA: Un buen plan es variado, flexible y adaptado a cada persona. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.1-plan-semanal.png"
+            alt="Tabla ilustrada de una semana con espacios de movimiento, descansos y tareas de autocuidado sin cifras prescriptivas"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Tabla ilustrada de una semana con espacios de movimiento, descansos y tareas de autocuidado sin cifras prescriptivas.
+            Añade el archivo <strong>ef6.1-plan-semanal.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Un buen plan es variado, flexible y adaptado a cada persona.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 2. OBSERVAMOS Y COMPRENDEMOS -->
+      <!-- ================================================================ -->
+      <section id="observamos" class="lesson-section" aria-labelledby="titulo-observamos">
+        <h2 id="titulo-observamos" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">2</span>
+          Observamos y comprendemos
+        </h2>
+        <p>Lee estas situaciones. Comenta las preguntas con tu grupo y justifica qué harías.</p>
+        <div class="columns">
+          <article class="info-card">
+            <h3>Situación A · Un recreo activo</h3>
+            <p>Un grupo piensa que solo cuenta como actividad física entrenar en un equipo. Otra compañera prefiere bailar y caminar.</p>
+            <p><strong>Piensa:</strong> ¿Qué otras formas de actividad física propondrías y por qué todas pueden ser valiosas?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación B · Un reto demasiado intenso</h3>
+            <p>Un alumno propone hacer ejercicio sin pausas para mejorar más deprisa, aunque varios participantes se encuentran muy cansados.</p>
+            <p><strong>Piensa:</strong> ¿Qué cambios necesita la propuesta para ser segura y ajustarse a cada persona?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación C · Comparaciones injustas</h3>
+            <p>En una conversación aparece el comentario: «Si no corres tan rápido como los demás, no estás en forma».</p>
+            <p><strong>Piensa:</strong> ¿Por qué es una afirmación inadecuada y cómo la reformularías con respeto?</p>
+          </article>
+          <article class="info-card">
+            <h3>Situación D · Una semana complicada</h3>
+            <p>Una alumna tiene actividades familiares que dificultan seguir el plan que había escrito para cada tarde.</p>
+            <p><strong>Piensa:</strong> ¿Cómo puede modificarlo sin sentirse culpable y sin abandonar su objetivo?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 3. ACTIVIDADES DE AULA -->
+      <!-- ================================================================ -->
+      <section id="actividades" class="lesson-section" aria-labelledby="titulo-actividades">
+        <h2 id="titulo-actividades" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">3</span>
+          Actividades de aula
+        </h2>
+        <p>
+          Puedes resolver estas tareas en tu cuaderno o en un documento digital.
+          Razona tus respuestas y revisa la propuesta antes de compartirla.
+        </p>
+        <!-- ACTIVIDAD 1 · CRITERIO ÚNICO: 1.1.b -->
+        <article class="activity-card" data-criterio="1.1.b" aria-labelledby="actividad-1">
+          <span class="activity-category">Actividad 1 · Analizamos hábitos</span>
+          <h3 id="actividad-1">Una semana, muchas opciones</h3>
+          <p>Lee una semana imaginaria con mucho tiempo sentado y pocas ocasiones de movimiento.</p>
+          <ol class="activity-questions">
+            <li>Distingue cuatro actividades físicas y cuatro actividades sedentarias en un día habitual.</li>
+            <li>Propón tres ocasiones realistas para moverse sin necesidad de competir.</li>
+            <li>Relaciona cada propuesta con un posible beneficio físico o emocional.</li>
+            <li>Explica por qué no todas las personas necesitan elegir las mismas actividades.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Una lista comentada de alternativas de movimiento.</p>
+        </article>
+        <!-- ACTIVIDAD 2 · CRITERIO ÚNICO: 1.2.b -->
+        <article class="activity-card" data-criterio="1.2.b" aria-labelledby="actividad-2">
+          <span class="activity-category">Actividad 2 · Preparamos el cuerpo</span>
+          <h3 id="actividad-2">Antes, durante y después</h3>
+          <p>Imagina que la clase va a realizar una sesión de juegos de desplazamiento.</p>
+          <ol class="activity-questions">
+            <li>Ordena estas fases: actividad principal, calentamiento y vuelta a la calma.</li>
+            <li>Describe una forma de comenzar progresivamente la sesión.</li>
+            <li>Indica cuándo sería prudente detenerse, descansar o comunicar una molestia.</li>
+            <li>Explica qué hábitos de higiene y recuperación deben considerarse.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Una secuencia visual de la sesión saludable.</p>
+        </article>
+        <!-- ACTIVIDAD 3 · CRITERIO ÚNICO: 1.3.b -->
+        <article class="activity-card" data-criterio="1.3.b" aria-labelledby="actividad-3">
+          <span class="activity-category">Actividad 3 · Detectamos riesgos</span>
+          <h3 id="actividad-3">Decisiones de seguridad</h3>
+          <p>Revisa el caso de una jornada de mucho calor, patio mojado y material mal colocado.</p>
+          <ol class="activity-questions">
+            <li>Señala tres riesgos concretos de la situación.</li>
+            <li>Escribe una medida preventiva para cada uno.</li>
+            <li>Decide qué hacer si aparece un dolor inesperado o un malestar importante.</li>
+            <li>Redacta dos normas para cuidar la seguridad de todo el grupo.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Una ficha de prevención de riesgos.</p>
+        </article>
+        <!-- ACTIVIDAD 4 · CRITERIO ÚNICO: 1.4.b -->
+        <article class="activity-card" data-criterio="1.4.b" aria-labelledby="actividad-4">
+          <span class="activity-category">Actividad 4 · Pensamiento crítico</span>
+          <h3 id="actividad-4">No somos una fotografía</h3>
+          <p>Analiza un mensaje ficticio que afirma que solo existe un cuerpo adecuado para hacer deporte.</p>
+          <ol class="activity-questions">
+            <li>Identifica dos estereotipos presentes en el mensaje.</li>
+            <li>Explica cómo podrían afectar a quienes lo leen.</li>
+            <li>Propón una respuesta respetuosa y razonada.</li>
+            <li>Escribe un lema inclusivo para animar a toda la clase a participar.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un pequeño cartel que respete la diversidad corporal.</p>
+        </article>
+        <!-- ACTIVIDAD 5 · CRITERIO ÚNICO: 1.1.b -->
+        <article class="activity-card" data-criterio="1.1.b" aria-labelledby="actividad-5">
+          <span class="activity-category">Actividad 5 · Nuestro día a día</span>
+          <h3 id="actividad-5">El diario de las decisiones</h3>
+          <p>Sin compartir datos íntimos, crea un ejemplo ficticio de una jornada equilibrada.</p>
+          <ol class="activity-questions">
+            <li>Incluye oportunidades de movimiento adecuadas a una persona imaginaria.</li>
+            <li>Añade decisiones sobre descanso, hidratación e higiene.</li>
+            <li>Justifica qué hábitos pueden favorecer el bienestar.</li>
+            <li>Señala qué podría cambiar si ese día la persona se encuentra cansada.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un diario ficticio de hábitos saludables.</p>
+        </article>
+        <!-- ACTIVIDAD 6 · CRITERIO ÚNICO: 1.2.b -->
+        <article class="activity-card" data-criterio="1.2.b" aria-labelledby="actividad-6">
+          <span class="activity-category">Actividad 6 · Producto final</span>
+          <h3 id="actividad-6">Mi plan flexible</h3>
+          <p>Utiliza lo aprendido para organizar una propuesta personal sin objetivos de peso ni marcas deportivas.</p>
+          <ol class="activity-questions">
+            <li>Elige actividades que te resulten accesibles y agradables.</li>
+            <li>Reparte las actividades durante la semana y reserva descansos.</li>
+            <li>Añade dos precauciones y una pauta de cuidado personal.</li>
+            <li>Indica cómo comprobarás si el plan es realista y cómo lo adaptarás.</li>
+          </ol>
+          <p><strong>Resultado:</strong> Un plan semanal revisable de vida activa.</p>
+        </article>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 4. LO PONEMOS EN PRÁCTICA -->
+      <!-- ================================================================ -->
+      <section id="practica" class="lesson-section" aria-labelledby="titulo-practica">
+        <h2 id="titulo-practica" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">4</span>
+          Lo ponemos en práctica
+        </h2>
+        <p>Prepararemos un calendario orientativo de siete días y una ficha de reflexión. El alumnado podrá usar
+          situaciones inventadas si prefiere no compartir hábitos personales. Después compararemos cómo hacer
+          planes flexibles sin juicios sobre el cuerpo.</p>
+        <div class="table-scroll">
+          <table class="lesson-table">
+            <thead>
+              <tr>
+                <th scope="col">Paso</th>
+                <th scope="col">Qué vamos a preparar o comprobar</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">Organizo</th>
+              <td>Selecciono acciones posibles para una semana y explico mis motivos.</td>
+            </tr>
+            <tr>
+              <th scope="row">Me cuido</th>
+              <td>Añado preparación, pausas, descanso e higiene.</td>
+            </tr>
+            <tr>
+              <th scope="row">Reviso</th>
+              <td>Compruebo qué partes son realistas y modifico las que no.</td>
+            </tr>
+            <tr>
+              <th scope="row">Respeto</th>
+              <td>Evito comparaciones y reconozco diferentes necesidades.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- IMAGEN SUGERIDA: Revisar lo que funciona ayuda a construir hábitos duraderos. -->
+        <figure class="media-frame">
+          <img
+            src="/img/ef6.1-revision-personal.png"
+            alt="Ilustración de una ficha de reflexión con símbolos de progreso, bienestar y ajuste de objetivos"
+            onerror="markImageMissing(this)"
+          >
+          <div class="missing-image-note">
+            Imagen horizontal sugerida: Ilustración de una ficha de reflexión con símbolos de progreso, bienestar y ajuste de objetivos.
+            Añade el archivo <strong>ef6.1-revision-personal.png</strong> a la carpeta <strong>/img</strong>.
+          </div>
+          <figcaption>Revisar lo que funciona ayuda a construir hábitos duraderos.</figcaption>
+        </figure>
+        <div class="tip">
+          <strong>Antes de compartir tu trabajo:</strong>
+          comprueba que la propuesta se entiende, es segura y permite participar
+          a personas con necesidades diferentes.
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- 5. COMPRUEBA LO APRENDIDO -->
+      <!-- ================================================================ -->
+      <section id="comprueba" class="lesson-section" aria-labelledby="titulo-comprueba">
+        <h2 id="titulo-comprueba" class="lesson-section-heading">
+          <span class="section-number" aria-hidden="true">5</span>
+          Comprueba lo aprendido
+        </h2>
+        <p>
+          Lee cada pregunta y marca una respuesta. Después, pulsa
+          <strong>Comprobar respuestas</strong> para ver la explicación.
+        </p>
+        <form id="quiz-ef6-1" autocomplete="off">
+          <!-- PREGUNTA 1 · CRITERIO ÚNICO: 1.1.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.1.b"
+            data-correct="b"
+            data-explanation="Hay muchas maneras de moverse sin competir."
+          >
+            <legend>1. ¿Cuál de estas opciones también es actividad física?</legend>
+            <label><input type="radio" name="q1" value="a"> Únicamente entrenar para una competición.</label>
+            <label><input type="radio" name="q1" value="b"> Caminar, bailar o jugar de manera activa.</label>
+            <label><input type="radio" name="q1" value="c"> Solo levantar mucho peso.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 2 · CRITERIO ÚNICO: 1.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.2.b"
+            data-correct="a"
+            data-explanation="La preparación y la recuperación forman parte de una práctica responsable."
+          >
+            <legend>2. ¿Qué orden es más adecuado en una sesión de actividad física?</legend>
+            <label><input type="radio" name="q2" value="a"> Calentamiento, actividad principal y vuelta a la calma.</label>
+            <label><input type="radio" name="q2" value="b"> Actividad principal intensa desde el primer minuto.</label>
+            <label><input type="radio" name="q2" value="c"> Vuelta a la calma antes de empezar.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 3 · CRITERIO ÚNICO: 1.3.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.3.b"
+            data-correct="c"
+            data-explanation="La seguridad está por delante de terminar el ejercicio."
+          >
+            <legend>3. Si una actividad se hace insegura, lo mejor es…</legend>
+            <label><input type="radio" name="q3" value="a"> Continuar aunque haya peligro.</label>
+            <label><input type="radio" name="q3" value="b"> Acelerar para terminar antes.</label>
+            <label><input type="radio" name="q3" value="c"> Detenerse y avisar a una persona adulta responsable.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 4 · CRITERIO ÚNICO: 1.4.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.4.b"
+            data-correct="a"
+            data-explanation="El respeto no depende del aspecto físico ni del rendimiento."
+          >
+            <legend>4. ¿Qué frase respeta la diversidad corporal?</legend>
+            <label><input type="radio" name="q4" value="a"> Todos los cuerpos merecen respeto y pueden encontrar maneras de participar.</label>
+            <label><input type="radio" name="q4" value="b"> Hay un único cuerpo válido para hacer deporte.</label>
+            <label><input type="radio" name="q4" value="c"> Quien corre más rápido vale más.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 5 · CRITERIO ÚNICO: 1.1.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.1.b"
+            data-correct="b"
+            data-explanation="La actividad física puede aportar beneficios en distintos ámbitos."
+          >
+            <legend>5. ¿Qué puede favorecer una vida activa?</legend>
+            <label><input type="radio" name="q5" value="a"> Evitar siempre el descanso.</label>
+            <label><input type="radio" name="q5" value="b"> Bienestar físico, social y emocional.</label>
+            <label><input type="radio" name="q5" value="c"> Compararse continuamente con los demás.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 6 · CRITERIO ÚNICO: 1.2.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.2.b"
+            data-correct="c"
+            data-explanation="Un plan útil tiene en cuenta las circunstancias personales."
+          >
+            <legend>6. Un plan saludable debería ser…</legend>
+            <label><input type="radio" name="q6" value="a"> Rígido y exactamente igual para todos.</label>
+            <label><input type="radio" name="q6" value="b"> Una competición diaria.</label>
+            <label><input type="radio" name="q6" value="c"> Realista, variado y adaptable.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 7 · CRITERIO ÚNICO: 1.3.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.3.b"
+            data-correct="a"
+            data-explanation="Prevenir accidentes requiere revisar el espacio y el material."
+          >
+            <legend>7. ¿Qué harías ante material deportivo deteriorado?</legend>
+            <label><input type="radio" name="q7" value="a"> Avisar y no utilizarlo hasta que sea seguro.</label>
+            <label><input type="radio" name="q7" value="b"> Usarlo sin decir nada.</label>
+            <label><input type="radio" name="q7" value="c"> Esconderlo.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <!-- PREGUNTA 8 · CRITERIO ÚNICO: 1.4.b -->
+          <fieldset
+            class="quiz-question"
+            data-criterio="1.4.b"
+            data-correct="b"
+            data-explanation="Las imágenes pueden estar retocadas y no justifican comparaciones."
+          >
+            <legend>8. ¿Qué debemos hacer con imágenes corporales poco realistas en redes?</legend>
+            <label><input type="radio" name="q8" value="a"> Tomarlas siempre como modelo obligatorio.</label>
+            <label><input type="radio" name="q8" value="b"> Analizarlas críticamente y respetar la diversidad.</label>
+            <label><input type="radio" name="q8" value="c"> Difundir burlas sobre otras personas.</label>
+            <p class="answer-feedback" aria-live="polite"></p>
+          </fieldset>
+          <div class="button-row">
+            <button type="button" id="check-quiz" class="action-button">
+              Comprobar respuestas
+            </button>
+            <button type="reset" class="action-button secondary">
+              Reiniciar cuestionario
+            </button>
+          </div>
+          <div id="quiz-result" class="quiz-result" role="status"
+               aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <aside class="summary-block" aria-label="Para recordar">
+        <h2>Para recordar</h2>
+        <p>La vida activa combina movimiento agradable, descanso, higiene, seguridad y respeto por las
+          diferencias. Un plan útil es flexible y cuida tanto el cuerpo como el bienestar emocional.</p>
+        <p><strong>Producto final:</strong> elaborar un plan personal y flexible de vida activa para una semana,
+          con decisiones justificadas y una revisión final.</p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA INSTITUCIONAL COMÚN -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png"
+             alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+           target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Permite que las imágenes pendientes muestren la sugerencia de inserción.
+    function markImageMissing(image) {
+      const frame = image.closest(".media-frame");
+      if (frame) {
+        frame.classList.add("is-missing");
+      }
+    }
+
+    // Si las imágenes llegan a cargarse después, recuperamos su visualización.
+    document.querySelectorAll(".media-frame img").forEach((image) => {
+      if (image.complete && image.naturalWidth === 0) {
+        markImageMissing(image);
+      }
+
+      image.addEventListener("load", () => {
+        const frame = image.closest(".media-frame");
+        if (frame) {
+          frame.classList.remove("is-missing");
+        }
+      });
+    });
+
+    const quiz = document.getElementById("quiz-ef6-1");
+    const quizResult = document.getElementById("quiz-result");
+    const questions = [...quiz.querySelectorAll(".quiz-question")];
+
+    document.getElementById("check-quiz").addEventListener("click", () => {
+      let correct = 0;
+      let answered = 0;
+
+      questions.forEach((question) => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const feedback = question.querySelector(".answer-feedback");
+        const expected = question.dataset.correct;
+        const explanation = question.dataset.explanation;
+
+        question.classList.remove("is-correct", "is-incorrect");
+
+        if (!selected) {
+          feedback.textContent = "Todavía no has contestado esta pregunta.";
+          return;
+        }
+
+        answered += 1;
+
+        if (selected.value === expected) {
+          correct += 1;
+          question.classList.add("is-correct");
+          feedback.textContent = "¡Correcto! " + explanation;
+        } else {
+          question.classList.add("is-incorrect");
+          feedback.textContent = "Revisa tu respuesta. " + explanation;
+        }
+      });
+
+      quizResult.hidden = false;
+      quizResult.textContent =
+        "Has acertado " + correct + " de " + questions.length +
+        " preguntas. Has respondido " + answered +
+        ". Revisa las explicaciones y vuelve a intentarlo si lo necesitas.";
+    });
+
+    quiz.addEventListener("reset", () => {
+      // El evento reset ocurre antes de que el navegador desmarque las opciones.
+      questions.forEach((question) => {
+        question.classList.remove("is-correct", "is-incorrect");
+        question.querySelector(".answer-feedback").textContent = "";
+      });
+      quizResult.hidden = true;
+      quizResult.textContent = "";
+    });
+
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
