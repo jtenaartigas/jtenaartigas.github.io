@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MAT4.7: Recogemos datos, los ordenamos en tablas y elaboramos gráficos para conocer mejor nuestro colegio y comprender sucesos aleatorios. CEIP Joaquín Tena Artigas.">
+  <title>MAT4.7 · Radiografía de nuestro colegio | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <!--
+    MAT4.7: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.E.1.1, MAT.2.E.1.2, MAT.2.E.1.3, MAT.2.E.2.1, MAT.2.E.2.2.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+    :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  </style>
+</head>
+<body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir al inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación"
+              aria-controls="main-navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li><a href="/recursos/cuarto/matematicas4/">Matemáticas</a></li>
+          <li aria-current="page">SdA 7</li>
+        </ol>
+      </nav>
+      <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Matemáticas · 4.º de Primaria · SdA 7</span>
+          <h1 id="titulo-sda">Radiografía de nuestro colegio</h1>
+          <p>Recogemos datos, los ordenamos en tablas y elaboramos gráficos para conocer mejor nuestro colegio y comprender sucesos aleatorios.</p>
+          <div class="hero-tags" aria-label="Qué aprenderemos">
+            <span>Encuestas</span>
+            <span>Tablas y gráficos</span>
+            <span>Azar</span>
+          </div>
+        </div>
+        <figure class="media-frame hero-mascot">
+          <img src="/img/tomatito/matematicas.png"
+               alt="Tomatito, la mascota del colegio, aprendiendo Matemáticas"
+               onerror="markImageMissing(this)">
+          <figcaption class="sr-only">Tomatito nos acompaña en esta situación de aprendizaje.</figcaption>
+        </figure>
+      </section>
+      <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="lesson-nav-links">
+          <a href="#sec-1">1.1 Hacemos buenas preguntas</a>
+          <a href="#sec-2">1.2 Tablas de recuento y frecuencias</a>
+          <a href="#sec-3">1.3 Leemos gráficos de barras</a>
+          <a href="#sec-4">1.4 Los pictogramas cuentan historias</a>
+          <a href="#sec-5">1.5 Cambios a lo largo del tiempo</a>
+          <a href="#sec-6">1.6 La moda y las conclusiones</a>
+          <a href="#sec-7">1.7 El azar: seguro, posible o imposible</a>
+          <a href="#sec-8" class="nav-challenge">1.8 Problemas y desafíos</a>
+          <a href="#sec-repaso" class="nav-review">🔄 Repasamos lo aprendido</a>
+          <a href="#sec-diana" class="nav-selfeval">🎯 Autoevaluación</a>
+          <a href="#sec-comprueba" class="nav-quiz">✓ Comprueba lo aprendido</a>
+        </div>
+      </nav>
+      <div class="topic-content">
+        <!-- SECCIÓN 1: Hacemos buenas preguntas -->
+        <section id="sec-1" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.1</span> Hacemos buenas preguntas
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La <strong>estadística</strong> nos ayuda a conocer mejor un grupo a partir de datos. Para empezar una investigación necesitamos una <strong>pregunta clara</strong>, saber a quién preguntaremos y decidir cómo anotaremos cada respuesta.</p>
+              <p>Una pregunta como «¿Cómo llegas al colegio?» tiene respuestas fáciles de clasificar: andando, en bicicleta, en coche o en autobús. Debemos preguntar lo mismo a todas las personas y apuntar cada respuesta una sola vez.</p>
+              <p>También hay que saber <strong>cuántas personas</strong> han contestado. Una encuesta a una clase describe esa clase, pero no necesariamente a todo el colegio.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Elige lo que quieres conocer: el medio de transporte al colegio.</li>
+                <li>Redacta una pregunta que todo el grupo entienda.</li>
+                <li>Establece las categorías posibles.</li>
+                <li>Registra una respuesta por persona.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 142" role="img" aria-labelledby="mat47-encuesta-title" focusable="false">
+                  <title id="mat47-encuesta-title">Proceso de encuesta escolar</title>
+                  <rect x="17" y="42" width="154" height="65" rx="9" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <text x="94" y="79" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Preguntar</text>
+                  <rect x="194" y="42" width="154" height="65" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="271" y="79" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Recoger</text>
+                  <rect x="371" y="42" width="154" height="65" rx="9" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <text x="448" y="79" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Contar</text>
+                  <rect x="548" y="42" width="154" height="65" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="625" y="79" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Interpretar</text>
+                  <text x="184" y="81" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#334155" font-weight="750">→</text>
+                  <text x="361" y="81" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#334155" font-weight="750">→</text>
+                  <text x="538" y="81" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#334155" font-weight="750">→</text>
+                </svg>
+                <figcaption>Las preguntas claras producen datos que se pueden comparar.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Si preguntas a 24 compañeros, debes obtener <strong>24 respuestas</strong>.</li>
+                <li>No puedes asegurar que todo el colegio opina lo mismo que una sola clase.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.3.2">
+              <h3>Actividad 1. Elige una pregunta que pueda investigarse</h3>
+              <ol type="a" class="subquestions">
+                <li>¿Qué medio de transporte usas para ir al colegio?</li>
+                <li>¿Cuál es el mejor deporte del mundo?</li>
+                <li>¿Cuántos libros leíste el último mes?</li>
+                <li>¿Qué fruta eliges para el recreo?</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.2">
+              <h3>Actividad 2. Escribe cuatro categorías de respuesta</h3>
+              <ol type="a" class="subquestions">
+                <li>Medio de transporte</li>
+                <li>Fruta favorita</li>
+                <li>Actividad del recreo</li>
+                <li>Material reciclado</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.2">
+              <h3>Actividad 3. Decide qué datos recogerías</h3>
+              <ol type="a" class="subquestions">
+                <li>Para conocer el juego preferido</li>
+                <li>Para saber cuántos libros se prestan</li>
+                <li>Para conocer las horas de lectura</li>
+                <li>Para contar árboles del patio</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.2">
+              <h3>Actividad 4. Mejora estas preguntas de encuesta</h3>
+              <ol type="a" class="subquestions">
+                <li>¿Te gustan mucho las cosas buenas?</li>
+                <li>¿Tienes libros?</li>
+                <li>¿No crees que el fútbol es lo mejor?</li>
+                <li>¿Qué haces siempre y todos los días?</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 2: Tablas de recuento y frecuencias -->
+        <section id="sec-2" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.2</span> Tablas de recuento y frecuencias
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Una <strong>tabla de recuento</strong> organiza las respuestas de una encuesta. Podemos usar una raya por cada respuesta; al llegar a cinco, agrupamos las marcas para contarlas con rapidez.</p>
+              <p>La <strong>frecuencia</strong> indica cuántas veces aparece cada dato o categoría. La suma de todas las frecuencias tiene que coincidir con el número total de respuestas.</p>
+              <p>Antes de dibujar un gráfico, comprueba la tabla. Si hay 20 participantes, todas las frecuencias deben sumar 20.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Cuenta 8 personas que eligen manzana, 5 plátano, 4 pera y 3 naranja.</li>
+                <li>Escribe cada categoría y su frecuencia en una tabla.</li>
+                <li>Suma: 8 + 5 + 4 + 3 = <strong>20</strong>.</li>
+                <li>Comprueba que coinciden con las 20 personas encuestadas.</li>
+              </ol>
+              <div class="table-scroller">
+                <table class="data-table">
+                  <caption>Ejemplo: fruta elegida por 20 escolares</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Fruta</th>
+                      <th scope="col">Marcas de recuento</th>
+                      <th scope="col">Frecuencia</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Manzana</th>
+                      <td>||||/ |||</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Plátano</th>
+                      <td>||||/</td>
+                      <td>5</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pera</th>
+                      <td>||||</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Naranja</th>
+                      <td>|||</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>—</td>
+                      <td>
+                        <strong>20</strong>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <aside class="theory-tip">
+                <strong>Recuerda:</strong> En las marcas de cinco, la quinta raya puede cruzar las otras cuatro; aquí se muestra mediante «/».</aside>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>La categoría más frecuente es manzana, con <strong>8 respuestas</strong>.</li>
+                <li>El total es <strong>20</strong>, igual que las personas encuestadas.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Calcula la frecuencia total</h3>
+              <ol type="a" class="subquestions">
+                <li>Rojo 8, azul 6 y verde 4</li>
+                <li>Fútbol 12, baloncesto 5 y patinaje 3</li>
+                <li>Andar 9, coche 7 y autobús 4</li>
+                <li>Perros 6, gatos 5, peces 2 y otros 1</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Elabora una tabla de frecuencias</h3>
+              <ol type="a" class="subquestions">
+                <li>A, B, A, C, A, B, C, A</li>
+                <li>Sol, sol, lluvia, sol, viento, lluvia, sol</li>
+                <li>1, 2, 1, 3, 2, 1, 3, 3</li>
+                <li>Pera, manzana, pera, kiwi, pera, kiwi</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Detecta qué dato falta</h3>
+              <ol type="a" class="subquestions">
+                <li>Responden 25: 8 + 7 + 6 + ___</li>
+                <li>Responden 30: 12 + 9 + ___</li>
+                <li>Responden 18: 4 + 5 + 3 + ___</li>
+                <li>Responden 40: 15 + 10 + ___</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Identifica la moda en los datos</h3>
+              <ol type="a" class="subquestions">
+                <li>5, 3, 5, 2, 1, 5</li>
+                <li>Azul, verde, azul, rojo, azul</li>
+                <li>7, 8, 8, 9, 8, 7</li>
+                <li>Pera, uva, pera, uva, pera</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: Leemos gráficos de barras -->
+        <section id="sec-3" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.3</span> Leemos gráficos de barras
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Un <strong>gráfico de barras</strong> representa cada categoría con una barra. La altura (o longitud) de la barra señala su frecuencia: cuanto más alta es, más respuestas hubo.</p>
+              <p>Antes de interpretarlo, busca el <strong>título</strong>, los <strong>nombres de las categorías</strong> y la <strong>escala</strong>. Si la escala aumenta de dos en dos, cada marca no significa una unidad.</p>
+              <p>Todas las barras deben empezar desde la misma línea de base. Podemos comparar sus alturas para averiguar cuál fue la respuesta más o menos frecuente.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Observa los préstamos de libros: lunes 6, martes 10, miércoles 8 y jueves 4.</li>
+                <li>Localiza la barra más alta: martes (10).</li>
+                <li>Localiza la menor: jueves (4).</li>
+                <li>Calcula la diferencia: 10 − 4 = <strong>6 préstamos</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 198" role="img" aria-labelledby="mat47-barras-title" focusable="false">
+                  <title id="mat47-barras-title">Gráfico de barras con préstamos de libros</title>
+                  <line x1="90" y1="151" x2="640" y2="151" stroke="#334155" stroke-width="3"/>
+                  <line x1="90" y1="15" x2="90" y2="151" stroke="#334155" stroke-width="3"/>
+                  <rect x="150" y="85" width="64" height="66" rx="2" fill="#84cfa1" stroke="#007a33" stroke-width="2"/>
+                  <text x="182" y="77" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="800">6</text>
+                  <text x="182" y="177" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#334155" font-weight="750">L</text>
+                  <rect x="270" y="41" width="64" height="110" rx="2" fill="#84cfa1" stroke="#007a33" stroke-width="2"/>
+                  <text x="302" y="33" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="800">10</text>
+                  <text x="302" y="177" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#334155" font-weight="750">M</text>
+                  <rect x="390" y="63" width="64" height="88" rx="2" fill="#84cfa1" stroke="#007a33" stroke-width="2"/>
+                  <text x="422" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="800">8</text>
+                  <text x="422" y="177" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#334155" font-weight="750">X</text>
+                  <rect x="510" y="107" width="64" height="44" rx="2" fill="#84cfa1" stroke="#007a33" stroke-width="2"/>
+                  <text x="542" y="99" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="800">4</text>
+                  <text x="542" y="177" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#334155" font-weight="750">J</text>
+                  <text x="36" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#64748b" font-weight="600">10</text>
+                </svg>
+                <figcaption>L = lunes, M = martes, X = miércoles, J = jueves. Cada barra indica una cantidad.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>El martes hubo <strong>10 préstamos</strong>, cuatro más que el lunes.</li>
+                <li>Durante los cuatro días hubo 6 + 10 + 8 + 4 = <strong>28 préstamos</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 1. Lee las frecuencias de estos datos</h3>
+              <ol type="a" class="subquestions">
+                <li>Lunes 8, martes 12, miércoles 7: ¿qué día tiene más?</li>
+                <li>Fútbol 9, baloncesto 6, tenis 4: ¿qué deporte menos?</li>
+                <li>Rojo 15, azul 12, verde 10: ¿cuántos votos verdes?</li>
+                <li>Manzana 7, pera 11, plátano 8: ¿qué fruta más?</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 2. Calcula diferencias entre barras</h3>
+              <ol type="a" class="subquestions">
+                <li>Días: 14 y 9</li>
+                <li>Juegos: 12 y 7</li>
+                <li>Libros: 18 y 11</li>
+                <li>Plantas: 22 y 15</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 3. Representa en barras</h3>
+              <ol type="a" class="subquestions">
+                <li>Deportes: 5, 8, 4, 7</li>
+                <li>Frutas: 3, 6, 9, 4</li>
+                <li>Libros: 10, 7, 13, 5</li>
+                <li>Árboles: 6, 8, 2, 4</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 4. Comprueba si la interpretación es correcta</h3>
+              <ol type="a" class="subquestions">
+                <li>Con 12 y 8 votos, la diferencia es 4</li>
+                <li>Con 7 y 9 votos, gana el primero</li>
+                <li>Con 4, 4 y 6 votos hay empate total</li>
+                <li>Con 10, 8 y 2 votos participan 20</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 4: Los pictogramas cuentan historias -->
+        <section id="sec-4" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.4</span> Los pictogramas cuentan historias
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Un <strong>pictograma</strong> utiliza dibujos repetidos para representar cantidades. Es atractivo y fácil de entender si leemos con atención la <strong>leyenda</strong>.</p>
+              <p>Un dibujo no siempre significa una unidad. Si el símbolo de un libro equivale a <strong>2 libros</strong>, cuatro símbolos representan <strong>8 libros</strong> y tres símbolos representan 6.</p>
+              <p>Para construir un pictograma, elige un símbolo claro y utiliza la misma equivalencia en todas las filas. Nunca cambies el valor de un dibujo a mitad de un gráfico.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Lee la leyenda: un icono representa 2 libros.</li>
+                <li>Cuenta 4 iconos en la fila de la clase A.</li>
+                <li>Multiplica 4 × 2 = <strong>8 libros</strong>.</li>
+                <li>Compara con una fila de 3 iconos, que representa 6 libros.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="mat47-pictogramas-title" focusable="false">
+                  <title id="mat47-pictogramas-title">Pictograma de libros leídos por dos clases</title>
+                  <text x="32" y="47" text-anchor="start" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">Clase A</text>
+                  <text x="32" y="105" text-anchor="start" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">Clase B</text>
+                  <rect x="178" y="19" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="206" y="47" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <rect x="273" y="19" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="301" y="47" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <rect x="368" y="19" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="396" y="47" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <rect x="463" y="19" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="491" y="47" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <rect x="178" y="77" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="206" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <rect x="273" y="77" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="301" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <rect x="368" y="77" width="57" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+                  <text x="396" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">▣</text>
+                  <text x="360" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="700">Leyenda: ▣ representa 2 libros</text>
+                </svg>
+                <figcaption>Clase A: 4 símbolos × 2 = 8 libros. Clase B: 3 símbolos × 2 = 6 libros.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Cuatro símbolos de valor 2 equivalen a <strong>8 libros</strong>.</li>
+                <li>Para representar 10 libros, dibujarías <strong>5 símbolos</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 1. Interpreta la leyenda</h3>
+              <ol type="a" class="subquestions">
+                <li>3 símbolos de 2 unidades cada uno</li>
+                <li>5 símbolos de 5 unidades cada uno</li>
+                <li>4 símbolos de 10 unidades cada uno</li>
+                <li>6 símbolos de 2 unidades cada uno</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 2. Averigua cuántos símbolos necesitas</h3>
+              <ol type="a" class="subquestions">
+                <li>12 objetos, 2 por dibujo</li>
+                <li>20 objetos, 5 por dibujo</li>
+                <li>40 objetos, 10 por dibujo</li>
+                <li>18 objetos, 3 por dibujo</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 3. Diseña un pictograma sencillo</h3>
+              <ol type="a" class="subquestions">
+                <li>Libros: 6, 8 y 10 con escala 2</li>
+                <li>Plantas: 5, 10 y 15 con escala 5</li>
+                <li>Pelotas: 8, 12 y 4 con escala 4</li>
+                <li>Tapones: 10, 20 y 30 con escala 10</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 4. Corrige la lectura del pictograma</h3>
+              <ol type="a" class="subquestions">
+                <li>4 dibujos de valor 5 se interpretan como 4</li>
+                <li>3 dibujos de valor 10 se interpretan como 30</li>
+                <li>6 dibujos de valor 2 se interpretan como 12</li>
+                <li>5 dibujos de valor 4 se interpretan como 9</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 5: Cambios a lo largo del tiempo -->
+        <section id="sec-5" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.5</span> Cambios a lo largo del tiempo
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Los <strong>gráficos de líneas</strong> sirven para mostrar cómo cambia una cantidad con el tiempo: por ejemplo, la temperatura de cada día o los centímetros que crece una planta.</p>
+              <p>Cada punto representa una medición. Los puntos se colocan sobre dos ejes: en uno aparece el tiempo y en el otro la cantidad; después los unimos con segmentos. Si la línea sube, la cantidad aumenta; si baja, disminuye.</p>
+              <p>No confundas una línea que baja con un valor negativo: solo indica que la cantidad es menor que antes.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Observa las temperaturas: 18°, 20°, 19° y 22°.</li>
+                <li>Del lunes al martes sube 2°.</li>
+                <li>Del martes al miércoles baja 1°.</li>
+                <li>Del miércoles al jueves sube 3°: el jueves fue el día más cálido.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 198" role="img" aria-labelledby="mat47-lineas-title" focusable="false">
+                  <title id="mat47-lineas-title">Evolución de la temperatura durante cuatro días</title>
+                  <line x1="80" y1="150" x2="650" y2="150" stroke="#334155" stroke-width="2"/>
+                  <line x1="80" y1="24" x2="80" y2="150" stroke="#334155" stroke-width="2"/>
+                  <polyline points="130,110 270,74 410,92 550,38" fill="none" stroke="#007a33" stroke-width="4"/>
+                  <circle cx="130" cy="110" r="6" fill="#2563eb"/>
+                  <text x="130" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="750">18°</text>
+                  <text x="130" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#334155" font-weight="750">L</text>
+                  <circle cx="270" cy="74" r="6" fill="#2563eb"/>
+                  <text x="270" y="61" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="750">20°</text>
+                  <text x="270" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#334155" font-weight="750">M</text>
+                  <circle cx="410" cy="92" r="6" fill="#2563eb"/>
+                  <text x="410" y="79" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="750">19°</text>
+                  <text x="410" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#334155" font-weight="750">X</text>
+                  <circle cx="550" cy="38" r="6" fill="#2563eb"/>
+                  <text x="550" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="750">22°</text>
+                  <text x="550" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#334155" font-weight="750">J</text>
+                </svg>
+                <figcaption>En un gráfico de líneas importa observar cuándo sube y baja la cantidad.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>El cambio entre lunes (18°) y jueves (22°) fue de <strong>4 °C</strong>.</li>
+                <li>El miércoles bajó la temperatura respecto al martes.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 1. Describe cuándo aumenta o disminuye</h3>
+              <ol type="a" class="subquestions">
+                <li>18, 20, 19, 22</li>
+                <li>12, 10, 9, 14</li>
+                <li>7, 7, 11, 13</li>
+                <li>25, 20, 18, 18</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 2. Dibuja un gráfico de líneas</h3>
+              <ol type="a" class="subquestions">
+                <li>Lunes 5, martes 8, miércoles 6, jueves 9</li>
+                <li>Semanas: 10, 12, 14 y 13</li>
+                <li>Horas: 18, 20, 19 y 21</li>
+                <li>Meses: 30, 25, 35 y 40</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 3. Calcula el cambio total</h3>
+              <ol type="a" class="subquestions">
+                <li>De 8 a 15</li>
+                <li>De 25 a 19</li>
+                <li>De 42 a 46</li>
+                <li>De 13 a 7</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 4. Identifica máximos y mínimos</h3>
+              <ol type="a" class="subquestions">
+                <li>9, 7, 11, 8, 13</li>
+                <li>12, 15, 10, 17, 14</li>
+                <li>4, 6, 6, 3, 5</li>
+                <li>20, 19, 22, 18, 21</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 6: La moda y las conclusiones -->
+        <section id="sec-6" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.6</span> La moda y las conclusiones
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La <strong>moda</strong> es el dato o categoría que aparece <strong>más veces</strong>. Si preguntamos por los juegos favoritos y el juego A recibe 12 votos, B recibe 8 y C recibe 5, la moda es A.</p>
+              <p>Si dos opciones empatan con la frecuencia más alta, hay <strong>dos modas</strong>. La moda no tiene por qué ser un número: puede ser un color, una fruta o un deporte.</p>
+              <p>Una conclusión debe estar respaldada por los datos. Podemos afirmar cuál fue el juego más elegido <strong>en la encuesta</strong>, pero no cuál es el preferido de todo el colegio si solo participó una clase.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Busca la frecuencia más alta: 12 votos.</li>
+                <li>Relaciona ese número con su categoría: juego A.</li>
+                <li>Escribe: «La moda es el juego A».</li>
+                <li>Explica de qué grupo proceden los datos: la clase encuestada.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 177" role="img" aria-labelledby="mat47-moda-title" focusable="false">
+                  <title id="mat47-moda-title">Moda: frecuencia más alta</title>
+                  <rect x="66" y="36" width="170" height="65" rx="8" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <text x="151" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="800">A · 12 votos</text>
+                  <rect x="275" y="50" width="170" height="51" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="360" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#2563eb" font-weight="750">B · 8 votos</text>
+                  <rect x="484" y="61" width="170" height="40" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="569" y="87" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#2563eb" font-weight="750">C · 5 votos</text>
+                  <text x="360" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="650">La opción A es la moda porque recibió más votos.</text>
+                </svg>
+                <figcaption>Una moda es el resultado más frecuente dentro de los datos estudiados.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Si los votos son A: 12, B: 8 y C: 5, la moda es <strong>A</strong>.</li>
+                <li>Con A: 12 y B: 12 habría <strong>dos modas</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 1. Encuentra la moda</h3>
+              <ol type="a" class="subquestions">
+                <li>4, 7, 4, 8, 4, 7</li>
+                <li>Azul, azul, verde, rojo</li>
+                <li>2, 3, 3, 2, 4</li>
+                <li>5, 5, 6, 6, 7</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 2. Redacta una conclusión a partir de datos</h3>
+              <ol type="a" class="subquestions">
+                <li>Lectura 12, pintura 6 y música 4</li>
+                <li>Fruta 8, bocadillo 11 y yogur 5</li>
+                <li>Patio A 17 y patio B 9</li>
+                <li>A pie 14, autobús 6 y coche 10</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 3. Detecta una conclusión exagerada</h3>
+              <ol type="a" class="subquestions">
+                <li>Encuestamos a 20 alumnos y hablamos de todo el país</li>
+                <li>Encuestamos a 30 familias y hablamos de la clase</li>
+                <li>Encuestamos a 10 personas y decimos que todos opinan igual</li>
+                <li>Encuestamos a 25 alumnos y describimos esos 25</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 4. Explica una decisión basada en datos</h3>
+              <ol type="a" class="subquestions">
+                <li>Elegir más libros del género más solicitado</li>
+                <li>Organizar el deporte con más votos</li>
+                <li>Comprar fruta para la merienda según preferencias</li>
+                <li>Cambiar el horario según la asistencia</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 7: El azar: seguro, posible o imposible -->
+        <section id="sec-7" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.7</span> El azar: seguro, posible o imposible
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>En un experimento de <strong>azar</strong> no siempre sabemos lo que ocurrirá. Un suceso es <strong>seguro</strong> si ocurre siempre, <strong>imposible</strong> si no puede ocurrir y <strong>posible</strong> si puede suceder o no.</p>
+              <p>Al lanzar un dado normal de seis caras, obtener un número del 1 al 6 es seguro; obtener un 9 es imposible; obtener un 4 es posible.</p>
+              <p>También podemos comparar situaciones: si en una bolsa hay 5 bolas verdes y 1 azul, sacar una verde es <strong>más probable</strong> que sacar una azul, aunque no es seguro.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Imagina una bolsa con 5 bolas verdes y 1 azul.</li>
+                <li>Hay más verdes que azules, por lo tanto la verde es más probable.</li>
+                <li>Sin mirar, no podemos estar seguros de qué color saldrá.</li>
+                <li>Explica por qué sacar una bola roja sería <strong>imposible</strong> si no hay ninguna.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 205" role="img" aria-labelledby="mat47-azar-title" focusable="false">
+                  <title id="mat47-azar-title">Bolsa de bolas: más probable y menos probable</title>
+                  <path d="M255,32 Q242,56 222,72 L204,155 Q205,183 360,186 Q515,183 516,155 L498,72 Q478,56 465,32 Z" fill="#f9fafb" stroke="#64748b" stroke-width="3"/>
+                  <line x1="266" y1="34" x2="454" y2="34" stroke="#64748b" stroke-width="4"/>
+                  <circle cx="293" cy="98" r="22" fill="#007a33" stroke="#005724" stroke-width="2"/>
+                  <circle cx="352" cy="95" r="22" fill="#007a33" stroke="#005724" stroke-width="2"/>
+                  <circle cx="414" cy="98" r="22" fill="#007a33" stroke="#005724" stroke-width="2"/>
+                  <circle cx="320" cy="145" r="22" fill="#007a33" stroke="#005724" stroke-width="2"/>
+                  <circle cx="389" cy="145" r="22" fill="#007a33" stroke="#005724" stroke-width="2"/>
+                  <circle cx="452" cy="145" r="22" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+                  <text x="130" y="86" text-anchor="middle" font-family="system-ui, sans-serif" font-size="21" fill="#005724" font-weight="750">5 verdes</text>
+                  <text x="598" y="86" text-anchor="middle" font-family="system-ui, sans-serif" font-size="21" fill="#2563eb" font-weight="750">1 azul</text>
+                </svg>
+                <figcaption>Extraer una verde es más probable que una azul; ninguno de los dos sucesos es seguro.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>De una bolsa con 5 verdes y 1 azul es <strong>más probable sacar una verde</strong>.</li>
+                <li>Sacar una roja es imposible si no hay ninguna bola roja.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 1. Clasifica sucesos con un dado</h3>
+              <ol type="a" class="subquestions">
+                <li>Sale un número del 1 al 6</li>
+                <li>Sale el número 9</li>
+                <li>Sale un número par</li>
+                <li>Sale un número menor que 7</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 2. Clasifica sucesos con una bolsa de 3 bolas rojas y 2 verdes</h3>
+              <ol type="a" class="subquestions">
+                <li>Sacar una bola roja</li>
+                <li>Sacar una bola azul</li>
+                <li>Sacar una bola roja o verde</li>
+                <li>Sacar una bola verde</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 3. Compara cuál es más probable</h3>
+              <ol type="a" class="subquestions">
+                <li>Bolsa: 6 rojas y 2 azules</li>
+                <li>Urna: 1 verde y 9 amarillas</li>
+                <li>Dado: número 1 o número par</li>
+                <li>Bolsa: 4 verdes y 4 amarillas</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 4. Diseña un experimento y predice</h3>
+              <ol type="a" class="subquestions">
+                <li>Moneda: cara o cruz</li>
+                <li>Dado: número mayor que 4</li>
+                <li>Bolsa: 5 rojas y 1 azul</li>
+                <li>Ruleta de 4 sectores iguales, uno azul</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+        <section id="sec-8" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number section-number-amber">1.8</span> Problemas y desafíos
+          </h2>
+          <h3 class="problem-subtitle">Parte A. Problemas contextualizados</h3>
+          <p>Lee cada situación, identifica los datos, elige las operaciones y escribe una respuesta con sentido.</p>
+          <div class="problem-grid">
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 1. Viaje al colegio</h4>
+              <p>Llegan a pie 15 niños, en coche 9 y en autobús 6. ¿Cuántos responden?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 2. Más leído</h4>
+              <p>En la clase se prestan 12 cuentos, 8 cómics y 5 libros informativos. ¿Qué categoría es la más frecuente?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 3. Pictograma</h4>
+              <p>Un símbolo de libro vale 5 préstamos y aparecen 6 símbolos. ¿Cuántos préstamos representan?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 4. Comparar barras</h4>
+              <p>En un gráfico, fútbol tiene 18 votos y baloncesto 11. ¿Cuántos votos más tiene fútbol?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 5. Datos de cuatro días</h4>
+              <p>En cuatro días se prestan 9, 13, 12 y 16 libros. ¿Cuántos se prestan en total?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 6. Tabla incompleta</h4>
+              <p>Encuestamos a 32 niños. Responden 12 «manzana», 11 «plátano» y el resto «pera». ¿Cuántos eligen pera?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 7. Moda</h4>
+              <p>En la lista 3, 4, 4, 2, 4, 3, 5, ¿cuál es la moda?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 8. Comparar días</h4>
+              <p>El miércoles se registraron 19 visitas y el viernes 27. ¿Cuánto aumentaron?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 9. Bola de colores</h4>
+              <p>En una bolsa hay 4 bolas rojas y 1 azul. ¿Qué color es más probable sacar?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.2.3">
+              <h4>Problema 10. Conclusiones prudentes</h4>
+              <p>Se encuesta a 20 niños de una clase y 14 prefieren leer cómics. ¿Sería correcto afirmar que todos los niños del colegio prefieren cómics? Justifica.</p>
+            </article>
+          </div>
+          <h3 class="problem-subtitle challenge-subtitle">Parte B. Desafíos matemáticos integrados</h3>
+          <p>Aplicamos lo aprendido para investigar, tomar decisiones y comunicar resultados.</p>
+          <div class="challenge-list">
+            <article class="challenge-card" data-criterio="MAT.4.5.2">
+              <h4>Desafío 1. Radiografía de nuestra clase</h4>
+              <p>Diseñad una encuesta sobre un hábito del colegio y recoged al menos 15 respuestas (o trabajad con datos ficticios si no es posible encuestar).</p>
+              <ol>
+                <li>Redactad una pregunta con respuestas fáciles de clasificar.</li>
+                <li>Organizad los datos en una tabla de frecuencias.</li>
+                <li>Representad los resultados con barras y añadid un título.</li>
+                <li>Escribid dos conclusiones sustentadas en los datos.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.8.1">
+              <h4>Desafío 2. Un equipo investigador</h4>
+              <p>Por equipos debéis crear un pictograma con los datos: lectura 12, deportes 8, música 6 y dibujo 4.</p>
+              <ol>
+                <li>Escuchad las propuestas y acordad la leyenda.</li>
+                <li>Repartid los encargos de cálculo, dibujo y revisión.</li>
+                <li>Explicad qué categoría obtiene la frecuencia mayor.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.7.1">
+              <h4>Desafío 3. La máquina de probabilidad</h4>
+              <p>Imagina una bolsa con 8 bolas: 5 rojas, 2 azules y 1 verde.</p>
+              <ol>
+                <li>Clasificad qué colores son más y menos probables.</li>
+                <li>Proponed dos cambios que hagan más probable sacar azul.</li>
+                <li>Comentad cómo os habéis sentido ante la incertidumbre y cuándo pedisteis ayuda.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+        <section id="sec-repaso" class="lesson-section review-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">↺</span> Repasamos lo aprendido
+          </h2>
+          <p>Dos fichas para consolidar los contenidos y profundizar en sus aplicaciones.</p>
+          <div class="review-group ">
+            <h3>Ficha de refuerzo</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.3.2">
+                <span class="review-tag">Refuerzo 1.1 · Hacemos buenas preguntas</span>
+                <p><strong>Repasa: escribe cuatro categorías de respuesta</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Medio de transporte</li>
+                  <li>Fruta favorita</li>
+                  <li>Actividad del recreo</li>
+                  <li>Material reciclado</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Refuerzo 1.2 · Tablas de recuento y frecuencias</span>
+                <p><strong>Repasa: elabora una tabla de frecuencias</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>A, B, A, C, A, B, C, A</li>
+                  <li>Sol, sol, lluvia, sol, viento, lluvia, sol</li>
+                  <li>1, 2, 1, 3, 2, 1, 3, 3</li>
+                  <li>Pera, manzana, pera, kiwi, pera, kiwi</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Refuerzo 1.3 · Leemos gráficos de barras</span>
+                <p><strong>Repasa: calcula diferencias entre barras</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Días: 14 y 9</li>
+                  <li>Juegos: 12 y 7</li>
+                  <li>Libros: 18 y 11</li>
+                  <li>Plantas: 22 y 15</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Refuerzo 1.4 · Los pictogramas cuentan historias</span>
+                <p><strong>Repasa: averigua cuántos símbolos necesitas</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>12 objetos, 2 por dibujo</li>
+                  <li>20 objetos, 5 por dibujo</li>
+                  <li>40 objetos, 10 por dibujo</li>
+                  <li>18 objetos, 3 por dibujo</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Refuerzo 1.5 · Cambios a lo largo del tiempo</span>
+                <p><strong>Repasa: dibuja un gráfico de líneas</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Lunes 5, martes 8, miércoles 6, jueves 9</li>
+                  <li>Semanas: 10, 12, 14 y 13</li>
+                  <li>Horas: 18, 20, 19 y 21</li>
+                  <li>Meses: 30, 25, 35 y 40</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.3">
+                <span class="review-tag">Refuerzo 1.6 · La moda y las conclusiones</span>
+                <p><strong>Repasa: redacta una conclusión a partir de datos</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Lectura 12, pintura 6 y música 4</li>
+                  <li>Fruta 8, bocadillo 11 y yogur 5</li>
+                  <li>Patio A 17 y patio B 9</li>
+                  <li>A pie 14, autobús 6 y coche 10</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.3.1">
+                <span class="review-tag">Refuerzo 1.7 · El azar: seguro, posible o imposible</span>
+                <p><strong>Repasa: clasifica sucesos con una bolsa de 3 bolas rojas y 2 verdes</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Sacar una bola roja</li>
+                  <li>Sacar una bola azul</li>
+                  <li>Sacar una bola roja o verde</li>
+                  <li>Sacar una bola verde</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">Refuerzo 1.8 · Problemas y desafíos</span>
+                <p>Identifica datos y preguntas en estos cuatro problemas de la situación.</p>
+                <ol type="a" class="subquestions">
+                  <li>Lee el problema «Viaje al colegio» y subraya los datos.</li>
+                  <li>Lee el problema «Más leído» y subraya los datos.</li>
+                  <li>Lee el problema «Pictograma» y subraya los datos.</li>
+                  <li>Lee el problema «Comparar barras» y subraya los datos.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+          <div class="review-group review-ampliacion">
+            <h3>Ficha de ampliación</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.3.2">
+                <span class="review-tag">Ampliacion 1.1 · Hacemos buenas preguntas</span>
+                <p><strong>Amplía: mejora estas preguntas de encuesta</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>¿Te gustan mucho las cosas buenas?</li>
+                  <li>¿Tienes libros?</li>
+                  <li>¿No crees que el fútbol es lo mejor?</li>
+                  <li>¿Qué haces siempre y todos los días?</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Ampliacion 1.2 · Tablas de recuento y frecuencias</span>
+                <p><strong>Amplía: identifica la moda en los datos</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>5, 3, 5, 2, 1, 5</li>
+                  <li>Azul, verde, azul, rojo, azul</li>
+                  <li>7, 8, 8, 9, 8, 7</li>
+                  <li>Pera, uva, pera, uva, pera</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Ampliacion 1.3 · Leemos gráficos de barras</span>
+                <p><strong>Amplía: comprueba si la interpretación es correcta</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Con 12 y 8 votos, la diferencia es 4</li>
+                  <li>Con 7 y 9 votos, gana el primero</li>
+                  <li>Con 4, 4 y 6 votos hay empate total</li>
+                  <li>Con 10, 8 y 2 votos participan 20</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Ampliacion 1.4 · Los pictogramas cuentan historias</span>
+                <p><strong>Amplía: corrige la lectura del pictograma</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>4 dibujos de valor 5 se interpretan como 4</li>
+                  <li>3 dibujos de valor 10 se interpretan como 30</li>
+                  <li>6 dibujos de valor 2 se interpretan como 12</li>
+                  <li>5 dibujos de valor 4 se interpretan como 9</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Ampliacion 1.5 · Cambios a lo largo del tiempo</span>
+                <p><strong>Amplía: identifica máximos y mínimos</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>9, 7, 11, 8, 13</li>
+                  <li>12, 15, 10, 17, 14</li>
+                  <li>4, 6, 6, 3, 5</li>
+                  <li>20, 19, 22, 18, 21</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.3">
+                <span class="review-tag">Ampliacion 1.6 · La moda y las conclusiones</span>
+                <p><strong>Amplía: explica una decisión basada en datos</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Elegir más libros del género más solicitado</li>
+                  <li>Organizar el deporte con más votos</li>
+                  <li>Comprar fruta para la merienda según preferencias</li>
+                  <li>Cambiar el horario según la asistencia</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.3.1">
+                <span class="review-tag">Ampliacion 1.7 · El azar: seguro, posible o imposible</span>
+                <p><strong>Amplía: diseña un experimento y predice</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Moneda: cara o cruz</li>
+                  <li>Dado: número mayor que 4</li>
+                  <li>Bolsa: 5 rojas y 1 azul</li>
+                  <li>Ruleta de 4 sectores iguales, uno azul</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.2">
+                <span class="review-tag">Ampliacion 1.8 · Problemas y desafíos</span>
+                <p>Aplica otra estrategia y explica por qué también permite llegar a la solución.</p>
+                <ol type="a" class="subquestions">
+                  <li>Propón una forma distinta de resolver el problema «Datos de cuatro días» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Tabla incompleta» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Moda» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Comparar días» y justifica tu método.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+        <section id="sec-diana" class="lesson-section diana-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number diana-marker">🎯</span> Diana de Autoevaluación Interactiva
+          </h2>
+          <p>Reflexiona sobre tu aprendizaje y marca la opción que mejor te describe.</p>
+          <div class="diana-list">
+            <div class="diana-row">
+              <p><strong>1.1</strong> Formulo preguntas y elijo datos útiles sin confundir opiniones y recuentos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.1">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.2</strong> Organizo datos y obtengo frecuencias y totales.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.2">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.3</strong> Leo y elaboro gráficos de barras sin confundir alturas y cantidades.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.3">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.4</strong> Interpreto correctamente la leyenda de un pictograma.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.4">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.5</strong> Interpreto cambios y tendencias sencillas en un gráfico.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.5">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.6</strong> Extraigo conclusiones ajustadas a los datos realmente recogidos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.6">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.7</strong> Distingo sucesos seguros, posibles e imposibles y justifico predicciones.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.7">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.8</strong> Comprendo problemas, tomo decisiones y explico mis resultados.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación de los problemas y desafíos">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="button" class="action-button secondary" id="reset-diana">Borrar mi autoevaluación</button>
+          </div>
+        </section>
+
+        <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+        <section id="sec-comprueba" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">✓</span> Comprueba lo aprendido
+          </h2>
+          <p>Marca una respuesta por pregunta y pulsa <strong>Comprobar respuestas</strong>. Puedes repetir el cuestionario.</p>
+          <form id="mat4-quiz" novalidate>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.1.2">
+              <legend>1. ¿Para qué sirve una tabla de frecuencias?</legend>
+              <label><input type="radio" name="q1" value="a"> Para medir metros</label>
+              <label><input type="radio" name="q1" value="b"> Para contar respuestas</label>
+              <label><input type="radio" name="q1" value="c"> Para dibujar ángulos</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.1.2">
+              <legend>2. Con frecuencias 8, 5 y 7, ¿cuántas respuestas hay?</legend>
+              <label><input type="radio" name="q2" value="a"> 20</label>
+              <label><input type="radio" name="q2" value="b"> 15</label>
+              <label><input type="radio" name="q2" value="c"> 25</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.5.2">
+              <legend>3. En un pictograma, 3 símbolos de valor 5 representan...</legend>
+              <label><input type="radio" name="q3" value="a"> 8</label>
+              <label><input type="radio" name="q3" value="b"> 15</label>
+              <label><input type="radio" name="q3" value="c"> 5</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.5.2">
+              <legend>4. ¿Qué gráfico permite comparar categorías?</legend>
+              <label><input type="radio" name="q4" value="a"> Reloj</label>
+              <label><input type="radio" name="q4" value="b"> Escala</label>
+              <label><input type="radio" name="q4" value="c"> Gráfico de barras</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.2.3">
+              <legend>5. ¿Cuál es la moda de 2, 3, 3, 4, 3?</legend>
+              <label><input type="radio" name="q5" value="a"> 3</label>
+              <label><input type="radio" name="q5" value="b"> 2</label>
+              <label><input type="radio" name="q5" value="c"> 4</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.3.1">
+              <legend>6. Al lanzar un dado de seis caras, obtener 7 es...</legend>
+              <label><input type="radio" name="q6" value="a"> Seguro</label>
+              <label><input type="radio" name="q6" value="b"> Imposible</label>
+              <label><input type="radio" name="q6" value="c"> Muy probable</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.5.2">
+              <legend>7. ¿Qué hay que leer para entender un pictograma?</legend>
+              <label><input type="radio" name="q7" value="a"> La fecha del curso</label>
+              <label><input type="radio" name="q7" value="b"> Solo los colores</label>
+              <label><input type="radio" name="q7" value="c"> La leyenda</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.2.3">
+              <legend>8. ¿Qué conclusión es válida si encuestamos solo a 15 alumnos?</legend>
+              <label><input type="radio" name="q8" value="a"> Explicar lo que opinan esos 15</label>
+              <label><input type="radio" name="q8" value="b"> Hablar de todos los niños de España</label>
+              <label><input type="radio" name="q8" value="c"> Afirmar que todos piensan igual</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <div class="button-row">
+              <button class="action-button" type="submit">Comprobar respuestas</button>
+              <button class="action-button secondary" type="reset">Volver a empezar</button>
+            </div>
+            <p id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
+
+      </div>
+      <nav class="lesson-footer" aria-label="Navegación final">
+        <a href="/recursos/cuarto/matematicas4/">← Volver a Matemáticas de 4.º</a>
+        <a href="#contenido-principal">↑ Subir al inicio</a>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>CEIP Joaquín Tena Artigas · Alcolea (Córdoba)</p>
+  </footer>
+  <script>
+    "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat4-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>
