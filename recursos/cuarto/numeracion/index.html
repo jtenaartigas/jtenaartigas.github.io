@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="MAT4.1: Andalucía en cifras. Numeración hasta 9.999, valor posicional, redondeo,
+                 ordinales y números romanos para 4.º de Primaria. CEIP Joaquín Tena Artigas.">
+  <title>MAT4.1 · Andalucía en cifras | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    MAT4.1 — Mapa curricular para el profesorado
+    Orden de 30 de mayo de 2023 (Andalucía), Anexo II, Matemáticas, segundo ciclo.
+    Saberes: MAT.2.A.2.1, MAT.2.A.2.2, MAT.2.A.2.3, MAT.2.A.2.7,
+             MAT.2.A.2.8 y MAT.2.A.4.1.
+    Una única referencia de evaluación por tarea:
+      Actividades de lectura, ordinales y romanos — MAT.4.6.1.
+      Actividades de representación y descomposición — MAT.4.1.2.
+      Actividades de comparación, aproximación y estrategias — MAT.4.2.1.
+      Actividades de interpretación de problemas — MAT.4.1.1.
+    Los códigos se conservan en atributos data-criterio y no se muestran al alumnado.
+    Los datos estadísticos de las actividades son ficticios y solo tienen fin didáctico.
+  -->
+
+  <style>
+    :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- CABECERA INSTITUCIONAL COMÚN -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png"
+           alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+           class="banner-image">
+    </a>
+  </header>
+
+  <!-- MENÚ GENERAL DEL CENTRO -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir al inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación"
+              aria-controls="main-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/"
+               target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <!-- MIGAS DE PAN -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li aria-current="page">Matemáticas · SdA 1</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Matemáticas · 4.º de Primaria · SdA 1</span>
+          <h1 id="titulo-sda">Andalucía en cifras</h1>
+          <p>
+            Descubre los números que aparecen a nuestro alrededor y aprende
+            a leerlos, representarlos, compararlos y utilizarlos para resolver retos.
+          </p>
+          <div class="hero-tags" aria-label="Qué aprenderemos">
+            <span>Números hasta 9.999</span>
+            <span>Valor posicional</span>
+            <span>Ordinales y romanos</span>
+          </div>
+        </div>
+        <figure class="media-frame hero-mascot">
+          <img src="/img/tomatito/tomatito-numeracion.png"
+               alt="Tomatito, la mascota del colegio, jugando con números"
+               onerror="markImageMissing(this)">
+          <figcaption class="sr-only">Tomatito nos acompaña en esta aventura matemática.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ÍNDICE DE LA SITUACIÓN DE APRENDIZAJE -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="lesson-nav-links">
+          <a href="#sec-1">1.1 Lectura y escritura</a>
+          <a href="#sec-2">1.2 Valor posicional</a>
+          <a href="#sec-3">1.3 Descomposición</a>
+          <a href="#sec-4">1.4 Comparación y ordenación</a>
+          <a href="#sec-5">1.5 Redondeo</a>
+          <a href="#sec-6">1.6 Ordinales</a>
+          <a href="#sec-7">1.7 Números romanos</a>
+          <a href="#sec-8" class="nav-challenge">1.8 Problemas y desafíos</a>
+          <a href="#sec-repaso" class="nav-review">🔄 Repasamos lo aprendido</a>
+          <a href="#sec-diana" class="nav-selfeval">🎯 Autoevaluación</a>
+          <a href="#sec-comprueba" class="nav-quiz">✓ Comprueba lo aprendido</a>
+        </div>
+      </nav>
+
+      <div class="topic-content">
+        <!-- 1.1: Se vincula a la tarea 1, MAT.4.6.1. -->
+        <section id="sec-1" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.1</span> Lectura y escritura de números
+          </h2>
+          <div class="explanation">
+            <p>
+              Utilizamos números para contar personas, visitantes, libros o árboles.
+              En esta situación trabajaremos con <strong>números naturales hasta 9.999</strong>.
+              Para leerlos, distinguimos los millares, las centenas, las decenas y las unidades.
+            </p>
+          </div>
+          <div class="example">
+            <strong>Ejemplo:</strong> <span class="numeral">5.284</span> se lee
+            <em>cinco mil doscientos ochenta y cuatro</em>.
+            <p class="hint">El punto separa los millares: no indica un número decimal.</p>
+          </div>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 1. Escribe los números con palabras</h3>
+              <ol type="a" class="subquestions">
+                <li>3.146</li>
+                <li>8.020</li>
+                <li>5.607</li>
+                <li>9.009</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 2. Escribe cada cantidad con cifras</h3>
+              <ol type="a" class="subquestions">
+                <li>Cuatro mil doscientos quince</li>
+                <li>Siete mil ochenta</li>
+                <li>Nueve mil novecientos seis</li>
+                <li>Dos mil cuarenta y tres</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 3. Completa la información numérica</h3>
+              <ol type="a" class="subquestions">
+                <li>El número siguiente de 3.999 es…</li>
+                <li>El número anterior de 7.000 es…</li>
+                <li>Escribe con palabras el número 6.060</li>
+                <li>Escribe con cifras «ocho mil ocho»</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 4. Detecta y corrige errores</h3>
+              <ol type="a" class="subquestions">
+                <li>Un cartel dice «cuatro mil quinientos» para 4.050. Corrígelo.</li>
+                <li>Una alumna escribe «7.080» al oír «siete mil ochocientos». Corrígela.</li>
+                <li>Un libro llama «nueve mil cuarenta» al 9.400. Escríbelo correctamente.</li>
+                <li>Explica por qué 6.007 no se lee «seis mil setenta».</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- 1.2: Se vincula a la tarea 2, MAT.4.1.2. -->
+        <section id="sec-2" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.2</span> El valor de cada cifra
+          </h2>
+          <p>
+            En nuestro sistema decimal, una cifra vale más o menos según el lugar que ocupa.
+            Por eso, el <strong>7</strong> de 7.300 vale 7.000, mientras que el 7 de 2.017 vale 7.
+          </p>
+          <div class="table-scroller">
+            <table class="place-value">
+              <caption>Tabla de valor posicional del número 6.407</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Unidades de millar (UM)</th>
+                  <th scope="col">Centenas (C)</th>
+                  <th scope="col">Decenas (D)</th>
+                  <th scope="col">Unidades (U)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>6</strong></td>
+                  <td><strong>4</strong></td>
+                  <td><strong>0</strong></td>
+                  <td><strong>7</strong></td>
+                </tr>
+                <tr>
+                  <td>6.000</td>
+                  <td>400</td>
+                  <td>0</td>
+                  <td>7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hint">Un cero también es importante: señala que no hay unidades de ese orden.</p>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Sitúa las cifras en UM, C, D y U</h3>
+              <ol type="a" class="subquestions">
+                <li>4.318</li>
+                <li>7.052</li>
+                <li>9.600</li>
+                <li>2.407</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Indica el valor de la cifra destacada</h3>
+              <ol type="a" class="subquestions">
+                <li>El 6 de 6.284</li>
+                <li>El 6 de 3.642</li>
+                <li>El 6 de 1.067</li>
+                <li>El 6 de 8.406</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Forma el número correspondiente</h3>
+              <ol type="a" class="subquestions">
+                <li>3 UM, 5 C, 2 D y 8 U</li>
+                <li>8 UM, 0 C, 6 D y 3 U</li>
+                <li>5 UM, 4 C, 0 D y 1 U</li>
+                <li>1 UM, 9 C, 9 D y 9 U</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Trabaja las equivalencias</h3>
+              <ol type="a" class="subquestions">
+                <li>¿Cuántas unidades forman 4 decenas?</li>
+                <li>¿Cuántas unidades forman 7 centenas?</li>
+                <li>¿Cuántas decenas forman 3 centenas?</li>
+                <li>¿Cuántas centenas forman 2 unidades de millar?</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- 1.3: Se vincula a la tarea 2, MAT.4.1.2. -->
+        <section id="sec-3" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.3</span> Componer y descomponer
+          </h2>
+          <p>
+            <strong>Descomponer</strong> un número significa separarlo en cantidades más pequeñas.
+            <strong>Componer</strong> consiste en reunir esas cantidades para obtener el número.
+          </p>
+          <div class="example">
+            <p><strong>Descomposición:</strong></p>
+            <p class="numeral">8.236 = 8.000 + 200 + 30 + 6</p>
+            <p><strong>Composición:</strong></p>
+            <p class="numeral">4.000 + 500 + 70 + 9 = 4.579</p>
+          </div>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Descompón como suma de valores</h3>
+              <ol type="a" class="subquestions">
+                <li>7.403</li>
+                <li>2.680</li>
+                <li>9.010</li>
+                <li>5.206</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Compón y escribe el número</h3>
+              <ol type="a" class="subquestions">
+                <li>5.000 + 600 + 40 + 2</li>
+                <li>7.000 + 80 + 3</li>
+                <li>2.000 + 900 + 5</li>
+                <li>4.000 + 300 + 70</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Descompón por órdenes</h3>
+              <ol type="a" class="subquestions">
+                <li>3.572 = … UM + … C + … D + … U</li>
+                <li>8.109 = … UM + … C + … D + … U</li>
+                <li>4.060 = … UM + … C + … D + … U</li>
+                <li>9.994 = … UM + … C + … D + … U</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Investiga los números que faltan</h3>
+              <ol type="a" class="subquestions">
+                <li>6.000 + ___ + 20 + 8 = 6.528</li>
+                <li>___ + 400 + 9 = 7.409</li>
+                <li>2.000 + 700 + ___ + 4 = 2.764</li>
+                <li>5 UM + ___ C + 1 D + 8 U = 5.918</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- 1.4: Se vincula a la tarea 3, MAT.4.2.1. -->
+        <section id="sec-4" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.4</span> Comparar y ordenar
+          </h2>
+          <div class="explanation">
+            <p>
+              Para comparar dos números, miramos primero los millares.
+              Si coinciden, comparamos las centenas; después las decenas y, por último, las unidades.
+            </p>
+            <p><strong>Recuerda:</strong> &gt; significa «mayor que»; &lt; significa «menor que»; = significa «igual».</p>
+          </div>
+          <div class="example">
+            <p><strong>Ejemplo:</strong> 6.742 &gt; 6.724 porque 4 decenas son más que 2 decenas.</p>
+            <p>De menor a mayor: <strong>4.607 &lt; 4.670 &lt; 4.706 &lt; 4.760</strong>.</p>
+          </div>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 1. Coloca el signo &amp;gt;, &amp;lt; o =</h3>
+              <ol type="a" class="subquestions">
+                <li>6.503 __ 6.530</li>
+                <li>8.010 __ 8.001</li>
+                <li>4.750 __ 4.750</li>
+                <li>2.999 __ 3.000</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 2. Ordena de menor a mayor</h3>
+              <ol type="a" class="subquestions">
+                <li>8.014, 8.140, 8.041, 8.104</li>
+                <li>4.321, 4.312, 4.231, 4.123</li>
+                <li>9.090, 9.900, 9.009, 9.099</li>
+                <li>1.890, 1.809, 1.980, 1.908</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 3. Ordena de mayor a menor</h3>
+              <ol type="a" class="subquestions">
+                <li>7.306, 7.360, 7.630, 7.603</li>
+                <li>3.445, 3.454, 3.544, 3.545</li>
+                <li>6.100, 6.010, 6.001, 6.110</li>
+                <li>8.808, 8.880, 8.088, 8.800</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 4. Razona y construye números</h3>
+              <ol type="a" class="subquestions">
+                <li>Escribe un número comprendido entre 3.700 y 3.800.</li>
+                <li>Escribe el mayor número posible con 4, 1, 8 y 2 sin repetir cifras.</li>
+                <li>Escribe el menor número de cuatro cifras con 0, 3, 6 y 5 sin repetir.</li>
+                <li>Explica cuál es mayor: 5.709 o 5.790, y por qué.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- 1.5: Se vincula a la tarea 3, MAT.4.2.1. -->
+        <section id="sec-5" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.5</span> Aproximar y redondear
+          </h2>
+          <p>
+            A veces no necesitamos una cantidad exacta. Si queremos saber aproximadamente
+            cuántas personas han asistido a una actividad, podemos redondear.
+          </p>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Ejemplo de redondeo del número 4.468</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Aproximación</th>
+                  <th scope="col">Resultado</th>
+                  <th scope="col">Motivo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>A la decena</td><td>4.470</td><td>La unidad es 8.</td></tr>
+                <tr><td>A la centena</td><td>4.500</td><td>La decena es 6.</td></tr>
+                <tr><td>Al millar</td><td>4.000</td><td>La centena es 4.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hint">
+            Cuando la primera cifra que eliminamos es 5 o más, redondeamos hacia arriba.
+            Si es menor que 5, mantenemos la cifra anterior.
+          </p>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 1. Redondea a la decena</h3>
+              <ol type="a" class="subquestions">
+                <li>5.783</li>
+                <li>2.644</li>
+                <li>8.956</li>
+                <li>4.305</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 2. Redondea a la centena</h3>
+              <ol type="a" class="subquestions">
+                <li>2.649</li>
+                <li>7.351</li>
+                <li>5.550</li>
+                <li>9.949</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 3. Redondea al millar</h3>
+              <ol type="a" class="subquestions">
+                <li>7.380</li>
+                <li>8.952</li>
+                <li>2.499</li>
+                <li>6.500</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 4. Selecciona la mejor aproximación</h3>
+              <ol type="a" class="subquestions">
+                <li>En una feria hubo 4.926 visitantes. Aproxima a la centena.</li>
+                <li>Una biblioteca tiene 7.160 libros. Aproxima al millar.</li>
+                <li>Una actividad reunió 3.847 personas. Aproxima a la decena.</li>
+                <li>¿Es más ajustado aproximar 8.952 a 8.950 o a 9.000? Explica.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- 1.6: Se vincula a la tarea 1, MAT.4.6.1. -->
+        <section id="sec-6" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.6</span> Los números ordinales
+          </h2>
+          <p>
+            Los números <strong>cardinales</strong> expresan cantidades: uno, dos, tres...
+            Los <strong>ordinales</strong> indican el orden o la posición: primero, segundo, tercero...
+          </p>
+          <div class="example">
+            <p><strong>Algunos ejemplos:</strong></p>
+            <p>1.º primero · 2.º segundo · 3.º tercero · 4.º cuarto · 5.º quinto.</p>
+            <p>10.º décimo · 11.º undécimo · 12.º duodécimo · 20.º vigésimo.</p>
+            <p>21.º vigésimo primero · 30.º trigésimo · 50.º quincuagésimo.</p>
+          </div>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 1. Escribe cada ordinal con palabras</h3>
+              <ol type="a" class="subquestions">
+                <li>4.º</li>
+                <li>11.ª</li>
+                <li>16.º</li>
+                <li>20.ª</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 2. Escribe con cifras y símbolo ordinal</h3>
+              <ol type="a" class="subquestions">
+                <li>Séptima</li>
+                <li>Duodécimo</li>
+                <li>Vigésima primera</li>
+                <li>Trigésimo</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 3. Relaciona orden y posición</h3>
+              <ol type="a" class="subquestions">
+                <li>En una carrera, Lucía llega 3.ª. Escribe su posición con palabras.</li>
+                <li>Pablo ocupa el puesto 12.º. Escribe cómo se lee.</li>
+                <li>Una página es la vigésima. Escríbela con cifra ordinal.</li>
+                <li>La clase se sitúa en el 8.º lugar. Escribe el ordinal en femenino.</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 4. Diferencia cardinales y ordinales</h3>
+              <ol type="a" class="subquestions">
+                <li>¿Qué indica el 6 en «seis libros»?</li>
+                <li>¿Qué indica el 6.º en «sexto puesto»?</li>
+                <li>Escribe una frase con «quince» y otra con «decimoquinto».</li>
+                <li>Escribe el ordinal correspondiente al puesto 24.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="hint">El currículo del segundo ciclo incluye ordinales hasta el 99.º.</p>
+        </section>
+
+        <!-- 1.7: Se vincula a la tarea 1, MAT.4.6.1. -->
+        <section id="sec-7" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.7</span> Descubrimos los números romanos
+          </h2>
+          <p>
+            Los números romanos aparecen en relojes, monumentos, libros y fechas históricas.
+            También forman parte de nuestro patrimonio cultural.
+          </p>
+          <div class="roman-grid" aria-label="Símbolos básicos de numeración romana">
+            <div class="roman-item"><b>I</b><span>1</span></div>
+            <div class="roman-item"><b>V</b><span>5</span></div>
+            <div class="roman-item"><b>X</b><span>10</span></div>
+            <div class="roman-item"><b>L</b><span>50</span></div>
+            <div class="roman-item"><b>C</b><span>100</span></div>
+            <div class="roman-item"><b>D</b><span>500</span></div>
+            <div class="roman-item"><b>M</b><span>1.000</span></div>
+          </div>
+          <div class="explanation">
+            <p><strong>Reglas sencillas:</strong></p>
+            <ul>
+              <li>Si una cifra menor se coloca después de una mayor, se suma: <strong>VI = 6</strong>.</li>
+              <li>Si I va antes de V o X, se resta: <strong>IV = 4</strong> y <strong>IX = 9</strong>.</li>
+              <li>Si X va antes de L o C, se resta: <strong>XL = 40</strong> y <strong>XC = 90</strong>.</li>
+              <li>Si C va antes de D o M, se resta: <strong>CD = 400</strong> y <strong>CM = 900</strong>.</li>
+            </ul>
+          </div>
+          <div class="example">
+            <strong>Ejemplo:</strong> XXIV = 10 + 10 + 4 = <strong>24</strong>.
+          </div>
+          <!-- Cuatro actividades con cuatro subapartados cada una. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 1. Traduce de romanos a números naturales</h3>
+              <ol type="a" class="subquestions">
+                <li>XIV</li>
+                <li>XXIX</li>
+                <li>XLII</li>
+                <li>LXV</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 2. Traduce de naturales a romanos</h3>
+              <ol type="a" class="subquestions">
+                <li>18</li>
+                <li>34</li>
+                <li>49</li>
+                <li>76</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 3. Reconoce los números romanos a tu alrededor</h3>
+              <ol type="a" class="subquestions">
+                <li>El capítulo IX de un libro: ¿qué capítulo es?</li>
+                <li>El siglo XXI: ¿qué siglo indica?</li>
+                <li>La esfera de un reloj marca XII: ¿qué número es?</li>
+                <li>El volumen IV de una colección: ¿qué volumen es?</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 4. Aplica las reglas y explica</h3>
+              <ol type="a" class="subquestions">
+                <li>Explica por qué IV vale 4 y VI vale 6.</li>
+                <li>Explica por qué XL vale 40 y LX vale 60.</li>
+                <li>Escribe el número romano que resulta de 50 + 20 + 3.</li>
+                <li>Detecta el error de «IIII» como escritura habitual de 4 y corrígelo.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- 1.8. Problemas y desafíos. Una referencia de evaluación por tarea. -->
+        <section id="sec-8" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number section-number-amber">1.8</span>
+            Problemas y desafíos
+          </h2>
+          <p>
+            Pon en práctica lo aprendido con situaciones relacionadas con nuestra escuela,
+            el entorno y Andalucía. Los datos de los ejercicios son ejemplos inventados
+            para aprender; no son estadísticas oficiales.
+          </p>
+          <div class="callout">
+            <strong>Para resolver:</strong> lee el problema, subraya los datos útiles,
+            decide qué operación o estrategia necesitas y comprueba tu resultado.
+          </div>
+          <h3 class="problem-subtitle">📌 Parte A. Problemas contextualizados</h3>
+          <!-- Diez problemas completos -->
+          <div class="problem-grid">
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>1. La biblioteca de Alcolea</h4>
+              <p>La biblioteca del colegio tenía 2.485 libros y recibe 314 libros nuevos. ¿Cuántos libros tiene ahora? Escribe el resultado con cifras y letras.</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>2. Excursión a Córdoba</h4>
+              <p>En una actividad cultural participaron 1.275 escolares por la mañana y 1.408 por la tarde. ¿Cuántos participaron en total? Indica qué datos necesitas.</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>3. Visitas al centro de Huelva</h4>
+              <p>Un centro de visitantes registró 9.117 visitas en un mes y otro 6.084. ¿Cuántas visitas más tuvo el primero?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>4. Semillas para el huerto</h4>
+              <p>En el huerto escolar se prepararon 4.360 semillas para repartir en cuatro bandejas iguales. ¿Cuántas semillas irán en cada bandeja?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>5. Ruta por la provincia</h4>
+              <p>En cuatro senderos se registraron 3.820, 3.802, 3.280 y 3.208 caminantes. Ordénalos de mayor a menor y di cuál registró más.</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>6. Un festival de cuentos</h4>
+              <p>En una feria de lectura se contaron 5.746 asistentes. Para un cartel se necesita redondear a la centena. ¿Qué cifra se anunciará?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>7. Las entradas numeradas</h4>
+              <p>Las entradas de un museo están numeradas del 1 al 3.450. Ya se han utilizado 2.785. ¿Cuántas quedan por utilizar?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>8. Las cajas de naranjas</h4>
+              <p>Una cooperativa reúne 6.120 naranjas en cajas de 10. ¿Cuántas cajas completas puede preparar?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>9. La carrera solidaria</h4>
+              <p>En una carrera Ana llegó 7.ª, Bruno 12.º y Carla 4.ª. ¿Quién llegó antes? Escribe con palabras los tres puestos.</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>10. Un reloj antiguo</h4>
+              <p>En una plaza se encuentra un reloj con números romanos. Sus agujas señalan la hora VII. ¿Qué hora marca? ¿Cómo escribirías 9 y 12 en números romanos?</p>
+            </article>
+          </div>
+          <h3 class="problem-subtitle challenge-subtitle">🌟 Parte B. Desafíos matemáticos</h3>
+          <p>Son tareas competenciales para pensar, investigar, calcular y explicar decisiones.</p>
+          <div class="challenge-list">
+            <article class="challenge-card" data-criterio="MAT.4.1.2">
+              <h4>Desafío 1. Atlas de cifras de Andalucía</h4>
+              <p>Elabora una ficha o pequeña página de un atlas matemático sobre Andalucía. Puedes usar estos datos de ejemplo de centros imaginarios o inventar otros e indicar que son simulados.</p>
+              <ol type="a" class="subquestions">
+                <li>Elige cuatro números de cuatro cifras y escríbelos con cifras y letras.</li>
+                <li>Representa dos de ellos en una tabla UM-C-D-U y descompón uno.</li>
+                <li>Ordena las cuatro cantidades y redondea una a la centena.</li>
+                <li>Añade una pregunta matemática sobre tus datos y explícala a un compañero.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.2.1">
+              <h4>Desafío 2. ¿Qué centro de visitantes elegirías?</h4>
+              <p>Observa las visitas ficticias de un mes: Córdoba 4.306, Cádiz 7.250, Jaén 6.084 y Huelva 9.117. Debes ayudar a organizar una visita escolar y justificar tu decisión con números.</p>
+              <ol type="a" class="subquestions">
+                <li>Ordena los centros de menor a mayor número de visitantes.</li>
+                <li>Calcula la diferencia de visitas entre Córdoba y Jaén.</li>
+                <li>Redondea las cuatro cantidades a la centena para presentar un informe.</li>
+                <li>Explica qué centro tuvo más visitas y qué datos has utilizado.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.1.1">
+              <h4>Desafío 3. Detectives de números en la escuela</h4>
+              <p>El centro prepara una exposición con 2.408 materiales de aula, 1.390 libros y 650 juegos. Debéis comprobar los carteles y comunicar las cantidades con claridad.</p>
+              <ol type="a" class="subquestions">
+                <li>Escribe con palabras la cantidad de materiales y la de libros.</li>
+                <li>Averigua cuántos objetos hay en total entre las tres categorías.</li>
+                <li>Imagina que se pierden 125 juegos. Escribe una pregunta y resuélvela.</li>
+                <li>Crea un pequeño cartel con un número ordinal y otro romano bien utilizados.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- REFUERZO Y AMPLIACIÓN: ocho actividades por ficha, cuatro apartados en cada una. -->
+        <section id="sec-repaso" class="lesson-section review-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">↺</span> Repasamos lo aprendido
+          </h2>
+          <p>Dos fichas para repasar las ocho secciones: empieza por refuerzo y continúa con ampliación.</p>
+          <div class="review-group review-refuerzo">
+            <h3>🟢 Ficha de refuerzo</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">1.1 Lectura y escritura</span>
+                <p>Escribe con cifras o con letras según corresponda:</p>
+                <ol type="a" class="subquestions">
+                  <li>2.105, con letras.</li>
+                  <li>4.070, con letras.</li>
+                  <li>Seis mil trescientos doce, con cifras.</li>
+                  <li>Nueve mil ocho, con cifras.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">1.2 Valor posicional</span>
+                <p>Completa los valores o los órdenes:</p>
+                <ol type="a" class="subquestions">
+                  <li>En 3.426, el 3 vale…</li>
+                  <li>En 5.071, el 7 vale…</li>
+                  <li>¿Qué cifra ocupa las centenas en 8.904?</li>
+                  <li>¿Cuántas decenas hay en 1 centena?</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">1.3 Composición y descomposición</span>
+                <p>Forma o descompón estos números:</p>
+                <ol type="a" class="subquestions">
+                  <li>Descompón 4.237.</li>
+                  <li>Descompón 8.010.</li>
+                  <li>Compón 3.000 + 900 + 20 + 5.</li>
+                  <li>Compón 7 UM + 2 C + 4 D + 6 U.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.1">
+                <span class="review-tag">1.4 Comparación</span>
+                <p>Compara u ordena:</p>
+                <ol type="a" class="subquestions">
+                  <li>2.405 __ 2.450</li>
+                  <li>6.090 __ 6.009</li>
+                  <li>Ordena 4.321, 4.312 y 4.231 de menor a mayor.</li>
+                  <li>Escribe un número entre 7.100 y 7.200.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.1">
+                <span class="review-tag">1.5 Redondeo</span>
+                <p>Redondea según se indica:</p>
+                <ol type="a" class="subquestions">
+                  <li>4.367 a la decena.</li>
+                  <li>3.849 a la centena.</li>
+                  <li>8.230 al millar.</li>
+                  <li>7.951 a la centena.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">1.6 Ordinales</span>
+                <p>Escribe con letras o cifras:</p>
+                <ol type="a" class="subquestions">
+                  <li>5.º</li>
+                  <li>12.ª</li>
+                  <li>Vigésimo</li>
+                  <li>Decimocuarta.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">1.7 Números romanos</span>
+                <p>Convierte a otro sistema de numeración:</p>
+                <ol type="a" class="subquestions">
+                  <li>XIV a número natural.</li>
+                  <li>XXX a número natural.</li>
+                  <li>9 a número romano.</li>
+                  <li>27 a número romano.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">1.8 Problemas y desafíos</span>
+                <p>Lee y resuelve cada situación:</p>
+                <ol type="a" class="subquestions">
+                  <li>Había 325 libros y llegan 120. ¿Cuántos hay ahora?</li>
+                  <li>De 870 plantas se secan 140. ¿Cuántas quedan?</li>
+                  <li>Una clase reúne 5 paquetes de 10 lápices. ¿Cuántos lápices tiene?</li>
+                  <li>En una fila, Paula ocupa el 6.º puesto. Escríbelo con palabras.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+          <div class="review-group review-ampliacion">
+            <h3>🟠 Ficha de ampliación</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">1.1 Lectura y escritura</span>
+                <p>Interpreta cantidades con alguna dificultad más:</p>
+                <ol type="a" class="subquestions">
+                  <li>Escribe 9.090 con letras.</li>
+                  <li>Escribe 5.005 con letras.</li>
+                  <li>Escribe «ocho mil ochenta y ocho» con cifras.</li>
+                  <li>¿Qué número es mil unidades mayor que 3.708? Escríbelo con letras.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">1.2 Valor posicional</span>
+                <p>Razona sobre el valor de las cifras:</p>
+                <ol type="a" class="subquestions">
+                  <li>¿Cuánto cambia 5.238 si su 2 se sustituye por un 7?</li>
+                  <li>En 7.070 aparecen dos sietes. ¿Qué valor tiene cada uno?</li>
+                  <li>Forma el mayor número posible con 0, 5, 2 y 8 sin repetir cifras.</li>
+                  <li>¿Cuántas centenas equivalen a 4.000 unidades?</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">1.3 Composición y descomposición</span>
+                <p>Utiliza equivalencias y términos ocultos:</p>
+                <ol type="a" class="subquestions">
+                  <li>Completa 6.000 + ___ + 30 + 4 = 6.734.</li>
+                  <li>Compón 3 UM + 17 D + 8 U.</li>
+                  <li>Descompón 8.805 de dos maneras diferentes.</li>
+                  <li>Compón 40 centenas + 20 decenas + 6 unidades.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.1">
+                <span class="review-tag">1.4 Comparación</span>
+                <p>Investiga las condiciones de cada número:</p>
+                <ol type="a" class="subquestions">
+                  <li>Ordena 8.890, 8.980, 8.809 y 8.908.</li>
+                  <li>Escribe el menor número de cuatro cifras formado con 0, 7, 2 y 4.</li>
+                  <li>Halla dos números distintos entre 5.498 y 5.503.</li>
+                  <li>Explica por qué 6.909 es menor que 6.990.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.1">
+                <span class="review-tag">1.5 Redondeo</span>
+                <p>Compara aproximaciones:</p>
+                <ol type="a" class="subquestions">
+                  <li>Da dos números diferentes que redondeen a 5.000 al millar.</li>
+                  <li>Redondea 8.455 a la decena y a la centena.</li>
+                  <li>¿Qué números enteros entre 2.495 y 2.505 redondean a 2.500 a la decena?</li>
+                  <li>¿Qué aproximación ofrece más precisión para 7.846: 7.850 o 7.800? Razona.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">1.6 Ordinales</span>
+                <p>Combina posiciones y orden:</p>
+                <ol type="a" class="subquestions">
+                  <li>Escribe con cifras «trigésimo segundo».</li>
+                  <li>Escribe con letras «45.ª».</li>
+                  <li>Si el puesto anterior fue el 19.º, ¿qué ordinal ocupa el puesto siguiente?</li>
+                  <li>Explica con un ejemplo la diferencia entre «veintidós» y «vigésimo segundo».</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">1.7 Números romanos</span>
+                <p>Combina símbolos y reglas:</p>
+                <ol type="a" class="subquestions">
+                  <li>Convierte LXXXIV a número natural.</li>
+                  <li>Escribe 94 en números romanos.</li>
+                  <li>Convierte CXLVI a número natural.</li>
+                  <li>Explica por qué XCIX representa 99.</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">1.8 Problemas y desafíos</span>
+                <p>Resuelve situaciones de varios pasos:</p>
+                <ol type="a" class="subquestions">
+                  <li>Una excursión cuenta 1.248 entradas y vende 375 más. ¿Cuántas son? Aproxima a la centena.</li>
+                  <li>Un almacén tiene 3.600 semillas en bolsas de 100. ¿Cuántas bolsas completa?</li>
+                  <li>Un centro recibió 5.280 visitas y otro 4.950. Calcula la diferencia y explica qué indica.</li>
+                  <li>Inventa un problema que se resuelva con 2.430 + 1.560 y escribe su respuesta.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+        <section id="sec-diana" class="lesson-section diana-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number diana-marker">🎯</span>
+            Diana de Autoevaluación Interactiva
+          </h2>
+          <p>Reflexiona sobre tu aprendizaje. En cada afirmación selecciona la opción que mejor te representa.</p>
+          <div class="diana-list">
+            <div class="diana-row">
+              <p><strong>1.1</strong> Leo y escribo correctamente números hasta 9.999.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.1">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.2</strong> Reconozco el valor de las unidades, decenas, centenas y millares.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.2">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.3</strong> Compongo y descompongo números de distintas maneras.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.3">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.4</strong> Comparo y ordeno números utilizando los signos correctos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.4">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.5</strong> Redondeo números a las decenas, centenas y unidades de millar.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.5">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.6</strong> Comprendo y escribo números ordinales en diferentes situaciones.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.6">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.7</strong> Leo y escribo números romanos utilizando sus reglas.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.7">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.8</strong> Interpreto problemas y explico cómo llego a una solución.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.8">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="button" class="action-button secondary" id="reset-diana">Borrar mi autoevaluación</button>
+          </div>
+        </section>
+
+        <!-- COMPRUEBA LO APRENDIDO: cuestionario con corrección automática. -->
+        <section id="sec-comprueba" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">✓</span> Comprueba lo aprendido
+          </h2>
+          <p>
+            Elige una respuesta para cada pregunta y pulsa <strong>Comprobar respuestas</strong>.
+            Puedes repetir el cuestionario para practicar.
+          </p>
+          <form id="mat4-quiz" novalidate>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.6.1">
+              <legend>1. ¿Cómo se escribe «ocho mil cuarenta y seis»?</legend>
+              <label><input type="radio" name="q1" value="a"> 8.406</label>
+              <label><input type="radio" name="q1" value="b"> 8.046</label>
+              <label><input type="radio" name="q1" value="c"> 846</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.1.2">
+              <legend>2. ¿Cuánto vale el 7 en 7.215?</legend>
+              <label><input type="radio" name="q2" value="a"> 70</label>
+              <label><input type="radio" name="q2" value="b"> 700</label>
+              <label><input type="radio" name="q2" value="c"> 7.000</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.1.2">
+              <legend>3. ¿Qué número representa 5.000 + 600 + 9?</legend>
+              <label><input type="radio" name="q3" value="a"> 5.609</label>
+              <label><input type="radio" name="q3" value="b"> 5.690</label>
+              <label><input type="radio" name="q3" value="c"> 5.069</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.2.1">
+              <legend>4. ¿Cuál de estos números es mayor?</legend>
+              <label><input type="radio" name="q4" value="a"> 4.608</label>
+              <label><input type="radio" name="q4" value="b"> 4.680</label>
+              <label><input type="radio" name="q4" value="c"> 4.086</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.2.1">
+              <legend>5. ¿Cuánto es 6.749 redondeado a la centena?</legend>
+              <label><input type="radio" name="q5" value="a"> 6.000</label>
+              <label><input type="radio" name="q5" value="b"> 6.800</label>
+              <label><input type="radio" name="q5" value="c"> 6.700</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.6.1">
+              <legend>6. ¿Qué significa 12.º?</legend>
+              <label><input type="radio" name="q6" value="a"> Duodécimo</label>
+              <label><input type="radio" name="q6" value="b"> Doce unidades</label>
+              <label><input type="radio" name="q6" value="c"> Vigésimo</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.6.1">
+              <legend>7. ¿A qué número corresponde XXIV?</legend>
+              <label><input type="radio" name="q7" value="a"> 26</label>
+              <label><input type="radio" name="q7" value="b"> 24</label>
+              <label><input type="radio" name="q7" value="c"> 14</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.1.1">
+              <legend>8. Según la tabla de visitas, ¿qué centro registra 6.084 visitas?</legend>
+              <label><input type="radio" name="q8" value="a"> Centro de Jaén</label>
+              <label><input type="radio" name="q8" value="b"> Centro de Huelva</label>
+              <label><input type="radio" name="q8" value="c"> Centro de Córdoba</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="button-row">
+              <button class="action-button" type="submit">Comprobar respuestas</button>
+              <button class="action-button secondary" type="reset">Volver a empezar</button>
+            </div>
+            <p id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
+      </div>
+
+      <nav class="lesson-footer" aria-label="Navegación final">
+        <a href="/recursos/cuarto/">← Volver a 4.º de Primaria</a>
+        <a href="#contenido-principal">↑ Subir al inicio</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>CEIP Joaquín Tena Artigas · Alcolea (Córdoba)</p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat4-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>
