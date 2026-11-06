@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MAT4.4: Descubrimos fracciones sencillas, euros y céntimos para interpretar ofertas, representar repartos y pagar con exactitud. CEIP Joaquín Tena Artigas.">
+  <title>MAT4.4 · El supermercado matemático | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <!--
+    MAT4.4: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.A.2.4, MAT.2.A.2.5, MAT.2.A.3.1, MAT.2.A.5.1, MAT.2.D.1.1.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+    :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  </style>
+</head>
+<body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir al inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación"
+              aria-controls="main-navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li><a href="/recursos/cuarto/matematicas4/">Matemáticas</a></li>
+          <li aria-current="page">SdA 4</li>
+        </ol>
+      </nav>
+      <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Matemáticas · 4.º de Primaria · SdA 4</span>
+          <h1 id="titulo-sda">El supermercado matemático</h1>
+          <p>Descubrimos fracciones sencillas, euros y céntimos para interpretar ofertas, representar repartos y pagar con exactitud.</p>
+          <div class="hero-tags" aria-label="Qué aprenderemos">
+            <span>Fracciones</span>
+            <span>Dinero</span>
+            <span>Compras responsables</span>
+          </div>
+        </div>
+        <figure class="media-frame hero-mascot">
+          <img src="/img/tomatito/matematicas.png"
+               alt="Tomatito, la mascota del colegio, aprendiendo Matemáticas"
+               onerror="markImageMissing(this)">
+          <figcaption class="sr-only">Tomatito nos acompaña en esta situación de aprendizaje.</figcaption>
+        </figure>
+      </section>
+      <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="lesson-nav-links">
+          <a href="#sec-1">1.1 Partes iguales de una unidad</a>
+          <a href="#sec-2">1.2 Leer y escribir fracciones</a>
+          <a href="#sec-3">1.3 Comparamos fracciones sencillas</a>
+          <a href="#sec-4">1.4 Fracción de una cantidad</a>
+          <a href="#sec-5">1.5 Fracciones equivalentes y unidad completa</a>
+          <a href="#sec-6">1.6 Euros y céntimos</a>
+          <a href="#sec-7">1.7 Compramos con un presupuesto</a>
+          <a href="#sec-8" class="nav-challenge">1.8 Problemas y desafíos</a>
+          <a href="#sec-repaso" class="nav-review">🔄 Repasamos lo aprendido</a>
+          <a href="#sec-diana" class="nav-selfeval">🎯 Autoevaluación</a>
+          <a href="#sec-comprueba" class="nav-quiz">✓ Comprueba lo aprendido</a>
+        </div>
+      </nav>
+      <div class="topic-content">
+        <!-- SECCIÓN 1: Partes iguales de una unidad -->
+        <section id="sec-1" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.1</span> Partes iguales de una unidad
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Una <strong>fracción</strong> expresa una o varias partes de una unidad. Para usar fracciones, la unidad debe estar dividida en <strong>partes iguales</strong>; si una parte es mayor que otra, no podemos decir que cada trozo es un octavo.</p>
+              <p>El número de arriba es el <strong>numerador</strong>: nos dice cuántas partes tomamos. El número de abajo es el <strong>denominador</strong>: indica en cuántas partes iguales se ha dividido la unidad. La raya entre ambos se llama raya de fracción.</p>
+              <p>Por ejemplo, <span class="frac" role="math" aria-label="3 partido por 8">
+                  <span class="num">3</span>
+                  <span class="den">8</span>
+                </span> significa que hemos tomado <strong>3 de las 8 partes iguales</strong> de una pizza. Si no tomamos ninguna, tenemos 0 partes; si tomamos las 8, tenemos la unidad completa.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Observa una unidad, por ejemplo, una tableta de chocolate.</li>
+                <li>Comprueba que está dividida en 8 trozos <strong>iguales</strong>.</li>
+                <li>Si coloreas tres, escribe 3 arriba y 8 abajo: <strong>tres octavos</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 164" role="img" aria-labelledby="mat44-tres-octavos-title" focusable="false">
+                  <title id="mat44-tres-octavos-title">Fracción coloreada: partes iguales</title>
+                  <text x="35" y="26" text-anchor="start" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">3 de 8 partes iguales</text>
+                  <rect x="35.0" y="48" width="80.0" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="115.0" y="48" width="80.0" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="195.0" y="48" width="80.0" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="275.0" y="48" width="80.0" height="70" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="355.0" y="48" width="80.0" height="70" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="435.0" y="48" width="80.0" height="70" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="515.0" y="48" width="80.0" height="70" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="595.0" y="48" width="80.0" height="70" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.6"/>
+                  <text x="355.0" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="25" fill="#005724" font-weight="800">3/8</text>
+                </svg>
+                <figcaption>Todas las partes deben tener el mismo tamaño.</figcaption>
+              </figure>
+              <aside class="theory-tip">
+                <strong>Recuerda:</strong> La fracción depende de la unidad elegida. Medio pastel grande no tiene el mismo tamaño que medio pastel pequeño.</aside>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>En una pizza con 8 porciones iguales tomas 3: <span class="frac" role="math" aria-label="3 partido por 8">
+                    <span class="num">3</span>
+                    <span class="den">8</span>
+                  </span> de pizza.</li>
+                <li>
+                  <strong>3</strong> es el numerador; <strong>8</strong> es el denominador.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Escribe la fracción representada</h3>
+              <ol type="a" class="subquestions">
+                <li>De 4 partes iguales, coloreamos 1</li>
+                <li>De 6 partes iguales, coloreamos 5</li>
+                <li>De 8 partes iguales, coloreamos 3</li>
+                <li>De 10 partes iguales, coloreamos 7</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Dibuja cada fracción</h3>
+              <ol type="a" class="subquestions">
+                <li>1/2 de una figura rectangular</li>
+                <li>2/3 de una tira de papel</li>
+                <li>3/4 de un cuadrado</li>
+                <li>5/6 de una barra</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Señala numerador y denominador</h3>
+              <ol type="a" class="subquestions">
+                <li>2/5</li>
+                <li>4/7</li>
+                <li>6/8</li>
+                <li>3/12</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Decide si el reparto es correcto</h3>
+              <ol type="a" class="subquestions">
+                <li>Un círculo en 4 partes iguales</li>
+                <li>Un rectángulo con dos partes distintas</li>
+                <li>Una barra en 10 trozos iguales</li>
+                <li>Una pizza con 6 porciones de tamaños diferentes</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 2: Leer y escribir fracciones -->
+        <section id="sec-2" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.2</span> Leer y escribir fracciones
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Para <strong>leer una fracción</strong>, pronunciamos primero el numerador (uno, dos, tres…) y después el denominador. Algunos denominadores habituales son: 2, <strong>medios</strong>; 3, <strong>tercios</strong>; 4, <strong>cuartos</strong>; 5, <strong>quintos</strong>; 6, <strong>sextos</strong>; 7, <strong>séptimos</strong>; 8, <strong>octavos</strong>; 9, <strong>novenos</strong>; 10, <strong>décimos</strong>; 11, <strong>onceavos</strong> y 12, <strong>doceavos</strong>.</p>
+              <p>Así, <span class="frac" role="math" aria-label="1 partido por 2">
+                  <span class="num">1</span>
+                  <span class="den">2</span>
+                </span> es «un medio» y <span class="frac" role="math" aria-label="7 partido por 10">
+                  <span class="num">7</span>
+                  <span class="den">10</span>
+                </span> es «siete décimos». Para representar una fracción, primero dibuja la unidad, después divídela en tantas partes iguales como marca el denominador y, al final, colorea tantas como indica el numerador.</p>
+              <p>Una fracción es <strong>propia</strong> cuando el numerador es menor que el denominador: representa menos de una unidad, como 3/4.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Lee el denominador de 5/6: «sextos».</li>
+                <li>Lee el numerador: «cinco».</li>
+                <li>Junta ambas palabras: <strong>cinco sextos</strong>.</li>
+                <li>En una tira de 6 partes iguales, colorea 5.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 164" role="img" aria-labelledby="mat44-cinco-sextos-title" focusable="false">
+                  <title id="mat44-cinco-sextos-title">Fracción coloreada: partes iguales</title>
+                  <text x="35" y="26" text-anchor="start" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">5 de 6 partes iguales</text>
+                  <rect x="35.0" y="48" width="106.66666666666667" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="141.66666666666669" y="48" width="106.66666666666667" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="248.33333333333334" y="48" width="106.66666666666667" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="355.0" y="48" width="106.66666666666667" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="461.6666666666667" y="48" width="106.66666666666667" height="70" rx="0" fill="#b9e6c5" stroke="#007a33" stroke-width="1.6"/>
+                  <rect x="568.3333333333334" y="48" width="106.66666666666667" height="70" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.6"/>
+                  <text x="355.0" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="25" fill="#005724" font-weight="800">5/6</text>
+                </svg>
+                <figcaption>Todas las partes deben tener el mismo tamaño.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>
+                  <span class="frac" role="math" aria-label="7 partido por 10">
+                    <span class="num">7</span>
+                    <span class="den">10</span>
+                  </span> se lee <strong>siete décimos</strong>.</li>
+                <li>Para dibujarla, divide una unidad en 10 partes iguales y colorea 7.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 1. Escribe cada fracción con palabras</h3>
+              <ol type="a" class="subquestions">
+                <li>1/3</li>
+                <li>2/5</li>
+                <li>3/8</li>
+                <li>7/12</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 2. Escribe la fracción con números</h3>
+              <ol type="a" class="subquestions">
+                <li>Dos cuartos</li>
+                <li>Cinco sextos</li>
+                <li>Tres décimos</li>
+                <li>Nueve doceavos</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 3. Identifica fracciones propias</h3>
+              <ol type="a" class="subquestions">
+                <li>3/4, 5/3, 2/7</li>
+                <li>6/6, 4/9, 8/5</li>
+                <li>1/2, 12/7, 5/6</li>
+                <li>11/12, 9/8, 3/10</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 4. Interpreta cada situación</h3>
+              <ol type="a" class="subquestions">
+                <li>4 de 7 libros son cuentos</li>
+                <li>2 de 9 plantas son aromáticas</li>
+                <li>5 de 8 personas van a pie</li>
+                <li>3 de 10 sobres son rojos</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: Comparamos fracciones sencillas -->
+        <section id="sec-3" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.3</span> Comparamos fracciones sencillas
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Para comparar fracciones usamos dibujos del <strong>mismo tamaño</strong>. Si dos fracciones tienen <strong>igual denominador</strong>, sus piezas son iguales; la fracción con más piezas coloreadas es mayor.</p>
+              <p>Por eso <span class="frac" role="math" aria-label="3 partido por 8">
+                  <span class="num">3</span>
+                  <span class="den">8</span>
+                </span> &lt; <span class="frac" role="math" aria-label="5 partido por 8">
+                  <span class="num">5</span>
+                  <span class="den">8</span>
+                </span>. Si tienen <strong>igual numerador</strong>, la unidad dividida en menos partes tiene piezas más grandes: <span class="frac" role="math" aria-label="1 partido por 3">
+                  <span class="num">1</span>
+                  <span class="den">3</span>
+                </span> &gt; <span class="frac" role="math" aria-label="1 partido por 6">
+                  <span class="num">1</span>
+                  <span class="den">6</span>
+                </span>.</p>
+              <p>Para comparar fracciones distintas, es muy útil colorear tiras del mismo ancho y longitud: la zona coloreada nos permite ver cuál es mayor.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Dibuja dos rectángulos iguales y divide ambos en 8 partes.</li>
+                <li>Colorea 3 partes en uno y 5 en el otro.</li>
+                <li>Como 5 partes iguales son más que 3, <strong>5/8 es mayor que 3/8</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 192" role="img" aria-labelledby="mat44-comparacion-title" focusable="false">
+                  <title id="mat44-comparacion-title">Comparación de tres octavos y cinco octavos</title>
+                  <text x="24" y="27" text-anchor="start" font-family="system-ui, sans-serif" font-size="22" fill="#005724" font-weight="800">3/8</text>
+                  <text x="24" y="105" text-anchor="start" font-family="system-ui, sans-serif" font-size="22" fill="#005724" font-weight="800">5/8</text>
+                  <rect x="94" y="7" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="159" y="7" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="224" y="7" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="289" y="7" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="354" y="7" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="419" y="7" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="484" y="7" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="549" y="7" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="94" y="86" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="159" y="86" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="224" y="86" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="289" y="86" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="354" y="86" width="65" height="50" rx="0" fill="#82cba0" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="419" y="86" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="484" y="86" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <rect x="549" y="86" width="65" height="50" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="350" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#334155" font-weight="650">Con el mismo denominador, 5/8 es mayor que 3/8.</text>
+                </svg>
+                <figcaption>Compara siempre unidades del mismo tamaño.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Entre 2/7 y 6/7 es mayor <strong>6/7</strong>.</li>
+                <li>Entre 1/2 y 1/4 es mayor <strong>1/2</strong>: la mitad es una pieza más grande que un cuarto.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 1. Compara fracciones con igual denominador</h3>
+              <ol type="a" class="subquestions">
+                <li>2/7 y 5/7</li>
+                <li>6/10 y 3/10</li>
+                <li>1/4 y 3/4</li>
+                <li>5/12 y 8/12</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 2. Compara fracciones con igual numerador</h3>
+              <ol type="a" class="subquestions">
+                <li>1/2 y 1/4</li>
+                <li>3/5 y 3/8</li>
+                <li>2/3 y 2/6</li>
+                <li>4/7 y 4/9</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 3. Ordena de menor a mayor</h3>
+              <ol type="a" class="subquestions">
+                <li>2/8, 7/8, 5/8</li>
+                <li>4/9, 1/9, 8/9</li>
+                <li>6/10, 3/10, 9/10</li>
+                <li>1/6, 5/6, 3/6</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.1">
+              <h3>Actividad 4. Representa para decidir qué parte es mayor</h3>
+              <ol type="a" class="subquestions">
+                <li>1/2 o 1/3 de una tarta</li>
+                <li>3/4 o 2/4 de una bandeja</li>
+                <li>2/5 o 2/8 de una tableta</li>
+                <li>5/6 o 4/6 de un huerto</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 4: Fracción de una cantidad -->
+        <section id="sec-4" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.4</span> Fracción de una cantidad
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>A veces una fracción nos indica una <strong>parte de un grupo de objetos</strong>, no solo una parte de una pizza o una barra. Por ejemplo, 3/4 de 20 lápices significa repartirlos en cuatro grupos iguales y escoger tres de ellos.</p>
+              <p>Para calcularla, primero <strong>dividimos por el denominador</strong> y después <strong>multiplicamos por el numerador</strong>. La división responde «¿cuánto vale una parte?». La multiplicación responde «¿cuánto valen las partes que tomamos?».</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Calcula 20 ÷ 4 = 5 lápices por cuarto.</li>
+                <li>Toma tres grupos de 5: 5 × 3 = 15.</li>
+                <li>Comprueba que 15 es menos que 20: <strong>3/4 de 20 = 15</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 172" role="img" aria-labelledby="mat44-grupos-title" focusable="false">
+                  <title id="mat44-grupos-title">Tres cuartas partes de veinte lápices</title>
+                  <rect x="65" y="40" width="118" height="66" rx="7" fill="#a4dbb6" stroke="#007a33" stroke-width="2"/>
+                  <text x="124" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">5 lápices</text>
+                  <rect x="223" y="40" width="118" height="66" rx="7" fill="#a4dbb6" stroke="#007a33" stroke-width="2"/>
+                  <text x="282" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">5 lápices</text>
+                  <rect x="381" y="40" width="118" height="66" rx="7" fill="#a4dbb6" stroke="#007a33" stroke-width="2"/>
+                  <text x="440" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">5 lápices</text>
+                  <rect x="539" y="40" width="118" height="66" rx="7" fill="#fff" stroke="#007a33" stroke-width="2"/>
+                  <text x="598" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">5 lápices</text>
+                  <text x="360" y="147" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#005724" font-weight="800">3 grupos de 5 = 15 lápices</text>
+                </svg>
+                <figcaption>Los cuatro grupos son iguales; escogemos tres.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>
+                  <strong>3/4 de 20 = (20 ÷ 4) × 3 = 15.</strong>
+                </li>
+                <li>Un cuarto de 20 son 5; tres cuartos son 15.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 1. Calcula mitades, tercios y cuartos</h3>
+              <ol type="a" class="subquestions">
+                <li>1/2 de 24</li>
+                <li>1/3 de 27</li>
+                <li>1/4 de 36</li>
+                <li>1/2 de 58</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 2. Calcula fracciones de un total</h3>
+              <ol type="a" class="subquestions">
+                <li>2/3 de 30</li>
+                <li>3/4 de 28</li>
+                <li>2/5 de 40</li>
+                <li>5/6 de 24</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 3. Interpreta situaciones de compra</h3>
+              <ol type="a" class="subquestions">
+                <li>1/4 de 40 manzanas</li>
+                <li>3/5 de 25 panes</li>
+                <li>2/3 de 18 botellas</li>
+                <li>5/8 de 32 yogures</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 4. Averigua la parte que queda</h3>
+              <ol type="a" class="subquestions">
+                <li>Si vendemos 1/2 de 36 barras</li>
+                <li>Si gastamos 2/5 de 40 €</li>
+                <li>Si regalamos 3/4 de 24 caramelos</li>
+                <li>Si utilizamos 1/3 de 45 semillas</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 5: Fracciones equivalentes y unidad completa -->
+        <section id="sec-5" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.5</span> Fracciones equivalentes y unidad completa
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Dos fracciones son <strong>equivalentes</strong> cuando representan la misma parte de una unidad. Aunque los números sean distintos, al colorearlas la cantidad es igual.</p>
+              <p>Mira: <span class="frac" role="math" aria-label="1 partido por 2">
+                  <span class="num">1</span>
+                  <span class="den">2</span>
+                </span> = <span class="frac" role="math" aria-label="2 partido por 4">
+                  <span class="num">2</span>
+                  <span class="den">4</span>
+                </span> = <span class="frac" role="math" aria-label="3 partido por 6">
+                  <span class="num">3</span>
+                  <span class="den">6</span>
+                </span>. En cada caso coloreamos exactamente la mitad de una tira del mismo tamaño.</p>
+              <p>Cuando el numerador es igual al denominador, hemos tomado <strong>toda la unidad</strong>: <span class="frac" role="math" aria-label="4 partido por 4">
+                  <span class="num">4</span>
+                  <span class="den">4</span>
+                </span> = 1. Si coloreas más partes, hay más de una unidad.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Dibuja dos rectángulos iguales.</li>
+                <li>Divide uno en 2 partes y colorea 1.</li>
+                <li>Divide el otro en 4 partes y colorea 2.</li>
+                <li>Compara: la superficie coloreada es la misma.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 172" role="img" aria-labelledby="mat44-equivalencias-title" focusable="false">
+                  <title id="mat44-equivalencias-title">Medio y dos cuartos equivalentes</title>
+                  <text x="34" y="30" text-anchor="start" font-family="system-ui, sans-serif" font-size="21" fill="#005724" font-weight="750">1/2</text>
+                  <text x="34" y="113" text-anchor="start" font-family="system-ui, sans-serif" font-size="21" fill="#005724" font-weight="750">2/4</text>
+                  <rect x="105.0" y="8" width="240.0" height="55" rx="0" fill="#7bd09c" stroke="#007a33" stroke-width="1.7"/>
+                  <rect x="345.0" y="8" width="240.0" height="55" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.7"/>
+                  <rect x="105.0" y="91" width="120.0" height="55" rx="0" fill="#7bd09c" stroke="#007a33" stroke-width="1.7"/>
+                  <rect x="225.0" y="91" width="120.0" height="55" rx="0" fill="#7bd09c" stroke="#007a33" stroke-width="1.7"/>
+                  <rect x="345.0" y="91" width="120.0" height="55" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.7"/>
+                  <rect x="465.0" y="91" width="120.0" height="55" rx="0" fill="#fff" stroke="#007a33" stroke-width="1.7"/>
+                  <text x="630" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="#005724" font-weight="800">=</text>
+                </svg>
+                <figcaption>La zona coloreada es exactamente igual en las dos barras.</figcaption>
+              </figure>
+              <aside class="theory-tip">
+                <strong>Recuerda:</strong> Para comparar dibujos de fracciones, las unidades deben tener el mismo tamaño.</aside>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>
+                  <span class="frac" role="math" aria-label="2 partido por 4">
+                    <span class="num">2</span>
+                    <span class="den">4</span>
+                  </span> y <span class="frac" role="math" aria-label="4 partido por 8">
+                    <span class="num">4</span>
+                    <span class="den">8</span>
+                  </span> son equivalentes porque ambas son la mitad de una unidad.</li>
+                <li>En cambio, 2/4 y 2/6 no representan la misma parte.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Completa fracciones equivalentes con dibujos</h3>
+              <ol type="a" class="subquestions">
+                <li>1/2 = ___/4</li>
+                <li>1/3 = ___/6</li>
+                <li>2/3 = ___/6</li>
+                <li>3/4 = ___/8</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Decide si equivalen</h3>
+              <ol type="a" class="subquestions">
+                <li>1/2 y 2/4</li>
+                <li>2/5 y 4/10</li>
+                <li>1/3 y 2/5</li>
+                <li>3/6 y 1/2</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Representa la unidad entera</h3>
+              <ol type="a" class="subquestions">
+                <li>4/4</li>
+                <li>6/6</li>
+                <li>8/8</li>
+                <li>12/12</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Explica qué fracción falta para completar</h3>
+              <ol type="a" class="subquestions">
+                <li>Ya tenemos 1/4 de una unidad</li>
+                <li>Ya tenemos 3/8 de una unidad</li>
+                <li>Ya tenemos 5/6 de una unidad</li>
+                <li>Ya tenemos 7/10 de una unidad</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 6: Euros y céntimos -->
+        <section id="sec-6" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.6</span> Euros y céntimos
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Para pagar y calcular cambios utilizamos <strong>euros y céntimos</strong>. Un euro son <strong>100 céntimos</strong>; medio euro son 50 céntimos y un cuarto de euro son 25 céntimos.</p>
+              <p>En 2,35 €, el 2 indica euros y el 35 indica céntimos. La <strong>coma decimal</strong> separa ambas partes. Si sumas o restas precios por escrito, coloca las comas una debajo de otra.</p>
+              <p>Podemos escribir el precio también en céntimos: 2,35 € = 235 céntimos.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Separa 3,75 € en 3 euros y 75 céntimos.</li>
+                <li>Convierte los euros a céntimos: 3 × 100 = 300.</li>
+                <li>Suma: 300 + 75 = <strong>375 céntimos</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 147" role="img" aria-labelledby="mat44-euros-title" focusable="false">
+                  <title id="mat44-euros-title">Un euro equivale a cien céntimos</title>
+                  <rect x="90" y="34" width="200" height="80" rx="40" fill="#e6f4ea" stroke="#007a33" stroke-width="3"/>
+                  <text x="190" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" fill="#005724" font-weight="800">1 €</text>
+                  <text x="357" y="81" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" fill="#334155" font-weight="700">=</text>
+                  <rect x="427" y="34" width="235" height="80" rx="40" fill="#eef7ff" stroke="#2563eb" stroke-width="3"/>
+                  <text x="544" y="82" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="#2563eb" font-weight="800">100 céntimos</text>
+                </svg>
+                <figcaption>1 € = 100 céntimos; los decimales de los precios representan céntimos.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>2,35 € = 200 céntimos + 35 céntimos = <strong>235 céntimos</strong>.</li>
+                <li>1,20 € + 0,85 € = <strong>2,05 €</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 1. Convierte a céntimos</h3>
+              <ol type="a" class="subquestions">
+                <li>1,20 €</li>
+                <li>3,05 €</li>
+                <li>5,70 €</li>
+                <li>9,99 €</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 2. Convierte a euros y céntimos</h3>
+              <ol type="a" class="subquestions">
+                <li>145 céntimos</li>
+                <li>280 céntimos</li>
+                <li>406 céntimos</li>
+                <li>975 céntimos</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 3. Suma los precios</h3>
+              <ol type="a" class="subquestions">
+                <li>2,35 € + 1,40 €</li>
+                <li>3,75 € + 2,15 €</li>
+                <li>5,60 € + 0,85 €</li>
+                <li>7,99 € + 1,25 €</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 4. Calcula el cambio</h3>
+              <ol type="a" class="subquestions">
+                <li>Pagas 5 € por un producto de 3,40 €</li>
+                <li>Pagas 10 € por uno de 7,25 €</li>
+                <li>Pagas 20 € por uno de 12,80 €</li>
+                <li>Pagas 10 € por uno de 6,95 €</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 7: Compramos con un presupuesto -->
+        <section id="sec-7" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.7</span> Compramos con un presupuesto
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Un <strong>presupuesto</strong> es la cantidad de dinero que podemos gastar. Primero anotamos los precios, después calculamos el total y por último comprobamos si nos alcanza.</p>
+              <p>Para decidir entre ofertas no basta con mirar el número más pequeño: hay que comparar <strong>la misma cantidad de producto</strong> y comprobar si conocemos el coste total. El cambio se calcula restando al dinero entregado el precio de la compra.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Dos cuadernos cuestan 2,50 € cada uno: 2 × 2,50 € = 5,00 €.</li>
+                <li>Añade un lápiz de 1,20 €: total = 6,20 €.</li>
+                <li>Si pagas con 10 €, el cambio es 10,00 € − 6,20 € = 3,80 €.</li>
+              </ol>
+              <aside class="theory-tip">
+                <strong>Recuerda:</strong> Redondear ayuda a estimar, pero para pagar hay que utilizar el precio exacto.</aside>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>
+                  <strong>2 × 2,50 € + 1,20 € = 6,20 €.</strong>
+                </li>
+                <li>Con 10 €, sobran <strong>3,80 €</strong>; comprueba sumando 6,20 € + 3,80 € = 10 €.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 1. Calcula el precio total</h3>
+              <ol type="a" class="subquestions">
+                <li>2 panes a 1,25 € cada uno</li>
+                <li>3 yogures a 0,80 € cada uno</li>
+                <li>4 lápices a 1,50 € cada uno</li>
+                <li>2 zumos a 2,35 € cada uno</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 2. Calcula cuánto dinero queda</h3>
+              <ol type="a" class="subquestions">
+                <li>Con 15 €, compras por 8,75 €</li>
+                <li>Con 20 €, compras por 14,60 €</li>
+                <li>Con 10 €, compras por 6,95 €</li>
+                <li>Con 25 €, compras por 17,80 €</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 3. Elige la opción más económica</h3>
+              <ol type="a" class="subquestions">
+                <li>2 envases de 3,25 € o uno de 6,80 €</li>
+                <li>3 panes de 1,20 € o una bolsa de 3,75 €</li>
+                <li>4 lápices a 0,90 € o un lote de 3,80 €</li>
+                <li>2 botellas a 1,65 € o una oferta de 3,50 €</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 4. Diseña la operación y comprueba</h3>
+              <ol type="a" class="subquestions">
+                <li>2 kg de peras a 2,40 € y 1 kg de manzanas a 1,80 €</li>
+                <li>3 paquetes de arroz a 1,35 € y una leche a 1,10 €</li>
+                <li>4 botellas a 0,95 € y 2 panes a 1,20 €</li>
+                <li>2 cuadernos a 2,80 € y 3 lápices a 0,75 €</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+        <section id="sec-8" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number section-number-amber">1.8</span> Problemas y desafíos
+          </h2>
+          <h3 class="problem-subtitle">Parte A. Problemas contextualizados</h3>
+          <p>Lee cada situación, identifica los datos, elige las operaciones y escribe una respuesta con sentido.</p>
+          <div class="problem-grid">
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 1. La tarta</h4>
+              <p>Una tarta se divide en 8 porciones iguales. Se comen 3. ¿Qué fracción se ha comido y cuál queda?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 2. Reparto de fruta</h4>
+              <p>De 24 naranjas, 3/4 se destinan al comedor. ¿Cuántas son?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 3. La lista de la compra</h4>
+              <p>Compramos pan por 1,45 €, leche por 1,10 € y fruta por 3,75 €. ¿Cuánto pagamos?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 4. Una compra con cambio</h4>
+              <p>Entregamos 10 € por un producto de 6,85 €. ¿Qué cambio corresponde?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 5. Ofertas del mercado</h4>
+              <p>¿Qué opción es más barata: 3 yogures a 0,85 € cada uno o un lote de 3 por 2,70 €?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 6. Leche para el comedor</h4>
+              <p>Hay 30 botellas y se utiliza 2/5. ¿Cuántas botellas quedan?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 7. Compartimos una pizza</h4>
+              <p>Marina come 2/8 de una pizza y Pedro 3/8. ¿Qué fracción han comido entre los dos?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.2.3">
+              <h4>Problema 8. Comprobamos el ticket</h4>
+              <p>Un ticket suma 2,50 € + 3,75 € y marca 5,25 €. ¿Es correcto? Razona.</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 9. La recaudación</h4>
+              <p>Vendemos 12 bolsas a 2,50 € y gastamos 8,75 € en material. ¿Cuánto queda?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 10. La elección</h4>
+              <p>Dispones de 15 €. ¿Puedes comprar 3 productos de 4,80 € cada uno? ¿Cuánto sobra?</p>
+            </article>
+          </div>
+          <h3 class="problem-subtitle challenge-subtitle">Parte B. Desafíos matemáticos integrados</h3>
+          <p>Aplicamos lo aprendido para investigar, tomar decisiones y comunicar resultados.</p>
+          <div class="challenge-list">
+            <article class="challenge-card" data-criterio="MAT.4.5.1">
+              <h4>Desafío 1. Nuestro supermercado</h4>
+              <p>Diseñad un pequeño catálogo ficticio con cinco productos, precios en euros y céntimos y una compra máxima de 20 €.</p>
+              <ol>
+                <li>Inventad cinco productos y precios realistas.</li>
+                <li>Preparad una compra que no supere 20 € y calculad el cambio.</li>
+                <li>Representad un reparto en fracciones de los productos elegidos.</li>
+                <li>Explicad cuál ha sido vuestra estrategia de compra.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.1.2">
+              <h4>Desafío 2. Dos maneras de repartir</h4>
+              <p>En una merienda se ofrecen 24 bocadillos para 8 personas. En otra hay 18 para 6 personas.</p>
+              <ol>
+                <li>Dibujad ambos repartos.</li>
+                <li>Comparad qué parte o cantidad recibe cada persona.</li>
+                <li>Explicad cuál de las dos situaciones es más justa y por qué.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.3.2">
+              <h4>Desafío 3. Preguntas de comprador</h4>
+              <p>Un cartel anuncia 2 paquetes por 5,60 € y otro anuncia un paquete por 2,95 €.</p>
+              <ol>
+                <li>Formulad una pregunta matemática que pueda responderse con estos datos.</li>
+                <li>Resolved la pregunta y verificad el cálculo.</li>
+                <li>Explicad qué información adicional pediríais para comparar la calidad.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+        <section id="sec-repaso" class="lesson-section review-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">↺</span> Repasamos lo aprendido
+          </h2>
+          <p>Dos fichas para consolidar los contenidos y profundizar en sus aplicaciones.</p>
+          <div class="review-group ">
+            <h3>Ficha de refuerzo</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Refuerzo 1.1 · Partes iguales de una unidad</span>
+                <p><strong>Repasa: dibuja cada fracción</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>1/2 de una figura rectangular</li>
+                  <li>2/3 de una tira de papel</li>
+                  <li>3/4 de un cuadrado</li>
+                  <li>5/6 de una barra</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">Refuerzo 1.2 · Leer y escribir fracciones</span>
+                <p><strong>Repasa: escribe la fracción con números</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Dos cuartos</li>
+                  <li>Cinco sextos</li>
+                  <li>Tres décimos</li>
+                  <li>Nueve doceavos</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.1">
+                <span class="review-tag">Refuerzo 1.3 · Comparamos fracciones sencillas</span>
+                <p><strong>Repasa: compara fracciones con igual numerador</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>1/2 y 1/4</li>
+                  <li>3/5 y 3/8</li>
+                  <li>2/3 y 2/6</li>
+                  <li>4/7 y 4/9</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.2">
+                <span class="review-tag">Refuerzo 1.4 · Fracción de una cantidad</span>
+                <p><strong>Repasa: calcula fracciones de un total</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>2/3 de 30</li>
+                  <li>3/4 de 28</li>
+                  <li>2/5 de 40</li>
+                  <li>5/6 de 24</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Refuerzo 1.5 · Fracciones equivalentes y unidad completa</span>
+                <p><strong>Repasa: decide si equivalen</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>1/2 y 2/4</li>
+                  <li>2/5 y 4/10</li>
+                  <li>1/3 y 2/5</li>
+                  <li>3/6 y 1/2</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Refuerzo 1.6 · Euros y céntimos</span>
+                <p><strong>Repasa: convierte a euros y céntimos</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>145 céntimos</li>
+                  <li>280 céntimos</li>
+                  <li>406 céntimos</li>
+                  <li>975 céntimos</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Refuerzo 1.7 · Compramos con un presupuesto</span>
+                <p><strong>Repasa: calcula cuánto dinero queda</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Con 15 €, compras por 8,75 €</li>
+                  <li>Con 20 €, compras por 14,60 €</li>
+                  <li>Con 10 €, compras por 6,95 €</li>
+                  <li>Con 25 €, compras por 17,80 €</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">Refuerzo 1.8 · Problemas y desafíos</span>
+                <p>Identifica datos y preguntas en estos cuatro problemas de la situación.</p>
+                <ol type="a" class="subquestions">
+                  <li>Lee el problema «La tarta» y subraya los datos.</li>
+                  <li>Lee el problema «Reparto de fruta» y subraya los datos.</li>
+                  <li>Lee el problema «La lista de la compra» y subraya los datos.</li>
+                  <li>Lee el problema «Una compra con cambio» y subraya los datos.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+          <div class="review-group review-ampliacion">
+            <h3>Ficha de ampliación</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Ampliacion 1.1 · Partes iguales de una unidad</span>
+                <p><strong>Amplía: decide si el reparto es correcto</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Un círculo en 4 partes iguales</li>
+                  <li>Un rectángulo con dos partes distintas</li>
+                  <li>Una barra en 10 trozos iguales</li>
+                  <li>Una pizza con 6 porciones de tamaños diferentes</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">Ampliacion 1.2 · Leer y escribir fracciones</span>
+                <p><strong>Amplía: interpreta cada situación</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>4 de 7 libros son cuentos</li>
+                  <li>2 de 9 plantas son aromáticas</li>
+                  <li>5 de 8 personas van a pie</li>
+                  <li>3 de 10 sobres son rojos</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.1">
+                <span class="review-tag">Ampliacion 1.3 · Comparamos fracciones sencillas</span>
+                <p><strong>Amplía: representa para decidir qué parte es mayor</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>1/2 o 1/3 de una tarta</li>
+                  <li>3/4 o 2/4 de una bandeja</li>
+                  <li>2/5 o 2/8 de una tableta</li>
+                  <li>5/6 o 4/6 de un huerto</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.2">
+                <span class="review-tag">Ampliacion 1.4 · Fracción de una cantidad</span>
+                <p><strong>Amplía: averigua la parte que queda</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Si vendemos 1/2 de 36 barras</li>
+                  <li>Si gastamos 2/5 de 40 €</li>
+                  <li>Si regalamos 3/4 de 24 caramelos</li>
+                  <li>Si utilizamos 1/3 de 45 semillas</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Ampliacion 1.5 · Fracciones equivalentes y unidad completa</span>
+                <p><strong>Amplía: explica qué fracción falta para completar</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Ya tenemos 1/4 de una unidad</li>
+                  <li>Ya tenemos 3/8 de una unidad</li>
+                  <li>Ya tenemos 5/6 de una unidad</li>
+                  <li>Ya tenemos 7/10 de una unidad</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Ampliacion 1.6 · Euros y céntimos</span>
+                <p><strong>Amplía: calcula el cambio</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Pagas 5 € por un producto de 3,40 €</li>
+                  <li>Pagas 10 € por uno de 7,25 €</li>
+                  <li>Pagas 20 € por uno de 12,80 €</li>
+                  <li>Pagas 10 € por uno de 6,95 €</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Ampliacion 1.7 · Compramos con un presupuesto</span>
+                <p><strong>Amplía: diseña la operación y comprueba</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>2 kg de peras a 2,40 € y 1 kg de manzanas a 1,80 €</li>
+                  <li>3 paquetes de arroz a 1,35 € y una leche a 1,10 €</li>
+                  <li>4 botellas a 0,95 € y 2 panes a 1,20 €</li>
+                  <li>2 cuadernos a 2,80 € y 3 lápices a 0,75 €</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.2">
+                <span class="review-tag">Ampliacion 1.8 · Problemas y desafíos</span>
+                <p>Aplica otra estrategia y explica por qué también permite llegar a la solución.</p>
+                <ol type="a" class="subquestions">
+                  <li>Propón una forma distinta de resolver el problema «Ofertas del mercado» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Leche para el comedor» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Compartimos una pizza» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Comprobamos el ticket» y justifica tu método.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+        <section id="sec-diana" class="lesson-section diana-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number diana-marker">🎯</span> Diana de Autoevaluación Interactiva
+          </h2>
+          <p>Reflexiona sobre tu aprendizaje y marca la opción que mejor te describe.</p>
+          <div class="diana-list">
+            <div class="diana-row">
+              <p><strong>1.1</strong> Represento fracciones como partes iguales de un todo.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.1">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.2</strong> Leo y escribo fracciones y entiendo qué representan.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.2">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.3</strong> Comparo fracciones mediante dibujos y razonamientos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.3">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.4</strong> Calculo una parte de una cantidad y compruebo el resultado.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.4">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.5</strong> Comprendo cuándo dos fracciones representan lo mismo.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.5">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.6</strong> Sumo precios y reconozco euros y céntimos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.6">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.7</strong> Aplico fracciones y precios a decisiones de compra.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.7">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.8</strong> Comprendo problemas, tomo decisiones y explico mis resultados.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación de los problemas y desafíos">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="button" class="action-button secondary" id="reset-diana">Borrar mi autoevaluación</button>
+          </div>
+        </section>
+
+        <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+        <section id="sec-comprueba" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">✓</span> Comprueba lo aprendido
+          </h2>
+          <p>Marca una respuesta por pregunta y pulsa <strong>Comprobar respuestas</strong>. Puedes repetir el cuestionario.</p>
+          <form id="mat4-quiz" novalidate>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.1.2">
+              <legend>1. ¿Qué fracción son 3 partes de 8 iguales?</legend>
+              <label><input type="radio" name="q1" value="a"> 8/3</label>
+              <label><input type="radio" name="q1" value="b"> 3/8</label>
+              <label><input type="radio" name="q1" value="c"> 3/5</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.6.1">
+              <legend>2. ¿Cómo se lee 2/5?</legend>
+              <label><input type="radio" name="q2" value="a"> Dos quintos</label>
+              <label><input type="radio" name="q2" value="b"> Cinco medios</label>
+              <label><input type="radio" name="q2" value="c"> Dos décimos</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.2.1">
+              <legend>3. ¿Qué fracción es mayor?</legend>
+              <label><input type="radio" name="q3" value="a"> 2/7</label>
+              <label><input type="radio" name="q3" value="b"> 4/7</label>
+              <label><input type="radio" name="q3" value="c"> 1/7</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.2.2">
+              <legend>4. ¿Cuánto es 1/4 de 20?</legend>
+              <label><input type="radio" name="q4" value="a"> 4</label>
+              <label><input type="radio" name="q4" value="b"> 10</label>
+              <label><input type="radio" name="q4" value="c"> 5</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.1.2">
+              <legend>5. ¿Cuál equivale a 1/2?</legend>
+              <label><input type="radio" name="q5" value="a"> 2/4</label>
+              <label><input type="radio" name="q5" value="b"> 3/4</label>
+              <label><input type="radio" name="q5" value="c"> 1/3</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.5.1">
+              <legend>6. ¿Cuántos céntimos son 2,35 €?</legend>
+              <label><input type="radio" name="q6" value="a"> 205</label>
+              <label><input type="radio" name="q6" value="b"> 235</label>
+              <label><input type="radio" name="q6" value="c"> 230</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.5.1">
+              <legend>7. ¿Cuánto es 1,20 € + 2,35 €?</legend>
+              <label><input type="radio" name="q7" value="a"> 2,55 €</label>
+              <label><input type="radio" name="q7" value="b"> 3,45 €</label>
+              <label><input type="radio" name="q7" value="c"> 3,55 €</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.5.1">
+              <legend>8. Pagas 5 € por algo de 3,75 €. ¿Cuál es el cambio?</legend>
+              <label><input type="radio" name="q8" value="a"> 1,25 €</label>
+              <label><input type="radio" name="q8" value="b"> 2,25 €</label>
+              <label><input type="radio" name="q8" value="c"> 1,75 €</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <div class="button-row">
+              <button class="action-button" type="submit">Comprobar respuestas</button>
+              <button class="action-button secondary" type="reset">Volver a empezar</button>
+            </div>
+            <p id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
+
+      </div>
+      <nav class="lesson-footer" aria-label="Navegación final">
+        <a href="/recursos/cuarto/matematicas4/">← Volver a Matemáticas de 4.º</a>
+        <a href="#contenido-principal">↑ Subir al inicio</a>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>CEIP Joaquín Tena Artigas · Alcolea (Córdoba)</p>
+  </footer>
+  <script>
+    "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat4-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>
