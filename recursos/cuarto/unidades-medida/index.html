@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MAT4.5: Medimos recorridos, tiempos, masas y capacidades para organizar una jornada de juegos y deporte con datos reales y estimaciones útiles. CEIP Joaquín Tena Artigas.">
+  <title>MAT4.5 · Organizamos una jornada deportiva | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <!--
+    MAT4.5: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.B.1.1, MAT.2.B.1.2, MAT.2.B.2.1, MAT.2.B.3.1, MAT.2.B.3.2.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+    :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  </style>
+</head>
+<body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir al inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación"
+              aria-controls="main-navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li><a href="/recursos/cuarto/matematicas4/">Matemáticas</a></li>
+          <li aria-current="page">SdA 5</li>
+        </ol>
+      </nav>
+      <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Matemáticas · 4.º de Primaria · SdA 5</span>
+          <h1 id="titulo-sda">Organizamos una jornada deportiva</h1>
+          <p>Medimos recorridos, tiempos, masas y capacidades para organizar una jornada de juegos y deporte con datos reales y estimaciones útiles.</p>
+          <div class="hero-tags" aria-label="Qué aprenderemos">
+            <span>Longitud</span>
+            <span>Masa y capacidad</span>
+            <span>Tiempo y superficie</span>
+          </div>
+        </div>
+        <figure class="media-frame hero-mascot">
+          <img src="/img/tomatito/matematicas.png"
+               alt="Tomatito, la mascota del colegio, aprendiendo Matemáticas"
+               onerror="markImageMissing(this)">
+          <figcaption class="sr-only">Tomatito nos acompaña en esta situación de aprendizaje.</figcaption>
+        </figure>
+      </section>
+      <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="lesson-nav-links">
+          <a href="#sec-1">1.1 Medimos longitudes</a>
+          <a href="#sec-2">1.2 Medimos masas</a>
+          <a href="#sec-3">1.3 Medimos capacidades</a>
+          <a href="#sec-4">1.4 El reloj y la duración</a>
+          <a href="#sec-5">1.5 Calendarios y horarios</a>
+          <a href="#sec-6">1.6 Superficie con cuadrículas</a>
+          <a href="#sec-7">1.7 Estimamos y elegimos unidades</a>
+          <a href="#sec-8" class="nav-challenge">1.8 Problemas y desafíos</a>
+          <a href="#sec-repaso" class="nav-review">🔄 Repasamos lo aprendido</a>
+          <a href="#sec-diana" class="nav-selfeval">🎯 Autoevaluación</a>
+          <a href="#sec-comprueba" class="nav-quiz">✓ Comprueba lo aprendido</a>
+        </div>
+      </nav>
+      <div class="topic-content">
+        <!-- SECCIÓN 1: Medimos longitudes -->
+        <section id="sec-1" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.1</span> Medimos longitudes
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Medir una <strong>longitud</strong> es averiguar cuánto mide algo de un extremo al otro. Para objetos pequeños usamos <strong>milímetros (mm)</strong> o <strong>centímetros (cm)</strong>; para habitaciones, <strong>metros (m)</strong>; y para viajes, <strong>kilómetros (km)</strong>.</p>
+              <p>Las unidades habituales siguen una escalera: km – hm – dam – m – dm – cm – mm. Cada escalón hacia la derecha multiplica por 10; cada escalón hacia la izquierda divide entre 10.</p>
+              <p>Así, <strong>1 m = 100 cm</strong> porque hemos avanzado dos escalones (m → dm → cm). También <strong>1 km = 1.000 m</strong>. Antes de convertir, pregunta si pasas a una unidad más grande o más pequeña.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Escribe la unidad de partida y la de llegada: 3 m → cm.</li>
+                <li>Cuenta dos saltos hacia una unidad más pequeña: m → dm → cm.</li>
+                <li>Multiplica por 100: 3 × 100 = <strong>300 cm</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 189" role="img" aria-labelledby="mat45-longitud-title" focusable="false">
+                  <title id="mat45-longitud-title">Escalera de unidades métricas</title>
+                  <rect x="40.0" y="38" width="84.57142857142857" height="57" rx="5" fill="#eaf7ee" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="82.28571428571428" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">km</text>
+                  <text x="124.57142857142856" y="28" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#2563eb" font-weight="750">×10 →</text>
+                  <rect x="128.57142857142856" y="38" width="84.57142857142857" height="57" rx="5" fill="#d9f1e3" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="170.85714285714283" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">hm</text>
+                  <text x="213.14285714285714" y="28" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#2563eb" font-weight="750">×10 →</text>
+                  <rect x="217.14285714285714" y="38" width="84.57142857142857" height="57" rx="5" fill="#bce5d1" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="259.42857142857144" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">dam</text>
+                  <text x="301.7142857142857" y="28" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#2563eb" font-weight="750">×10 →</text>
+                  <rect x="305.7142857142857" y="38" width="84.57142857142857" height="57" rx="5" fill="#a3d9bd" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="348.0" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">m</text>
+                  <text x="390.2857142857143" y="28" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#2563eb" font-weight="750">×10 →</text>
+                  <rect x="394.2857142857143" y="38" width="84.57142857142857" height="57" rx="5" fill="#78c59c" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="436.57142857142856" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">dm</text>
+                  <text x="478.85714285714283" y="28" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#2563eb" font-weight="750">×10 →</text>
+                  <rect x="482.85714285714283" y="38" width="84.57142857142857" height="57" rx="5" fill="#58b183" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="525.1428571428571" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">cm</text>
+                  <text x="567.4285714285714" y="28" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#2563eb" font-weight="750">×10 →</text>
+                  <rect x="571.4285714285714" y="38" width="84.57142857142857" height="57" rx="5" fill="#399867" stroke="#007a33" stroke-width="1.4"/>
+                  <text x="613.7142857142858" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="800">mm</text>
+                  <text x="360" y="141" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="650">Al pasar a una unidad más pequeña, multiplicamos.</text>
+                  <text x="360" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="650">Al pasar a una unidad más grande, dividimos.</text>
+                </svg>
+                <figcaption>Cada salto entre unidades consecutivas equivale a multiplicar o dividir entre 10.</figcaption>
+              </figure>
+              <aside class="theory-tip">
+                <strong>Recuerda:</strong> Una goma se mide en centímetros; la distancia entre dos localidades, en kilómetros. La unidad importa.</aside>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>250 m recorridos cuatro veces son 4 × 250 = 1.000 m.</li>
+                <li>Como 1.000 m = 1 km, la carrera mide <strong>1 km</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 1. Transforma a centímetros</h3>
+              <ol type="a" class="subquestions">
+                <li>2 m</li>
+                <li>5 m y 30 cm</li>
+                <li>1 m y 8 cm</li>
+                <li>7 m y 45 cm</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 2. Transforma a metros</h3>
+              <ol type="a" class="subquestions">
+                <li>3 km</li>
+                <li>2 km y 150 m</li>
+                <li>4 km y 25 m</li>
+                <li>1 km y 700 m</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 3. Elige la unidad que usarías</h3>
+              <ol type="a" class="subquestions">
+                <li>El ancho de una mesa</li>
+                <li>La distancia de Córdoba a Sevilla</li>
+                <li>El grosor de una moneda</li>
+                <li>El largo del patio</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 4. Resuelve recorridos</h3>
+              <ol type="a" class="subquestions">
+                <li>Damos 4 vueltas de 200 m</li>
+                <li>Caminamos 750 m y 350 m</li>
+                <li>Corremos 1 km y 250 m más</li>
+                <li>Nos faltan 300 m de un recorrido de 2 km tras completar 1.700 m</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 2: Medimos masas -->
+        <section id="sec-2" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.2</span> Medimos masas
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La <strong>masa</strong> es la cantidad de materia que tiene un objeto; la medimos con una balanza o báscula. Usamos <strong>gramos (g)</strong> para objetos ligeros y <strong>kilogramos (kg)</strong> para objetos más pesados.</p>
+              <p>La equivalencia fundamental es <strong>1 kg = 1.000 g</strong>. Para pasar de kilogramos a gramos multiplicamos por 1.000. Para pasar de gramos a kilogramos dividimos por 1.000.</p>
+              <p>También utilizamos <strong>medio kilogramo = 500 g</strong> y <strong>un cuarto de kilogramo = 250 g</strong>. Son cantidades frecuentes al comprar alimentos.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Separa 2 kg y 350 g.</li>
+                <li>Convierte los dos kilogramos a gramos: 2 × 1.000 = 2.000 g.</li>
+                <li>Añade 350: 2.000 + 350 = <strong>2.350 g</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 154" role="img" aria-labelledby="mat45-masa-title" focusable="false">
+                  <title id="mat45-masa-title">Equivalencias entre kilogramos y gramos</title>
+                  <rect x="35" y="35" width="205" height="86" rx="10" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <text x="138" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="#005724" font-weight="800">1 kg</text>
+                  <text x="138" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="600">kilogramo</text>
+                  <text x="284" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="27" fill="#334155" font-weight="750">=</text>
+                  <rect x="328" y="35" width="340" height="86" rx="10" fill="#eef7ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="498" y="76" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="#2563eb" font-weight="800">1.000 g</text>
+                  <text x="498" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="600">mil gramos</text>
+                </svg>
+                <figcaption>500 g es medio kilogramo; 250 g es un cuarto de kilogramo.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>1.500 g = <strong>1 kg y 500 g</strong>.</li>
+                <li>En una receta, tres paquetes de 250 g pesan 3 × 250 = <strong>750 g</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 1. Convierte a gramos</h3>
+              <ol type="a" class="subquestions">
+                <li>3 kg</li>
+                <li>1 kg y 250 g</li>
+                <li>2 kg y 75 g</li>
+                <li>4 kg y 600 g</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 2. Expresa en kilos y gramos</h3>
+              <ol type="a" class="subquestions">
+                <li>1.425 g</li>
+                <li>2.080 g</li>
+                <li>3.750 g</li>
+                <li>5.009 g</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 3. Calcula la masa total</h3>
+              <ol type="a" class="subquestions">
+                <li>Dos sacos de 2 kg</li>
+                <li>500 g + 750 g</li>
+                <li>1 kg y 250 g + 800 g</li>
+                <li>3 kg y 150 g + 1 kg y 950 g</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 4. Elige la medida razonable</h3>
+              <ol type="a" class="subquestions">
+                <li>La masa de un lápiz: 8 g u 8 kg</li>
+                <li>La masa de una persona: 35 g o 35 kg</li>
+                <li>La masa de un paquete de arroz: 1 kg o 1 g</li>
+                <li>La masa de una naranja: 250 g o 250 kg</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: Medimos capacidades -->
+        <section id="sec-3" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.3</span> Medimos capacidades
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La <strong>capacidad</strong> indica cuánto líquido puede contener un recipiente. Una botella se suele medir en <strong>litros (l)</strong> o <strong>mililitros (ml)</strong>.</p>
+              <p>Un litro equivale a <strong>1.000 ml</strong>. Medio litro son <strong>500 ml</strong> y un cuarto de litro son <strong>250 ml</strong>. Una botella de medio litro no contiene más líquido que una de 500 ml: son la misma cantidad.</p>
+              <p>Piensa en las equivalencias como recipientes: para llenar una botella de un litro hacen falta dos botellas de medio litro o cuatro vasos de un cuarto de litro.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Observa que cada vaso contiene 250 ml.</li>
+                <li>Suma cuatro vasos: 250 + 250 + 250 + 250 = 1.000 ml.</li>
+                <li>Por tanto, <strong>4 vasos de 250 ml = 1 l</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 185" role="img" aria-labelledby="mat45-capacidad-title" focusable="false">
+                  <title id="mat45-capacidad-title">Cuatro recipientes de un cuarto de litro forman un litro</title>
+                  <rect x="35" y="30" width="115" height="95" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                  <rect x="44" y="53" width="97" height="63" rx="1" fill="#8bd1b2" stroke="#007a33" stroke-width="0.9"/>
+                  <text x="93" y="82" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">250 ml</text>
+                  <rect x="205" y="30" width="115" height="95" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                  <rect x="214" y="53" width="97" height="63" rx="1" fill="#8bd1b2" stroke="#007a33" stroke-width="0.9"/>
+                  <text x="263" y="82" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">250 ml</text>
+                  <rect x="375" y="30" width="115" height="95" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                  <rect x="384" y="53" width="97" height="63" rx="1" fill="#8bd1b2" stroke="#007a33" stroke-width="0.9"/>
+                  <text x="433" y="82" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">250 ml</text>
+                  <rect x="545" y="30" width="115" height="95" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                  <rect x="554" y="53" width="97" height="63" rx="1" fill="#8bd1b2" stroke="#007a33" stroke-width="0.9"/>
+                  <text x="603" y="82" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#005724" font-weight="750">250 ml</text>
+                  <text x="360" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="800">250 + 250 + 250 + 250 = 1.000 ml = 1 l</text>
+                </svg>
+                <figcaption>La cantidad total se conserva aunque cambiemos de recipientes.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Una botella de 500 ml y dos vasos de 250 ml suman 500 + 250 + 250 = <strong>1.000 ml</strong>.</li>
+                <li>En litros, equivale a <strong>1 litro</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 1. Pasa a mililitros</h3>
+              <ol type="a" class="subquestions">
+                <li>2 l</li>
+                <li>1 l y 250 ml</li>
+                <li>3 l y 75 ml</li>
+                <li>4 l y 500 ml</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 2. Pasa a litros y mililitros</h3>
+              <ol type="a" class="subquestions">
+                <li>1.250 ml</li>
+                <li>2.750 ml</li>
+                <li>3.015 ml</li>
+                <li>4.900 ml</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 3. Suma capacidades</h3>
+              <ol type="a" class="subquestions">
+                <li>750 ml + 500 ml</li>
+                <li>1 l + 250 ml</li>
+                <li>2 l y 300 ml + 450 ml</li>
+                <li>1 l y 800 ml + 600 ml</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 4. Calcula lo que falta</h3>
+              <ol type="a" class="subquestions">
+                <li>Una jarra de 1 l contiene 650 ml</li>
+                <li>Una botella de 2 l contiene 1.250 ml</li>
+                <li>Un bidón de 5 l contiene 3.600 ml</li>
+                <li>Un recipiente de 3 l contiene 2.150 ml</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 4: El reloj y la duración -->
+        <section id="sec-4" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.4</span> El reloj y la duración
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Para indicar la hora usamos el <strong>reloj</strong>. En un reloj digital, 10:15 son las diez y cuarto; en uno analógico, la aguja pequeña señala aproximadamente la hora y la grande los minutos.</p>
+              <p>Recuerda que <strong>1 hora = 60 minutos</strong> y <strong>1 minuto = 60 segundos</strong>. No debemos restar minutos como si cada hora tuviera 100.</p>
+              <p>Para calcular una duración es muy útil avanzar hasta la hora en punto y después hasta la hora final.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Desde las 10:15 hasta las 11:00 transcurren 45 minutos.</li>
+                <li>Desde las 11:00 hasta las 11:05 transcurren 5 minutos.</li>
+                <li>Sumamos 45 + 5 = <strong>50 minutos</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 149" role="img" aria-labelledby="mat45-tiempo-title" focusable="false">
+                  <title id="mat45-tiempo-title">Duración desde las diez y cuarto hasta las once y cinco</title>
+                  <rect x="24" y="44" width="185" height="72" rx="10" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <text x="116" y="89" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="#005724" font-weight="800">10:15</text>
+                  <text x="248" y="84" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#2563eb" font-weight="750">→ 45 min →</text>
+                  <rect x="347" y="44" width="150" height="72" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="422" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="27" fill="#2563eb" font-weight="800">11:00</text>
+                  <text x="540" y="84" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#2563eb" font-weight="700">→ 5 min →</text>
+                  <rect x="630" y="50" width="86" height="60" rx="8" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <text x="673" y="86" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="800">11:05</text>
+                </svg>
+                <figcaption>45 minutos + 5 minutos = 50 minutos.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Una actividad de 10:15 a 11:05 dura <strong>50 minutos</strong>.</li>
+                <li>Si empieza a las 9:30 y dura 45 minutos, termina a las <strong>10:15</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 1. Convierte a minutos</h3>
+              <ol type="a" class="subquestions">
+                <li>2 horas</li>
+                <li>1 hora y 30 minutos</li>
+                <li>3 horas y 15 minutos</li>
+                <li>4 horas y 5 minutos</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 2. Convierte a segundos</h3>
+              <ol type="a" class="subquestions">
+                <li>2 minutos</li>
+                <li>5 minutos</li>
+                <li>3 minutos y 20 segundos</li>
+                <li>1 minuto y 45 segundos</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 3. Calcula la duración</h3>
+              <ol type="a" class="subquestions">
+                <li>De 09:15 a 10:00</li>
+                <li>De 10:20 a 11:05</li>
+                <li>De 12:40 a 13:15</li>
+                <li>De 16:25 a 17:10</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.2">
+              <h3>Actividad 4. Calcula a qué hora terminan</h3>
+              <ol type="a" class="subquestions">
+                <li>Empieza 09:30 y dura 45 min</li>
+                <li>Empieza 10:15 y dura 1 h</li>
+                <li>Empieza 11:40 y dura 35 min</li>
+                <li>Empieza 16:50 y dura 25 min</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 5: Calendarios y horarios -->
+        <section id="sec-5" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.5</span> Calendarios y horarios
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Un <strong>calendario</strong> sirve para ordenar días, semanas y meses. Una semana tiene 7 días; los meses pueden tener 28, 29, 30 o 31 días. Un año normal tiene 365 días y uno bisiesto, 366.</p>
+              <p>Un <strong>horario</strong> muestra a qué hora comienza y termina cada actividad. Para organizar una jornada, calculamos la duración de cada parte y añadimos descansos y desplazamientos.</p>
+              <p>Si usamos horas del formato de 24 horas, 14:30 significa las dos y media de la tarde. La hora de finalización debe ser posterior a la de inicio de la tarea.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Inicio de una jornada: 9:00.</li>
+                <li>Actividad 1: 50 minutos; termina a las 9:50.</li>
+                <li>Descanso: 20 minutos; termina a las 10:10.</li>
+                <li>La siguiente actividad empieza a las <strong>10:10</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 145" role="img" aria-labelledby="mat45-horario-title" focusable="false">
+                  <title id="mat45-horario-title">Horario de una mañana deportiva</title>
+                  <rect x="23" y="42" width="243" height="70" rx="4" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+                  <rect x="267" y="42" width="147" height="70" rx="4" fill="#fff4db" stroke="#d97706" stroke-width="2"/>
+                  <rect x="416" y="42" width="275" height="70" rx="4" fill="#eef5ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="144" y="74" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Actividad · 50 min</text>
+                  <text x="144" y="96" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="600">9:00–9:50</text>
+                  <text x="341" y="74" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="750">Descanso</text>
+                  <text x="341" y="96" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#334155" font-weight="600">9:50–10:10</text>
+                  <text x="553" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#2563eb" font-weight="750">Siguiente actividad</text>
+                  <text x="553" y="96" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#334155" font-weight="600">Desde 10:10</text>
+                </svg>
+                <figcaption>Los bloques colocados en fila ayudan a visualizar la duración.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>La salida comienza a las 9:00. Tras 50 min de carrera y 20 min de pausa, son las <strong>10:10</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.1">
+              <h3>Actividad 1. Razona sobre días y semanas</h3>
+              <ol type="a" class="subquestions">
+                <li>¿Cuántos días tienen 3 semanas?</li>
+                <li>¿Cuántos días tienen 5 semanas?</li>
+                <li>¿Cuántos días tienen 2 semanas y 4 días?</li>
+                <li>¿Cuántas semanas completas hay en 28 días?</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.1">
+              <h3>Actividad 2. Lee el horario</h3>
+              <ol type="a" class="subquestions">
+                <li>Natación: 9:00–9:45. ¿Cuánto dura?</li>
+                <li>Baloncesto: 10:15–11:00. ¿Cuánto dura?</li>
+                <li>Atletismo: 11:20–12:10. ¿Cuánto dura?</li>
+                <li>Descanso: 12:10–12:35. ¿Cuánto dura?</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.1">
+              <h3>Actividad 3. Compara dos actividades</h3>
+              <ol type="a" class="subquestions">
+                <li>Fútbol dura 40 min y atletismo 55 min</li>
+                <li>Yoga dura 35 min y patinaje 50 min</li>
+                <li>Recreo de 25 min y merienda de 15 min</li>
+                <li>Un paseo de 1 h y una carrera de 45 min</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.1">
+              <h3>Actividad 4. Construye un pequeño horario</h3>
+              <ol type="a" class="subquestions">
+                <li>Actividad de 30 min desde 9:10</li>
+                <li>Actividad de 45 min desde 10:20</li>
+                <li>Actividad de 1 h y 15 min desde 11:00</li>
+                <li>Actividad de 20 min desde 16:35</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 6: Superficie con cuadrículas -->
+        <section id="sec-6" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.6</span> Superficie con cuadrículas
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La <strong>superficie</strong> de una figura plana es todo lo que ocupa por dentro. Podemos medirla cubriéndola con cuadrados del mismo tamaño, sin huecos ni superposiciones.</p>
+              <p>Si cada cuadrito mide <strong>1 cm por 1 cm</strong>, su superficie es <strong>1 cm²</strong> (un centímetro cuadrado). Contar 24 cuadritos de 1 cm² equivale a decir que el área es 24 cm².</p>
+              <p>En un rectángulo, no necesitamos contar uno a uno: multiplicamos el número de <strong>filas por columnas</strong> o largo por ancho, siempre con la misma unidad.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Cuenta las columnas: 6.</li>
+                <li>Cuenta las filas: 4.</li>
+                <li>Multiplica 6 × 4 = <strong>24</strong>.</li>
+                <li>Escribe la unidad de superficie: <strong>24 cm²</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 307" role="img" aria-labelledby="mat45-superficie-title" focusable="false">
+                  <title id="mat45-superficie-title">Cuadrícula de superficies</title>
+                  <rect x="55" y="45" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="113" y="45" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="171" y="45" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="229" y="45" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="287" y="45" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="345" y="45" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="55" y="103" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="113" y="103" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="171" y="103" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="229" y="103" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="287" y="103" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="345" y="103" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="55" y="161" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="113" y="161" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="171" y="161" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="229" y="161" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="287" y="161" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="345" y="161" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="55" y="219" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="113" y="219" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="171" y="219" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="229" y="219" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="287" y="219" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <rect x="345" y="219" width="58" height="58" rx="0" fill="#8ed4a3" stroke="#007a33" stroke-width="1.1"/>
+                  <text x="438" y="168.0" text-anchor="start" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">24 cuadros</text>
+                </svg>
+                <figcaption>Cada cuadrado pequeño representa una unidad de superficie.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Una superficie de 4 filas y 6 columnas de cuadrados de 1 cm² ocupa <strong>24 cm²</strong>.</li>
+                <li>No confundas cm (longitud) con cm² (superficie).</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Calcula contando cuadrados</h3>
+              <ol type="a" class="subquestions">
+                <li>Figura con 3 filas de 5 cuadrados</li>
+                <li>Figura con 4 filas de 6 cuadrados</li>
+                <li>Figura con 7 filas de 2 cuadrados</li>
+                <li>Figura con 8 filas de 3 cuadrados</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Dibuja un rectángulo en papel cuadriculado</h3>
+              <ol type="a" class="subquestions">
+                <li>Área de 12 cuadritos</li>
+                <li>Área de 18 cuadritos</li>
+                <li>Área de 20 cuadritos</li>
+                <li>Área de 24 cuadritos</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Compara superficies</h3>
+              <ol type="a" class="subquestions">
+                <li>Rectángulo 3 × 6 y rectángulo 2 × 9</li>
+                <li>Rectángulo 4 × 5 y rectángulo 3 × 7</li>
+                <li>Rectángulo 2 × 8 y rectángulo 4 × 4</li>
+                <li>Rectángulo 5 × 6 y rectángulo 3 × 9</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Calcula superficies del patio</h3>
+              <ol type="a" class="subquestions">
+                <li>Zona de 6 m × 4 m</li>
+                <li>Huerto de 8 m × 3 m</li>
+                <li>Zona de juego de 10 m × 5 m</li>
+                <li>Parterre de 9 m × 2 m</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 7: Estimamos y elegimos unidades -->
+        <section id="sec-7" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.7</span> Estimamos y elegimos unidades
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Antes de medir, conviene <strong>estimar</strong> el resultado. Estimar es decir una cantidad razonable sin usar todavía la regla o la balanza; luego medimos para comprobar si nos hemos acercado.</p>
+              <p>También necesitamos <strong>elegir la unidad</strong>. Decir «la botella contiene 500» no es suficiente: ¿500 litros o 500 mililitros? La unidad cambia totalmente el significado.</p>
+              <p>Una estimación razonable depende del objeto: un lápiz puede medir 15 cm, una clase 8 m, una mochila 3 kg y una botella pequeña 500 ml.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Identifica qué magnitud quieres medir: longitud, masa, capacidad o tiempo.</li>
+                <li>Elige la unidad adecuada: cm, kg, ml, min…</li>
+                <li>Haz una estimación razonable y después mide.</li>
+                <li>Compara estimación y medida real; explica por qué se parecen o no.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 140" role="img" aria-labelledby="mat45-unidades-title" focusable="false">
+                  <title id="mat45-unidades-title">Elección de unidades de medida</title>
+                  <rect x="18" y="25" width="153" height="82" rx="9" fill="#eaf8ee" stroke="#007a33" stroke-width="2"/>
+                  <text x="94" y="59" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Lápiz</text>
+                  <text x="94" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="700">cm</text>
+                  <rect x="196" y="25" width="153" height="82" rx="9" fill="#eef6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="272" y="59" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Mochila</text>
+                  <text x="272" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="700">kg</text>
+                  <rect x="374" y="25" width="153" height="82" rx="9" fill="#eaf8ee" stroke="#007a33" stroke-width="2"/>
+                  <text x="450" y="59" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Botella</text>
+                  <text x="450" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="700">ml</text>
+                  <rect x="552" y="25" width="153" height="82" rx="9" fill="#eef6ff" stroke="#2563eb" stroke-width="2"/>
+                  <text x="628" y="59" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Carrera</text>
+                  <text x="628" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#334155" font-weight="700">m</text>
+                </svg>
+                <figcaption>Elegimos la unidad según lo que queremos medir.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Una mochila pesa aproximadamente <strong>3 kg</strong>, no 3 g.</li>
+                <li>Una botella individual contiene aproximadamente <strong>500 ml</strong>, no 500 l.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 1. Señala qué unidad corresponde</h3>
+              <ol type="a" class="subquestions">
+                <li>Masa de una manzana: g o km</li>
+                <li>Capacidad de un vaso: ml o m</li>
+                <li>Anchura de una puerta: cm o l</li>
+                <li>Duración de un recreo: min o kg</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 2. Encuentra medidas imposibles</h3>
+              <ol type="a" class="subquestions">
+                <li>Una mochila pesa 3.000 kg</li>
+                <li>Una carrera escolar mide 100 m</li>
+                <li>Una botella contiene 2.000 l</li>
+                <li>Un partido dura 40 minutos</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 3. Razona si basta con la unidad indicada</h3>
+              <ol type="a" class="subquestions">
+                <li>Una cuerda mide 5 (sin unidad)</li>
+                <li>Un bidón contiene 3 (sin unidad)</li>
+                <li>Una prueba dura 20 (sin unidad)</li>
+                <li>Una bolsa pesa 2 (sin unidad)</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.2.3">
+              <h3>Actividad 4. Estima y comprueba con cálculos</h3>
+              <ol type="a" class="subquestions">
+                <li>¿Cuánto es aproximadamente 1.950 ml + 1.020 ml?</li>
+                <li>¿Cuánto es aproximadamente 980 m + 1.030 m?</li>
+                <li>¿Cuánto es aproximadamente 1.480 g + 510 g?</li>
+                <li>¿Cuánto es aproximadamente 58 min + 62 min?</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+        <section id="sec-8" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number section-number-amber">1.8</span> Problemas y desafíos
+          </h2>
+          <h3 class="problem-subtitle">Parte A. Problemas contextualizados</h3>
+          <p>Lee cada situación, identifica los datos, elige las operaciones y escribe una respuesta con sentido.</p>
+          <div class="problem-grid">
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 1. Carrera solidaria</h4>
+              <p>Alba da tres vueltas a un circuito de 350 m. ¿Cuántos metros recorre en total?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 2. Agua para el equipo</h4>
+              <p>Una clase lleva 8 botellas de 750 ml. ¿Cuántos litros de agua tiene?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 3. Los dorsales</h4>
+              <p>Se preparan 5 paquetes con 35 dorsales. ¿Cuántos dorsales hay?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 4. Hora de llegada</h4>
+              <p>Una prueba empieza a las 10:25 y dura 55 minutos. ¿A qué hora termina?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 5. Masa de las mochilas</h4>
+              <p>Tres mochilas pesan 2 kg y 250 g, 3 kg y 100 g y 1 kg y 650 g. ¿Cuánto pesan juntas?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 6. Patio cuadriculado</h4>
+              <p>Una zona de juegos mide 8 m de largo y 6 m de ancho. ¿Cuál es su superficie?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 7. Agua que sobra</h4>
+              <p>De un bidón de 5 l se utilizan 2.750 ml. ¿Cuántos mililitros quedan?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 8. Comparar distancias</h4>
+              <p>¿Qué recorrido es mayor: 1 km y 200 m o 950 m más 350 m?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.2.3">
+              <h4>Problema 9. Una medida sospechosa</h4>
+              <p>Un cartel dice que un alumno corrió 2.000 km durante el recreo. ¿Qué unidad o dato podría estar equivocado?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 10. Descansos y juego</h4>
+              <p>La jornada dura 3 horas. Se destinan 95 minutos a juegos y 40 a descansos. ¿Cuántos minutos restan?</p>
+            </article>
+          </div>
+          <h3 class="problem-subtitle challenge-subtitle">Parte B. Desafíos matemáticos integrados</h3>
+          <p>Aplicamos lo aprendido para investigar, tomar decisiones y comunicar resultados.</p>
+          <div class="challenge-list">
+            <article class="challenge-card" data-criterio="MAT.4.5.1">
+              <h4>Desafío 1. Circuito deportivo</h4>
+              <p>Diseñad en un plano cuadriculado un circuito de cuatro tramos: 150 m, 275 m, 125 m y 350 m.</p>
+              <ol>
+                <li>Sumad las longitudes y expresad el total en metros.</li>
+                <li>Calculad cuántas vueltas hay que dar para recorrer al menos 2 km.</li>
+                <li>Preparad un horario con 15 min de calentamiento y 30 min de carrera.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.2.3">
+              <h4>Desafío 2. El reparto de agua</h4>
+              <p>Organizad el agua para 24 participantes. Cada persona necesita una botella de 500 ml.</p>
+              <ol>
+                <li>Calculad la capacidad total necesaria en litros.</li>
+                <li>Elegid entre comprar 6 bidones de 2 l u 8 de 1 l y explicad cuál basta.</li>
+                <li>Presentad los cálculos y justificad la elección.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.8.1">
+              <h4>Desafío 3. El plano del patio</h4>
+              <p>En un plano cuadriculado, cada cuadrado representa 1 m². Se reservan 24 cuadrados para juegos, 16 para descanso y 12 para plantas.</p>
+              <ol>
+                <li>Calculad el total de superficie reservada.</li>
+                <li>Dibujad una distribución diferente con las mismas superficies.</li>
+                <li>Escuchad las propuestas del equipo y acordad una solución conjunta.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+        <section id="sec-repaso" class="lesson-section review-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">↺</span> Repasamos lo aprendido
+          </h2>
+          <p>Dos fichas para consolidar los contenidos y profundizar en sus aplicaciones.</p>
+          <div class="review-group ">
+            <h3>Ficha de refuerzo</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Refuerzo 1.1 · Medimos longitudes</span>
+                <p><strong>Repasa: transforma a metros</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>3 km</li>
+                  <li>2 km y 150 m</li>
+                  <li>4 km y 25 m</li>
+                  <li>1 km y 700 m</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Refuerzo 1.2 · Medimos masas</span>
+                <p><strong>Repasa: expresa en kilos y gramos</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>1.425 g</li>
+                  <li>2.080 g</li>
+                  <li>3.750 g</li>
+                  <li>5.009 g</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Refuerzo 1.3 · Medimos capacidades</span>
+                <p><strong>Repasa: pasa a litros y mililitros</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>1.250 ml</li>
+                  <li>2.750 ml</li>
+                  <li>3.015 ml</li>
+                  <li>4.900 ml</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.2">
+                <span class="review-tag">Refuerzo 1.4 · El reloj y la duración</span>
+                <p><strong>Repasa: convierte a segundos</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>2 minutos</li>
+                  <li>5 minutos</li>
+                  <li>3 minutos y 20 segundos</li>
+                  <li>1 minuto y 45 segundos</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">Refuerzo 1.5 · Calendarios y horarios</span>
+                <p><strong>Repasa: lee el horario</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Natación: 9:00–9:45. ¿Cuánto dura?</li>
+                  <li>Baloncesto: 10:15–11:00. ¿Cuánto dura?</li>
+                  <li>Atletismo: 11:20–12:10. ¿Cuánto dura?</li>
+                  <li>Descanso: 12:10–12:35. ¿Cuánto dura?</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Refuerzo 1.6 · Superficie con cuadrículas</span>
+                <p><strong>Repasa: dibuja un rectángulo en papel cuadriculado</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Área de 12 cuadritos</li>
+                  <li>Área de 18 cuadritos</li>
+                  <li>Área de 20 cuadritos</li>
+                  <li>Área de 24 cuadritos</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.3">
+                <span class="review-tag">Refuerzo 1.7 · Estimamos y elegimos unidades</span>
+                <p><strong>Repasa: encuentra medidas imposibles</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Una mochila pesa 3.000 kg</li>
+                  <li>Una carrera escolar mide 100 m</li>
+                  <li>Una botella contiene 2.000 l</li>
+                  <li>Un partido dura 40 minutos</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">Refuerzo 1.8 · Problemas y desafíos</span>
+                <p>Identifica datos y preguntas en estos cuatro problemas de la situación.</p>
+                <ol type="a" class="subquestions">
+                  <li>Lee el problema «Carrera solidaria» y subraya los datos.</li>
+                  <li>Lee el problema «Agua para el equipo» y subraya los datos.</li>
+                  <li>Lee el problema «Los dorsales» y subraya los datos.</li>
+                  <li>Lee el problema «Hora de llegada» y subraya los datos.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+          <div class="review-group review-ampliacion">
+            <h3>Ficha de ampliación</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Ampliacion 1.1 · Medimos longitudes</span>
+                <p><strong>Amplía: resuelve recorridos</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Damos 4 vueltas de 200 m</li>
+                  <li>Caminamos 750 m y 350 m</li>
+                  <li>Corremos 1 km y 250 m más</li>
+                  <li>Nos faltan 300 m de un recorrido de 2 km tras completar 1.700 m</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Ampliacion 1.2 · Medimos masas</span>
+                <p><strong>Amplía: elige la medida razonable</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>La masa de un lápiz: 8 g u 8 kg</li>
+                  <li>La masa de una persona: 35 g o 35 kg</li>
+                  <li>La masa de un paquete de arroz: 1 kg o 1 g</li>
+                  <li>La masa de una naranja: 250 g o 250 kg</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Ampliacion 1.3 · Medimos capacidades</span>
+                <p><strong>Amplía: calcula lo que falta</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Una jarra de 1 l contiene 650 ml</li>
+                  <li>Una botella de 2 l contiene 1.250 ml</li>
+                  <li>Un bidón de 5 l contiene 3.600 ml</li>
+                  <li>Un recipiente de 3 l contiene 2.150 ml</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.2">
+                <span class="review-tag">Ampliacion 1.4 · El reloj y la duración</span>
+                <p><strong>Amplía: calcula a qué hora terminan</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Empieza 09:30 y dura 45 min</li>
+                  <li>Empieza 10:15 y dura 1 h</li>
+                  <li>Empieza 11:40 y dura 35 min</li>
+                  <li>Empieza 16:50 y dura 25 min</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">Ampliacion 1.5 · Calendarios y horarios</span>
+                <p><strong>Amplía: construye un pequeño horario</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Actividad de 30 min desde 9:10</li>
+                  <li>Actividad de 45 min desde 10:20</li>
+                  <li>Actividad de 1 h y 15 min desde 11:00</li>
+                  <li>Actividad de 20 min desde 16:35</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Ampliacion 1.6 · Superficie con cuadrículas</span>
+                <p><strong>Amplía: calcula superficies del patio</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Zona de 6 m × 4 m</li>
+                  <li>Huerto de 8 m × 3 m</li>
+                  <li>Zona de juego de 10 m × 5 m</li>
+                  <li>Parterre de 9 m × 2 m</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.2.3">
+                <span class="review-tag">Ampliacion 1.7 · Estimamos y elegimos unidades</span>
+                <p><strong>Amplía: estima y comprueba con cálculos</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>¿Cuánto es aproximadamente 1.950 ml + 1.020 ml?</li>
+                  <li>¿Cuánto es aproximadamente 980 m + 1.030 m?</li>
+                  <li>¿Cuánto es aproximadamente 1.480 g + 510 g?</li>
+                  <li>¿Cuánto es aproximadamente 58 min + 62 min?</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.2">
+                <span class="review-tag">Ampliacion 1.8 · Problemas y desafíos</span>
+                <p>Aplica otra estrategia y explica por qué también permite llegar a la solución.</p>
+                <ol type="a" class="subquestions">
+                  <li>Propón una forma distinta de resolver el problema «Masa de las mochilas» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Patio cuadriculado» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Agua que sobra» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Comparar distancias» y justifica tu método.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+        <section id="sec-diana" class="lesson-section diana-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number diana-marker">🎯</span> Diana de Autoevaluación Interactiva
+          </h2>
+          <p>Reflexiona sobre tu aprendizaje y marca la opción que mejor te describe.</p>
+          <div class="diana-list">
+            <div class="diana-row">
+              <p><strong>1.1</strong> Selecciono y convierto unidades de longitud.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.1">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.2</strong> Comparo y expreso masas en kilogramos y gramos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.2">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.3</strong> Calculo y convierto litros y mililitros.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.3">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.4</strong> Calculo duraciones e interpreto horarios.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.4">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.5</strong> Organizo actividades y comprendo duraciones.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.5">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.6</strong> Cuento cuadrados y mido áreas sencillas.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.6">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.7</strong> Estimo, selecciono la unidad y compruebo la coherencia.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.7">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.8</strong> Comprendo problemas, tomo decisiones y explico mis resultados.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación de los problemas y desafíos">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="button" class="action-button secondary" id="reset-diana">Borrar mi autoevaluación</button>
+          </div>
+        </section>
+
+        <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+        <section id="sec-comprueba" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">✓</span> Comprueba lo aprendido
+          </h2>
+          <p>Marca una respuesta por pregunta y pulsa <strong>Comprobar respuestas</strong>. Puedes repetir el cuestionario.</p>
+          <form id="mat4-quiz" novalidate>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.5.1">
+              <legend>1. ¿Cuántos centímetros hay en 2 m?</legend>
+              <label><input type="radio" name="q1" value="a"> 20</label>
+              <label><input type="radio" name="q1" value="b"> 200</label>
+              <label><input type="radio" name="q1" value="c"> 2.000</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.5.1">
+              <legend>2. ¿Cuántos metros hay en 3 km?</legend>
+              <label><input type="radio" name="q2" value="a"> 3.000</label>
+              <label><input type="radio" name="q2" value="b"> 300</label>
+              <label><input type="radio" name="q2" value="c"> 30</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.5.1">
+              <legend>3. ¿Cuántos gramos son 1 kg y 250 g?</legend>
+              <label><input type="radio" name="q3" value="a"> 125</label>
+              <label><input type="radio" name="q3" value="b"> 1.025</label>
+              <label><input type="radio" name="q3" value="c"> 1.250</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.5.1">
+              <legend>4. ¿Cuántos mililitros contiene 1 l?</legend>
+              <label><input type="radio" name="q4" value="a"> 100</label>
+              <label><input type="radio" name="q4" value="b"> 1.000</label>
+              <label><input type="radio" name="q4" value="c"> 10</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.2.2">
+              <legend>5. ¿Cuántos minutos son 2 horas?</legend>
+              <label><input type="radio" name="q5" value="a"> 120</label>
+              <label><input type="radio" name="q5" value="b"> 100</label>
+              <label><input type="radio" name="q5" value="c"> 60</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.1.1">
+              <legend>6. Una actividad de 10:15 a 11:00 dura...</legend>
+              <label><input type="radio" name="q6" value="a"> 35 min</label>
+              <label><input type="radio" name="q6" value="b"> 55 min</label>
+              <label><input type="radio" name="q6" value="c"> 45 min</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.1.2">
+              <legend>7. Un rectángulo de 3 filas y 7 columnas ocupa...</legend>
+              <label><input type="radio" name="q7" value="a"> 10 cuadritos</label>
+              <label><input type="radio" name="q7" value="b"> 21 cuadritos</label>
+              <label><input type="radio" name="q7" value="c"> 14 cuadritos</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.2.3">
+              <legend>8. ¿Qué unidad usarías para la capacidad de un vaso?</legend>
+              <label><input type="radio" name="q8" value="a"> ml</label>
+              <label><input type="radio" name="q8" value="b"> kg</label>
+              <label><input type="radio" name="q8" value="c"> km</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <div class="button-row">
+              <button class="action-button" type="submit">Comprobar respuestas</button>
+              <button class="action-button secondary" type="reset">Volver a empezar</button>
+            </div>
+            <p id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
+
+      </div>
+      <nav class="lesson-footer" aria-label="Navegación final">
+        <a href="/recursos/cuarto/matematicas4/">← Volver a Matemáticas de 4.º</a>
+        <a href="#contenido-principal">↑ Subir al inicio</a>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>CEIP Joaquín Tena Artigas · Alcolea (Córdoba)</p>
+  </footer>
+  <script>
+    "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat4-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>
