@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MAT4.6: Las formas, los ángulos, las simetrías y los planos nos ayudan a imaginar espacios públicos cómodos y seguros. CEIP Joaquín Tena Artigas.">
+  <title>MAT4.6 · Diseñamos un barrio sostenible | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <!--
+    MAT4.6: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.C.1.1, MAT.2.C.1.2, MAT.2.C.2.1, MAT.2.C.3.1, MAT.2.C.4.1.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+    :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  </style>
+</head>
+<body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir al inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación"
+              aria-controls="main-navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li><a href="/recursos/cuarto/matematicas4/">Matemáticas</a></li>
+          <li aria-current="page">SdA 6</li>
+        </ol>
+      </nav>
+      <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">Matemáticas · 4.º de Primaria · SdA 6</span>
+          <h1 id="titulo-sda">Diseñamos un barrio sostenible</h1>
+          <p>Las formas, los ángulos, las simetrías y los planos nos ayudan a imaginar espacios públicos cómodos y seguros.</p>
+          <div class="hero-tags" aria-label="Qué aprenderemos">
+            <span>Figuras geométricas</span>
+            <span>Perímetros</span>
+            <span>Planos y simetría</span>
+          </div>
+        </div>
+        <figure class="media-frame hero-mascot">
+          <img src="/img/tomatito/matematicas.png"
+               alt="Tomatito, la mascota del colegio, aprendiendo Matemáticas"
+               onerror="markImageMissing(this)">
+          <figcaption class="sr-only">Tomatito nos acompaña en esta situación de aprendizaje.</figcaption>
+        </figure>
+      </section>
+      <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="lesson-nav-links">
+          <a href="#sec-1">1.1 Puntos, rectas y segmentos</a>
+          <a href="#sec-2">1.2 Ángulos y giros</a>
+          <a href="#sec-3">1.3 Polígonos y sus propiedades</a>
+          <a href="#sec-4">1.4 Circunferencia y círculo</a>
+          <a href="#sec-5">1.5 Perímetros y superficies</a>
+          <a href="#sec-6">1.6 Simetría y movimientos en el plano</a>
+          <a href="#sec-7">1.7 Cuerpos geométricos y planos</a>
+          <a href="#sec-8" class="nav-challenge">1.8 Problemas y desafíos</a>
+          <a href="#sec-repaso" class="nav-review">🔄 Repasamos lo aprendido</a>
+          <a href="#sec-diana" class="nav-selfeval">🎯 Autoevaluación</a>
+          <a href="#sec-comprueba" class="nav-quiz">✓ Comprueba lo aprendido</a>
+        </div>
+      </nav>
+      <div class="topic-content">
+        <!-- SECCIÓN 1: Puntos, rectas y segmentos -->
+        <section id="sec-1" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.1</span> Puntos, rectas y segmentos
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La geometría comienza con elementos muy sencillos. Un <strong>punto</strong> indica una posición y se representa con una letra mayúscula. Una <strong>recta</strong> no tiene extremos; se prolonga sin fin en las dos direcciones.</p>
+              <p>Una <strong>semirrecta</strong> tiene un origen pero continúa en una dirección. Un <strong>segmento</strong> tiene dos extremos y por eso podemos medir su longitud.</p>
+              <p>Dos rectas <strong>paralelas</strong> nunca se cortan; dos rectas <strong>secantes</strong> se cruzan en un punto. Si forman cuatro ángulos rectos, son secantes <strong>perpendiculares</strong>.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Dibuja dos puntos A y B.</li>
+                <li>Únelos: obtienes el <strong>segmento AB</strong>.</li>
+                <li>Prolonga el dibujo por ambos extremos y añade flechas: será una recta.</li>
+                <li>Dibuja otra recta y explica si es paralela o secante a la primera.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 215" role="img" aria-labelledby="mat46-elementos-title" focusable="false">
+                  <title id="mat46-elementos-title">Punto, segmento, semirrecta y recta</title>
+                  <circle cx="75" cy="55" r="5" fill="#007a33"/>
+                  <text x="75" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="700">Punto A</text>
+                  <line x1="198" y1="55" x2="327" y2="55" stroke="#2563eb" stroke-width="4"/>
+                  <circle cx="198" cy="55" r="4" fill="#2563eb"/>
+                  <circle cx="327" cy="55" r="4" fill="#2563eb"/>
+                  <text x="260" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="700">Segmento</text>
+                  <line x1="400" y1="55" x2="532" y2="55" stroke="#007a33" stroke-width="4"/>
+                  <polygon points="532,55 521,48 521,62" fill="#007a33"/>
+                  <text x="466" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="700">Semirrecta</text>
+                  <line x1="577" y1="55" x2="689" y2="55" stroke="#007a33" stroke-width="4"/>
+                  <polygon points="577,55 588,48 588,62" fill="#007a33"/>
+                  <polygon points="689,55 678,48 678,62" fill="#007a33"/>
+                  <text x="634" y="83" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#334155" font-weight="700">Recta</text>
+                  <line x1="60" y1="135" x2="250" y2="135" stroke="#2563eb" stroke-width="3"/>
+                  <line x1="60" y1="158" x2="250" y2="158" stroke="#2563eb" stroke-width="3"/>
+                  <text x="155" y="187" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#005724" font-weight="750">Paralelas</text>
+                  <line x1="385" y1="131" x2="575" y2="174" stroke="#007a33" stroke-width="3"/>
+                  <line x1="385" y1="174" x2="575" y2="131" stroke="#2563eb" stroke-width="3"/>
+                  <text x="480" y="196" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#005724" font-weight="750">Secantes</text>
+                </svg>
+                <figcaption>Observa los extremos: el segmento tiene dos; la semirrecta, uno; la recta, ninguno.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Los bordes largos de una vía de tren pueden verse como rectas <strong>paralelas</strong>.</li>
+                <li>Dos calles que se cruzan forman rectas <strong>secantes</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 1. Identifica cada elemento</h3>
+              <ol type="a" class="subquestions">
+                <li>Una línea con dos extremos marcados</li>
+                <li>Una línea que sigue sin límite a ambos lados</li>
+                <li>Una línea con un origen y una flecha</li>
+                <li>La marca de una esquina en un plano</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 2. Dibuja en tu cuaderno</h3>
+              <ol type="a" class="subquestions">
+                <li>Una recta y un punto fuera de ella</li>
+                <li>Dos segmentos de distinta longitud</li>
+                <li>Dos rectas paralelas</li>
+                <li>Dos rectas secantes</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 3. Busca elementos en el entorno</h3>
+              <ol type="a" class="subquestions">
+                <li>Bordes de una regla</li>
+                <li>Cruce de dos calles</li>
+                <li>Una esquina de la pizarra</li>
+                <li>Las líneas de un paso de peatones</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 4. Razona sobre las relaciones</h3>
+              <ol type="a" class="subquestions">
+                <li>Dos rectas paralelas se cortan: ¿sí o no?</li>
+                <li>Un segmento tiene dos extremos: ¿sí o no?</li>
+                <li>Una recta termina en sus extremos: ¿sí o no?</li>
+                <li>Dos rectas secantes comparten un punto: ¿sí o no?</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 2: Ángulos y giros -->
+        <section id="sec-2" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.2</span> Ángulos y giros
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Un <strong>ángulo</strong> es la abertura que forman dos semirrectas que parten de un mismo punto, llamado <strong>vértice</strong>. Sus dos lados son las semirrectas.</p>
+              <p>Medimos los ángulos en <strong>grados (°)</strong>. Un ángulo <strong>recto</strong> mide 90°. Uno <strong>agudo</strong> mide menos de 90°; uno <strong>obtuso</strong>, más de 90° y menos de 180°.</p>
+              <p>Los giros también se expresan en grados: un cuarto de vuelta = 90°; media vuelta = 180°; una vuelta completa = 360°.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Identifica el vértice, donde se unen los dos lados.</li>
+                <li>Observa la abertura, no la longitud de los lados.</li>
+                <li>Compara con una esquina cuadrada, que mide 90°.</li>
+                <li>Decide si es agudo, recto u obtuso.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="mat46-angulos-title" focusable="false">
+                  <title id="mat46-angulos-title">Tres tipos de ángulos</title>
+                  <line x1="35" y1="124" x2="150" y2="124" stroke="#334155" stroke-width="3"/>
+                  <line x1="35" y1="124" x2="112.78174593052023" y2="46.218254069479784" stroke="#2563eb" stroke-width="3"/>
+                  <circle cx="35" cy="124" r="5" fill="#007a33"/>
+                  <text x="95" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Agudo</text>
+                  <line x1="295" y1="124" x2="410" y2="124" stroke="#334155" stroke-width="3"/>
+                  <line x1="295" y1="124" x2="295.0" y2="14.0" stroke="#2563eb" stroke-width="3"/>
+                  <circle cx="295" cy="124" r="5" fill="#007a33"/>
+                  <text x="355" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Recto</text>
+                  <line x1="540" y1="124" x2="655" y2="124" stroke="#334155" stroke-width="3"/>
+                  <line x1="540" y1="124" x2="462.21825406947977" y2="46.21825406947977" stroke="#2563eb" stroke-width="3"/>
+                  <circle cx="540" cy="124" r="5" fill="#007a33"/>
+                  <text x="600" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">Obtuso</text>
+                </svg>
+                <figcaption>Un ángulo agudo mide menos de 90°, el recto 90° y el obtuso más de 90° y menos de 180°.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>La esquina de un libro rectangular mide <strong>90°</strong>.</li>
+                <li>Si una persona da media vuelta, gira <strong>180°</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Clasifica el ángulo</h3>
+              <ol type="a" class="subquestions">
+                <li>35°</li>
+                <li>90°</li>
+                <li>125°</li>
+                <li>80°</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Relaciona giro y grados</h3>
+              <ol type="a" class="subquestions">
+                <li>Un cuarto de vuelta</li>
+                <li>Media vuelta</li>
+                <li>Tres cuartos de vuelta</li>
+                <li>Una vuelta completa</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Dibuja ángulos con transportador</h3>
+              <ol type="a" class="subquestions">
+                <li>45°</li>
+                <li>90°</li>
+                <li>120°</li>
+                <li>60°</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Interpreta giros en un itinerario</h3>
+              <ol type="a" class="subquestions">
+                <li>Mirando al norte, giras 90° a la derecha</li>
+                <li>Mirando al sur, giras 180°</li>
+                <li>Mirando al este, giras 90° a la izquierda</li>
+                <li>Mirando al oeste, giras 90° a la derecha</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: Polígonos y sus propiedades -->
+        <section id="sec-3" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.3</span> Polígonos y sus propiedades
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Un <strong>polígono</strong> es una figura plana y cerrada formada únicamente por segmentos rectos. Cada segmento es un <strong>lado</strong> y el punto donde se unen dos lados es un <strong>vértice</strong>.</p>
+              <p>Según el número de lados, tenemos <strong>triángulos</strong> (3), <strong>cuadriláteros</strong> (4), <strong>pentágonos</strong> (5), <strong>hexágonos</strong> (6), etcétera.</p>
+              <p>No todos los cuadriláteros son cuadrados: también hay rectángulos, rombos y trapecios. Los cuadrados tienen cuatro lados iguales y cuatro ángulos rectos; los rectángulos tienen cuatro ángulos rectos.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Recorre con el dedo el contorno de la figura.</li>
+                <li>Cuenta los lados rectos.</li>
+                <li>Cuenta también los vértices.</li>
+                <li>Si tiene cinco lados, es un <strong>pentágono</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 191" role="img" aria-labelledby="mat46-poligonos-title" focusable="false">
+                  <title id="mat46-poligonos-title">Polígonos según el número de lados</title>
+                  <polygon points="120,25 180,140 60,140" fill="#e6f4ea" stroke="#007a33" stroke-width="3"/>
+                  <rect x="290" y="32" width="125" height="108" rx="0" fill="#e6f4ea" stroke="#007a33" stroke-width="3"/>
+                  <polygon points="555,20 610,55 602,130 507,130 498,55" fill="#e6f4ea" stroke="#007a33" stroke-width="3"/>
+                  <text x="120" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="700">Triángulo · 3 lados</text>
+                  <text x="353" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="700">Cuadrilátero · 4</text>
+                  <text x="554" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="700">Pentágono · 5</text>
+                </svg>
+                <figcaption>Los lados son segmentos rectos y los vértices son los puntos donde se unen.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Un triángulo tiene <strong>3 lados y 3 vértices</strong>.</li>
+                <li>Un hexágono tiene <strong>6 lados y 6 vértices</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 1. Nombra el polígono</h3>
+              <ol type="a" class="subquestions">
+                <li>3 lados</li>
+                <li>4 lados</li>
+                <li>5 lados</li>
+                <li>6 lados</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 2. Indica lados y vértices</h3>
+              <ol type="a" class="subquestions">
+                <li>Triángulo</li>
+                <li>Rectángulo</li>
+                <li>Pentágono</li>
+                <li>Octógono</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 3. Dibuja y compara</h3>
+              <ol type="a" class="subquestions">
+                <li>Cuadrado y rectángulo</li>
+                <li>Triángulo y pentágono</li>
+                <li>Rombo y rectángulo</li>
+                <li>Hexágono y cuadrilátero</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.3.1">
+              <h3>Actividad 4. Explica si es cierto</h3>
+              <ol type="a" class="subquestions">
+                <li>Todos los cuadrados son cuadriláteros</li>
+                <li>Todos los cuadriláteros son cuadrados</li>
+                <li>Un triángulo tiene cuatro vértices</li>
+                <li>Un hexágono tiene seis lados</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 4: Circunferencia y círculo -->
+        <section id="sec-4" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.4</span> Circunferencia y círculo
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>La <strong>circunferencia</strong> es la línea curva cerrada que forma el borde. El <strong>círculo</strong> es toda la región del interior, incluido el borde. Por ejemplo, en una pizza circular, el borde dibuja la circunferencia y toda la pizza forma el círculo.</p>
+              <p>El <strong>centro</strong> es el punto que queda a la misma distancia de todos los puntos del borde. Un <strong>radio</strong> une el centro con la circunferencia. Un <strong>diámetro</strong> une dos puntos de la circunferencia pasando por el centro.</p>
+              <p>Siempre se cumple que <strong>diámetro = 2 × radio</strong>. Para dibujar circunferencias utilizamos un compás.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Localiza el centro de la circunferencia.</li>
+                <li>Dibuja un segmento desde el centro al borde: es un radio.</li>
+                <li>Continúa el segmento hasta el otro lado, pasando por el centro: es un diámetro.</li>
+                <li>Si el radio mide 4 cm, el diámetro mide <strong>8 cm</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 185" role="img" aria-labelledby="mat46-circulo-title" focusable="false">
+                  <title id="mat46-circulo-title">Circunferencia, círculo, radio y diámetro</title>
+                  <circle cx="230" cy="100" r="70" fill="#e6f4ea" stroke="#007a33" stroke-width="4"/>
+                  <line x1="160" y1="100" x2="300" y2="100" stroke="#2563eb" stroke-width="3"/>
+                  <line x1="230" y1="100" x2="230" y2="30" stroke="#d97706" stroke-width="3"/>
+                  <circle cx="230" cy="100" r="4" fill="#334155"/>
+                  <text x="230" y="117" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#334155" font-weight="650">centro</text>
+                  <text x="325" y="74" text-anchor="start" font-family="system-ui, sans-serif" font-size="18" fill="#d97706" font-weight="800">radio</text>
+                  <text x="325" y="112" text-anchor="start" font-family="system-ui, sans-serif" font-size="18" fill="#2563eb" font-weight="800">diámetro</text>
+                  <text x="490" y="154" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#005724" font-weight="750">diámetro = 2 × radio</text>
+                </svg>
+                <figcaption>La circunferencia es el borde verde; el círculo es toda la superficie verde clara.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Radio = 5 cm → diámetro = 2 × 5 = <strong>10 cm</strong>.</li>
+                <li>Diámetro = 12 cm → radio = 12 ÷ 2 = <strong>6 cm</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 1. Identifica los elementos</h3>
+              <ol type="a" class="subquestions">
+                <li>El punto central de una rueda</li>
+                <li>La línea que bordea una moneda</li>
+                <li>Un segmento del centro al borde</li>
+                <li>Un segmento de borde a borde que pasa por el centro</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 2. Calcula diámetros</h3>
+              <ol type="a" class="subquestions">
+                <li>Radio de 2 cm</li>
+                <li>Radio de 5 cm</li>
+                <li>Radio de 7 cm</li>
+                <li>Radio de 9 cm</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 3. Calcula radios</h3>
+              <ol type="a" class="subquestions">
+                <li>Diámetro de 6 cm</li>
+                <li>Diámetro de 10 cm</li>
+                <li>Diámetro de 14 cm</li>
+                <li>Diámetro de 18 cm</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.6.1">
+              <h3>Actividad 4. Dibuja e indica las partes</h3>
+              <ol type="a" class="subquestions">
+                <li>Círculo con radio de 3 cm</li>
+                <li>Circunferencia con diámetro de 8 cm</li>
+                <li>Círculo con centro marcado</li>
+                <li>Circunferencia con radio y diámetro</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 5: Perímetros y superficies -->
+        <section id="sec-5" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.5</span> Perímetros y superficies
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>El <strong>perímetro</strong> es la longitud del borde de una figura plana. Para calcularlo, sumamos la longitud de todos sus lados. Lo expresamos en unidades de longitud, como cm o m.</p>
+              <p>La <strong>superficie</strong> (o área) es la parte que queda dentro de la figura. La medimos con unidades cuadradas, como cm² o m². En un rectángulo podemos contar las casillas o multiplicar largo × ancho.</p>
+              <p>Una misma figura puede tener un perímetro y una superficie distintos: no se pueden sumar metros y metros cuadrados.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Para un jardín de 6 m por 4 m, suma los cuatro lados: 6 + 4 + 6 + 4 = 20 m.</li>
+                <li>Para el área, cuenta 6 columnas y 4 filas de cuadrados de 1 m².</li>
+                <li>Multiplica 6 × 4 = 24 m².</li>
+                <li>Compara: el perímetro es <strong>20 m</strong> y la superficie es <strong>24 m²</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 191" role="img" aria-labelledby="mat46-perimetro-title" focusable="false">
+                  <title id="mat46-perimetro-title">Perímetro y superficie de rectángulo</title>
+                  <rect x="160" y="30" width="360" height="112" rx="0" fill="#d9f1e3" stroke="#007a33" stroke-width="3"/>
+                  <line x1="220" y1="30" x2="220" y2="142" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="280" y1="30" x2="280" y2="142" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="340" y1="30" x2="340" y2="142" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="400" y1="30" x2="400" y2="142" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="460" y1="30" x2="460" y2="142" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="160" y1="58" x2="520" y2="58" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="160" y1="86" x2="520" y2="86" stroke="#9cceb3" stroke-width="1"/>
+                  <line x1="160" y1="114" x2="520" y2="114" stroke="#9cceb3" stroke-width="1"/>
+                  <text x="340" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#005724" font-weight="750">6 m</text>
+                  <text x="555" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#005724" font-weight="750">4 m</text>
+                  <text x="340" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#334155" font-weight="700">Perímetro: 20 m   •   Superficie: 24 m²</text>
+                </svg>
+                <figcaption>El perímetro rodea la figura; la superficie cubre el interior.</figcaption>
+              </figure>
+              <aside class="theory-tip">
+                <strong>Recuerda:</strong> Perímetro = contorno; superficie = interior. No confundas sus unidades.</aside>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Un cuadrado de 3 cm de lado tiene perímetro <strong>12 cm</strong> y área <strong>9 cm²</strong>.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 1. Calcula perímetros</h3>
+              <ol type="a" class="subquestions">
+                <li>Cuadrado de lado 5 cm</li>
+                <li>Rectángulo de lados 8 cm y 3 cm</li>
+                <li>Triángulo de lados 4, 5 y 6 cm</li>
+                <li>Pentágono regular de lado 4 cm</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 2. Calcula áreas de rectángulos</h3>
+              <ol type="a" class="subquestions">
+                <li>4 cm × 7 cm</li>
+                <li>6 cm × 3 cm</li>
+                <li>5 m × 8 m</li>
+                <li>9 m × 2 m</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 3. Compara perímetro y superficie</h3>
+              <ol type="a" class="subquestions">
+                <li>Rectángulo de 2 × 6 y cuadrado de 4 × 4</li>
+                <li>Rectángulo de 3 × 8 y de 4 × 6</li>
+                <li>Cuadrado de lado 5 y de lado 6</li>
+                <li>Rectángulo de 4 × 7 y de 5 × 6</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.1">
+              <h3>Actividad 4. Resuelve problemas de jardines</h3>
+              <ol type="a" class="subquestions">
+                <li>Vallar un cuadrado de lado 7 m</li>
+                <li>Sembrar un rectángulo de 8 m × 5 m</li>
+                <li>Vallar un rectángulo de 9 m × 4 m</li>
+                <li>Embaldosar un patio de 6 m × 7 m</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 6: Simetría y movimientos en el plano -->
+        <section id="sec-6" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.6</span> Simetría y movimientos en el plano
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Una figura tiene <strong>simetría</strong> cuando puede doblarse por una línea y sus dos mitades coinciden exactamente. Esa línea se llama <strong>eje de simetría</strong>.</p>
+              <p>Una <strong>traslación</strong> es desplazar una figura sin girarla ni cambiar su forma. Un <strong>giro</strong> cambia su orientación alrededor de un punto.</p>
+              <p>En una cuadrícula podemos indicar movimientos con instrucciones sencillas: dos casillas a la derecha, una hacia arriba… El tamaño de la figura no cambia.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Observa un corazón dibujado en papel.</li>
+                <li>Imagina doblarlo por la línea vertical del centro.</li>
+                <li>Si las mitades coinciden, esa línea es un eje de simetría.</li>
+                <li>Si lo mueves tres cuadros sin girarlo, haces una <strong>traslación</strong>.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 179" role="img" aria-labelledby="mat46-simetria-title" focusable="false">
+                  <title id="mat46-simetria-title">Simetría y traslación en una cuadrícula</title>
+                  <polygon points="95,35 130,70 95,112 60,70" fill="#c5e8d2" stroke="#007a33" stroke-width="3"/>
+                  <line x1="95" y1="20" x2="95" y2="127" stroke="#2563eb" stroke-width="2" stroke-dasharray="6,5"/>
+                  <text x="95" y="151" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#005724" font-weight="750">Eje de simetría</text>
+                  <text x="295" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#2563eb" font-weight="750">→ desplazar →</text>
+                  <polygon points="495,35 530,70 495,112 460,70" fill="#c5e8d2" stroke="#007a33" stroke-width="3"/>
+                  <text x="495" y="151" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#005724" font-weight="750">Misma forma</text>
+                </svg>
+                <figcaption>La figura trasladada conserva su forma y su orientación.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Un cuadrado trasladado 3 casillas a la derecha <strong>no cambia de tamaño</strong>.</li>
+                <li>Un rectángulo puede tener eje de simetría vertical y horizontal.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 1. Busca ejes de simetría</h3>
+              <ol type="a" class="subquestions">
+                <li>Un cuadrado</li>
+                <li>Un rectángulo no cuadrado</li>
+                <li>Un triángulo equilátero</li>
+                <li>Un círculo</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 2. Completa un dibujo simétrico</h3>
+              <ol type="a" class="subquestions">
+                <li>Media casa respecto a eje vertical</li>
+                <li>Media mariposa respecto a eje vertical</li>
+                <li>Media estrella sencilla</li>
+                <li>Medio jardín respecto a eje horizontal</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 3. Traslada figuras en una cuadrícula</h3>
+              <ol type="a" class="subquestions">
+                <li>Un cuadrado 3 a la derecha</li>
+                <li>Un triángulo 2 arriba</li>
+                <li>Un rectángulo 4 a la izquierda</li>
+                <li>Una letra L 2 abajo</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.1.2">
+              <h3>Actividad 4. Explica el movimiento</h3>
+              <ol type="a" class="subquestions">
+                <li>Una figura se desplaza sin girar</li>
+                <li>Una figura gira 90°</li>
+                <li>Una figura se refleja en espejo</li>
+                <li>Una figura se hace el doble de grande</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 7: Cuerpos geométricos y planos -->
+        <section id="sec-7" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">1.7</span> Cuerpos geométricos y planos
+          </h2>
+          <div class="explanation">
+              <h3 class="theory-label">Entendemos el concepto</h3>
+              <p>Los <strong>cuerpos geométricos</strong> tienen tres dimensiones: largo, ancho y alto. Algunos están formados por caras planas, como el <strong>cubo</strong>, el prisma y la pirámide; otros presentan superficies curvas, como la esfera, el cilindro y el cono.</p>
+              <p>En un cubo distinguimos <strong>caras</strong> (6 cuadrados), <strong>aristas</strong> (12 segmentos donde se unen las caras) y <strong>vértices</strong> (8 esquinas). Una lata se parece a un cilindro; una pelota, a una esfera.</p>
+              <p>Un <strong>plano</strong> representa un lugar visto desde arriba. Utilizamos referencias, símbolos y una cuadrícula para localizar edificios, calles y parques.</p>
+              <h3 class="theory-label">Cómo lo hacemos</h3>
+              <ol class="theory-steps">
+                <li>Observa una caja con forma de cubo.</li>
+                <li>Cuenta las caras: 6.</li>
+                <li>Cuenta las aristas: 12.</li>
+                <li>Cuenta los vértices: 8.</li>
+              </ol>
+              <figure class="math-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 207" role="img" aria-labelledby="mat46-cuerpos-title" focusable="false">
+                  <title id="mat46-cuerpos-title">Cubo, cilindro y esfera</title>
+                  <polygon points="88,60 148,32 211,64 150,95" fill="#d5ecdb" stroke="#007a33" stroke-width="3"/>
+                  <polygon points="88,60 150,95 150,159 88,123" fill="#99d7b3" stroke="#007a33" stroke-width="3"/>
+                  <polygon points="150,95 211,64 211,125 150,159" fill="#b4e3c8" stroke="#007a33" stroke-width="3"/>
+                  <text x="149" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Cubo</text>
+                  <ellipse cx="365" cy="55" rx="65" ry="18" fill="#d3eafb" stroke="#2563eb" stroke-width="3"/>
+                  <path d="M300 55 L300 142 A65 18 0 0 0 430 142 L430 55" fill="#acd3f0" stroke="#2563eb" stroke-width="3"/>
+                  <ellipse cx="365" cy="142" rx="65" ry="18" fill="#b5def4" stroke="#2563eb" stroke-width="3"/>
+                  <text x="365" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Cilindro</text>
+                  <circle cx="590" cy="100" r="62" fill="#d9f0e2" stroke="#007a33" stroke-width="3"/>
+                  <ellipse cx="590" cy="100" rx="62" ry="19" fill="none" stroke="#007a33" stroke-dasharray="5,4" stroke-width="2"/>
+                  <text x="590" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#005724" font-weight="750">Esfera</text>
+                </svg>
+                <figcaption>Las figuras planas ocupan una superficie; los cuerpos tienen volumen.</figcaption>
+              </figure>
+            </div>
+          <div class="example">
+              <strong>Ejemplo resuelto, paso a paso:</strong>
+              <ol class="worked-steps">
+                <li>Un dado es un <strong>cubo</strong>; una lata de refresco es un <strong>cilindro</strong>.</li>
+                <li>En un plano, localizar una biblioteca exige seguir las referencias de calles o cuadrículas.</li>
+              </ol>
+            </div>
+          <!-- Cuatro actividades de cuatro subapartados, un criterio por actividad. -->
+          <div class="activity-grid">
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 1. Relaciona objetos y cuerpos</h3>
+              <ol type="a" class="subquestions">
+                <li>Dado</li>
+                <li>Lata de conservas</li>
+                <li>Pelota</li>
+                <li>Gorro de fiesta</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 2. Indica si tiene superficie curva</h3>
+              <ol type="a" class="subquestions">
+                <li>Cubo</li>
+                <li>Esfera</li>
+                <li>Cilindro</li>
+                <li>Prisma rectangular</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 3. Dibuja un plano en cuadrícula</h3>
+              <ol type="a" class="subquestions">
+                <li>Escuela en A2 y parque en C4</li>
+                <li>Biblioteca en B3 y huerto en D5</li>
+                <li>Hospital en C1 y plaza en A4</li>
+                <li>Museo en D2 y mercado en B5</li>
+              </ol>
+            </article>
+            <article class="exercise-card" data-criterio="MAT.4.5.2">
+              <h3>Actividad 4. Describe un recorrido sencillo</h3>
+              <ol type="a" class="subquestions">
+                <li>Desde A1 hasta A4</li>
+                <li>Desde B2 hasta D2</li>
+                <li>Desde C3 hasta A3</li>
+                <li>Desde D4 hasta B1</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+        <section id="sec-8" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number section-number-amber">1.8</span> Problemas y desafíos
+          </h2>
+          <h3 class="problem-subtitle">Parte A. Problemas contextualizados</h3>
+          <p>Lee cada situación, identifica los datos, elige las operaciones y escribe una respuesta con sentido.</p>
+          <div class="problem-grid">
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 1. Valla del huerto</h4>
+              <p>Un huerto rectangular mide 12 m de largo y 7 m de ancho. ¿Cuántos metros de valla se necesitan?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 2. Baldosas del patio</h4>
+              <p>Una zona rectangular tiene 6 filas de 8 baldosas. ¿Cuántas baldosas ocupa?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 3. Radio de la fuente</h4>
+              <p>Una fuente circular tiene un diámetro de 10 m. ¿Cuánto mide su radio?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 4. La señal triangular</h4>
+              <p>Una señal tiene lados de 30 cm, 30 cm y 30 cm. ¿Cuál es su perímetro?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 5. El parque cuadrado</h4>
+              <p>Un parque cuadrado tiene lados de 9 m. Calcula su perímetro y superficie.</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 6. Giro en la esquina</h4>
+              <p>Desde una calle orientada al norte, un ciclista gira 90° a la derecha. ¿En qué dirección continúa?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 7. Vitrina de museo</h4>
+              <p>Una vitrina tiene forma de prisma rectangular. ¿Qué objetos del aula tienen formas similares?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 8. La plaza y la escuela</h4>
+              <p>En la cuadrícula la escuela está en B2 y la plaza en B5. ¿Cuántas casillas separan ambos lugares?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 9. Dos jardines</h4>
+              <p>Un rectángulo mide 5 m × 9 m y otro 6 m × 8 m. ¿Cuál tiene mayor superficie?</p>
+            </article>
+            <article class="problem-card" data-criterio="MAT.4.1.1">
+              <h4>Problema 10. Ejes de simetría</h4>
+              <p>Dibuja un rectángulo no cuadrado y un cuadrado. ¿Cuántos ejes de simetría tiene cada uno?</p>
+            </article>
+          </div>
+          <h3 class="problem-subtitle challenge-subtitle">Parte B. Desafíos matemáticos integrados</h3>
+          <p>Aplicamos lo aprendido para investigar, tomar decisiones y comunicar resultados.</p>
+          <div class="challenge-list">
+            <article class="challenge-card" data-criterio="MAT.4.5.2">
+              <h4>Desafío 1. Diseñamos un barrio sostenible</h4>
+              <p>En una cuadrícula, distribuid escuela, parque, centro de salud, biblioteca y huerto comunitario.</p>
+              <ol>
+                <li>Dibujad el plano con una leyenda para cinco lugares.</li>
+                <li>Incluid un jardín rectangular y calculad su perímetro.</li>
+                <li>Elegid zonas con simetría y explicad su utilidad.</li>
+                <li>Presentad un recorrido que conecte tres espacios.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.8.1">
+              <h4>Desafío 2. El parque accesible</h4>
+              <p>Un parque rectangular mide 12 m por 8 m y necesita una senda alrededor.</p>
+              <ol>
+                <li>Calculad el perímetro del parque.</li>
+                <li>Representad dos posibles accesos desde calles diferentes.</li>
+                <li>Explicad cómo decidiríais en grupo un recorrido accesible para todas las personas.</li>
+              </ol>
+            </article>
+            <article class="challenge-card" data-criterio="MAT.4.5.1">
+              <h4>Desafío 3. Buscamos figuras</h4>
+              <p>Recorred el aula o el centro con una hoja de observación.</p>
+              <ol>
+                <li>Anotad cuatro objetos con formas geométricas diferentes.</li>
+                <li>Dibujad uno e identificad sus elementos.</li>
+                <li>Relacionad esas formas con una mejora para el barrio.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+        <section id="sec-repaso" class="lesson-section review-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">↺</span> Repasamos lo aprendido
+          </h2>
+          <p>Dos fichas para consolidar los contenidos y profundizar en sus aplicaciones.</p>
+          <div class="review-group ">
+            <h3>Ficha de refuerzo</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">Refuerzo 1.1 · Puntos, rectas y segmentos</span>
+                <p><strong>Repasa: dibuja en tu cuaderno</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Una recta y un punto fuera de ella</li>
+                  <li>Dos segmentos de distinta longitud</li>
+                  <li>Dos rectas paralelas</li>
+                  <li>Dos rectas secantes</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Refuerzo 1.2 · Ángulos y giros</span>
+                <p><strong>Repasa: relaciona giro y grados</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Un cuarto de vuelta</li>
+                  <li>Media vuelta</li>
+                  <li>Tres cuartos de vuelta</li>
+                  <li>Una vuelta completa</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.3.1">
+                <span class="review-tag">Refuerzo 1.3 · Polígonos y sus propiedades</span>
+                <p><strong>Repasa: indica lados y vértices</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Triángulo</li>
+                  <li>Rectángulo</li>
+                  <li>Pentágono</li>
+                  <li>Octógono</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">Refuerzo 1.4 · Circunferencia y círculo</span>
+                <p><strong>Repasa: calcula diámetros</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Radio de 2 cm</li>
+                  <li>Radio de 5 cm</li>
+                  <li>Radio de 7 cm</li>
+                  <li>Radio de 9 cm</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Refuerzo 1.5 · Perímetros y superficies</span>
+                <p><strong>Repasa: calcula áreas de rectángulos</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>4 cm × 7 cm</li>
+                  <li>6 cm × 3 cm</li>
+                  <li>5 m × 8 m</li>
+                  <li>9 m × 2 m</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Refuerzo 1.6 · Simetría y movimientos en el plano</span>
+                <p><strong>Repasa: completa un dibujo simétrico</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Media casa respecto a eje vertical</li>
+                  <li>Media mariposa respecto a eje vertical</li>
+                  <li>Media estrella sencilla</li>
+                  <li>Medio jardín respecto a eje horizontal</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Refuerzo 1.7 · Cuerpos geométricos y planos</span>
+                <p><strong>Repasa: indica si tiene superficie curva</strong></p>
+                <p class="hint">Resuelve con orden; puedes apoyar tus respuestas con un dibujo o un esquema.</p>
+                <ol type="a" class="subquestions">
+                  <li>Cubo</li>
+                  <li>Esfera</li>
+                  <li>Cilindro</li>
+                  <li>Prisma rectangular</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.1">
+                <span class="review-tag">Refuerzo 1.8 · Problemas y desafíos</span>
+                <p>Identifica datos y preguntas en estos cuatro problemas de la situación.</p>
+                <ol type="a" class="subquestions">
+                  <li>Lee el problema «Valla del huerto» y subraya los datos.</li>
+                  <li>Lee el problema «Baldosas del patio» y subraya los datos.</li>
+                  <li>Lee el problema «Radio de la fuente» y subraya los datos.</li>
+                  <li>Lee el problema «La señal triangular» y subraya los datos.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+          <div class="review-group review-ampliacion">
+            <h3>Ficha de ampliación</h3>
+            <div class="review-grid">
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">Ampliacion 1.1 · Puntos, rectas y segmentos</span>
+                <p><strong>Amplía: razona sobre las relaciones</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Dos rectas paralelas se cortan: ¿sí o no?</li>
+                  <li>Un segmento tiene dos extremos: ¿sí o no?</li>
+                  <li>Una recta termina en sus extremos: ¿sí o no?</li>
+                  <li>Dos rectas secantes comparten un punto: ¿sí o no?</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Ampliacion 1.2 · Ángulos y giros</span>
+                <p><strong>Amplía: interpreta giros en un itinerario</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Mirando al norte, giras 90° a la derecha</li>
+                  <li>Mirando al sur, giras 180°</li>
+                  <li>Mirando al este, giras 90° a la izquierda</li>
+                  <li>Mirando al oeste, giras 90° a la derecha</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.3.1">
+                <span class="review-tag">Ampliacion 1.3 · Polígonos y sus propiedades</span>
+                <p><strong>Amplía: explica si es cierto</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Todos los cuadrados son cuadriláteros</li>
+                  <li>Todos los cuadriláteros son cuadrados</li>
+                  <li>Un triángulo tiene cuatro vértices</li>
+                  <li>Un hexágono tiene seis lados</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.1">
+                <span class="review-tag">Ampliacion 1.4 · Circunferencia y círculo</span>
+                <p><strong>Amplía: dibuja e indica las partes</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Círculo con radio de 3 cm</li>
+                  <li>Circunferencia con diámetro de 8 cm</li>
+                  <li>Círculo con centro marcado</li>
+                  <li>Circunferencia con radio y diámetro</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.1">
+                <span class="review-tag">Ampliacion 1.5 · Perímetros y superficies</span>
+                <p><strong>Amplía: resuelve problemas de jardines</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Vallar un cuadrado de lado 7 m</li>
+                  <li>Sembrar un rectángulo de 8 m × 5 m</li>
+                  <li>Vallar un rectángulo de 9 m × 4 m</li>
+                  <li>Embaldosar un patio de 6 m × 7 m</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.1.2">
+                <span class="review-tag">Ampliacion 1.6 · Simetría y movimientos en el plano</span>
+                <p><strong>Amplía: explica el movimiento</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Una figura se desplaza sin girar</li>
+                  <li>Una figura gira 90°</li>
+                  <li>Una figura se refleja en espejo</li>
+                  <li>Una figura se hace el doble de grande</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.5.2">
+                <span class="review-tag">Ampliacion 1.7 · Cuerpos geométricos y planos</span>
+                <p><strong>Amplía: describe un recorrido sencillo</strong></p>
+                <p class="hint">Resuelve, comprueba o justifica tu respuesta; explica al menos una decisión.</p>
+                <ol type="a" class="subquestions">
+                  <li>Desde A1 hasta A4</li>
+                  <li>Desde B2 hasta D2</li>
+                  <li>Desde C3 hasta A3</li>
+                  <li>Desde D4 hasta B1</li>
+                </ol>
+              </article>
+              <article class="review-card" data-criterio="MAT.4.6.2">
+                <span class="review-tag">Ampliacion 1.8 · Problemas y desafíos</span>
+                <p>Aplica otra estrategia y explica por qué también permite llegar a la solución.</p>
+                <ol type="a" class="subquestions">
+                  <li>Propón una forma distinta de resolver el problema «El parque cuadrado» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Giro en la esquina» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «Vitrina de museo» y justifica tu método.</li>
+                  <li>Propón una forma distinta de resolver el problema «La plaza y la escuela» y justifica tu método.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+        <section id="sec-diana" class="lesson-section diana-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number diana-marker">🎯</span> Diana de Autoevaluación Interactiva
+          </h2>
+          <p>Reflexiona sobre tu aprendizaje y marca la opción que mejor te describe.</p>
+          <div class="diana-list">
+            <div class="diana-row">
+              <p><strong>1.1</strong> Distingo puntos, rectas, semirrectas y segmentos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.1">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.2</strong> Reconozco y represento ángulos y giros.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.2">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.3</strong> Clasifico polígonos y explico sus propiedades.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.3">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.4</strong> Distingo círculo y circunferencia, radio y diámetro.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.4">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.5</strong> Calculo y distingo perímetro y superficie.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.5">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.6</strong> Reconozco simetrías y represento desplazamientos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.6">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.7</strong> Relaciono formas y planos con espacios cotidianos.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación del apartado 1.7">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+            <div class="diana-row">
+              <p><strong>1.8</strong> Comprendo problemas, tomo decisiones y explico mis resultados.</p>
+              <div class="diana-options" role="group" aria-label="Autoevaluación de los problemas y desafíos">
+                <button type="button" class="diana-option" aria-pressed="false" data-value="1">Casi nunca</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="2">A veces</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="3">Casi siempre</button>
+                <button type="button" class="diana-option" aria-pressed="false" data-value="4">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="button" class="action-button secondary" id="reset-diana">Borrar mi autoevaluación</button>
+          </div>
+        </section>
+
+        <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+        <section id="sec-comprueba" class="lesson-section">
+          <h2 class="lesson-section-heading">
+            <span class="section-number">✓</span> Comprueba lo aprendido
+          </h2>
+          <p>Marca una respuesta por pregunta y pulsa <strong>Comprobar respuestas</strong>. Puedes repetir el cuestionario.</p>
+          <form id="mat4-quiz" novalidate>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.6.1">
+              <legend>1. ¿Cuántos extremos tiene un segmento?</legend>
+              <label><input type="radio" name="q1" value="a"> 1</label>
+              <label><input type="radio" name="q1" value="b"> 2</label>
+              <label><input type="radio" name="q1" value="c"> Ninguno</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.1.2">
+              <legend>2. ¿Cuánto es un cuarto de vuelta?</legend>
+              <label><input type="radio" name="q2" value="a"> 90°</label>
+              <label><input type="radio" name="q2" value="b"> 180°</label>
+              <label><input type="radio" name="q2" value="c"> 360°</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.3.1">
+              <legend>3. ¿Cuántos lados tiene un pentágono?</legend>
+              <label><input type="radio" name="q3" value="a"> 4</label>
+              <label><input type="radio" name="q3" value="b"> 6</label>
+              <label><input type="radio" name="q3" value="c"> 5</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.6.1">
+              <legend>4. Si el radio mide 3 cm, el diámetro es...</legend>
+              <label><input type="radio" name="q4" value="a"> 3 cm</label>
+              <label><input type="radio" name="q4" value="b"> 6 cm</label>
+              <label><input type="radio" name="q4" value="c"> 9 cm</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.5.1">
+              <legend>5. Un cuadrado de 5 cm de lado tiene perímetro...</legend>
+              <label><input type="radio" name="q5" value="a"> 20 cm</label>
+              <label><input type="radio" name="q5" value="b"> 25 cm</label>
+              <label><input type="radio" name="q5" value="c"> 10 cm</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.4.5.1">
+              <legend>6. El área de un rectángulo de 4 × 6 es...</legend>
+              <label><input type="radio" name="q6" value="a"> 10 cuadrados</label>
+              <label><input type="radio" name="q6" value="b"> 20 cuadrados</label>
+              <label><input type="radio" name="q6" value="c"> 24 cuadrados</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.4.5.2">
+              <legend>7. ¿Qué objeto recuerda a un cilindro?</legend>
+              <label><input type="radio" name="q7" value="a"> Pelota</label>
+              <label><input type="radio" name="q7" value="b"> Lata</label>
+              <label><input type="radio" name="q7" value="c"> Dado</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.4.1.2">
+              <legend>8. Trasladar una figura significa...</legend>
+              <label><input type="radio" name="q8" value="a"> Moverla sin girarla</label>
+              <label><input type="radio" name="q8" value="b"> Darle la vuelta en espejo</label>
+              <label><input type="radio" name="q8" value="c"> Cambiar su tamaño</label>
+              <p class="feedback" aria-live="polite"></p>
+            </fieldset>
+            <div class="button-row">
+              <button class="action-button" type="submit">Comprobar respuestas</button>
+              <button class="action-button secondary" type="reset">Volver a empezar</button>
+            </div>
+            <p id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
+
+      </div>
+      <nav class="lesson-footer" aria-label="Navegación final">
+        <a href="/recursos/cuarto/matematicas4/">← Volver a Matemáticas de 4.º</a>
+        <a href="#contenido-principal">↑ Subir al inicio</a>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>CEIP Joaquín Tena Artigas · Alcolea (Córdoba)</p>
+  </footer>
+  <script>
+    "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat4-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>
