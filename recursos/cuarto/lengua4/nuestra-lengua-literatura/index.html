@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lengua Castellana y Literatura de 4.º de Primaria. SdA LNL4.8: Nuestra lengua, nuestra literatura. Diversidad lingüística, andaluz, coplas, refranes, poemas, rima y antología ilustrada.">
+  <title>Nuestra lengua, nuestra literatura | Lengua 4.º | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <style>
+
+  :root {
+    --lnl-green: #007a33;
+    --lnl-dark: #005724;
+    --lnl-light: #e9f7ee;
+    --lnl-text: #243447;
+    --lnl-muted: #526475;
+    --lnl-border: #d5e8da;
+  }
+
+  html { scroll-behavior: smooth; }
+  .topic-page {
+    background: #f4f7f5;
+    color: var(--lnl-text);
+    min-height: 70vh;
+  }
+  .topic-shell {
+    width: min(94%, 1180px);
+    margin: 0 auto;
+    padding: 1.7rem 0 3.5rem;
+  }
+  .topic-shell *,
+  .topic-shell *::before,
+  .topic-shell *::after { box-sizing: border-box; }
+  .topic-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    overflow: hidden;
+    min-height: 265px;
+    margin: 1.2rem 0 1.6rem;
+    padding: 2.25rem clamp(1.4rem, 4vw, 3rem);
+    border-radius: 24px;
+    background: linear-gradient(120deg, var(--lnl-dark), var(--lnl-green) 66%, #16a057);
+    color: white;
+    box-shadow: 0 14px 40px rgba(0, 87, 36, .13);
+  }
+  .topic-hero::before {
+    content: "ABC";
+    position: absolute;
+    right: 15%;
+    bottom: -2.2rem;
+    font-size: clamp(6rem, 17vw, 13rem);
+    font-weight: 900;
+    opacity: .075;
+    letter-spacing: -.09em;
+    pointer-events: none;
+  }
+  .topic-hero-content { position: relative; z-index: 1; flex: 1; max-width: 720px; }
+  .topic-kicker {
+    margin: 0 0 .7rem;
+    color: #d3f4de;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    font-size: .8rem;
+    font-weight: 750;
+  }
+  .topic-hero h1 {
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+    line-height: 1.15;
+    font-weight: 850;
+    text-align: left;
+  }
+  .topic-hero p:last-child { max-width: 55ch; line-height: 1.6; margin: 0; }
+  .topic-hero-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(23%, 215px);
+    max-height: 235px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .sda-nav,
+  .lesson-section,
+  .sda-recap,
+  .self-eval {
+    background: #fff;
+    border: 1px solid var(--lnl-border);
+    border-radius: 20px;
+    box-shadow: 0 7px 22px rgba(10, 60, 30, .05);
+  }
+  .sda-nav { padding: 1.3rem 1.5rem; margin-bottom: 1.8rem; }
+  .sda-nav h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 850;
+    color: var(--lnl-dark);
+    text-align: left;
+  }
+  .sda-nav-links { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .sda-nav-links a {
+    padding: .52rem .75rem;
+    border-radius: 10px;
+    background: #f0f5f2;
+    color: #254939;
+    text-decoration: none;
+    border: 1px solid #e1ede5;
+    font-size: .84rem;
+    font-weight: 650;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible { background: var(--lnl-dark); color: white; }
+  .topic-content { display: grid; gap: 1.6rem; }
+  .lesson-section { padding: clamp(1.1rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .lesson-heading-wrap { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1.25rem; }
+  .section-number {
+    display: inline-flex;
+    min-width: 3.3rem;
+    min-height: 2.55rem;
+    padding: .35rem .55rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--lnl-green);
+    color: #fff;
+    font-weight: 850;
+    border-radius: 10px;
+  }
+  .lesson-section-heading {
+    margin: .15rem 0 0;
+    color: #213a30;
+    font-size: clamp(1.27rem, 2.5vw, 1.72rem);
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: left;
+  }
+  .section-intro { color: var(--lnl-muted); margin: 0 0 1.2rem; line-height: 1.65; }
+  .reading-box {
+    margin: 1.3rem 0;
+    padding: clamp(1rem, 2.6vw, 1.6rem);
+    border: 1px solid #b7e5c7;
+    border-radius: 18px;
+    background: #f5fff8;
+  }
+  .reading-box h3 { margin: 0 0 1rem; color: var(--lnl-dark); font-size: 1.22rem; }
+  .reading-text { max-width: 83ch; line-height: 1.82; }
+  .reading-text p { margin: 0 0 .9rem; }
+  .reading-text p:last-child { margin-bottom: 0; }
+  .explanation {
+    margin: 1.15rem 0 1.25rem;
+    padding: 1.2rem 1.4rem;
+    border-left: 5px solid var(--lnl-green);
+    border-radius: 0 16px 16px 0;
+    background: var(--lnl-light);
+    line-height: 1.7;
+  }
+  .explanation h3 { margin: 0 0 .65rem; font-size: 1.05rem; color: var(--lnl-dark); }
+  .explanation p { margin: 0 0 .65rem; }
+  .explanation p:last-child { margin-bottom: 0; }
+  .example {
+    margin: 1rem 0 .1rem;
+    padding: .8rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #c2e1ce;
+  }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  .content-table { width: 100%; border-collapse: collapse; background: #fff; font-size: .92rem; }
+  .content-table th,
+  .content-table td { padding: .7rem .85rem; border: 1px solid #c5dfd0; text-align: left; }
+  .content-table th { color: var(--lnl-dark); background: #daf3e1; }
+  .sequence { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin: 1rem 0 .15rem; }
+  .sequence span:nth-child(odd) {
+    background: white; border: 1px solid #c6dfce; padding: .5rem .7rem;
+    border-radius: 9px; font-weight: 750; color: var(--lnl-dark);
+  }
+  .check-panel { padding: .75rem 1rem; background: #fff9e8; border-radius: 9px; margin-top: 1rem; }
+  .activities-heading {
+    margin: 1.5rem 0 1rem;
+    color: #4c6170;
+    font-size: .84rem;
+    text-transform: uppercase;
+    letter-spacing: .055em;
+    font-weight: 850;
+    text-align: left;
+  }
+  .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .activity-card { padding: 1.15rem 1.25rem; border: 1px solid #dce6e0; background: #fafcfb; border-radius: 16px; }
+  .activity-card h4 { margin: 0 0 .75rem; color: var(--lnl-dark); line-height: 1.35; font-size: .98rem; }
+  .activity-card ol { margin: 0; padding-left: 1.45rem; list-style: lower-alpha; }
+  .activity-card li { margin-bottom: .65rem; padding-left: .1rem; line-height: 1.5; font-size: .94rem; }
+  .activity-card li:last-child { margin-bottom: 0; }
+  .lesson-bottom { margin: 1.1rem 0 0; border-top: 1px dashed #dbe6df; padding-top: .9rem; color: #5e716a; font-size: .88rem; }
+  .sda-recap,
+  .self-eval { padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .sda-recap h2,
+  .self-eval h2 { text-align: left; font-size: 1.45rem; color: var(--lnl-dark); margin: 0 0 .8rem; }
+  .sda-recap > p,
+  .self-eval > p { line-height: 1.65; color: var(--lnl-muted); }
+  /* Opciones de respuesta en cajas, como en Lengua de 5.º y 6.º. */
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.15rem 0;
+  }
+  .quiz-item {
+    min-width: 0;
+    border: 1px solid #d7e6db;
+    background: #fbfdfb;
+    border-radius: 13px;
+    padding: 1rem;
+  }
+  .quiz-prompt {
+    color: #274d37;
+    font-weight: 750;
+    font-size: .94rem;
+    line-height: 1.45;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: .6rem;
+    padding: .65rem .8rem;
+    margin: .5rem 0;
+    color: #334155;
+    cursor: pointer;
+    font: inherit;
+    font-size: .875rem;
+    line-height: 1.45;
+    transition: background-color .15s, border-color .15s;
+  }
+  .quiz-option:hover {
+    border-color: var(--lnl-green);
+    background: #f0fdf4;
+  }
+  .quiz-option[aria-pressed="true"] {
+    background: #e6f4ea;
+    border-color: var(--lnl-green);
+    color: var(--lnl-dark);
+    font-weight: 650;
+  }
+  .quiz-option:focus-visible {
+    outline: 3px solid #77ba92;
+    outline-offset: 2px;
+  }
+  .quiz-item.correct { border-color: #3c9961; }
+  .quiz-item.incorrect { border-color: #d79a71; }
+  .quiz-feedback {
+    margin: .6rem 0 0;
+    min-height: 1em;
+    font-size: .86rem;
+  }
+  .quiz-actions { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .lnl-btn { border: 0; border-radius: 11px; padding: .75rem 1.1rem; cursor: pointer; font: inherit; font-weight: 750; background: var(--lnl-green); color: #fff; }
+  .lnl-btn.secondary { background: #e9f3ed; color: var(--lnl-dark); }
+  .lnl-btn:hover,
+  .lnl-btn:focus-visible { filter: brightness(.94); outline-offset: 3px; }
+  #quiz-result { margin: .9rem 0 0; font-weight: 750; color: var(--lnl-dark); }
+  .reflection-list { padding-left: 1.4rem; line-height: 1.75; }
+  .reflection-list li { margin-bottom: .45rem; }
+  /* Estilos históricos del prototipo de apoyo, conservados sin uso. */
+  .support-block {
+    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #cfe1d4;
+    background: #f9fcfa;
+  }
+  .support-block h3 { margin: 0 0 .6rem; color: var(--lnl-dark); }
+  .support-block p { line-height: 1.55; }
+  .support-block ol { list-style: lower-alpha; padding-left: 1.5rem; line-height: 1.6; }
+  .support-block li { margin-bottom: .4rem; }
+
+  /* FICHAS DE REFUERZO Y AMPLIACIÓN - COHERENCIA CON LENGUA 5.º */
+  .sda-recap {
+    border: 2px solid #007a33;
+  }
+  .recap-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    margin: 0 0 1.5rem;
+  }
+  .recap-heading p { margin: .4rem 0 0; color: #65736b; font-size: .87rem; }
+  .heading-icon {
+    display: inline-grid;
+    place-items: center;
+    min-width: 3rem;
+    min-height: 2.8rem;
+    border-radius: 12px;
+    background: #007a33;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  .heading-icon--indigo { background: #4f46e5; }
+  .recap-sheet + .recap-sheet { margin-top: 2.5rem; }
+  .sheet-heading {
+    padding: .85rem 1rem;
+    border-left: 4px solid #007a33;
+    border-radius: 0 12px 12px 0;
+    background: #ecfdf3;
+    margin-bottom: 1.2rem;
+  }
+  .sheet-heading h3 { margin: 0; font-size: 1.05rem; color: #005724; }
+  .sheet-heading--ampliacion { background: #fffbeb; border-color: #d97706; }
+  .sheet-heading--ampliacion h3 { color: #92400e; }
+  .sheet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .sheet-card {
+    min-width: 0;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid #dce6e0;
+    border-radius: 16px;
+    background: #f8faf9;
+  }
+  .sheet-card h4 {
+    display: inline-block;
+    margin: 0 0 .75rem;
+    padding: .32rem .6rem;
+    border-radius: 7px;
+    background: #007a33;
+    color: white;
+    font-size: .9rem;
+    line-height: 1.35;
+  }
+  .sheet-card--ampliacion h4 { background: #b45309; }
+  .sheet-card p { margin: 0 0 .65rem; line-height: 1.55; font-size: .92rem; }
+  .sheet-questions { list-style: lower-alpha; margin: 0; padding-left: 1.5rem; }
+  .sheet-questions li { margin-bottom: .5rem; line-height: 1.5; font-size: .94rem; }
+  .sheet-questions li:last-child { margin-bottom: 0; }
+  .check-learning,
+  .self-eval {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    scroll-margin-top: 80px;
+  }
+  .check-learning h2 { margin: 0 0 .7rem; color: #005724; font-size: 1.4rem; text-align: left; }
+  .check-learning > p { line-height: 1.6; }
+  .self-eval { border: 2px solid #c7d2fe; }
+  .self-eval-grid { display: grid; gap: .9rem; }
+  .eval-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem;
+    background: #f8fafc;
+  }
+  .eval-statement { flex: 1 1 370px; margin: 0; line-height: 1.5; }
+  .eval-statement strong { color: #007a33; margin-right: .25rem; }
+  .auto-eval-group { flex: 0 1 410px; display: flex; gap: .35rem; flex-wrap: wrap; }
+  .eval-btn {
+    padding: .47rem .65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #475569;
+    font: inherit;
+    font-size: .75rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+  .eval-btn:hover,
+  .eval-btn:focus-visible { border-color: #4f46e5; outline-offset: 2px; }
+  .eval-btn[aria-pressed="true"] { color: white; background: #4f46e5; border-color: #4f46e5; }
+  .eval-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.3rem; }
+  #eval-status { flex: 1 1 240px; margin: 0; color: #475569; }
+  @media (max-width: 900px) {
+    .eval-row { flex-direction: column; align-items: stretch; }
+    .eval-statement, .auto-eval-group { flex: auto; }
+  }
+  @media (max-width: 760px) { .sheet-grid { grid-template-columns: 1fr; } }
+  @media print {
+    .auto-eval-group, .eval-actions, .quiz-actions { display: none; }
+    .sda-recap, .self-eval, .check-learning { box-shadow: none; }
+  }
+
+  .back-to-index { display: inline-flex; margin: 1.5rem 0 0; align-items: center; gap: .35rem; color: var(--lnl-dark); font-weight: 800; }
+  .footer-bottom a { text-decoration: none; }
+  @media (max-width: 760px) {
+    .topic-hero { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
+    .topic-hero-image { align-self: center; width: min(45%, 170px); max-height: 180px; }
+    .activity-grid,
+    .quiz-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .topic-shell { width: min(96%, 1180px); padding-top: .7rem; }
+    .topic-hero { border-radius: 17px; }
+    .lesson-section { padding: 1.15rem; }
+    .sda-nav { padding: 1rem; }
+    .lesson-heading-wrap { gap: .55rem; }
+    .section-number { min-width: 2.85rem; font-size: .95rem; }
+    .reading-text { line-height: 1.72; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  /* Navegación de contenidos alineada con el modelo de Lengua 5.º–6.º. */
+  .sda-nav {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #d1fae5;
+  }
+  .sda-nav h2 {
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    color: #007a33;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .sda-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .sda-nav-links a {
+    padding: .375rem .75rem;
+    font-size: .83rem;
+    line-height: 1.5;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #334155;
+    transition: background-color .18s, color .18s;
+    text-decoration: none;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible {
+    color: #fff;
+    background: #007a33;
+  }
+  .sda-nav-links a.nav-repaso {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-repaso:hover,
+  .sda-nav-links a.nav-repaso:focus-visible {
+    background: #d97706;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-autoevaluacion {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-autoevaluacion:hover,
+  .sda-nav-links a.nav-autoevaluacion:focus-visible {
+    background: #4f46e5;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-comprueba {
+    background: #e7f5e9;
+    color: #166534;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-comprueba:hover,
+  .sda-nav-links a.nav-comprueba:focus-visible {
+    background: #007a33;
+    color: #fff;
+  }
+  /* Las columnas no pueden forzar desplazamiento horizontal en móvil. */
+  .topic-content { grid-template-columns: minmax(0, 1fr); }
+  .topic-content > section {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .reading-box,
+  .explanation,
+  .activity-card,
+  .sheet-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  /* Protección frente a la regla general de centrado de .section-heading. */
+  .lesson-section-heading {
+    text-align: left;
+  }
+  .quiz-option {
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    padding: .65rem .8rem;
+    text-align: left;
+    cursor: pointer;
+  }
+  .quiz-option[aria-pressed="true"] {
+    border-color: #007a33;
+    background: #e6f4ea;
+    color: #005724;
+    font-weight: 700;
+  }
+  @media (max-width: 480px) {
+    .sda-nav { padding: 1rem; }
+    .sda-nav-links a { font-size: .78rem; }
+  }
+
+    /* Tablas de conjugación propias de esta SdA. */
+    .explanation .verb-subheading {
+      margin: 1.7rem 0 .65rem;
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--lnl-dark);
+    }
+    .explanation .content-table caption {
+      padding: .5rem 0;
+      text-align: left;
+      font-weight: 700;
+      color: #475569;
+    }
+    .explanation .content-table th:first-child {
+      min-width: 104px;
+    }
+    .explanation .content-table td {
+      min-width: 135px;
+      overflow-wrap: anywhere;
+    }
+
+  /* Disposición de versos y estrofas (sin modificar el diseño institucional). */
+  .poem { margin: .8rem 0; font-style: italic; line-height: 1.8; }
+  .poem p { margin: 0 0 1.1rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- CABECERA Y NAVEGACIÓN DEL CENTRO -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir al inicio">
+      <img class="banner-image" src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas · Alcolea, Córdoba">
+    </a>
+  </header>
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a class="navigation-logo" href="/" aria-label="Ir al inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-controls="main-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">🔒 Área privada Profesorado</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL: /recursos/cuarto/lengua4/nuestra-lengua-literatura/index.html -->
+  <main id="contenido-principal" class="topic-page">
+    <div class="topic-shell">
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li><a href="/recursos/cuarto/lengua4/">Lengua Castellana y Literatura</a></li>
+          <li aria-current="page">Nuestra lengua, nuestra literatura</li>
+        </ol>
+      </nav>
+
+      <!-- PORTADA VERDE INSTITUCIONAL -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <p class="topic-kicker">Lengua Castellana y Literatura · 4.º de Primaria</p>
+          <h1 id="titulo-sda">8. Nuestra lengua, nuestra literatura</h1>
+          <p>Escuchamos las voces de nuestro entorno, descubrimos la poesía y creamos una antología ilustrada.</p>
+        </div>
+        <img
+          src="/img/tomatito/tomatito-nuestra-lengua-literatura.png"
+          alt=""
+          class="topic-hero-image"
+          onerror="this.hidden = true"
+        >
+      </section>
+
+      <!-- NAVEGACIÓN INTERNA: MISMO DISEÑO QUE LNL4.4 -->
+      <!-- Currículo de Lengua 4.º (Andalucía): criterio único disponible en atributos data-criterio, no al alumnado. -->
+      <nav class="sda-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+        <div class="sda-nav-links">
+          <a href="#sec-1">8.1 Comprensión lectora inicial</a>
+          <a href="#sec-2">8.2 La diversidad lingüística: nuestras lenguas</a>
+          <a href="#sec-3">8.3 La modalidad lingüística andaluza</a>
+          <a href="#sec-4">8.4 Literatura oral: coplas, refranes y adivinanzas</a>
+          <a href="#sec-5">8.5 La poesía: versos, estrofas y ritmo</a>
+          <a href="#sec-6">8.6 La rima asonante y consonante</a>
+          <a href="#sec-7">8.7 Recursos literarios: jugar con el lenguaje</a>
+          <a href="#sec-8">8.8 Comprensión lectora aplicada</a>
+          <a href="#sec-9">8.9 Producción: nuestra antología ilustrada</a>
+          <a href="#sec-repaso" class="nav-repaso">🔄 Repasamos lo aprendido</a>
+          <a href="#sec-comprueba" class="nav-comprueba">✔ Comprueba lo aprendido</a>
+          <a href="#sec-autoevaluacion" class="nav-autoevaluacion">🎯 Autoevaluación</a>
+        </div>
+      </nav>
+
+      <div class="topic-content">
+        <!-- APARTADO 8.1: Comprensión lectora inicial -->
+        <section id="sec-1" class="lesson-section" aria-labelledby="titulo-sec-1">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.1</span>
+            <h2 id="titulo-sec-1" class="lesson-section-heading">Comprensión lectora inicial</h2>
+          </div>
+          <p class="section-intro">Leemos un relato sobre las voces y los recuerdos de nuestra comunidad.</p>
+          <article class="reading-box" aria-label="Lectura: La caja de las voces">
+            <h3>📖 La caja de las voces</h3>
+            <div class="reading-text">
+              <p>A principios de mayo, la biblioteca del colegio de Alcolea recibió una caja de madera. No guardaba monedas ni juguetes: contenía una libreta, fotografías y papeles doblados con cuidado. En la tapa se leía: «Palabras para compartir». La directora propuso a cuarto curso investigar su historia.</p>
+              <p>La abuela de Nora reconoció enseguida una de las coplas. Se la había cantado su madre mientras preparaban la merienda. «En casa la repetíamos de pequeñas», explicó, «y cada persona cambiaba alguna palabra». Nora quiso copiarla en el cuaderno de la clase, pero primero pidió permiso para hacerlo.</p>
+              <p>La maestra sugirió una idea: crear una antología que reuniera canciones familiares, refranes, adivinanzas y poemas inventados por el alumnado. Cada equipo se ocuparía de un tipo de texto. También debían anotar de quién habían aprendido las piezas tradicionales y distinguirlas de las creaciones propias.</p>
+              <p>El primer día entrevistaron a las familias. Algunas recordaban palabras que no se oían mucho en el patio; otras hablaban de sonidos característicos de su localidad. Un abuelo de Cádiz pronunciaba algunas palabras de forma distinta a una tía de Córdoba. A Nora le sorprendió que ambos se entendieran perfectamente. «La lengua puede tener muchas voces», les explicó la maestra.</p>
+              <p>Un compañero preguntó si había una única manera correcta de hablar en Andalucía. La maestra respondió que no: existen diferentes maneras de pronunciar y expresarse dentro de nuestra comunidad. Recordó que burlarse de un acento es burlarse de una parte de la historia de quien lo habla. La clase escribió un compromiso: «Escucharemos antes de juzgar».</p>
+              <p>Después organizaron una tarde de lectura. Leo leyó un refrán y explicó su significado sin tomarlo literalmente. Sara recitó una adivinanza y los demás buscaron pistas para resolverla. Cuando llegó su turno, Nora leyó una breve copla familiar con el ritmo que le había enseñado su abuela. El grupo aplaudió y le preguntó de dónde venía.</p>
+              <p>Los niños se dieron cuenta de que una copla puede tener versos que se recuerdan por su ritmo y su rima, mientras que un refrán suele condensar una enseñanza. Decidieron añadir pequeñas explicaciones a cada página para que los lectores pudieran descubrir estas diferencias sin perder el placer de escuchar.</p>
+              <p>Una tarde, Leo propuso copiar un poema de internet sin citarlo. Nora recordó que debían indicar quién había escrito cada texto y contar con permiso cuando fuera necesario. Para evitar dudas, eligieron crear sus propios poemas. Pusieron títulos, separaron las estrofas e hicieron dibujos a mano.</p>
+              <p>El día de la presentación, cada familia encontró una voz conocida junto a otras nuevas. La abuela de Nora escuchó su copla y sonrió. «Las palabras cambian un poco cuando viajan», dijo, «pero siguen uniéndonos». Nora comprendió entonces que aquella caja no estaba llena de papeles viejos: guardaba recuerdos que merecían ser escuchados con respeto.</p>
+            </div>
+          </article>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>Antes de leer, observa el título y plantea una hipótesis. Durante la lectura, identifica <strong>personajes, lugar, hechos y propósito</strong>. Después, distingue la información que el relato dice expresamente de la que puedes deducir.</p>
+            <p>En esta historia, la caja reúne recuerdos de diferentes personas. Un mismo texto tradicional puede tener <strong>variantes</strong>: una palabra, una rima o una melodía pueden cambiar al transmitirse de generación en generación.</p>
+            <div class="example"><strong>Ejemplo:</strong> sabemos que Nora pidió permiso porque el relato lo dice; podemos deducir que su abuela está orgullosa por su sonrisa durante la lectura.</div>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.1; actividad 1 · LCL.4.4.1 -->
+            <article class="activity-card" data-criterio="LCL.4.4.1">
+              <h4>Actividad 1 · Buscamos datos</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Quién propuso crear la antología de la clase?</li>
+                <li>¿Qué trajo la abuela de Nora?</li>
+                <li>¿Dónde escucharon el canto tradicional?</li>
+                <li>¿Qué preparó finalmente la clase?</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.1; actividad 2 · LCL.4.4.1 -->
+            <article class="activity-card" data-criterio="LCL.4.4.1">
+              <h4>Actividad 2 · Ordenamos y resumimos</h4>
+              <ol class="exercise-list" type="a">
+                <li>Ordena estos hechos: entrevistar, presentar el libro, escuchar una copla, proponer el proyecto.</li>
+                <li>Escribe una oración que resuma el comienzo.</li>
+                <li>Resume en tres oraciones cómo trabajaron los equipos.</li>
+                <li>Inventa un título alternativo que tenga relación con el mensaje del relato.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.1; actividad 3 · LCL.4.4.1 -->
+            <article class="activity-card" data-criterio="LCL.4.4.1">
+              <h4>Actividad 3 · Comprendemos las ideas</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Por qué no todos los familiares hablaban exactamente igual?</li>
+                <li>¿Qué descubrió Nora al comparar las expresiones?</li>
+                <li>¿Qué quiso enseñar la maestra cuando habló de los acentos?</li>
+                <li>¿Por qué la clase conservó las palabras de sus familiares al citarlas?</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.1; actividad 4 · LCL.4.4.1 -->
+            <article class="activity-card" data-criterio="LCL.4.4.1">
+              <h4>Actividad 4 · Pensamos y opinamos</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Qué parte del proyecto te gustaría realizar y por qué?</li>
+                <li>¿Por qué debemos escuchar sin burlarnos de los acentos?</li>
+                <li>Escribe una pregunta respetuosa para conocer una canción familiar.</li>
+                <li>Explica qué aporta una ilustración a un texto literario.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Los relatos nos ayudan a comprender por qué las palabras y las canciones pueden conservar recuerdos.</p>
+        </section>
+
+        <!-- APARTADO 8.2: La diversidad lingüística: nuestras lenguas -->
+        <section id="sec-2" class="lesson-section" aria-labelledby="titulo-sec-2">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.2</span>
+            <h2 id="titulo-sec-2" class="lesson-section-heading">La diversidad lingüística: nuestras lenguas</h2>
+          </div>
+          <p class="section-intro">Conocemos la riqueza de las lenguas y aprendemos a respetarlas.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>En España se hablan varias lenguas. Entre ellas están el <strong>castellano o español, el catalán, el gallego, el euskera y el valenciano</strong> (nombre oficial tradicional de la variedad de lengua compartida con el catalán en la Comunitat Valenciana). En algunas zonas también se hablan el aranés y otras lenguas y variedades.</p>
+            <p>Una <strong>lengua</strong> permite comunicarse mediante palabras y reglas compartidas. Una <strong>variedad lingüística</strong> es una manera de emplear una lengua que puede cambiar según la región, la situación o la comunidad. Una persona puede conocer varias lenguas y distintos registros.</p>
+            <div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Lengua</th><th scope="col">Zona de uso destacada</th></tr></thead><tbody><tr><td>Castellano</td><td>Se usa en toda España y en muchos países del mundo</td></tr><tr><td>Gallego</td><td>Galicia</td></tr><tr><td>Euskera</td><td>País Vasco y zonas de Navarra</td></tr><tr><td>Catalán / valenciano</td><td>Cataluña, Illes Balears y Comunitat Valenciana, con denominaciones propias</td></tr><tr><td>Aranés (occitano)</td><td>Valle de Arán</td></tr></tbody></table></div>
+            <p><strong>Regla de convivencia:</strong> ninguna lengua ni ningún acento hace que una persona sea más inteligente o tenga más valor que otra.</p>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.2; actividad 1 · LCL.4.1.1 -->
+            <article class="activity-card" data-criterio="LCL.4.1.1">
+              <h4>Actividad 1 · Observamos y situamos</h4>
+              <ol class="exercise-list" type="a">
+                <li>Nombra cuatro lenguas que se hablan en España además del castellano.</li>
+                <li>Indica una comunidad donde se usa habitualmente el gallego.</li>
+                <li>¿En qué zonas se habla euskera?</li>
+                <li>Explica qué significa que España es plurilingüe.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.2; actividad 2 · LCL.4.1.1 -->
+            <article class="activity-card" data-criterio="LCL.4.1.1">
+              <h4>Actividad 2 · Distinguimos lengua y acento</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Son exactamente lo mismo una lengua y una variedad de una lengua?</li>
+                <li>Da un ejemplo de dos acentos del español.</li>
+                <li>Explica por qué una persona puede hablar más de una lengua.</li>
+                <li>¿Se debe juzgar la inteligencia de alguien por su acento? Justifica.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.2; actividad 3 · LCL.4.1.1 -->
+            <article class="activity-card" data-criterio="LCL.4.1.1">
+              <h4>Actividad 3 · Investigamos nuestro entorno</h4>
+              <ol class="exercise-list" type="a">
+                <li>Pregunta en casa por una palabra de otra lengua que conozcáis.</li>
+                <li>Anota la lengua de esa palabra, si puedes averiguarla.</li>
+                <li>Escribe qué significa y cuándo se utiliza.</li>
+                <li>Indica cómo preguntarías su pronunciación de forma respetuosa.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.2; actividad 4 · LCL.4.1.2 -->
+            <article class="activity-card" data-criterio="LCL.4.1.2">
+              <h4>Actividad 4 · Respetamos la diversidad</h4>
+              <ol class="exercise-list" type="a">
+                <li>Transforma «habla raro» en una expresión respetuosa.</li>
+                <li>Explica por qué ninguna lengua es menos valiosa que otra.</li>
+                <li>Escribe una norma de clase para cuidar la diversidad lingüística.</li>
+                <li>Cuenta una ventaja de aprender palabras de otras lenguas.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Una lengua forma parte de la vida de quienes la hablan: la diversidad enriquece la convivencia.</p>
+        </section>
+
+        <!-- APARTADO 8.3: La modalidad lingüística andaluza -->
+        <section id="sec-3" class="lesson-section" aria-labelledby="titulo-sec-3">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.3</span>
+            <h2 id="titulo-sec-3" class="lesson-section-heading">La modalidad lingüística andaluza</h2>
+          </div>
+          <p class="section-intro">Reconocemos rasgos orales andaluces y valoramos su variedad.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>El <strong>andaluz</strong> es una modalidad de la lengua española que presenta diversos rasgos de pronunciación, vocabulario y entonación. <strong>No existe una sola manera de hablar andaluz</strong>: hay diferencias entre pueblos, comarcas, ciudades y hablantes.</p>
+            <p>Entre los rasgos que pueden aparecer están el <strong>seseo</strong>, el <strong>ceceo</strong>, la <strong>distinción entre /s/ y /θ/</strong> en otras zonas y la <strong>aspiración o debilitamiento de algunas consonantes</strong> al hablar. No todas las personas andaluzas utilizan los mismos rasgos.</p>
+            <div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Situación</th><th scope="col">Qué debemos recordar</th></tr></thead><tbody><tr><td>Pronunciamos con distintos acentos</td><td>Escuchamos y respetamos la variedad oral</td></tr><tr><td>Redactamos un texto escolar</td><td>Aplicamos las convenciones de la ortografía</td></tr><tr><td>Conocemos una palabra local</td><td>Preguntamos su significado sin burlas</td></tr></tbody></table></div>
+            <div class="example"><strong>Importante:</strong> un acento no es un error. Aprender a escribir con ortografía común no significa renunciar a nuestra manera de hablar.</div>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.3; actividad 1 · LCL.4.1.1 -->
+            <article class="activity-card" data-criterio="LCL.4.1.1">
+              <h4>Actividad 1 · Escuchamos con atención</h4>
+              <ol class="exercise-list" type="a">
+                <li>Explica con tus palabras qué es una variedad lingüística.</li>
+                <li>Nombra un rasgo de pronunciación que pueda escucharse en Andalucía.</li>
+                <li>¿Se habla exactamente igual en todas las localidades andaluzas?</li>
+                <li>Explica por qué el andaluz merece respeto.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.3; actividad 2 · LCL.4.9.2 -->
+            <article class="activity-card" data-criterio="LCL.4.9.2">
+              <h4>Actividad 2 · Acento y escritura</h4>
+              <ol class="exercise-list" type="a">
+                <li>Escribe correctamente «Los niños están jugando».</li>
+                <li>Explica por qué la pronunciación cotidiana puede variar de la escritura.</li>
+                <li>¿Debemos escribir las palabras como las pronunciamos siempre?</li>
+                <li>Redacta una frase que distinga hablar de escribir.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.3; actividad 3 · LCL.4.1.2 -->
+            <article class="activity-card" data-criterio="LCL.4.1.2">
+              <h4>Actividad 3 · Variedades sin prejuicios</h4>
+              <ol class="exercise-list" type="a">
+                <li>Corrige el prejuicio «Hablar andaluz es hablar mal».</li>
+                <li>Escribe una respuesta amable si alguien se burla de un acento.</li>
+                <li>Explica por qué un seseante y un distinguidor pueden entenderse.</li>
+                <li>Menciona una situación en la que debemos escuchar con especial atención.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.3; actividad 4 · LCL.4.3.2 -->
+            <article class="activity-card" data-criterio="LCL.4.3.2">
+              <h4>Actividad 4 · Expresiones de nuestro entorno</h4>
+              <ol class="exercise-list" type="a">
+                <li>Pregunta a una persona por una expresión habitual de tu entorno.</li>
+                <li>Escribe su significado sin ridiculizarla.</li>
+                <li>Di en qué situación se usa esa expresión.</li>
+                <li>Prepara una breve explicación oral para compartirla.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Escuchar y escribir son acciones diferentes; ambas pueden hacerse con respeto y cuidado.</p>
+        </section>
+
+        <!-- APARTADO 8.4: Literatura oral: coplas, refranes y adivinanzas -->
+        <section id="sec-4" class="lesson-section" aria-labelledby="titulo-sec-4">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.4</span>
+            <h2 id="titulo-sec-4" class="lesson-section-heading">Literatura oral: coplas, refranes y adivinanzas</h2>
+          </div>
+          <p class="section-intro">Descubrimos textos tradicionales y aprendemos a interpretarlos y crearlos.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>La <strong>literatura de tradición oral</strong> se transmite al contarla, cantarla y escucharla. Muchas piezas tienen versiones diferentes. Las <strong>coplas</strong> son composiciones breves que suelen cantarse; los <strong>refranes</strong> expresan una experiencia o un consejo; las <strong>adivinanzas</strong> ofrecen pistas para descubrir una respuesta.</p>
+            <div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Tipo</th><th scope="col">Modelo</th><th scope="col">Finalidad</th></tr></thead><tbody><tr><td>Copla creada para esta SdA</td><td>En la plaza de mi pueblo / hay una fuente cantando; / cuando regresa la tarde, / parece que está soñando.</td><td>Expresar y transmitir emociones con ritmo</td></tr><tr><td>Refrán tradicional</td><td>«Más vale tarde que nunca»</td><td>Transmitir un consejo</td></tr><tr><td>Adivinanza original</td><td>Tengo hojas y no soy árbol; / sin caminar viajo lejos; / si me abres con cuidado, / te regalo mil reflejos. ¿Qué soy?</td><td>Jugar con pistas (respuesta: un libro)</td></tr></tbody></table></div>
+            <p>Cuando recopiles un texto, pregunta <strong>quién te lo enseñó</strong>. No atribuyas sin pruebas una composición tradicional a una persona concreta.</p>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.4; actividad 1 · LCL.4.8.3 -->
+            <article class="activity-card" data-criterio="LCL.4.8.3">
+              <h4>Actividad 1 · Reconocemos textos populares</h4>
+              <ol class="exercise-list" type="a">
+                <li>Identifica cuál de los textos modelo es una copla.</li>
+                <li>Indica qué texto expresa una enseñanza breve.</li>
+                <li>¿Qué texto propone un acertijo?</li>
+                <li>Explica cómo pueden transmitirse estos textos entre generaciones.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.4; actividad 2 · LCL.4.8.3 -->
+            <article class="activity-card" data-criterio="LCL.4.8.3">
+              <h4>Actividad 2 · Comprendemos refranes</h4>
+              <ol class="exercise-list" type="a">
+                <li>Explica el sentido de «A quien madruga, Dios le ayuda» sin interpretarlo literalmente.</li>
+                <li>Escribe una situación donde se use «Más vale tarde que nunca».</li>
+                <li>¿Qué diferencia hay entre consejo y obligación?</li>
+                <li>Inventa una situación a la que se adapte un refrán conocido.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.4; actividad 3 · LCL.4.8.3 -->
+            <article class="activity-card" data-criterio="LCL.4.8.3">
+              <h4>Actividad 3 · Jugamos con adivinanzas</h4>
+              <ol class="exercise-list" type="a">
+                <li>Lee la adivinanza de la explicación y escribe su respuesta.</li>
+                <li>Subraya dos pistas de la adivinanza.</li>
+                <li>Cambia una pista para hacer el acertijo más difícil.</li>
+                <li>Crea un acertijo de cuatro versos sobre un objeto de la clase.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.4; actividad 4 · LCL.4.8.3 -->
+            <article class="activity-card" data-criterio="LCL.4.8.3">
+              <h4>Actividad 4 · Creamos tradición oral</h4>
+              <ol class="exercise-list" type="a">
+                <li>Escribe una copla original de cuatro versos sobre el patio.</li>
+                <li>Incluye una palabra relacionada con tu localidad.</li>
+                <li>Léela en voz alta respetando el ritmo.</li>
+                <li>Explica qué sentimiento quieres transmitir.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">En la tradición oral hay memoria, juego, música e historias compartidas.</p>
+        </section>
+
+        <!-- APARTADO 8.5: La poesía: versos, estrofas y ritmo -->
+        <section id="sec-5" class="lesson-section" aria-labelledby="titulo-sec-5">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.5</span>
+            <h2 id="titulo-sec-5" class="lesson-section-heading">La poesía: versos, estrofas y ritmo</h2>
+          </div>
+          <p class="section-intro">Aprendemos cómo se organiza un poema y cómo suena cuando lo leemos.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>Un <strong>verso</strong> es cada línea de un poema. Una <strong>estrofa</strong> es un grupo de versos; entre estrofas suele dejarse una línea en blanco. El <strong>ritmo</strong> se percibe al leer mediante las pausas, los acentos y las repeticiones. No todos los poemas necesitan rima.</p>
+            <div class="example"><strong>Poema original: «La plaza despierta»</strong>
+            <div class="poem" role="group" aria-label="Poema de dos estrofas y cuatro versos cada una">
+            <p>Sale el sol por la ventana,<br>pinta de oro la pared;<br>la plaza bosteza lenta,<br>ya se escucha un cascabel.</p>
+            <p>Vuela un pájaro en el aire,<br>una voz llama al portal;<br>entre pasos y campanas,<br>va despertando el lugar.</p>
+            </div><strong>Fíjate:</strong> hay 2 estrofas y 8 versos, cuatro por estrofa.</div>
+            <p>En 4.º podemos acercarnos a la medida del verso contando sílabas de forma orientativa; para estudiar poesía, primero importa distinguir su estructura y <strong>leer expresivamente</strong>. La métrica más compleja se desarrollará en cursos posteriores.</p>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.5; actividad 1 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 1 · Localizamos versos y estrofas</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Cuántos versos tiene la primera estrofa del poema «La plaza despierta»?</li>
+                <li>¿Cuántas estrofas aparecen en total?</li>
+                <li>Escribe el primer verso.</li>
+                <li>Señala dónde comienza la segunda estrofa.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.5; actividad 2 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 2 · Leemos con ritmo</h4>
+              <ol class="exercise-list" type="a">
+                <li>Lee en voz alta la primera estrofa marcando las pausas.</li>
+                <li>¿Qué palabra repetirías para destacar el ritmo?</li>
+                <li>Indica dónde harías una pausa breve.</li>
+                <li>Explica cómo cambia la lectura si hablas demasiado deprisa.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.5; actividad 3 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 3 · Comparamos prosa y poesía</h4>
+              <ol class="exercise-list" type="a">
+                <li>Transforma dos versos del poema en una oración en prosa.</li>
+                <li>Indica una diferencia de presentación entre verso y prosa.</li>
+                <li>¿Todos los poemas tienen que rimar?</li>
+                <li>Explica por qué un poema puede transmitir emociones.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.5; actividad 4 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 4 · Escribimos una estrofa</h4>
+              <ol class="exercise-list" type="a">
+                <li>Escribe cuatro versos sobre un amanecer.</li>
+                <li>Organízalos en una estrofa.</li>
+                <li>Añade una imagen relacionada con un sonido.</li>
+                <li>Léelos de nuevo y mejora el ritmo.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">La lectura pausada ayuda a descubrir el ritmo incluso cuando los versos no riman.</p>
+        </section>
+
+        <!-- APARTADO 8.6: La rima asonante y consonante -->
+        <section id="sec-6" class="lesson-section" aria-labelledby="titulo-sec-6">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.6</span>
+            <h2 id="titulo-sec-6" class="lesson-section-heading">La rima asonante y consonante</h2>
+          </div>
+          <p class="section-intro">Distinguimos las coincidencias de sonidos al final de los versos.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>La <strong>rima</strong> es la coincidencia de sonidos desde la última vocal acentuada de dos versos. En la <strong>rima consonante</strong> coinciden vocales y consonantes; en la <strong>rima asonante</strong> coinciden solo las vocales, aunque pueden variar las consonantes.</p>
+            <div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Pareja</th><th scope="col">Tipo</th><th scope="col">Por qué</th></tr></thead><tbody><tr><td>casa / tasa</td><td>Consonante</td><td>Coinciden los sonidos <strong>-asa</strong></td></tr><tr><td>canción / corazón</td><td>Consonante</td><td>Coinciden los sonidos desde la <strong>ó</strong> tónica hasta el final: <strong>-ón</strong></td></tr><tr><td>luna / bruma</td><td>Asonante</td><td>Coinciden las vocales <strong>u-a</strong>, pero no todas las consonantes</td></tr><tr><td>casa / ala</td><td>Asonante</td><td>Coinciden las vocales <strong>a-a</strong>, pero no las consonantes</td></tr></tbody></table></div>
+            <p><strong>Truco:</strong> lee en voz alta las palabras finales. No basta con observar letras iguales: debemos atender a los <strong>sonidos</strong> y al lugar donde recae el acento.</p>
+            <div class="example">Una poesía también puede tener <strong>versos libres</strong>, sin una rima establecida.</div>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.6; actividad 1 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 1 · Reconocemos sonidos finales</h4>
+              <ol class="exercise-list" type="a">
+                <li>Identifica los sonidos repetidos de «canción / corazón».</li>
+                <li>¿Riman «luna» y «cuna»? ¿De qué tipo?</li>
+                <li>¿Comparten rima «luna» y «bruma»?</li>
+                <li>Explica desde dónde se comparan los sonidos al estudiar la rima.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.6; actividad 2 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 2 · Distinguimos tipos de rima</h4>
+              <ol class="exercise-list" type="a">
+                <li>Clasifica «casa / tasa» como asonante o consonante.</li>
+                <li>Clasifica «pino / río» como asonante o consonante.</li>
+                <li>Indica qué vocales coinciden en «luna / bruma».</li>
+                <li>Explica por qué «casa / cosa» no tienen rima consonante.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.6; actividad 3 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 3 · Completamos versos</h4>
+              <ol class="exercise-list" type="a">
+                <li>Completa: «En mi ventana canta el ___» con una palabra que rime con «gallo».</li>
+                <li>Escribe dos palabras que rimen de modo consonante con «flor».</li>
+                <li>Propón una pareja con rima asonante en «a-a».</li>
+                <li>Revisa que la rima se basa en sonidos y no solo en letras.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.6; actividad 4 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 4 · Creamos rimas propias</h4>
+              <ol class="exercise-list" type="a">
+                <li>Inventa dos versos con rima consonante.</li>
+                <li>Escribe otros dos con rima asonante.</li>
+                <li>Subraya las palabras finales.</li>
+                <li>Señala qué sonidos coinciden en cada pareja.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Para reconocer una rima, compara los sonidos desde la última vocal acentuada.</p>
+        </section>
+
+        <!-- APARTADO 8.7: Recursos literarios: jugar con el lenguaje -->
+        <section id="sec-7" class="lesson-section" aria-labelledby="titulo-sec-7">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.7</span>
+            <h2 id="titulo-sec-7" class="lesson-section-heading">Recursos literarios: jugar con el lenguaje</h2>
+          </div>
+          <p class="section-intro">Reconocemos comparaciones, personificaciones, metáforas sencillas y repeticiones.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>Los <strong>recursos literarios</strong> permiten jugar con las palabras para crear imágenes y emociones. La <strong>comparación</strong> relaciona dos elementos, a menudo mediante «como». La <strong>personificación</strong> atribuye rasgos o acciones humanas a objetos, animales o fenómenos. La <strong>repetición</strong> destaca palabras y crea ritmo. La <strong>metáfora</strong> presenta una cosa como si fuera otra.</p>
+            <div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Recurso</th><th scope="col">Ejemplo original</th><th scope="col">Qué produce</th></tr></thead><tbody><tr><td>Comparación</td><td>«Su risa suena <strong>como</strong> una campana»</td><td>Relaciona el sonido de una risa con una campana</td></tr><tr><td>Personificación</td><td>«La ventana <strong>saluda</strong> al sol»</td><td>Da a la ventana una acción humana</td></tr><tr><td>Repetición</td><td>«<strong>Corre, corre</strong>, viento suave»</td><td>Añade intensidad y ritmo</td></tr><tr><td>Metáfora</td><td>«Tus ojos <strong>son dos luceros</strong>»</td><td>Crea una imagen sin decir «como»</td></tr></tbody></table></div>
+            <p>Las imágenes poéticas no suelen leerse de manera literal. Una ventana no puede saludar: esa expresión invita a imaginar el movimiento de la luz.</p>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.7; actividad 1 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 1 · Encontramos comparaciones</h4>
+              <ol class="exercise-list" type="a">
+                <li>Completa «La nube es suave como…».</li>
+                <li>Señala el término que introduce la comparación en «Corre como el viento».</li>
+                <li>Transforma «Es muy veloz» en una comparación.</li>
+                <li>Explica qué dos elementos se comparan en tu ejemplo.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.7; actividad 2 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 2 · Descubrimos personificaciones</h4>
+              <ol class="exercise-list" type="a">
+                <li>Identifica la personificación de «La luna me guiñó un ojo».</li>
+                <li>¿Puede una montaña reír de verdad? Explica.</li>
+                <li>Escribe una oración donde un libro parezca hablar.</li>
+                <li>Explica qué efecto produce esa imagen en el lector.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.7; actividad 3 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 3 · Jugamos con imágenes</h4>
+              <ol class="exercise-list" type="a">
+                <li>Interpreta «Tus ojos son dos luceros» como imagen poética.</li>
+                <li>Transforma «Sus ojos brillan» en una metáfora sencilla.</li>
+                <li>Encuentra la repetición en «Llueve, llueve sobre el río».</li>
+                <li>Explica cómo puede una repetición crear ritmo.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.7; actividad 4 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 4 · Escribimos con recursos</h4>
+              <ol class="exercise-list" type="a">
+                <li>Redacta un verso con una comparación.</li>
+                <li>Escribe otro con una personificación.</li>
+                <li>Añade una repetición breve a una estrofa.</li>
+                <li>Elige el verso más expresivo y justifica tu elección.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Un recurso expresivo debe aportar significado, no aparecer simplemente por adornar.</p>
+        </section>
+
+        <!-- APARTADO 8.8: Comprensión lectora aplicada -->
+        <section id="sec-8" class="lesson-section" aria-labelledby="titulo-sec-8">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.8</span>
+            <h2 id="titulo-sec-8" class="lesson-section-heading">Comprensión lectora aplicada</h2>
+          </div>
+          <p class="section-intro">Leemos un segundo texto y relacionamos la poesía con la tradición andaluza.</p>
+          <article class="reading-box" aria-label="Lectura: El cuaderno del río">
+            <h3>📖 El cuaderno del río</h3>
+            <div class="reading-text">
+              <p>Samira ayudaba a ordenar los estantes de la biblioteca cuando encontró un cuaderno de tapas verdes. Entre sus páginas había dibujos de un puente, un río y un olivo. En la primera hoja alguien había escrito: «Cada voz tiene un camino». No aparecía el nombre de la persona que había hecho los dibujos.</p>
+              <p>Al verlo, Samira pensó en los paseos que daba junto al río con su padre. Recordaba cómo el agua cambiaba de color según la hora del día. Decidió escribir unos versos y compartirlos con la clase. No quería copiar la frase de la portada como si fuera suya, así que comenzó una página nueva con su nombre.</p>
+              <p>Su poema decía:</p>
+              <div class="poem" role="group" aria-label="Poema original de Samira, cuatro versos">
+                <p>El río guarda secretos,<br>
+                la tarde le da color;<br>
+                las hojas bailan despacio,<br>
+                y las mira el girasol.</p>
+              </div>
+              <p>Su amiga Alba observó que el río no guarda secretos como una persona y que las hojas no bailan de verdad. Samira explicó que había empleado esas imágenes para hacer el paisaje más vivo. La maestra les dijo que esas expresiones eran personificaciones: recursos literarios que atribuyen acciones humanas a seres u objetos que no las realizan literalmente.</p>
+              <p>Durante el recreo, Pablo llevó una copla que había aprendido de su abuelo. Quería incluirla en la antología. El grupo decidió preguntar a la familia si estaba de acuerdo en compartirla y anotar de dónde procedía. La maestra les recordó que los textos tradicionales pueden circular en diferentes versiones y que no conviene atribuirlos a una persona concreta sin pruebas.</p>
+              <p>Alba propuso añadir dos páginas dedicadas a las maneras de hablar de las familias. Un niño contó que en su pueblo algunas palabras sonaban diferentes. Otra compañera dijo que en su casa se hablaban dos lenguas. Nadie se rio. Las voces distintas hacían que el libro pareciera más amplio, como si tuviera ventanas abiertas a muchos lugares.</p>
+              <p>Después revisaron los poemas. Separaron los versos en estrofas, comprobaron las rimas y corrigieron los signos de puntuación. Descubrieron que una palabra podía cambiar para mejorar el ritmo, pero que no era necesario forzar una rima si el verso perdía sentido.</p>
+              <p>El cuaderno terminó convirtiéndose en un pequeño libro con dibujos, poemas, coplas y adivinanzas. Lo titularon «Un río de palabras». Al presentarlo, Samira leyó su poema con calma y explicó lo que quería expresar. La maestra preguntó qué habían aprendido. «Que escuchar una lengua o un poema es escuchar también a las personas», respondió Alba.</p>
+            </div>
+          </article>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p>En la segunda lectura se combinan <strong>narración y poema</strong>. Primero localiza los hechos reales del relato; después interpreta las imágenes del poema. Distingue una <strong>personificación</strong> («el río guarda secretos») de una afirmación literal.</p>
+            <p>Para incluir textos de otras personas en la antología, pregunta por su procedencia y pide permiso cuando corresponda. Una <strong>creación propia</strong> debe identificarse como tal; un texto tradicional puede ofrecer varias versiones. Valorar la diversidad supone escuchar sin ridiculizar las palabras o acentos ajenos.</p>
+            <div class="example"><strong>Lectura expresiva:</strong> respeta las pausas de los versos y explica con tus propias palabras qué emoción te transmite cada imagen.</div>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.8; actividad 1 · LCL.4.4.1 -->
+            <article class="activity-card" data-criterio="LCL.4.4.1">
+              <h4>Actividad 1 · Comprendemos la segunda lectura</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Qué objeto encontró Samira en la biblioteca?</li>
+                <li>¿Qué pidió la maestra al grupo antes de publicar?</li>
+                <li>¿Quién explicó la diferencia entre escuchar y copiar?</li>
+                <li>¿Qué título escogieron para el cuaderno común?</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.8; actividad 2 · LCL.4.8.1 -->
+            <article class="activity-card" data-criterio="LCL.4.8.1">
+              <h4>Actividad 2 · Interpretamos un poema</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Cuántos versos tiene el poema que escribió Samira?</li>
+                <li>Copia un ejemplo de personificación del poema.</li>
+                <li>¿Qué idea transmite la imagen del río?</li>
+                <li>Describe el sentimiento que te sugiere el poema y justifica.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.8; actividad 3 · LCL.4.1.2 -->
+            <article class="activity-card" data-criterio="LCL.4.1.2">
+              <h4>Actividad 3 · Reflexionamos sobre el respeto</h4>
+              <ol class="exercise-list" type="a">
+                <li>¿Por qué los niños pidieron permiso para publicar la copla familiar?</li>
+                <li>¿Por qué no debemos inventar que un texto tiene un autor determinado?</li>
+                <li>¿Qué diferencia hay entre tradición oral y una creación personal?</li>
+                <li>Explica cómo valorar un acento sin imitarlo para burlarse.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.8; actividad 4 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 4 · Relacionamos texto e imagen</h4>
+              <ol class="exercise-list" type="a">
+                <li>Dibuja una escena que represente uno de los versos.</li>
+                <li>Escribe un pie de imagen que explique el dibujo.</li>
+                <li>Relaciona el dibujo con un fragmento concreto de la lectura.</li>
+                <li>Propón una pregunta para un club de lectura escolar.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Una lectura creativa también exige reconocer la procedencia de los textos.</p>
+        </section>
+
+        <!-- APARTADO 8.9: Producción: nuestra antología ilustrada -->
+        <section id="sec-9" class="lesson-section" aria-labelledby="titulo-sec-9">
+          <div class="lesson-heading-wrap">
+            <span class="section-number" aria-hidden="true">8.9</span>
+            <h2 id="titulo-sec-9" class="lesson-section-heading">Producción: nuestra antología ilustrada</h2>
+          </div>
+          <p class="section-intro">Creamos y presentamos una antología de textos propios y de tradición oral.</p>
+          <div class="explanation">
+            <h3>💡 Para comprender y practicar</h3>
+            <p><strong>Reto final:</strong> preparad una <strong>antología ilustrada de la clase</strong> que reúna una copla, una adivinanza, un refrán explicado y uno o varios poemas originales. Añadid una página sobre la diversidad lingüística y las voces del entorno.</p>
+            <div class="sequence"><span>Planificar</span><span>Crear y recopilar</span><span>Revisar</span><span>Ilustrar</span><span>Compartir</span></div>
+            <p>Cada texto debe tener <strong>título</strong>, buena presentación y, cuando proceda, <strong>autoría o procedencia</strong>. Para textos familiares, preguntad antes si podéis compartirlos. Ilustrad las composiciones con dibujos propios y cuidemos el respeto a las variedades de habla.</p>
+            <div class="check-panel"><strong>Lista de comprobación:</strong> ¿hay índice?, ¿se distinguen textos propios y recopilados?, ¿hemos revisado la ortografía?, ¿todos pueden participar?, ¿las ilustraciones ayudan a comprender el contenido?</div>
+            <p><strong>Producto:</strong> libro en papel o digital presentado oralmente a otros compañeros y compañeras.</p>
+          </div>
+          <h3 class="activities-heading">Actividades para practicar</h3>
+          <div class="activity-grid">
+            <!-- Tarea curricular 8.9; actividad 1 · LCL.4.5.1 -->
+            <article class="activity-card" data-criterio="LCL.4.5.1">
+              <h4>Actividad 1 · Planificamos la antología</h4>
+              <ol class="exercise-list" type="a">
+                <li>Elige un título que represente la diversidad y la literatura.</li>
+                <li>Planifica un índice con al menos cuatro tipos de texto.</li>
+                <li>Reparte las responsabilidades del equipo.</li>
+                <li>Explica a quién va dirigida la antología.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.9; actividad 2 · LCL.4.8.2 -->
+            <article class="activity-card" data-criterio="LCL.4.8.2">
+              <h4>Actividad 2 · Creamos textos originales</h4>
+              <ol class="exercise-list" type="a">
+                <li>Escribe una copla de cuatro versos que sea creación tuya.</li>
+                <li>Redacta una adivinanza con al menos tres pistas.</li>
+                <li>Compón un poema de dos estrofas.</li>
+                <li>Añade a uno de tus poemas un recurso literario estudiado.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.9; actividad 3 · LCL.4.9.2 -->
+            <article class="activity-card" data-criterio="LCL.4.9.2">
+              <h4>Actividad 3 · Revisamos y documentamos</h4>
+              <ol class="exercise-list" type="a">
+                <li>Comprueba las tildes y la puntuación de tus textos.</li>
+                <li>Escribe «creación propia» en los textos inventados por ti.</li>
+                <li>Si recopilas un texto familiar, explica quién lo compartió y pide autorización.</li>
+                <li>Añade una ilustración que respete el contenido de cada texto.</li>
+              </ol>
+            </article>
+            <!-- Tarea curricular 8.9; actividad 4 · LCL.4.7.2 -->
+            <article class="activity-card" data-criterio="LCL.4.7.2">
+              <h4>Actividad 4 · Compartimos el libro</h4>
+              <ol class="exercise-list" type="a">
+                <li>Diseña una portada legible para el libro.</li>
+                <li>Prepara una presentación oral de un minuto.</li>
+                <li>Lee un fragmento expresivamente ante tu clase.</li>
+                <li>Explica qué aprendiste sobre las lenguas y la literatura.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="lesson-bottom">Una antología cuidada une imaginación, respeto, revisión y trabajo compartido.</p>
+        </section>
+
+        <!-- REPASAMOS LO APRENDIDO: FICHAS COMPLETAS -->
+        <section id="sec-repaso" class="sda-recap" aria-labelledby="titulo-repaso">
+          <div class="recap-heading">
+            <span class="heading-icon" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Una actividad de cuatro cuestiones por apartado en cada ficha.</p>
+            </div>
+          </div>
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 8.1 · LCL.4.4.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.4.1">
+                <h4>Refuerzo 8.1 · Lectura inicial</h4>
+                <p>Recuerda los hechos principales.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Cómo se llama la protagonista de la primera lectura?</li>
+                  <li>¿Qué guardaba la caja de madera?</li>
+                  <li>¿Qué elaboró la clase?</li>
+                  <li>¿Qué consejo dejó la maestra sobre los acentos?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.2 · LCL.4.1.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.1.1">
+                <h4>Refuerzo 8.2 · Diversidad lingüística</h4>
+                <p>Revisa las lenguas y los usos.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe el nombre de tres lenguas habladas en España.</li>
+                  <li>Relaciona Galicia con una lengua propia.</li>
+                  <li>¿Qué significa ser bilingüe?</li>
+                  <li>Completa: todas las lenguas merecen _____.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.3 · LCL.4.1.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.1.1">
+                <h4>Refuerzo 8.3 · Modalidad andaluza</h4>
+                <p>Distingue habla y escritura.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Existe un único acento andaluz?</li>
+                  <li>Escribe un rasgo de pronunciación que conozcas.</li>
+                  <li>Corrige por escrito: «Los niño juegan» sin burlarte de quien lo pronuncie así.</li>
+                  <li>Escribe una frase que defienda el respeto a los acentos.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.4 · LCL.4.8.3 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.8.3">
+                <h4>Refuerzo 8.4 · Tradición oral</h4>
+                <p>Reconoce cada tipo de texto.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es una copla?</li>
+                  <li>¿Qué enseña normalmente un refrán?</li>
+                  <li>¿Qué debemos hacer para resolver una adivinanza?</li>
+                  <li>Escribe un refrán que conozcas y explica su sentido.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.5 · LCL.4.8.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.8.1">
+                <h4>Refuerzo 8.5 · Versos y estrofas</h4>
+                <p>Identifica las partes del poema.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Define verso.</li>
+                  <li>Define estrofa.</li>
+                  <li>Cuenta los versos de «La plaza despierta».</li>
+                  <li>Escribe una estrofa de dos versos sobre la lluvia.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.6 · LCL.4.8.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.8.1">
+                <h4>Refuerzo 8.6 · Rimas</h4>
+                <p>Escucha las coincidencias.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Riman consonantemente «casa» y «tasa»?</li>
+                  <li>¿Qué vocales coinciden en «luna» y «bruma»?</li>
+                  <li>Propón una palabra con rima consonante para «flor».</li>
+                  <li>Recuerda qué es la rima asonante.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.7 · LCL.4.8.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.8.1">
+                <h4>Refuerzo 8.7 · Recursos literarios</h4>
+                <p>Clasifica las imágenes.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué recurso aparece en «Blanco como la nieve»?</li>
+                  <li>¿Qué recurso aparece en «El sol ríe»?</li>
+                  <li>¿Qué recurso aparece en «Corre, corre»?</li>
+                  <li>Explica con tus palabras una metáfora sencilla.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.8 · LCL.4.4.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.4.1">
+                <h4>Refuerzo 8.8 · Segunda lectura</h4>
+                <p>Comprueba qué recuerdas.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Cómo se titulaba el cuaderno final?</li>
+                  <li>¿Quién escribió el poema del río?</li>
+                  <li>Copia la frase que personifica al río.</li>
+                  <li>¿Por qué pidieron permiso para publicar una copla familiar?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 8.9 · LCL.4.5.1 -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.5.1">
+                <h4>Refuerzo 8.9 · Antología ilustrada</h4>
+                <p>Revisa el producto final.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Anota un título para tu antología.</li>
+                  <li>Escribe un refrán con su explicación.</li>
+                  <li>Señala quién creó uno de tus poemas.</li>
+                  <li>Añade una ilustración relacionada con el texto.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 8.1 · LCL.4.4.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.4.1">
+                <h4>Ampliación 8.1 · Inferencias del relato</h4>
+                <p>Piensa más allá de lo literal.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué la caja era valiosa aunque no guardara dinero.</li>
+                  <li>Compara el punto de vista de Nora y el de Leo sobre las fuentes.</li>
+                  <li>Propón otra manera respetuosa de conservar la tradición oral.</li>
+                  <li>Escribe una conclusión sobre memoria y comunidad.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.2 · LCL.4.1.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.1.1">
+                <h4>Ampliación 8.2 · Lenguas y convivencia</h4>
+                <p>Amplía tu reflexión.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara dos lenguas o variedades que conozcas sin jerarquizarlas.</li>
+                  <li>Explica por qué una persona puede cambiar de registro según la situación.</li>
+                  <li>Diseña una pregunta de entrevista sobre diversidad lingüística.</li>
+                  <li>Crea un lema contra los prejuicios lingüísticos.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.3 · LCL.4.1.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.1.1">
+                <h4>Ampliación 8.3 · Riqueza del andaluz</h4>
+                <p>Analiza usos y estereotipos.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué dos pueblos andaluces pueden compartir y diferir en rasgos orales.</li>
+                  <li>Escribe un ejemplo de burla lingüística y conviértelo en un mensaje respetuoso.</li>
+                  <li>¿Cómo se puede citar una expresión oral sin ridiculizar a su hablante?</li>
+                  <li>Diseña una campaña escolar de respeto a las variedades.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.4 · LCL.4.8.3 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.8.3">
+                <h4>Ampliación 8.4 · Coplas y refranes</h4>
+                <p>Crea y compara.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe una copla original de cuatro versos.</li>
+                  <li>Transforma un refrán conocido en un consejo expresado con tus palabras.</li>
+                  <li>Inventa una adivinanza sobre un oficio del barrio.</li>
+                  <li>Comenta qué conserva y qué cambia en una tradición oral.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.5 · LCL.4.8.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.8.1">
+                <h4>Ampliación 8.5 · Arquitectura poética</h4>
+                <p>Experimenta con estrofas.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Crea un poema de dos estrofas y cuatro versos cada una.</li>
+                  <li>Introduce una pausa expresiva entre ambas.</li>
+                  <li>Reescribe un verso para lograr un ritmo más fluido.</li>
+                  <li>Justifica por qué prefieres una de las dos versiones.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.6 · LCL.4.8.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.8.1">
+                <h4>Ampliación 8.6 · Juego de rimas</h4>
+                <p>Explora sonidos.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe dos parejas de rima consonante y subraya los sonidos coincidentes.</li>
+                  <li>Construye una pareja de rima asonante en «a-a».</li>
+                  <li>Explica por qué no debemos confundir el sonido final con la escritura.</li>
+                  <li>Escribe una estrofa que combine versos con rima y sin ella.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.7 · LCL.4.8.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.8.1">
+                <h4>Ampliación 8.7 · Imágenes poéticas</h4>
+                <p>Combina recursos.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Crea una personificación de un árbol.</li>
+                  <li>Transfórmala en comparación.</li>
+                  <li>Introduce una repetición con sentido expresivo.</li>
+                  <li>Explica qué cambia entre tus tres versiones.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.8 · LCL.4.4.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.4.1">
+                <h4>Ampliación 8.8 · Interpretación crítica</h4>
+                <p>Relaciona textos y emociones.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara el valor del agua en el relato y en el poema.</li>
+                  <li>Explica la metáfora o personificación que te parece más expresiva.</li>
+                  <li>Propón una pregunta para comentar la lectura en un club escolar.</li>
+                  <li>Reescribe un verso cambiando la emoción sin perder el sentido.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 8.9 · LCL.4.5.1 -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.5.1">
+                <h4>Ampliación 8.9 · Edición y difusión</h4>
+                <p>Amplía el producto final.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña un índice temático de al menos cinco páginas.</li>
+                  <li>Redacta una nota sobre cómo se recopilaron los textos familiares.</li>
+                  <li>Propón un formato accesible para compartir la antología.</li>
+                  <li>Escribe una invitación respetuosa a las familias para la presentación.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- COMPRUEBA LO APRENDIDO: CAJAS SELECCIONABLES -->
+        <section id="sec-comprueba" class="check-learning" aria-labelledby="titulo-comprueba">
+          <h2 id="titulo-comprueba" class="lesson-section-heading">Comprueba lo aprendido</h2>
+          <p>Selecciona una caja por pregunta y pulsa «Comprobar respuestas». Podrás corregir tus elecciones y volver a empezar.</p>
+          <form id="quiz-form">
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="1" role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Qué idea expresa mejor la primera lectura?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Es importante imponer un único acento.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Las palabras tradicionales unen recuerdos y personas.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Todas las coplas tienen autor conocido.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="2" role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">2. ¿Qué afirmación es correcta sobre las lenguas de España?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">En España solo se habla castellano.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">El gallego es una variedad del euskera.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">En España conviven varias lenguas.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="0" role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué actitud es adecuada ante una variedad andaluza?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Escuchar con respeto y sin burlas.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Considerarla una forma incorrecta de hablar.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Exigir que todos pronuncien igual.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="1" role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. ¿Cuál de estos textos suele proponer un acertijo?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Un refrán.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Una adivinanza.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Una noticia.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="0" role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. ¿Qué es un verso?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Cada línea de un poema.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Un conjunto de capítulos.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">El título de una narración.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="2" role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Qué es una estrofa?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Una palabra que rima.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Un sinónimo de refrán.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Un grupo de versos.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="1" role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Qué pareja tiene rima consonante?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">luna / bruma</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">casa / tasa</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">casa / ala</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="0" role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Qué coincide en una rima asonante?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Solo las vocales desde la última vocal tónica.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Todas las vocales y consonantes finales.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Solo las letras iniciales.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="2" role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Qué recurso aparece en «La nube llora»?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Comparación.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Refrán.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Personificación.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="1" role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Cuál es una comparación?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">El viento canta.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Su voz suena como un cascabel.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">La tarde es un pañuelo de oro.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 11 -->
+              <div class="quiz-item quiz-question" data-answer="0" role="group" aria-labelledby="quiz-pregunta-11">
+                <h3 id="quiz-pregunta-11" class="quiz-prompt">11. ¿Qué debemos hacer si incluimos una copla familiar en la antología?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Indicar su procedencia y pedir permiso si corresponde.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Firmarla siempre como creación propia.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Modificar el nombre de quien la compartió sin consultar.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 12 -->
+              <div class="quiz-item quiz-question" data-answer="2" role="group" aria-labelledby="quiz-pregunta-12">
+                <h3 id="quiz-pregunta-12" class="quiz-prompt">12. ¿Qué producto elaboramos al final de LNL4.8?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="0" type="button" aria-pressed="false">Una lista de conjugaciones.</button>
+                  <button class="quiz-option" data-option="1" type="button" aria-pressed="false">Una tabla de temperaturas.</button>
+                  <button class="quiz-option" data-option="2" type="button" aria-pressed="false">Una antología ilustrada.</button>
+                </div>
+                <p class="quiz-feedback quiz-result" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button type="button" id="quiz-check" class="lnl-btn">Comprobar respuestas</button>
+              <button type="button" id="quiz-reset" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+        <section id="sec-autoevaluacion" class="self-eval" aria-labelledby="titulo-autoevaluacion">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-autoevaluacion" class="lesson-section-heading">Diana de Autoevaluación Interactiva</h2>
+              <p>Selecciona la opción que mejor representa tu aprendizaje.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.1 · LCL.4.4.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.1</strong> Comprendo un relato e interpreto las ideas que transmite sobre las voces y la memoria.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.2 · LCL.4.1.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.2</strong> Reconozco la diversidad lingüística de España y muestro respeto por otras lenguas.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.3 · LCL.4.1.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.3</strong> Valoro las distintas maneras de hablar andaluz y evito prejuicios lingüísticos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.4 · LCL.4.8.3 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.4</strong> Distingo coplas, refranes y adivinanzas y creo textos siguiendo sus modelos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.5 · LCL.4.8.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.5</strong> Identifico versos y estrofas y leo poemas con pausas y ritmo.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.6 · LCL.4.8.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.6</strong> Diferencio las rimas asonante y consonante mediante sus sonidos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.7 · LCL.4.8.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.7</strong> Reconozco y utilizo comparaciones, personificaciones, metáforas sencillas y repeticiones.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.8 · LCL.4.4.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.8</strong> Interpreto una segunda lectura y relaciono sus imágenes poéticas con el significado.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.8">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- CRITERIO DE AUTOEVALUACIÓN 8.9 · LCL.4.5.1 -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>8.9</strong> Colaboro en una antología ilustrada y reviso sus textos y su procedencia.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 8.9">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">Borrar respuestas</button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 9 apartados.</p>
+          </div>
+        </section>
+      </div>
+
+      <a class="back-to-index" href="/recursos/cuarto/lengua4/">← Volver a Lengua de 4.º</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía · Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverrores.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Autoevaluación: una única caja activa por apartado.
+    document.addEventListener('DOMContentLoaded', function () {
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' + groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('.eval-btn').forEach(function (other) {
+            other.setAttribute('aria-pressed', other === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+
+      // Cuestionario: cajas rectangulares, como en Lengua 5.º y 6.º.
+      const questions = Array.from(document.querySelectorAll('.quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) return;
+          question.querySelectorAll('.quiz-option').forEach(function (other) {
+            other.setAttribute('aria-pressed', other === button ? 'true' : 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-result').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let answered = 0;
+        let correct = 0;
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const result = question.querySelector('.quiz-result');
+          question.classList.remove('correct', 'incorrect');
+          if (!selected) {
+            result.textContent = 'Sin responder.';
+            return;
+          }
+          answered++;
+          if (Number(selected.dataset.option) === Number(question.dataset.answer)) {
+            correct++;
+            question.classList.add('correct');
+            result.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector('.quiz-option[data-option="' + question.dataset.answer + '"]');
+            result.textContent = '✗ Repasa el contenido. Respuesta correcta: ' + answer.textContent.trim();
+          }
+        });
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' + questions.length +
+          ' respuestas correctas. Contestadas: ' + answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-result').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      const year = document.getElementById('current-year');
+      if (year) year.textContent = new Date().getFullYear();
+    });
+  </script>
+  <script defer src="/js/main.js"></script>
+</body>
+</html>
