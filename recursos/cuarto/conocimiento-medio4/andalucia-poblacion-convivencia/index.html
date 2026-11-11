@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Andalucía: población y convivencia. Situación de Aprendizaje CM4.5 de Conocimiento del Medio de 4.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+  <title>Andalucía: población y convivencia | Conocimiento del Medio 4.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Cabecera y navegación compartidas con el resto del colegio. -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    SITUACIÓN DE APRENDIZAJE CM4.5 (también solicitada como CN4.5).
+    Base visual: HTML de Conocimiento del Medio de 5.º y 6.º y SdA recientes.
+    Mantener el verde institucional en las SdA y la clase lesson-section-heading.
+
+    DESTINO PREVISTO:
+    /recursos/cuarto/conocimiento-medio4/andalucia-poblacion-convivencia/index.html
+
+    Marco curricular: segundo ciclo de Educación Primaria, Andalucía.
+    Producto final: guía ciudadana de Andalucía.
+    Criterios de las siete tareas: 5.1.b, 8.1.b, 8.2.b,
+    9.2.b, 9.1.b, 9.3.b, 6.1.b.
+    Se guarda un solo criterio en data-criterio para cada actividad.
+
+    IMÁGENES FUTURAS:
+    /img/conocimiento4/*.webp
+    Se usan figure.media-frame, img con onerror=markImageMissing(this),
+    figcaption, y mensaje alternativo visible si todavía falta el archivo.
+    No añadir botones de impresión ni de pistas.
+  -->
+  <style>
+
+    :root {
+      --cm-primary: #007a33;
+      --cm-dark: #005724;
+      --cm-light: #e6f4ea;
+      --cm-accent: #00a847;
+      --cm-ink: #1e293b;
+      --cm-muted: #475569;
+      --cm-border: #d1e7dd;
+      --cm-bg: #f4f7f5;
+      --cm-amber-light: #fff7e6;
+      --cm-shadow: 0 5px 18px rgba(0, 90, 37, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page {
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+    }
+
+    .topic-page a:not(.skip-link) {
+      text-underline-offset: 0.15em;
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: 0.3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.65rem;
+      color: #94a3b8;
+    }
+
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(
+        110deg,
+        #005724 0%,
+        #007a33 60%,
+        #00a847 100%
+      );
+      color: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .topic-hero::after {
+      content: "✦  ◉";
+      position: absolute;
+      right: 10px;
+      top: -72px;
+      color: rgba(255, 255, 255, 0.055);
+      font-size: 10rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      max-width: 650px;
+      margin: 0.9rem 0 0;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    /* La mascota utiliza la misma imagen compartida que los índices. */
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: 0.35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .lesson-nav-heading {
+      width: 100%;
+      margin: 0 0 0.2rem;
+      color: var(--cm-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .lesson-nav a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Evita que las reglas generales centren las cabeceras. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 0.85rem;
+      border-bottom: 2px solid var(--cm-border);
+      color: var(--cm-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 0.25rem;
+      border-radius: 0.65rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 0.55rem;
+      color: var(--cm-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: 0.55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ol,
+    .topic-page .lesson-section ul {
+      padding-left: 1.4rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 0.9rem 0.9rem 0;
+      background: var(--cm-light);
+    }
+
+    .explanation h3 {
+      margin-top: 0 !important;
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--cm-dark);
+    }
+
+    .info-card {
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      margin-top: 0 !important;
+    }
+
+    .two-columns,
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .step-index {
+      display: inline-grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--cm-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--cm-amber-light);
+      color: #754709;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 0.75rem 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table caption {
+      margin-bottom: 0.55rem;
+      color: var(--cm-muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--cm-border);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* Cajas de imágenes: estructura compartida figure.media-frame. */
+    .topic-page .media-frame:not(.hero-mascot) {
+      margin: 1.3rem 0 1.7rem;
+      padding: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #f9fcfa;
+      box-shadow: 0 2px 10px rgba(0, 90, 37, 0.04);
+      text-align: center;
+    }
+
+    .topic-page .media-frame:not(.hero-mascot) img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      max-height: 440px;
+      margin: 0 auto;
+      border-radius: 0.65rem;
+      object-fit: contain;
+    }
+
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      color: var(--cm-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    /* Hasta incorporar los .webp, se ve la sugerencia sin icono roto. */
+    .image-suggestion {
+      display: none;
+      padding: 1.5rem 1rem;
+      border: 2px dashed #b8dec6;
+      border-radius: 0.65rem;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .image-suggestion strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .media-frame.image-missing .image-suggestion {
+      display: block;
+    }
+
+    .topic-page .media-frame.image-missing > img {
+      display: none;
+    }
+
+    .media-frame.image-missing figcaption {
+      display: none;
+    }
+
+    .practice {
+      margin: 1.5rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .topic-page .practice > h3 {
+      margin-top: 0;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .task-card {
+      margin: 0.9rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .task-card h4 {
+      margin: 0.25rem 0 0.65rem;
+      color: var(--cm-dark);
+      font-size: 1.04rem;
+    }
+
+    .task-card ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      list-style-type: lower-alpha;
+    }
+
+    .task-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .readable-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ======================================================
+       REPASO: fichas de CM5.1/CM5.2 con estructura de LNL4.8
+       ====================================================== */
+    .sda-recap {
+      border: 2px solid var(--cm-primary);
+    }
+
+    .recap-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recap-heading > div {
+      min-width: 0;
+    }
+
+    .recap-heading .lesson-section-heading {
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .recap-heading p {
+      margin: 0.2rem 0 0;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .recap-sheet + .recap-sheet {
+      margin-top: 2.5rem;
+    }
+
+    .sheet-heading {
+      margin-bottom: 1.2rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 12px 12px 0;
+      background: #ecfdf3;
+    }
+
+    .sheet-heading h3 {
+      margin: 0;
+      color: var(--cm-dark);
+      font-size: 1.05rem;
+    }
+
+    .sheet-heading--ampliacion {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .sheet-heading--ampliacion h3 {
+      color: #92400e;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .sheet-card {
+      min-width: 0;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid #dce6e0;
+      border-radius: 16px;
+      background: #f8faf9;
+    }
+
+    .sheet-card--ampliacion {
+      background: #ffffff;
+      border-color: #f2d5aa;
+    }
+
+    .sheet-card h4 {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 7px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .sheet-card--ampliacion h4 {
+      background: #b45309;
+    }
+
+    .sheet-questions {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: lower-alpha;
+    }
+
+    .sheet-questions li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* ======================================================
+       COMPRUEBA LO APRENDIDO: cajas de respuesta de LNL4.8
+       ====================================================== */
+    .check-learning {
+      background: #ffffff;
+      scroll-margin-top: 80px;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .quiz-item {
+      min-width: 0;
+      border: 1px solid #d7e6db;
+      border-radius: 13px;
+      padding: 1rem;
+      background: #fbfdfb;
+    }
+
+    .quiz-prompt {
+      margin: 0 0 0.75rem;
+      color: #274d37;
+      font-weight: 750;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.65rem 0.8rem;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: #ffffff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--cm-primary);
+      background: #f0fdf4;
+    }
+
+    .quiz-option[aria-pressed="true"] {
+      border-color: var(--cm-primary);
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 700;
+    }
+
+    .quiz-item.correct {
+      border-color: #3c9961;
+    }
+
+    .quiz-item.incorrect {
+      border-color: #d79a71;
+    }
+
+    .quiz-feedback {
+      margin: 0.6rem 0 0;
+      min-height: 1em;
+      color: #475569;
+      font-size: 0.86rem;
+    }
+
+    .quiz-actions,
+    .eval-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.3rem;
+    }
+
+    .lnl-btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 0.75rem 1.1rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+
+    .lnl-btn.secondary {
+      background: #e9f3ed;
+      color: var(--cm-dark);
+    }
+
+    .lnl-btn:hover,
+    .lnl-btn:focus-visible {
+      filter: brightness(0.94);
+    }
+
+    #quiz-summary {
+      margin: 0.9rem 0 0;
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* ======================================================
+       DIANA DE AUTOEVALUACIÓN: botones de LNL4.8
+       ====================================================== */
+    .self-eval {
+      border: 2px solid #c7d2fe;
+    }
+
+    .heading-icon {
+      display: inline-grid;
+      place-items: center;
+      min-width: 3rem;
+      min-height: 2.8rem;
+      border-radius: 12px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .heading-icon--indigo {
+      background: #4f46e5;
+    }
+
+    .self-eval-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .eval-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .eval-statement {
+      flex: 1 1 370px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .eval-statement strong {
+      margin-right: 0.25rem;
+      color: var(--cm-primary);
+    }
+
+    .auto-eval-group {
+      display: flex;
+      flex: 0 1 410px;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .eval-btn {
+      padding: 0.47rem 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #475569;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .eval-btn:hover,
+    .eval-btn:focus-visible {
+      border-color: #4f46e5;
+    }
+
+    .eval-btn[aria-pressed="true"] {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    #eval-status {
+      flex: 1 1 240px;
+      margin: 0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: minmax(0, 1fr) 150px;
+      }
+
+      .topic-page .media-frame.hero-mascot img {
+        max-height: 190px;
+      }
+
+      .two-columns,
+      .step-grid,
+      .sheet-grid,
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 135px;
+        justify-self: end;
+        margin-top: -0.6rem;
+      }
+
+      .topic-page .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        margin-top: 0.13rem;
+      }
+
+
+
+      .topic-page .media-frame:not(.hero-mascot) {
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eval-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .eval-statement,
+      .auto-eval-group {
+        flex: auto;
+      }
+    }
+
+    @media print {
+      .quiz-actions,
+      .eval-actions,
+      .auto-eval-group {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Detecta imágenes pendientes y muestra la sugerencia correspondiente.
+    function markImageMissing(image) {
+      var frame = image.closest('figure.media-frame');
+
+      if (frame) {
+        frame.classList.add('image-missing');
+      } else {
+        image.hidden = true;
+      }
+    }
+  </script>
+</head>
+
+<body class="topic-page">
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       CABECERA GENERAL DEL CENTRO
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a
+        class="navigation-logo"
+        href="/"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/cuarto/conocimiento-medio4/">
+              Conocimiento del Medio
+            </a>
+          </li>
+          <li aria-current="page">Andalucía: población y convivencia</li>
+        </ol>
+      </nav>
+
+
+
+
+      <!-- Portada verde institucional: mismas clases, Tomatito y estructura CN4.1-CN4.3. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">
+            Conocimiento del Medio · 4.º de Primaria · CM4.5
+          </span>
+          <h1 id="titulo-sda">5. ANDALUCÍA: POBLACIÓN Y CONVIVENCIA</h1>
+          <p>
+            Conocemos los municipios y las provincias de Andalucía, descubrimos cómo
+            convivimos personas diferentes y elaboramos una guía ciudadana
+            para mejorar nuestros espacios y relaciones.
+          </p>
+          <div class="hero-tags" aria-label="Contenidos principales">
+            <span>Andalucía</span>
+            <span>Población</span>
+            <span>Diversidad</span>
+            <span>Derechos</span>
+            <span>Convivencia</span>
+          </div>
+        </div>
+
+        <!-- Misma mascota del área, sin crear variantes. -->
+        <figure class="media-frame hero-mascot">
+          <img
+            src="/img/tomatito/conocimiento-medio.png"
+            alt="Tomatito, la mascota del colegio"
+            class="topic-hero-image"
+            onerror="markImageMissing(this)"
+          >
+        </figure>
+      </section>
+
+      <!-- Índice interno: siete tareas, una por apartado. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <a href="#sec-1">5.1 Organización territorial</a>
+        <a href="#sec-2">5.2 Población y migraciones</a>
+        <a href="#sec-3">5.3 Igualdad y diversidad</a>
+        <a href="#sec-4">5.4 Instituciones y servicios</a>
+        <a href="#sec-5">5.5 Derechos y convivencia</a>
+        <a href="#sec-6">5.6 Movilidad responsable</a>
+        <a href="#sec-7">5.7 Nuestra guía ciudadana</a>
+        <a href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a href="#sec-diana">🎯 Autoevaluación</a>
+      </nav>
+
+      <div class="topic-content">
+
+        <!-- ==================================================
+             APARTADO 5.1: ANDALUCÍA: MUNICIPIOS, PROVINCIAS Y COMUNIDAD AUTÓNOMA
+             Tarea 1: Localizamos Andalucía, sus ocho provincias y nuestros municipios en mapas sencillos
+             Criterio único: 5.1.b
+             ================================================== -->
+        <section
+          id="sec-1"
+          class="lesson-section"
+          data-tarea="1"
+          data-criterio="5.1.b"
+          aria-labelledby="titulo-sec-1"
+        >
+          <h2 id="titulo-sec-1" class="lesson-section-heading">
+            <span class="section-number">5.1</span>
+            Andalucía: municipios, provincias y comunidad autónoma
+          </h2>
+
+          <div class="explanation">
+            <h3>Del lugar donde vivimos a la comunidad autónoma</h3>
+            <p>Las personas vivimos en una localidad, que puede ser un pueblo o una ciudad. Una localidad forma
+              parte de un <strong>municipio</strong>, el territorio que administra un ayuntamiento. Un municipio puede
+              incluir varias localidades. Por ejemplo, Alcolea es un núcleo de población que pertenece al municipio de
+              Córdoba.</p>
+            <p>Los municipios se agrupan en <strong>provincias</strong> y las provincias forman parte de una
+              <strong>comunidad autónoma</strong>. Andalucía es una de las comunidades autónomas de España, y su
+              capital es la ciudad de Sevilla. España también incluye dos ciudades autónomas: Ceuta y Melilla.</p>
+          </div>
+
+          <h3>Las ocho provincias de Andalucía</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Provincias andaluzas y sus capitales.</caption>
+              <thead><tr><th>Provincia</th><th>Capital de provincia</th><th>Localización
+                aproximada</th></tr></thead>
+              <tbody>
+                <tr><td>Almería</td><td>Almería</td><td>Este y litoral mediterráneo</td></tr>
+                <tr><td>Cádiz</td><td>Cádiz</td><td>Suroeste y litoral atlántico</td></tr>
+                <tr><td>Córdoba</td><td>Córdoba</td><td>Interior y centro de Andalucía</td></tr>
+                <tr><td>Granada</td><td>Granada</td><td>Sureste, con interior y litoral mediterráneo</td></tr>
+                <tr><td>Huelva</td><td>Huelva</td><td>Oeste y litoral atlántico</td></tr>
+                <tr><td>Jaén</td><td>Jaén</td><td>Noreste e interior</td></tr>
+                <tr><td>Málaga</td><td>Málaga</td><td>Sur y litoral mediterráneo</td></tr>
+                <tr><td>Sevilla</td><td>Sevilla</td><td>Oeste e interior</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Orientarnos en un mapa político</h3>
+          <p>Un <strong>mapa político</strong> representa divisiones territoriales, como los límites de los
+            municipios, las provincias o los países. Los colores nos ayudan a distinguir territorios y la
+            <strong>leyenda</strong> explica qué representan los símbolos. También utilizamos los puntos cardinales:
+            norte, sur, este y oeste.</p>
+          <div class="example">
+            <h3>Ejemplo: del colegio al mapa de España</h3>
+            <p>Si salimos del CEIP Joaquín Tena Artigas, estamos en Alcolea, dentro del municipio de Córdoba. El
+              municipio de Córdoba pertenece a la provincia de Córdoba; esta provincia pertenece a Andalucía y
+              Andalucía forma parte de España. Representaremos esa relación mediante cuatro recuadros, uno dentro de
+              otro, y localizaremos el municipio en un mapa.</p>
+          </div>
+          <div class="callout"><strong>Recuerda:</strong> municipio, provincia y comunidad autónoma no significan lo
+            mismo. La capital de Andalucía es Sevilla y cada una de sus ocho provincias tiene su propia capital.</div>
+
+          <!-- IMAGEN FUTURA WEBP: andalucia-ocho-provincias-mapa-politico.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/andalucia-ocho-provincias-mapa-politico.webp"
+              alt="Mapa político de Andalucía con las ocho provincias, capitales y situación de Córdoba y Alcolea"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Mapa didáctico de Andalucía con las ocho provincias en colores, capitales claramente rotuladas, rosa de los vientos y recuadro que sitúe Andalucía en España; señalar Córdoba y Alcolea sin superponer textos.
+              <code>/img/conocimiento4/andalucia-ocho-provincias-mapa-politico.webp</code>
+            </div>
+            <figcaption>La organización territorial nos permite situar nuestro municipio y comprender dónde vivimos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-1">
+            <h3 id="actividades-1">✏️ Actividades 5.1</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 5.1.b. -->
+            <article class="task-card" data-criterio="5.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Ordenamos los territorios</h4>
+              <ol type="a">
+                <li>Escribe qué es un municipio con tus palabras.</li>
+                <li>Explica qué territorio es mayor: una provincia o un municipio.</li>
+                <li>Completa la cadena: Alcolea → municipio de ____ → provincia de ____ → comunidad autónoma de ____.</li>
+                <li>¿Cuál es la capital de Andalucía?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 5.1.b. -->
+            <article class="task-card" data-criterio="5.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Las ocho provincias</h4>
+              <ol type="a">
+                <li>Enumera las ocho provincias andaluzas.</li>
+                <li>Escribe el nombre de tres provincias con costa.</li>
+                <li>Localiza en un mapa Jaén y Huelva, y señala cuál está más al este.</li>
+                <li>¿Qué provincias limitan con la provincia de Córdoba? Compruébalo en un mapa.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 5.1.b. -->
+            <article class="task-card" data-criterio="5.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Leemos mapas</h4>
+              <ol type="a">
+                <li>¿Qué representa un mapa político?</li>
+                <li>¿Para qué sirve su leyenda?</li>
+                <li>Si Cádiz aparece al oeste de Málaga, ¿qué punto cardinal utilizamos?</li>
+                <li>Dibuja una rosa de los vientos y escribe sus cuatro puntos principales.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 5.1.b. -->
+            <article class="task-card" data-criterio="5.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Mi municipio en el mapa</h4>
+              <ol type="a">
+                <li>Escribe el municipio en el que vives.</li>
+                <li>Averigua a qué provincia pertenece y cuál es su capital.</li>
+                <li>Identifica una localidad o pedanía de ese municipio, si la hay.</li>
+                <li>Crea un esquema con tu localidad, municipio, provincia, comunidad autónoma y país.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 5.2: LA POBLACIÓN DE ANDALUCÍA Y SUS MOVIMIENTOS
+             Tarea 2: Interpretamos datos sencillos sobre población y explicamos las migraciones desde el respeto a la diversidad
+             Criterio único: 8.1.b
+             ================================================== -->
+        <section
+          id="sec-2"
+          class="lesson-section"
+          data-tarea="2"
+          data-criterio="8.1.b"
+          aria-labelledby="titulo-sec-2"
+        >
+          <h2 id="titulo-sec-2" class="lesson-section-heading">
+            <span class="section-number">5.2</span>
+            La población de Andalucía y sus movimientos
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué es la población?</h3>
+            <p>La <strong>población</strong> es el conjunto de personas que viven en un territorio. Hay localidades
+              con muchos habitantes y otras con pocos. La población de un municipio puede cambiar a lo largo de los
+              años.</p>
+            <p>El número de habitantes puede variar por los <strong>nacimientos</strong>, las
+              <strong>defunciones</strong> y las <strong>migraciones</strong>. Migrar significa cambiar el lugar
+              habitual de residencia para vivir en otro territorio. Una persona puede trasladarse dentro de Andalucía,
+              a otra comunidad autónoma o a otro país.</p>
+          </div>
+
+          <h3>Población urbana, rural y distribución</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🏙️ Zonas urbanas</h3><p>Son espacios con gran concentración de viviendas
+              y servicios, como las ciudades. Suelen contar con muchas actividades comerciales, educativas o
+              culturales.</p></article>
+            <article class="info-card"><h3>🌿 Zonas rurales</h3><p>Incluyen pueblos y áreas con menor concentración
+              de población. Pueden desarrollar actividades agrícolas, ganaderas, turísticas y de muchos otros
+              sectores.</p></article>
+          </div>
+          <p>Para comparar territorios de tamaños distintos usamos a veces la <strong>densidad de
+            población</strong>: habitantes por kilómetro cuadrado. No indica que un lugar sea mejor que otro, sino
+            cómo se distribuyen allí sus habitantes.</p>
+          <h3>Practicamos con datos inventados para aprender</h3>
+          <p>Imaginemos tres municipios del mismo tamaño, con 10 km² cada uno. Estos <strong>datos son
+            ficticios</strong> y sirven únicamente para practicar la lectura de tablas.</p>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Ejemplo ficticio de población, no son cifras oficiales.</caption>
+            <thead><tr><th>Municipio
+              imaginario</th><th>Habitantes</th><th>Superficie</th><th>Densidad</th></tr></thead>
+            <tbody><tr><td>Villa Encina</td><td>800</td><td>10 km²</td><td>80 hab./km²</td></tr>
+            <tr><td>Río Claro</td><td>2.000</td><td>10 km²</td><td>200 hab./km²</td></tr>
+            <tr><td>Puerto Sol</td><td>5.000</td><td>10 km²</td><td>500 hab./km²</td></tr></tbody>
+          </table></div>
+          <div class="example"><h3>Ejemplo: una nueva familia llega al barrio</h3>
+          <p>La familia de Laila se muda a Córdoba desde otra ciudad porque sus madres han encontrado trabajo. En el
+            nuevo colegio, Laila conoce amistades y comparte costumbres y palabras de su lugar de origen. Este
+            traslado es una migración. En la guía ciudadana anotamos que <strong>todas las familias merecen acogida y
+            respeto</strong>, con independencia de dónde hayan nacido.</p>
+          </div>
+          <div class="callout"><strong>Recuerda:</strong> las causas de una migración pueden ser familiares,
+            laborales, educativas o de seguridad. Cada persona tiene una historia y no debemos sacar conclusiones por
+            su origen.</div>
+
+          <!-- IMAGEN FUTURA WEBP: poblacion-andalucia-rural-urbana-migraciones.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/poblacion-andalucia-rural-urbana-migraciones.webp"
+              alt="Ilustración comparativa de un pueblo y una ciudad andaluces con personas de edades y orígenes diversos"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Dos escenas equivalentes, una localidad rural y otra urbana, con leyenda sencilla y personas de diferentes edades y culturas; añadir una pequeña flecha de cambio de residencia sin cifras inventadas.
+              <code>/img/conocimiento4/poblacion-andalucia-rural-urbana-migraciones.webp</code>
+            </div>
+            <figcaption>La población se reparte de forma desigual entre ciudades, pueblos y zonas rurales.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-2">
+            <h3 id="actividades-2">✏️ Actividades 5.2</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 8.1.b. -->
+            <article class="task-card" data-criterio="8.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Comprendemos la población</h4>
+              <ol type="a">
+                <li>Define población.</li>
+                <li>Nombra dos hechos que cambian el número de habitantes.</li>
+                <li>¿Qué diferencia hay entre nacimiento y migración?</li>
+                <li>Explica qué significa emigrar a otra ciudad.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 8.1.b. -->
+            <article class="task-card" data-criterio="8.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Leemos la tabla</h4>
+              <ol type="a">
+                <li>¿Qué municipio imaginario tiene más habitantes?</li>
+                <li>¿Qué municipio imaginario tiene menos habitantes?</li>
+                <li>Calcula cuántos habitantes más tiene Río Claro que Villa Encina.</li>
+                <li>¿Por qué Puerto Sol tiene la densidad más alta de los tres?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 8.1.b. -->
+            <article class="task-card" data-criterio="8.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Historias de movilidad</h4>
+              <ol type="a">
+                <li>Escribe dos motivos por los que una familia puede cambiar de residencia.</li>
+                <li>¿Una persona que se muda de Córdoba a Granada realiza una migración? Explica.</li>
+                <li>Propón una forma de ayudar a un compañero recién llegado.</li>
+                <li>Escribe una pregunta respetuosa que podrías hacerle sobre su lugar de origen.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 8.1.b. -->
+            <article class="task-card" data-criterio="8.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Conocemos nuestro entorno</h4>
+              <ol type="a">
+                <li>¿Hay zonas rurales y urbanas cerca de tu localidad? Pon ejemplos.</li>
+                <li>¿Qué servicios necesitará un pueblo si aumenta su población?</li>
+                <li>Diseña dos preguntas para una entrevista sobre cómo era el barrio hace años.</li>
+                <li>Explica por qué no podemos usar los datos ficticios de la tabla como cifras oficiales.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 5.3: DIVERSIDAD, IGUALDAD Y RECHAZO DE LA DISCRIMINACIÓN
+             Tarea 3: Reconocemos situaciones de discriminación y proponemos respuestas justas e inclusivas
+             Criterio único: 8.2.b
+             ================================================== -->
+        <section
+          id="sec-3"
+          class="lesson-section"
+          data-tarea="3"
+          data-criterio="8.2.b"
+          aria-labelledby="titulo-sec-3"
+        >
+          <h2 id="titulo-sec-3" class="lesson-section-heading">
+            <span class="section-number">5.3</span>
+            Diversidad, igualdad y rechazo de la discriminación
+          </h2>
+
+          <div class="explanation">
+            <h3>Nos parecemos y somos diferentes</h3>
+            <p>En Andalucía convivimos personas con distintas costumbres, lenguas, experiencias, capacidades y
+              gustos. Esta <strong>diversidad</strong> enriquece la comunidad cuando escuchamos a los demás y
+              compartimos oportunidades.</p>
+            <p>La <strong>igualdad</strong> significa que todas las personas tienen la misma dignidad y los mismos
+              derechos. La <strong>equidad</strong> nos anima a ofrecer apoyos cuando son necesarios para que todas
+              puedan participar. Dar a alguien un apoyo no supone tratarlo como menos capaz.</p>
+          </div>
+
+          <h3>¿Cómo reconocemos un trato injusto?</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>⚖️ Igualdad de oportunidades</h3><p>Las niñas y los niños pueden
+              interesarse por la ciencia, el deporte, el arte o la tecnología. No debemos decidir por alguien a partir
+              de estereotipos.</p></article>
+            <article class="info-card"><h3>♿ Accesibilidad</h3><p>Una rampa, un paso libre de obstáculos o una
+              explicación con imágenes pueden ayudar a que más personas utilicen un espacio o comprendan una
+              información.</p></article>
+            <article class="info-card"><h3>🗣️ Respeto lingüístico y cultural</h3><p>Las formas de hablar y las
+              costumbres pueden variar. Escuchamos sin burlas y preguntamos con educación cuando no entendemos
+              algo.</p></article>
+            <article class="info-card"><h3>🤝 Convivencia sin exclusiones</h3><p>No apartamos a una persona de una
+              actividad por su origen, discapacidad, género o aspecto. Si vemos una situación injusta, buscamos ayuda
+              de una persona adulta responsable.</p></article>
+          </div>
+          <h3>Discriminación, prejuicios y estereotipos</h3>
+          <p>Un <strong>estereotipo</strong> es una idea simplificada sobre un grupo, como pensar que una actividad
+            pertenece solo a niños o solo a niñas. Un <strong>prejuicio</strong> es una opinión negativa sin conocer
+            suficientemente a la persona. La <strong>discriminación</strong> aparece cuando alguien recibe un trato
+            injusto por una característica personal o por pertenecer a un grupo.</p>
+          <div class="example"><h3>Ejemplo: una actividad para toda la clase</h3>
+          <p>El alumnado debe formar equipos para diseñar un huerto escolar. Un compañero dice: «Las niñas no pueden
+            usar herramientas». El grupo explica que es un estereotipo, acuerda repartir las tareas según las
+            capacidades y preferencias de cada cual y pide al profesorado que supervise el uso seguro del material.
+            Así se garantiza la participación de todas las personas.</p></div>
+          <h3>Pasos para actuar con respeto</h3>
+          <ol class="readable-list"><li>Escuchamos qué ocurrió sin interrumpir.</li><li>Explicamos por qué la
+            situación puede ser injusta, sin insultar.</li><li>Proponemos una solución que permita participar a todo
+            el mundo.</li><li>Si existe acoso, pedimos ayuda a una persona adulta de confianza.</li></ol>
+          <div class="callout"><strong>Idea clave:</strong> respetar la diversidad no significa estar siempre de
+            acuerdo, sino reconocer los derechos de cada persona y resolver las diferencias sin excluir ni
+            humillar.</div>
+
+          <!-- IMAGEN FUTURA WEBP: diversidad-igualdad-accesibilidad-andalucia.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/diversidad-igualdad-accesibilidad-andalucia.webp"
+              alt="Grupo de escolares colaborando en un huerto accesible, con reparto equitativo de tareas"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Escena inclusiva de un huerto escolar con niños y niñas trabajando de manera cooperativa, distintas formas de participación y acceso sin barreras; evitar estereotipos visuales.
+              <code>/img/conocimiento4/diversidad-igualdad-accesibilidad-andalucia.webp</code>
+            </div>
+            <figcaption>El respeto, los apoyos adecuados y la participación ayudan a construir una comunidad inclusiva.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-3">
+            <h3 id="actividades-3">✏️ Actividades 5.3</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Palabras importantes</h4>
+              <ol type="a">
+                <li>Explica qué significa diversidad.</li>
+                <li>Escribe un ejemplo de estereotipo y explica por qué es incorrecto.</li>
+                <li>¿Qué es una discriminación?</li>
+                <li>Explica con tus palabras la diferencia entre igualdad y apoyo a quien lo necesita.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Situaciones del aula</h4>
+              <ol type="a">
+                <li>¿Por qué es injusto prohibir un juego a alguien por ser niña o niño?</li>
+                <li>Propón una forma de organizar un equipo sin excluir a nadie.</li>
+                <li>¿Qué harías si alguien se burla de la forma de hablar de otra persona?</li>
+                <li>Explica a quién pedirías ayuda si vieras un caso de acoso.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Espacios para todos</h4>
+              <ol type="a">
+                <li>Escribe una barrera que pueda dificultar el acceso a un parque.</li>
+                <li>Propón una mejora para facilitar la entrada a personas con movilidad reducida.</li>
+                <li>¿Cómo ayudaría un cartel con imágenes a distintos visitantes?</li>
+                <li>Indica por qué es mejor preguntar antes de ayudar a alguien.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Campaña de respeto</h4>
+              <ol type="a">
+                <li>Inventa un lema breve sobre igualdad.</li>
+                <li>Diseña una escena que represente la cooperación.</li>
+                <li>Redacta dos normas de convivencia inclusivas.</li>
+                <li>Explica cómo sabrás si la campaña ha sido entendida por tu clase.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 5.4: INSTITUCIONES Y SERVICIOS PÚBLICOS CERCANOS
+             Tarea 4: Relacionamos las administraciones y los servicios públicos con las necesidades de la ciudadanía
+             Criterio único: 9.2.b
+             ================================================== -->
+        <section
+          id="sec-4"
+          class="lesson-section"
+          data-tarea="4"
+          data-criterio="9.2.b"
+          aria-labelledby="titulo-sec-4"
+        >
+          <h2 id="titulo-sec-4" class="lesson-section-heading">
+            <span class="section-number">5.4</span>
+            Instituciones y servicios públicos cercanos
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Quién organiza los servicios que compartimos?</h3>
+            <p>Un <strong>servicio público</strong> atiende necesidades de la población, como la educación, la
+              sanidad, la limpieza de las calles o el transporte. Para que funcione, existen instituciones que
+              organizan tareas y toman decisiones dentro de sus competencias.</p>
+            <p>En un municipio, el <strong>ayuntamiento</strong> se ocupa de numerosos asuntos locales. La
+              <strong>Junta de Andalucía</strong> es la institución de gobierno de la comunidad autónoma y tiene
+              responsabilidades en ámbitos como la educación y la sanidad. El <strong>Estado</strong> también
+              desarrolla funciones y servicios que afectan al conjunto de España. En ocasiones varias administraciones
+              colaboran.</p>
+          </div>
+
+          <h3>Tres ámbitos de administración que debemos distinguir</h3>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Ejemplos sencillos de instituciones y ámbitos de actuación.</caption>
+            <thead><tr><th>Ámbito</th><th>Institución de referencia</th><th>Ejemplos de
+              responsabilidades</th></tr></thead>
+            <tbody>
+              <tr><td>Municipal</td><td>Ayuntamiento</td><td>Parques locales, limpieza de calles, alumbrado y otros
+                servicios municipales</td></tr>
+              <tr><td>Autonómico</td><td>Junta de Andalucía</td><td>Organización de servicios educativos y
+                sanitarios de competencia autonómica</td></tr>
+              <tr><td>Estatal</td><td>Instituciones del Estado</td><td>Documentos oficiales, defensa y otros asuntos
+                de alcance estatal</td></tr>
+            </tbody>
+          </table></div>
+          <p>En los ayuntamientos trabajan la alcaldía y las concejalías, entre otras personas y servicios. En las
+            elecciones municipales, las personas que cumplen los requisitos pueden elegir representantes. Los
+            servicios públicos se financian mediante distintos recursos, entre ellos <strong>impuestos</strong> y
+            tasas que pagan la ciudadanía y las empresas según las normas.</p>
+          <h3>Servicios que usamos en nuestra vida diaria</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🏫 Educación</h3><p>Los colegios, sus profesionales y los recursos
+              escolares permiten aprender. Su organización requiere cooperación entre diferentes
+              instituciones.</p></article>
+            <article class="info-card"><h3>🏥 Sanidad</h3><p>Los centros de salud y hospitales atienden a las
+              personas y ayudan a prevenir problemas de salud.</p></article>
+            <article class="info-card"><h3>🚍 Transporte y calles</h3><p>Las vías públicas, las paradas y los
+              transportes facilitan desplazamientos. Es importante que sean accesibles y seguros.</p></article>
+            <article class="info-card"><h3>🧹 Espacios cuidados</h3><p>La recogida de residuos, las papeleras, los
+              jardines y la iluminación ayudan al bienestar de los barrios.</p></article>
+          </div>
+          <div class="example"><h3>Ejemplo: una papelera rota junto al parque</h3>
+          <p>Una clase observa que una papelera del parque municipal está rota. Primero describe el problema, luego
+            localiza el organismo responsable —habitualmente el ayuntamiento— y finalmente redacta una solicitud
+            educada con la ubicación y una propuesta de mejora. No hace falta reparar la papelera por cuenta propia ni
+            tocar materiales cortantes.</p></div>
+          <div class="callout"><strong>Recuerda:</strong> cuidar los servicios públicos es una responsabilidad
+            compartida. Podemos utilizarlos, pedir mejoras con respeto y evitar daños.</div>
+
+          <!-- IMAGEN FUTURA WEBP: instituciones-servicios-publicos-andalucia.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/instituciones-servicios-publicos-andalucia.webp"
+              alt="Esquema de instituciones local, autonómica y estatal y sus servicios a la ciudadanía"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Infografía con tres columnas tituladas Ayuntamiento, Junta de Andalucía y Estado; iconos de parque, colegio, centro de salud, transporte y documento oficial; indicar que algunas tareas se coordinan.
+              <code>/img/conocimiento4/instituciones-servicios-publicos-andalucia.webp</code>
+            </div>
+            <figcaption>Diferentes instituciones colaboran para organizar los servicios públicos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-4">
+            <h3 id="actividades-4">✏️ Actividades 5.4</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 9.2.b. -->
+            <article class="task-card" data-criterio="9.2.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Conocemos las instituciones</h4>
+              <ol type="a">
+                <li>Explica qué es un ayuntamiento.</li>
+                <li>¿Cuál es el gobierno autonómico de Andalucía?</li>
+                <li>Escribe un servicio que se organiza en un municipio.</li>
+                <li>Nombra una responsabilidad que corresponde a las instituciones del Estado.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 9.2.b. -->
+            <article class="task-card" data-criterio="9.2.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Servicios de mi localidad</h4>
+              <ol type="a">
+                <li>Anota tres servicios públicos que conozcas.</li>
+                <li>Escribe quién utiliza uno de esos servicios.</li>
+                <li>Explica cómo afectaría al barrio que dejara de funcionar.</li>
+                <li>Propón una mejora sencilla para uno de ellos.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 9.2.b. -->
+            <article class="task-card" data-criterio="9.2.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Un aviso ciudadano</h4>
+              <ol type="a">
+                <li>Describe un problema cotidiano en una calle o parque.</li>
+                <li>Explica qué información necesita el ayuntamiento para localizarlo.</li>
+                <li>Escribe un mensaje respetuoso solicitando una revisión.</li>
+                <li>Razona por qué no debes manipular tú mismo una instalación peligrosa.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 9.2.b. -->
+            <article class="task-card" data-criterio="9.2.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Financiación y cuidado</h4>
+              <ol type="a">
+                <li>¿Para qué sirven los impuestos en términos generales?</li>
+                <li>Nombra un servicio que beneficie a personas de edades distintas.</li>
+                <li>Escribe dos normas para cuidar un servicio público.</li>
+                <li>¿Por qué las instituciones deben escuchar las necesidades de la ciudadanía?</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 5.5: DERECHOS, NORMAS Y ACUERDOS DEMOCRÁTICOS
+             Tarea 5: Elaboramos acuerdos de convivencia mediante el diálogo, la participación y el respeto a los derechos
+             Criterio único: 9.1.b
+             ================================================== -->
+        <section
+          id="sec-5"
+          class="lesson-section"
+          data-tarea="5"
+          data-criterio="9.1.b"
+          aria-labelledby="titulo-sec-5"
+        >
+          <h2 id="titulo-sec-5" class="lesson-section-heading">
+            <span class="section-number">5.5</span>
+            Derechos, normas y acuerdos democráticos
+          </h2>
+
+          <div class="explanation">
+            <h3>Derechos y responsabilidades</h3>
+            <p>Las personas tenemos <strong>derechos</strong> que deben ser respetados. Las niñas y los niños tienen
+              derecho a recibir educación, protección, cuidados, descanso y a expresar sus opiniones sobre asuntos que
+              les afectan. Estos derechos aparecen recogidos, entre otros documentos, en la Convención sobre los
+              Derechos del Niño.</p>
+            <p>También tenemos <strong>responsabilidades</strong> de convivencia: escuchar, respetar las normas
+              justas, cuidar los espacios comunes y no dañar a otras personas. Nuestros deberes no eliminan nuestros
+              derechos; ambas ideas ayudan a vivir juntos.</p>
+          </div>
+
+          <h3>Tomamos decisiones escuchando a los demás</h3>
+          <p>En una comunidad democrática se participa, se dialoga y se respetan las decisiones que se toman con
+            normas justas. En clase podemos practicar con una asamblea: explicamos el problema, escuchamos propuestas,
+            intentamos llegar a un acuerdo y, si hace falta, votamos.</p>
+          <div class="step-grid">
+            <article class="info-card"><h3><span class="step-index">1</span> Identificamos</h3><p>Exponemos con
+              claridad qué situación queremos mejorar.</p></article>
+            <article class="info-card"><h3><span class="step-index">2</span> Dialogamos</h3><p>Escuchamos propuestas
+              y comprobamos que respeten los derechos de todos.</p></article>
+            <article class="info-card"><h3><span class="step-index">3</span> Acordamos</h3><p>Buscamos consenso y,
+              cuando procede, votamos opciones justas.</p></article>
+            <article class="info-card"><h3><span class="step-index">4</span> Revisamos</h3><p>Comprobamos si el
+              acuerdo funciona y lo mejoramos cuando es necesario.</p></article>
+          </div>
+          <h3>Un desacuerdo no tiene que terminar en pelea</h3>
+          <p>El <strong>conflicto</strong> es una diferencia de intereses u opiniones. Podemos resolverlo hablando
+            con calma, proponiendo turnos, pidiendo mediación o solicitando ayuda. La <strong>violencia</strong> no es
+            una manera aceptable de resolverlo. Si alguien está en peligro, pedimos ayuda a una persona adulta de
+            confianza.</p>
+          <div class="example"><h3>Ejemplo: los juegos en el recreo</h3>
+          <p>Dos grupos quieren usar la misma zona del patio. En la asamblea, cada grupo explica qué necesita. Se
+            acuerdan turnos y una zona libre para juegos tranquilos. Antes de votar, comprueban que la propuesta
+            permita participar también a quienes tienen distintas necesidades. Una semana después, revisan si el
+            reparto funciona.</p></div>
+          <div class="callout"><strong>Importante:</strong> votar no permite quitar derechos a una minoría. Una
+            norma de clase debe ser respetuosa, comprensible y revisable.</div>
+
+          <!-- IMAGEN FUTURA WEBP: asamblea-infantil-convivencia-derechos.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/asamblea-infantil-convivencia-derechos.webp"
+              alt="Alumnos y alumnas dialogando en asamblea y acordando normas de uso del patio escolar"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustración de una asamblea escolar con turno de palabra, cartel de propuestas y acuerdos accesibles a todos; evitar una escena de votación que excluya a alguien.
+              <code>/img/conocimiento4/asamblea-infantil-convivencia-derechos.webp</code>
+            </div>
+            <figcaption>Dialogar y llegar a acuerdos justos es una forma de participación democrática.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-5">
+            <h3 id="actividades-5">✏️ Actividades 5.5</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 9.1.b. -->
+            <article class="task-card" data-criterio="9.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Derechos de la infancia</h4>
+              <ol type="a">
+                <li>Escribe tres derechos que tienen las niñas y los niños.</li>
+                <li>Explica por qué la educación es un derecho.</li>
+                <li>Escribe una responsabilidad que facilite la convivencia.</li>
+                <li>¿Por qué los derechos deben respetarse aunque una persona piense diferente?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 9.1.b. -->
+            <article class="task-card" data-criterio="9.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Asamblea de clase</h4>
+              <ol type="a">
+                <li>Propón un tema para tratar en una asamblea.</li>
+                <li>Explica qué significa escuchar un turno de palabra.</li>
+                <li>Indica qué haríamos si aparecen dos propuestas distintas.</li>
+                <li>¿Por qué es necesario revisar un acuerdo después de aplicarlo?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 9.1.b. -->
+            <article class="task-card" data-criterio="9.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Conflictos con solución</h4>
+              <ol type="a">
+                <li>Describe un conflicto de uso de materiales sin señalar a personas reales.</li>
+                <li>Propón una manera de resolverlo dialogando.</li>
+                <li>Explica cuándo debemos pedir ayuda a una persona adulta.</li>
+                <li>Escribe una frase que sirva para discrepar con respeto.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 9.1.b. -->
+            <article class="task-card" data-criterio="9.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Nuestro pacto de convivencia</h4>
+              <ol type="a">
+                <li>Redacta una norma clara para cuidar el aula.</li>
+                <li>Redacta una norma de respeto a las diferencias.</li>
+                <li>Explica cómo sabremos si las normas se cumplen.</li>
+                <li>Propón cómo cambiaríamos una norma si ocasiona un problema injusto.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 5.6: SEGURIDAD VIAL Y MOVILIDAD SOSTENIBLE
+             Tarea 6: Diseñamos itinerarios seguros y valoramos desplazamientos sostenibles y accesibles
+             Criterio único: 9.3.b
+             ================================================== -->
+        <section
+          id="sec-6"
+          class="lesson-section"
+          data-tarea="6"
+          data-criterio="9.3.b"
+          aria-labelledby="titulo-sec-6"
+        >
+          <h2 id="titulo-sec-6" class="lesson-section-heading">
+            <span class="section-number">5.6</span>
+            Seguridad vial y movilidad sostenible
+          </h2>
+
+          <div class="explanation">
+            <h3>Las calles son espacios compartidos</h3>
+            <p>Cuando vamos al colegio, al parque o a la biblioteca podemos desplazarnos andando, en bicicleta, en
+              transporte público o en automóvil. Cada medio necesita normas de convivencia y seguridad. Una
+              <strong>movilidad segura</strong> reduce riesgos para quienes se desplazan y una <strong>movilidad
+              sostenible</strong> busca disminuir el consumo de recursos y la contaminación.</p>
+            <p>Caminar en trayectos apropiados, usar transporte público y compartir vehículos cuando sea necesario
+              son opciones que pueden reducir algunos impactos del tráfico. También debemos tener en cuenta la
+              seguridad, la distancia y las necesidades de cada persona.</p>
+          </div>
+
+          <h3>Normas sencillas que nos protegen</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🚶 Al caminar</h3><p>Usamos aceras, miramos antes de cruzar y respetamos
+              los pasos de peatones y los semáforos. Evitamos distraernos con pantallas al cruzar.</p></article>
+            <article class="info-card"><h3>🚲 En bicicleta</h3><p>Utilizamos el casco y los elementos de seguridad
+              adecuados, respetamos las normas de circulación y circulamos por espacios autorizados de acuerdo con
+              nuestra edad y las normas locales.</p></article>
+            <article class="info-card"><h3>🚌 En transporte público</h3><p>Esperamos en lugares seguros, respetamos
+              los asientos reservados y no distraemos a quien conduce. Procuramos dejar libres las puertas y
+              pasillos.</p></article>
+            <article class="info-card"><h3>♿ Accesibilidad</h3><p>Una ciudad accesible cuenta con pasos adecuados,
+              rampas, señalización clara y transporte adaptado para que más personas puedan desplazarse.</p></article>
+          </div>
+          <h3>Elegimos rutas seguras, no solo las más cortas</h3>
+          <p>Para organizar un trayecto usamos un plano del barrio. Identificamos calles, pasos de peatones, cruces,
+            semáforos y lugares donde conviene extremar la atención. Un camino un poco más largo puede ser más seguro
+            si evita cruces peligrosos.</p>
+          <div class="example"><h3>Ejemplo: desde la escuela hasta la biblioteca</h3>
+          <p>Una ruta A mide 400 metros, pero obliga a cruzar una calle sin paso cercano. Una ruta B mide 500 metros
+            y pasa por un semáforo y una acera amplia. Para un grupo de escolares acompañado, la ruta B puede ser más
+            adecuada. La clase marca el itinerario en un plano y explica por qué no ha elegido simplemente el
+            recorrido más corto. <strong>Las distancias son inventadas</strong> para practicar.</p></div>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Comparación orientativa de dos rutas ficticias.</caption>
+            <thead><tr><th>Ruta</th><th>Distancia</th><th>Cruces</th><th>Aspecto relevante</th></tr></thead>
+            <tbody><tr><td>A</td><td>400 m</td><td>Uno sin paso cercano</td><td>Más corta, pero menos adecuada para
+              la actividad</td></tr>
+            <tr><td>B</td><td>500 m</td><td>Uno con semáforo</td><td>Mayor protección al cruzar</td></tr></tbody>
+          </table></div>
+          <div class="callout"><strong>Seguridad:</strong> esta actividad es de planificación de aula. No se sale a
+            la calle ni se hace una prueba de tráfico sin organización y supervisión del centro.</div>
+
+          <!-- IMAGEN FUTURA WEBP: movilidad-sostenible-seguridad-vial-colegio.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/movilidad-sostenible-seguridad-vial-colegio.webp"
+              alt="Plano esquemático de dos caminos al colegio con pasos de peatones, carril bici y semáforo"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Plano infantil de dos rutas entre colegio y biblioteca: destacar pasos seguros, semáforo, aceras, autobús y accesibilidad; incluir leyenda clara; no dibujar trayectos inseguros como recomendación.
+              <code>/img/conocimiento4/movilidad-sostenible-seguridad-vial-colegio.webp</code>
+            </div>
+            <figcaption>Planificar una ruta implica valorar su seguridad, accesibilidad y sostenibilidad.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-6">
+            <h3 id="actividades-6">✏️ Actividades 5.6</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 9.3.b. -->
+            <article class="task-card" data-criterio="9.3.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Caminamos con seguridad</h4>
+              <ol type="a">
+                <li>¿Dónde debemos cruzar cuando existe un paso de peatones cercano?</li>
+                <li>Explica por qué mirar una pantalla al cruzar es peligroso.</li>
+                <li>Escribe una conducta responsable en una parada de autobús.</li>
+                <li>¿Por qué debemos respetar los semáforos?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 9.3.b. -->
+            <article class="task-card" data-criterio="9.3.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Comparamos itinerarios</h4>
+              <ol type="a">
+                <li>¿Cuál es la ruta más corta del ejemplo?</li>
+                <li>¿Cuál parece más segura para la clase y por qué?</li>
+                <li>Calcula cuántos metros más tiene la ruta B que la A.</li>
+                <li>Nombra dos datos importantes para elegir un itinerario.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 9.3.b. -->
+            <article class="task-card" data-criterio="9.3.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Movilidad sostenible</h4>
+              <ol type="a">
+                <li>Escribe dos formas de desplazamiento que puedan reducir emisiones frente a un viaje individual en coche.</li>
+                <li>Indica una ventaja del transporte público.</li>
+                <li>Explica una dificultad de caminar grandes distancias para algunas personas.</li>
+                <li>Propón una mejora para que una calle sea más accesible.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 9.3.b. -->
+            <article class="task-card" data-criterio="9.3.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Diseñamos una ruta escolar</h4>
+              <ol type="a">
+                <li>Dibuja un plano sencillo del entorno del colegio.</li>
+                <li>Señala dos puntos donde sea importante prestar atención.</li>
+                <li>Elige una ruta a un servicio público cercano y justifica la elección.</li>
+                <li>Añade una leyenda con al menos tres símbolos de seguridad.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 5.7: CUIDAMOS LOS ESPACIOS PÚBLICOS: NUESTRA GUÍA CIUDADANA
+             Tarea 7: Identificamos problemas del entorno y elaboramos una guía ciudadana con propuestas responsables de mejora
+             Criterio único: 6.1.b
+             ================================================== -->
+        <section
+          id="sec-7"
+          class="lesson-section"
+          data-tarea="7"
+          data-criterio="6.1.b"
+          aria-labelledby="titulo-sec-7"
+        >
+          <h2 id="titulo-sec-7" class="lesson-section-heading">
+            <span class="section-number">5.7</span>
+            Cuidamos los espacios públicos: nuestra guía ciudadana
+          </h2>
+
+          <div class="explanation">
+            <h3>Lo que es de todos también necesita cuidados</h3>
+            <p>Las plazas, los parques, las calles, las fuentes y los jardines son <strong>espacios
+              públicos</strong> que compartimos. Un entorno cuidado facilita la convivencia y puede proteger también a
+              los seres vivos. Algunos problemas son la acumulación de residuos, el derroche de agua, el ruido
+              excesivo o la falta de zonas de sombra y accesos adecuados.</p>
+            <p>La <strong>participación ciudadana</strong> consiste en interesarnos por lo que ocurre en nuestra
+              comunidad y colaborar, de forma adecuada a nuestra edad, para mejorarla. Antes de proponer soluciones,
+              debemos observar, obtener información fiable y escuchar a quienes utilizan el espacio.</p>
+          </div>
+
+          <h3>Del problema a una propuesta útil</h3>
+          <div class="step-grid">
+            <article class="info-card"><h3><span class="step-index">1</span> Observamos</h3><p>Describimos qué
+              sucede, dónde ocurre y a quién afecta, sin inventar datos ni señalar culpables.</p></article>
+            <article class="info-card"><h3><span class="step-index">2</span> Comprendemos</h3><p>Preguntamos,
+              buscamos fuentes adecuadas y distinguimos hechos de opiniones.</p></article>
+            <article class="info-card"><h3><span class="step-index">3</span> Proponemos</h3><p>Elegimos medidas
+              realistas, seguras, inclusivas y respetuosas con el medioambiente.</p></article>
+            <article class="info-card"><h3><span class="step-index">4</span> Compartimos</h3><p>Explicamos la
+              propuesta en nuestra guía y escuchamos cómo mejorarla.</p></article>
+          </div>
+          <h3>Producto final: Guía ciudadana de Andalucía</h3>
+          <p>En equipos elaboraremos una <strong>guía ciudadana ilustrada</strong> para explicar cómo se organiza
+            Andalucía y cómo podemos convivir mejor en nuestros municipios. Usaremos hojas, una presentación o un
+            documento digital según los recursos del aula. No incluiremos datos personales de compañeros ni
+            fotografías sin autorización.</p>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Índice propuesto de nuestra guía ciudadana.</caption>
+            <thead><tr><th>Página</th><th>Contenido</th><th>Qué incorporamos</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>¿Dónde vivimos?</td><td>Mapa de Andalucía, provincias, capitales y
+                municipio</td></tr>
+              <tr><td>2</td><td>¿Quiénes vivimos aquí?</td><td>Explicación de población, migraciones y
+                diversidad</td></tr>
+              <tr><td>3</td><td>Una comunidad inclusiva</td><td>Ejemplos de igualdad y rechazo a la
+                discriminación</td></tr>
+              <tr><td>4</td><td>Instituciones y servicios</td><td>Ayuntamiento, Junta y servicios de la
+                localidad</td></tr>
+              <tr><td>5</td><td>Derechos y convivencia</td><td>Acuerdos democráticos y diálogo</td></tr>
+              <tr><td>6</td><td>Movilidad segura</td><td>Plano sencillo con un itinerario responsable</td></tr>
+              <tr><td>7</td><td>Mejoramos lo común</td><td>Una propuesta ambiental o de accesibilidad, con
+                razones</td></tr>
+            </tbody>
+          </table></div>
+          <div class="example"><h3>Ejemplo: una plaza con pocos árboles</h3>
+          <p>En un caso imaginario, el patio de una plaza recibe mucho sol en verano. La clase observa qué zonas
+            ofrecen sombra y dibuja un plano. Propone consultar al ayuntamiento sobre la posibilidad de plantar
+            árboles adecuados para el lugar o instalar elementos de sombra. En su guía explica cómo la mejora
+            beneficiaría a personas mayores, niños y niñas y otros visitantes. <strong>No plantamos ni modificamos
+            espacios públicos sin permiso</strong>.</p></div>
+          <h3>Revisamos antes de presentar</h3>
+          <ol class="readable-list"><li>Los mapas y nombres están comprobados.</li><li>Los datos inventados para
+            practicar están identificados como tales.</li><li>El texto es comprensible y respeta a todas las
+            personas.</li><li>La propuesta es segura y señala quién podría llevarla a cabo.</li><li>El equipo explica
+            el trabajo y escucha preguntas.</li></ol>
+          <div class="callout"><strong>Producto final:</strong> la guía contendrá mapas, información sobre la
+            población y las instituciones, derechos y propuestas para mejorar la convivencia y el cuidado del
+            entorno.</div>
+
+          <!-- IMAGEN FUTURA WEBP: guia-ciudadana-andalucia-proyecto.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/guia-ciudadana-andalucia-proyecto.webp"
+              alt="Maqueta de una guía escolar sobre Andalucía con mapas, datos de población, servicios y propuestas ambientales"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen editorial de siete páginas de una guía ciudadana infantil: mapa, población, diversidad, servicios, derechos, ruta y cuidado de una plaza. Con títulos sencillos y sin mucho texto minúsculo.
+              <code>/img/conocimiento4/guia-ciudadana-andalucia-proyecto.webp</code>
+            </div>
+            <figcaption>La guía ciudadana reúne lo aprendido y plantea una mejora realista para nuestro entorno.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-7">
+            <h3 id="actividades-7">✏️ Actividades 5.7</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 6.1.b. -->
+            <article class="task-card" data-criterio="6.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Detectamos una necesidad</h4>
+              <ol type="a">
+                <li>Nombra un problema de un espacio público que pueda observarse sin riesgos.</li>
+                <li>Explica a quién afecta ese problema.</li>
+                <li>Separa un hecho que podrías comprobar de una opinión.</li>
+                <li>Indica qué institución podría recibir una propuesta de mejora.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 6.1.b. -->
+            <article class="task-card" data-criterio="6.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Proponemos soluciones</h4>
+              <ol type="a">
+                <li>Escribe una medida para reducir residuos en un parque.</li>
+                <li>Propón una actuación que ahorre agua en un espacio común.</li>
+                <li>Explica cómo mejorarías la accesibilidad de una plaza.</li>
+                <li>Justifica por qué tu propuesta es respetuosa con el entorno.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 6.1.b. -->
+            <article class="task-card" data-criterio="6.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Construimos la guía</h4>
+              <ol type="a">
+                <li>Prepara un pequeño mapa con provincias y capitales de Andalucía.</li>
+                <li>Redacta dos frases sobre población y diversidad.</li>
+                <li>Explica la función de un servicio público y una norma de convivencia.</li>
+                <li>Incluye una ruta segura y una propuesta de cuidado ambiental.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 6.1.b. -->
+            <article class="task-card" data-criterio="6.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Presentamos y revisamos</h4>
+              <ol type="a">
+                <li>Explica la idea central de la guía a otro equipo.</li>
+                <li>Pide una opinión que te ayude a mejorarla.</li>
+                <li>Revisa que ninguna ilustración ni frase excluya a personas.</li>
+                <li>Escribe qué modificarías después de escuchar la evaluación del grupo.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             REPASAMOS LO APRENDIDO: fichas de refuerzo y ampliación
+             Se preservan las clases y distribución de CN4.4.
+             ================================================== -->
+        <section id="sec-repaso" class="summary-block sda-recap" aria-labelledby="titulo-repaso">
+          <div class="recap-heading">
+            <span class="section-number" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Una ficha de refuerzo y otra de ampliación, con una actividad de cuatro cuestiones por apartado.</p>
+            </div>
+          </div>
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 5.1 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.1.b">
+                <h4>Refuerzo 5.1 · Organización territorial</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diferencia localidad y municipio.</li>
+                  <li>¿Cuántas provincias tiene Andalucía?</li>
+                  <li>Nombra las capitales de Cádiz y Jaén.</li>
+                  <li>¿Por qué es útil la leyenda de un mapa?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 5.2 · Criterio 8.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="8.1.b">
+                <h4>Refuerzo 5.2 · Población y migraciones</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué significa población?</li>
+                  <li>Indica una causa de cambio de población.</li>
+                  <li>Diferencia zona rural y zona urbana.</li>
+                  <li>¿Qué significa migrar?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 5.3 · Criterio 8.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="8.2.b">
+                <h4>Refuerzo 5.3 · Igualdad y diversidad</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es un estereotipo?</li>
+                  <li>Da un ejemplo de igualdad de oportunidades.</li>
+                  <li>¿Por qué es importante la accesibilidad?</li>
+                  <li>¿Qué hacemos ante una burla discriminatoria?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 5.4 · Criterio 9.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="9.2.b">
+                <h4>Refuerzo 5.4 · Instituciones y servicios</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es un servicio público?</li>
+                  <li>¿Cómo se llama el gobierno municipal?</li>
+                  <li>Escribe un ejemplo de servicio autonómico.</li>
+                  <li>¿Por qué debemos cuidar las instalaciones públicas?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 5.5 · Criterio 9.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="9.1.b">
+                <h4>Refuerzo 5.5 · Derechos y convivencia</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe dos derechos de la infancia.</li>
+                  <li>¿Qué significa participar en una asamblea?</li>
+                  <li>¿Cómo resolvemos un conflicto sin violencia?</li>
+                  <li>¿Por qué una norma debe ser justa?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 5.6 · Criterio 9.3.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="9.3.b">
+                <h4>Refuerzo 5.6 · Movilidad responsable</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Indica dos normas de seguridad al cruzar.</li>
+                  <li>¿Qué significa movilidad sostenible?</li>
+                  <li>Nombra un elemento de accesibilidad de las calles.</li>
+                  <li>¿Qué debe aparecer en un plano de ruta escolar?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 5.7 · Criterio 6.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="6.1.b">
+                <h4>Refuerzo 5.7 · Nuestra guía ciudadana</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra dos problemas que pueden afectar a un parque.</li>
+                  <li>¿Qué apartados principales tiene nuestra guía?</li>
+                  <li>Escribe una mejora ambiental o de accesibilidad.</li>
+                  <li>¿Por qué debemos comprobar los datos antes de publicar?</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 5.1 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.1.b">
+                <h4>Ampliación 5.1 · Organización territorial</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué una pedanía no tiene que ser un municipio independiente.</li>
+                  <li>Diseña una tarjeta de una provincia: capital, localización y dos rasgos.</li>
+                  <li>Compara un mapa físico y uno político; describe qué muestra cada uno.</li>
+                  <li>Describe cómo localizarías tu municipio en un atlas que no conoces.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 5.2 · Criterio 8.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="8.1.b">
+                <h4>Ampliación 5.2 · Población y migraciones</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Construye un gráfico de barras con los tres municipios ficticios.</li>
+                  <li>Describe dos razones por las que una familia puede cambiar de residencia.</li>
+                  <li>Explica con un ejemplo por qué población total y densidad no son lo mismo.</li>
+                  <li>Propón una medida de acogida para alumnado que llega durante el curso.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 5.3 · Criterio 8.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="8.2.b">
+                <h4>Ampliación 5.3 · Igualdad y diversidad</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Propón un cambio para hacer más accesible la biblioteca escolar.</li>
+                  <li>Explica por qué «todos exactamente igual» puede necesitar apoyos diferentes.</li>
+                  <li>Escribe un diálogo para resolver una exclusión en un juego.</li>
+                  <li>Diseña una campaña que cuestione un estereotipo que hayas escuchado.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 5.4 · Criterio 9.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="9.2.b">
+                <h4>Ampliación 5.4 · Instituciones y servicios</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Prepara un directorio ilustrado de cuatro servicios de tu municipio.</li>
+                  <li>Compara quién puede intervenir si falla una farola o si falta una especialidad sanitaria.</li>
+                  <li>Redacta una petición clara para mejorar una instalación pública.</li>
+                  <li>Explica cómo beneficia a todos un servicio accesible.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 5.5 · Criterio 9.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="9.1.b">
+                <h4>Ampliación 5.5 · Derechos y convivencia</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una asamblea ficticia con un conflicto y dos soluciones.</li>
+                  <li>Razona por qué no todo lo que decide una mayoría es justo.</li>
+                  <li>Propón una mejora para que los más tímidos puedan expresar sus opiniones.</li>
+                  <li>Escribe un acuerdo de convivencia y cómo evaluarías su cumplimiento.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 5.6 · Criterio 9.3.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="9.3.b">
+                <h4>Ampliación 5.6 · Movilidad responsable</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña un itinerario escolar accesible usando un plano ficticio.</li>
+                  <li>Explica por qué la ruta más corta no siempre es la más segura.</li>
+                  <li>Compara ventajas y limitaciones de caminar, bicicleta y autobús.</li>
+                  <li>Propón una medida para reducir el tráfico en las entradas al colegio.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 5.7 · Criterio 6.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="6.1.b">
+                <h4>Ampliación 5.7 · Nuestra guía ciudadana</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Propón una solución que mejore a la vez la sombra y la biodiversidad de una plaza.</li>
+                  <li>Diseña un pequeño presupuesto cualitativo: materiales y personas que serían necesarios.</li>
+                  <li>Explica qué harías si vecinos distintos tienen opiniones contrapuestas sobre una mejora.</li>
+                  <li>Prepara una presentación de un minuto defendiendo tu propuesta con dos razones.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+        </section>
+
+        <!-- ==================================================
+             COMPRUEBA LO APRENDIDO: selección de cajas rectangulares
+             ================================================== -->
+        <section id="sec-comprueba" class="summary-block check-learning" aria-labelledby="titulo-comprueba">
+          <h2 id="titulo-comprueba" class="lesson-section-heading">
+            <span class="section-number" aria-hidden="true">✓</span>
+            Comprueba lo aprendido
+          </h2>
+          <p>Selecciona una caja por pregunta y pulsa «Comprobar respuestas». Puedes corregir tus elecciones y volver a empezar.</p>
+          <form id="quiz-cm45" novalidate>
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Cuántas provincias forman Andalucía?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Seis.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Ocho.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Diez.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">2. ¿Cuál es la capital de Andalucía?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Sevilla.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Granada.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Córdoba.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué significa migrar?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Cambiar el lugar habitual de residencia.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Viajar una tarde de excursión.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Ir a comprar a otro barrio.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. ¿Qué actitud ayuda a la igualdad?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Elegir equipos según estereotipos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Excluir a quien habla de otra manera.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Permitir participar y ofrecer apoyos necesarios.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. ¿Qué institución organiza muchos servicios locales?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    El ayuntamiento.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    El equipo de fútbol.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    La biblioteca privada.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Qué podemos hacer ante una decisión de clase?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Imponer nuestra opinión.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Dialogar y respetar los derechos de todos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Prohibir hablar a quienes discrepan.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Cuál es una actuación segura como peatón?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Cruzar mientras miramos el móvil.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Cruzar sin comprobar el tráfico.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Utilizar un paso de peatones y prestar atención.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Qué ruta es mejor para una salida escolar?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    La más corta aunque tenga cruces inseguros.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Una ruta adecuada, accesible y con cruces seguros.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Cualquiera sin mirar el plano.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Cuál es una propuesta responsable para un parque?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Dejar residuos en el suelo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Arrancar plantas sin permiso.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Pedir papeleras y cuidar las zonas verdes.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Qué debe incluir nuestra guía ciudadana?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Solo dibujos sin explicación.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Mapas, convivencia, instituciones y propuestas de mejora.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Datos personales de las familias.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button id="quiz-check" type="button" class="lnl-btn">Comprobar respuestas</button>
+              <button id="quiz-reset" type="button" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- ==================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA
+             Cuatro niveles y una respuesta por apartado.
+             ================================================== -->
+        <section id="sec-diana" class="summary-block self-eval" aria-labelledby="titulo-diana">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-diana" class="lesson-section-heading">Diana de Autoevaluación Interactiva</h2>
+              <p>Selecciona la opción que mejor representa lo que has aprendido.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- AUTOEVALUACIÓN 5.1 · Criterio 5.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.1</strong> Distingo municipio, provincia y comunidad autónoma y localizo las ocho provincias de Andalucía en un mapa.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 5.2 · Criterio 8.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.2</strong> Interpreto información sencilla sobre población y migraciones y respeto los distintos orígenes de las personas.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 5.3 · Criterio 8.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.3</strong> Identifico estereotipos y discriminaciones y propongo formas de convivencia igualitarias y accesibles.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 5.4 · Criterio 9.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.4</strong> Distingo ayuntamiento, Junta de Andalucía y Estado, y explico para qué sirven los servicios públicos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 5.5 · Criterio 9.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.5</strong> Conozco derechos de la infancia y participo en acuerdos democráticos respetuosos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 5.6 · Criterio 9.3.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.6</strong> Reconozco normas de seguridad vial y propongo desplazamientos seguros, accesibles y sostenibles.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 5.7 · Criterio 6.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>5.7</strong> Analizo necesidades del entorno y participo en una guía ciudadana con propuestas sostenibles e inclusivas.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 5.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">Borrar respuestas</button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 7 apartados.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE INSTITUCIONAL DEL CENTRO
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interacciones reutilizadas de los HTML de Lengua 4.º. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuestionario: una caja rectangular seleccionada por pregunta.
+      const questions = Array.from(document.querySelectorAll('#quiz-cm45 .quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) {
+            return;
+          }
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Sin responder.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === question.dataset.answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector(
+              '.quiz-option[data-option="' + question.dataset.answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              answer.textContent.trim();
+          }
+        });
+
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' +
+          questions.length + ' respuestas correctas. Contestadas: ' +
+          answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      // Diana de autoevaluación: cuatro niveles, una única elección por fila.
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) {
+            return;
+          }
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+    });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
