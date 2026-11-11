@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Un viaje a la Prehistoria y la Edad Antigua. Situación de Aprendizaje CM4.6 de Conocimiento del Medio de 4.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+  <title>Un viaje a la Prehistoria y la Edad Antigua | Conocimiento del Medio 4.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Cabecera y navegación compartidas con el resto del colegio. -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    SITUACIÓN DE APRENDIZAJE CM4.6 (también solicitada como CN4.6).
+    Contenidos adaptados a alumnado de cuarto y a la distribución ya acordada.
+    Base visual: HTML anteriores de Conocimiento del Medio de 4.º, 5.º y 6.º.
+    Mantener el verde institucional en las SdA y la clase lesson-section-heading.
+
+    DESTINO PREVISTO:
+    /recursos/cuarto/conocimiento-medio4/prehistoria-edad-antigua/index.html
+
+    Marco curricular: segundo ciclo de Educación Primaria, Andalucía.
+    Producto final: museo de aula sobre la Prehistoria y la Edad Antigua.
+    Criterios de las ocho tareas: 7.1.b, 7.2.b, 7.2.b, 7.1.b,
+    7.1.b, 5.3.b, 8.2.b y 1.1.b.
+    Se guarda un solo criterio en data-criterio para cada actividad.
+
+    IMÁGENES FUTURAS:
+    /img/conocimiento4/*.webp
+    Se usan figure.media-frame, img con onerror=markImageMissing(this),
+    figcaption, y mensaje alternativo visible si todavía falta el archivo.
+    No añadir botones de impresión ni de pistas.
+  -->
+  <style>
+
+    :root {
+      --cm-primary: #007a33;
+      --cm-dark: #005724;
+      --cm-light: #e6f4ea;
+      --cm-accent: #00a847;
+      --cm-ink: #1e293b;
+      --cm-muted: #475569;
+      --cm-border: #d1e7dd;
+      --cm-bg: #f4f7f5;
+      --cm-amber-light: #fff7e6;
+      --cm-shadow: 0 5px 18px rgba(0, 90, 37, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page {
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+    }
+
+    .topic-page a:not(.skip-link) {
+      text-underline-offset: 0.15em;
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: 0.3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.65rem;
+      color: #94a3b8;
+    }
+
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(
+        110deg,
+        #005724 0%,
+        #007a33 60%,
+        #00a847 100%
+      );
+      color: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .topic-hero::after {
+      content: "✦  ◉";
+      position: absolute;
+      right: 10px;
+      top: -72px;
+      color: rgba(255, 255, 255, 0.055);
+      font-size: 10rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      max-width: 650px;
+      margin: 0.9rem 0 0;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    /* La mascota utiliza la misma imagen compartida que los índices. */
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: 0.35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .lesson-nav-heading {
+      width: 100%;
+      margin: 0 0 0.2rem;
+      color: var(--cm-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .lesson-nav a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Evita que las reglas generales centren las cabeceras. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 0.85rem;
+      border-bottom: 2px solid var(--cm-border);
+      color: var(--cm-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 0.25rem;
+      border-radius: 0.65rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 0.55rem;
+      color: var(--cm-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: 0.55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ol,
+    .topic-page .lesson-section ul {
+      padding-left: 1.4rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 0.9rem 0.9rem 0;
+      background: var(--cm-light);
+    }
+
+    .explanation h3 {
+      margin-top: 0 !important;
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--cm-dark);
+    }
+
+    .info-card {
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      margin-top: 0 !important;
+    }
+
+    .two-columns,
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .step-index {
+      display: inline-grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--cm-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--cm-amber-light);
+      color: #754709;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 0.75rem 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table caption {
+      margin-bottom: 0.55rem;
+      color: var(--cm-muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--cm-border);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* Cajas de imágenes: estructura compartida figure.media-frame. */
+    .topic-page .media-frame:not(.hero-mascot) {
+      margin: 1.3rem 0 1.7rem;
+      padding: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #f9fcfa;
+      box-shadow: 0 2px 10px rgba(0, 90, 37, 0.04);
+      text-align: center;
+    }
+
+    .topic-page .media-frame:not(.hero-mascot) img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      max-height: 440px;
+      margin: 0 auto;
+      border-radius: 0.65rem;
+      object-fit: contain;
+    }
+
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      color: var(--cm-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    /* Hasta incorporar los .webp, se ve la sugerencia sin icono roto. */
+    .image-suggestion {
+      display: none;
+      padding: 1.5rem 1rem;
+      border: 2px dashed #b8dec6;
+      border-radius: 0.65rem;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .image-suggestion strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .media-frame.image-missing .image-suggestion {
+      display: block;
+    }
+
+    .topic-page .media-frame.image-missing > img {
+      display: none;
+    }
+
+    .media-frame.image-missing figcaption {
+      display: none;
+    }
+
+    .practice {
+      margin: 1.5rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .topic-page .practice > h3 {
+      margin-top: 0;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .task-card {
+      margin: 0.9rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .task-card h4 {
+      margin: 0.25rem 0 0.65rem;
+      color: var(--cm-dark);
+      font-size: 1.04rem;
+    }
+
+    .task-card ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      list-style-type: lower-alpha;
+    }
+
+    .task-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .readable-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ======================================================
+       REPASO: fichas de CM5.1/CM5.2 con estructura de LNL4.8
+       ====================================================== */
+    .sda-recap {
+      border: 2px solid var(--cm-primary);
+    }
+
+    .recap-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recap-heading > div {
+      min-width: 0;
+    }
+
+    .recap-heading .lesson-section-heading {
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .recap-heading p {
+      margin: 0.2rem 0 0;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .recap-sheet + .recap-sheet {
+      margin-top: 2.5rem;
+    }
+
+    .sheet-heading {
+      margin-bottom: 1.2rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 12px 12px 0;
+      background: #ecfdf3;
+    }
+
+    .sheet-heading h3 {
+      margin: 0;
+      color: var(--cm-dark);
+      font-size: 1.05rem;
+    }
+
+    .sheet-heading--ampliacion {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .sheet-heading--ampliacion h3 {
+      color: #92400e;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .sheet-card {
+      min-width: 0;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid #dce6e0;
+      border-radius: 16px;
+      background: #f8faf9;
+    }
+
+    .sheet-card--ampliacion {
+      background: #ffffff;
+      border-color: #f2d5aa;
+    }
+
+    .sheet-card h4 {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 7px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .sheet-card--ampliacion h4 {
+      background: #b45309;
+    }
+
+    .sheet-questions {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: lower-alpha;
+    }
+
+    .sheet-questions li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* ======================================================
+       COMPRUEBA LO APRENDIDO: cajas de respuesta de LNL4.8
+       ====================================================== */
+    .check-learning {
+      background: #ffffff;
+      scroll-margin-top: 80px;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .quiz-item {
+      min-width: 0;
+      border: 1px solid #d7e6db;
+      border-radius: 13px;
+      padding: 1rem;
+      background: #fbfdfb;
+    }
+
+    .quiz-prompt {
+      margin: 0 0 0.75rem;
+      color: #274d37;
+      font-weight: 750;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.65rem 0.8rem;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: #ffffff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--cm-primary);
+      background: #f0fdf4;
+    }
+
+    .quiz-option[aria-pressed="true"] {
+      border-color: var(--cm-primary);
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 700;
+    }
+
+    .quiz-item.correct {
+      border-color: #3c9961;
+    }
+
+    .quiz-item.incorrect {
+      border-color: #d79a71;
+    }
+
+    .quiz-feedback {
+      margin: 0.6rem 0 0;
+      min-height: 1em;
+      color: #475569;
+      font-size: 0.86rem;
+    }
+
+    .quiz-actions,
+    .eval-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.3rem;
+    }
+
+    .lnl-btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 0.75rem 1.1rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+
+    .lnl-btn.secondary {
+      background: #e9f3ed;
+      color: var(--cm-dark);
+    }
+
+    .lnl-btn:hover,
+    .lnl-btn:focus-visible {
+      filter: brightness(0.94);
+    }
+
+    #quiz-summary {
+      margin: 0.9rem 0 0;
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* ======================================================
+       DIANA DE AUTOEVALUACIÓN: botones de LNL4.8
+       ====================================================== */
+    .self-eval {
+      border: 2px solid #c7d2fe;
+    }
+
+    .heading-icon {
+      display: inline-grid;
+      place-items: center;
+      min-width: 3rem;
+      min-height: 2.8rem;
+      border-radius: 12px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .heading-icon--indigo {
+      background: #4f46e5;
+    }
+
+    .self-eval-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .eval-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .eval-statement {
+      flex: 1 1 370px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .eval-statement strong {
+      margin-right: 0.25rem;
+      color: var(--cm-primary);
+    }
+
+    .auto-eval-group {
+      display: flex;
+      flex: 0 1 410px;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .eval-btn {
+      padding: 0.47rem 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #475569;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .eval-btn:hover,
+    .eval-btn:focus-visible {
+      border-color: #4f46e5;
+    }
+
+    .eval-btn[aria-pressed="true"] {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    #eval-status {
+      flex: 1 1 240px;
+      margin: 0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: minmax(0, 1fr) 150px;
+      }
+
+      .topic-page .media-frame.hero-mascot img {
+        max-height: 190px;
+      }
+
+      .two-columns,
+      .step-grid,
+      .sheet-grid,
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 135px;
+        justify-self: end;
+        margin-top: -0.6rem;
+      }
+
+      .topic-page .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        margin-top: 0.13rem;
+      }
+
+
+
+      .topic-page .media-frame:not(.hero-mascot) {
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eval-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .eval-statement,
+      .auto-eval-group {
+        flex: auto;
+      }
+    }
+
+    @media print {
+      .quiz-actions,
+      .eval-actions,
+      .auto-eval-group {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Detecta imágenes pendientes y muestra la sugerencia correspondiente.
+    function markImageMissing(image) {
+      var frame = image.closest('figure.media-frame');
+
+      if (frame) {
+        frame.classList.add('image-missing');
+      } else {
+        image.hidden = true;
+      }
+    }
+  </script>
+</head>
+
+<body class="topic-page">
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       CABECERA GENERAL DEL CENTRO
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a
+        class="navigation-logo"
+        href="/"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/cuarto/conocimiento-medio4/">
+              Conocimiento del Medio
+            </a>
+          </li>
+          <li aria-current="page">Un viaje a la Prehistoria y la Edad Antigua</li>
+        </ol>
+      </nav>
+
+
+
+
+      <!-- Portada verde institucional: mismas clases, Tomatito y estructura CN4.1-CN4.3. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">
+            Conocimiento del Medio · 4.º de Primaria · CM4.6
+          </span>
+          <h1 id="titulo-sda">6. UN VIAJE A LA PREHISTORIA Y LA EDAD ANTIGUA</h1>
+          <p>
+            Viajamos desde los primeros seres humanos hasta la Hispania romana,
+            descubrimos el patrimonio de Andalucía y construimos un museo de aula
+            con fuentes históricas, mapas, objetos y una línea del tiempo.
+          </p>
+          <div class="hero-tags" aria-label="Contenidos principales">
+            <span>Prehistoria</span>
+            <span>Pueblos antiguos</span>
+            <span>Roma</span>
+            <span>Patrimonio</span>
+            <span>Museo escolar</span>
+          </div>
+        </div>
+
+        <!-- Misma mascota del área, sin crear variantes. -->
+        <figure class="media-frame hero-mascot">
+          <img
+            src="/img/tomatito/conocimiento-medio.png"
+            alt="Tomatito, la mascota del colegio"
+            class="topic-hero-image"
+            onerror="markImageMissing(this)"
+          >
+        </figure>
+      </section>
+
+      <!-- Índice interno: ocho tareas y un criterio por tarea. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <a href="#sec-1">6.1 Tiempo histórico y fuentes</a>
+        <a href="#sec-2">6.2 Formas de vida prehistóricas</a>
+        <a href="#sec-3">6.3 Pueblos prerromanos</a>
+        <a href="#sec-4">6.4 Pueblos colonizadores</a>
+        <a href="#sec-5">6.5 Hispania y Córdoba romana</a>
+        <a href="#sec-6">6.6 Arte y patrimonio</a>
+        <a href="#sec-7">6.7 Igualdad y vida cotidiana</a>
+        <a href="#sec-8">6.8 Museo de aula y presentación</a>
+        <a href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a href="#sec-diana">🎯 Autoevaluación</a>
+      </nav>
+
+      <div class="topic-content">
+
+        <!-- ==================================================
+             APARTADO 6.1: VIAJAMOS POR EL TIEMPO: ETAPAS Y FUENTES DE LA HISTORIA
+             Tarea 1: Ordenamos las etapas de la Prehistoria y la Edad Antigua y construimos una línea del tiempo usando fuentes históricas
+             Criterio único: 7.1.b
+             ================================================== -->
+        <section
+          id="sec-1"
+          class="lesson-section"
+          data-tarea="1"
+          data-criterio="7.1.b"
+          aria-labelledby="titulo-sec-1"
+        >
+          <h2 id="titulo-sec-1" class="lesson-section-heading">
+            <span class="section-number">6.1</span>
+            Viajamos por el tiempo: etapas y fuentes de la historia
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Cómo sabemos lo que sucedió hace mucho tiempo?</h3>
+            <p>La <strong>historia</strong> estudia el pasado de las sociedades humanas. Las personas que investigan
+              ese pasado son los historiadores y las historiadoras. Para conocerlo utilizan <strong>fuentes
+              históricas</strong>: objetos, edificios, documentos, relatos y otras huellas que han llegado hasta
+              nosotros.</p>
+            <p>La <strong>arqueología</strong> estudia los restos materiales del pasado. Una vasija, una herramienta
+              o el suelo de una vivienda antigua pueden explicar cómo se vivía. Los arqueólogos registran dónde
+              aparece cada objeto y analizan su contexto; por eso no debemos recoger ni mover piezas en un
+              yacimiento.</p>
+          </div>
+
+          <h3>Un tiempo muy largo dividido en etapas</h3>
+          <p>La <strong>Prehistoria</strong> abarca desde la aparición de los primeros seres humanos hasta la
+            aparición de la escritura. Solemos distinguir <strong>Paleolítico</strong>, <strong>Neolítico</strong> y
+            <strong>Edad de los Metales</strong>. Después se inicia la <strong>Edad Antigua</strong>, cuando numerosas
+            civilizaciones comenzaron a utilizar la escritura. Las fechas no fueron idénticas en todas las
+            regiones.</p>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Etapas y pistas para reconocerlas.</caption>
+              <thead><tr><th>Etapa</th><th>Aspectos destacados</th><th>Fuente que podríamos
+                encontrar</th></tr></thead>
+              <tbody>
+                <tr><td>Paleolítico</td><td>Caza, recolección, grupos móviles, herramientas
+                  talladas</td><td>Herramientas de piedra y pinturas</td></tr>
+                <tr><td>Neolítico</td><td>Agricultura, ganadería y poblados más estables</td><td>Hoz de piedra,
+                  vasija de cerámica</td></tr>
+                <tr><td>Edad de los Metales</td><td>Uso del cobre, bronce y hierro; más
+                  intercambios</td><td>Herramienta o adorno metálico</td></tr>
+                <tr><td>Edad Antigua</td><td>Pueblos y ciudades, rutas comerciales, escritura</td><td>Monedas,
+                  inscripciones, edificios</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Aprendemos a leer una línea del tiempo</h3>
+          <p>Una <strong>línea del tiempo</strong> coloca los acontecimientos en el orden en que sucedieron. En la
+            historia utilizamos <strong>a. C.</strong> (antes de Cristo) y <strong>d. C.</strong> (después de Cristo).
+            Entre dos fechas anteriores a nuestra era, la que tiene el número mayor ocurrió primero: 800 a. C. es
+            anterior a 200 a. C.</p>
+          <div class="example">
+            <h3>Ejemplo: tres tarjetas para nuestro museo</h3>
+            <p>Tenemos una herramienta paleolítica, una vasija neolítica y una moneda romana. Para organizarlas,
+              primero identificamos de qué etapa procede cada objeto y luego colocamos las tarjetas en una línea:
+              <strong>Paleolítico → Neolítico → Edad Antigua romana</strong>. Esta secuencia es orientativa: las
+              monedas romanas son mucho más recientes que las herramientas de las primeras etapas.</p>
+          </div>
+          <div class="callout"><strong>Recuerda:</strong> una fuente histórica no es simplemente algo viejo. Debemos
+            conocer su origen y estudiarla con cuidado para que sirva como prueba del pasado.</div>
+
+          <!-- IMAGEN FUTURA WEBP: linea-tiempo-prehistoria-edad-antigua.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/linea-tiempo-prehistoria-edad-antigua.webp"
+              alt="Línea del tiempo infantil con Paleolítico, Neolítico, Edad de los Metales y Edad Antigua"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Línea del tiempo horizontal con cuatro etapas, dibujos de herramientas talladas, cerámica, metal y edificio romano; textos grandes y claros, sin fechas rígidas para toda la península.
+              <code>/img/conocimiento4/linea-tiempo-prehistoria-edad-antigua.webp</code>
+            </div>
+            <figcaption>Cada fuente histórica aporta pistas sobre las personas que vivieron antes que nosotros.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-1">
+            <h3 id="actividades-1">✏️ Actividades 6.1</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Ordenamos las etapas</h4>
+              <ol type="a">
+                <li>Escribe las tres grandes etapas de la Prehistoria en orden.</li>
+                <li>¿Qué etapa comenzó antes: el Neolítico o la Edad de los Metales?</li>
+                <li>Ordena estas tarjetas: moneda romana, herramienta paleolítica, vasija neolítica.</li>
+                <li>Explica por qué las fechas pueden ser distintas según el lugar.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Conocemos las fuentes</h4>
+              <ol type="a">
+                <li>Define fuente histórica con un ejemplo.</li>
+                <li>¿Qué puede enseñarnos una moneda antigua?</li>
+                <li>Nombra un ejemplo de fuente escrita y otro de fuente material.</li>
+                <li>¿Por qué no debemos llevarnos objetos de un yacimiento arqueológico?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Leemos fechas</h4>
+              <ol type="a">
+                <li>¿Qué significa a. C.?</li>
+                <li>¿Qué sucedió antes: 700 a. C. o 300 a. C.?</li>
+                <li>Ordena: 50 d. C., 400 a. C. y 100 a. C.</li>
+                <li>Explica con tus palabras para qué sirve una línea del tiempo.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Iniciamos el museo</h4>
+              <ol type="a">
+                <li>Propón un título para la línea del tiempo del museo.</li>
+                <li>Elige un objeto para representar la Prehistoria y justifica tu elección.</li>
+                <li>Explica cómo indicarías que una pieza es una reproducción.</li>
+                <li>Escribe una pregunta de investigación que pueda responder una fuente histórica.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.2: DE LAS CUEVAS A LOS POBLADOS: LA PREHISTORIA
+             Tarea 2: Comparamos las formas de vida durante el Paleolítico, el Neolítico y la Edad de los Metales
+             Criterio único: 7.2.b
+             ================================================== -->
+        <section
+          id="sec-2"
+          class="lesson-section"
+          data-tarea="2"
+          data-criterio="7.2.b"
+          aria-labelledby="titulo-sec-2"
+        >
+          <h2 id="titulo-sec-2" class="lesson-section-heading">
+            <span class="section-number">6.2</span>
+            De las cuevas a los poblados: la Prehistoria
+          </h2>
+
+          <div class="explanation">
+            <h3>El Paleolítico: grupos que se desplazaban</h3>
+            <p>Durante buena parte del Paleolítico, los grupos humanos obtenían sus alimentos mediante la
+              <strong>caza</strong>, la <strong>pesca</strong> y la <strong>recolección</strong>. Se trasladaban
+              cuando escaseaban los recursos, por lo que se dice que muchos de ellos eran <strong>nómadas</strong>. Se
+              refugiaban en cuevas y también construían campamentos al aire libre. Fabricaban útiles de piedra, hueso
+              y madera y utilizaban el fuego.</p>
+            <p>Algunas comunidades dejaron <strong>arte rupestre</strong> en cuevas y abrigos rocosos. Las pinturas
+              y grabados son una fuente importante, aunque no siempre conocemos con seguridad su significado.</p>
+          </div>
+
+          <h3>El Neolítico: producir alimentos y formar poblados</h3>
+          <p>En el Neolítico se extendieron la <strong>agricultura</strong> y la <strong>ganadería</strong>.
+            Cultivar plantas y criar animales permitió a muchas comunidades vivir durante más tiempo en un mismo
+            lugar: es una forma de vida <strong>sedentaria</strong>. También se desarrollaron la cerámica, el tejido y
+            las herramientas de piedra pulida.</p>
+          <div class="two-columns">
+            <article class="info-card"><h3>🏕️ Grupo nómada</h3><p>Se desplaza según las estaciones y los recursos.
+              Puede utilizar refugios temporales. Sus utensilios deben ser fáciles de transportar.</p></article>
+            <article class="info-card"><h3>🏘️ Poblado sedentario</h3><p>Sus habitantes cultivan la tierra, cuidan
+              animales y construyen viviendas más duraderas, almacenes y recipientes de cerámica.</p></article>
+          </div>
+          <h3>La Edad de los Metales: nuevos materiales</h3>
+          <p>Con el tiempo, las personas aprendieron a trabajar el <strong>cobre</strong>, el
+            <strong>bronce</strong> y el <strong>hierro</strong>. No sustituyeron de golpe a la piedra: durante muchos
+            años se usaron materiales diferentes. Mejoraron algunas herramientas, aumentaron los intercambios y
+            aparecieron poblados con nuevas formas de organización.</p>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Comparación sencilla de las tres etapas.</caption>
+            <thead><tr><th>Aspecto</th><th>Paleolítico</th><th>Neolítico</th><th>Edad de los
+              Metales</th></tr></thead>
+            <tbody>
+              <tr><td>Alimentos</td><td>Caza, pesca, recolección</td><td>Agricultura y ganadería, además de otros
+                recursos</td><td>Cultivos, ganadería y comercio</td></tr>
+              <tr><td>Vivienda</td><td>Campamentos y refugios</td><td>Poblados más estables</td><td>Poblados,
+                algunos fortificados</td></tr>
+              <tr><td>Tecnología</td><td>Piedra tallada</td><td>Piedra pulida, cerámica</td><td>Cobre, bronce y
+                hierro</td></tr>
+            </tbody>
+          </table></div>
+          <div class="example"><h3>Ejemplo: ¿qué llevaríamos a un poblado neolítico?</h3>
+          <p>Imaginamos que una familia cultiva trigo y guarda parte de su cosecha. Necesitaría un recipiente para
+            almacenar el grano, una herramienta para recogerlo y una vivienda próxima a los campos. Así relacionamos
+            <strong>las necesidades</strong> con los cambios técnicos. Este ejemplo es una recreación didáctica, no la
+            descripción de un poblado concreto.</p></div>
+          <div class="callout"><strong>Importante:</strong> no todos los grupos cambiaron de forma de vida al mismo
+            tiempo. El Paleolítico, el Neolítico y la Edad de los Metales tuvieron duraciones diferentes según el
+            territorio.</div>
+
+          <!-- IMAGEN FUTURA WEBP: paleolitico-neolitico-metales-vida-cotidiana.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/paleolitico-neolitico-metales-vida-cotidiana.webp"
+              alt="Tres escenas comparativas de un campamento paleolítico, un poblado neolítico y un taller de metales"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Tríptico con tres escenas históricamente verosímiles, hombres y mujeres realizando tareas variadas, campamento, aldea agrícola y artesanía metalúrgica; no usar estereotipos de género.
+              <code>/img/conocimiento4/paleolitico-neolitico-metales-vida-cotidiana.webp</code>
+            </div>
+            <figcaption>La Prehistoria muestra cómo cambiaron, poco a poco, la tecnología y los modos de vida.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-2">
+            <h3 id="actividades-2">✏️ Actividades 6.2</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Vivimos en el Paleolítico</h4>
+              <ol type="a">
+                <li>¿Cómo conseguían sus alimentos muchos grupos paleolíticos?</li>
+                <li>Explica qué significa nómada.</li>
+                <li>Nombra dos materiales para fabricar herramientas.</li>
+                <li>¿Qué información pueden aportar las pinturas rupestres?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Cambios del Neolítico</h4>
+              <ol type="a">
+                <li>Explica qué significa sedentario.</li>
+                <li>Nombra dos novedades del Neolítico.</li>
+                <li>¿Para qué se utilizaba una vasija de cerámica?</li>
+                <li>¿Por qué la agricultura favoreció la aparición de poblados?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Los metales</h4>
+              <ol type="a">
+                <li>Escribe tres metales utilizados en diferentes momentos de la Prehistoria.</li>
+                <li>Explica por qué trabajar metales podía cambiar algunas herramientas.</li>
+                <li>¿Dejó de utilizarse la piedra de un día para otro? Razona.</li>
+                <li>Relaciona el comercio con el intercambio de materiales.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Comparamos modos de vida</h4>
+              <ol type="a">
+                <li>Compara dos diferencias entre un campamento y un poblado.</li>
+                <li>Describe qué alimentos podría consumir una familia neolítica.</li>
+                <li>Elige un objeto representativo de cada etapa y explícalo.</li>
+                <li>Dibuja una escena y añade tres etiquetas históricas correctas.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.3: LOS PUEBLOS ANTERIORES A ROMA: TARTESSOS E ÍBEROS
+             Tarea 3: Reconocemos pueblos y culturas prerromanas y estudiamos sus formas de vida y su legado
+             Criterio único: 7.2.b
+             ================================================== -->
+        <section
+          id="sec-3"
+          class="lesson-section"
+          data-tarea="3"
+          data-criterio="7.2.b"
+          aria-labelledby="titulo-sec-3"
+        >
+          <h2 id="titulo-sec-3" class="lesson-section-heading">
+            <span class="section-number">6.3</span>
+            Los pueblos anteriores a Roma: Tartessos e íberos
+          </h2>
+
+          <div class="explanation">
+            <h3>Una península habitada por comunidades diferentes</h3>
+            <p>Antes de la conquista romana, la Península Ibérica no estaba habitada por un único pueblo. Existían
+              muchas comunidades con sus propias lenguas, costumbres y formas de organización. Algunos de los nombres
+              que usamos para estudiarlas son <strong>íberos</strong>, <strong>celtas</strong> y
+              <strong>celtíberos</strong>, además de las comunidades relacionadas con <strong>Tartessos</strong>.</p>
+            <p>Las poblaciones antiguas practicaban la agricultura, la ganadería, la artesanía y el comercio en
+              proporciones diferentes según el lugar. El contacto con otros pueblos hizo que intercambiaran objetos e
+              ideas, sin que todas las comunidades fueran iguales.</p>
+          </div>
+
+          <h3>Tartessos: una cultura del suroeste</h3>
+          <p>La cultura que llamamos <strong>Tartessos</strong> se desarrolló en el suroeste de la península,
+            especialmente en áreas vinculadas al bajo Guadalquivir y al golfo de Cádiz, durante parte del primer
+            milenio antes de nuestra era. Destacó la actividad minera, el trabajo de metales y los intercambios con
+            comerciantes del Mediterráneo. Los especialistas siguen investigando cómo se organizaban exactamente estas
+            comunidades.</p>
+          <h3>Los pueblos íberos</h3>
+          <p>En amplias zonas del este y del sur de la Península Ibérica vivieron comunidades íberas. Habitaron
+            poblados, algunos protegidos por murallas, cultivaron la tierra, realizaron intercambios y dejaron
+            esculturas y objetos de cerámica. En Andalucía conocemos importantes hallazgos de <strong>Cástulo</strong>
+            (Jaén) y la escultura llamada <strong>Dama de Baza</strong> (Granada).</p>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Ejemplos de comunidades y huellas prerromanas.</caption>
+            <thead><tr><th>Cultura o pueblos</th><th>Áreas destacadas</th><th>Huellas materiales</th></tr></thead>
+            <tbody>
+              <tr><td>Tartessos</td><td>Suroeste de la península, bajo Guadalquivir y entorno del golfo de
+                Cádiz</td><td>Objetos de orfebrería, restos de poblados, cerámica</td></tr>
+              <tr><td>Íberos</td><td>Sur y este peninsulares, entre otras áreas</td><td>Esculturas, cerámica y
+                poblados fortificados</td></tr>
+              <tr><td>Celtas y celtíberos</td><td>Áreas del norte, centro y oeste, según los grupos</td><td>Restos
+                de poblados, herramientas y objetos metálicos</td></tr>
+            </tbody>
+          </table></div>
+          <div class="example"><h3>Ejemplo: somos detectives de un poblado antiguo</h3>
+          <p>En una excavación ficticia aparecen un recipiente de cerámica, semillas carbonizadas y un adorno de
+            metal. Podemos preguntarnos: ¿guardaban alimentos?, ¿qué cultivaban?, ¿trabajaban el metal o lo conseguían
+            mediante intercambios? Estas son <strong>hipótesis</strong>, posibles explicaciones que deben contrastarse
+            con más pruebas.</p></div>
+          <div class="callout"><strong>Una idea importante:</strong> los pueblos prerromanos no eran iguales ni
+            vivieron todos en la misma época. Los mapas históricos son representaciones aproximadas, no fronteras
+            actuales.</div>
+
+          <!-- IMAGEN FUTURA WEBP: mapa-prerromanos-tartessos-iberos.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/mapa-prerromanos-tartessos-iberos.webp"
+              alt="Mapa didáctico aproximado de pueblos prerromanos con Tartessos, áreas íberas y otras comunidades"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Mapa simplificado de la península con zonas aproximadas, sin fronteras rígidas, y pequeños dibujos de una vasija, un poblado y una escultura; indicar Andalucía y Córdoba.
+              <code>/img/conocimiento4/mapa-prerromanos-tartessos-iberos.webp</code>
+            </div>
+            <figcaption>Las comunidades prerromanas dejaron huellas diferentes que hoy estudian los arqueólogos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-3">
+            <h3 id="actividades-3">✏️ Actividades 6.3</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Situamos las culturas</h4>
+              <ol type="a">
+                <li>Explica qué significa prerromano.</li>
+                <li>Sitúa de forma aproximada Tartessos en el mapa peninsular.</li>
+                <li>¿En qué zonas de la península vivieron muchas comunidades íberas?</li>
+                <li>¿Podemos afirmar que todos los pueblos prerromanos eran iguales? Razona.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Conocemos Tartessos</h4>
+              <ol type="a">
+                <li>Nombra dos actividades relacionadas con Tartessos.</li>
+                <li>Explica por qué el comercio fue importante en el suroeste.</li>
+                <li>¿Qué puede enseñarnos un adorno de metal?</li>
+                <li>Escribe una pregunta que todavía pudiera investigar un arqueólogo.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Descubrimos el legado íbero</h4>
+              <ol type="a">
+                <li>Nombra un yacimiento relacionado con comunidades íberas de Andalucía.</li>
+                <li>¿En qué provincia se halló la Dama de Baza?</li>
+                <li>Escribe dos materiales empleados por los artesanos.</li>
+                <li>¿Por qué una escultura es una fuente para conocer el pasado?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 7.2.b. -->
+            <article class="task-card" data-criterio="7.2.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Razonamos con hallazgos</h4>
+              <ol type="a">
+                <li>Imagina una vasija rota y propone qué investigarías.</li>
+                <li>Diferencia un dato observado de una suposición.</li>
+                <li>Explica por qué es importante estudiar el lugar del hallazgo.</li>
+                <li>Prepara una ficha de museo con nombre del objeto, procedencia y posible uso.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.4: LOS PUEBLOS NAVEGANTES: FENICIOS, GRIEGOS Y CARTAGINESES
+             Tarea 4: Identificamos las rutas comerciales y aportaciones de los pueblos mediterráneos durante la Edad Antigua
+             Criterio único: 7.1.b
+             ================================================== -->
+        <section
+          id="sec-4"
+          class="lesson-section"
+          data-tarea="4"
+          data-criterio="7.1.b"
+          aria-labelledby="titulo-sec-4"
+        >
+          <h2 id="titulo-sec-4" class="lesson-section-heading">
+            <span class="section-number">6.4</span>
+            Los pueblos navegantes: fenicios, griegos y cartagineses
+          </h2>
+
+          <div class="explanation">
+            <h3>El mar Mediterráneo unía territorios</h3>
+            <p>Hace muchos siglos, los barcos permitieron comunicar distintos pueblos del mar Mediterráneo. Los
+              navegantes buscaban productos, establecían lugares de intercambio y compartían conocimientos. Entre
+              ellos destacaron <strong>fenicios</strong>, <strong>griegos</strong> y, más tarde,
+              <strong>cartagineses</strong>.</p>
+            <p>Las relaciones no siempre fueron pacíficas: hubo intercambios comerciales, acuerdos, competencia y
+              conflictos. Es importante estudiar lo que estos encuentros cambiaron en las comunidades que ya vivían en
+              la península.</p>
+          </div>
+
+          <h3>Fenicios: ciudades costeras y comercio</h3>
+          <p>Los fenicios procedían de ciudades del Mediterráneo oriental. Llegaron a costas del sur peninsular y
+            fundaron asentamientos comerciales. Se relaciona con su presencia la fundación de <strong>Gadir</strong>,
+            en el entorno de la actual Cádiz, y de <strong>Malaka</strong>, en el área de Málaga. Comerciaban, entre
+            otros productos, con metales y manufacturas. Su alfabeto influyó en el desarrollo de distintos sistemas de
+            escritura.</p>
+          <h3>Griegos y cartagineses</h3>
+          <p>Los comerciantes <strong>griegos</strong> navegaron por el Mediterráneo y establecieron colonias en la
+            costa oriental peninsular, como <strong>Emporion</strong> (actual Empúries, Girona). Los
+            <strong>cartagineses</strong>, relacionados con la ciudad de Cartago, extendieron su influencia por parte
+            del sur y el este de la península y fundaron <strong>Qart Hadasht</strong>, la actual Cartagena. Más
+            adelante se enfrentaron a Roma en las guerras púnicas.</p>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Rutas, lugares y relaciones de tres pueblos mediterráneos.</caption>
+            <thead><tr><th>Pueblo</th><th>Ejemplo de ciudad vinculada</th><th>Relaciones
+              destacadas</th></tr></thead>
+            <tbody>
+              <tr><td>Fenicios</td><td>Gadir (Cádiz)</td><td>Comercio de metales, artesanías y difusión de
+                técnicas</td></tr>
+              <tr><td>Griegos</td><td>Emporion (Empúries)</td><td>Comercio mediterráneo e intercambios
+                culturales</td></tr>
+              <tr><td>Cartagineses</td><td>Qart Hadasht (Cartagena)</td><td>Comercio, control territorial y
+                enfrentamientos con Roma</td></tr>
+            </tbody>
+          </table></div>
+          <div class="example"><h3>Ejemplo: un mercado imaginario junto al mar</h3>
+          <p>En nuestra representación teatral, una familia local ofrece mineral, otra vende recipientes de cerámica
+            y unos navegantes traen tejidos. Cada grupo intercambia productos y aprende palabras nuevas. Después
+            explicamos que <strong>el intercambio de productos también difundía ideas</strong>. Es una dramatización
+            inventada para comprender una situación histórica, no un hecho documentado concreto.</p></div>
+          <div class="callout"><strong>Recuerda:</strong> la llegada de otros pueblos no borró a las comunidades
+            locales. El contacto produjo cambios e influencias mutuas a lo largo del tiempo.</div>
+
+          <!-- IMAGEN FUTURA WEBP: rutas-mediterraneo-colonizadores.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/rutas-mediterraneo-colonizadores.webp"
+              alt="Mapa de rutas marítimas mediterráneas que conecta las costas fenicias, griegas y cartaginesas con la Península Ibérica"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Mapa claro del Mediterráneo con flechas de rutas comerciales, Cádiz, Málaga, Empúries y Cartagena; tres embarcaciones de estilos antiguos sin exceso de etiquetas.
+              <code>/img/conocimiento4/rutas-mediterraneo-colonizadores.webp</code>
+            </div>
+            <figcaption>Las rutas marítimas favorecieron intercambios de productos y conocimientos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-4">
+            <h3 id="actividades-4">✏️ Actividades 6.4</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Localizamos rutas</h4>
+              <ol type="a">
+                <li>¿Por qué el Mediterráneo fue importante para el comercio?</li>
+                <li>Nombra un lugar relacionado con los fenicios en Andalucía.</li>
+                <li>Localiza Empúries y Cartagena en un mapa de España.</li>
+                <li>Explica por qué muchas ciudades comerciales surgieron junto al mar.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Conocemos a los fenicios</h4>
+              <ol type="a">
+                <li>¿De qué región del Mediterráneo procedían los fenicios?</li>
+                <li>¿Con qué ciudad actual relacionamos Gadir?</li>
+                <li>Nombra dos productos o conocimientos que podían intercambiar.</li>
+                <li>Explica por qué una inscripción es una fuente histórica.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Comparamos pueblos</h4>
+              <ol type="a">
+                <li>Escribe el nombre de los tres pueblos navegantes estudiados.</li>
+                <li>¿Qué pueblo fundó Emporion?</li>
+                <li>¿Qué ciudad actual se relaciona con Qart Hadasht?</li>
+                <li>Explica una semejanza y una diferencia entre sus actividades.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Representamos un intercambio</h4>
+              <ol type="a">
+                <li>Dibuja un barco mercante y dos productos transportados.</li>
+                <li>Escribe un diálogo de cuatro frases entre comerciantes sin usar estereotipos.</li>
+                <li>Añade una consecuencia positiva del intercambio cultural.</li>
+                <li>Explica por qué también podía haber competencia o conflictos.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.5: HISPANIA ROMANA: LA BÉTICA Y LAS HUELLAS DE CÓRDOBA
+             Tarea 5: Localizamos la Bética romana y explicamos cambios y huellas de la presencia romana en Andalucía y Córdoba
+             Criterio único: 7.1.b
+             ================================================== -->
+        <section
+          id="sec-5"
+          class="lesson-section"
+          data-tarea="5"
+          data-criterio="7.1.b"
+          aria-labelledby="titulo-sec-5"
+        >
+          <h2 id="titulo-sec-5" class="lesson-section-heading">
+            <span class="section-number">6.5</span>
+            Hispania romana: la Bética y las huellas de Córdoba
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué ocurrió cuando llegaron los romanos?</h3>
+            <p>Hace más de dos mil años, <strong>Roma</strong> fue una gran potencia del Mediterráneo. Los romanos
+              conquistaron la Península Ibérica durante un proceso que duró muchos años. Llamaron
+              <strong>Hispania</strong> al territorio peninsular bajo su dominio y lo organizaron en distintas
+              provincias.</p>
+            <p>Durante ese período se extendieron el <strong>latín</strong>, muchas leyes y costumbres, nuevas
+              ciudades, calzadas y obras de ingeniería. A ese proceso de cambios se le llama
+              <strong>romanización</strong>. No todas las personas cambiaron de costumbres de la misma forma ni al
+              mismo tiempo.</p>
+          </div>
+
+          <h3>La Bética, provincia romana</h3>
+          <p>Una de las provincias de Hispania se llamó <strong>Bética</strong> y comprendió buena parte del
+            territorio de la actual Andalucía y otras áreas próximas, aunque sus límites no coincidían exactamente con
+            los actuales. Su capital fue <strong>Corduba</strong>, la actual Córdoba.</p>
+          <p>En la Bética se cultivaban productos como el <strong>aceite de oliva</strong> y los cereales. El
+            transporte de mercancías se apoyaba en vías terrestres y rutas marítimas. Algunas ánforas encontradas por
+            los arqueólogos se usaban para transportar aceite y otros productos.</p>
+          <h3>La ciudad y sus edificios</h3>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Algunas construcciones y sus funciones en la época romana.</caption>
+            <thead><tr><th>Construcción</th><th>¿Para qué se utilizaba?</th><th>Ejemplo o pista</th></tr></thead>
+            <tbody>
+              <tr><td>Calzada</td><td>Comunicar ciudades y transportar mercancías</td><td>Restos de caminos y
+                trazados antiguos</td></tr>
+              <tr><td>Puente</td><td>Salvar un río y facilitar el paso</td><td>Puente de origen romano de Córdoba,
+                reformado a lo largo del tiempo</td></tr>
+              <tr><td>Acueducto</td><td>Llevar agua a algunos núcleos urbanos</td><td>Canales y
+                conducciones</td></tr>
+              <tr><td>Teatro</td><td>Representar obras y celebrar espectáculos</td><td>Graderíos y
+                escenarios</td></tr>
+              <tr><td>Templo</td><td>Realizar cultos religiosos</td><td>Restos del templo romano de
+                Córdoba</td></tr>
+            </tbody>
+          </table></div>
+          <h3>La vida cotidiana: no todo el mundo vivía igual</h3>
+          <p>Las ciudades tenían viviendas, mercados, talleres y lugares de reunión, pero las condiciones de vida
+            variaban mucho. Había personas libres y esclavizadas, y las mujeres no disponían de los mismos derechos
+            políticos que los hombres ciudadanos. Al estudiar el pasado reconocemos sus diferencias sin justificar las
+            desigualdades.</p>
+          <div class="example"><h3>Ejemplo: una visita imaginaria a Corduba</h3>
+          <p>Imaginamos una jornada de mercado: un vendedor llega por una calzada con un carro; otros comerciantes
+            transportan aceite en ánforas y varias familias atraviesan un puente. Buscamos en un mapa el río
+            Guadalquivir y señalamos las huellas de origen romano visibles hoy. Después distinguimos <strong>la
+            recreación</strong> de los <strong>restos históricos reales</strong>.</p></div>
+          <div class="callout"><strong>Atención:</strong> el puente actual de Córdoba tiene origen romano, pero ha
+            sido reparado y transformado durante muchos siglos. No debemos presentar todo lo que vemos hoy como si
+            fuera exactamente de la época romana.</div>
+
+          <!-- IMAGEN FUTURA WEBP: hispania-betica-corduba-romana.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/hispania-betica-corduba-romana.webp"
+              alt="Mapa sencillo de Hispania romana con la Bética y Corduba, junto a una vista de puente y calzada romanos"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Composición con mapa histórico aproximado de Hispania y la Bética, Córdoba marcada claramente y escena de calzada, ánforas y puente; leyenda que advierta de los cambios en los límites.
+              <code>/img/conocimiento4/hispania-betica-corduba-romana.webp</code>
+            </div>
+            <figcaption>Corduba fue capital de la Bética y conserva huellas de su pasado romano.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-5">
+            <h3 id="actividades-5">✏️ Actividades 6.5</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Situamos Hispania</h4>
+              <ol type="a">
+                <li>¿Cómo llamaban los romanos a la península bajo su dominio?</li>
+                <li>¿Qué fue la romanización?</li>
+                <li>¿Cómo se llamó la provincia romana vinculada a gran parte de Andalucía?</li>
+                <li>¿Cuál fue la capital de la Bética?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Observamos las construcciones</h4>
+              <ol type="a">
+                <li>¿Para qué servía una calzada?</li>
+                <li>¿Qué diferencia hay entre un puente y un acueducto?</li>
+                <li>Nombra dos construcciones de origen romano que se relacionen con Córdoba.</li>
+                <li>¿Por qué un edificio antiguo puede haber cambiado con los siglos?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Investigamos la economía</h4>
+              <ol type="a">
+                <li>¿Qué producto obtenían de los olivos en la Bética?</li>
+                <li>Explica para qué se utilizaban las ánforas.</li>
+                <li>¿Por qué eran importantes las rutas terrestres y marítimas?</li>
+                <li>Propón un dibujo de una ruta comercial antigua con una leyenda.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 7.1.b. -->
+            <article class="task-card" data-criterio="7.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Un día en Corduba</h4>
+              <ol type="a">
+                <li>Escribe dos personajes de una escena de mercado.</li>
+                <li>Describe un edificio público y su función.</li>
+                <li>Separa una afirmación histórica comprobable de un detalle inventado en una recreación.</li>
+                <li>Explica una desigualdad de la sociedad romana que hoy consideraríamos injusta.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.6: EL ARTE Y EL PATRIMONIO: PROTEGEMOS EL PASADO
+             Tarea 6: Identificamos manifestaciones artísticas y proponemos medidas para cuidar el patrimonio histórico y cultural
+             Criterio único: 5.3.b
+             ================================================== -->
+        <section
+          id="sec-6"
+          class="lesson-section"
+          data-tarea="6"
+          data-criterio="5.3.b"
+          aria-labelledby="titulo-sec-6"
+        >
+          <h2 id="titulo-sec-6" class="lesson-section-heading">
+            <span class="section-number">6.6</span>
+            El arte y el patrimonio: protegemos el pasado
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué es el patrimonio cultural?</h3>
+            <p>El <strong>patrimonio cultural</strong> es el conjunto de bienes, lugares, conocimientos y
+              tradiciones que una comunidad valora y desea conservar para las generaciones futuras. En esta situación
+              de aprendizaje nos fijaremos especialmente en el <strong>patrimonio histórico y arqueológico</strong>:
+              yacimientos, monumentos, esculturas, cerámicas y pinturas del pasado.</p>
+            <p>Los bienes patrimoniales ayudan a comprender cómo vivían otras sociedades. También pueden ser
+              frágiles: un arañazo, una pintada o llevarse una pieza puede borrar información que nadie podrá
+              recuperar.</p>
+          </div>
+
+          <h3>Arte de la Prehistoria y de la Edad Antigua</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🎨 Arte prehistórico</h3><p>Incluye pinturas y grabados rupestres,
+              pequeños adornos y, en algunas épocas, grandes construcciones de piedra. Se estudia mediante las huellas
+              y el contexto de los hallazgos.</p></article>
+            <article class="info-card"><h3>🏺 Arte de la Edad Antigua</h3><p>Incluye esculturas, mosaicos, cerámicas,
+              monumentos y edificios. Podemos estudiar piezas íberas y romanas en museos y yacimientos de
+              Andalucía.</p></article>
+          </div>
+          <h3>Algunos lugares para conocer la historia andaluza</h3>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Patrimonio andaluz y qué podemos aprender de él.</caption>
+            <thead><tr><th>Ejemplo</th><th>Provincia</th><th>Qué muestra</th></tr></thead>
+            <tbody>
+              <tr><td>Dólmenes de Antequera</td><td>Málaga</td><td>Construcciones monumentales
+                prehistóricas</td></tr>
+              <tr><td>Conjunto arqueológico de Cástulo</td><td>Jaén</td><td>Huellas de distintas épocas, incluida la
+                íbera y la romana</td></tr>
+              <tr><td>Teatro romano de Málaga</td><td>Málaga</td><td>Arquitectura para espectáculos en época
+                romana</td></tr>
+              <tr><td>Templo romano de Córdoba</td><td>Córdoba</td><td>Restos de un edificio religioso
+                romano</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Cómo debemos visitar y cuidar un yacimiento</h3>
+          <ol class="readable-list">
+            <li>Respetar los recorridos señalizados y las indicaciones de quienes lo conservan.</li>
+            <li>No tocar superficies delicadas ni escribir sobre muros o rocas.</li>
+            <li>No recoger ni mover piezas, fragmentos de cerámica o piedras de un yacimiento.</li>
+            <li>Fotografiar únicamente cuando esté permitido y cuidar el entorno.</li>
+            <li>Compartir información contrastada sobre lo que hemos aprendido.</li>
+          </ol>
+          <div class="example"><h3>Ejemplo: preparamos una visita al museo</h3>
+          <p>La clase visita un museo arqueológico con permiso del centro. Cada equipo escoge una pieza, lee la
+            cartela y completa una ficha con nombre, material, procedencia y época. Si algo no está claro, lo anotamos
+            como <strong>pregunta</strong>, no como un dato inventado. Al volver, dibujamos la pieza para nuestra
+            exposición de aula.</p></div>
+          <div class="callout"><strong>Cuidar es conocer:</strong> un monumento no es solo un lugar para hacerse
+            fotos. Su conservación permite que otras personas puedan seguir estudiándolo y disfrutándolo.</div>
+
+          <!-- IMAGEN FUTURA WEBP: patrimonio-andaluz-prehistoria-roma.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/patrimonio-andaluz-prehistoria-roma.webp"
+              alt="Collage educativo de pinturas rupestres, dólmenes, cerámica íbera y restos de arquitectura romana andaluza"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Cuatro ilustraciones documentales con recuadros de igual tamaño: arte rupestre, dolmen, cerámica íbera y teatro o templo romano; textos breves, sin convertir ruinas en edificios intactos.
+              <code>/img/conocimiento4/patrimonio-andaluz-prehistoria-roma.webp</code>
+            </div>
+            <figcaption>Conservar el patrimonio nos ayuda a comprender y transmitir la historia.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-6">
+            <h3 id="actividades-6">✏️ Actividades 6.6</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 5.3.b. -->
+            <article class="task-card" data-criterio="5.3.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Reconocemos el patrimonio</h4>
+              <ol type="a">
+                <li>Explica qué es el patrimonio cultural.</li>
+                <li>Nombra un ejemplo de patrimonio prehistórico.</li>
+                <li>Nombra un ejemplo de arte romano.</li>
+                <li>¿Por qué debemos proteger los restos arqueológicos?</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 5.3.b. -->
+            <article class="task-card" data-criterio="5.3.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Visitamos con respeto</h4>
+              <ol type="a">
+                <li>Escribe dos normas de una visita a un museo.</li>
+                <li>¿Por qué no debemos recoger fragmentos de cerámica de un yacimiento?</li>
+                <li>Explica qué harías si ves a alguien dañando un monumento.</li>
+                <li>Diseña una señal breve y positiva de protección del patrimonio.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 5.3.b. -->
+            <article class="task-card" data-criterio="5.3.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Analizamos una pieza</h4>
+              <ol type="a">
+                <li>Elige una pieza antigua y escribe su posible material.</li>
+                <li>Indica qué información buscarías en su cartela.</li>
+                <li>Diferencia un dato de una hipótesis sobre su uso.</li>
+                <li>Redacta una descripción de tres frases comprensibles para un visitante.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 5.3.b. -->
+            <article class="task-card" data-criterio="5.3.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Elaboramos una propuesta</h4>
+              <ol type="a">
+                <li>Selecciona un monumento andaluz de las etapas estudiadas.</li>
+                <li>Explica qué podemos aprender de él.</li>
+                <li>Diseña una medida para que se conserve mejor.</li>
+                <li>Prepara un cartel con una imagen o dibujo y una explicación.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.7: MUJERES Y HOMBRES EN EL PASADO: UNA HISTORIA DE TODAS LAS PERSONAS
+             Tarea 7: Analizamos los papeles de mujeres y hombres en sociedades antiguas sin reproducir estereotipos
+             Criterio único: 8.2.b
+             ================================================== -->
+        <section
+          id="sec-7"
+          class="lesson-section"
+          data-tarea="7"
+          data-criterio="8.2.b"
+          aria-labelledby="titulo-sec-7"
+        >
+          <h2 id="titulo-sec-7" class="lesson-section-heading">
+            <span class="section-number">6.7</span>
+            Mujeres y hombres en el pasado: una historia de todas las personas
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Quiénes construyeron la historia?</h3>
+            <p>La historia no la hicieron solamente reyes, guerreros o gobernantes. También participaron
+              <strong>agricultoras, artesanas, comerciantes, pescadores, niñas, niños y muchas otras
+              personas</strong>. Las actividades de cada comunidad variaban con el tiempo, el lugar y la situación
+              familiar.</p>
+            <p>Durante años, muchos relatos históricos destacaron sobre todo a algunos hombres. Hoy estudiamos más
+              fuentes para conocer mejor el trabajo y las experiencias de <strong>mujeres y hombres</strong>, sin
+              suponer que cada tarea pertenecía siempre a un sexo.</p>
+          </div>
+
+          <h3>¿Qué sabemos realmente?</h3>
+          <p>Para estudiar la vida cotidiana observamos viviendas, herramientas, enterramientos, restos de
+            alimentos, textos y representaciones artísticas. Una herramienta junto a una persona no siempre demuestra
+            qué trabajo realizaba durante toda su vida; las pruebas deben interpretarse con cuidado.</p>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Preguntas para estudiar la vida diaria de forma respetuosa.</caption>
+            <thead><tr><th>Aspecto</th><th>Pregunta histórica</th><th>Qué fuentes pueden ayudarnos</th></tr></thead>
+            <tbody>
+              <tr><td>Alimentación</td><td>¿Quién cultivaba, recogía, cocinaba o comerciaba?</td><td>Herramientas,
+                restos de alimentos, textos</td></tr>
+              <tr><td>Artesanía</td><td>¿Quién fabricaba tejidos, cerámica o metal?</td><td>Telares, talleres,
+                objetos, imágenes</td></tr>
+              <tr><td>Infancia</td><td>¿Cómo aprendían y jugaban niñas y niños?</td><td>Juguetes, viviendas,
+                relatos</td></tr>
+              <tr><td>Derechos</td><td>¿Podían todas las personas decidir y participar igual?</td><td>Normas,
+                inscripciones, documentos</td></tr>
+            </tbody>
+          </table></div>
+          <h3>La desigualdad en algunas sociedades antiguas</h3>
+          <p>En Roma, por ejemplo, las mujeres tenían limitados sus derechos políticos y existía la
+            <strong>esclavitud</strong>. Esta realidad histórica no significa que fuera justa. Hoy defendemos la
+            <strong>igualdad de dignidad y derechos</strong> de todas las personas, con independencia de su sexo,
+            origen o situación.</p>
+          <div class="example"><h3>Ejemplo: corregimos una ficha de museo</h3>
+          <p>Una ficha dice: «En el Neolítico los hombres cazaban y las mujeres solo cocinaban». El equipo detecta
+            que es una afirmación demasiado general. La sustituye por: «Las personas de las comunidades prehistóricas
+            obtenían alimentos y realizaban diferentes tareas. La distribución del trabajo podía variar y se investiga
+            mediante restos arqueológicos». Así evitamos afirmar como seguro algo que <strong>las fuentes no
+            demuestran para todos los grupos</strong>.</p></div>
+          <div class="callout"><strong>Para pensar:</strong> explicar las costumbres de otras épocas no significa
+            que tengamos que aceptarlas en el presente. Podemos aprender del pasado y defender relaciones más justas
+            hoy.</div>
+
+          <!-- IMAGEN FUTURA WEBP: vida-cotidiana-mujeres-hombres-antiguedad.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/vida-cotidiana-mujeres-hombres-antiguedad.webp"
+              alt="Escenas de vida cotidiana prehistórica y romana con mujeres, hombres, niñas y niños desarrollando actividades diversas"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustración educativa con escenas de agricultura, cerámica, comercio y aprendizaje realizadas por personas diversas; evitar asignación rígida de tareas según género o vestimentas inventadas.
+              <code>/img/conocimiento4/vida-cotidiana-mujeres-hombres-antiguedad.webp</code>
+            </div>
+            <figcaption>Para entender el pasado debemos investigar las experiencias de muchas personas distintas.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-7">
+            <h3 id="actividades-7">✏️ Actividades 6.7</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Miramos la historia de todos</h4>
+              <ol type="a">
+                <li>Nombra cuatro actividades de la vida cotidiana antigua.</li>
+                <li>Explica por qué también debemos estudiar a niñas, niños y artesanos.</li>
+                <li>¿Qué es un estereotipo?</li>
+                <li>Escribe una pregunta sobre una tarea cotidiana que investigarías con fuentes.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Interpretamos las pruebas</h4>
+              <ol type="a">
+                <li>¿Qué podría enseñarnos un telar antiguo?</li>
+                <li>¿Basta con un solo objeto para conocer toda una sociedad? Justifica.</li>
+                <li>Diferencia una afirmación comprobada de una suposición.</li>
+                <li>Propón una manera de incluir las dudas en una cartela de museo.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Comprendemos derechos</h4>
+              <ol type="a">
+                <li>Nombra una desigualdad que existió en la sociedad romana.</li>
+                <li>¿Por qué no debemos justificar la esclavitud?</li>
+                <li>Explica qué significa igualdad de derechos hoy.</li>
+                <li>Escribe una norma para que todas las personas participen en nuestro equipo.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 8.2.b. -->
+            <article class="task-card" data-criterio="8.2.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Revisamos relatos</h4>
+              <ol type="a">
+                <li>Corrige la frase «En la Prehistoria todas las mujeres hacían siempre lo mismo».</li>
+                <li>Diseña una escena de museo con dos personas realizando tareas diversas.</li>
+                <li>Escribe un texto breve que explique por qué debemos evitar estereotipos.</li>
+                <li>Explica una aportación que puede hacer el estudio de la vida cotidiana a la historia.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 6.8: CREAMOS NUESTRO MUSEO DE LA PREHISTORIA Y LA EDAD ANTIGUA
+             Tarea 8: Elaboramos y presentamos un museo de aula con línea del tiempo, piezas ilustradas y fuentes digitales fiables
+             Criterio único: 1.1.b
+             ================================================== -->
+        <section
+          id="sec-8"
+          class="lesson-section"
+          data-tarea="8"
+          data-criterio="1.1.b"
+          aria-labelledby="titulo-sec-8"
+        >
+          <h2 id="titulo-sec-8" class="lesson-section-heading">
+            <span class="section-number">6.8</span>
+            Creamos nuestro museo de la Prehistoria y la Edad Antigua
+          </h2>
+
+          <div class="explanation">
+            <h3>Nuestro reto final: abrir un museo de aula</h3>
+            <p>Vamos a preparar un <strong>museo de aula</strong> para que otras clases puedan conocer la
+              Prehistoria y la Edad Antigua de la Península Ibérica y de Andalucía. Reuniremos los aprendizajes de las
+              siete tareas anteriores: línea del tiempo, cambios de vida, pueblos prerromanos, navegantes
+              mediterráneos, Bética romana, patrimonio y participación de distintas personas.</p>
+            <p>Un museo no es una colección de dibujos sin explicación. Cada pieza tendrá una
+              <strong>cartela</strong> con nombre, época aproximada, material, función y procedencia de la
+              información. Las recreaciones estarán señaladas como tales.</p>
+          </div>
+
+          <h3>Cómo organizamos la exposición</h3>
+          <div class="table-scroller"><table class="data-table">
+            <caption>Ocho espacios para nuestra exposición escolar.</caption>
+            <thead><tr><th>Espacio</th><th>Qué vamos a mostrar</th></tr></thead>
+            <tbody>
+              <tr><td>1. Viajamos por el tiempo</td><td>Línea del tiempo de Prehistoria y Edad Antigua</td></tr>
+              <tr><td>2. Antes de las ciudades</td><td>Vida paleolítica, neolítica y Edad de los Metales</td></tr>
+              <tr><td>3. Pueblos prerromanos</td><td>Tartessos, íberos y otras comunidades</td></tr>
+              <tr><td>4. Por el Mediterráneo</td><td>Mapa de rutas fenicias, griegas y cartaginesas</td></tr>
+              <tr><td>5. Hispania y la Bética</td><td>Mapa de la provincia y huellas de Corduba</td></tr>
+              <tr><td>6. El patrimonio</td><td>Fichas de lugares que debemos proteger</td></tr>
+              <tr><td>7. Todas las personas</td><td>Vida cotidiana e igualdad sin estereotipos</td></tr>
+              <tr><td>8. Fuentes y agradecimientos</td><td>Bibliografía, enlaces y autores de
+                ilustraciones</td></tr>
+            </tbody>
+          </table></div>
+          <h3>Trabajamos con fuentes y herramientas digitales</h3>
+          <ol class="readable-list">
+            <li>Elegimos una pregunta concreta: «¿Qué podemos aprender de una calzada romana?».</li>
+            <li>Buscamos información en materiales de clase, museos y sitios institucionales.</li>
+            <li>Comprobamos la fecha, el autor y si otra fuente fiable apoya lo encontrado.</li>
+            <li>Redactamos con nuestras palabras y anotamos de dónde procede cada dato.</li>
+            <li>Usamos dibujos propios o imágenes con permiso y anotamos su procedencia.</li>
+            <li>Revisamos carteles, faltas de ortografía, letras legibles y accesibilidad.</li>
+          </ol>
+          <div class="example"><h3>Ejemplo: una cartela para la reproducción de una vasija</h3>
+          <p><strong>Nombre:</strong> vasija de cerámica (reproducción realizada en clase). <strong>Época
+            representada:</strong> Neolítico. <strong>Material:</strong> arcilla de modelar. <strong>Posible
+            función:</strong> guardar alimentos o líquidos. <strong>Fuente:</strong> explicación de clase y ficha de
+            un museo consultado por el equipo. La cartela aclara que no se trata de un objeto antiguo
+            auténtico.</p></div>
+          <h3>Presentamos, escuchamos y mejoramos</h3>
+          <p>Cada equipo dispone de unos minutos para explicar su panel, señalar qué fuentes utilizó y responder a
+            preguntas. Después revisamos si la exposición presenta <strong>las etapas en orden</strong>, incluye
+            hechos comprobados, respeta las diferencias y muestra propuestas para cuidar el patrimonio. Podemos usar
+            una presentación sencilla o tarjetas impresas: <strong>lo importante es que el contenido sea
+            claro</strong>.</p>
+          <div class="callout"><strong>Producto final:</strong> un museo escolar con línea del tiempo, mapas,
+            ilustraciones, cartelas históricas y propuestas de conservación. No publicaremos fotografías o datos
+            personales de compañeros sin autorización.</div>
+
+          <!-- IMAGEN FUTURA WEBP: museo-aula-prehistoria-edad-antigua.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/museo-aula-prehistoria-edad-antigua.webp"
+              alt="Exposición escolar con línea del tiempo, mapas, réplicas de vasijas y cartelas de la Prehistoria y la Edad Antigua"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Museo escolar en aula con ocho paneles: cronología, Prehistoria, Tartessos e íberos, rutas, Bética y Córdoba, patrimonio, vida cotidiana y fuentes; alumnos presentando sin textos minúsculos.
+              <code>/img/conocimiento4/museo-aula-prehistoria-edad-antigua.webp</code>
+            </div>
+            <figcaption>La exposición final reúne conocimientos, fuentes fiables y propuestas de cuidado del patrimonio.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-8">
+            <h3 id="actividades-8">✏️ Actividades 6.8</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad contiene los apartados a), b), c) y d).</p>
+
+            <!-- Actividad 1: criterio único 1.1.b. -->
+            <article class="task-card" data-criterio="1.1.b">
+              <span class="task-tag">Actividad 1</span>
+              <h4>Planificamos la exposición</h4>
+              <ol type="a">
+                <li>Selecciona un tema de los apartados anteriores.</li>
+                <li>Indica qué objeto o panel lo representará.</li>
+                <li>Escribe una pregunta que deberá responder la cartela.</li>
+                <li>Reparte tareas respetando que todos participen.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: criterio único 1.1.b. -->
+            <article class="task-card" data-criterio="1.1.b">
+              <span class="task-tag">Actividad 2</span>
+              <h4>Buscamos información</h4>
+              <ol type="a">
+                <li>Localiza dos fuentes adecuadas para el tema.</li>
+                <li>Anota el nombre del museo, autor o institución de una fuente.</li>
+                <li>Compara una información común a ambas fuentes.</li>
+                <li>Explica qué harías si dos fuentes se contradicen.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: criterio único 1.1.b. -->
+            <article class="task-card" data-criterio="1.1.b">
+              <span class="task-tag">Actividad 3</span>
+              <h4>Elaboramos cartelas</h4>
+              <ol type="a">
+                <li>Redacta una cartela con nombre, época y uso de un objeto.</li>
+                <li>Especifica si el objeto es original, copia o dibujo.</li>
+                <li>Indica de dónde has obtenido la información.</li>
+                <li>Revisa el texto para que lo comprenda un alumno de otro curso.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: criterio único 1.1.b. -->
+            <article class="task-card" data-criterio="1.1.b">
+              <span class="task-tag">Actividad 4</span>
+              <h4>Abrimos el museo</h4>
+              <ol type="a">
+                <li>Explica una idea importante de tu panel a un visitante.</li>
+                <li>Señala en la línea del tiempo la etapa que representas.</li>
+                <li>Propón una norma para proteger el patrimonio.</li>
+                <li>Escribe una mejora que introducirías después de escuchar a los visitantes.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             REPASAMOS LO APRENDIDO: mismo modelo de las SdA anteriores
+             ================================================== -->
+        <section id="sec-repaso" class="summary-block sda-recap" aria-labelledby="titulo-repaso">
+          <div class="recap-heading">
+            <span class="section-number" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Dos fichas, de refuerzo y ampliación. Cada ficha contiene una actividad de cuatro cuestiones por apartado.</p>
+            </div>
+          </div>
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 6.1 · Criterio 7.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="7.1.b">
+                <h4>Refuerzo 6.1 · Tiempo histórico y fuentes</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Ordena Paleolítico, Neolítico y Edad de los Metales.</li>
+                  <li>Define fuente histórica.</li>
+                  <li>¿Qué significa a. C.?</li>
+                  <li>¿Para qué sirve una línea del tiempo?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.2 · Criterio 7.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="7.2.b">
+                <h4>Refuerzo 6.2 · Formas de vida prehistóricas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué significa nómada?</li>
+                  <li>Nombra dos novedades neolíticas.</li>
+                  <li>¿Qué se utilizaba para fabricar herramientas en la Edad de los Metales?</li>
+                  <li>Diferencia piedra tallada y piedra pulida.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.3 · Criterio 7.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="7.2.b">
+                <h4>Refuerzo 6.3 · Pueblos prerromanos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué significa prerromano?</li>
+                  <li>¿En qué parte de la península se desarrolló Tartessos?</li>
+                  <li>Nombra una huella de las comunidades íberas.</li>
+                  <li>¿Qué es un yacimiento arqueológico?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.4 · Criterio 7.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="7.1.b">
+                <h4>Refuerzo 6.4 · Pueblos colonizadores</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra los tres pueblos navegantes.</li>
+                  <li>¿Con qué ciudad actual relacionamos Gadir?</li>
+                  <li>¿Qué actividad unía a los puertos comerciales?</li>
+                  <li>¿Qué dos formas de contacto podían producirse entre pueblos?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.5 · Criterio 7.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="7.1.b">
+                <h4>Refuerzo 6.5 · Hispania y Córdoba romana</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué nombre dieron los romanos a Hispania?</li>
+                  <li>¿Cómo se llamó la provincia romana con capital en Corduba?</li>
+                  <li>Escribe una función de las calzadas.</li>
+                  <li>Nombra un ejemplo de herencia romana de Córdoba.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.6 · Criterio 5.3.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.3.b">
+                <h4>Refuerzo 6.6 · Arte y patrimonio</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es el patrimonio arqueológico?</li>
+                  <li>Nombra una obra o lugar histórico de Andalucía.</li>
+                  <li>Indica dos normas para visitar un yacimiento.</li>
+                  <li>¿Por qué son importantes las cartelas de un museo?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.7 · Criterio 8.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="8.2.b">
+                <h4>Refuerzo 6.7 · Igualdad y vida cotidiana</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Por qué debemos estudiar también a personas que no gobernaban?</li>
+                  <li>Nombra una fuente para conocer la vida cotidiana.</li>
+                  <li>¿Qué es un estereotipo?</li>
+                  <li>Explica un derecho que debemos respetar en clase.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 6.8 · Criterio 1.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="1.1.b">
+                <h4>Refuerzo 6.8 · Museo de aula y presentación</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué producto final elaboramos en esta SdA?</li>
+                  <li>¿Qué datos mínimos debe incluir una cartela?</li>
+                  <li>¿Por qué debemos citar las fuentes?</li>
+                  <li>¿Cómo distinguimos una reproducción de una pieza original?</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 6.1 · Criterio 7.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="7.1.b">
+                <h4>Ampliación 6.1 · Tiempo histórico y fuentes</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué una vasija puede revelar información sobre la alimentación.</li>
+                  <li>Elabora una mini línea del tiempo con cinco acontecimientos y una leyenda.</li>
+                  <li>Compara una fuente escrita con un objeto arqueológico y explica qué aportan.</li>
+                  <li>Razona por qué la historia no siempre tiene una única fecha de inicio para todas las regiones.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.2 · Criterio 7.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="7.2.b">
+                <h4>Ampliación 6.2 · Formas de vida prehistóricas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña un cartel que compare actividades de un poblado neolítico y un campamento paleolítico.</li>
+                  <li>Explica qué inventos podían ayudar a conservar alimentos.</li>
+                  <li>Analiza qué problemas podía causar una mala cosecha en un poblado.</li>
+                  <li>Propón una pregunta arqueológica que pudiera investigar un equipo a partir de un molino de mano.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.3 · Criterio 7.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="7.2.b">
+                <h4>Ampliación 6.3 · Pueblos prerromanos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara la información que aporta un mapa histórico con la de una escultura.</li>
+                  <li>Explica por qué es difícil conocer con certeza todos los detalles sobre Tartessos.</li>
+                  <li>Diseña una etiqueta con un hecho confirmado y una pregunta pendiente para un objeto.</li>
+                  <li>Investiga un yacimiento andaluz prerromano y redacta una ficha de cinco líneas con una fuente fiable.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.4 · Criterio 7.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="7.1.b">
+                <h4>Ampliación 6.4 · Pueblos colonizadores</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Dibuja una ruta que conecte un puerto del Mediterráneo oriental con Cádiz.</li>
+                  <li>Relaciona escritura y comercio: ¿por qué era útil registrar intercambios?</li>
+                  <li>Compara una fuente arqueológica y una narración antigua sobre una colonia.</li>
+                  <li>Investiga por qué Cartagena fue importante para los cartagineses y resume la respuesta con una fuente.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.5 · Criterio 7.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="7.1.b">
+                <h4>Ampliación 6.5 · Hispania y Córdoba romana</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Elabora un esquema de una ciudad romana con mercado, teatro y calzadas.</li>
+                  <li>Explica con dos razones por qué era importante el aceite de la Bética.</li>
+                  <li>Investiga qué elementos del puente de Córdoba han sido reformados y escribe una conclusión prudente.</li>
+                  <li>Compara las funciones de una calzada romana y una carretera actual.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.6 · Criterio 5.3.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.3.b">
+                <h4>Ampliación 6.6 · Arte y patrimonio</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica la diferencia entre restaurar y reconstruir un monumento.</li>
+                  <li>Investiga qué es un mosaico romano e imagina su ficha de museo.</li>
+                  <li>Diseña un itinerario de visita para niños con tres recomendaciones de cuidado.</li>
+                  <li>Compara cómo conocemos el pasado a partir de un edificio y de una vasija.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.7 · Criterio 8.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="8.2.b">
+                <h4>Ampliación 6.7 · Igualdad y vida cotidiana</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara dos escenas de la vida cotidiana y qué fuentes permitirían investigarlas.</li>
+                  <li>Explica por qué las historias antiguas deben revisarse cuando aparecen nuevas pruebas.</li>
+                  <li>Redacta una cartela de museo que incluya con respeto a personas distintas.</li>
+                  <li>Propón preguntas para analizar si una ilustración histórica transmite estereotipos.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 6.8 · Criterio 1.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="1.1.b">
+                <h4>Ampliación 6.8 · Museo de aula y presentación</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña un recorrido accesible de la exposición con una entrada y una salida claras.</li>
+                  <li>Elabora una cartela con dos fuentes y un dato que aún se investiga.</li>
+                  <li>Prepara un audio original de 30 segundos para explicar una pieza sin leer toda la cartela.</li>
+                  <li>Evalúa el museo de otro equipo y ofrece dos sugerencias concretas y respetuosas.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+        </section>
+
+        <!-- ==================================================
+             COMPRUEBA LO APRENDIDO: cajas rectangulares, no radios
+             ================================================== -->
+        <section id="sec-comprueba" class="summary-block check-learning" aria-labelledby="titulo-comprueba">
+          <h2 id="titulo-comprueba" class="lesson-section-heading">
+            <span class="section-number" aria-hidden="true">✓</span>
+            Comprueba lo aprendido
+          </h2>
+          <p>Selecciona una caja por pregunta y pulsa «Comprobar respuestas». Puedes corregir tus elecciones y volver a empezar.</p>
+          <form id="quiz-cm46" novalidate>
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Qué nos ayuda a ordenar los acontecimientos del pasado?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Una línea del tiempo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Una lista de la compra.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Un mapa del tiempo atmosférico.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">2. ¿Qué cambio destacó en el Neolítico?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    La aparición de los motores.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    La extensión de la agricultura y la ganadería.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    La construcción de vías férreas.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué cultura antigua se relaciona con el suroeste de la península y el bajo Guadalquivir?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Roma.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Tartessos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Egipto.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. ¿Con qué ciudad actual se relaciona Gadir?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Cádiz.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Madrid.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Burgos.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. ¿Cómo se llamó la provincia romana cuya capital fue Corduba?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Galia.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Bética.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Lusitania.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Para qué servía una calzada romana?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Para comunicar territorios.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Solo para almacenar agua.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Para guardar pinturas rupestres.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Qué acción ayuda a conservar el patrimonio arqueológico?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Llevarnos una piedra del yacimiento.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Escribir nuestro nombre en un muro.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Seguir las normas y no mover las piezas.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Qué afirmación evita estereotipos sobre la Prehistoria?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Las tareas podían variar según la comunidad y deben investigarse.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Todas las mujeres hacían exactamente lo mismo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Solo los gobernantes contribuyeron a la historia.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Cómo debemos presentar una vasija de arcilla creada en clase?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Como pieza original de hace miles de años.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Como reproducción realizada por el alumnado.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Sin indicar nada sobre su origen.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Qué debe incluir el museo final?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Solo imágenes sin explicar.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Nombres de compañeros sin permiso.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Una línea del tiempo, materiales explicados y sus fuentes.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button id="quiz-check" type="button" class="lnl-btn">Comprobar respuestas</button>
+              <button id="quiz-reset" type="button" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- ==================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA: cuatro niveles
+             ================================================== -->
+        <section id="sec-diana" class="summary-block self-eval" aria-labelledby="titulo-diana">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-diana" class="lesson-section-heading">Diana de Autoevaluación Interactiva</h2>
+              <p>Selecciona la opción que mejor representa lo que has aprendido.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- AUTOEVALUACIÓN 6.1 · Criterio 7.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.1</strong> Ordeno las etapas, interpreto fechas y utilizo fuentes históricas para conocer el pasado.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.2 · Criterio 7.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.2</strong> Comparo las formas de vida y los cambios técnicos del Paleolítico, Neolítico y Edad de los Metales.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.3 · Criterio 7.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.3</strong> Reconozco la diversidad de pueblos prerromanos y describo el legado de Tartessos y de los íberos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.4 · Criterio 7.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.4</strong> Identifico a fenicios, griegos y cartagineses y explico algunas consecuencias de sus intercambios.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.5 · Criterio 7.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.5</strong> Explico qué fue Hispania, sitúo la Bética y reconozco huellas romanas en Córdoba.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.6 · Criterio 5.3.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.6</strong> Reconozco patrimonio de distintas épocas y propongo acciones para protegerlo y valorarlo.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.7 · Criterio 8.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.7</strong> Reconozco el protagonismo de distintas personas en la historia y cuestiono los estereotipos y desigualdades.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 6.8 · Criterio 1.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>6.8</strong> Selecciono fuentes fiables, creo materiales de museo claros y presento lo aprendido respetando el patrimonio.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 6.8">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">Borrar respuestas</button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 8 apartados.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE INSTITUCIONAL DEL CENTRO
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interacciones reutilizadas de los HTML de Lengua 4.º. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuestionario: una caja rectangular seleccionada por pregunta.
+      const questions = Array.from(document.querySelectorAll('#quiz-cm46 .quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) {
+            return;
+          }
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Sin responder.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === question.dataset.answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector(
+              '.quiz-option[data-option="' + question.dataset.answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              answer.textContent.trim();
+          }
+        });
+
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' +
+          questions.length + ' respuestas correctas. Contestadas: ' +
+          answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      // Diana de autoevaluación: cuatro niveles, una única elección por fila.
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) {
+            return;
+          }
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+    });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
