@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Nuestro cuerpo funciona en equipo. Situación de Aprendizaje CM4.3 de Conocimiento del Medio de 4.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+  <title>Nuestro cuerpo funciona en equipo | Conocimiento del Medio 4.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Cabecera y navegación compartidas con el resto del colegio. -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    SITUACIÓN DE APRENDIZAJE CM4.3 (también solicitada como CN4.3).
+    Base visual: HTML de Conocimiento del Medio de 5.º y 6.º y SdA recientes.
+    Mantener el verde institucional en las SdA y la clase lesson-section-heading.
+
+    DESTINO PREVISTO:
+    /recursos/cuarto/conocimiento-medio4/nuestro-cuerpo-funciona-en-equipo/index.html
+
+    Marco curricular: segundo ciclo de Educación Primaria, Andalucía.
+    Criterios de las siete tareas: 4.2.b, 4.2.b, 4.2.b, 4.1.b,
+    2.2.b, 2.4.b, 3.2.b.
+    Se guarda un solo criterio en data-criterio para cada actividad.
+
+    IMÁGENES FUTURAS:
+    /img/conocimiento4/*.webp
+    Se usan figure.media-frame, img con onerror=markImageMissing(this),
+    figcaption, y mensaje alternativo visible si todavía falta el archivo.
+    No añadir botones de impresión ni de pistas.
+  -->
+  <style>
+
+    :root {
+      --cm-primary: #007a33;
+      --cm-dark: #005724;
+      --cm-light: #e6f4ea;
+      --cm-accent: #00a847;
+      --cm-ink: #1e293b;
+      --cm-muted: #475569;
+      --cm-border: #d1e7dd;
+      --cm-bg: #f4f7f5;
+      --cm-amber-light: #fff7e6;
+      --cm-shadow: 0 5px 18px rgba(0, 90, 37, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page {
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+    }
+
+    .topic-page a:not(.skip-link) {
+      text-underline-offset: 0.15em;
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: 0.3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.65rem;
+      color: #94a3b8;
+    }
+
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(
+        110deg,
+        #005724 0%,
+        #007a33 60%,
+        #00a847 100%
+      );
+      color: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .topic-hero::after {
+      content: "✚  ♡";
+      position: absolute;
+      right: 10px;
+      top: -72px;
+      color: rgba(255, 255, 255, 0.055);
+      font-size: 10rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      max-width: 650px;
+      margin: 0.9rem 0 0;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    /* La mascota utiliza la misma imagen compartida que los índices. */
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: 0.35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .lesson-nav-heading {
+      width: 100%;
+      margin: 0 0 0.2rem;
+      color: var(--cm-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .lesson-nav a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Evita que las reglas generales centren las cabeceras. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 0.85rem;
+      border-bottom: 2px solid var(--cm-border);
+      color: var(--cm-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 0.25rem;
+      border-radius: 0.65rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 0.55rem;
+      color: var(--cm-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: 0.55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ol,
+    .topic-page .lesson-section ul {
+      padding-left: 1.4rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 0.9rem 0.9rem 0;
+      background: var(--cm-light);
+    }
+
+    .explanation h3 {
+      margin-top: 0 !important;
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--cm-dark);
+    }
+
+    .info-card {
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      margin-top: 0 !important;
+    }
+
+    .two-columns,
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .step-index {
+      display: inline-grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--cm-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--cm-amber-light);
+      color: #754709;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 0.75rem 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table caption {
+      margin-bottom: 0.55rem;
+      color: var(--cm-muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--cm-border);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* Cajas de imágenes: estructura compartida figure.media-frame. */
+    .topic-page .media-frame:not(.hero-mascot) {
+      margin: 1.3rem 0 1.7rem;
+      padding: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #f9fcfa;
+      box-shadow: 0 2px 10px rgba(0, 90, 37, 0.04);
+      text-align: center;
+    }
+
+    .topic-page .media-frame:not(.hero-mascot) img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      max-height: 440px;
+      margin: 0 auto;
+      border-radius: 0.65rem;
+      object-fit: contain;
+    }
+
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      color: var(--cm-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    /* Hasta incorporar los .webp, se ve la sugerencia sin icono roto. */
+    .image-suggestion {
+      display: none;
+      padding: 1.5rem 1rem;
+      border: 2px dashed #b8dec6;
+      border-radius: 0.65rem;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .image-suggestion strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .media-frame.image-missing .image-suggestion {
+      display: block;
+    }
+
+    .topic-page .media-frame.image-missing > img {
+      display: none;
+    }
+
+    .media-frame.image-missing figcaption {
+      display: none;
+    }
+
+    .practice {
+      margin: 1.5rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .topic-page .practice > h3 {
+      margin-top: 0;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .task-card {
+      margin: 0.9rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .task-card h4 {
+      margin: 0.25rem 0 0.65rem;
+      color: var(--cm-dark);
+      font-size: 1.04rem;
+    }
+
+    .task-card ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      list-style-type: lower-alpha;
+    }
+
+    .task-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .readable-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ======================================================
+       REPASO: fichas de CM5.1/CM5.2 con estructura de LNL4.8
+       ====================================================== */
+    .sda-recap {
+      border: 2px solid var(--cm-primary);
+    }
+
+    .recap-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recap-heading > div {
+      min-width: 0;
+    }
+
+    .recap-heading .lesson-section-heading {
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .recap-heading p {
+      margin: 0.2rem 0 0;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .recap-sheet + .recap-sheet {
+      margin-top: 2.5rem;
+    }
+
+    .sheet-heading {
+      margin-bottom: 1.2rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 12px 12px 0;
+      background: #ecfdf3;
+    }
+
+    .sheet-heading h3 {
+      margin: 0;
+      color: var(--cm-dark);
+      font-size: 1.05rem;
+    }
+
+    .sheet-heading--ampliacion {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .sheet-heading--ampliacion h3 {
+      color: #92400e;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .sheet-card {
+      min-width: 0;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid #dce6e0;
+      border-radius: 16px;
+      background: #f8faf9;
+    }
+
+    .sheet-card--ampliacion {
+      background: #ffffff;
+      border-color: #f2d5aa;
+    }
+
+    .sheet-card h4 {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 7px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .sheet-card--ampliacion h4 {
+      background: #b45309;
+    }
+
+    .sheet-questions {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: lower-alpha;
+    }
+
+    .sheet-questions li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* ======================================================
+       COMPRUEBA LO APRENDIDO: cajas de respuesta de LNL4.8
+       ====================================================== */
+    .check-learning {
+      background: #ffffff;
+      scroll-margin-top: 80px;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .quiz-item {
+      min-width: 0;
+      border: 1px solid #d7e6db;
+      border-radius: 13px;
+      padding: 1rem;
+      background: #fbfdfb;
+    }
+
+    .quiz-prompt {
+      margin: 0 0 0.75rem;
+      color: #274d37;
+      font-weight: 750;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.65rem 0.8rem;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: #ffffff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--cm-primary);
+      background: #f0fdf4;
+    }
+
+    .quiz-option[aria-pressed="true"] {
+      border-color: var(--cm-primary);
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 700;
+    }
+
+    .quiz-item.correct {
+      border-color: #3c9961;
+    }
+
+    .quiz-item.incorrect {
+      border-color: #d79a71;
+    }
+
+    .quiz-feedback {
+      margin: 0.6rem 0 0;
+      min-height: 1em;
+      color: #475569;
+      font-size: 0.86rem;
+    }
+
+    .quiz-actions,
+    .eval-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.3rem;
+    }
+
+    .lnl-btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 0.75rem 1.1rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+
+    .lnl-btn.secondary {
+      background: #e9f3ed;
+      color: var(--cm-dark);
+    }
+
+    .lnl-btn:hover,
+    .lnl-btn:focus-visible {
+      filter: brightness(0.94);
+    }
+
+    #quiz-summary {
+      margin: 0.9rem 0 0;
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* ======================================================
+       DIANA DE AUTOEVALUACIÓN: botones de LNL4.8
+       ====================================================== */
+    .self-eval {
+      border: 2px solid #c7d2fe;
+    }
+
+    .heading-icon {
+      display: inline-grid;
+      place-items: center;
+      min-width: 3rem;
+      min-height: 2.8rem;
+      border-radius: 12px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .heading-icon--indigo {
+      background: #4f46e5;
+    }
+
+    .self-eval-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .eval-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .eval-statement {
+      flex: 1 1 370px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .eval-statement strong {
+      margin-right: 0.25rem;
+      color: var(--cm-primary);
+    }
+
+    .auto-eval-group {
+      display: flex;
+      flex: 0 1 410px;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .eval-btn {
+      padding: 0.47rem 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #475569;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .eval-btn:hover,
+    .eval-btn:focus-visible {
+      border-color: #4f46e5;
+    }
+
+    .eval-btn[aria-pressed="true"] {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    #eval-status {
+      flex: 1 1 240px;
+      margin: 0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: minmax(0, 1fr) 150px;
+      }
+
+      .topic-page .media-frame.hero-mascot img {
+        max-height: 190px;
+      }
+
+      .two-columns,
+      .step-grid,
+      .sheet-grid,
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 135px;
+        justify-self: end;
+        margin-top: -0.6rem;
+      }
+
+      .topic-page .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        margin-top: 0.13rem;
+      }
+
+
+
+      .topic-page .media-frame:not(.hero-mascot) {
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eval-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .eval-statement,
+      .auto-eval-group {
+        flex: auto;
+      }
+    }
+
+    @media print {
+      .quiz-actions,
+      .eval-actions,
+      .auto-eval-group {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Detecta imágenes pendientes y muestra la sugerencia correspondiente.
+    function markImageMissing(image) {
+      var frame = image.closest('figure.media-frame');
+
+      if (frame) {
+        frame.classList.add('image-missing');
+      } else {
+        image.hidden = true;
+      }
+    }
+  </script>
+</head>
+
+<body class="topic-page">
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       CABECERA GENERAL DEL CENTRO
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a
+        class="navigation-logo"
+        href="/"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/cuarto/conocimiento-medio4/">
+              Conocimiento del Medio
+            </a>
+          </li>
+          <li aria-current="page">Nuestro cuerpo funciona en equipo</li>
+        </ol>
+      </nav>
+
+
+
+      <!-- Portada verde institucional y Tomatito: estructura CN4.1 y CN4.2. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">
+            Conocimiento del Medio · 4.º de Primaria · CM4.3
+          </span>
+          <h1 id="titulo-sda">3. NUESTRO CUERPO FUNCIONA EN EQUIPO</h1>
+          <p>
+            Descubrimos cómo se coordinan nuestros aparatos y sistemas,
+            aprendemos a cuidar nuestro cuerpo, las emociones y la convivencia
+            y elaboramos un manual ilustrado de hábitos saludables.
+          </p>
+          <div class="hero-tags" aria-label="Contenidos principales">
+            <span>Nutrición</span>
+            <span>Relación</span>
+            <span>Hábitos</span>
+            <span>Emociones</span>
+            <span>Prevención</span>
+          </div>
+        </div>
+
+        <!-- Mascota del área, sin variantes ni imágenes inventadas. -->
+        <figure class="media-frame hero-mascot">
+          <img
+            src="/img/tomatito/conocimiento-medio.png"
+            alt="Tomatito, la mascota del colegio"
+            class="topic-hero-image"
+            onerror="markImageMissing(this)"
+          >
+        </figure>
+      </section>
+
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <a href="#sec-1">3.1 Los aparatos de la nutrición</a>
+        <a href="#sec-2">3.2 Los sistemas de relación</a>
+        <a href="#sec-3">3.3 Hábitos saludables</a>
+        <a href="#sec-4">3.4 Emociones y convivencia</a>
+        <a href="#sec-5">3.5 Información fiable sobre salud</a>
+        <a href="#sec-6">3.6 Prevención y seguridad</a>
+        <a href="#sec-7">3.7 Nuestro manual ilustrado</a>
+        <a href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a href="#sec-diana">🎯 Autoevaluación</a>
+      </nav>
+
+      <div class="topic-content">
+
+        <!-- ==================================================
+             APARTADO 3.1: LA FUNCIÓN DE NUTRICIÓN: CUATRO APARATOS QUE COOPERAN
+             Tarea 1: Explicamos cómo intervienen los aparatos digestivo, respiratorio, circulatorio y excretor en la nutrición
+             Criterio único: 4.2.b
+             ================================================== -->
+        <section
+          id="sec-1"
+          class="lesson-section"
+          data-tarea="1"
+          data-criterio="4.2.b"
+          aria-labelledby="titulo-sec-1"
+        >
+          <h2 id="titulo-sec-1" class="lesson-section-heading">
+            <span class="section-number">3.1</span>
+            La función de nutrición: cuatro aparatos que cooperan
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Cómo consigue nuestro cuerpo lo que necesita?</h3>
+            <p>Para jugar, estudiar, crecer y reparar tejidos, nuestro organismo necesita <strong>materia y energía</strong>.
+              La <strong>función de nutrición</strong> permite obtener nutrientes y oxígeno, transportarlos a las células
+              y eliminar sustancias de desecho. No depende de un único órgano: <strong>cuatro aparatos colaboran</strong>.</p>
+            <p>Los <strong>nutrientes</strong> son sustancias aprovechables de los alimentos, como hidratos de carbono,
+              proteínas, grasas, vitaminas y minerales. El <strong>oxígeno</strong> llega del aire que respiramos.
+              Las células utilizan nutrientes y oxígeno para realizar muchas de sus actividades.</p>
+          </div>
+          <h3>Los cuatro aparatos de la nutrición</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🍎 Aparato digestivo</h3>
+              <p>Transforma los alimentos para que podamos absorber nutrientes. La comida pasa por
+                <strong>boca, esófago, estómago e intestino delgado</strong>. En el intestino delgado se absorbe
+                la mayor parte de los nutrientes; el intestino grueso recupera agua y se forman las heces.</p></article>
+            <article class="info-card"><h3>🫁 Aparato respiratorio</h3>
+              <p>El aire entra por la nariz o la boca, pasa por <strong>tráquea y bronquios</strong> hasta los
+                pulmones. En los <strong>alvéolos</strong> se intercambian gases: el oxígeno pasa a la sangre
+                y el dióxido de carbono pasa desde la sangre al aire que expulsamos.</p></article>
+            <article class="info-card"><h3>❤️ Aparato circulatorio</h3>
+              <p>El <strong>corazón</strong> impulsa la sangre por los vasos sanguíneos. La sangre lleva
+                oxígeno y nutrientes a las células y recoge sustancias que deben eliminarse.
+                Las arterias llevan sangre desde el corazón; las venas la devuelven al corazón.</p></article>
+            <article class="info-card"><h3>💧 Aparato urinario</h3>
+              <p>Forma parte de la excreción. Los <strong>riñones</strong> filtran la sangre, regulan el agua
+                y las sales y producen orina. Esta baja por los <strong>uréteres</strong>, se almacena en
+                la <strong>vejiga</strong> y sale por la uretra. No confundas orina con heces: siguen caminos diferentes.</p></article>
+          </div>
+          <h3>Seguimos un alimento desde el bocadillo hasta las células</h3>
+          <div class="example">
+            <h3>Un recreo muy activo</h3>
+            <p>Lucía desayuna un bocadillo y una mandarina. Su aparato digestivo transforma y absorbe
+              parte de sus nutrientes. Al correr, sus pulmones introducen oxígeno, mientras el corazón
+              impulsa la sangre para repartirlo junto con los nutrientes. Las células obtienen energía
+              para sus actividades y producen desechos. Los pulmones eliminan dióxido de carbono;
+              los riñones ayudan a eliminar otras sustancias de desecho mediante la orina.</p>
+            <p><strong>Importante:</strong> la sangre no viaja directamente del estómago a los músculos con la
+              comida intacta: lo que transporta son nutrientes ya absorbidos.</p>
+          </div>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Un mismo trabajo, funciones distintas.</caption>
+              <thead><tr><th>Aparato</th><th>Qué aporta o transporta</th><th>Resultado</th></tr></thead>
+              <tbody>
+                <tr><td>Digestivo</td><td>Nutrientes de los alimentos</td><td>Absorción de nutrientes y expulsión de heces</td></tr>
+                <tr><td>Respiratorio</td><td>Oxígeno del aire</td><td>Entrada de oxígeno y salida de CO₂</td></tr>
+                <tr><td>Circulatorio</td><td>Sangre</td><td>Reparto de sustancias y recogida de desechos</td></tr>
+                <tr><td>Urinario</td><td>Sustancias filtradas de la sangre</td><td>Formación y expulsión de orina</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout"><strong>Recuerda:</strong> respirar, digerir y hacer circular la sangre son procesos
+            diferentes, pero las células necesitan que todos funcionen coordinadamente.</div>
+
+          <!-- IMAGEN FUTURA WEBP: nutricion-cuatro-aparatos.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/nutricion-cuatro-aparatos.webp"
+              alt="Esquema del aparato digestivo, respiratorio, circulatorio y urinario con flechas que explican su relación"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Cuatro dibujos sencillos, con esófago-estómago-intestino; tráquea-pulmones; corazón-vasos; riñones-uréteres-vejiga. Conectar mediante flechas nutrientes, oxígeno y sustancias de desecho.
+              <code>/img/conocimiento4/nutricion-cuatro-aparatos.webp</code>
+            </div>
+            <figcaption>Los aparatos de la nutrición trabajan de forma coordinada.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-1">
+            <h3 id="actividades-1">✏️ Actividades 3.1</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Identificamos aparatos</h4>
+            <ol type="a">
+              <li>Nombra los cuatro aparatos que participan en la nutrición.</li>
+              <li>Escribe dos órganos del aparato digestivo y dos del respiratorio.</li>
+              <li>Indica la función principal del corazón.</li>
+              <li>¿Qué órganos fabrican la orina?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>La ruta de los nutrientes</h4>
+            <ol type="a">
+              <li>Ordena boca, intestino delgado, esófago y estómago.</li>
+              <li>Explica dónde se absorbe la mayor parte de los nutrientes.</li>
+              <li>¿Qué diferencia hay entre nutrientes y alimentos?</li>
+              <li>Explica por qué las heces no son lo mismo que la orina.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>El viaje del oxígeno</h4>
+            <ol type="a">
+              <li>¿Por dónde entra el aire al cuerpo?</li>
+              <li>¿En qué parte de los pulmones pasa oxígeno a la sangre?</li>
+              <li>Indica qué gas expulsamos en gran cantidad al respirar.</li>
+              <li>Explica cómo llega el oxígeno desde los pulmones hasta las células.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>El equipo de Lucía</h4>
+            <ol type="a">
+              <li>¿Qué aparato obtiene nutrientes del bocadillo?</li>
+              <li>¿Qué aparato incorpora oxígeno al organismo?</li>
+              <li>¿Qué aparato reparte ambas sustancias?</li>
+              <li>Escribe una frase que explique cómo coopera el aparato urinario.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 3.2: LA FUNCIÓN DE RELACIÓN: SENTIDOS, NERVIOS Y MOVIMIENTO
+             Tarea 2: Identificamos estímulos, sentidos, sistema nervioso y aparato locomotor en situaciones cotidianas
+             Criterio único: 4.2.b
+             ================================================== -->
+        <section
+          id="sec-2"
+          class="lesson-section"
+          data-tarea="2"
+          data-criterio="4.2.b"
+          aria-labelledby="titulo-sec-2"
+        >
+          <h2 id="titulo-sec-2" class="lesson-section-heading">
+            <span class="section-number">3.2</span>
+            La función de relación: sentidos, nervios y movimiento
+          </h2>
+
+          <div class="explanation">
+            <h3>Respondemos a lo que sucede</h3>
+            <p>La <strong>función de relación</strong> permite percibir cambios en nuestro cuerpo o en el entorno,
+              interpretar lo que ocurre y responder. A esos cambios los llamamos <strong>estímulos</strong>.
+              Un ruido fuerte, una luz, una textura o sentir sed son ejemplos de estímulos.</p>
+            <p>En muchas respuestas intervienen tres elementos: <strong>receptores</strong> (recogen información),
+              <strong>sistema nervioso</strong> (procesa y comunica información) y <strong>efectores</strong>,
+              como los músculos (realizan parte de la respuesta).</p>
+          </div>
+          <h3>Los cinco sentidos y sus órganos</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Órganos que nos permiten obtener información del entorno.</caption>
+              <thead><tr><th>Sentido</th><th>Órgano principal</th><th>Ejemplo</th></tr></thead>
+              <tbody>
+                <tr><td>Vista</td><td>Ojos</td><td>Leer un cartel de paso de peatones</td></tr>
+                <tr><td>Oído</td><td>Oídos</td><td>Escuchar que suena el timbre</td></tr>
+                <tr><td>Olfato</td><td>Nariz</td><td>Reconocer el olor del pan</td></tr>
+                <tr><td>Gusto</td><td>Lengua (papilas gustativas)</td><td>Diferenciar sabores</td></tr>
+                <tr><td>Tacto</td><td>Piel</td><td>Notar frío, presión o una textura</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>¿Quién organiza la respuesta?</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🧠 Sistema nervioso</h3>
+              <p>El <strong>encéfalo</strong>, protegido por el cráneo, incluye el cerebro y otras partes.
+                La <strong>médula espinal</strong> discurre por el interior de la columna vertebral.
+                Los <strong>nervios</strong> conectan distintas regiones del cuerpo con el sistema nervioso central.
+                Algunas respuestas son conscientes; otras, como ciertos reflejos, son rápidas y automáticas.</p></article>
+            <article class="info-card"><h3>🦴 Aparato locomotor</h3>
+              <p>El <strong>esqueleto</strong> da soporte y protege órganos. Las <strong>articulaciones</strong>
+                permiten movimientos entre huesos y los <strong>músculos</strong> producen movimiento al contraerse.
+                El sistema nervioso envía órdenes a los músculos para realizar muchos movimientos.</p></article>
+          </div>
+          <div class="example">
+            <h3>Una pelota se acerca al banco del patio</h3>
+            <p>Mario está sentado y ve que una pelota rueda hacia él. Sus ojos captan la luz reflejada
+              por la pelota. La información llega por nervios al sistema nervioso, que coordina una respuesta.
+              Sus músculos se contraen y Mario mueve las piernas para evitar el golpe.</p>
+            <p>Es útil describir la secuencia: <strong>estímulo → receptor → coordinación → respuesta</strong>.
+              No todas las respuestas requieren que pensemos cada paso conscientemente.</p>
+          </div>
+          <div class="callout"><strong>Seguridad:</strong> para cuidar sentidos y sistema nervioso,
+            evita ruidos excesivos, utiliza casco al ir en bici y pide ayuda ante cualquier golpe fuerte.</div>
+
+          <!-- IMAGEN FUTURA WEBP: funcion-relacion-estimulo-respuesta.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/funcion-relacion-estimulo-respuesta.webp"
+              alt="Niña que ve una pelota acercarse; ojos, cerebro, nervios y músculos enlazados con flechas"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Secuencia de cuatro viñetas: estímulo (pelota), receptor (ojo), coordinación (cerebro y nervios), respuesta (músculos y esqueleto apartan el cuerpo).
+              <code>/img/conocimiento4/funcion-relacion-estimulo-respuesta.webp</code>
+            </div>
+            <figcaption>De un estímulo a una respuesta: sentidos, sistema nervioso y aparato locomotor.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-2">
+            <h3 id="actividades-2">✏️ Actividades 3.2</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Reconocemos estímulos</h4>
+            <ol type="a">
+              <li>Define estímulo con tus palabras.</li>
+              <li>Escribe dos estímulos del patio.</li>
+              <li>Explica qué ocurre cuando oyes el timbre.</li>
+              <li>Indica un estímulo que proceda del interior del cuerpo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Los sentidos nos informan</h4>
+            <ol type="a">
+              <li>Relaciona cada sentido con su órgano principal.</li>
+              <li>¿Qué sentido interviene al reconocer una melodía?</li>
+              <li>¿Qué órgano detecta la textura de una piedra?</li>
+              <li>Explica por qué hay situaciones en las que utilizamos varios sentidos a la vez.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Sistema nervioso y locomotor</h4>
+            <ol type="a">
+              <li>Nombra dos partes del sistema nervioso.</li>
+              <li>¿Qué función cumplen los nervios?</li>
+              <li>Indica para qué sirven los músculos y las articulaciones.</li>
+              <li>Explica por qué el esqueleto y los músculos deben cooperar para caminar.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>De la pelota a la respuesta</h4>
+            <ol type="a">
+              <li>Identifica el estímulo del ejemplo de Mario.</li>
+              <li>Indica el órgano que capta la información.</li>
+              <li>Explica qué papel desempeña el sistema nervioso.</li>
+              <li>Escribe qué músculos o partes del cuerpo participan en la respuesta.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 3.3: CUIDAMOS LOS APARATOS DEL CUERPO CON HÁBITOS SALUDABLES
+             Tarea 3: Relacionamos alimentación, actividad, descanso e higiene con el bienestar y el funcionamiento corporal
+             Criterio único: 4.2.b
+             ================================================== -->
+        <section
+          id="sec-3"
+          class="lesson-section"
+          data-tarea="3"
+          data-criterio="4.2.b"
+          aria-labelledby="titulo-sec-3"
+        >
+          <h2 id="titulo-sec-3" class="lesson-section-heading">
+            <span class="section-number">3.3</span>
+            Cuidamos los aparatos del cuerpo con hábitos saludables
+          </h2>
+
+          <div class="explanation">
+            <h3>La salud se cuida cada día</h3>
+            <p>Nuestro organismo funciona mejor cuando incorporamos <strong>hábitos saludables</strong>.
+              No existe un alimento mágico que lo resuelva todo: importa la variedad de lo que comemos,
+              beber agua, movernos, descansar, mantener la higiene y pedir ayuda cuando la necesitamos.</p>
+            <p>Los hábitos no garantizan que nunca enfermemos. Hay enfermedades por muchas causas,
+              por lo que también necesitamos cuidados médicos, vacunas cuando corresponden y entornos seguros.</p>
+          </div>
+          <div class="two-columns">
+            <article class="info-card"><h3>🥗 Alimentación variada</h3>
+              <p>Frutas, verduras, legumbres, cereales, alimentos proteicos y otros grupos aportan nutrientes.
+                El agua es la bebida habitual para mantenernos hidratados. Podemos disfrutar de comidas
+                diferentes respetando necesidades, culturas y posibles alergias.</p></article>
+            <article class="info-card"><h3>🚴 Actividad física</h3>
+              <p>Jugar, correr, saltar, bailar o caminar ayudan a fortalecer músculos y huesos,
+                favorecen el funcionamiento del corazón y contribuyen al bienestar. La intensidad y el tipo
+                de movimiento deben ajustarse a cada persona.</p></article>
+            <article class="info-card"><h3>😴 Descanso</h3>
+              <p>Durante el sueño el cuerpo y el cerebro realizan tareas importantes para recuperarse,
+                aprender y crecer. Favorecen el descanso los horarios regulares y un ambiente tranquilo.
+                No conviene acostarse muy tarde de manera habitual.</p></article>
+            <article class="info-card"><h3>🧼 Higiene y prevención</h3>
+              <p>Lavarse las manos con agua y jabón antes de comer y después de ir al baño,
+                cepillarse los dientes y cubrirse al toser son ejemplos de cuidados que reducen riesgos.</p></article>
+          </div>
+          <h3>Un día realista para cuidarse</h3>
+          <div class="example">
+            <h3>La jornada de Inés</h3>
+            <p>Antes de ir al colegio, Inés desayuna y prepara una botella de agua. En el recreo juega
+              con sus compañeros y aprovecha para moverse. Al volver a casa come de forma variada,
+              dedica tiempo a descansar y a sus aficiones, y por la noche sigue una rutina tranquila.
+              También se lava las manos cuando corresponde y se cepilla los dientes.</p>
+            <p>Si un día cambia un horario o no puede practicar ejercicio, eso no significa que haya
+              hecho algo mal. Lo importante es buscar un <strong>equilibrio sostenido</strong> adaptado
+              a las necesidades de cada persona.</p>
+          </div>
+          <h3>¿Qué aparato se beneficia?</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Relacionamos hábitos con partes del cuerpo.</caption>
+              <thead><tr><th>Hábito</th><th>Relación con el organismo</th></tr></thead>
+              <tbody>
+                <tr><td>Actividad física segura</td><td>Músculos, huesos, corazón y pulmones</td></tr>
+                <tr><td>Comer variado</td><td>Aporte de sustancias que el cuerpo necesita</td></tr>
+                <tr><td>Dormir lo suficiente</td><td>Descanso, atención y recuperación</td></tr>
+                <tr><td>Higiene de manos</td><td>Disminución de la transmisión de algunos microbios</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout"><strong>Un hábito saludable no debe provocar vergüenza:</strong> cada cuerpo
+            y cada familia tienen circunstancias diferentes. Evitamos comparar cuerpos o burlarnos
+            de los hábitos de los demás.</div>
+
+          <!-- IMAGEN FUTURA WEBP: habitos-saludables-cuerpo-humano.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/habitos-saludables-cuerpo-humano.webp"
+              alt="Cuatro escenas: comida variada y agua, juego activo, descanso nocturno e higiene de manos"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Infografía dividida en cuatro: alimentación variada e hidratación; movimiento y juego; descanso de noche; lavado de manos y cuidado de dientes.
+              <code>/img/conocimiento4/habitos-saludables-cuerpo-humano.webp</code>
+            </div>
+            <figcaption>Hábitos cotidianos que ayudan a cuidar nuestro cuerpo.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-3">
+            <h3 id="actividades-3">✏️ Actividades 3.3</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Elegimos hábitos</h4>
+            <ol type="a">
+              <li>Indica dos hábitos que ayudan al sistema circulatorio.</li>
+              <li>Escribe dos hábitos relacionados con la higiene.</li>
+              <li>Explica qué beneficios aporta descansar.</li>
+              <li>Nombra una forma de actividad física que disfrutes.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Una comida variada</h4>
+            <ol type="a">
+              <li>Propón una merienda con alimentos de al menos dos grupos.</li>
+              <li>Indica por qué el agua es importante.</li>
+              <li>¿Por qué no conviene basar toda la dieta en un único alimento?</li>
+              <li>Explica cómo respetarías una alergia alimentaria de un compañero.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Leemos el día de Inés</h4>
+            <ol type="a">
+              <li>Identifica un hábito de actividad física.</li>
+              <li>Señala un ejemplo de hidratación.</li>
+              <li>Localiza un hábito relacionado con el sueño.</li>
+              <li>Propón una mejora realista para cuidar su salud sin compararla con la de otras personas.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 4.2.b. -->
+          <article class="task-card" data-criterio="4.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Diseñamos una rutina</h4>
+            <ol type="a">
+              <li>Elabora un horario sencillo con tiempo de estudio y descanso.</li>
+              <li>Incluye una actividad física adecuada para ti.</li>
+              <li>Añade dos momentos para la higiene personal.</li>
+              <li>Explica qué hábito sería importante mantener durante la semana.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 3.4: EMOCIONES, RELACIONES Y BIENESTAR
+             Tarea 4: Reconocemos emociones, practicamos la empatía y mejoramos la convivencia
+             Criterio único: 4.1.b
+             ================================================== -->
+        <section
+          id="sec-4"
+          class="lesson-section"
+          data-tarea="4"
+          data-criterio="4.1.b"
+          aria-labelledby="titulo-sec-4"
+        >
+          <h2 id="titulo-sec-4" class="lesson-section-heading">
+            <span class="section-number">3.4</span>
+            Emociones, relaciones y bienestar
+          </h2>
+
+          <div class="explanation">
+            <h3>Las emociones también forman parte de nuestra vida</h3>
+            <p>Sentimos <strong>alegría, miedo, enfado, sorpresa o tristeza</strong> en distintos momentos.
+              Las emociones nos informan sobre cómo vivimos una situación. Ninguna emoción es incorrecta;
+              lo importante es aprender a <strong>expresarla sin hacernos daño ni dañar a los demás</strong>.</p>
+            <p>El cuerpo puede mostrar señales: al tener miedo, a veces se acelera el pulso;
+              al sentir nervios, podemos notar tensión o respirar deprisa. El cerebro y el sistema
+              nervioso participan en estas respuestas, pero cada persona puede sentirlas de manera distinta.</p>
+          </div>
+          <h3>Herramientas para comprendernos</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>💬 Poner nombre a lo que siento</h3>
+              <p>Podemos decir «Estoy preocupado por el examen» en lugar de responder con un grito.
+                Reconocer el sentimiento ayuda a pedir lo que necesitamos.</p></article>
+            <article class="info-card"><h3>👂 Escucha activa</h3>
+              <p>Mirar y escuchar con respeto, sin interrumpir, permite comprender mejor
+                lo que dice la otra persona. Podemos preguntar antes de sacar conclusiones.</p></article>
+            <article class="info-card"><h3>🤝 Empatía</h3>
+              <p>Consiste en intentar comprender cómo puede sentirse otra persona. No significa
+                que tengamos que estar de acuerdo con todas sus decisiones.</p></article>
+            <article class="info-card"><h3>🧩 Resolver conflictos</h3>
+              <p>Describimos el problema, escuchamos propuestas y buscamos un acuerdo justo.
+                Si hay insultos, amenazas o alguien se siente inseguro, recurrimos a una persona adulta.</p></article>
+          </div>
+          <div class="example">
+            <h3>Un desacuerdo en educación física</h3>
+            <p>En un juego por equipos, Samira se enfada porque no ha podido participar tanto como esperaba.
+              En lugar de empujar, dice: «Me he sentido apartada y quiero participar». Sus compañeros
+              escuchan y proponen cambiar los turnos. El grupo acuerda reglas para que todas las personas
+              puedan jugar y después comprueba si funcionan.</p>
+            <p>Podemos practicar tres pasos: <strong>expresar cómo me siento</strong>,
+              <strong>escuchar a las demás personas</strong> y <strong>buscar una solución respetuosa</strong>.</p>
+          </div>
+          <h3>¿Y si necesito ayuda?</h3>
+          <p>Hablar con el profesorado, familiares u otra persona adulta de confianza es adecuado
+            cuando una emoción nos sobrepasa, un conflicto se repite o alguien no respeta nuestros límites.
+            Pedir ayuda es una forma responsable de cuidarse.</p>
+          <div class="callout"><strong>El respeto es esencial:</strong> no debemos contar en público
+            sentimientos privados de otras personas sin su permiso.</div>
+
+          <!-- IMAGEN FUTURA WEBP: emociones-y-convivencia.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/emociones-y-convivencia.webp"
+              alt="Escenas escolares con niños y niñas que reconocen emociones, escuchan y piden ayuda de forma respetuosa"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustración en tres escenas: reconocer una emoción; escuchar a una compañera; dialogar y pedir ayuda ante un conflicto. Representación inclusiva y sin estereotipos.
+              <code>/img/conocimiento4/emociones-y-convivencia.webp</code>
+            </div>
+            <figcaption>Comprender las emociones y comunicarnos nos ayuda a convivir.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-4">
+            <h3 id="actividades-4">✏️ Actividades 3.4</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 4.1.b. -->
+          <article class="task-card" data-criterio="4.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Nombramos emociones</h4>
+            <ol type="a">
+              <li>Escribe tres emociones que conozcas.</li>
+              <li>Relaciona una emoción con una señal corporal posible.</li>
+              <li>Explica por qué una emoción no es buena ni mala por sí sola.</li>
+              <li>Propón una forma adecuada de expresar el enfado.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 4.1.b. -->
+          <article class="task-card" data-criterio="4.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Escuchar con empatía</h4>
+            <ol type="a">
+              <li>¿Qué significa escuchar sin interrumpir?</li>
+              <li>Escribe una pregunta que harías para comprender a un amigo.</li>
+              <li>Explica qué significa mostrar empatía.</li>
+              <li>Indica por qué no debemos ridiculizar a una persona triste.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 4.1.b. -->
+          <article class="task-card" data-criterio="4.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Resolvemos el conflicto</h4>
+            <ol type="a">
+              <li>Explica qué preocupa a Samira en el ejemplo.</li>
+              <li>Indica cómo expresa su malestar sin agredir.</li>
+              <li>Propón una regla de juego inclusiva.</li>
+              <li>Describe cómo comprobar que el acuerdo funciona para todos.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 4.1.b. -->
+          <article class="task-card" data-criterio="4.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Pedir ayuda y respetar</h4>
+            <ol type="a">
+              <li>Nombra dos personas adultas de confianza.</li>
+              <li>¿Qué harías si una discusión te hace sentir inseguro?</li>
+              <li>Explica por qué no se deben difundir secretos personales.</li>
+              <li>Escribe una frase para pedir ayuda con respeto.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 3.5: BUSCAMOS INFORMACIÓN FIABLE SOBRE SALUD
+             Tarea 5: Planteamos preguntas y contrastamos información sobre alimentación, descanso y hábitos saludables
+             Criterio único: 2.2.b
+             ================================================== -->
+        <section
+          id="sec-5"
+          class="lesson-section"
+          data-tarea="5"
+          data-criterio="2.2.b"
+          aria-labelledby="titulo-sec-5"
+        >
+          <h2 id="titulo-sec-5" class="lesson-section-heading">
+            <span class="section-number">3.5</span>
+            Buscamos información fiable sobre salud
+          </h2>
+
+          <div class="explanation">
+            <h3>Preguntar antes de buscar</h3>
+            <p>Cuando tenemos una duda sobre salud, conviene empezar por una <strong>pregunta clara</strong>,
+              como «¿Por qué es importante dormir?». Después buscamos información, la comparamos
+              y anotamos una respuesta con nuestras palabras. No debemos compartir afirmaciones
+              de salud solo porque aparezcan en un vídeo o una red social.</p>
+            <p>Una <strong>fuente fiable</strong> suele explicar quién ofrece la información, cuándo se
+              ha publicado o revisado y en qué conocimientos se apoya. Para cuestiones importantes
+              pueden consultarse materiales de organismos sanitarios y profesionales de la salud.</p>
+          </div>
+          <h3>Pasos para investigar una pregunta de salud</h3>
+          <div class="step-grid">
+            <article class="info-card"><span class="step-index">1</span><h3>Pregunta</h3>
+              <p>Formulamos una duda concreta. Ejemplo: «¿Cómo ayuda el descanso a aprender?».</p></article>
+            <article class="info-card"><span class="step-index">2</span><h3>Búsqueda</h3>
+              <p>Seleccionamos dos materiales comprensibles de procedencia conocida.</p></article>
+            <article class="info-card"><span class="step-index">3</span><h3>Comparación</h3>
+              <p>Revisamos autor, propósito, fecha e ideas que coinciden o se contradicen.</p></article>
+            <article class="info-card"><span class="step-index">4</span><h3>Conclusión</h3>
+              <p>Escribimos una respuesta razonada, anotamos las fuentes y señalamos dudas.</p></article>
+          </div>
+          <div class="example">
+            <h3>Una investigación de aula: ¿por qué dormimos?</h3>
+            <p>Un equipo lee un folleto de un organismo sanitario sobre la importancia del sueño.
+              Después encuentra un vídeo que promete que dormir muy poco no afecta al aprendizaje.
+              Comprueba quién firma cada fuente, si ofrece pruebas y si coincide con otras publicaciones
+              fiables. Finalmente escribe: «Dormir ayuda al descanso y a procesos que intervienen
+              en el aprendizaje y la atención». Cita el folleto y explica por qué no ha confiado
+              en la promesa del vídeo sin pruebas.</p>
+            <p>Este ejercicio es una <strong>comparación de información</strong>, no una prueba médica
+              sobre los hábitos de ninguna persona de la clase.</p>
+          </div>
+          <h3>Qué conviene anotar de cada fuente</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Ficha de fuentes para nuestra investigación.</caption>
+              <thead><tr><th>Dato</th><th>Qué escribimos</th></tr></thead>
+              <tbody>
+                <tr><td>Quién publica</td><td>Nombre de institución o autor</td></tr>
+                <tr><td>Cuándo</td><td>Fecha de publicación o revisión si aparece</td></tr>
+                <tr><td>Qué explica</td><td>Una idea importante expresada con palabras propias</td></tr>
+                <tr><td>Qué falta comprobar</td><td>Una duda o afirmación que no podemos confirmar</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout"><strong>Privacidad y salud:</strong> nunca necesitamos publicar
+            diagnósticos, fotos médicas ni información personal de compañeros para hacer esta tarea.</div>
+
+          <!-- IMAGEN FUTURA WEBP: investigacion-fuentes-salud.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/investigacion-fuentes-salud.webp"
+              alt="Niños comparando dos fuentes de información sobre hábitos saludables y registrando sus conclusiones"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Dos fichas de consulta sobre descanso y alimentación con campos de autor, fecha y propósito; alumnado anotando qué dato está respaldado por fuentes fiables.
+              <code>/img/conocimiento4/investigacion-fuentes-salud.webp</code>
+            </div>
+            <figcaption>Investigar exige plantear una pregunta, buscar fuentes y comprobar lo que dicen.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-5">
+            <h3 id="actividades-5">✏️ Actividades 3.5</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Hacemos preguntas</h4>
+            <ol type="a">
+              <li>Escribe una pregunta concreta sobre el sueño.</li>
+              <li>Formula otra pregunta sobre alimentación saludable.</li>
+              <li>Explica por qué conviene empezar con una pregunta clara.</li>
+              <li>Indica qué información necesitarías para contestar una de ellas.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Elegimos fuentes</h4>
+            <ol type="a">
+              <li>Nombra un tipo de fuente que pueda ser fiable para temas de salud.</li>
+              <li>Indica dos datos que conviene comprobar en una página web.</li>
+              <li>¿Por qué una promesa espectacular no es una prueba?</li>
+              <li>Explica cómo buscarías una segunda fuente para contrastar un consejo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Leemos el caso del sueño</h4>
+            <ol type="a">
+              <li>¿Qué pregunta investiga la clase?</li>
+              <li>¿Qué afirman el folleto y el vídeo?</li>
+              <li>Indica qué detalles ayudarían a evaluar cada fuente.</li>
+              <li>Redacta una conclusión prudente y cita la procedencia de la información.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Nuestra ficha de investigación</h4>
+            <ol type="a">
+              <li>Escoge una pregunta sobre descanso o alimentación.</li>
+              <li>Anota qué dos fuentes consultarías.</li>
+              <li>Escribe dos ideas coincidentes que esperarías verificar.</li>
+              <li>Señala una duda que preguntarías a un profesional sanitario o docente.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 3.6: PREVENIMOS ENFERMEDADES Y ACCIDENTES
+             Tarea 6: Adoptamos pautas de prevención y elegimos formas seguras de pedir ayuda
+             Criterio único: 2.4.b
+             ================================================== -->
+        <section
+          id="sec-6"
+          class="lesson-section"
+          data-tarea="6"
+          data-criterio="2.4.b"
+          aria-labelledby="titulo-sec-6"
+        >
+          <h2 id="titulo-sec-6" class="lesson-section-heading">
+            <span class="section-number">3.6</span>
+            Prevenimos enfermedades y accidentes
+          </h2>
+
+          <div class="explanation">
+            <h3>Prevenir significa reducir riesgos</h3>
+            <p>Las <strong>medidas preventivas</strong> sirven para disminuir la probabilidad de que ocurra
+              un problema. Algunas infecciones se transmiten por microorganismos, pero no todas
+              las enfermedades son contagiosas. Además, los accidentes pueden ocurrir en casa,
+              en el colegio o durante actividades deportivas.</p>
+            <p>Lavarse las manos, ventilar los espacios cuando sea apropiado, seguir las indicaciones
+              sanitarias y utilizar equipos de protección adecuados son ejemplos de prevención.
+              Las vacunas son otra medida de prevención que ayudan a proteger frente a determinadas enfermedades.</p>
+          </div>
+          <h3>Ejemplos de prevención cotidiana</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🧽 Cuidar la higiene</h3>
+              <p>Lavamos las manos con agua y jabón, sobre todo antes de comer y después de usar el baño.
+                Al toser o estornudar usamos un pañuelo o el interior del codo.</p></article>
+            <article class="info-card"><h3>🪖 Movernos con seguridad</h3>
+              <p>Para ir en bicicleta utilizamos casco y respetamos las normas de circulación.
+                En el patio evitamos empujones y revisamos que el espacio de juego sea seguro.</p></article>
+            <article class="info-card"><h3>☀️ Cuidarnos del calor</h3>
+              <p>En días de calor buscamos sombra, bebemos agua y seguimos las indicaciones sobre
+                protección solar y tiempos de exposición.</p></article>
+            <article class="info-card"><h3>🆘 Saber pedir ayuda</h3>
+              <p>Ante una lesión importante o una situación peligrosa, avisamos a una persona adulta.
+                En España, el número <strong>112</strong> permite contactar con emergencias.
+                No debemos llamar para bromas ni manipular a una persona herida salvo que haya un peligro inmediato.</p></article>
+          </div>
+          <div class="example">
+            <h3>Un incidente en el patio</h3>
+            <p>Durante el recreo, alguien se cae y parece haberse lesionado una pierna.
+              Sus compañeros dejan espacio, no lo obligan a levantarse y avisan al profesorado.
+              Una persona adulta valora la situación y solicita asistencia si hace falta.
+              La clase comprende que <strong>ayudar</strong> no consiste en improvisar tratamientos,
+              sino en <strong>proteger el lugar, avisar y seguir las indicaciones</strong>.</p>
+          </div>
+          <h3>Pequeñas decisiones que marcan la diferencia</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Situaciones y respuestas seguras para el alumnado.</caption>
+              <thead><tr><th>Situación</th><th>Respuesta adecuada</th></tr></thead>
+              <tbody>
+                <tr><td>Alguien tose cerca</td><td>Mantener una buena higiene y evitar compartir pañuelos</td></tr>
+                <tr><td>Suelo mojado</td><td>No correr, avisar y respetar la zona señalizada</td></tr>
+                <tr><td>Golpe fuerte o caída</td><td>Detener la actividad y avisar al profesorado</td></tr>
+                <tr><td>Emergencia real</td><td>Pedir ayuda adulta y comunicar lugar y situación al 112 si corresponde</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout"><strong>Precaución:</strong> esta actividad enseña pautas generales.
+            No sustituye los protocolos del colegio ni la atención de profesionales sanitarios.</div>
+
+          <!-- IMAGEN FUTURA WEBP: prevencion-seguridad-higiene.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/prevencion-seguridad-higiene.webp"
+              alt="Pictogramas de lavado de manos, seguridad en bici, protección solar y petición de ayuda ante una emergencia"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Cartel escolar en cuatro viñetas: lavarse las manos; casco adecuado; sombra, agua y protección solar; avisar a una persona adulta y contactar con emergencias.
+              <code>/img/conocimiento4/prevencion-seguridad-higiene.webp</code>
+            </div>
+            <figcaption>Prevenir y pedir ayuda son formas importantes de cuidar la salud.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-6">
+            <h3 id="actividades-6">✏️ Actividades 3.6</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 2.4.b. -->
+          <article class="task-card" data-criterio="2.4.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Prevenir contagios</h4>
+            <ol type="a">
+              <li>Escribe dos situaciones en que debamos lavarnos las manos.</li>
+              <li>Explica cómo conviene cubrirse al toser.</li>
+              <li>¿Todas las enfermedades son contagiosas?</li>
+              <li>Indica una medida de prevención que se realice con ayuda de profesionales de salud.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 2.4.b. -->
+          <article class="task-card" data-criterio="2.4.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Reconocer riesgos</h4>
+            <ol type="a">
+              <li>Nombra dos riesgos en un patio escolar.</li>
+              <li>Explica para qué sirve un casco al montar en bicicleta.</li>
+              <li>Escribe dos cuidados adecuados en días de mucho calor.</li>
+              <li>Propón una medida para evitar resbalones en el colegio.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 2.4.b. -->
+          <article class="task-card" data-criterio="2.4.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Actuamos ante una caída</h4>
+            <ol type="a">
+              <li>¿Qué ocurre en el ejemplo del patio?</li>
+              <li>Indica por qué no debemos obligar a levantarse a la persona lesionada.</li>
+              <li>¿A quién avisarías primero en el colegio?</li>
+              <li>Escribe qué información darías a una persona adulta.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 2.4.b. -->
+          <article class="task-card" data-criterio="2.4.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Plan de seguridad de aula</h4>
+            <ol type="a">
+              <li>Elige un riesgo cotidiano para la clase.</li>
+              <li>Explica cómo podría prevenirse.</li>
+              <li>Anota a quién pedir ayuda si ocurre.</li>
+              <li>Diseña un pequeño cartel con una recomendación segura.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 3.7: CREAMOS UN MANUAL ILUSTRADO DEL CUERPO HUMANO
+             Tarea 7: Elaboramos y presentamos un manual ilustrado del cuerpo humano y los hábitos saludables
+             Criterio único: 3.2.b
+             ================================================== -->
+        <section
+          id="sec-7"
+          class="lesson-section"
+          data-tarea="7"
+          data-criterio="3.2.b"
+          aria-labelledby="titulo-sec-7"
+        >
+          <h2 id="titulo-sec-7" class="lesson-section-heading">
+            <span class="section-number">3.7</span>
+            Creamos un manual ilustrado del cuerpo humano
+          </h2>
+
+          <div class="explanation">
+            <h3>Producto final: manual ilustrado del cuerpo humano y de los hábitos saludables</h3>
+            <p>En pequeños equipos elaboraremos un <strong>manual ilustrado</strong> pensado para que otras
+              clases comprendan cómo funcionan los aparatos de nutrición y relación, y qué podemos hacer
+              para cuidar la salud y convivir mejor. No es copiar un libro: se trata de seleccionar
+              ideas importantes, comprobarlas, expresarlas con nuestras palabras y acompañarlas de dibujos.</p>
+            <p>Un buen manual debe ser <strong>claro, correcto, respetuoso y fácil de consultar</strong>.
+              Puede hacerse en papel o con herramientas digitales del centro, siguiendo las normas del profesorado.</p>
+          </div>
+          <h3>Organizamos el trabajo</h3>
+          <div class="step-grid">
+            <article class="info-card"><span class="step-index">1</span><h3>Planificamos</h3>
+              <p>Elegimos el público, repartimos páginas y asignamos responsabilidades de forma justa.</p></article>
+            <article class="info-card"><span class="step-index">2</span><h3>Investigamos</h3>
+              <p>Revisamos lo explicado y consultamos fuentes fiables para completar dibujos y datos.</p></article>
+            <article class="info-card"><span class="step-index">3</span><h3>Diseñamos</h3>
+              <p>Escribimos frases breves, rotulamos órganos y añadimos esquemas sencillos con flechas correctas.</p></article>
+            <article class="info-card"><span class="step-index">4</span><h3>Comprobamos</h3>
+              <p>Revisamos errores, citamos fuentes, escuchamos a otros equipos y presentamos el manual.</p></article>
+          </div>
+          <h3>Índice de nuestro manual</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Propuesta de partes que debe contener el trabajo final.</caption>
+              <thead><tr><th>Página</th><th>Contenido</th></tr></thead>
+              <tbody>
+                <tr><td>1. Portada</td><td>Título, nombres del grupo y dibujo propio</td></tr>
+                <tr><td>3. Nutrición</td><td>Los cuatro aparatos y cómo colaboran</td></tr>
+                <tr><td>3. Relación</td><td>Órganos de los sentidos, sistema nervioso y locomotor</td></tr>
+                <tr><td>4. Hábitos</td><td>Alimentación, actividad, higiene y sueño</td></tr>
+                <tr><td>5. Emociones</td><td>Escucha, empatía y ayuda en la convivencia</td></tr>
+                <tr><td>6. Prevención</td><td>Consejos razonados y personas a quienes acudir</td></tr>
+                <tr><td>7. Fuentes</td><td>Procedencia de imágenes y materiales consultados</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>Ejemplo: la página «Así llega el oxígeno»</h3>
+            <p>La página presenta un dibujo de pulmones, corazón y vasos sanguíneos.
+              Un pie de ilustración explica: «El oxígeno pasa de los pulmones a la sangre.
+              El corazón impulsa la sangre que lo transporta hasta las células».
+              El equipo añade una pregunta para el lector: «¿Qué dos aparatos colaboran aquí?».
+              Finalmente comprueba que las flechas no indiquen un recorrido equivocado.</p>
+          </div>
+          <h3>¿Cómo revisaremos la calidad del manual?</h3>
+          <p>Comprobaremos cuatro aspectos: <strong>precisión científica</strong> (órganos y funciones correctos),
+            <strong>claridad</strong> (dibujos y textos comprensibles), <strong>colaboración</strong>
+            (participación del equipo) y <strong>cuidado de las fuentes</strong>
+            (imágenes y datos de procedencia conocida). Escucharemos las sugerencias de la clase para mejorarlo.</p>
+          <div class="callout"><strong>Antes de entregar:</strong> evita incluir datos personales o
+            historias de salud de compañeros. Usa esquemas generales y ejemplos inventados, no diagnósticos reales.</div>
+
+          <!-- IMAGEN FUTURA WEBP: manual-ilustrado-cuerpo-humano.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/manual-ilustrado-cuerpo-humano.webp"
+              alt="Ejemplo de cuaderno ilustrado con diagramas del cuerpo, hábitos saludables, emociones, fuentes y medidas de prevención"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Doble página de un manual escolar: dibujos rotulados de órganos y flechas de cooperación, tabla de hábitos, escena de convivencia y ficha de fuentes; portada con título.
+              <code>/img/conocimiento4/manual-ilustrado-cuerpo-humano.webp</code>
+            </div>
+            <figcaption>Nuestro producto final reúne lo aprendido con esquemas, consejos y ejemplos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-7">
+            <h3 id="actividades-7">✏️ Actividades 3.7</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 3.2.b. -->
+          <article class="task-card" data-criterio="3.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Planificamos el proyecto</h4>
+            <ol type="a">
+              <li>Propón un título para nuestro manual.</li>
+              <li>Decide qué páginas preparará tu equipo.</li>
+              <li>Reparte las tareas de manera equitativa.</li>
+              <li>Escribe a qué público dirigirás el manual y por qué.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 3.2.b. -->
+          <article class="task-card" data-criterio="3.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Diseñamos ilustraciones</h4>
+            <ol type="a">
+              <li>Dibuja y rotula cuatro aparatos de la nutrición.</li>
+              <li>Representa con flechas la entrada y el transporte del oxígeno.</li>
+              <li>Elabora un esquema de estímulo y respuesta.</li>
+              <li>Escribe una leyenda clara para cada dibujo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 3.2.b. -->
+          <article class="task-card" data-criterio="3.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Escribimos consejos y fuentes</h4>
+            <ol type="a">
+              <li>Añade cuatro recomendaciones de hábitos saludables.</li>
+              <li>Incluye una estrategia para resolver un conflicto con respeto.</li>
+              <li>Escribe dos pautas de prevención de riesgos.</li>
+              <li>Cita al menos dos fuentes empleadas en el proyecto.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 3.2.b. -->
+          <article class="task-card" data-criterio="3.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Presentamos y revisamos</h4>
+            <ol type="a">
+              <li>Presenta una página del manual a tus compañeros.</li>
+              <li>Explica cómo has comprobado la corrección de un dato.</li>
+              <li>Escucha una sugerencia y anótala.</li>
+              <li>Escribe qué cambiarías para que el manual sea más fácil de comprender.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             REPASAMOS LO APRENDIDO - FICHAS DE REFUERZO Y AMPLIACIÓN
+             ================================================== -->
+        <section
+          id="sec-repaso"
+          class="summary-block sda-recap"
+          aria-labelledby="titulo-repaso"
+        >
+          <div class="recap-heading">
+            <span class="section-number" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Una ficha de refuerzo y otra de ampliación, con cuatro cuestiones por apartado.</p>
+            </div>
+          </div>
+
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 3.1 · Criterio 4.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="4.2.b">
+                <h4>Refuerzo 3.1 · La función de nutrición: cuatro aparatos que cooperan</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Relaciona boca, corazón, pulmón y riñón con su aparato.</li>
+                  <li>¿Qué dos sustancias principales transporta la sangre a las células?</li>
+                  <li>¿Qué diferencia hay entre las funciones de pulmones y riñones?</li>
+                  <li>Ordena: alimento, digestión, absorción de nutrientes, circulación.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 3.2 · Criterio 4.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="4.2.b">
+                <h4>Refuerzo 3.2 · La función de relación: sentidos, nervios y movimiento</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe la secuencia estímulo, receptor, coordinación y respuesta.</li>
+                  <li>Enumera los cinco sentidos.</li>
+                  <li>Nombra encéfalo, médula espinal y nervios.</li>
+                  <li>Distingue una función de los músculos y otra del esqueleto.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 3.3 · Criterio 4.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="4.2.b">
+                <h4>Refuerzo 3.3 · Cuidamos los aparatos del cuerpo con hábitos saludables</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra un hábito saludable de alimentación.</li>
+                  <li>Explica para qué sirve el descanso.</li>
+                  <li>Escribe dos prácticas sencillas de higiene.</li>
+                  <li>Relaciona caminar con dos aparatos o sistemas del cuerpo.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 3.4 · Criterio 4.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="4.1.b">
+                <h4>Refuerzo 3.4 · Emociones, relaciones y bienestar</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra dos emociones y una forma respetuosa de expresarlas.</li>
+                  <li>¿Qué significa escuchar activamente?</li>
+                  <li>Escribe una señal corporal que puede acompañar una emoción.</li>
+                  <li>¿A quién acudirías ante un problema que no puedes resolver solo?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 3.5 · Criterio 2.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.2.b">
+                <h4>Refuerzo 3.5 · Buscamos información fiable sobre salud</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué se escribe antes de buscar información?</li>
+                  <li>Nombra dos datos que ayudan a identificar una fuente.</li>
+                  <li>¿Por qué debemos contrastar lo que leemos?</li>
+                  <li>¿Es necesario revelar datos médicos de compañeros para investigar?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 3.6 · Criterio 2.4.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.4.b">
+                <h4>Refuerzo 3.6 · Prevenimos enfermedades y accidentes</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica qué significa prevención.</li>
+                  <li>Escribe una medida de higiene para evitar infecciones.</li>
+                  <li>¿Cuál es el número general de emergencias en España?</li>
+                  <li>¿Qué harías si un compañero sufre una caída importante?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 3.7 · Criterio 3.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="3.2.b">
+                <h4>Refuerzo 3.7 · Creamos un manual ilustrado del cuerpo humano</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Cuál es el producto final de esta situación de aprendizaje?</li>
+                  <li>Nombra dos páginas que expliquen el funcionamiento del cuerpo.</li>
+                  <li>¿Por qué son útiles los dibujos con etiquetas?</li>
+                  <li>¿Qué debemos hacer con las fuentes de información consultadas?</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 3.1 · Criterio 4.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="4.2.b">
+                <h4>Ampliación 3.1 · La función de nutrición: cuatro aparatos que cooperan</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué aumenta la respiración cuando corres.</li>
+                  <li>Traza un esquema con flechas desde el intestino y los pulmones hasta una célula.</li>
+                  <li>Compara el trayecto de las heces y de la orina.</li>
+                  <li>Escribe qué ocurriría si la sangre no transportara suficiente oxígeno a las células.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 3.2 · Criterio 4.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="4.2.b">
+                <h4>Ampliación 3.2 · La función de relación: sentidos, nervios y movimiento</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara una respuesta voluntaria y un reflejo cotidiano.</li>
+                  <li>Explica cómo colaboran varios sentidos al cruzar una calle.</li>
+                  <li>Elabora un dibujo que una un órgano de los sentidos con el sistema nervioso.</li>
+                  <li>Inventa un ejemplo de respuesta ante una señal acústica y explica sus etapas.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 3.3 · Criterio 4.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="4.2.b">
+                <h4>Ampliación 3.3 · Cuidamos los aparatos del cuerpo con hábitos saludables</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara dos rutinas de tarde y explica cuál favorece mejor el descanso.</li>
+                  <li>Propón alternativas de actividad física accesibles a distintas personas.</li>
+                  <li>Elabora un cartel con tres recomendaciones de higiene y sus motivos.</li>
+                  <li>Redacta por qué cuidar la salud no consiste en juzgar cuerpos ajenos.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 3.4 · Criterio 4.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="4.1.b">
+                <h4>Ampliación 3.4 · Emociones, relaciones y bienestar</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Redacta un diálogo de acuerdo entre dos compañeros con opiniones distintas.</li>
+                  <li>Propón una norma para mejorar la participación en el recreo.</li>
+                  <li>Explica por qué dos personas pueden reaccionar de manera distinta ante una misma situación.</li>
+                  <li>Crea un cartel con tres frases que ayuden a pedir ayuda y mostrar respeto.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 3.5 · Criterio 2.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.2.b">
+                <h4>Ampliación 3.5 · Buscamos información fiable sobre salud</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una tabla para comparar dos fuentes de salud.</li>
+                  <li>Explica cómo detectarías una afirmación de salud sin fundamento.</li>
+                  <li>Redacta una conclusión que reconozca la incertidumbre.</li>
+                  <li>Propón cómo comunicarías información contrastada a estudiantes de 3.º.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 3.6 · Criterio 2.4.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.4.b">
+                <h4>Ampliación 3.6 · Prevenimos enfermedades y accidentes</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Elabora un mapa del colegio con dos riesgos evitables y sus medidas de prevención.</li>
+                  <li>Redacta un aviso breve y respetuoso para un día de calor.</li>
+                  <li>Compara prevención de una infección y prevención de una caída.</li>
+                  <li>Explica por qué no debemos mover a una persona herida sin valorar el peligro.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 3.7 · Criterio 3.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="3.2.b">
+                <h4>Ampliación 3.7 · Creamos un manual ilustrado del cuerpo humano</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una página accesible con letra clara y contraste suficiente.</li>
+                  <li>Redacta una pregunta de autoevaluación para cada una de las dos funciones estudiadas.</li>
+                  <li>Propón un modo de mejorar el manual tras recibir opiniones de otra clase.</li>
+                  <li>Explica cómo evitarías que una recomendación de salud suene a diagnóstico personal.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- ==================================================
+             COMPRUEBA LO APRENDIDO: CAJAS SELECCIONABLES
+             Patrón LNL4.8 / CN4.1; no usar botones de radio.
+             ================================================== -->
+        <section
+          id="sec-comprueba"
+          class="summary-block check-learning"
+          aria-labelledby="titulo-comprueba"
+        >
+          <h2 id="titulo-comprueba" class="lesson-section-heading">
+            <span class="section-number">✓</span>
+            Comprueba lo aprendido
+          </h2>
+          <p>Selecciona una caja por pregunta y pulsa <strong>Comprobar respuestas</strong>.
+            Después podrás corregir tus elecciones o volver a empezar.</p>
+          <form id="quiz-cm43" novalidate>
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Qué aparato transforma los alimentos para que puedan absorberse los nutrientes?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Aparato digestivo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Aparato locomotor.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Aparato nervioso.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">3. ¿Qué función tienen los alvéolos de los pulmones?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Formar orina.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Realizar el intercambio de oxígeno y dióxido de carbono.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Absorber los nutrientes del pan.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué órgano impulsa la sangre a través de los vasos?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    El estómago.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    El riñón.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    El corazón.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. ¿Dónde se forma la orina?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    En los riñones.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    En el intestino delgado.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    En los pulmones.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. En la función de relación, ¿qué hacen los órganos de los sentidos?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Fabrican glóbulos rojos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Captan información del entorno.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Transforman alimentos.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Qué partes del cuerpo producen muchos de nuestros movimientos?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Los alvéolos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Los riñones.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Los músculos.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Cuál es un conjunto de hábitos saludable?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Dormir, hidratarse y moverse de forma adecuada.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Evitar siempre la actividad física.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Comer únicamente un mismo alimento.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Qué es una forma respetuosa de resolver un conflicto?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Gritar para tener la razón.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Escuchar, expresar lo que ocurre y buscar acuerdos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Difundir secretos de otra persona.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Qué debemos hacer al encontrar una afirmación sobre salud en Internet?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Compartirla sin leerla.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Creerla si aparece en un vídeo llamativo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Comprobar quién la publica y contrastarla.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Qué es adecuado hacer ante una caída que podría ser grave?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Avisar al profesorado y no mover a la persona sin valorar el peligro.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Obligar a la persona a levantarse enseguida.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Continuar jugando sin avisar.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button id="quiz-check" type="button" class="lnl-btn">Comprobar respuestas</button>
+              <button id="quiz-reset" type="button" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- ==================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA
+             Cuatro niveles por apartado; patrón LNL4.8 / CN4.1.
+             ================================================== -->
+        <section id="sec-diana" class="summary-block self-eval"
+                 aria-labelledby="titulo-diana">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-diana" class="lesson-section-heading">Diana de Autoevaluación Interactiva</h2>
+              <p>Selecciona la opción que mejor representa lo que has aprendido.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- AUTOEVALUACIÓN 3.1 · Criterio 4.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.1</strong> Relaciono los aparatos de la nutrición y explico cómo colaboran para mantener el organismo.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 3.2 · Criterio 4.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.2</strong> Comprendo la función de relación y describo cómo cooperan órganos de los sentidos, nervios y aparato locomotor.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 3.3 · Criterio 4.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.3</strong> Relaciono hábitos cotidianos con el funcionamiento de los aparatos y el cuidado del cuerpo.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 3.4 · Criterio 4.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.4</strong> Reconozco emociones propias y ajenas y practico respuestas respetuosas para convivir.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 3.5 · Criterio 2.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.5</strong> Formulo preguntas y contrasto información sobre salud identificando su autoría y procedencia.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 3.6 · Criterio 2.4.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.6</strong> Selecciono medidas de prevención ante situaciones cotidianas y sé pedir ayuda de manera segura.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 3.7 · Criterio 3.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>3.7</strong> Planifico, elaboro y presento un manual en equipo con información y esquemas claros y comprobados.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 3.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">Borrar respuestas</button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 7 apartados.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE INSTITUCIONAL DEL CENTRO
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interacciones reutilizadas de los HTML de Lengua 4.º. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuestionario: una caja rectangular seleccionada por pregunta.
+      const questions = Array.from(document.querySelectorAll('#quiz-cm43 .quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) {
+            return;
+          }
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Sin responder.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === question.dataset.answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector(
+              '.quiz-option[data-option="' + question.dataset.answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              answer.textContent.trim();
+          }
+        });
+
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' +
+          questions.length + ' respuestas correctas. Contestadas: ' +
+          answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      // Diana de autoevaluación: cuatro niveles, una única elección por fila.
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) {
+            return;
+          }
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+    });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
