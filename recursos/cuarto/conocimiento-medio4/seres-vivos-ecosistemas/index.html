@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Los seres vivos y los ecosistemas. Situación de Aprendizaje CM4.2 de Conocimiento del Medio de 4.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+  <title>Los seres vivos y los ecosistemas | Conocimiento del Medio 4.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Cabecera y navegación compartidas con el resto del colegio. -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    SITUACIÓN DE APRENDIZAJE CM4.2 (también solicitada como CN4.2).
+    Base visual: HTML de Conocimiento del Medio de 5.º y 6.º y SdA recientes.
+    Mantener el verde institucional en las SdA y la clase lesson-section-heading.
+
+    DESTINO PREVISTO:
+    /recursos/cuarto/conocimiento-medio4/seres-vivos-ecosistemas/index.html
+
+    Marco curricular: segundo ciclo de Educación Primaria, Andalucía.
+    Criterios de las siete tareas: 5.1.b, 5.2.b, 5.1.b, 6.1.b,
+    2.2.b, 5.3.b, 3.1.b.
+    Se guarda un solo criterio en data-criterio para cada actividad.
+
+    IMÁGENES FUTURAS:
+    /img/conocimiento4/*.webp
+    Se usan figure.media-frame, img con onerror=markImageMissing(this),
+    figcaption, y mensaje alternativo visible si todavía falta el archivo.
+    No añadir botones de impresión ni de pistas.
+  -->
+  <style>
+
+    :root {
+      --cm-primary: #007a33;
+      --cm-dark: #005724;
+      --cm-light: #e6f4ea;
+      --cm-accent: #00a847;
+      --cm-ink: #1e293b;
+      --cm-muted: #475569;
+      --cm-border: #d1e7dd;
+      --cm-bg: #f4f7f5;
+      --cm-amber-light: #fff7e6;
+      --cm-shadow: 0 5px 18px rgba(0, 90, 37, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page {
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+    }
+
+    .topic-page a:not(.skip-link) {
+      text-underline-offset: 0.15em;
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: 0.3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.65rem;
+      color: #94a3b8;
+    }
+
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(
+        110deg,
+        #005724 0%,
+        #007a33 60%,
+        #00a847 100%
+      );
+      color: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .topic-hero::after {
+      content: "❀  ♧";
+      position: absolute;
+      right: 10px;
+      top: -72px;
+      color: rgba(255, 255, 255, 0.055);
+      font-size: 10rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      max-width: 650px;
+      margin: 0.9rem 0 0;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    /* La mascota utiliza la misma imagen compartida que los índices. */
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: 0.35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .lesson-nav-heading {
+      width: 100%;
+      margin: 0 0 0.2rem;
+      color: var(--cm-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .lesson-nav a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Evita que las reglas generales centren las cabeceras. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 0.85rem;
+      border-bottom: 2px solid var(--cm-border);
+      color: var(--cm-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 0.25rem;
+      border-radius: 0.65rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 0.55rem;
+      color: var(--cm-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: 0.55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ol,
+    .topic-page .lesson-section ul {
+      padding-left: 1.4rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 0.9rem 0.9rem 0;
+      background: var(--cm-light);
+    }
+
+    .explanation h3 {
+      margin-top: 0 !important;
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--cm-dark);
+    }
+
+    .info-card {
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      margin-top: 0 !important;
+    }
+
+    .two-columns,
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .step-index {
+      display: inline-grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--cm-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--cm-amber-light);
+      color: #754709;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 0.75rem 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table caption {
+      margin-bottom: 0.55rem;
+      color: var(--cm-muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--cm-border);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* Cajas de imágenes: estructura compartida figure.media-frame. */
+    .topic-page .media-frame:not(.hero-mascot) {
+      margin: 1.3rem 0 1.7rem;
+      padding: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #f9fcfa;
+      box-shadow: 0 2px 10px rgba(0, 90, 37, 0.04);
+      text-align: center;
+    }
+
+    .topic-page .media-frame:not(.hero-mascot) img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      max-height: 440px;
+      margin: 0 auto;
+      border-radius: 0.65rem;
+      object-fit: contain;
+    }
+
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      color: var(--cm-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    /* Hasta incorporar los .webp, se ve la sugerencia sin icono roto. */
+    .image-suggestion {
+      display: none;
+      padding: 1.5rem 1rem;
+      border: 2px dashed #b8dec6;
+      border-radius: 0.65rem;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .image-suggestion strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .media-frame.image-missing .image-suggestion {
+      display: block;
+    }
+
+    .topic-page .media-frame.image-missing > img {
+      display: none;
+    }
+
+    .media-frame.image-missing figcaption {
+      display: none;
+    }
+
+    .practice {
+      margin: 1.5rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .topic-page .practice > h3 {
+      margin-top: 0;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .task-card {
+      margin: 0.9rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .task-card h4 {
+      margin: 0.25rem 0 0.65rem;
+      color: var(--cm-dark);
+      font-size: 1.04rem;
+    }
+
+    .task-card ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      list-style-type: lower-alpha;
+    }
+
+    .task-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .readable-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ======================================================
+       REPASO: fichas de CM5.1/CM5.2 con estructura de LNL4.8
+       ====================================================== */
+    .sda-recap {
+      border: 2px solid var(--cm-primary);
+    }
+
+    .recap-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recap-heading > div {
+      min-width: 0;
+    }
+
+    .recap-heading .lesson-section-heading {
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .recap-heading p {
+      margin: 0.2rem 0 0;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .recap-sheet + .recap-sheet {
+      margin-top: 2.5rem;
+    }
+
+    .sheet-heading {
+      margin-bottom: 1.2rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 12px 12px 0;
+      background: #ecfdf3;
+    }
+
+    .sheet-heading h3 {
+      margin: 0;
+      color: var(--cm-dark);
+      font-size: 1.05rem;
+    }
+
+    .sheet-heading--ampliacion {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .sheet-heading--ampliacion h3 {
+      color: #92400e;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .sheet-card {
+      min-width: 0;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid #dce6e0;
+      border-radius: 16px;
+      background: #f8faf9;
+    }
+
+    .sheet-card--ampliacion {
+      background: #ffffff;
+      border-color: #f2d5aa;
+    }
+
+    .sheet-card h4 {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 7px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .sheet-card--ampliacion h4 {
+      background: #b45309;
+    }
+
+    .sheet-questions {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: lower-alpha;
+    }
+
+    .sheet-questions li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* ======================================================
+       COMPRUEBA LO APRENDIDO: cajas de respuesta de LNL4.8
+       ====================================================== */
+    .check-learning {
+      background: #ffffff;
+      scroll-margin-top: 80px;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .quiz-item {
+      min-width: 0;
+      border: 1px solid #d7e6db;
+      border-radius: 13px;
+      padding: 1rem;
+      background: #fbfdfb;
+    }
+
+    .quiz-prompt {
+      margin: 0 0 0.75rem;
+      color: #274d37;
+      font-weight: 750;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.65rem 0.8rem;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: #ffffff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--cm-primary);
+      background: #f0fdf4;
+    }
+
+    .quiz-option[aria-pressed="true"] {
+      border-color: var(--cm-primary);
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 700;
+    }
+
+    .quiz-item.correct {
+      border-color: #3c9961;
+    }
+
+    .quiz-item.incorrect {
+      border-color: #d79a71;
+    }
+
+    .quiz-feedback {
+      margin: 0.6rem 0 0;
+      min-height: 1em;
+      color: #475569;
+      font-size: 0.86rem;
+    }
+
+    .quiz-actions,
+    .eval-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.3rem;
+    }
+
+    .lnl-btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 0.75rem 1.1rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+
+    .lnl-btn.secondary {
+      background: #e9f3ed;
+      color: var(--cm-dark);
+    }
+
+    .lnl-btn:hover,
+    .lnl-btn:focus-visible {
+      filter: brightness(0.94);
+    }
+
+    #quiz-summary {
+      margin: 0.9rem 0 0;
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* ======================================================
+       DIANA DE AUTOEVALUACIÓN: botones de LNL4.8
+       ====================================================== */
+    .self-eval {
+      border: 2px solid #c7d2fe;
+    }
+
+    .heading-icon {
+      display: inline-grid;
+      place-items: center;
+      min-width: 3rem;
+      min-height: 2.8rem;
+      border-radius: 12px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .heading-icon--indigo {
+      background: #4f46e5;
+    }
+
+    .self-eval-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .eval-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .eval-statement {
+      flex: 1 1 370px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .eval-statement strong {
+      margin-right: 0.25rem;
+      color: var(--cm-primary);
+    }
+
+    .auto-eval-group {
+      display: flex;
+      flex: 0 1 410px;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .eval-btn {
+      padding: 0.47rem 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #475569;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .eval-btn:hover,
+    .eval-btn:focus-visible {
+      border-color: #4f46e5;
+    }
+
+    .eval-btn[aria-pressed="true"] {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    #eval-status {
+      flex: 1 1 240px;
+      margin: 0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: minmax(0, 1fr) 150px;
+      }
+
+      .topic-page .media-frame.hero-mascot img {
+        max-height: 190px;
+      }
+
+      .two-columns,
+      .step-grid,
+      .sheet-grid,
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 135px;
+        justify-self: end;
+        margin-top: -0.6rem;
+      }
+
+      .topic-page .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        margin-top: 0.13rem;
+      }
+
+
+
+      .topic-page .media-frame:not(.hero-mascot) {
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eval-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .eval-statement,
+      .auto-eval-group {
+        flex: auto;
+      }
+    }
+
+    @media print {
+      .quiz-actions,
+      .eval-actions,
+      .auto-eval-group {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Detecta imágenes pendientes y muestra la sugerencia correspondiente.
+    function markImageMissing(image) {
+      var frame = image.closest('figure.media-frame');
+
+      if (frame) {
+        frame.classList.add('image-missing');
+      } else {
+        image.hidden = true;
+      }
+    }
+  </script>
+</head>
+
+<body class="topic-page">
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       CABECERA GENERAL DEL CENTRO
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a
+        class="navigation-logo"
+        href="/"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/cuarto/conocimiento-medio4/">
+              Conocimiento del Medio
+            </a>
+          </li>
+          <li aria-current="page">Los seres vivos y los ecosistemas</li>
+        </ol>
+      </nav>
+
+
+      <!-- Portada verde institucional: misma estructura y mascota de CN4.1. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">
+            Conocimiento del Medio · 4.º de Primaria · CM4.2
+          </span>
+          <h1 id="titulo-sda">2. LOS SERES VIVOS Y LOS ECOSISTEMAS</h1>
+          <p>
+            Clasificamos seres vivos, descubrimos sus adaptaciones y relaciones,
+            investigamos los ecosistemas de Andalucía y creamos una guía para
+            proteger la biodiversidad.
+          </p>
+          <div class="hero-tags" aria-label="Contenidos principales">
+            <span>Seres vivos</span>
+            <span>Cadenas alimentarias</span>
+            <span>Ecosistemas</span>
+            <span>Biodiversidad</span>
+            <span>Conservación</span>
+          </div>
+        </div>
+
+        <!-- Tomatito compartido con Conocimiento del Medio de 3.º a 6.º. -->
+        <figure class="media-frame hero-mascot">
+          <img
+            src="/img/tomatito/conocimiento-medio.png"
+            alt="Tomatito, la mascota del colegio"
+            class="topic-hero-image"
+            onerror="markImageMissing(this)"
+          >
+        </figure>
+      </section>
+
+      <!-- Índice: nomenclatura 2.1 a 2.7 coherente con CN4.2. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">
+          📍 Contenidos de la Situación de Aprendizaje
+        </h2>
+        <a href="#sec-1">2.1 Clasificamos los seres vivos</a>
+        <a href="#sec-2">2.2 Adaptaciones y alimentación</a>
+        <a href="#sec-3">2.3 Ecosistemas andaluces</a>
+        <a href="#sec-4">2.4 Problemas y soluciones</a>
+        <a href="#sec-5">2.5 Información fiable</a>
+        <a href="#sec-6">2.6 Espacios protegidos</a>
+        <a href="#sec-7">2.7 Nuestra guía y refugio</a>
+        <a href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a href="#sec-diana">🎯 Autoevaluación</a>
+      </nav>
+
+      <div class="topic-content">
+
+        <!-- ==================================================
+             APARTADO 2.1: DESCUBRIMOS Y CLASIFICAMOS LOS SERES VIVOS
+             Tarea 1: Clasificamos los seres vivos con criterios científicos sencillos
+             Criterio único: 5.1.b
+             ================================================== -->
+        <section
+          id="sec-1"
+          class="lesson-section"
+          data-tarea="1"
+          data-criterio="5.1.b"
+          aria-labelledby="titulo-sec-1"
+        >
+          <h2 id="titulo-sec-1" class="lesson-section-heading">
+            <span class="section-number">2.1</span>
+            Descubrimos y clasificamos los seres vivos
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Cómo sabemos si algo está vivo?</h3>
+            <p>Un <strong>ser vivo</strong> realiza las funciones vitales: <strong>nutrición</strong> (obtiene materia y energía),
+              <strong>relación</strong> (capta cambios y responde) y <strong>reproducción</strong> (puede dar origen a nuevos seres vivos).
+              Los seres vivos están formados por una o más células. Una piedra o una bicicleta no tienen estas características.</p>
+            <p>Todos los seres vivos nacen de otros seres vivos. Un individuo puede estar vivo aunque todavía no pueda
+              reproducirse, como ocurre con un cachorro.</p>
+          </div>
+          <h3>Grupos de seres vivos</h3>
+          <div class="two-columns">
+            <div class="info-card">
+              <h3>🌿 Plantas</h3>
+              <p>La mayoría fabrica su propio alimento mediante la <strong>fotosíntesis</strong>, usando luz, agua y dióxido de carbono.
+                Hay plantas con flores, como el romero, y otras sin flores, como los musgos y helechos.</p>
+            </div>
+            <div class="info-card">
+              <h3>🐝 Animales</h3>
+              <p>Se alimentan de otros organismos o de sus productos. Los <strong>vertebrados</strong> poseen columna vertebral;
+                los <strong>invertebrados</strong>, como insectos y lombrices, no.</p>
+            </div>
+            <div class="info-card">
+              <h3>🍄 Hongos</h3>
+              <p>No son plantas: se alimentan de materia orgánica. Incluyen setas, mohos y levaduras.
+                Algunos ayudan a descomponer restos de seres vivos.</p>
+            </div>
+            <div class="info-card">
+              <h3>🔬 Microorganismos</h3>
+              <p>Son seres vivos demasiado pequeños para verse a simple vista; entre ellos hay muchas bacterias
+                y organismos microscópicos de otros grupos. Algunos son útiles y otros pueden causar enfermedades.</p>
+            </div>
+          </div>
+          <h3>¿Cómo se clasifican los animales?</h3>
+          <p>Los vertebrados se agrupan, de forma sencilla, en <strong>mamíferos, aves, reptiles, anfibios y peces</strong>.
+            Entre los invertebrados encontramos insectos, arácnidos, moluscos y otros grupos.
+            Para clasificar, observamos características que se pueden comprobar, no el color o el tamaño solamente.</p>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Ejemplos de rasgos útiles para clasificar animales.</caption>
+              <thead><tr><th>Grupo</th><th>Características frecuentes</th><th>Ejemplo</th></tr></thead>
+              <tbody>
+                <tr><td>Mamíferos</td><td>Las crías toman leche materna; la mayoría tiene pelo.</td><td>Lince ibérico.</td></tr>
+                <tr><td>Aves</td><td>Tienen plumas, pico y ponen huevos.</td><td>Flamenco.</td></tr>
+                <tr><td>Reptiles</td><td>Tienen piel con escamas; respiran por pulmones.</td><td>Lagarto ocelado.</td></tr>
+                <tr><td>Anfibios</td><td>Muchos viven parte de su vida en el agua y parte en tierra.</td><td>Rana.</td></tr>
+                <tr><td>Peces</td><td>La mayoría respira por branquias y vive en el agua.</td><td>Barbo.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>Clasificamos seres vivos del patio</h3>
+            <p>Vemos una hormiga, un olivo, un gorrión y una seta. La hormiga es un invertebrado; el olivo, una planta;
+              el gorrión, un ave; y la seta es la parte visible de un hongo. Un solo rasgo no sirve siempre: las aves
+              y los insectos pueden tener alas, ¡pero pertenecen a grupos distintos!</p>
+          </div>
+          <div class="callout"><strong>Investigar sin dañar:</strong> observa y dibuja los seres vivos del patio,
+            pero no arranques plantas, no recojas setas desconocidas y no manipules animales.</div>
+
+          <!-- IMAGEN FUTURA WEBP: clasificacion-seres-vivos.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/clasificacion-seres-vivos.webp"
+              alt="Esquema de clasificación de animales, plantas, hongos y microorganismos con ejemplos próximos"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Infografía con cuatro grupos (animales, plantas, hongos y microorganismos), dibujos claros y nombres de ejemplos conocidos.
+              <code>/img/conocimiento4/clasificacion-seres-vivos.webp</code>
+            </div>
+            <figcaption>Grupos de seres vivos y algunos ejemplos cotidianos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-1">
+            <h3 id="actividades-1">✏️ Actividades 2.1</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>¿Vivo o no vivo?</h4>
+            <ol type="a">
+              <li>Explica con tus palabras qué es un ser vivo.</li>
+              <li>Indica las tres funciones vitales de los seres vivos.</li>
+              <li>Clasifica: hormiga, roca, encina, nube y seta.</li>
+              <li>Razona por qué una semilla puede contener un ser vivo aunque no se mueva.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Identificamos grupos</h4>
+            <ol type="a">
+              <li>Indica a qué grupo pertenecen la encina, el champiñón, la mariposa y la levadura.</li>
+              <li>Escribe una diferencia entre animales y plantas.</li>
+              <li>Explica por qué una seta no es una planta.</li>
+              <li>Da un ejemplo de microorganismo útil.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Vertebrados e invertebrados</h4>
+            <ol type="a">
+              <li>Nombra los cinco grupos principales de vertebrados.</li>
+              <li>Clasifica el flamenco, la rana, el lince y la sardina.</li>
+              <li>Escribe dos ejemplos de animales invertebrados.</li>
+              <li>¿Por qué tener alas no es suficiente para clasificar un animal como ave?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Nuestro pequeño inventario</h4>
+            <ol type="a">
+              <li>Observa un espacio del colegio y anota tres seres vivos que encuentres.</li>
+              <li>Clasifica cada uno con un criterio que puedas explicar.</li>
+              <li>Dibuja uno y señala dos características observables.</li>
+              <li>Cuenta al grupo qué dudas te han surgido al clasificarlo.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 2.2: ADAPTACIONES Y RELACIONES ALIMENTARIAS
+             Tarea 2: Comprendemos las adaptaciones y las relaciones alimentarias
+             Criterio único: 5.2.b
+             ================================================== -->
+        <section
+          id="sec-2"
+          class="lesson-section"
+          data-tarea="2"
+          data-criterio="5.2.b"
+          aria-labelledby="titulo-sec-2"
+        >
+          <h2 id="titulo-sec-2" class="lesson-section-heading">
+            <span class="section-number">2.2</span>
+            Adaptaciones y relaciones alimentarias
+          </h2>
+
+          <div class="explanation">
+            <h3>Vivir en un lugar requiere características adecuadas</h3>
+            <p>Una <strong>adaptación</strong> es una característica que ayuda a un ser vivo a sobrevivir y reproducirse
+              en su ambiente. Algunas son físicas, como las hojas pequeñas del romero, y otras son de comportamiento,
+              como buscar sombra en las horas de más calor.</p>
+            <p>Las adaptaciones aparecen a lo largo de muchas generaciones. Un animal no cambia su cuerpo a voluntad
+              porque lo necesite en un momento concreto.</p>
+          </div>
+          <div class="two-columns">
+            <div class="info-card">
+              <h3>🌵 Ahorrar agua</h3>
+              <p>Las hojas pequeñas y resistentes de algunas plantas mediterráneas ayudan a reducir
+                la pérdida de agua durante el verano seco.</p>
+            </div>
+            <div class="info-card">
+              <h3>🦉 Conseguir alimento</h3>
+              <p>El pico, las garras o los dientes pueden favorecer distintas formas de alimentación.
+                El búho tiene características adecuadas para localizar y capturar presas.</p>
+            </div>
+          </div>
+          <h3>Productores, consumidores y descomponedores</h3>
+          <p>En una <strong>cadena alimentaria</strong>, los seres vivos se relacionan porque unos sirven
+            de alimento a otros. Los <strong>productores</strong>, como las plantas, fabrican materia orgánica
+            mediante la fotosíntesis. Los <strong>consumidores</strong>, como los herbívoros y carnívoros,
+            se alimentan de otros organismos. Los <strong>descomponedores</strong>, como muchos hongos y bacterias,
+            transforman restos orgánicos y ayudan a que los nutrientes vuelvan al ambiente.</p>
+          <div class="example">
+            <h3>Una cadena del monte mediterráneo</h3>
+            <p><strong>Encina → saltamontes → lagartija → culebra.</strong></p>
+            <p>Las flechas señalan <strong>desde el ser vivo que sirve de alimento hacia el que se alimenta de él</strong>.
+              Por ejemplo, el saltamontes come partes de plantas y algunas lagartijas se alimentan de insectos.
+              En la naturaleza, las relaciones son mucho más complejas y forman <strong>redes alimentarias</strong>.</p>
+          </div>
+          <h3>¿Qué pasa si cambia un eslabón?</h3>
+          <p>Si disminuyen mucho los insectos, algunas aves insectívoras pueden encontrar menos alimento.
+            Una alteración puede afectar a otros seres vivos del ecosistema, aunque no siempre del mismo modo.</p>
+          <div class="callout"><strong>Idea esencial:</strong> los animales y las plantas no viven aislados:
+            dependen del agua, la luz, el suelo y también de otros seres vivos.</div>
+
+          <!-- IMAGEN FUTURA WEBP: cadena-alimentaria-mediterranea.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/cadena-alimentaria-mediterranea.webp"
+              alt="Cadena alimentaria del monte mediterráneo con encina, saltamontes, lagartija y culebra"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Cadena alimentaria con encina, saltamontes, lagartija y culebra; flechas desde el alimento hacia el ser vivo que lo consume.
+              <code>/img/conocimiento4/cadena-alimentaria-mediterranea.webp</code>
+            </div>
+            <figcaption>Ejemplo de cadena alimentaria terrestre y sentido de las flechas.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-2">
+            <h3 id="actividades-2">✏️ Actividades 2.2</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Adaptaciones para vivir</h4>
+            <ol type="a">
+              <li>Define adaptación con tus palabras.</li>
+              <li>Explica para qué pueden servir las hojas pequeñas del romero.</li>
+              <li>Describe una característica que ayude a un ave a conseguir alimento.</li>
+              <li>Razona por qué una adaptación no aparece de repente porque un animal la desee.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>¿Quién se alimenta de quién?</h4>
+            <ol type="a">
+              <li>Define productor y escribe dos ejemplos.</li>
+              <li>Explica qué es un consumidor e indica uno herbívoro.</li>
+              <li>Indica la función que realizan los descomponedores.</li>
+              <li>Clasifica en productores, consumidores o descomponedores: encina, conejo y hongo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Interpretamos cadenas</h4>
+            <ol type="a">
+              <li>Copia la cadena encina → saltamontes → lagartija → culebra.</li>
+              <li>Señala cuál es el productor.</li>
+              <li>Explica qué significan las flechas.</li>
+              <li>Predice una posible consecuencia de la disminución de los saltamontes.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Construimos una red sencilla</h4>
+            <ol type="a">
+              <li>Dibuja hierba, semillas, ratón, conejo y zorro.</li>
+              <li>Une con flechas algunos alimentos y consumidores que podrían relacionarse.</li>
+              <li>Señala qué animales pueden compartir alimento.</li>
+              <li>Explica por qué una red representa mejor la naturaleza que una sola cadena.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 2.3: INVESTIGAMOS LOS ECOSISTEMAS ANDALUCES
+             Tarea 3: Exploramos ecosistemas de Andalucía y sus componentes
+             Criterio único: 5.1.b
+             ================================================== -->
+        <section
+          id="sec-3"
+          class="lesson-section"
+          data-tarea="3"
+          data-criterio="5.1.b"
+          aria-labelledby="titulo-sec-3"
+        >
+          <h2 id="titulo-sec-3" class="lesson-section-heading">
+            <span class="section-number">2.3</span>
+            Investigamos los ecosistemas andaluces
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué es un ecosistema?</h3>
+            <p>Un <strong>ecosistema</strong> está formado por los seres vivos que habitan un lugar,
+              el medio físico en el que viven y las relaciones entre todos ellos. Por ejemplo,
+              en una charca hay plantas acuáticas, insectos, ranas, agua, luz, temperatura y suelo.</p>
+            <p>Los <strong>factores bióticos</strong> son los seres vivos. Los <strong>factores abióticos</strong>
+              son elementos del medio no vivos, como el agua, el suelo, la luz, la temperatura o el aire.</p>
+          </div>
+          <div class="two-columns">
+            <div class="info-card"><h3>🌳 Bosque mediterráneo</h3>
+              <p>Encinas, alcornoques, lentiscos, conejos y muchas aves. Los veranos suelen ser secos y calurosos.
+                Los bosques y matorrales ofrecen alimento y refugio.</p></div>
+            <div class="info-card"><h3>🦆 Humedales y marismas</h3>
+              <p>En zonas como Doñana, el agua cambia según las estaciones. Habitan allí aves acuáticas,
+                plantas de marisma e innumerables invertebrados.</p></div>
+            <div class="info-card"><h3>🏔️ Alta montaña</h3>
+              <p>En Sierra Nevada, el frío, la nieve y la altitud influyen en los seres vivos.
+                Algunos animales y plantas están adaptados a condiciones exigentes.</p></div>
+            <div class="info-card"><h3>🌊 Litoral y mar</h3>
+              <p>En costas rocosas, playas y fondos marinos encontramos algas, peces e invertebrados.
+                El oleaje, la salinidad y la profundidad influyen en la vida.</p></div>
+          </div>
+          <h3>¿Qué es la biodiversidad?</h3>
+          <p>La <strong>biodiversidad</strong> es la variedad de seres vivos. Un ecosistema puede contener
+            especies diferentes que cumplen funciones distintas. Proteger la biodiversidad también significa
+            proteger los lugares y las relaciones que hacen posible su vida.</p>
+          <div class="example">
+            <h3>Observamos una charca tras la lluvia</h3>
+            <p>Una clase encuentra juncos, renacuajos, zapateros y agua acumulada. Anota en una tabla dos seres vivos
+              y dos factores no vivos; después explica cómo puede afectar la falta de agua a los organismos
+              que viven en ella. Esa observación ya es el comienzo de una investigación ecológica.</p>
+          </div>
+          <div class="callout"><strong>Atención:</strong> un paisaje no es solo una fotografía bonita.
+            Al estudiarlo necesitamos fijarnos en sus seres vivos, las condiciones físicas y sus relaciones.</div>
+
+          <!-- IMAGEN FUTURA WEBP: ecosistemas-andaluces.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/ecosistemas-andaluces.webp"
+              alt="Mosaico de un bosque mediterráneo, una marisma, un paisaje de montaña y el litoral andaluz"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Cuatro viñetas rotuladas: bosque mediterráneo, marismas de Doñana, montaña de Sierra Nevada y ecosistema litoral mediterráneo.
+              <code>/img/conocimiento4/ecosistemas-andaluces.webp</code>
+            </div>
+            <figcaption>Diferentes ecosistemas que podemos estudiar en Andalucía.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-3">
+            <h3 id="actividades-3">✏️ Actividades 2.3</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Componentes de un ecosistema</h4>
+            <ol type="a">
+              <li>Define ecosistema y explica sus tres componentes.</li>
+              <li>Indica cuatro factores abióticos que pueden influir en una charca.</li>
+              <li>Escribe tres factores bióticos de un bosque.</li>
+              <li>Explica qué podría ocurrir si una charca se seca durante mucho tiempo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Un recorrido por Andalucía</h4>
+            <ol type="a">
+              <li>Nombra cuatro tipos de ecosistemas andaluces.</li>
+              <li>Escribe un ser vivo característico de un bosque mediterráneo.</li>
+              <li>Indica una característica ambiental de Sierra Nevada.</li>
+              <li>Explica una diferencia entre una marisma y una playa.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Estudiamos la biodiversidad</h4>
+            <ol type="a">
+              <li>Explica qué significa biodiversidad.</li>
+              <li>Imagina dos lugares: uno tiene una sola especie y otro varias. ¿Cuál presenta más variedad?</li>
+              <li>Indica dos razones por las que conviene conservar la biodiversidad.</li>
+              <li>Propón una forma de observar especies sin perjudicarlas.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Nuestra ficha de campo</h4>
+            <ol type="a">
+              <li>Elige un ecosistema de Andalucía para investigarlo.</li>
+              <li>Anota dos organismos productores y dos consumidores que pudieran vivir allí.</li>
+              <li>Describe dos factores abióticos característicos.</li>
+              <li>Explica qué relaciones o adaptaciones te gustaría investigar.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 2.4: ACCIONES HUMANAS: PROBLEMAS Y SOLUCIONES
+             Tarea 4: Analizamos los impactos humanos y proponemos hábitos sostenibles
+             Criterio único: 6.1.b
+             ================================================== -->
+        <section
+          id="sec-4"
+          class="lesson-section"
+          data-tarea="4"
+          data-criterio="6.1.b"
+          aria-labelledby="titulo-sec-4"
+        >
+          <h2 id="titulo-sec-4" class="lesson-section-heading">
+            <span class="section-number">2.4</span>
+            Acciones humanas: problemas y soluciones
+          </h2>
+
+          <div class="explanation">
+            <h3>Nuestras acciones también modifican la naturaleza</h3>
+            <p>Los seres humanos formamos parte de los ecosistemas. Algunas actividades pueden producir
+              <strong>impactos negativos</strong>, como tirar residuos, contaminar el agua, destruir lugares de refugio,
+              provocar incendios por imprudencias o desperdiciar recursos.</p>
+            <p>También podemos tener un <strong>impacto positivo</strong>: ahorrar agua, reducir residuos,
+              restaurar zonas dañadas, respetar senderos y proteger los lugares donde viven las especies.</p>
+          </div>
+          <h3>Problemas frecuentes y respuestas posibles</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Del problema a una acción de cuidado.</caption>
+              <thead><tr><th>Problema</th><th>¿Qué puede pasar?</th><th>¿Qué podemos hacer?</th></tr></thead>
+              <tbody>
+                <tr><td>Plásticos y otros residuos</td><td>Los animales pueden ingerirlos o quedar atrapados.</td>
+                  <td>Reducir envases, usar papeleras y recoger residuos con supervisión.</td></tr>
+                <tr><td>Contaminación del agua</td><td>Empeora la calidad del agua para muchos organismos.</td>
+                  <td>No verter aceites ni productos químicos y cuidar las redes de saneamiento.</td></tr>
+                <tr><td>Pérdida de vegetación</td><td>Desaparecen alimento, sombra y refugios.</td>
+                  <td>Proteger plantas autóctonas y recuperar espacios adecuados.</td></tr>
+                <tr><td>Uso excesivo de agua</td><td>Puede reducir la disponibilidad para personas y ecosistemas.</td>
+                  <td>Reparar fugas y utilizar solo la cantidad necesaria.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>El caso del arroyo del pueblo</h3>
+            <p>La clase observa papeles junto a un arroyo, zonas sin vegetación y algunas plantas en buen estado.
+              Primero distingue <strong>hechos observados</strong> de opiniones. Después propone acciones realistas:
+              señalizar el sendero, comunicar los problemas al ayuntamiento y organizar una campaña de cuidado
+              con personas adultas. Al final compara fotografías tomadas desde el mismo lugar.</p>
+          </div>
+          <h3>¿Qué significa actuar de manera sostenible?</h3>
+          <p>Una práctica es <strong>sostenible</strong> cuando ayuda a atender nuestras necesidades sin deteriorar
+            innecesariamente el entorno ni perjudicar a quienes vivirán después. No se trata de dejar de usar
+            recursos, sino de utilizarlos con responsabilidad y pensar en las consecuencias.</p>
+          <div class="callout"><strong>Seguridad:</strong> no recojas residuos peligrosos,
+            no entres en cauces ni zonas restringidas y avisa a una persona adulta si detectas un problema.</div>
+
+          <!-- IMAGEN FUTURA WEBP: cuidamos-ecosistemas.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/cuidamos-ecosistemas.webp"
+              alt="Comparación entre un espacio natural con residuos y otro cuidado mediante acciones de conservación"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustración antes y después: un arroyo con basura y erosión frente a un arroyo limpio, vegetación de ribera y un sendero señalizado.
+              <code>/img/conocimiento4/cuidamos-ecosistemas.webp</code>
+            </div>
+            <figcaption>Las decisiones humanas pueden perjudicar o ayudar a conservar un ecosistema.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-4">
+            <h3 id="actividades-4">✏️ Actividades 2.4</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 6.1.b. -->
+          <article class="task-card" data-criterio="6.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Identificamos impactos</h4>
+            <ol type="a">
+              <li>Escribe tres actividades humanas que puedan afectar negativamente a un ecosistema.</li>
+              <li>Relaciona cada actividad con una consecuencia concreta.</li>
+              <li>Describe una actividad humana que ayude a conservar el entorno.</li>
+              <li>Explica por qué no todas las intervenciones humanas tienen el mismo resultado.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 6.1.b. -->
+          <article class="task-card" data-criterio="6.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>El arroyo necesita ayuda</h4>
+            <ol type="a">
+              <li>Lee el ejemplo del arroyo y señala dos problemas observados.</li>
+              <li>Propón dos medidas que la clase pueda realizar de forma segura.</li>
+              <li>Indica una medida que corresponda a las autoridades o personas adultas.</li>
+              <li>Explica cómo comprobarías si el lugar ha mejorado.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 6.1.b. -->
+          <article class="task-card" data-criterio="6.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Hábitos sostenibles</h4>
+            <ol type="a">
+              <li>Propón dos acciones para reducir residuos en el recreo.</li>
+              <li>Indica una forma sencilla de ahorrar agua en el colegio.</li>
+              <li>Explica qué beneficio tiene usar menos envases desechables.</li>
+              <li>Escribe un mensaje breve que anime a cuidar el entorno sin culpabilizar a nadie.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 6.1.b. -->
+          <article class="task-card" data-criterio="6.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Elegimos soluciones</h4>
+            <ol type="a">
+              <li>Describe un problema ambiental cercano que hayas observado.</li>
+              <li>Escribe una solución posible y los materiales que necesitarías.</li>
+              <li>Indica a quién pedirías permiso o colaboración.</li>
+              <li>Explica cómo valorarías los resultados después de varias semanas.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 2.5: BUSCAMOS Y COMPROBAMOS INFORMACIÓN FIABLE
+             Tarea 5: Buscamos, seleccionamos y contrastamos información sobre los ecosistemas
+             Criterio único: 2.2.b
+             ================================================== -->
+        <section
+          id="sec-5"
+          class="lesson-section"
+          data-tarea="5"
+          data-criterio="2.2.b"
+          aria-labelledby="titulo-sec-5"
+        >
+          <h2 id="titulo-sec-5" class="lesson-section-heading">
+            <span class="section-number">2.5</span>
+            Buscamos y comprobamos información fiable
+          </h2>
+
+          <div class="explanation">
+            <h3>De una pregunta a una respuesta fundamentada</h3>
+            <p>Para conocer mejor un ecosistema podemos plantear una <strong>pregunta de investigación</strong>,
+              recoger observaciones y consultar fuentes. No basta con encontrar una frase en Internet:
+              debemos comprobar si la información es fiable y explicarla con nuestras palabras.</p>
+            <p>Una <strong>fuente de información</strong> puede ser un libro, una guía de naturaleza,
+              un mapa, una web de un organismo público o una entrevista a una persona especialista.</p>
+          </div>
+          <h3>Cuatro pasos para investigar</h3>
+          <div class="step-grid">
+            <div class="info-card"><span class="step-index">1</span><h3>Preguntar</h3>
+              <p>Formula una cuestión concreta: «¿Por qué llegan tantas aves a las marismas?».</p></div>
+            <div class="info-card"><span class="step-index">2</span><h3>Buscar</h3>
+              <p>Consulta un libro y una página informativa reconocible, con ayuda del docente.</p></div>
+            <div class="info-card"><span class="step-index">3</span><h3>Contrastar</h3>
+              <p>Comprueba quién publica, la fecha y si otras fuentes fiables apoyan la información.</p></div>
+            <div class="info-card"><span class="step-index">4</span><h3>Explicar</h3>
+              <p>Anota los datos útiles, escribe una conclusión propia y cita de dónde proceden.</p></div>
+          </div>
+          <div class="example">
+            <h3>Ejemplo: ¿qué necesita una rana para vivir en una charca?</h3>
+            <p>Un equipo observa que hay ranas cerca del agua. Busca en una guía de animales y una web de
+              divulgación científica datos sobre su reproducción, alimentación y refugio. Anota qué datos
+              aparecen en ambas fuentes y cuáles necesita confirmar. Después redacta:
+              «Muchas ranas necesitan ambientes húmedos y agua para reproducirse; por eso la conservación
+              de las charcas resulta importante». Bajo el texto indica las fuentes consultadas.</p>
+          </div>
+          <h3>Cómo reconocer una fuente útil</h3>
+          <ul class="readable-list">
+            <li>Permite identificar quién la ha escrito o publicado.</li>
+            <li>Explica hechos y, cuando es necesario, muestra pruebas o datos.</li>
+            <li>Indica cuándo se publicó o actualizó la información.</li>
+            <li>Se puede contrastar con otra fuente que trate el mismo tema.</li>
+          </ul>
+          <div class="callout"><strong>Seguridad digital:</strong> utiliza recursos revisados por el docente;
+            no compartas datos personales, ni fotografías de compañeros sin permiso,
+            y no copies textos completos sin indicar su procedencia.</div>
+
+          <!-- IMAGEN FUTURA WEBP: investigacion-ecosistemas.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/investigacion-ecosistemas.webp"
+              alt="Alumnado comparando un libro, una página informativa fiable y una ficha de campo sobre un ecosistema"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustración de un equipo consultando una biblioteca y recursos digitales, subrayando autor, fecha, fuente y datos comprobados.
+              <code>/img/conocimiento4/investigacion-ecosistemas.webp</code>
+            </div>
+            <figcaption>Para investigar bien necesitamos observar, preguntar y contrastar fuentes.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-5">
+            <h3 id="actividades-5">✏️ Actividades 2.5</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Preguntas investigables</h4>
+            <ol type="a">
+              <li>Formula una pregunta sobre una especie de Andalucía.</li>
+              <li>Explica qué dato necesitarías para responderla.</li>
+              <li>Indica dónde buscarías esa información.</li>
+              <li>Transforma una pregunta demasiado amplia en otra más concreta.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Comprobamos las fuentes</h4>
+            <ol type="a">
+              <li>Escribe dos señales que ayudan a reconocer una fuente fiable.</li>
+              <li>¿Por qué conviene consultar más de una fuente?</li>
+              <li>Explica cómo comprobarías quién ha publicado una página.</li>
+              <li>Indica qué harías si dos fuentes ofrecieran datos diferentes.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>El caso de la rana</h4>
+            <ol type="a">
+              <li>Lee el ejemplo de investigación sobre la rana.</li>
+              <li>Identifica la pregunta que intenta resolver el equipo.</li>
+              <li>Escribe dos datos que convendría comprobar.</li>
+              <li>Redacta una conclusión breve sin copiar literalmente el ejemplo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 2.2.b. -->
+          <article class="task-card" data-criterio="2.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Ficha bibliográfica sencilla</h4>
+            <ol type="a">
+              <li>Elige un libro o recurso digital revisado por el docente.</li>
+              <li>Anota su título y quién lo publica.</li>
+              <li>Resume dos datos útiles para nuestra guía.</li>
+              <li>Explica cómo indicarías esa fuente al final de tu trabajo.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 2.6: ESPACIOS PROTEGIDOS Y CONSERVACIÓN
+             Tarea 6: Reconocemos espacios protegidos y medidas para conservar la biodiversidad
+             Criterio único: 5.3.b
+             ================================================== -->
+        <section
+          id="sec-6"
+          class="lesson-section"
+          data-tarea="6"
+          data-criterio="5.3.b"
+          aria-labelledby="titulo-sec-6"
+        >
+          <h2 id="titulo-sec-6" class="lesson-section-heading">
+            <span class="section-number">2.6</span>
+            Espacios protegidos y conservación
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Por qué protegemos ciertos lugares?</h3>
+            <p>Un <strong>espacio natural protegido</strong> es un área cuyo valor natural merece medidas especiales
+              de conservación. Se protegen paisajes, especies, hábitats y procesos naturales.
+              La protección no es solo un cartel: incluye normas, investigación y acciones de cuidado.</p>
+            <p>Un <strong>hábitat</strong> es el lugar y las condiciones en las que vive una especie.
+              Cuidar una especie también requiere conservar su hábitat.</p>
+          </div>
+          <h3>Ejemplos de Andalucía</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Espacios naturales conocidos y características para investigar.</caption>
+              <thead><tr><th>Espacio natural</th><th>Figura de protección</th><th>Qué podemos estudiar</th></tr></thead>
+              <tbody>
+                <tr><td>Doñana</td><td>Parque nacional (también con otras figuras de protección)</td>
+                  <td>Marismas, aves acuáticas y conservación del agua.</td></tr>
+                <tr><td>Sierra Nevada</td><td>Parque nacional</td><td>Montaña, altitud y plantas adaptadas al frío.</td></tr>
+                <tr><td>Sierra de Grazalema</td><td>Parque natural</td>
+                  <td>Bosques y montañas de la serranía gaditana y malagueña.</td></tr>
+                <tr><td>Cabo de Gata-Níjar</td><td>Parque natural</td>
+                  <td>Ambientes áridos, costas y vida marina.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>Una visita que respeta la naturaleza</h3>
+            <p>La clase visita un sendero señalizado de un espacio natural. Antes de salir, revisa las normas.
+              Durante el recorrido observa aves a distancia, evita hacer ruido cerca de nidos, no recoge
+              plantas ni minerales y se lleva sus residuos. Después elabora un pequeño informe sobre lo observado,
+              sin revelar lugares sensibles como nidos de especies protegidas.</p>
+          </div>
+          <h3>Conservar también es restaurar y estudiar</h3>
+          <p>Proteger la naturaleza puede requerir vigilar la calidad del agua, recuperar vegetación autóctona,
+            informar a visitantes, estudiar poblaciones y colaborar con especialistas. Las normas varían
+            según el lugar y deben consultarse antes de cada visita.</p>
+          <div class="callout"><strong>En una excursión:</strong> sigue las indicaciones del profesorado,
+            permanece en los caminos autorizados y observa sin tocar ni alimentar animales silvestres.</div>
+
+          <!-- IMAGEN FUTURA WEBP: espacios-protegidos-andalucia.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/espacios-protegidos-andalucia.webp"
+              alt="Mapa ilustrado de Andalucía con Doñana, Sierra Nevada, Sierra de Grazalema y Cabo de Gata"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Mapa sencillo de Andalucía señalando Doñana, Sierra Nevada, Sierra de Grazalema y Cabo de Gata-Níjar, con una pequeña ilustración de su paisaje.
+              <code>/img/conocimiento4/espacios-protegidos-andalucia.webp</code>
+            </div>
+            <figcaption>Algunos espacios protegidos de Andalucía y sus distintos paisajes.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-6">
+            <h3 id="actividades-6">✏️ Actividades 2.6</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.3.b. -->
+          <article class="task-card" data-criterio="5.3.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>¿Qué protegemos?</h4>
+            <ol type="a">
+              <li>Explica qué es un espacio natural protegido.</li>
+              <li>Define hábitat con un ejemplo sencillo.</li>
+              <li>Indica dos motivos por los que merece la pena proteger un ecosistema.</li>
+              <li>Razona por qué proteger un animal implica cuidar el lugar donde vive.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.3.b. -->
+          <article class="task-card" data-criterio="5.3.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Localizamos lugares</h4>
+            <ol type="a">
+              <li>Nombra dos parques nacionales andaluces estudiados.</li>
+              <li>Escribe el nombre de dos parques naturales de la tabla.</li>
+              <li>Relaciona Doñana con un tipo de ecosistema.</li>
+              <li>Relaciona Sierra Nevada con una condición ambiental.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.3.b. -->
+          <article class="task-card" data-criterio="5.3.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Preparamos una visita</h4>
+            <ol type="a">
+              <li>Elabora tres normas de conducta respetuosa para una excursión.</li>
+              <li>Explica por qué no debemos acercarnos a nidos.</li>
+              <li>Propón un material sencillo para observar sin causar molestias.</li>
+              <li>Indica qué harías si encuentras residuos o un animal herido.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.3.b. -->
+          <article class="task-card" data-criterio="5.3.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Conservar para el futuro</h4>
+            <ol type="a">
+              <li>Selecciona un espacio natural andaluz.</li>
+              <li>Describe una especie o paisaje que merezca protección.</li>
+              <li>Propón una medida de conservación relacionada con el problema observado.</li>
+              <li>Escribe un compromiso concreto que pueda cumplir la clase.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 2.7: NUESTRA GUÍA DE ECOSISTEMAS Y UN REFUGIO PARA LA BIODIVERSIDAD
+             Tarea 7: Diseñamos en equipo una solución que favorezca la biodiversidad
+             Criterio único: 3.1.b
+             ================================================== -->
+        <section
+          id="sec-7"
+          class="lesson-section"
+          data-tarea="7"
+          data-criterio="3.1.b"
+          aria-labelledby="titulo-sec-7"
+        >
+          <h2 id="titulo-sec-7" class="lesson-section-heading">
+            <span class="section-number">2.7</span>
+            Nuestra guía de ecosistemas y un refugio para la biodiversidad
+          </h2>
+
+          <div class="explanation">
+            <h3>Producto final: guía de ecosistemas andaluces con propuestas de protección</h3>
+            <p>En equipos elaboraremos una <strong>guía de ecosistemas de Andalucía</strong> que cualquier compañero
+              pueda comprender. Incluirá información contrastada, dibujos o imágenes con su procedencia,
+              relaciones alimentarias, amenazas y propuestas de protección.</p>
+            <p>Además, cada equipo diseñará una <strong>solución que favorezca la biodiversidad</strong> del colegio:
+              por ejemplo, una zona con plantas autóctonas y rincones de refugio para pequeños animales,
+              previa valoración y autorización del profesorado.</p>
+          </div>
+          <h3>Plan de trabajo de los equipos</h3>
+          <div class="step-grid">
+            <div class="info-card"><span class="step-index">1</span><h3>Elegimos</h3>
+              <p>Seleccionamos un ecosistema y definimos qué queremos explicar a quienes lean la guía.</p></div>
+            <div class="info-card"><span class="step-index">2</span><h3>Investigamos</h3>
+              <p>Buscamos fuentes fiables y reunimos información sobre seres vivos, clima, suelo y relaciones.</p></div>
+            <div class="info-card"><span class="step-index">3</span><h3>Diseñamos</h3>
+              <p>Preparamos fichas y dibujamos un refugio o mejora ambiental viable, sin introducir especies exóticas.</p></div>
+            <div class="info-card"><span class="step-index">4</span><h3>Revisamos y presentamos</h3>
+              <p>Comprobamos datos, citamos fuentes, escuchamos propuestas y explicamos cómo cuidar nuestro diseño.</p></div>
+          </div>
+          <h3>¿Qué debe contener nuestra guía?</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Lista de apartados que puede seguir cada equipo.</caption>
+              <thead><tr><th>Parte</th><th>Qué incluimos</th></tr></thead>
+              <tbody>
+                <tr><td>Portada</td><td>Título, nombres del equipo y dibujo representativo.</td></tr>
+                <tr><td>Ficha del ecosistema</td><td>Localización general, clima, suelo, agua y especies características.</td></tr>
+                <tr><td>Relaciones</td><td>Una cadena alimentaria correctamente orientada y dos adaptaciones.</td></tr>
+                <tr><td>Conservación</td><td>Un problema realista y dos propuestas responsables.</td></tr>
+                <tr><td>Diseño</td><td>Boceto del refugio o mejora, materiales seguros y cuidados necesarios.</td></tr>
+                <tr><td>Fuentes</td><td>Títulos y procedencia de los materiales consultados.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>Ejemplo de propuesta: rincón de biodiversidad</h3>
+            <p>El equipo observa que una parte del patio recibe mucho sol y apenas tiene plantas.
+              Propone un pequeño espacio con <strong>plantas autóctonas apropiadas</strong>, algunas zonas sin pavimentar
+              y refugios naturales sencillos. Realiza un boceto, pregunta qué especies son adecuadas,
+              calcula qué mantenimiento requeriría y consulta al profesorado antes de poner nada en práctica.
+              Una propuesta bien razonada también es válida aunque no pueda construirse.</p>
+          </div>
+          <div class="callout"><strong>Regla de cuidado:</strong> no construimos refugios ni colocamos
+            materiales sin autorización. No capturamos animales ni trasladamos especies de otros lugares.
+            Nuestro objetivo es ayudar, no alterar el ecosistema.</div>
+
+          <!-- IMAGEN FUTURA WEBP: guia-ecosistemas-refugio.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/guia-ecosistemas-refugio.webp"
+              alt="Maqueta de una guía de ecosistemas andaluces y diseño seguro de un refugio natural para insectos"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Doble panel: portada y páginas interiores de la guía de ecosistemas andaluces; al lado, boceto de una zona de jardín con plantas autóctonas y pequeños refugios bajo supervisión.
+              <code>/img/conocimiento4/guia-ecosistemas-refugio.webp</code>
+            </div>
+            <figcaption>Nuestro proyecto combina investigación, comunicación y un diseño cuidadoso para la biodiversidad.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-7">
+            <h3 id="actividades-7">✏️ Actividades 2.7</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Planificamos la guía</h4>
+            <ol type="a">
+              <li>Elige con tu equipo un ecosistema andaluz.</li>
+              <li>Propón un título claro para la guía.</li>
+              <li>Reparte responsabilidades de manera equilibrada.</li>
+              <li>Escribe dos preguntas que la guía deberá responder.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Creamos las fichas</h4>
+            <ol type="a">
+              <li>Elabora una ficha con tres seres vivos del ecosistema elegido.</li>
+              <li>Añade dos factores abióticos y dos adaptaciones.</li>
+              <li>Dibuja una cadena alimentaria con flechas correctas.</li>
+              <li>Anota las fuentes de donde proceden los datos.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Diseñamos una mejora</h4>
+            <ol type="a">
+              <li>Observa qué necesita un pequeño ser vivo del patio para alimentarse y refugiarse.</li>
+              <li>Dibuja una posible mejora ambiental segura para el colegio.</li>
+              <li>Indica materiales, cuidados y personas que deberían autorizarla.</li>
+              <li>Explica qué problema pretende resolver tu diseño.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Presentamos y revisamos</h4>
+            <ol type="a">
+              <li>Expón las ideas principales de la guía al resto de la clase.</li>
+              <li>Justifica una propuesta para proteger el ecosistema estudiado.</li>
+              <li>Escucha una sugerencia de otro equipo y anótala.</li>
+              <li>Escribe qué mejorarías tras revisar el trabajo.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             REPASAMOS LO APRENDIDO - FICHAS DE REFUERZO Y AMPLIACIÓN
+             ================================================== -->
+        <section
+          id="sec-repaso"
+          class="summary-block sda-recap"
+          aria-labelledby="titulo-repaso"
+        >
+          <div class="recap-heading">
+            <span class="section-number" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Una ficha de refuerzo y otra de ampliación, con cuatro cuestiones por apartado.</p>
+            </div>
+          </div>
+
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 2.1 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.1.b">
+                <h4>Refuerzo 2.1 · Descubrimos y clasificamos los seres vivos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe las tres funciones vitales.</li>
+                  <li>¿Es una seta una planta? Explica por qué.</li>
+                  <li>Nombra dos vertebrados y dos invertebrados.</li>
+                  <li>Clasifica: pino, gorrión, lombriz y champiñón.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 2.2 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.2.b">
+                <h4>Refuerzo 2.2 · Adaptaciones y relaciones alimentarias</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es una adaptación?</li>
+                  <li>Escribe un productor de un ecosistema terrestre.</li>
+                  <li>¿Qué indican las flechas en una cadena alimentaria?</li>
+                  <li>¿Qué función cumplen los hongos descomponedores?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 2.3 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.1.b">
+                <h4>Refuerzo 2.3 · Investigamos los ecosistemas andaluces</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es un ecosistema?</li>
+                  <li>Separa dos factores bióticos y dos abióticos de una marisma.</li>
+                  <li>Nombra dos ecosistemas de Andalucía.</li>
+                  <li>¿Qué significa biodiversidad?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 2.4 · Criterio 6.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="6.1.b">
+                <h4>Refuerzo 2.4 · Acciones humanas: problemas y soluciones</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Indica una causa de contaminación del agua.</li>
+                  <li>Escribe dos formas de ahorrar recursos.</li>
+                  <li>¿Por qué importa conservar la vegetación de un arroyo?</li>
+                  <li>Pon un ejemplo de impacto humano positivo.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 2.5 · Criterio 2.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.2.b">
+                <h4>Refuerzo 2.5 · Buscamos y comprobamos información fiable</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué significa contrastar una información?</li>
+                  <li>Escribe dos tipos de fuentes que puedas consultar.</li>
+                  <li>¿Por qué debemos saber quién publica un texto?</li>
+                  <li>¿Qué debemos hacer si utilizamos información ajena?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 2.6 · Criterio 5.3.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.3.b">
+                <h4>Refuerzo 2.6 · Espacios protegidos y conservación</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es un espacio natural protegido?</li>
+                  <li>Nombra dos espacios protegidos de Andalucía.</li>
+                  <li>Escribe dos normas para visitar un parque natural.</li>
+                  <li>Explica la relación entre una especie y su hábitat.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 2.7 · Criterio 3.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="3.1.b">
+                <h4>Refuerzo 2.7 · Nuestra guía de ecosistemas y un refugio para la biodiversidad</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra tres apartados indispensables de la guía.</li>
+                  <li>¿Por qué debemos indicar las fuentes?</li>
+                  <li>¿Qué debe incluir el boceto de una solución?</li>
+                  <li>¿Por qué necesitamos permiso antes de hacer cambios en el patio?</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 2.1 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.1.b">
+                <h4>Ampliación 2.1 · Descubrimos y clasificamos los seres vivos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Construye una clave de dos preguntas para distinguir ave, insecto y planta.</li>
+                  <li>Investiga por qué un murciélago no es un ave, aunque vuele.</li>
+                  <li>Explica qué puede ocurrir si desaparecen todos los hongos descomponedores.</li>
+                  <li>Elige dos animales parecidos y compara un rasgo que ayude a clasificarlos.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 2.2 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.2.b">
+                <h4>Ampliación 2.2 · Adaptaciones y relaciones alimentarias</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara dos adaptaciones de un animal de montaña y uno de humedal.</li>
+                  <li>Diseña dos cadenas diferentes que empiecen por una planta.</li>
+                  <li>Explica cómo afectaría a una red alimentaria la desaparición de una especie.</li>
+                  <li>Investiga un animal nocturno de Andalucía y relaciona dos rasgos con su forma de vida.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 2.3 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.1.b">
+                <h4>Ampliación 2.3 · Investigamos los ecosistemas andaluces</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara un humedal andaluz con un bosque mediterráneo usando cuatro rasgos.</li>
+                  <li>Explica por qué cambia la vida de una charca entre primavera y verano.</li>
+                  <li>Propón un esquema que relacione agua, plantas e insectos.</li>
+                  <li>Investiga una especie propia de un ecosistema andaluz y presenta su ficha.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 2.4 · Criterio 6.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="6.1.b">
+                <h4>Ampliación 2.4 · Acciones humanas: problemas y soluciones</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una campaña para reducir envases en el colegio.</li>
+                  <li>Relaciona la pérdida de vegetación con dos consecuencias para los animales.</li>
+                  <li>Propón indicadores para comprobar si una zona se conserva mejor.</li>
+                  <li>Argumenta qué medida aplicarías primero en un patio con residuos y poca sombra.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 2.5 · Criterio 2.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.2.b">
+                <h4>Ampliación 2.5 · Buscamos y comprobamos información fiable</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Elige dos fuentes sobre una misma especie y compara sus datos.</li>
+                  <li>Escribe una pregunta y propone un plan para responderla sin molestar a animales.</li>
+                  <li>Construye una ficha con título, fuente, fecha y tres datos comprobados.</li>
+                  <li>Detecta una afirmación dudosa sobre un ecosistema y explica cómo verificarla.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 2.6 · Criterio 5.3.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.3.b">
+                <h4>Ampliación 2.6 · Espacios protegidos y conservación</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Investiga una especie amenazada y explica por qué necesita su hábitat.</li>
+                  <li>Compara un parque nacional y un parque natural sin afirmar que todos tienen las mismas normas.</li>
+                  <li>Propón un cartel para visitantes de un humedal y justifica sus consejos.</li>
+                  <li>Describe un proyecto de restauración de una zona degradada con ayuda de especialistas.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 2.7 · Criterio 3.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="3.1.b">
+                <h4>Ampliación 2.7 · Nuestra guía de ecosistemas y un refugio para la biodiversidad</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara dos propuestas de refugio y valora su mantenimiento.</li>
+                  <li>Diseña una versión accesible de tu guía con letra clara y dibujos rotulados.</li>
+                  <li>Elabora una rúbrica sencilla de cuatro puntos para revisar el proyecto.</li>
+                  <li>Propón cómo comprobar en varios meses si una mejora beneficia al entorno.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- ==================================================
+             COMPRUEBA LO APRENDIDO: CAJAS SELECCIONABLES
+             Patrón LNL4.8 / CN4.1; no usar botones de radio.
+             ================================================== -->
+        <section
+          id="sec-comprueba"
+          class="summary-block check-learning"
+          aria-labelledby="titulo-comprueba"
+        >
+          <h2 id="titulo-comprueba" class="lesson-section-heading">
+            <span class="section-number">✓</span>
+            Comprueba lo aprendido
+          </h2>
+          <p>Selecciona una caja por pregunta y pulsa <strong>Comprobar respuestas</strong>.
+            Después podrás corregir tus elecciones o volver a empezar.</p>
+          <form id="quiz-cm42" novalidate>
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Qué característica comparten todos los seres vivos?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Están hechos de metal.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Están formados por una o más células.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Se desplazan de un lugar a otro.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">2. ¿Cuál de los siguientes es un hongo?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Un champiñón.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Una encina.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Una mariposa.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué organismo actúa como productor en una cadena alimentaria?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Una lagartija.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Un zorro.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Una planta verde.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. En una cadena alimentaria, ¿hacia dónde apunta la flecha?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Del que se alimenta hacia su alimento.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Del alimento hacia quien lo consume.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Siempre hacia el Sol.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. ¿Cuál es un factor abiótico de una charca?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    El agua.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    La rana.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    El junco.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Qué tipo de paisaje es típico de Doñana?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Alta montaña con nieve permanente.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Desierto de dunas sin organismos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Marismas y humedales.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Cuál de estas acciones ayuda a conservar un ecosistema?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Abandonar envoltorios en el campo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Reducir residuos y respetar senderos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Arrancar plantas para llevarlas a casa.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Qué debemos hacer al investigar una especie?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Contrastar fuentes e indicar su procedencia.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Copiar la primera página que encontremos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Publicar datos personales de compañeros.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Cuál de estos espacios es un parque nacional de Andalucía?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Cabo de Gata-Níjar.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Sierra de Grazalema.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Sierra Nevada.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Qué corresponde hacer antes de construir un refugio en el patio?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Introducir animales de otros ecosistemas.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Diseñarlo y pedir autorización al profesorado.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Colocarlo sin consultar a nadie.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button id="quiz-check" type="button" class="lnl-btn">Comprobar respuestas</button>
+              <button id="quiz-reset" type="button" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- ==================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA
+             Cuatro niveles por apartado; patrón LNL4.8 / CN4.1.
+             ================================================== -->
+        <section id="sec-diana" class="summary-block self-eval"
+                 aria-labelledby="titulo-diana">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-diana" class="lesson-section-heading">Diana de Autoevaluación Interactiva</h2>
+              <p>Selecciona la opción que mejor representa lo que has aprendido.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- AUTOEVALUACIÓN 2.1 · Criterio 5.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.1</strong> Reconozco las funciones vitales y clasifico seres vivos mediante características observables.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 2.2 · Criterio 5.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.2</strong> Explico adaptaciones y represento las relaciones alimentarias con flechas bien orientadas.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 2.3 · Criterio 5.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.3</strong> Identifico los componentes y las características de distintos ecosistemas andaluces.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 2.4 · Criterio 6.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.4</strong> Reconozco impactos humanos sobre la naturaleza y propongo soluciones sostenibles y seguras.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 2.5 · Criterio 2.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.5</strong> Busco y contrasto fuentes fiables y explico información relevante con mis propias palabras.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 2.6 · Criterio 5.3.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.6</strong> Identifico espacios protegidos y propongo medidas responsables de conservación de la biodiversidad.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 2.7 · Criterio 3.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>2.7</strong> Planifico, diseño y presento en equipo una guía y una propuesta segura para la biodiversidad.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 2.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">Borrar respuestas</button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 7 apartados.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE INSTITUCIONAL DEL CENTRO
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interacciones reutilizadas de los HTML de Lengua 4.º. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuestionario: una caja rectangular seleccionada por pregunta.
+      const questions = Array.from(document.querySelectorAll('#quiz-cm42 .quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) {
+            return;
+          }
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Sin responder.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === question.dataset.answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector(
+              '.quiz-option[data-option="' + question.dataset.answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              answer.textContent.trim();
+          }
+        });
+
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' +
+          questions.length + ' respuestas correctas. Contestadas: ' +
+          answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      // Diana de autoevaluación: cuatro niveles, una única elección por fila.
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) {
+            return;
+          }
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+    });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
