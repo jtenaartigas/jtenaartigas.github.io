@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="La materia, las fuerzas y las máquinas. Situación de Aprendizaje CM4.4 de Conocimiento del Medio de 4.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+  <title>La materia, las fuerzas y las máquinas | Conocimiento del Medio 4.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Cabecera y navegación compartidas con el resto del colegio. -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    SITUACIÓN DE APRENDIZAJE CM4.4 (también solicitada como CN4.4).
+    Base visual: HTML de Conocimiento del Medio de 5.º y 6.º y SdA recientes.
+    Mantener el verde institucional en las SdA y la clase lesson-section-heading.
+
+    DESTINO PREVISTO:
+    /recursos/cuarto/conocimiento-medio4/materia-fuerzas-maquinas/index.html
+
+    Marco curricular: segundo ciclo de Educación Primaria, Andalucía.
+    Criterios de las ocho tareas: 5.1.b, 5.1.b, 2.3.b, 5.2.b,
+    5.2.b, 3.1.b, 3.3.b, 2.5.b.
+    Se guarda un solo criterio en data-criterio para cada actividad.
+
+    IMÁGENES FUTURAS:
+    /img/conocimiento4/*.webp
+    Se usan figure.media-frame, img con onerror=markImageMissing(this),
+    figcaption, y mensaje alternativo visible si todavía falta el archivo.
+    No añadir botones de impresión ni de pistas.
+  -->
+  <style>
+
+    :root {
+      --cm-primary: #007a33;
+      --cm-dark: #005724;
+      --cm-light: #e6f4ea;
+      --cm-accent: #00a847;
+      --cm-ink: #1e293b;
+      --cm-muted: #475569;
+      --cm-border: #d1e7dd;
+      --cm-bg: #f4f7f5;
+      --cm-amber-light: #fff7e6;
+      --cm-shadow: 0 5px 18px rgba(0, 90, 37, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page {
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+    }
+
+    .topic-page a:not(.skip-link) {
+      text-underline-offset: 0.15em;
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: 0.3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.65rem;
+      color: #94a3b8;
+    }
+
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(
+        110deg,
+        #005724 0%,
+        #007a33 60%,
+        #00a847 100%
+      );
+      color: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .topic-hero::after {
+      content: "⚙  ✦";
+      position: absolute;
+      right: 10px;
+      top: -72px;
+      color: rgba(255, 255, 255, 0.055);
+      font-size: 10rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      max-width: 650px;
+      margin: 0.9rem 0 0;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    /* La mascota utiliza la misma imagen compartida que los índices. */
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: 0.35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .lesson-nav-heading {
+      width: 100%;
+      margin: 0 0 0.2rem;
+      color: var(--cm-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .lesson-nav a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Evita que las reglas generales centren las cabeceras. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 0.85rem;
+      border-bottom: 2px solid var(--cm-border);
+      color: var(--cm-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 0.25rem;
+      border-radius: 0.65rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 0.55rem;
+      color: var(--cm-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: 0.55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ol,
+    .topic-page .lesson-section ul {
+      padding-left: 1.4rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 0.9rem 0.9rem 0;
+      background: var(--cm-light);
+    }
+
+    .explanation h3 {
+      margin-top: 0 !important;
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--cm-dark);
+    }
+
+    .info-card {
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      margin-top: 0 !important;
+    }
+
+    .two-columns,
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .step-index {
+      display: inline-grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--cm-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--cm-amber-light);
+      color: #754709;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 0.75rem 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table caption {
+      margin-bottom: 0.55rem;
+      color: var(--cm-muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--cm-border);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* Cajas de imágenes: estructura compartida figure.media-frame. */
+    .topic-page .media-frame:not(.hero-mascot) {
+      margin: 1.3rem 0 1.7rem;
+      padding: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #f9fcfa;
+      box-shadow: 0 2px 10px rgba(0, 90, 37, 0.04);
+      text-align: center;
+    }
+
+    .topic-page .media-frame:not(.hero-mascot) img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      max-height: 440px;
+      margin: 0 auto;
+      border-radius: 0.65rem;
+      object-fit: contain;
+    }
+
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      color: var(--cm-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    /* Hasta incorporar los .webp, se ve la sugerencia sin icono roto. */
+    .image-suggestion {
+      display: none;
+      padding: 1.5rem 1rem;
+      border: 2px dashed #b8dec6;
+      border-radius: 0.65rem;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .image-suggestion strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .media-frame.image-missing .image-suggestion {
+      display: block;
+    }
+
+    .topic-page .media-frame.image-missing > img {
+      display: none;
+    }
+
+    .media-frame.image-missing figcaption {
+      display: none;
+    }
+
+    .practice {
+      margin: 1.5rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .topic-page .practice > h3 {
+      margin-top: 0;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .task-card {
+      margin: 0.9rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .task-card h4 {
+      margin: 0.25rem 0 0.65rem;
+      color: var(--cm-dark);
+      font-size: 1.04rem;
+    }
+
+    .task-card ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      list-style-type: lower-alpha;
+    }
+
+    .task-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .readable-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ======================================================
+       REPASO: fichas de CM5.1/CM5.2 con estructura de LNL4.8
+       ====================================================== */
+    .sda-recap {
+      border: 2px solid var(--cm-primary);
+    }
+
+    .recap-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recap-heading > div {
+      min-width: 0;
+    }
+
+    .recap-heading .lesson-section-heading {
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .recap-heading p {
+      margin: 0.2rem 0 0;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .recap-sheet + .recap-sheet {
+      margin-top: 2.5rem;
+    }
+
+    .sheet-heading {
+      margin-bottom: 1.2rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 12px 12px 0;
+      background: #ecfdf3;
+    }
+
+    .sheet-heading h3 {
+      margin: 0;
+      color: var(--cm-dark);
+      font-size: 1.05rem;
+    }
+
+    .sheet-heading--ampliacion {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .sheet-heading--ampliacion h3 {
+      color: #92400e;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .sheet-card {
+      min-width: 0;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid #dce6e0;
+      border-radius: 16px;
+      background: #f8faf9;
+    }
+
+    .sheet-card--ampliacion {
+      background: #ffffff;
+      border-color: #f2d5aa;
+    }
+
+    .sheet-card h4 {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 7px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .sheet-card--ampliacion h4 {
+      background: #b45309;
+    }
+
+    .sheet-questions {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: lower-alpha;
+    }
+
+    .sheet-questions li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* ======================================================
+       COMPRUEBA LO APRENDIDO: cajas de respuesta de LNL4.8
+       ====================================================== */
+    .check-learning {
+      background: #ffffff;
+      scroll-margin-top: 80px;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .quiz-item {
+      min-width: 0;
+      border: 1px solid #d7e6db;
+      border-radius: 13px;
+      padding: 1rem;
+      background: #fbfdfb;
+    }
+
+    .quiz-prompt {
+      margin: 0 0 0.75rem;
+      color: #274d37;
+      font-weight: 750;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.65rem 0.8rem;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: #ffffff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--cm-primary);
+      background: #f0fdf4;
+    }
+
+    .quiz-option[aria-pressed="true"] {
+      border-color: var(--cm-primary);
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 700;
+    }
+
+    .quiz-item.correct {
+      border-color: #3c9961;
+    }
+
+    .quiz-item.incorrect {
+      border-color: #d79a71;
+    }
+
+    .quiz-feedback {
+      margin: 0.6rem 0 0;
+      min-height: 1em;
+      color: #475569;
+      font-size: 0.86rem;
+    }
+
+    .quiz-actions,
+    .eval-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.3rem;
+    }
+
+    .lnl-btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 0.75rem 1.1rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+
+    .lnl-btn.secondary {
+      background: #e9f3ed;
+      color: var(--cm-dark);
+    }
+
+    .lnl-btn:hover,
+    .lnl-btn:focus-visible {
+      filter: brightness(0.94);
+    }
+
+    #quiz-summary {
+      margin: 0.9rem 0 0;
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* ======================================================
+       DIANA DE AUTOEVALUACIÓN: botones de LNL4.8
+       ====================================================== */
+    .self-eval {
+      border: 2px solid #c7d2fe;
+    }
+
+    .heading-icon {
+      display: inline-grid;
+      place-items: center;
+      min-width: 3rem;
+      min-height: 2.8rem;
+      border-radius: 12px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .heading-icon--indigo {
+      background: #4f46e5;
+    }
+
+    .self-eval-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .eval-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .eval-statement {
+      flex: 1 1 370px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .eval-statement strong {
+      margin-right: 0.25rem;
+      color: var(--cm-primary);
+    }
+
+    .auto-eval-group {
+      display: flex;
+      flex: 0 1 410px;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .eval-btn {
+      padding: 0.47rem 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #475569;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .eval-btn:hover,
+    .eval-btn:focus-visible {
+      border-color: #4f46e5;
+    }
+
+    .eval-btn[aria-pressed="true"] {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    #eval-status {
+      flex: 1 1 240px;
+      margin: 0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: minmax(0, 1fr) 150px;
+      }
+
+      .topic-page .media-frame.hero-mascot img {
+        max-height: 190px;
+      }
+
+      .two-columns,
+      .step-grid,
+      .sheet-grid,
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 135px;
+        justify-self: end;
+        margin-top: -0.6rem;
+      }
+
+      .topic-page .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        margin-top: 0.13rem;
+      }
+
+
+
+      .topic-page .media-frame:not(.hero-mascot) {
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eval-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .eval-statement,
+      .auto-eval-group {
+        flex: auto;
+      }
+    }
+
+    @media print {
+      .quiz-actions,
+      .eval-actions,
+      .auto-eval-group {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Detecta imágenes pendientes y muestra la sugerencia correspondiente.
+    function markImageMissing(image) {
+      var frame = image.closest('figure.media-frame');
+
+      if (frame) {
+        frame.classList.add('image-missing');
+      } else {
+        image.hidden = true;
+      }
+    }
+  </script>
+</head>
+
+<body class="topic-page">
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       CABECERA GENERAL DEL CENTRO
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a
+        class="navigation-logo"
+        href="/"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/cuarto/conocimiento-medio4/">
+              Conocimiento del Medio
+            </a>
+          </li>
+          <li aria-current="page">La materia, las fuerzas y las máquinas</li>
+        </ol>
+      </nav>
+
+
+
+
+      <!-- Portada verde institucional: mismas clases, Tomatito y estructura CN4.1-CN4.3. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">
+            Conocimiento del Medio · 4.º de Primaria · CM4.4
+          </span>
+          <h1 id="titulo-sda">4. LA MATERIA, LAS FUERZAS Y LAS MÁQUINAS</h1>
+          <p>
+            Experimentamos con materiales, cambios de estado y mezclas,
+            descubrimos los efectos de las fuerzas y construimos una máquina
+            sencilla que resuelva una necesidad cotidiana.
+          </p>
+          <div class="hero-tags" aria-label="Contenidos principales">
+            <span>Materia</span>
+            <span>Mezclas</span>
+            <span>Fuerzas</span>
+            <span>Máquinas</span>
+            <span>Programación</span>
+          </div>
+        </div>
+
+        <!-- Misma mascota del área, sin crear variantes. -->
+        <figure class="media-frame hero-mascot">
+          <img
+            src="/img/tomatito/conocimiento-medio.png"
+            alt="Tomatito, la mascota del colegio"
+            class="topic-hero-image"
+            onerror="markImageMissing(this)"
+          >
+        </figure>
+      </section>
+
+      <!-- Índice interno: la nomenclatura visible corresponde a CN4.4. -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">📍 Contenidos de la Situación de Aprendizaje</h2>
+        <a href="#sec-1">4.1 Materia y materiales</a>
+        <a href="#sec-2">4.2 Estados y transformaciones</a>
+        <a href="#sec-3">4.3 Separamos mezclas</a>
+        <a href="#sec-4">4.4 Las fuerzas</a>
+        <a href="#sec-5">4.5 Máquinas simples y compuestas</a>
+        <a href="#sec-6">4.6 Construimos una máquina</a>
+        <a href="#sec-7">4.7 Programamos secuencias</a>
+        <a href="#sec-8">4.8 Presentamos investigaciones</a>
+        <a href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a href="#sec-diana">🎯 Autoevaluación</a>
+      </nav>
+
+      <div class="topic-content">
+
+        <!-- ==================================================
+             APARTADO 4.1: LA MATERIA Y LAS PROPIEDADES DE LOS MATERIALES
+             Tarea 1: Comparamos propiedades de materiales y diferenciamos conductores y aislantes térmicos
+             Criterio único: 5.1.b
+             ================================================== -->
+        <section
+          id="sec-1"
+          class="lesson-section"
+          data-tarea="1"
+          data-criterio="5.1.b"
+          aria-labelledby="titulo-sec-1"
+        >
+          <h2 id="titulo-sec-1" class="lesson-section-heading">
+            <span class="section-number">4.1</span>
+            La materia y las propiedades de los materiales
+          </h2>
+
+          <div class="explanation">
+            <h3>Todo lo que nos rodea está formado por materia</h3>
+            <p>Una mesa, el agua, el aire o un lápiz están hechos de <strong>materia</strong>. La materia tiene
+              <strong>masa</strong> (la cantidad de materia de un cuerpo) y ocupa un <strong>volumen</strong>
+              (un espacio). Podemos medir la masa con una balanza y el volumen de un líquido con
+              una probeta graduada. No confundimos masa y volumen: dos objetos del mismo tamaño
+              pueden tener masas diferentes.</p>
+            <p>Los objetos se fabrican con <strong>materiales</strong>. Un material puede ser madera,
+              acero, vidrio, algodón, cerámica o plástico. Elegir bien el material depende de las
+              propiedades que necesitemos para cada uso.</p>
+          </div>
+          <h3>Propiedades que nos ayudan a elegir</h3>
+          <div class="two-columns">
+            <article class="info-card">
+              <h3>🪟 Transparencia</h3>
+              <p>Un material <strong>transparente</strong> deja pasar la luz y permite ver a través de él,
+                como un vidrio limpio. Uno <strong>opaco</strong>, como la madera, no permite ver a través.</p>
+            </article>
+            <article class="info-card">
+              <h3>🧣 Flexibilidad</h3>
+              <p>Algunos materiales se doblan con facilidad, como la tela. Otros son rígidos, como
+                la cerámica, aunque puedan romperse con un golpe. Ser rígido no significa ser irrompible.</p>
+            </article>
+            <article class="info-card">
+              <h3>🧽 Impermeabilidad</h3>
+              <p>Los materiales impermeables impiden que el agua los atraviese fácilmente; por eso
+                se usan en chubasqueros. Una esponja, en cambio, puede absorber mucha agua.</p>
+            </article>
+            <article class="info-card">
+              <h3>🧲 Magnetismo</h3>
+              <p>Algunos metales, como el hierro, son atraídos por los imanes. No todos los metales
+                lo son: el aluminio y el cobre no se comportan como el hierro ante un imán corriente.</p>
+            </article>
+          </div>
+          <h3>¿Qué significa conducir o aislar el calor?</h3>
+          <p>Cuando dos objetos tienen distinta temperatura, el <strong>calor</strong> puede pasar del más
+            caliente al más frío. Un <strong>conductor térmico</strong> permite que el calor se transmita
+            con facilidad: los metales suelen ser buenos conductores. Un <strong>aislante térmico</strong>
+            dificulta esa transmisión: la madera, el corcho y muchos plásticos suelen actuar como
+            aislantes. Ningún material cotidiano detiene por completo el paso del calor.</p>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Propiedades útiles para elegir materiales.</caption>
+              <thead><tr><th>Objeto</th><th>Material habitual</th><th>Propiedad que nos interesa</th></tr></thead>
+              <tbody>
+                <tr><td>Cazuela</td><td>Metal</td><td>Transmite el calor a los alimentos</td></tr>
+                <tr><td>Mango de una cazuela</td><td>Madera o plástico apropiado</td><td>Dificulta el paso del calor</td></tr>
+                <tr><td>Ventana</td><td>Vidrio</td><td>Deja pasar la luz</td></tr>
+                <tr><td>Chubasquero</td><td>Tejido impermeable</td><td>Protege del agua</td></tr>
+                <tr><td>Toalla</td><td>Algodón</td><td>Absorbe agua</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>La cuchara de la merienda</h3>
+            <p>En clase tenemos dos cucharas del mismo tamaño: una metálica y otra de madera.
+              Al sostenerlas, el metal puede parecernos más frío porque transmite el calor de la mano
+              más rápidamente. <strong>Eso no demuestra que el metal estuviera a menor temperatura</strong>.
+              Observamos, comparamos el material y buscamos una explicación basada en sus propiedades.</p>
+            <p>Para una experiencia sobre calor, el profesorado puede utilizar agua <strong>templada</strong>
+              y un termómetro apropiado. No usamos agua hirviendo ni tocamos recipientes calientes.</p>
+          </div>
+          <div class="callout"><strong>Idea clave:</strong> el mismo material no sirve para todo. La elección
+            depende de la propiedad necesaria y de la seguridad de quien va a utilizar el objeto.</div>
+
+          <!-- IMAGEN FUTURA WEBP: materiales-propiedades-conductores-aislantes.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/materiales-propiedades-conductores-aislantes.webp"
+              alt="Muestras de madera, metal, vidrio, plástico y tela, con ejemplos de conductores y aislantes del calor"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustrar objetos de metal, madera, vidrio, tela y plástico con pictogramas para flexibilidad, transparencia y conducción del calor; incluir una cuchara metálica y otra de madera.
+              <code>/img/conocimiento4/materiales-propiedades-conductores-aislantes.webp</code>
+            </div>
+            <figcaption>Distintos materiales tienen propiedades que los hacen útiles para diferentes objetos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-1">
+            <h3 id="actividades-1">✏️ Actividades 4.1</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Identificamos la materia</h4>
+            <ol type="a">
+              <li>Explica qué es la materia con tus palabras.</li>
+              <li>Escribe dos objetos que tengan masa y volumen.</li>
+              <li>¿Con qué instrumento medimos la masa?</li>
+              <li>¿Un globo lleno de aire contiene materia? Razona tu respuesta.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Elegimos propiedades</h4>
+            <ol type="a">
+              <li>Nombra un material transparente y uno opaco.</li>
+              <li>Escribe un ejemplo de objeto impermeable.</li>
+              <li>Explica la diferencia entre flexible y rígido.</li>
+              <li>Indica un objeto de casa cuya propiedad sea importante para su uso.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Conductor o aislante</h4>
+            <ol type="a">
+              <li>¿Qué significa ser conductor térmico?</li>
+              <li>Compara una cuchara metálica y una de madera en cuanto al paso del calor.</li>
+              <li>Explica por qué algunos mangos de utensilios de cocina son aislantes.</li>
+              <li>¿Por qué no debemos usar agua hirviendo en el experimento de clase?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Un material para cada necesidad</h4>
+            <ol type="a">
+              <li>Elige un material para una ventana y justifica tu decisión.</li>
+              <li>Propón otro para un chubasquero y explica su propiedad.</li>
+              <li>Elige el material apropiado para una toalla.</li>
+              <li>Diseña un objeto y anota dos propiedades que necesitan sus materiales.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.2: LOS ESTADOS DE LA MATERIA Y SUS TRANSFORMACIONES
+             Tarea 2: Reconocemos cambios de estado y diferenciamos transformaciones reversibles e irreversibles
+             Criterio único: 5.1.b
+             ================================================== -->
+        <section
+          id="sec-2"
+          class="lesson-section"
+          data-tarea="2"
+          data-criterio="5.1.b"
+          aria-labelledby="titulo-sec-2"
+        >
+          <h2 id="titulo-sec-2" class="lesson-section-heading">
+            <span class="section-number">4.2</span>
+            Los estados de la materia y sus transformaciones
+          </h2>
+
+          <div class="explanation">
+            <h3>Sólido, líquido y gas</h3>
+            <p>La materia puede presentarse en distintos <strong>estados</strong>. Un <strong>sólido</strong>
+              conserva su forma y su volumen en condiciones normales, como un cubito de hielo.
+              Un <strong>líquido</strong> mantiene su volumen aproximado, pero adopta la forma del
+              recipiente. Un <strong>gas</strong> se extiende y ocupa el espacio disponible, como el aire.</p>
+            <p>Los cambios de temperatura pueden producir <strong>cambios de estado</strong>. Por ejemplo,
+              un cubito de hielo se funde al recibir calor, y el agua se solidifica cuando se enfría
+              suficientemente. Durante estos cambios sigue siendo la misma sustancia: agua.</p>
+          </div>
+          <h3>Los cuatro cambios que aprenderemos</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Cambios de estado del agua y ejemplos.</caption>
+              <thead><tr><th>Cambio</th><th>De... a...</th><th>Ejemplo próximo</th></tr></thead>
+              <tbody>
+                <tr><td>Fusión</td><td>Sólido → líquido</td><td>Un cubito se derrite</td></tr>
+                <tr><td>Solidificación</td><td>Líquido → sólido</td><td>Agua que se congela</td></tr>
+                <tr><td>Evaporación</td><td>Líquido → gas</td><td>Un charco que se seca</td></tr>
+                <tr><td>Condensación</td><td>Gas → líquido</td><td>Gotas sobre un vaso frío</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>La <strong>evaporación</strong> puede ocurrir a temperaturas inferiores a la ebullición.
+            Cuando el agua hierve también pasa a gas, pero por un proceso llamado
+            <strong>ebullición</strong>. El vapor de agua es invisible: la nubecilla blanca que a veces
+            vemos junto a una superficie caliente contiene diminutas gotitas de agua líquida.</p>
+          <h3>Cambios reversibles e irreversibles</h3>
+          <div class="two-columns">
+            <article class="info-card">
+              <h3>🔁 Cambios reversibles</h3>
+              <p>En condiciones adecuadas, podemos recuperar el estado o la forma anterior.
+                El hielo que se derrite puede volver a congelarse. Doblar una goma elástica sin
+                dañarla suele permitir recuperar su forma inicial.</p>
+            </article>
+            <article class="info-card">
+              <h3>➡️ Cambios irreversibles</h3>
+              <p>No se puede recuperar fácilmente el material o la situación de partida
+                simplemente deshaciendo la acción. Cocer un huevo, quemar papel o dejar oxidar
+                un clavo son ejemplos habituales.</p>
+            </article>
+          </div>
+          <div class="example">
+            <h3>Dos cambios en una cocina</h3>
+            <p>Un vaso contiene hielo y otro, un huevo crudo. El hielo se funde y el agua líquida
+              puede congelarse otra vez: es un cambio reversible. En cambio, si cocemos el huevo,
+              ya no podemos convertirlo de nuevo en un huevo crudo simplemente enfriándolo.
+              La diferencia no depende solo de si aplicamos calor, sino de <strong>qué cambia en
+              el material</strong>.</p>
+          </div>
+          <div class="callout"><strong>Experimentos seguros:</strong> el alumnado puede observar hielo
+            derritiéndose o gotas en un vaso frío. La ebullición y la cocción requieren
+            la actuación y supervisión del profesorado.</div>
+
+          <!-- IMAGEN FUTURA WEBP: estados-materia-ciclo-agua.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/estados-materia-ciclo-agua.webp"
+              alt="Diagrama del hielo, agua líquida y vapor con flechas de fusión, solidificación, evaporación y condensación"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Tres estados del agua con flechas de cambio: hielo, agua líquida y vapor; nombrar fusión, solidificación, evaporación y condensación de forma clara.
+              <code>/img/conocimiento4/estados-materia-ciclo-agua.webp</code>
+            </div>
+            <figcaption>El agua puede pasar de sólido a líquido y gas, y regresar a otros estados.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-2">
+            <h3 id="actividades-2">✏️ Actividades 4.2</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Tres estados</h4>
+            <ol type="a">
+              <li>Escribe una característica de los sólidos.</li>
+              <li>¿Por qué el agua de una botella adopta su forma?</li>
+              <li>Explica qué ocurre con un gas cuando ocupa un recipiente.</li>
+              <li>Clasifica hielo, zumo y aire según su estado.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Nombramos los cambios</h4>
+            <ol type="a">
+              <li>¿Cómo se llama el paso de sólido a líquido?</li>
+              <li>Indica el cambio de líquido a sólido.</li>
+              <li>Explica por qué se seca un charco.</li>
+              <li>¿Qué proceso forma las gotas en el exterior de un vaso frío?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>¿Podemos volver atrás?</h4>
+            <ol type="a">
+              <li>Clasifica la fusión del hielo como reversible o irreversible.</li>
+              <li>Clasifica la cocción de un huevo.</li>
+              <li>Explica por qué una hoja de papel quemada no recupera fácilmente su estado inicial.</li>
+              <li>Propón otro ejemplo cotidiano de cambio reversible.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.1.b. -->
+          <article class="task-card" data-criterio="5.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Observamos sin riesgos</h4>
+            <ol type="a">
+              <li>Coloca un cubito en un recipiente y anota su estado inicial.</li>
+              <li>Describe lo que cambia después de unos minutos.</li>
+              <li>Explica si la sustancia sigue siendo agua.</li>
+              <li>Escribe cómo recuperaríamos el estado sólido con ayuda del congelador.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.3: INVESTIGAMOS Y SEPARAMOS MEZCLAS
+             Tarea 3: Realizamos experimentos seguros para separar diferentes mezclas y registramos los resultados
+             Criterio único: 2.3.b
+             ================================================== -->
+        <section
+          id="sec-3"
+          class="lesson-section"
+          data-tarea="3"
+          data-criterio="2.3.b"
+          aria-labelledby="titulo-sec-3"
+        >
+          <h2 id="titulo-sec-3" class="lesson-section-heading">
+            <span class="section-number">4.3</span>
+            Investigamos y separamos mezclas
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué es una mezcla?</h3>
+            <p>Una <strong>mezcla</strong> está formada por dos o más sustancias que permanecen juntas
+              sin convertirse necesariamente en una sustancia nueva. En una mezcla
+              <strong>heterogénea</strong> distinguimos sus componentes o partes, como arena y piedras.
+              En una mezcla <strong>homogénea</strong>, como agua con sal bien disuelta, no distinguimos
+              los componentes a simple vista, aunque sigan estando presentes.</p>
+            <p>Separar una mezcla consiste en aprovechar diferencias de tamaño, magnetismo,
+              solubilidad o densidad. No existe un método que sirva para todas las mezclas.</p>
+          </div>
+          <h3>Cuatro maneras de separar materiales</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Seleccionamos un método según lo que queremos separar.</caption>
+              <thead><tr><th>Método</th><th>¿Cómo funciona?</th><th>Mezcla de ejemplo</th></tr></thead>
+              <tbody>
+                <tr><td>Tamizado</td><td>Una malla retiene las partículas grandes y deja pasar las pequeñas.</td><td>Piedras y arena</td></tr>
+                <tr><td>Filtración</td><td>Un filtro retiene sólidos insolubles y deja pasar el líquido.</td><td>Arena y agua</td></tr>
+                <tr><td>Decantación</td><td>Se dejan separar fases y se vierte una con cuidado.</td><td>Agua y aceite</td></tr>
+                <tr><td>Imantación</td><td>Un imán atrae determinados materiales metálicos.</td><td>Clips de acero y papel</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>En otros casos se utiliza la <strong>evaporación</strong> para recuperar un sólido
+            disuelto en un líquido, como la sal del agua salada. Es un proceso más lento y, si requiere
+            calor, solo lo realiza el profesorado. <strong>Filtrar agua salada no separa la sal disuelta</strong>:
+            las partículas disueltas atraviesan el filtro ordinario.</p>
+          <h3>Cómo planteamos una investigación</h3>
+          <div class="step-grid">
+            <article class="info-card"><span class="step-index">1</span><h3>Pregunta</h3>
+              <p>¿Qué método permite recuperar arena de un vaso con agua?</p></article>
+            <article class="info-card"><span class="step-index">2</span><h3>Hipótesis</h3>
+              <p>Creemos que un filtro dejará pasar el agua y retendrá gran parte de la arena.</p></article>
+            <article class="info-card"><span class="step-index">3</span><h3>Prueba</h3>
+              <p>Con supervisión, pasamos la mezcla por un embudo con papel de filtro.</p></article>
+            <article class="info-card"><span class="step-index">4</span><h3>Conclusión</h3>
+              <p>Observamos qué ha quedado en el filtro y qué ha atravesado el papel; registramos los resultados.</p></article>
+          </div>
+          <div class="example">
+            <h3>El taller de mezclas de 4.º</h3>
+            <p>En el aula se han mezclado por error arena y piedrecitas. Necesitamos recuperar
+              las dos por separado para una maqueta. Antes de actuar, cada equipo propone
+              <strong>tamizar</strong>, dibuja su procedimiento y anota qué espera observar.
+              Después recoge los resultados en una tabla: «¿Quedó la arena abajo? ¿Qué pasó
+              con las piedras?». Así comprendemos por qué una investigación necesita
+              <strong>pregunta, predicción, prueba y conclusión</strong>.</p>
+          </div>
+          <div class="callout"><strong>Normas de seguridad:</strong> nunca probamos ni bebemos mezclas
+            del laboratorio; empleamos materiales escolares autorizados y recogemos todos los restos.
+            No mezclamos productos de limpieza ni manipulamos objetos metálicos punzantes.</div>
+
+          <!-- IMAGEN FUTURA WEBP: mezclas-filtracion-decantacion-tamizado.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/mezclas-filtracion-decantacion-tamizado.webp"
+              alt="Cuatro viñetas que muestran tamizado, filtración, decantación e imantación"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Cuatro experimentos de aula dibujados paso a paso: separar arena de piedras con tamiz; arena y agua con filtro; aceite y agua por decantación; clips de hierro de papelitos mediante un imán.
+              <code>/img/conocimiento4/mezclas-filtracion-decantacion-tamizado.webp</code>
+            </div>
+            <figcaption>El método de separación depende de las propiedades de los componentes.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-3">
+            <h3 id="actividades-3">✏️ Actividades 4.3</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 2.3.b. -->
+          <article class="task-card" data-criterio="2.3.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Reconocemos mezclas</h4>
+            <ol type="a">
+              <li>¿Qué es una mezcla?</li>
+              <li>Distingue mezcla homogénea y heterogénea.</li>
+              <li>Clasifica agua con sal bien disuelta y arena con piedras.</li>
+              <li>Explica por qué el agua salada puede parecer una sola sustancia.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 2.3.b. -->
+          <article class="task-card" data-criterio="2.3.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Elegimos el método</h4>
+            <ol type="a">
+              <li>Indica cómo separarías arena y piedras.</li>
+              <li>¿Qué emplearías para separar arena y agua?</li>
+              <li>Explica cómo separarías agua y aceite en el aula.</li>
+              <li>¿Qué utilizarías para recoger clips de hierro mezclados con papelitos?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 2.3.b. -->
+          <article class="task-card" data-criterio="2.3.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Nuestra investigación</h4>
+            <ol type="a">
+              <li>Escribe la pregunta de investigación del filtro.</li>
+              <li>Formula una hipótesis antes de probarlo.</li>
+              <li>Indica qué observarías después de filtrar.</li>
+              <li>Redacta una conclusión basada en los resultados.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 2.3.b. -->
+          <article class="task-card" data-criterio="2.3.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Comparamos resultados</h4>
+            <ol type="a">
+              <li>Dibuja una mezcla antes y después de separarla.</li>
+              <li>Escribe qué materiales has utilizado.</li>
+              <li>Indica si el método recupera todos los componentes.</li>
+              <li>Explica qué mejorarías para que la separación fuese más eficaz.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.4: LAS FUERZAS Y SUS EFECTOS
+             Tarea 4: Exploramos fuerzas de empuje, tracción, gravedad, rozamiento y magnetismo
+             Criterio único: 5.2.b
+             ================================================== -->
+        <section
+          id="sec-4"
+          class="lesson-section"
+          data-tarea="4"
+          data-criterio="5.2.b"
+          aria-labelledby="titulo-sec-4"
+        >
+          <h2 id="titulo-sec-4" class="lesson-section-heading">
+            <span class="section-number">4.4</span>
+            Las fuerzas y sus efectos
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué hace que un objeto se mueva o cambie de forma?</h3>
+            <p>Una <strong>fuerza</strong> es una interacción que puede cambiar la velocidad o la
+              dirección del movimiento de un cuerpo o deformarlo. Al empujar una puerta o tirar
+              de una cuerda ejercemos fuerzas. También existen fuerzas que actúan a distancia,
+              como la <strong>gravedad</strong> y el magnetismo.</p>
+            <p>Una fuerza no siempre consigue mover un objeto: podemos empujar una pared sin
+              desplazarla. A veces varias fuerzas se compensan, de modo que no cambia el movimiento.</p>
+          </div>
+          <h3>Fuerzas en situaciones cotidianas</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🛒 Empuje y tracción</h3>
+              <p>Empujamos un carrito para alejarlo y tiramos de una mochila con ruedas
+                para acercarla. Son fuerzas de contacto.</p></article>
+            <article class="info-card"><h3>🍎 Gravedad</h3>
+              <p>La Tierra atrae los objetos hacia su centro. Por eso un objeto que soltamos
+                normalmente cae hacia el suelo, si nada impide su caída.</p></article>
+            <article class="info-card"><h3>🛝 Rozamiento</h3>
+              <p>El <strong>rozamiento</strong> dificulta el deslizamiento entre superficies en contacto.
+                Ayuda a frenar una bicicleta y a que el calzado no resbale tan fácilmente.</p></article>
+            <article class="info-card"><h3>🧲 Magnetismo</h3>
+              <p>Los imanes pueden atraer ciertos materiales, como el hierro, sin tocarlos.
+                Dos imanes también pueden atraerse o repelerse según la orientación de sus polos.</p></article>
+          </div>
+          <h3>¿Qué efectos puede tener una fuerza?</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Un mismo tipo de interacción puede producir distintos efectos.</caption>
+              <thead><tr><th>Efecto</th><th>Situación observable</th></tr></thead>
+              <tbody>
+                <tr><td>Iniciar o detener un movimiento</td><td>Empujar una pelota quieta o frenar una bicicleta</td></tr>
+                <tr><td>Aumentar o reducir velocidad</td><td>Impulsar un patinete o dejarlo frenar por rozamiento</td></tr>
+                <tr><td>Cambiar la dirección</td><td>Golpear una pelota hacia un lado</td></tr>
+                <tr><td>Deformar un objeto</td><td>Comprimir una esponja o estirar una goma elástica</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>La pelota sobre dos suelos</h3>
+            <p>Un equipo hace rodar suavemente la misma pelota sobre baldosas y sobre una alfombra.
+              En igualdad de condiciones, suele detenerse antes en la alfombra. Nuestra pregunta
+              es: «¿Cómo influye el tipo de superficie en el desplazamiento?». Para comparar,
+              intentamos conservar la misma pelota y una forma semejante de impulsarla;
+              solo cambiamos <strong>la superficie</strong>. Medimos la distancia y anotamos resultados.
+              Si las medidas varían, repetimos y comparamos.</p>
+          </div>
+          <div class="callout"><strong>Importante:</strong> las flechas en los dibujos muestran la
+            dirección de las fuerzas. No usamos imanes cerca de dispositivos sensibles ni objetos
+            pesados o peligrosos en nuestros experimentos.</div>
+
+          <!-- IMAGEN FUTURA WEBP: fuerzas-empuje-rozamiento-gravedad.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/fuerzas-empuje-rozamiento-gravedad.webp"
+              alt="Viñetas de una niña empujando un carrito, un balón cayendo y dos imanes atrayéndose"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Dibujar flechas claras que muestren empuje y tracción, dirección de la gravedad, rozamiento contrario al deslizamiento y atracción de un imán.
+              <code>/img/conocimiento4/fuerzas-empuje-rozamiento-gravedad.webp</code>
+            </div>
+            <figcaption>Las fuerzas pueden cambiar el movimiento o la forma de los objetos.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-4">
+            <h3 id="actividades-4">✏️ Actividades 4.4</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Reconocemos fuerzas</h4>
+            <ol type="a">
+              <li>Explica con tus palabras qué es una fuerza.</li>
+              <li>Escribe un ejemplo de empuje y otro de tracción.</li>
+              <li>¿Qué fuerza explica por qué caen los objetos?</li>
+              <li>Indica un ejemplo de fuerza que actúe sin contacto directo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Efectos sobre objetos</h4>
+            <ol type="a">
+              <li>Describe una fuerza que cambie la velocidad de una pelota.</li>
+              <li>Escribe un ejemplo de cambio de dirección.</li>
+              <li>Explica cómo se deforma una esponja al apretarla.</li>
+              <li>¿Es necesario que una fuerza mueva siempre un objeto? Razona tu respuesta.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Experimentamos con rozamiento</h4>
+            <ol type="a">
+              <li>Plantea una pregunta sobre una pelota en dos superficies.</li>
+              <li>Indica qué cambiarías y qué intentarías mantener igual.</li>
+              <li>Explica cómo registrarías las distancias recorridas.</li>
+              <li>Escribe una posible conclusión según los resultados obtenidos.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Observamos imanes</h4>
+            <ol type="a">
+              <li>Nombra un material que suele ser atraído por un imán.</li>
+              <li>¿Todos los metales son atraídos por los imanes?</li>
+              <li>Explica cómo dos imanes pueden atraerse o repelerse.</li>
+              <li>Dibuja flechas que representen una atracción a distancia.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.5: MÁQUINAS SIMPLES Y MÁQUINAS COMPUESTAS
+             Tarea 5: Reconocemos cómo las máquinas facilitan tareas y analizamos sus componentes
+             Criterio único: 5.2.b
+             ================================================== -->
+        <section
+          id="sec-5"
+          class="lesson-section"
+          data-tarea="5"
+          data-criterio="5.2.b"
+          aria-labelledby="titulo-sec-5"
+        >
+          <h2 id="titulo-sec-5" class="lesson-section-heading">
+            <span class="section-number">4.5</span>
+            Máquinas simples y máquinas compuestas
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Para qué sirve una máquina?</h3>
+            <p>Una <strong>máquina</strong> es un dispositivo que ayuda a realizar un trabajo o a
+              transformar una fuerza o un movimiento. No crea energía de la nada: necesita una
+              fuente de energía, como el esfuerzo muscular de una persona, el viento o un motor.</p>
+            <p>Una <strong>máquina simple</strong> utiliza un mecanismo sencillo, como una palanca,
+              una polea o un plano inclinado. Una <strong>máquina compuesta</strong> reúne varios
+              mecanismos que trabajan de manera coordinada, como una bicicleta.</p>
+          </div>
+          <h3>Tres máquinas simples</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>⚖️ Palanca</h3>
+              <p>Una barra que gira alrededor de un punto de apoyo. En un balancín,
+                el punto de apoyo está entre los extremos. Según dónde se aplique la fuerza,
+                una palanca puede facilitar una tarea.</p></article>
+            <article class="info-card"><h3>🧗 Plano inclinado</h3>
+              <p>Una rampa puede permitir elevar un objeto mediante una fuerza menor que la
+                necesaria para levantarlo directamente, aunque haya que recorrer una distancia mayor.</p></article>
+            <article class="info-card"><h3>🪣 Polea</h3>
+              <p>Una rueda con una cuerda que puede cambiar la dirección de la fuerza.
+                Una polea fija sencilla no siempre reduce el esfuerzo; sobre todo cambia su dirección.
+                Las combinaciones de poleas pueden facilitar más ciertas tareas.</p></article>
+            <article class="info-card"><h3>🚲 Máquina compuesta</h3>
+              <p>Una bicicleta combina ruedas, ejes, palancas en los frenos, cadena y engranajes.
+                Necesita una fuente de energía: por ejemplo, el esfuerzo de la persona que pedalea.</p></article>
+          </div>
+          <h3>Comparamos máquinas por su función</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Máquinas y mecanismos que encontramos cerca.</caption>
+              <thead><tr><th>Máquina</th><th>Mecanismo</th><th>¿Qué facilita?</th></tr></thead>
+              <tbody>
+                <tr><td>Balancín</td><td>Palanca</td><td>Cambiar la posición al ejercer una fuerza</td></tr>
+                <tr><td>Rampa para carritos</td><td>Plano inclinado</td><td>Superar un desnivel de forma progresiva</td></tr>
+                <tr><td>Pozo con polea</td><td>Polea</td><td>Cambiar la dirección del tirón de una cuerda</td></tr>
+                <tr><td>Bicicleta</td><td>Ruedas, ejes, cadena y otras piezas</td><td>Desplazarse usando mecanismos coordinados</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>Subir material a una mesa</h3>
+            <p>La clase quiere colocar una caja pequeña de material escolar sobre una plataforma
+              de maqueta. Una opción es levantarla directamente; otra es empujar un carrito por
+              una rampa. El recorrido por la rampa es más largo, pero puede requerir menos fuerza
+              en determinadas condiciones. Si la superficie es rugosa, el rozamiento también
+              influye. Compararemos los resultados con una prueba sencilla.</p>
+          </div>
+          <div class="callout"><strong>Matiz científico:</strong> las máquinas pueden cambiar la fuerza,
+            la dirección del movimiento o la distancia recorrida, pero no permiten obtener energía gratis.</div>
+
+          <!-- IMAGEN FUTURA WEBP: maquinas-simples-palanca-polea-plano.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/maquinas-simples-palanca-polea-plano.webp"
+              alt="Dibujo de una palanca con apoyo, un plano inclinado, una polea y una bicicleta como máquina compuesta"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Comparativa sencilla: balancín como palanca, rampa con carro como plano inclinado, polea con cuerda y bicicleta como combinación de mecanismos. Rotular apoyo, carga y esfuerzo cuando corresponda.
+              <code>/img/conocimiento4/maquinas-simples-palanca-polea-plano.webp</code>
+            </div>
+            <figcaption>Las máquinas utilizan mecanismos para facilitar o transformar los movimientos y las fuerzas.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-5">
+            <h3 id="actividades-5">✏️ Actividades 4.5</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Definimos máquinas</h4>
+            <ol type="a">
+              <li>Explica qué es una máquina.</li>
+              <li>Indica para qué sirve una máquina simple.</li>
+              <li>Escribe un ejemplo de máquina compuesta.</li>
+              <li>¿Por qué una máquina necesita energía?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Reconocemos mecanismos</h4>
+            <ol type="a">
+              <li>Identifica el punto de apoyo de un balancín.</li>
+              <li>Explica qué ventaja puede ofrecer una rampa.</li>
+              <li>¿Qué cambia una polea fija sencilla?</li>
+              <li>Indica dos mecanismos presentes en una bicicleta.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Analizamos objetos cotidianos</h4>
+            <ol type="a">
+              <li>Selecciona una máquina de la escuela.</li>
+              <li>Nombra una de sus piezas importantes.</li>
+              <li>Explica qué movimiento o tarea facilita.</li>
+              <li>Indica qué energía necesita para funcionar.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 5.2.b. -->
+          <article class="task-card" data-criterio="5.2.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Comparamos soluciones</h4>
+            <ol type="a">
+              <li>Dibuja una caja elevada directamente y mediante una rampa.</li>
+              <li>Indica qué recorrido es más largo.</li>
+              <li>Explica en cuál puede ser menor la fuerza necesaria.</li>
+              <li>Razona cómo podría influir el rozamiento.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.6: DISEÑAMOS Y PROBAMOS UNA MÁQUINA SENCILLA
+             Tarea 6: Diseñamos, construimos y probamos una máquina simple para resolver una necesidad cotidiana
+             Criterio único: 3.1.b
+             ================================================== -->
+        <section
+          id="sec-6"
+          class="lesson-section"
+          data-tarea="6"
+          data-criterio="3.1.b"
+          aria-labelledby="titulo-sec-6"
+        >
+          <h2 id="titulo-sec-6" class="lesson-section-heading">
+            <span class="section-number">4.6</span>
+            Diseñamos y probamos una máquina sencilla
+          </h2>
+
+          <div class="explanation">
+            <h3>Producto final: una máquina que soluciona una necesidad</h3>
+            <p>En equipos crearemos una <strong>máquina sencilla</strong> capaz de resolver una
+              dificultad cotidiana. Por ejemplo, transportaremos una cajita ligera hasta una
+              plataforma de una maqueta usando una <strong>rampa</strong> o diseñaremos una
+              <strong>palanca</strong> para levantar un objeto pequeño. Antes de construir,
+              debemos comprender el problema y elegir un mecanismo adecuado.</p>
+            <p>Nuestro prototipo debe ser <strong>seguro, estable, útil y fácil de explicar</strong>.
+              No es necesario construir una máquina grande: una maqueta funcional también permite
+              descubrir cómo actúan las fuerzas.</p>
+          </div>
+          <h3>Fases de un proyecto tecnológico</h3>
+          <div class="step-grid">
+            <article class="info-card"><span class="step-index">1</span><h3>Detectamos</h3>
+              <p>Formulamos la necesidad: «¿Cómo subimos una cajita ligera a una plataforma de la maqueta?».</p></article>
+            <article class="info-card"><span class="step-index">2</span><h3>Diseñamos</h3>
+              <p>Dibujamos un boceto, elegimos la máquina simple y enumeramos los materiales.</p></article>
+            <article class="info-card"><span class="step-index">3</span><h3>Construimos</h3>
+              <p>Montamos la maqueta con materiales reciclados y herramientas escolares autorizadas.</p></article>
+            <article class="info-card"><span class="step-index">4</span><h3>Probamos y mejoramos</h3>
+              <p>Comprobamos si cumple su función, anotamos problemas y hacemos una modificación razonada.</p></article>
+          </div>
+          <h3>Ejemplo guiado: una rampa para una caja ligera</h3>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Plan del prototipo que se construirá en el aula.</caption>
+              <thead><tr><th>Aspecto</th><th>Decisión de nuestro equipo</th></tr></thead>
+              <tbody>
+                <tr><td>Necesidad</td><td>Subir una cajita ligera a una plataforma de 10 cm de altura</td></tr>
+                <tr><td>Materiales</td><td>Cartón rígido, base estable, cinta de papel y carrito de juguete</td></tr>
+                <tr><td>Diseño</td><td>Rampa suficientemente larga, estable y con acceso libre</td></tr>
+                <tr><td>Prueba</td><td>Observar si el carrito sube y la caja permanece en su sitio</td></tr>
+                <tr><td>Mejora</td><td>Reforzar la rampa o modificar la inclinación tras la prueba</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>Una prueba y una mejora</h3>
+            <p>Al primer intento, el carrito se sale de la rampa. El equipo observa que la
+              superficie no está bien sujeta. En lugar de empezar de nuevo sin pensar,
+              anota el problema, fija mejor el cartón, añade topes laterales de papel y repite
+              la prueba con la misma cajita. Finalmente escribe: «La segunda versión mantiene
+              mejor el camino del carrito». Esta es una <strong>conclusión basada en pruebas</strong>.</p>
+          </div>
+          <h3>¿Cómo sabremos si el proyecto funciona?</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>✔ Funciona</h3><p>La máquina permite completar la tarea definida.</p></article>
+            <article class="info-card"><h3>✔ Es segura</h3><p>No tiene bordes peligrosos ni piezas inestables.</p></article>
+            <article class="info-card"><h3>✔ Se puede explicar</h3><p>Sabemos identificar la fuerza y el mecanismo empleado.</p></article>
+            <article class="info-card"><h3>✔ Se puede mejorar</h3><p>Registramos una prueba y una modificación con su resultado.</p></article>
+          </div>
+          <div class="callout"><strong>Seguridad del taller:</strong> no usamos herramientas cortantes,
+            enchufes ni motores improvisados. Construimos solamente con la autorización del
+            profesorado y empleamos objetos ligeros; las rampas son maquetas, no para subirse.</div>
+
+          <!-- IMAGEN FUTURA WEBP: proyecto-rampa-carton-maquina.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/proyecto-rampa-carton-maquina.webp"
+              alt="Maqueta escolar de rampa de cartón con un carrito pequeño, base estable y marcas para medir el recorrido"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Fotografía o ilustración de maqueta construida con cartón, cinta de papel, bloques y coche de juguete; añadir boceto con medidas, flecha de subida y materiales.
+              <code>/img/conocimiento4/proyecto-rampa-carton-maquina.webp</code>
+            </div>
+            <figcaption>Probar y mejorar un prototipo es parte del trabajo tecnológico.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-6">
+            <h3 id="actividades-6">✏️ Actividades 4.6</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Definimos el problema</h4>
+            <ol type="a">
+              <li>Describe una necesidad que pueda resolverse con una máquina simple.</li>
+              <li>Elige una palanca o una rampa y justifica por qué.</li>
+              <li>Escribe los materiales necesarios.</li>
+              <li>Dibuja un boceto con las partes principales.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Construimos en equipo</h4>
+            <ol type="a">
+              <li>Explica cómo repartiréis las tareas del proyecto.</li>
+              <li>Indica qué pasos seguiréis para montarlo.</li>
+              <li>Señala una norma de seguridad importante.</li>
+              <li>Anota cómo comprobarás que el prototipo es estable.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Probamos nuestra solución</h4>
+            <ol type="a">
+              <li>Define una prueba concreta de funcionamiento.</li>
+              <li>Anota qué ocurrió durante el primer intento.</li>
+              <li>Explica si la máquina cumplió su objetivo.</li>
+              <li>Propón un cambio basado en lo observado.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 3.1.b. -->
+          <article class="task-card" data-criterio="3.1.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Presentamos la mejora</h4>
+            <ol type="a">
+              <li>Dibuja o describe el antes y el después.</li>
+              <li>Explica qué pieza o medida modificasteis.</li>
+              <li>Compara los resultados de las dos pruebas.</li>
+              <li>Concluye qué has aprendido sobre las máquinas y las fuerzas.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.7: PROGRAMAMOS SECUENCIAS Y CORREGIMOS ERRORES
+             Tarea 7: Modificamos secuencias de instrucciones para resolver recorridos y detectar errores
+             Criterio único: 3.3.b
+             ================================================== -->
+        <section
+          id="sec-7"
+          class="lesson-section"
+          data-tarea="7"
+          data-criterio="3.3.b"
+          aria-labelledby="titulo-sec-7"
+        >
+          <h2 id="titulo-sec-7" class="lesson-section-heading">
+            <span class="section-number">4.7</span>
+            Programamos secuencias y corregimos errores
+          </h2>
+
+          <div class="explanation">
+            <h3>También podemos construir soluciones con instrucciones</h3>
+            <p>Un <strong>algoritmo</strong> es una secuencia de instrucciones ordenadas que
+              permiten realizar una tarea. Cuando damos esas instrucciones a un dispositivo
+              para que las ejecute, hablamos de <strong>programación</strong>.
+              No siempre hace falta un ordenador: podemos ensayar el razonamiento con tarjetas,
+              flechas o un personaje sobre una cuadrícula.</p>
+            <p>Si la secuencia no consigue el objetivo, buscamos un <strong>error</strong>,
+              modificamos las instrucciones y repetimos la prueba. A esto lo llamamos
+              <strong>depurar</strong> una secuencia.</p>
+          </div>
+          <h3>Cuatro instrucciones que utilizaremos</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>⬆ Avanzar</h3><p>Nos movemos una casilla hacia donde mira el personaje.</p></article>
+            <article class="info-card"><h3>↪ Girar a la derecha</h3><p>Cambiamos la orientación 90 grados sin avanzar.</p></article>
+            <article class="info-card"><h3>↩ Girar a la izquierda</h3><p>Cambiamos la orientación 90 grados sin avanzar.</p></article>
+            <article class="info-card"><h3>🔁 Repetir</h3><p>Indicamos que una misma acción se realiza varias veces seguidas.</p></article>
+          </div>
+          <h3>Resolvemos un recorrido paso a paso</h3>
+          <div class="example">
+            <h3>El robot transporta una caja en la fábrica de maquetas</h3>
+            <p>Imaginamos un robot situado en la casilla (fila 1, columna 1), mirando hacia la derecha.
+              Debe llegar a la casilla (fila 1, columna 4), sin obstáculos en ese tramo.
+              Una solución es: <strong>avanzar, avanzar, avanzar</strong>.
+              También podemos representar esta secuencia como <strong>repetir 3 veces: avanzar</strong>.
+              Después aparece un obstáculo en la casilla (fila 1, columna 3). ¿Sirve aún el programa?
+              No: hay que modificar el recorrido para esquivarlo. Con tarjetas, cada equipo propone
+              un nuevo camino y lo comprueba sobre la cuadrícula.</p>
+          </div>
+          <h3>Programación y diseño de máquinas</h3>
+          <p>Algunas máquinas compuestas, como ciertos robots industriales, ejecutan
+            <strong>instrucciones programadas</strong> para repetir movimientos. Nuestra rampa
+            de cartón no necesita un programa electrónico, pero ambos proyectos comparten
+            la importancia de <strong>planificar, probar, detectar errores y mejorar</strong>.</p>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Dos programas y su evaluación.</caption>
+              <thead><tr><th>Situación</th><th>Secuencia</th><th>Resultado</th></tr></thead>
+              <tbody>
+                <tr><td>Meta a tres casillas delante</td><td>Avanzar × 3</td><td>Llega a la meta</td></tr>
+                <tr><td>Meta a tres casillas delante, con obstáculo en medio</td><td>Avanzar × 3</td><td>Choca: hay que corregir</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout"><strong>Regla de programación:</strong> las instrucciones deben ser
+            precisas, porque un ordenador o un robot no puede adivinar lo que queríamos decir.</div>
+
+          <!-- IMAGEN FUTURA WEBP: secuencias-programacion-robot-cuadricula.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/secuencias-programacion-robot-cuadricula.webp"
+              alt="Cuadrícula con casillas de inicio y meta y una secuencia de flechas para un robot de cartulina"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Dibujar cuadrícula de 5 por 5, robot en inicio, caja en meta, obstáculos y bloques de instrucciones avanzar, girar derecha, girar izquierda, repetir.
+              <code>/img/conocimiento4/secuencias-programacion-robot-cuadricula.webp</code>
+            </div>
+            <figcaption>Un programa es una secuencia clara de instrucciones que podemos probar y corregir.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-7">
+            <h3 id="actividades-7">✏️ Actividades 4.7</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 3.3.b. -->
+          <article class="task-card" data-criterio="3.3.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Leemos instrucciones</h4>
+            <ol type="a">
+              <li>Define algoritmo con tus palabras.</li>
+              <li>Escribe una instrucción para avanzar y otra para girar.</li>
+              <li>Explica qué significa repetir tres veces una acción.</li>
+              <li>¿Por qué deben ser claras las instrucciones?</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 3.3.b. -->
+          <article class="task-card" data-criterio="3.3.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Programamos una ruta</h4>
+            <ol type="a">
+              <li>Dibuja una cuadrícula de cinco por cinco casillas.</li>
+              <li>Coloca el inicio y la meta a tres casillas de distancia.</li>
+              <li>Escribe la secuencia más corta para llegar.</li>
+              <li>Representa una repetición para simplificarla.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 3.3.b. -->
+          <article class="task-card" data-criterio="3.3.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Detectamos el error</h4>
+            <ol type="a">
+              <li>Coloca un obstáculo en el recorrido original.</li>
+              <li>Explica por qué la primera secuencia deja de servir.</li>
+              <li>Dibuja otro camino que evite el obstáculo.</li>
+              <li>Escribe nuevas instrucciones y compruébalas.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 3.3.b. -->
+          <article class="task-card" data-criterio="3.3.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Programamos y mejoramos</h4>
+            <ol type="a">
+              <li>Intercambia tu secuencia con otro equipo.</li>
+              <li>Pide que la prueben sin explicaciones adicionales.</li>
+              <li>Anota una dificultad o error que hayan encontrado.</li>
+              <li>Modifica la secuencia y justifica la mejora.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 4.8: PRESENTAMOS NUESTRAS INVESTIGACIONES Y LA MÁQUINA
+             Tarea 8: Comunicamos los resultados de las investigaciones sobre materiales y fuerzas y presentamos el producto tecnológico
+             Criterio único: 2.5.b
+             ================================================== -->
+        <section
+          id="sec-8"
+          class="lesson-section"
+          data-tarea="8"
+          data-criterio="2.5.b"
+          aria-labelledby="titulo-sec-8"
+        >
+          <h2 id="titulo-sec-8" class="lesson-section-heading">
+            <span class="section-number">4.8</span>
+            Presentamos nuestras investigaciones y la máquina
+          </h2>
+
+          <div class="explanation">
+            <h3>Una feria científica para explicar lo aprendido</h3>
+            <p>Terminaremos la SdA con una <strong>exposición científica</strong>. Cada equipo
+              presentará su máquina sencilla y una investigación realizada durante el tema:
+              conductividad térmica, separación de mezclas, fuerzas y rozamiento o comparación
+              de diseños de una rampa. Nuestro objetivo no es mostrar un objeto bonito solamente,
+              sino explicar <strong>qué problema intentamos resolver y qué resultados obtuvimos</strong>.</p>
+            <p>La comunicación científica debe ser <strong>clara, ordenada y honesta</strong>.
+              Si el experimento no salió como esperábamos, también aprendimos: contamos qué sucedió,
+              qué limitaciones encontramos y cómo podríamos mejorar.</p>
+          </div>
+          <h3>Cómo construimos nuestro cartel</h3>
+          <div class="step-grid">
+            <article class="info-card"><span class="step-index">1</span><h3>La pregunta</h3>
+              <p>¿Qué queríamos averiguar o qué necesidad queríamos resolver?</p></article>
+            <article class="info-card"><span class="step-index">2</span><h3>La prueba</h3>
+              <p>¿Qué materiales usamos y qué pasos seguimos? ¿Qué mantuvimos igual?</p></article>
+            <article class="info-card"><span class="step-index">3</span><h3>Los resultados</h3>
+              <p>Mostramos dibujos, una tabla y observaciones de lo que ocurrió realmente.</p></article>
+            <article class="info-card"><span class="step-index">4</span><h3>La conclusión</h3>
+              <p>Respondemos a la pregunta, explicamos nuestras evidencias y proponemos mejoras.</p></article>
+          </div>
+          <h3>Ejemplo de investigación comunicada</h3>
+          <div class="example">
+            <h3>¿En qué superficie rueda más la pelota?</h3>
+            <p>Un equipo usa la misma pelota, la impulsa desde una marca del suelo y compara
+              dos superficies. Registra tres pruebas por superficie para tener en cuenta pequeñas
+              diferencias entre los lanzamientos. Esta tabla contiene <strong>datos inventados
+              como ejemplo de presentación</strong>; los equipos escribirán sus medidas reales.</p>
+          </div>
+          <div class="table-scroller">
+            <table class="data-table">
+              <caption>Ejemplo didáctico de resultados (centímetros recorridos).</caption>
+              <thead><tr><th>Superficie</th><th>Prueba 1</th><th>Prueba 2</th><th>Prueba 3</th></tr></thead>
+              <tbody>
+                <tr><td>Baldosa</td><td>180</td><td>165</td><td>175</td></tr>
+                <tr><td>Alfombra</td><td>95</td><td>90</td><td>100</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Con estos datos ilustrativos, la pelota recorre más distancia sobre la baldosa.
+            El equipo propone que <strong>el rozamiento y las características de la superficie</strong>
+            influyen en el movimiento. También reconoce que no todos los impulsos han sido
+            exactamente iguales. Una investigación responsable distingue <strong>resultado observado</strong>
+            de <strong>explicación propuesta</strong>.</p>
+          <h3>Presentamos la máquina y escuchamos mejoras</h3>
+          <div class="two-columns">
+            <article class="info-card"><h3>🎤 Presentamos</h3>
+              <p>Explicamos la necesidad, el boceto, las partes, las pruebas y el cambio realizado.</p></article>
+            <article class="info-card"><h3>👂 Escuchamos</h3>
+              <p>Recibimos preguntas, pedimos que sean respetuosas y anotamos una mejora posible.</p></article>
+            <article class="info-card"><h3>📝 Revisamos</h3>
+              <p>Comprobamos unidades, flechas, ortografía, fuentes y seguridad del prototipo.</p></article>
+            <article class="info-card"><h3>🤝 Colaboramos</h3>
+              <p>Repartimos la explicación entre los miembros del grupo y citamos los recursos consultados.</p></article>
+          </div>
+          <div class="callout"><strong>Antes de exponer:</strong> no inventamos resultados para que
+            coincidan con una hipótesis. Escribimos de dónde procede cada imagen y mostramos
+            el prototipo únicamente en condiciones seguras.</div>
+
+          <!-- IMAGEN FUTURA WEBP: feria-ciencia-maquina-carteles.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/feria-ciencia-maquina-carteles.webp"
+              alt="Mesa de feria científica escolar con cartel, tabla de resultados y maqueta de máquina simple"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Ilustrar exposición en aula de una rampa de cartón, panel con pregunta, hipótesis, materiales, tabla de observaciones, conclusión y una fotografía o dibujo del prototipo.
+              <code>/img/conocimiento4/feria-ciencia-maquina-carteles.webp</code>
+            </div>
+            <figcaption>Compartimos la investigación con explicaciones claras y pruebas que apoyan las conclusiones.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-8">
+            <h3 id="actividades-8">✏️ Actividades 4.8</h3>
+            <p>Resuelve las cuatro actividades. Cada actividad tiene los apartados a), b), c) y d).</p>
+
+          <!-- Actividad 1: criterio único 2.5.b. -->
+          <article class="task-card" data-criterio="2.5.b">
+            <span class="task-tag">Actividad 1</span>
+            <h4>Preparamos la explicación</h4>
+            <ol type="a">
+              <li>Escribe una pregunta investigable relacionada con los materiales o las fuerzas.</li>
+              <li>Describe los materiales empleados en tu investigación.</li>
+              <li>Explica los pasos realizados en orden.</li>
+              <li>Separa lo que observaste de lo que suponías antes del ensayo.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 2: criterio único 2.5.b. -->
+          <article class="task-card" data-criterio="2.5.b">
+            <span class="task-tag">Actividad 2</span>
+            <h4>Organizamos los datos</h4>
+            <ol type="a">
+              <li>Dibuja una tabla para registrar tres pruebas.</li>
+              <li>Indica qué unidad utilizarías para medir la distancia.</li>
+              <li>Redacta una frase que resuma el resultado obtenido.</li>
+              <li>Explica una limitación o posible error en las medidas.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 3: criterio único 2.5.b. -->
+          <article class="task-card" data-criterio="2.5.b">
+            <span class="task-tag">Actividad 3</span>
+            <h4>Exponemos la máquina</h4>
+            <ol type="a">
+              <li>Presenta la necesidad que resuelve el prototipo.</li>
+              <li>Identifica la máquina simple y la fuerza utilizada.</li>
+              <li>Compara la primera versión con la versión mejorada.</li>
+              <li>Responde con respeto a una pregunta de tus compañeros.</li>
+            </ol>
+          </article>
+
+          <!-- Actividad 4: criterio único 2.5.b. -->
+          <article class="task-card" data-criterio="2.5.b">
+            <span class="task-tag">Actividad 4</span>
+            <h4>Valoramos el proyecto</h4>
+            <ol type="a">
+              <li>Anota una fortaleza del equipo.</li>
+              <li>Describe un aspecto que podría mejorarse.</li>
+              <li>Indica qué fuente o recurso has utilizado y cómo la citarías.</li>
+              <li>Escribe una conclusión personal sobre lo aprendido con materiales, fuerzas y máquinas.</li>
+            </ol>
+          </article>
+          </div>
+        </section>
+
+        <!-- ==================================================
+             REPASAMOS LO APRENDIDO - FICHAS DE REFUERZO Y AMPLIACIÓN
+             ================================================== -->
+        <section
+          id="sec-repaso"
+          class="summary-block sda-recap"
+          aria-labelledby="titulo-repaso"
+        >
+          <div class="recap-heading">
+            <span class="section-number" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Una ficha de refuerzo y otra de ampliación, con cuatro cuestiones por apartado.</p>
+            </div>
+          </div>
+
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 4.1 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.1.b">
+                <h4>Refuerzo 4.1 · La materia y las propiedades de los materiales</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Define materia, masa y volumen.</li>
+                  <li>Nombra dos materiales conductores o aislantes del calor.</li>
+                  <li>Explica para qué sirve una propiedad de un material.</li>
+                  <li>Relaciona vidrio, tela y corcho con una propiedad útil.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.2 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.1.b">
+                <h4>Refuerzo 4.2 · Los estados de la materia y sus transformaciones</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra los tres estados principales de la materia.</li>
+                  <li>Define fusión y solidificación.</li>
+                  <li>Indica un cambio reversible y uno irreversible.</li>
+                  <li>¿Cómo se forman las gotas de un vaso frío?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.3 · Criterio 2.3.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.3.b">
+                <h4>Refuerzo 4.3 · Investigamos y separamos mezclas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diferencia mezcla homogénea y heterogénea.</li>
+                  <li>Relaciona tamizado y filtración con una mezcla.</li>
+                  <li>¿Qué método puede separar clips de papelitos?</li>
+                  <li>Enumera cuatro pasos de una investigación de separación.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.4 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.2.b">
+                <h4>Refuerzo 4.4 · Las fuerzas y sus efectos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra cuatro fuerzas o formas de aplicarlas.</li>
+                  <li>Explica qué hace la gravedad.</li>
+                  <li>Escribe dos efectos posibles de una fuerza.</li>
+                  <li>¿Por qué una bicicleta puede frenar gracias al rozamiento?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.5 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.2.b">
+                <h4>Refuerzo 4.5 · Máquinas simples y máquinas compuestas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué diferencia hay entre máquina simple y compuesta?</li>
+                  <li>Pon un ejemplo de palanca.</li>
+                  <li>Explica para qué se usa un plano inclinado.</li>
+                  <li>Nombra dos mecanismos de una bicicleta.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.6 · Criterio 3.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="3.1.b">
+                <h4>Refuerzo 4.6 · Diseñamos y probamos una máquina sencilla</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es un prototipo?</li>
+                  <li>Nombra las cuatro fases del proyecto.</li>
+                  <li>Escribe una norma de seguridad al construir.</li>
+                  <li>¿Qué hacemos si una primera prueba no funciona?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.7 · Criterio 3.3.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="3.3.b">
+                <h4>Refuerzo 4.7 · Programamos secuencias y corregimos errores</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué es un algoritmo?</li>
+                  <li>Escribe tres instrucciones de un programa de recorrido.</li>
+                  <li>¿Qué significa depurar una secuencia?</li>
+                  <li>¿Cuándo sirve utilizar una repetición?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 4.8 · Criterio 2.5.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.5.b">
+                <h4>Refuerzo 4.8 · Presentamos nuestras investigaciones y la máquina</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Nombra las cuatro partes principales de un cartel científico.</li>
+                  <li>¿Por qué registramos resultados en una tabla?</li>
+                  <li>¿Qué debemos explicar al mostrar la máquina?</li>
+                  <li>¿Qué significa comunicar resultados con honestidad?</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 4.1 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.1.b">
+                <h4>Ampliación 4.1 · La materia y las propiedades de los materiales</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Por qué una cuchara de metal puede parecer más fría que otra de madera?</li>
+                  <li>Diseña un guante protector y justifica sus materiales.</li>
+                  <li>Explica por qué dos objetos del mismo volumen pueden tener distinta masa.</li>
+                  <li>Compara qué propiedades necesita una ventana y qué propiedades necesita una puerta.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.2 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.1.b">
+                <h4>Ampliación 4.2 · Los estados de la materia y sus transformaciones</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diferencia evaporación y ebullición con un ejemplo.</li>
+                  <li>Explica por qué la nube blanca del agua caliente no es vapor invisible.</li>
+                  <li>Compara qué sucede al derretir hielo y al tostar pan.</li>
+                  <li>Diseña un registro de observaciones con hora, estado y cambios del cubito.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.3 · Criterio 2.3.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.3.b">
+                <h4>Ampliación 4.3 · Investigamos y separamos mezclas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Justifica por qué un filtro normal no separa sal disuelta de agua.</li>
+                  <li>Propón cómo separar arena, piedrecitas y clips en dos etapas.</li>
+                  <li>Diseña una tabla para comparar tres métodos de separación.</li>
+                  <li>Explica qué harías si una predicción no coincide con los resultados observados.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.4 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.2.b">
+                <h4>Ampliación 4.4 · Las fuerzas y sus efectos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una prueba con una pelota en superficies distintas.</li>
+                  <li>Explica qué ocurre si varias fuerzas se compensan.</li>
+                  <li>Indica una ventaja y un inconveniente del rozamiento.</li>
+                  <li>Compara la fuerza de un imán y la que realizamos al empujar una silla.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.5 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.2.b">
+                <h4>Ampliación 4.5 · Máquinas simples y máquinas compuestas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué la rampa puede reducir la fuerza a costa de más recorrido.</li>
+                  <li>¿Por qué una polea fija no siempre reduce la fuerza necesaria?</li>
+                  <li>Diseña una máquina compuesta formada por dos mecanismos simples.</li>
+                  <li>Compara la energía necesaria para una bicicleta y para un ventilador.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.6 · Criterio 3.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="3.1.b">
+                <h4>Ampliación 4.6 · Diseñamos y probamos una máquina sencilla</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Propón dos soluciones para un mismo problema y compáralas.</li>
+                  <li>Explica cómo afectaría aumentar la inclinación de una rampa.</li>
+                  <li>Diseña una ficha de prueba con columnas para problema, cambio y resultado.</li>
+                  <li>Propón un modo de aprovechar materiales reciclados sin perder seguridad.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.7 · Criterio 3.3.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="3.3.b">
+                <h4>Ampliación 4.7 · Programamos secuencias y corregimos errores</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Inventa una ruta con dos giros y represéntala con instrucciones.</li>
+                  <li>Diseña un recorrido con un obstáculo y explica cómo lo esquivas.</li>
+                  <li>Compara dos programas correctos para una misma meta.</li>
+                  <li>Explica qué tienen en común la depuración y la mejora de un prototipo físico.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 4.8 · Criterio 2.5.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.5.b">
+                <h4>Ampliación 4.8 · Presentamos nuestras investigaciones y la máquina</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña un gráfico de barras con los datos de la pelota.</li>
+                  <li>Explica cómo mejorarías la comparación para que el impulso inicial fuese más parecido.</li>
+                  <li>Redacta una conclusión que reconozca una limitación de la prueba.</li>
+                  <li>Propón una pregunta nueva que se pueda investigar con el prototipo.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- ==================================================
+             COMPRUEBA LO APRENDIDO: CAJAS SELECCIONABLES
+             Patrón LNL4.8 / CN4.1; no usar botones de radio.
+             ================================================== -->
+        <section
+          id="sec-comprueba"
+          class="summary-block check-learning"
+          aria-labelledby="titulo-comprueba"
+        >
+          <h2 id="titulo-comprueba" class="lesson-section-heading">
+            <span class="section-number">✓</span>
+            Comprueba lo aprendido
+          </h2>
+          <p>Selecciona una caja por pregunta y pulsa <strong>Comprobar respuestas</strong>.
+            Después podrás corregir tus elecciones o volver a empezar.</p>
+          <form id="quiz-cm44" novalidate>
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Qué propiedad explica que una ventana de vidrio deje ver a través?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Magnetismo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Transparencia.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Flexibilidad.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">4. ¿Qué material suele conducir bien el calor?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Una cuchara metálica.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Un corcho.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Una tela gruesa.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué cambio ocurre cuando el hielo se convierte en agua líquida?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Condensación.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Solidificación.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Fusión.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. ¿Qué ejemplo es normalmente irreversible?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Congelar agua.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Cocer un huevo.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Derretir hielo.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. ¿Cómo separarías piedras y arena?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Mediante tamizado.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Mediante un imán cualquiera.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Mediante condensación.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Qué fuerza dificulta el deslizamiento de dos superficies?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Luz.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Electricidad estática.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Rozamiento.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Qué máquina simple permite superar un desnivel por un recorrido inclinado?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Una polea fija.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Una rampa.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Un engranaje compuesto.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Qué hacemos después de probar un prototipo que no funciona?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Observamos el fallo y proponemos una mejora.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Lo damos por terminado sin cambios.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Inventamos resultados.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="2"
+                   role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Qué significa depurar una secuencia de instrucciones?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Dibujarla con muchos colores.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Ejecutarla sin observar.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    Localizar errores y corregirlos.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Qué debe incluir una conclusión científica?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">
+                    Solo una opinión sin datos.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">
+                    Resultados observados y una explicación razonada.
+                  </button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">
+                    La respuesta que esperábamos, aunque sea distinta de los datos.
+                  </button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button id="quiz-check" type="button" class="lnl-btn">Comprobar respuestas</button>
+              <button id="quiz-reset" type="button" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- ==================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA
+             Cuatro niveles por apartado; patrón LNL4.8 / CN4.1.
+             ================================================== -->
+        <section id="sec-diana" class="summary-block self-eval"
+                 aria-labelledby="titulo-diana">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-diana" class="lesson-section-heading">Diana de Autoevaluación Interactiva</h2>
+              <p>Selecciona la opción que mejor representa lo que has aprendido.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- AUTOEVALUACIÓN 4.1 · Criterio 5.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.1</strong> Distingo propiedades de la materia y justifico la elección de materiales conductores o aislantes térmicos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.2 · Criterio 5.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.2</strong> Identifico estados y transformaciones de la materia y distingo cambios reversibles e irreversibles.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.3 · Criterio 2.3.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.3</strong> Planifico y realizo pruebas sencillas para separar mezclas y explico sus resultados con evidencias.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.4 · Criterio 5.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.4</strong> Reconozco distintos tipos de fuerzas y explico sus efectos a partir de experiencias cotidianas.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.5 · Criterio 5.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.5</strong> Identifico máquinas simples y compuestas y justifico cómo sus mecanismos ayudan en tareas reales.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.6 · Criterio 3.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.6</strong> Participo en el diseño, la construcción, la prueba y la mejora de una máquina sencilla.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.7 · Criterio 3.3.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.7</strong> Modifico programas sencillos por secuencias, localizo errores y compruebo la solución.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 4.8 · Criterio 2.5.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>4.8</strong> Comunico investigaciones y soluciones tecnológicas con resultados, conclusiones y explicaciones comprensibles.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 4.8">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">Borrar respuestas</button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 8 apartados.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE INSTITUCIONAL DEL CENTRO
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interacciones reutilizadas de los HTML de Lengua 4.º. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuestionario: una caja rectangular seleccionada por pregunta.
+      const questions = Array.from(document.querySelectorAll('#quiz-cm44 .quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) {
+            return;
+          }
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Sin responder.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === question.dataset.answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector(
+              '.quiz-option[data-option="' + question.dataset.answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              answer.textContent.trim();
+          }
+        });
+
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' +
+          questions.length + ' respuestas correctas. Contestadas: ' +
+          answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      // Diana de autoevaluación: cuatro niveles, una única elección por fila.
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) {
+            return;
+          }
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+    });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
