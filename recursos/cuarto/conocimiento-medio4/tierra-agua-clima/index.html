@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="La Tierra, el agua y el clima. Situación de Aprendizaje CM4.1 de Conocimiento del Medio de 4.º de Educación Primaria del CEIP Joaquín Tena Artigas."
+  >
+  <title>La Tierra, el agua y el clima | Conocimiento del Medio 4.º | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Cabecera y navegación compartidas con el resto del colegio. -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!--
+    SITUACIÓN DE APRENDIZAJE CM4.1 (también solicitada como CN4.1).
+    Base visual: HTML de Conocimiento del Medio de 5.º y 6.º y SdA recientes.
+    Mantener el verde institucional en las SdA y la clase lesson-section-heading.
+
+    DESTINO PREVISTO:
+    /recursos/cuarto/conocimiento-medio4/tierra-agua-clima/index.html
+
+    Marco curricular: segundo ciclo de Educación Primaria, Andalucía.
+    Criterios de las siete tareas: 5.2.b, 5.1.b, 2.1.b, 2.3.b,
+    2.4.b, 1.1.b, 2.5.b.
+    Se guarda un solo criterio en data-criterio para cada actividad.
+
+    IMÁGENES FUTURAS:
+    /img/conocimiento4/*.webp
+    Se usan figure.media-frame, img con onerror=markImageMissing(this),
+    figcaption, y mensaje alternativo visible si todavía falta el archivo.
+    No añadir botones de impresión ni de pistas.
+  -->
+  <style>
+
+    :root {
+      --cm-primary: #007a33;
+      --cm-dark: #005724;
+      --cm-light: #e6f4ea;
+      --cm-accent: #00a847;
+      --cm-ink: #1e293b;
+      --cm-muted: #475569;
+      --cm-border: #d1e7dd;
+      --cm-bg: #f4f7f5;
+      --cm-amber-light: #fff7e6;
+      --cm-shadow: 0 5px 18px rgba(0, 90, 37, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    .topic-page {
+      background: var(--cm-bg);
+      color: var(--cm-ink);
+    }
+
+    .topic-page a:not(.skip-link) {
+      text-underline-offset: 0.15em;
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: 0.3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.65rem;
+      color: #94a3b8;
+    }
+
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(
+        110deg,
+        #005724 0%,
+        #007a33 60%,
+        #00a847 100%
+      );
+      color: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .topic-hero::after {
+      content: "☀  ☁";
+      position: absolute;
+      right: 10px;
+      top: -72px;
+      color: rgba(255, 255, 255, 0.055);
+      font-size: 10rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      max-width: 650px;
+      margin: 0.9rem 0 0;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    /* La mascota utiliza la misma imagen compartida que los índices. */
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: #ffffff;
+      box-shadow: var(--cm-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: 0.35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .lesson-nav-heading {
+      width: 100%;
+      margin: 0 0 0.2rem;
+      color: var(--cm-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .lesson-nav a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Evita que las reglas generales centren las cabeceras. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 0.85rem;
+      border-bottom: 2px solid var(--cm-border);
+      color: var(--cm-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 0.25rem;
+      border-radius: 0.65rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 0.55rem;
+      color: var(--cm-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: 0.55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ol,
+    .topic-page .lesson-section ul {
+      padding-left: 1.4rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 0.9rem 0.9rem 0;
+      background: var(--cm-light);
+    }
+
+    .explanation h3 {
+      margin-top: 0 !important;
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--cm-dark);
+    }
+
+    .info-card {
+      padding: 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      margin-top: 0 !important;
+    }
+
+    .two-columns,
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .step-index {
+      display: inline-grid;
+      place-items: center;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--cm-dark);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--cm-amber-light);
+      color: #754709;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 0.75rem 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .data-table caption {
+      margin-bottom: 0.55rem;
+      color: var(--cm-muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--cm-border);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* Cajas de imágenes: estructura compartida figure.media-frame. */
+    .topic-page .media-frame:not(.hero-mascot) {
+      margin: 1.3rem 0 1.7rem;
+      padding: 0.9rem;
+      overflow: hidden;
+      border: 1px solid var(--cm-border);
+      border-radius: 1rem;
+      background: #f9fcfa;
+      box-shadow: 0 2px 10px rgba(0, 90, 37, 0.04);
+      text-align: center;
+    }
+
+    .topic-page .media-frame:not(.hero-mascot) img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      max-height: 440px;
+      margin: 0 auto;
+      border-radius: 0.65rem;
+      object-fit: contain;
+    }
+
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      color: var(--cm-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    /* Hasta incorporar los .webp, se ve la sugerencia sin icono roto. */
+    .image-suggestion {
+      display: none;
+      padding: 1.5rem 1rem;
+      border: 2px dashed #b8dec6;
+      border-radius: 0.65rem;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .image-suggestion strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .media-frame.image-missing .image-suggestion {
+      display: block;
+    }
+
+    .topic-page .media-frame.image-missing > img {
+      display: none;
+    }
+
+    .media-frame.image-missing figcaption {
+      display: none;
+    }
+
+    .practice {
+      margin: 1.5rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .topic-page .practice > h3 {
+      margin-top: 0;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .task-card {
+      margin: 0.9rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #ffffff;
+    }
+
+    .task-card h4 {
+      margin: 0.25rem 0 0.65rem;
+      color: var(--cm-dark);
+      font-size: 1.04rem;
+    }
+
+    .task-card ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      list-style-type: lower-alpha;
+    }
+
+    .task-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .readable-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ======================================================
+       REPASO: fichas de CM5.1/CM5.2 con estructura de LNL4.8
+       ====================================================== */
+    .sda-recap {
+      border: 2px solid var(--cm-primary);
+    }
+
+    .recap-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recap-heading > div {
+      min-width: 0;
+    }
+
+    .recap-heading .lesson-section-heading {
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .recap-heading p {
+      margin: 0.2rem 0 0;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .recap-sheet + .recap-sheet {
+      margin-top: 2.5rem;
+    }
+
+    .sheet-heading {
+      margin-bottom: 1.2rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--cm-primary);
+      border-radius: 0 12px 12px 0;
+      background: #ecfdf3;
+    }
+
+    .sheet-heading h3 {
+      margin: 0;
+      color: var(--cm-dark);
+      font-size: 1.05rem;
+    }
+
+    .sheet-heading--ampliacion {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .sheet-heading--ampliacion h3 {
+      color: #92400e;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .sheet-card {
+      min-width: 0;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid #dce6e0;
+      border-radius: 16px;
+      background: #f8faf9;
+    }
+
+    .sheet-card--ampliacion {
+      background: #ffffff;
+      border-color: #f2d5aa;
+    }
+
+    .sheet-card h4 {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 7px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .sheet-card--ampliacion h4 {
+      background: #b45309;
+    }
+
+    .sheet-questions {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: lower-alpha;
+    }
+
+    .sheet-questions li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* ======================================================
+       COMPRUEBA LO APRENDIDO: cajas de respuesta de LNL4.8
+       ====================================================== */
+    .check-learning {
+      background: #ffffff;
+      scroll-margin-top: 80px;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.15rem 0;
+    }
+
+    .quiz-item {
+      min-width: 0;
+      border: 1px solid #d7e6db;
+      border-radius: 13px;
+      padding: 1rem;
+      background: #fbfdfb;
+    }
+
+    .quiz-prompt {
+      margin: 0 0 0.75rem;
+      color: #274d37;
+      font-weight: 750;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.65rem 0.8rem;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: #ffffff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--cm-primary);
+      background: #f0fdf4;
+    }
+
+    .quiz-option[aria-pressed="true"] {
+      border-color: var(--cm-primary);
+      background: var(--cm-light);
+      color: var(--cm-dark);
+      font-weight: 700;
+    }
+
+    .quiz-item.correct {
+      border-color: #3c9961;
+    }
+
+    .quiz-item.incorrect {
+      border-color: #d79a71;
+    }
+
+    .quiz-feedback {
+      margin: 0.6rem 0 0;
+      min-height: 1em;
+      color: #475569;
+      font-size: 0.86rem;
+    }
+
+    .quiz-actions,
+    .eval-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.3rem;
+    }
+
+    .lnl-btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 0.75rem 1.1rem;
+      background: var(--cm-primary);
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+    }
+
+    .lnl-btn.secondary {
+      background: #e9f3ed;
+      color: var(--cm-dark);
+    }
+
+    .lnl-btn:hover,
+    .lnl-btn:focus-visible {
+      filter: brightness(0.94);
+    }
+
+    #quiz-summary {
+      margin: 0.9rem 0 0;
+      color: var(--cm-dark);
+      font-weight: 750;
+    }
+
+    /* ======================================================
+       DIANA DE AUTOEVALUACIÓN: botones de LNL4.8
+       ====================================================== */
+    .self-eval {
+      border: 2px solid #c7d2fe;
+    }
+
+    .heading-icon {
+      display: inline-grid;
+      place-items: center;
+      min-width: 3rem;
+      min-height: 2.8rem;
+      border-radius: 12px;
+      background: var(--cm-primary);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .heading-icon--indigo {
+      background: #4f46e5;
+    }
+
+    .self-eval-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .eval-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .eval-statement {
+      flex: 1 1 370px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .eval-statement strong {
+      margin-right: 0.25rem;
+      color: var(--cm-primary);
+    }
+
+    .auto-eval-group {
+      display: flex;
+      flex: 0 1 410px;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .eval-btn {
+      padding: 0.47rem 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #475569;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .eval-btn:hover,
+    .eval-btn:focus-visible {
+      border-color: #4f46e5;
+    }
+
+    .eval-btn[aria-pressed="true"] {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    #eval-status {
+      flex: 1 1 240px;
+      margin: 0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+    .closing-link {
+      margin: 2rem 0 0;
+      text-align: center;
+    }
+
+    .closing-link a {
+      display: inline-block;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 0.65rem;
+      background: #ffffff;
+      color: var(--cm-dark);
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: minmax(0, 1fr) 150px;
+      }
+
+      .topic-page .media-frame.hero-mascot img {
+        max-height: 190px;
+      }
+
+      .two-columns,
+      .step-grid,
+      .sheet-grid,
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 135px;
+        justify-self: end;
+        margin-top: -0.6rem;
+      }
+
+      .topic-page .lesson-section-heading {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        margin-top: 0.13rem;
+      }
+
+
+
+      .topic-page .media-frame:not(.hero-mascot) {
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eval-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .eval-statement,
+      .auto-eval-group {
+        flex: auto;
+      }
+    }
+
+    @media print {
+      .quiz-actions,
+      .eval-actions,
+      .auto-eval-group {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // Detecta imágenes pendientes y muestra la sugerencia correspondiente.
+    function markImageMissing(image) {
+      var frame = image.closest('figure.media-frame');
+
+      if (frame) {
+        frame.classList.add('image-missing');
+      } else {
+        image.hidden = true;
+      }
+    }
+  </script>
+</head>
+
+<body class="topic-page">
+  <a class="skip-link" href="#contenido-principal">
+    Ir al contenido principal
+  </a>
+
+  <!-- ======================================================
+       CABECERA GENERAL DEL CENTRO
+       ====================================================== -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img
+        src="/img/banner-principal.png"
+        alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba"
+        class="banner-image"
+      >
+    </a>
+  </header>
+
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a
+        class="navigation-logo"
+        href="/"
+        aria-label="Ir a la página de inicio"
+      >
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="main-navigation"
+        class="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue">
+            <a href="/recursos/" aria-current="page">Recursos educativos</a>
+          </li>
+          <li class="nav-red">
+            <a
+              href="https://profesorado.ceipjta.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTENIDO PRINCIPAL
+       ====================================================== -->
+  <main class="topic-page" id="contenido-principal">
+    <div class="topic-shell">
+
+      <!-- Migas de pan -->
+      <nav class="breadcrumbs" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/recursos/">Recursos educativos</a></li>
+          <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+          <li>
+            <a href="/recursos/cuarto/conocimiento-medio4/">
+              Conocimiento del Medio
+            </a>
+          </li>
+          <li aria-current="page">La Tierra, el agua y el clima</li>
+        </ol>
+      </nav>
+
+      <!-- Portada verde institucional con Tomatito, como en CM5 y CM6. -->
+      <section class="topic-hero" aria-labelledby="titulo-sda">
+        <div class="topic-hero-content">
+          <span class="topic-eyebrow">
+            Conocimiento del Medio · 4.º de Primaria · CM4.1
+          </span>
+          <h1 id="titulo-sda">1. LA TIERRA, EL AGUA Y EL CLIMA</h1>
+          <p>
+            Descubrimos cómo se mueve la Tierra, reconocemos el relieve,
+            investigamos el ciclo del agua y el tiempo atmosférico,
+            y creamos un atlas físico y climático de Andalucía y España.
+          </p>
+          <div class="hero-tags" aria-label="Contenidos principales">
+            <span>La Tierra</span>
+            <span>Relieve y ríos</span>
+            <span>Agua</span>
+            <span>Clima</span>
+            <span>Atlas</span>
+          </div>
+        </div>
+
+        <!-- Mascota ya utilizada en los índices de Conocimiento del Medio. -->
+        <figure class="media-frame hero-mascot">
+          <img
+            src="/img/tomatito/conocimiento-medio.png"
+            alt="Tomatito, la mascota del colegio"
+            class="topic-hero-image"
+            onerror="markImageMissing(this)"
+          >
+        </figure>
+      </section>
+
+      <!-- Índice de apartados -->
+      <nav class="lesson-nav" aria-label="Contenidos de la situación de aprendizaje">
+        <h2 class="lesson-nav-heading">
+          📍 Contenidos de la Situación de Aprendizaje
+        </h2>
+        <a href="#sec-1">1.1 La Tierra y sus movimientos</a>
+        <a href="#sec-2">1.2 Relieve de Andalucía y España</a>
+        <a href="#sec-3">1.3 Las aguas y el ciclo del agua</a>
+        <a href="#sec-4">1.4 El tiempo y sus instrumentos</a>
+        <a href="#sec-5">1.5 El clima y sus zonas</a>
+        <a href="#sec-6">1.6 Mapas y recursos digitales</a>
+        <a href="#sec-7">1.7 Nuestro atlas físico y climático</a>
+        <a href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a href="#sec-diana">🎯 Autoevaluación</a>
+      </nav>
+
+      <div class="topic-content">
+
+        <!-- ==================================================
+             APARTADO 1.1: LA TIERRA Y SUS MOVIMIENTOS
+             Tarea 1: Explicamos fenómenos terrestres
+             Criterio único: 5.2.b
+             ================================================== -->
+        <section
+          id="sec-1"
+          class="lesson-section"
+          data-tarea="1"
+          data-criterio="5.2.b"
+          aria-labelledby="titulo-sec-1"
+        >
+          <h2 id="titulo-sec-1" class="lesson-section-heading">
+            <span class="section-number">1.1</span>
+            La Tierra y sus movimientos
+          </h2>
+
+          <div class="explanation">
+            <h3>Vivimos en un planeta que se mueve</h3>
+            <p>La <strong>Tierra</strong> es un planeta del Sistema Solar. Tiene forma casi esférica,
+              ligeramente achatada por los polos. Aunque desde el suelo parece inmóvil, realiza dos movimientos
+              fundamentales: <strong>rotación</strong> y <strong>traslación</strong>.</p>
+            <p>El <strong>eje terrestre</strong> es una línea imaginaria que atraviesa los polos. Está inclinado
+              respecto al plano por el que la Tierra se desplaza alrededor del Sol.</p>
+          </div>
+          <div class="two-columns">
+            <div class="info-card">
+              <h3>Rotación</h3>
+              <p>La Tierra gira sobre su eje aproximadamente cada <strong>24 horas</strong>. La parte orientada
+                hacia el Sol tiene día y la opuesta, noche. El Sol <em>parece</em>desplazarse por el cielo,
+                pero es la Tierra la que gira.</p>
+            </div>
+            <div class="info-card">
+              <h3>Traslación</h3>
+              <p>La Tierra recorre una órbita alrededor del Sol durante unos <strong>365 días y 6 horas</strong>
+                . Su eje inclinado y la traslación originan las estaciones; <strong>no</strong> se deben a estar
+                mucho más cerca o lejos del Sol.</p>
+            </div>
+          </div>
+          <div class="example">
+            <h3>Un ejemplo que puedes representar</h3>
+            <p>Ilumina una pelota con una linterna: al girar la pelota, una parte queda iluminada y otra
+              oscura. Es un <strong>modelo</strong> del día y la noche. Para las estaciones, el eje de la pelota
+              debe mantenerse inclinado al desplazarla alrededor de la linterna.</p>
+          </div>
+          <div class="callout"><strong>Recuerda:</strong> cuando es verano en España, en buena parte del
+            hemisferio sur es invierno. Las estaciones son opuestas en ambos hemisferios.</div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: movimientos-tierra.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/movimientos-tierra.webp"
+              alt="Esquema comparativo de la rotación y la traslación terrestres"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: dos esquemas distintos de la Tierra, uno girando sobre su eje y otro orbitando alrededor del Sol, con flechas y rótulos.
+              <br>
+              <code>/img/conocimiento4/movimientos-tierra.webp</code>
+            </div>
+            <figcaption>Esquema comparativo de la rotación y la traslación terrestres.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-1">
+            <h3 id="actividades-1">✏️ Actividades 1.1</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 5.2.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.2.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Reconocemos los movimientos</h4>
+              <ol type="a">
+                <li>Nombra los dos movimientos principales de la Tierra.</li>
+                <li>Indica cuánto dura aproximadamente cada movimiento.</li>
+                <li>Relaciona la rotación con un fenómeno que observamos cada día.</li>
+                <li>Relaciona la traslación y la inclinación del eje con un fenómeno anual.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 5.2.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.2.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Explicamos el día y la noche</h4>
+              <ol type="a">
+                <li>Dibuja la Tierra y señala la mitad iluminada por el Sol.</li>
+                <li>Escribe dónde es de día y dónde es de noche en tu dibujo.</li>
+                <li>Explica por qué no es de día al mismo tiempo en todos los países.</li>
+                <li>Razona si el día y la noche sucederían igual si la Tierra no girase.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 5.2.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.2.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Comprendemos las estaciones</h4>
+              <ol type="a">
+                <li>Explica con tus palabras por qué existen las estaciones.</li>
+                <li>Indica en qué hemisferio se sitúa España.</li>
+                <li>Señala qué estación suele haber en Argentina cuando en España es verano.</li>
+                <li>Corrige la afirmación: «En verano hace calor porque siempre estamos más cerca del Sol».</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 5.2.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.2.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Observamos y comunicamos</h4>
+              <ol type="a">
+                <li>Anota la hora aproximada a la que amanece un día de esta semana.</li>
+                <li>Compara esa hora con la observada en otra época del año, si tienes datos.</li>
+                <li>Representa la rotación con una linterna y una esfera y describe qué ocurre.</li>
+                <li>Redacta cuatro frases que expliquen la relación entre Sol, Tierra, día y estaciones.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 1.2: RELIEVE DE ANDALUCÍA Y ESPAÑA
+             Tarea 2: Localizamos e identificamos el relieve
+             Criterio único: 5.1.b
+             ================================================== -->
+        <section
+          id="sec-2"
+          class="lesson-section"
+          data-tarea="2"
+          data-criterio="5.1.b"
+          aria-labelledby="titulo-sec-2"
+        >
+          <h2 id="titulo-sec-2" class="lesson-section-heading">
+            <span class="section-number">1.2</span>
+            El relieve de Andalucía y España
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué es el relieve?</h3>
+            <p>El <strong>relieve</strong> es el conjunto de formas de la superficie terrestre. En los
+              continentes encontramos montañas, sierras, cordilleras, mesetas, valles, llanuras y depresiones.
+              Un <strong>mapa físico</strong> representa estas formas mediante colores, alturas y símbolos.</p>
+          </div>
+          <div class="two-columns">
+            <div class="info-card">
+              <h3>Formas elevadas</h3>
+              <p>Una <strong>montaña</strong> es una elevación importante; una <strong>sierra</strong> es un
+                conjunto de montañas y una <strong>cordillera</strong>, una agrupación extensa. Una <strong>
+                meseta</strong> es una superficie relativamente llana situada a cierta altitud.</p>
+            </div>
+            <div class="info-card">
+              <h3>Formas bajas</h3>
+              <p>Un <strong>valle</strong> es una zona baja entre montañas o elevaciones, a menudo recorrida por
+                un río. Una <strong>llanura</strong> es una extensión de terreno con escasa pendiente. Una
+                <strong>depresión</strong> es una zona más baja que los relieves próximos.</p>
+            </div>
+          </div>
+          <h3>El relieve de España</h3>
+          <p>En el centro de la península ibérica se extiende la <strong>Meseta Central</strong>. Destacan
+            también los <strong>Pirineos</strong> al noreste, el <strong>sistema Ibérico</strong>, los <strong>
+            Montes de Toledo</strong> y los <strong>sistemas Béticos</strong> al sur. Las grandes depresiones del
+            <strong>Ebro</strong> y del <strong>Guadalquivir</strong> son zonas más bajas.</p>
+          <h3>El relieve de Andalucía</h3>
+          <p>En Andalucía distinguimos tres unidades principales: <strong>Sierra Morena</strong>, al norte; la
+            <strong>depresión del Guadalquivir</strong>, en la zona central y occidental; y los <strong>
+            sistemas Béticos</strong>, al sur y al este. En Sierra Nevada se encuentra el <strong>Mulhacén
+            </strong>, la montaña más alta de la península ibérica.</p>
+          <div class="example"><strong>Para leer un mapa:</strong> comprueba su título, orientación, leyenda,
+            colores y escala. Los colores hipsométricos suelen indicar alturas diferentes, pero debes consultar
+            siempre la leyenda del mapa concreto.</div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: relieve-andalucia-espana.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/relieve-andalucia-espana.webp"
+              alt="Mapa físico de España con las principales unidades del relieve y Andalucía destacada"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: mapa físico de España y Andalucía con Meseta Central, Pirineos, sistemas Béticos, Sierra Morena, depresión del Guadalquivir y Sierra Nevada.
+              <br>
+              <code>/img/conocimiento4/relieve-andalucia-espana.webp</code>
+            </div>
+            <figcaption>Mapa físico de España con las principales unidades del relieve y Andalucía destacada.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-2">
+            <h3 id="actividades-2">✏️ Actividades 1.2</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 5.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.1.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Vocabulario del relieve</h4>
+              <ol type="a">
+                <li>Define montaña con una frase.</li>
+                <li>Explica en qué se parecen y se diferencian una sierra y una cordillera.</li>
+                <li>Describe qué es un valle.</li>
+                <li>Escribe una diferencia entre meseta y llanura.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 5.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.1.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Situamos relieves españoles</h4>
+              <ol type="a">
+                <li>Localiza la Meseta Central en un mapa físico de España.</li>
+                <li>Señala dónde están los Pirineos.</li>
+                <li>Encuentra la depresión del Ebro.</li>
+                <li>Identifica los sistemas Béticos en el sur peninsular.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 5.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.1.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Conocemos Andalucía</h4>
+              <ol type="a">
+                <li>Sitúa Sierra Morena al norte de Andalucía.</li>
+                <li>Localiza la depresión del Guadalquivir.</li>
+                <li>Busca Sierra Nevada en el mapa.</li>
+                <li>Escribe el nombre de la cumbre más alta de la península ibérica.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 5.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="5.1.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Interpretamos mapas</h4>
+              <ol type="a">
+                <li>Señala qué indica la leyenda del mapa físico que estás utilizando.</li>
+                <li>Explica cómo reconoces las zonas más elevadas.</li>
+                <li>Identifica dos zonas de relieve diferente y compáralas.</li>
+                <li>Dibuja un pequeño mapa con título, rosa de los vientos y leyenda.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 1.3: LAS AGUAS Y EL CICLO DEL AGUA
+             Tarea 3: Investigamos el agua y formulamos hipótesis
+             Criterio único: 2.1.b
+             ================================================== -->
+        <section
+          id="sec-3"
+          class="lesson-section"
+          data-tarea="3"
+          data-criterio="2.1.b"
+          aria-labelledby="titulo-sec-3"
+        >
+          <h2 id="titulo-sec-3" class="lesson-section-heading">
+            <span class="section-number">1.3</span>
+            Las aguas de la Tierra y el ciclo del agua
+          </h2>
+
+          <div class="explanation">
+            <h3>El agua se desplaza y cambia de estado</h3>
+            <p>El agua existe en la naturaleza en estado <strong>líquido</strong>, <strong>sólido</strong> y
+              <strong>gaseoso</strong>. Gracias a la energía del Sol y a la gravedad circula continuamente
+              entre mares, continentes y atmósfera: es el <strong>ciclo del agua</strong>.</p>
+          </div>
+          <div class="step-grid">
+            <div class="info-card"><span class="step-index">1</span><h3>Evaporación</h3><p>El agua líquida
+              recibe calor y pasa a vapor, que se mezcla con el aire.</p></div>
+            <div class="info-card"><span class="step-index">2</span><h3>Condensación</h3><p>Parte del vapor se
+              enfría y forma diminutas gotas o cristales de hielo en las nubes.</p></div>
+            <div class="info-card"><span class="step-index">3</span><h3>Precipitación</h3><p>El agua cae de las
+              nubes en forma de lluvia, nieve o granizo.</p></div>
+            <div class="info-card"><span class="step-index">4</span><h3>Escorrentía e infiltración</h3><p>Una
+              parte circula hacia ríos y mares; otra penetra en el suelo y puede alimentar aguas subterráneas.
+              </p></div>
+          </div>
+          <h3>Ríos, mares y costas</h3>
+          <p>Un <strong>río</strong> es una corriente natural de agua. Nace en su <strong>nacimiento</strong>,
+            discurre por un <strong>cauce</strong> y termina en su <strong>desembocadura</strong>. Sus tramos
+            son alto, medio y bajo. Un <strong>afluente</strong> es un río que desemboca en otro.</p>
+          <p>España está bañada por el <strong>océano Atlántico</strong>, el <strong>mar Mediterráneo</strong>
+            y, al norte, el <strong>mar Cantábrico</strong>. En Andalucía encontramos costa atlántica (Huelva y
+            Cádiz) y costa mediterránea (Cádiz, Málaga, Granada y Almería).</p>
+          <p>
+            En un mapa físico de España conviene reconocer algunos de los ríos
+            principales. Muchos desembocan en el <strong>océano Atlántico</strong>
+            y otros en el <strong>mar Mediterráneo</strong>. El río Guadalhorce
+            es un ejemplo andaluz de la provincia de Málaga; lo estudiamos
+            junto a otros ríos de gran importancia en el conjunto de España.
+          </p>
+          <div class="table-scroller" role="region" tabindex="0"
+               aria-label="Ríos principales de España y sus desembocaduras">
+            <table class="data-table">
+              <caption>Ríos principales de España y otros ejemplos andaluces</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Río</th>
+                  <th scope="col">Desembocadura</th>
+                  <th scope="col">Para situarlo en el mapa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Miño</td><td>Océano Atlántico</td><td>Galicia; parte de su tramo final marca la frontera con Portugal.</td></tr>
+                <tr><td>Duero</td><td>Océano Atlántico</td><td>Atraviesa la Meseta Norte y desemboca en Portugal.</td></tr>
+                <tr><td>Tajo</td><td>Océano Atlántico</td><td>Recorre el centro peninsular y desemboca en Portugal.</td></tr>
+                <tr><td>Guadiana</td><td>Océano Atlántico</td><td>Desemboca entre Ayamonte (Huelva) y Portugal.</td></tr>
+                <tr><td>Guadalquivir</td><td>Océano Atlántico</td><td>Recorre Andalucía y desemboca junto a Doñana.</td></tr>
+                <tr><td>Ebro</td><td>Mar Mediterráneo</td><td>Recorre el nordeste y forma el delta del Ebro.</td></tr>
+                <tr><td>Júcar</td><td>Mar Mediterráneo</td><td>Desemboca en la costa valenciana.</td></tr>
+                <tr><td>Segura</td><td>Mar Mediterráneo</td><td>Desemboca en la provincia de Alicante.</td></tr>
+                <tr><td>Guadalhorce</td><td>Mar Mediterráneo</td><td>Es un río andaluz que desemboca en Málaga.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <h3>🔎 Investigamos un charco que desaparece</h3>
+            <p>
+              Después de llover, Ana observa que los charcos del patio se secan.
+              Uno que recibe sol desaparece antes que otro situado a la sombra.
+              La clase decide investigar por qué sucede.
+            </p>
+            <ol class="readable-list">
+              <li><strong>Pregunta:</strong> ¿se evapora antes el agua que recibe más luz solar?</li>
+              <li><strong>Hipótesis:</strong> creemos que el recipiente colocado al sol perderá más agua.</li>
+              <li><strong>Prueba:</strong> ponemos igual cantidad de agua en dos platos idénticos,
+                  uno en un lugar soleado y otro en sombra, sin añadir nada al agua.</li>
+              <li><strong>Observamos y anotamos:</strong> señalamos el nivel inicial y comparamos
+                  la cantidad de agua que queda en ambos platos a la misma hora del día siguiente.</li>
+              <li><strong>Conclusión:</strong> explicamos qué observamos y si los resultados
+                  apoyan nuestra hipótesis. Si no la apoyan, también hemos aprendido.</li>
+            </ol>
+            <p class="hint">
+              El experimento se hace con supervisión de una persona adulta.
+              No utilizamos fuego ni aparatos eléctricos; colocamos los platos
+              donde nadie pueda tropezar con ellos.
+            </p>
+          </div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: ciclo-agua-rios.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/ciclo-agua-rios.webp"
+              alt="Ilustración del ciclo natural del agua, con evaporación, condensación, precipitación e infiltración"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: ciclo del agua en un paisaje andaluz con mar, río, nubes, lluvia, montaña y acuífero; flechas y rótulos correctamente situados.
+              <br>
+              <code>/img/conocimiento4/ciclo-agua-rios.webp</code>
+            </div>
+            <figcaption>Ilustración del ciclo natural del agua, con evaporación, condensación, precipitación e infiltración.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-3">
+            <h3 id="actividades-3">✏️ Actividades 1.3</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 2.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.1.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Seguimos una gota de agua</h4>
+              <ol type="a">
+                <li>Explica qué ocurre durante la evaporación.</li>
+                <li>Define condensación con tus palabras.</li>
+                <li>Escribe tres formas de precipitación.</li>
+                <li>Indica dos caminos que puede seguir el agua tras caer al suelo.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 2.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.1.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Comprendemos los ríos y las costas</h4>
+              <ol type="a">
+                <li>Dibuja un río y señala nacimiento, curso y desembocadura.</li>
+                <li>Define qué es un afluente.</li>
+                <li>Explica dónde desemboca el Guadalquivir.</li>
+                <li>Nombra las dos fachadas marítimas de Andalucía.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 2.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.1.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Formulamos preguntas e hipótesis</h4>
+              <ol type="a">
+                <li>Plantea una pregunta sobre por qué se seca antes un charco al sol.</li>
+                <li>Formula una hipótesis que pueda comprobarse.</li>
+                <li>Identifica qué cambiarías y qué mantendrías igual en una prueba con dos recipientes.</li>
+                <li>Escribe qué dato medirías para saber si tu hipótesis se cumple.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 2.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.1.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Planificamos una investigación sencilla</h4>
+              <ol type="a">
+                <li>Propón un experimento seguro sobre evaporación usando agua a temperatura ambiente.</li>
+                <li>Enumera los materiales necesarios.</li>
+                <li>Predice qué recipiente perderá más agua y explica por qué.</li>
+                <li>Indica cómo anotarías los resultados durante varios días.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 1.4: EL TIEMPO Y SUS INSTRUMENTOS
+             Tarea 4: Observamos y registramos datos meteorológicos
+             Criterio único: 2.3.b
+             ================================================== -->
+        <section
+          id="sec-4"
+          class="lesson-section"
+          data-tarea="4"
+          data-criterio="2.3.b"
+          aria-labelledby="titulo-sec-4"
+        >
+          <h2 id="titulo-sec-4" class="lesson-section-heading">
+            <span class="section-number">1.4</span>
+            El tiempo atmosférico y su observación
+          </h2>
+
+          <div class="explanation">
+            <h3>¿Qué tiempo hace hoy?</h3>
+            <p>El <strong>tiempo atmosférico</strong> es el estado de la atmósfera en un lugar y un momento
+              determinados. Puede cambiar a lo largo del día. Para describirlo observamos <strong>temperatura
+              </strong>, <strong>precipitaciones</strong>, <strong>viento</strong> y <strong>nubosidad</strong>.
+              </p>
+          </div>
+          <div class="table-scroller" role="region" aria-label="Instrumentos meteorológicos" tabindex="0">
+            <table class="data-table">
+              <caption>Instrumentos para observar el tiempo</caption>
+              <thead><tr><th>Instrumento</th><th>¿Qué mide?</th><th>Unidades o resultado</th></tr></thead>
+              <tbody>
+                <tr><td>Termómetro</td><td>Temperatura del aire</td><td>Grados Celsius (°C)</td></tr>
+                <tr><td>Pluviómetro</td><td>Precipitación acumulada</td><td>Milímetros (mm) o l/m²</td></tr>
+                <tr><td>Anemómetro</td><td>Velocidad del viento</td><td>km/h o m/s</td></tr>
+                <tr><td>Veleta</td><td>Dirección de procedencia del viento</td><td>N, S, E, O, etc.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Un registro meteorológico</h3>
+          <p>Una estación meteorológica puede tomar observaciones cada día a la misma hora. Para comparar datos
+            hay que indicar <strong>lugar, fecha, hora y unidad</strong>. Una tabla facilita ver qué cambia y
+            qué se mantiene.</p>
+          <div class="table-scroller" role="region" aria-label="Datos meteorológicos inventados" tabindex="0">
+            <table class="data-table">
+              <caption>Ejemplo didáctico inventado (no son mediciones reales)</caption>
+              <thead><tr><th>Día</th><th>Temperatura a las 12:00</th><th>Lluvia del día</th><th>Cielo</th></tr></thead>
+              <tbody>
+                <tr><td>Lunes</td><td>18 °C</td><td>0 mm</td><td>Despejado</td></tr>
+                <tr><td>Martes</td><td>16 °C</td><td>4 mm</td><td>Nuboso</td></tr>
+                <tr><td>Miércoles</td><td>17 °C</td><td>1 mm</td><td>Variable</td></tr>
+                <tr><td>Jueves</td><td>20 °C</td><td>0 mm</td><td>Despejado</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example"><strong>Ejemplo de lectura:</strong> el jueves se registró la temperatura más
+            alta (20 °C); el martes, la mayor precipitación (4 mm). La lluvia acumulada en los cuatro días fue
+            de 5 mm.</div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: instrumentos-meteorologicos.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/instrumentos-meteorologicos.webp"
+              alt="Termómetro, pluviómetro, veleta y anemómetro con sus nombres"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: cuatro instrumentos meteorológicos reales, identificados y sin elementos superpuestos, con las unidades que miden.
+              <br>
+              <code>/img/conocimiento4/instrumentos-meteorologicos.webp</code>
+            </div>
+            <figcaption>Termómetro, pluviómetro, veleta y anemómetro con sus nombres.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-4">
+            <h3 id="actividades-4">✏️ Actividades 1.4</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 2.3.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.3.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Identificamos instrumentos</h4>
+              <ol type="a">
+                <li>Escribe qué mide un termómetro.</li>
+                <li>Nombra el instrumento que recoge la lluvia.</li>
+                <li>Diferencia anemómetro y veleta.</li>
+                <li>Indica dos unidades usadas en meteorología.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 2.3.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.3.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Leemos una tabla meteorológica</h4>
+              <ol type="a">
+                <li>¿Qué día fue más cálido en el ejemplo?</li>
+                <li>¿Qué día tuvo más lluvia?</li>
+                <li>Calcula cuántos milímetros llovió en total.</li>
+                <li>Señala dos días sin precipitación.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 2.3.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.3.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Diseñamos una observación</h4>
+              <ol type="a">
+                <li>Elige un lugar seguro donde observar el cielo.</li>
+                <li>Establece una hora fija para tus observaciones.</li>
+                <li>Propón una tabla con cuatro columnas útiles.</li>
+                <li>Explica por qué es importante anotar las unidades de medida.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 2.3.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.3.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Representamos los datos</h4>
+              <ol type="a">
+                <li>Dibuja un gráfico de barras con las cuatro temperaturas del ejemplo.</li>
+                <li>Escribe un título apropiado para el gráfico.</li>
+                <li>Indica en el eje vertical la unidad que has usado.</li>
+                <li>Redacta dos conclusiones a partir del gráfico.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 1.5: EL CLIMA Y SUS ZONAS
+             Tarea 5: Comparamos climas e interpretamos datos
+             Criterio único: 2.4.b
+             ================================================== -->
+        <section
+          id="sec-5"
+          class="lesson-section"
+          data-tarea="5"
+          data-criterio="2.4.b"
+          aria-labelledby="titulo-sec-5"
+        >
+          <h2 id="titulo-sec-5" class="lesson-section-heading">
+            <span class="section-number">1.5</span>
+            El clima y sus zonas
+          </h2>
+
+          <div class="explanation">
+            <h3>Tiempo y clima no son lo mismo</h3>
+            <p>El <strong>tiempo atmosférico</strong> describe lo que ocurre <strong>ahora</strong> o durante un
+              periodo corto. El <strong>clima</strong> describe las condiciones habituales de un lugar
+              observadas durante <strong>muchos años</strong>. Un día frío no significa que el clima de una
+              localidad sea frío.</p>
+          </div>
+          <div class="two-columns">
+            <div class="info-card"><h3>Factores del clima</h3><p>Influyen la <strong>latitud</strong>, la
+              <strong>altitud</strong>, la proximidad al <strong>mar</strong> y el <strong>relieve</strong>. En
+              general, al ascender una montaña la temperatura disminuye.</p></div>
+            <div class="info-card"><h3>Datos para comparar</h3><p>Los climatólogos estudian durante muchos años
+              las temperaturas, las precipitaciones y otros datos. Representan sus resultados en mapas, tablas
+              y <strong>climogramas</strong>.</p></div>
+          </div>
+          <h3>Algunos climas de España</h3>
+          <div class="table-scroller" role="region" aria-label="Características de los principales climas" tabindex="0">
+            <table class="data-table">
+              <caption>Climas principales, de forma simplificada</caption>
+              <thead><tr><th>Clima</th><th>Rasgos generales</th><th>Localización orientativa</th></tr></thead>
+              <tbody>
+                <tr><td>Oceánico</td><td>Lluvias frecuentes y temperaturas moderadas</td><td>Parte del norte peninsular</td></tr>
+                <tr><td>Mediterráneo</td><td>Veranos secos; lluvias variables e irregulares</td><td>Gran parte de la península y Baleares</td></tr>
+                <tr><td>De montaña</td><td>Temperaturas menores y nieve frecuente en zonas elevadas</td><td>Principales cordilleras</td></tr>
+                <tr><td>Subtropical canario</td><td>Temperaturas suaves; diferencias según isla, altitud y orientación</td><td>Islas Canarias</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>¿Y en Andalucía?</h3>
+          <p>En buena parte de Andalucía predomina el <strong>clima mediterráneo</strong>, con veranos cálidos
+            y secos. Hay diferencias entre zonas costeras e interiores y en las sierras más elevadas, como
+            <strong>Sierra Nevada</strong>. Algunas áreas del sureste son especialmente secas.</p>
+          <div class="example"><strong>Una comparación correcta:</strong> no basta con decir «ayer llovió». Para
+            comparar climas usamos datos de muchos años. Para comparar el tiempo de dos días, sí podemos usar
+            temperaturas y lluvias de esas jornadas.</div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: zonas-climaticas-espana.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/zonas-climaticas-espana.webp"
+              alt="Mapa de las zonas climáticas de España y localización de los climas de Andalucía"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: mapa de climas de España con leyenda legible y ejemplos de clima oceánico, mediterráneo, de montaña y subtropical de Canarias.
+              <br>
+              <code>/img/conocimiento4/zonas-climaticas-espana.webp</code>
+            </div>
+            <figcaption>Mapa de las zonas climáticas de España y localización de los climas de Andalucía.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-5">
+            <h3 id="actividades-5">✏️ Actividades 1.5</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 2.4.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.4.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Diferenciamos tiempo y clima</h4>
+              <ol type="a">
+                <li>Define tiempo atmosférico.</li>
+                <li>Define clima.</li>
+                <li>Explica por qué no se puede conocer un clima observando un solo día.</li>
+                <li>Escribe un ejemplo de una frase sobre tiempo y otra sobre clima.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 2.4.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.4.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Reconocemos climas</h4>
+              <ol type="a">
+                <li>Nombra dos rasgos del clima oceánico.</li>
+                <li>Señala qué suele caracterizar al verano mediterráneo.</li>
+                <li>Explica qué ocurre con la temperatura al subir una montaña.</li>
+                <li>Localiza las islas Canarias en un mapa y nombra su tipo climático general.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 2.4.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.4.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Comparamos paisajes y datos</h4>
+              <ol type="a">
+                <li>Describe una diferencia entre una costa andaluza y Sierra Nevada.</li>
+                <li>Indica por qué dos lugares a la misma latitud pueden tener climas distintos.</li>
+                <li>Relaciona las precipitaciones con la vegetación habitual de un paisaje.</li>
+                <li>Escribe dos datos necesarios para comparar el clima de dos localidades.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 2.4.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.4.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Interpretamos e inferimos</h4>
+              <ol type="a">
+                <li>Lee el mapa climático propuesto e identifica su leyenda.</li>
+                <li>Señala una zona de clima mediterráneo.</li>
+                <li>Localiza una región donde predomine el clima oceánico.</li>
+                <li>Explica qué datos te faltarían para saber si una región se ha vuelto más cálida.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 1.6: MAPAS Y RECURSOS DIGITALES
+             Tarea 6: Buscamos y seleccionamos información fiable
+             Criterio único: 1.1.b
+             ================================================== -->
+        <section
+          id="sec-6"
+          class="lesson-section"
+          data-tarea="6"
+          data-criterio="1.1.b"
+          aria-labelledby="titulo-sec-6"
+        >
+          <h2 id="titulo-sec-6" class="lesson-section-heading">
+            <span class="section-number">1.6</span>
+            Orientación, mapas y recursos digitales
+          </h2>
+
+          <div class="explanation">
+            <h3>Representamos el espacio</h3>
+            <p>Un <strong>plano</strong> representa con detalle un espacio pequeño; un <strong>mapa</strong>, un
+              territorio más extenso. La <strong>orientación</strong> indica dónde están el norte, el sur, el
+              este y el oeste. La <strong>leyenda</strong> explica los símbolos, y la <strong>escala</strong>
+              relaciona las distancias del mapa con las reales.</p>
+          </div>
+          <div class="two-columns">
+            <div class="info-card"><h3>Mapas físicos</h3><p>Muestran montañas, llanuras, ríos, mares y
+              altitudes. Son útiles para conocer el relieve de España y Andalucía.</p></div>
+            <div class="info-card"><h3>Mapas políticos</h3><p>Muestran límites y divisiones administrativas,
+              como países, comunidades autónomas y provincias.</p></div>
+          </div>
+          <h3>Buscar información fiable</h3>
+          <p>Podemos consultar atlas escolares, bibliotecas y páginas institucionales. Antes de usar un dato
+            hay que comprobar <strong>quién lo publica</strong>, <strong>cuándo se actualizó</strong> y <strong>
+            si responde a la pregunta</strong> que estamos investigando. No debemos copiar un mapa sin entender
+            sus símbolos ni publicar datos personales.</p>
+          <div class="example">
+            <strong>Fuentes útiles para el aula:</strong>
+            <ul>
+              <li><a href="https://www.ign.es/" target="_blank" rel="noopener noreferrer">Instituto Geográfico
+                Nacional</a>: cartografía y mapas de España.</li>
+              <li>
+                <a href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/" target="_blank" rel="noopener noreferrer">
+                Instituto de Estadística y Cartografía de Andalucía</a>: información territorial andaluza.</li>
+              <li><a href="https://www.aemet.es/" target="_blank" rel="noopener noreferrer">AEMET</a>:
+                información y observación meteorológica.</li>
+            </ul>
+          </div>
+          <div class="callout"><strong>Seguridad digital:</strong> busca recursos con ayuda docente, utiliza
+            materiales permitidos, cita su procedencia y no compartas tu nombre completo, fotografías
+            personales ni tu ubicación exacta.</div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: elementos-mapa-fisico.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/elementos-mapa-fisico.webp"
+              alt="Mapa físico sencillo con título, puntos cardinales, escala y leyenda"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: mapa físico simplificado del entorno de Córdoba con título, escala gráfica, orientación y leyenda; sin topónimos inventados.
+              <br>
+              <code>/img/conocimiento4/elementos-mapa-fisico.webp</code>
+            </div>
+            <figcaption>Mapa físico sencillo con título, puntos cardinales, escala y leyenda.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-6">
+            <h3 id="actividades-6">✏️ Actividades 1.6</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 1.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="1.1.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Nos orientamos</h4>
+              <ol type="a">
+                <li>Escribe los cuatro puntos cardinales.</li>
+                <li>Indica en qué dirección queda el oeste si miras hacia el norte.</li>
+                <li>Señala la orientación de un mapa que tengas a mano.</li>
+                <li>Dibuja una rosa de los vientos sencilla.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 1.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="1.1.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Leemos mapas y planos</h4>
+              <ol type="a">
+                <li>Diferencia mapa y plano.</li>
+                <li>Explica para qué sirve una leyenda.</li>
+                <li>Indica qué representa la escala.</li>
+                <li>Enumera cuatro elementos que debe tener un buen mapa escolar.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 1.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="1.1.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Buscamos fuentes fiables</h4>
+              <ol type="a">
+                <li>Anota el nombre de una institución que publique mapas físicos.</li>
+                <li>Busca un mapa de Andalucía con ayuda docente e identifica la fuente.</li>
+                <li>Comprueba si el mapa tiene fecha o información de actualización.</li>
+                <li>Explica por qué conviene comparar fuentes antes de dar un dato por cierto.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 1.1.b. -->
+            <article
+              class="task-card"
+              data-criterio="1.1.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Organizamos nuestros hallazgos</h4>
+              <ol type="a">
+                <li>Selecciona un mapa físico y otro climático.</li>
+                <li>Anota sus títulos, fuentes y enlaces.</li>
+                <li>Escribe una diferencia entre la información de ambos.</li>
+                <li>Guarda una ficha bibliográfica sencilla sin incluir datos personales.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             APARTADO 1.7: NUESTRO ATLAS FÍSICO Y CLIMÁTICO
+             Tarea 7: Elaboramos y presentamos el atlas
+             Criterio único: 2.5.b
+             ================================================== -->
+        <section
+          id="sec-7"
+          class="lesson-section"
+          data-tarea="7"
+          data-criterio="2.5.b"
+          aria-labelledby="titulo-sec-7"
+        >
+          <h2 id="titulo-sec-7" class="lesson-section-heading">
+            <span class="section-number">1.7</span>
+            Creamos nuestro atlas físico y climático
+          </h2>
+
+          <div class="explanation">
+            <h3>Un atlas para explicar nuestro territorio</h3>
+            <p>El <strong>producto final</strong> de esta situación de aprendizaje es un <strong>atlas físico y
+              climático de Andalucía y España</strong>. Reuniremos mapas, ilustraciones, gráficas de
+              temperatura y lluvia, explicaciones breves y fuentes consultadas.</p>
+          </div>
+          <div class="step-grid">
+            <div class="info-card"><span class="step-index">1</span><h3>Planificamos</h3><p>Decidimos a quién
+              va dirigido, qué información incluirá y cómo distribuiremos las páginas.</p></div>
+            <div class="info-card"><span class="step-index">2</span><h3>Reunimos datos</h3><p>Seleccionamos
+              mapas claros y datos de fuentes fiables, con ayuda del profesorado.</p></div>
+            <div class="info-card"><span class="step-index">3</span><h3>Elaboramos</h3><p>Preparamos mapas
+              físicos y climáticos, una tabla meteorológica y un gráfico con título.</p></div>
+            <div class="info-card"><span class="step-index">4</span><h3>Explicamos</h3><p>Presentamos el atlas,
+              comentamos resultados y proponemos mejoras tras escucharnos.</p></div>
+          </div>
+          <h3>Propuesta de índice del atlas</h3>
+          <ol class="readable-list">
+            <li><strong>Portada</strong>: título, curso y dibujo propio.</li>
+            <li><strong>Mapas físicos</strong>: relieves, ríos y costas con leyendas.</li>
+            <li><strong>Mapas del clima</strong>: zonas climáticas principales.</li>
+            <li><strong>Datos</strong>: tabla de tiempo atmosférico y gráfico.</li>
+            <li><strong>Conclusiones y fuentes</strong>: qué hemos aprendido y de dónde proceden los datos.</li>
+          </ol>
+          <div class="example"><strong>Lista de calidad:</strong> todo mapa debe tener título, orientación y
+            leyenda; todo gráfico, variables y unidades; todo dato ajeno, una fuente. El trabajo puede
+            elaborarse en papel o en una presentación digital sencilla.</div>
+
+          <!-- SUGERENCIA DE IMAGEN WEBP: ejemplo-atlas-fisico-climatico.webp -->
+          <figure class="media-frame">
+            <img
+              src="/img/conocimiento4/ejemplo-atlas-fisico-climatico.webp"
+              alt="Ejemplo de doble página de un atlas escolar físico y climático"
+              loading="lazy"
+              onerror="markImageMissing(this)"
+            >
+            <div class="image-suggestion" role="note">
+              <strong>Imagen sugerida para este apartado</strong>
+              Imagen sugerida: ejemplo de doble página de atlas infantil de Andalucía y España, con mapas, leyendas, datos de clima y créditos.
+              <br>
+              <code>/img/conocimiento4/ejemplo-atlas-fisico-climatico.webp</code>
+            </div>
+            <figcaption>Ejemplo de doble página de un atlas escolar físico y climático.</figcaption>
+          </figure>
+
+          <div class="practice" aria-labelledby="actividades-7">
+            <h3 id="actividades-7">✏️ Actividades 1.7</h3>
+            <p>
+              Resuelve las cuatro actividades. Cada actividad contiene
+              los apartados a), b), c) y d).
+            </p>
+
+            <!-- Actividad 1: un único criterio 2.5.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.5.b"
+            >
+              <span class="task-tag">Actividad 1</span>
+              <h4>Diseñamos el atlas</h4>
+              <ol type="a">
+                <li>Pon un título claro al atlas.</li>
+                <li>Escribe las cinco partes de su índice.</li>
+                <li>Decide qué mapa irá primero y explica por qué.</li>
+                <li>Distribuye las tareas del equipo de forma equilibrada.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 2: un único criterio 2.5.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.5.b"
+            >
+              <span class="task-tag">Actividad 2</span>
+              <h4>Construimos nuestros mapas</h4>
+              <ol type="a">
+                <li>Elabora un mapa físico de España señalando cuatro unidades del relieve.</li>
+                <li>Añade los principales relieves de Andalucía a otro mapa.</li>
+                <li>Sitúa Guadalquivir y otro río de tu elección.</li>
+                <li>Incorpora una leyenda y los puntos cardinales.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 3: un único criterio 2.5.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.5.b"
+            >
+              <span class="task-tag">Actividad 3</span>
+              <h4>Presentamos datos y conclusiones</h4>
+              <ol type="a">
+                <li>Incluye una tabla de temperaturas y precipitaciones identificada.</li>
+                <li>Dibuja un gráfico de barras que represente un dato de la tabla.</li>
+                <li>Escribe dos conclusiones que apoyen los datos.</li>
+                <li>Cita al menos una fuente fiable de información.</li>
+              </ol>
+            </article>
+
+            <!-- Actividad 4: un único criterio 2.5.b. -->
+            <article
+              class="task-card"
+              data-criterio="2.5.b"
+            >
+              <span class="task-tag">Actividad 4</span>
+              <h4>Explicamos y mejoramos</h4>
+              <ol type="a">
+                <li>Prepara una intervención oral breve para presentar el atlas.</li>
+                <li>Explica a tus compañeros cómo se interpreta uno de tus mapas.</li>
+                <li>Escucha una sugerencia y anótala con respeto.</li>
+                <li>Corrige un aspecto mejorable del atlas tras la revisión.</li>
+              </ol>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================================================
+             REPASAMOS LO APRENDIDO · ESTRUCTURA DE CM5.1 / CM5.2
+             Fichas de refuerzo y ampliación, una actividad por apartado
+             y cuatro cuestiones en cada actividad.
+             ================================================== -->
+        <section
+          id="sec-repaso"
+          class="summary-block sda-recap bg-white rounded-3xl custom-shadow border-junta"
+          aria-labelledby="titulo-repaso"
+        >
+          <div class="recap-heading">
+            <span class="section-number" aria-hidden="true">🔄</span>
+            <div>
+              <h2 id="titulo-repaso" class="lesson-section-heading">Repasamos lo aprendido</h2>
+              <p>Consolidación y repaso global de la Situación de Aprendizaje.</p>
+            </div>
+          </div>
+
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo">
+              <h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- REFUERZO 1.1 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.2.b">
+                <h4>Refuerzo 1.1 · La Tierra y sus movimientos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Cómo se llama el movimiento por el que la Tierra gira sobre sí misma?</li>
+                  <li>¿Cuánto tarda aproximadamente en completar una rotación?</li>
+                  <li>¿Qué movimiento está relacionado con el año?</li>
+                  <li>Explica por qué hay día y noche.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.2 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="5.1.b">
+                <h4>Refuerzo 1.2 · El relieve de Andalucía y España</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué diferencia hay entre una montaña y una depresión?</li>
+                  <li>Nombra una cordillera de Andalucía.</li>
+                  <li>¿Dónde se sitúa Sierra Morena dentro de Andalucía?</li>
+                  <li>Localiza en un mapa la depresión del Guadalquivir.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.3 · Criterio 2.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.1.b">
+                <h4>Refuerzo 1.3 · Las aguas y el ciclo del agua</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Ordena las fases: precipitación, evaporación y condensación.</li>
+                  <li>Explica la diferencia entre un río y un afluente.</li>
+                  <li>¿En qué océano desembocan el Miño, el Guadiana y el Guadalquivir?</li>
+                  <li>¿Dónde desemboca el río Ebro?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.4 · Criterio 2.3.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.3.b">
+                <h4>Refuerzo 1.4 · El tiempo atmosférico</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué instrumento se usa para medir la temperatura?</li>
+                  <li>¿Qué instrumento permite medir la lluvia caída?</li>
+                  <li>¿Qué indica una veleta?</li>
+                  <li>Escribe dos datos que incluirías en una ficha diaria del tiempo.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.5 · Criterio 2.4.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.4.b">
+                <h4>Refuerzo 1.5 · El clima y sus zonas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica la diferencia entre el tiempo y el clima.</li>
+                  <li>¿Cómo suelen ser los veranos en el clima mediterráneo?</li>
+                  <li>Nombra una zona de España donde haya clima oceánico.</li>
+                  <li>¿Por qué hace generalmente más frío en una montaña alta?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.6 · Criterio 1.1.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="1.1.b">
+                <h4>Refuerzo 1.6 · Orientación, mapas y recursos digitales</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe los cuatro puntos cardinales.</li>
+                  <li>¿Para qué sirve la leyenda de un mapa?</li>
+                  <li>¿Qué indica la escala de un mapa?</li>
+                  <li>Nombra un recurso digital que permita explorar mapas.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.7 · Criterio 2.5.b -->
+              <article class="sheet-card sheet-card--refuerzo" data-criterio="2.5.b">
+                <h4>Refuerzo 1.7 · Nuestro atlas físico y climático</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué título pondrías a tu atlas?</li>
+                  <li>¿Qué datos debe tener un mapa físico para entenderlo bien?</li>
+                  <li>¿Qué fuente indicarías si utilizas un mapa de Internet?</li>
+                  <li>¿Cómo repartiríais el trabajo dentro del equipo?</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion">
+              <h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3>
+            </div>
+            <div class="sheet-grid">
+              <!-- AMPLIACIÓN 1.1 · Criterio 5.2.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.2.b">
+                <h4>Ampliación 1.1 · La Tierra y sus movimientos</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué es de día en España cuando en otras zonas es de noche.</li>
+                  <li>Representa con una linterna y una esfera la sucesión de día y noche.</li>
+                  <li>¿Por qué no se deben las estaciones a que la Tierra esté mucho más cerca del Sol en verano?</li>
+                  <li>Escribe una comparación entre los movimientos de rotación y traslación.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.2 · Criterio 5.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="5.1.b">
+                <h4>Ampliación 1.2 · El relieve de Andalucía y España</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara una llanura y un valle indicando una semejanza y una diferencia.</li>
+                  <li>Explica cómo puede influir el relieve en la construcción de carreteras.</li>
+                  <li>Busca y sitúa en un mapa la cordillera de los Pirineos y los Sistemas Béticos.</li>
+                  <li>Elige una forma de relieve de tu provincia y descríbela.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.3 · Criterio 2.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.1.b">
+                <h4>Ampliación 1.3 · Las aguas y el ciclo del agua</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Por qué se puede secar un charco aunque nadie retire el agua?</li>
+                  <li>Plantea una hipótesis sobre dos recipientes de agua: uno al sol y otro a la sombra.</li>
+                  <li>Indica qué condición mantendrías igual para comparar los recipientes.</li>
+                  <li>Dibuja el ciclo del agua en un paisaje con montaña, río y mar.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.4 · Criterio 2.3.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.3.b">
+                <h4>Ampliación 1.4 · El tiempo atmosférico</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una tabla para anotar el tiempo durante cinco días.</li>
+                  <li>Explica cómo representarías las temperaturas con un gráfico de barras.</li>
+                  <li>¿Por qué debemos usar las mismas unidades para comparar dos registros?</li>
+                  <li>Redacta una predicción breve a partir de los datos recogidos.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.5 · Criterio 2.4.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.4.b">
+                <h4>Ampliación 1.5 · El clima y sus zonas</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Compara el clima de la costa andaluza y el de Sierra Nevada.</li>
+                  <li>¿Qué información necesitarías para describir el clima de un lugar?</li>
+                  <li>Explica cómo puede influir la cercanía al mar en las temperaturas.</li>
+                  <li>Interpreta un climograma sencillo e indica el mes más lluvioso.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.6 · Criterio 1.1.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="1.1.b">
+                <h4>Ampliación 1.6 · Orientación, mapas y recursos digitales</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Dibuja un plano del aula con una leyenda sencilla.</li>
+                  <li>Compara dos mapas del mismo lugar con escalas diferentes.</li>
+                  <li>Explica por qué conviene comprobar la fuente de un mapa digital.</li>
+                  <li>Señala en un mapa una ruta y explica sus indicaciones de orientación.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.7 · Criterio 2.5.b -->
+              <article class="sheet-card sheet-card--ampliacion" data-criterio="2.5.b">
+                <h4>Ampliación 1.7 · Nuestro atlas físico y climático</h4>
+                <ol class="sheet-questions" type="a">
+                  <li>Diseña una leyenda con cuatro símbolos para un mapa de Andalucía.</li>
+                  <li>Propón una página del atlas que explique un río importante de España.</li>
+                  <li>Explica cómo mejorarías un gráfico si faltaran sus unidades.</li>
+                  <li>Prepara tres frases para presentar el atlas ante la clase.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- ==================================================
+             COMPRUEBA LO APRENDIDO · CAJAS RECTANGULARES SELECCIONABLES
+             Mismo patrón que Lengua de 4.º: botones aria-pressed.
+             ================================================== -->
+        <section id="sec-comprueba" class="summary-block check-learning"
+                 aria-labelledby="titulo-comprueba">
+          <h2 id="titulo-comprueba" class="lesson-section-heading">
+            <span class="section-number" aria-hidden="true">✓</span>
+            Comprueba lo aprendido
+          </h2>
+          <p>
+            Selecciona una caja por pregunta y pulsa <strong>Comprobar respuestas</strong>.
+            Podrás corregir tus elecciones y volver a empezar.
+          </p>
+          <form id="quiz-cm41">
+            <div class="quiz-grid">
+              <!-- PREGUNTA 1 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-1">
+                <h3 id="quiz-pregunta-1" class="quiz-prompt">1. ¿Qué movimiento de la Tierra origina el día y la noche?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Traslación</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Rotación</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Evaporación</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 2 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-2">
+                <h3 id="quiz-pregunta-2" class="quiz-prompt">2. ¿Por qué hay estaciones?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Por la inclinación del eje terrestre y la traslación</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Porque siempre cambia mucho la distancia al Sol</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Porque el Sol gira alrededor de la Tierra</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 3 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-3">
+                <h3 id="quiz-pregunta-3" class="quiz-prompt">3. ¿Qué relieve destaca en el norte de Andalucía?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Los Pirineos</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Sierra Morena</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">El delta del Ebro</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 4 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-4">
+                <h3 id="quiz-pregunta-4" class="quiz-prompt">4. ¿Dónde desemboca el río Guadalquivir?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">En el océano Atlántico</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">En el mar Cantábrico</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">En el mar Mediterráneo</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 5 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-5">
+                <h3 id="quiz-pregunta-5" class="quiz-prompt">5. ¿Cómo se llama el paso de agua líquida a vapor?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Condensación</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Evaporación</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Precipitación</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 6 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-6">
+                <h3 id="quiz-pregunta-6" class="quiz-prompt">6. ¿Qué instrumento mide la cantidad de lluvia?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Pluviómetro</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Veleta</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Anemómetro</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 7 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-7">
+                <h3 id="quiz-pregunta-7" class="quiz-prompt">7. ¿Cuál es un dato de tiempo atmosférico?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">El norte de España tiene clima oceánico</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Ayer llovieron 6 mm</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Los veranos son secos durante muchos años</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 8 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-8">
+                <h3 id="quiz-pregunta-8" class="quiz-prompt">8. ¿Cuál es una característica habitual de los veranos mediterráneos?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Son secos</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Siempre nieva</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Llueve cada día</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 9 -->
+              <div class="quiz-item quiz-question" data-answer="0"
+                   role="group" aria-labelledby="quiz-pregunta-9">
+                <h3 id="quiz-pregunta-9" class="quiz-prompt">9. ¿Qué elemento explica los símbolos de un mapa?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">La leyenda</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">La portada</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">El título de un libro</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+              <!-- PREGUNTA 10 -->
+              <div class="quiz-item quiz-question" data-answer="1"
+                   role="group" aria-labelledby="quiz-pregunta-10">
+                <h3 id="quiz-pregunta-10" class="quiz-prompt">10. ¿Qué debe incluir un gráfico del atlas?</h3>
+                <div class="quiz-options">
+                  <button type="button" class="quiz-option" data-option="0" aria-pressed="false">Solo dibujos decorativos</button>
+                  <button type="button" class="quiz-option" data-option="1" aria-pressed="false">Título, datos y unidades</button>
+                  <button type="button" class="quiz-option" data-option="2" aria-pressed="false">Nombres y direcciones personales</button>
+                </div>
+                <p class="quiz-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="quiz-actions">
+              <button type="button" id="quiz-check" class="lnl-btn">Comprobar respuestas</button>
+              <button type="button" id="quiz-reset" class="lnl-btn secondary">Volver a empezar</button>
+            </div>
+            <p id="quiz-summary" aria-live="polite" role="status"></p>
+          </form>
+        </section>
+
+        <!-- ==================================================
+             DIANA DE AUTOEVALUACIÓN INTERACTIVA · PATRÓN DE LENGUA 4.º
+             ================================================== -->
+        <section id="sec-diana" class="summary-block self-eval"
+                 aria-labelledby="titulo-diana">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-diana" class="lesson-section-heading">
+                Diana de Autoevaluación Interactiva
+              </h2>
+              <p>Selecciona la opción que mejor representa tu aprendizaje.</p>
+            </div>
+          </div>
+          <div class="self-eval-grid">
+            <!-- AUTOEVALUACIÓN 1.1 · Criterio 5.2.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.1</strong> Explico los movimientos de la Tierra y sus consecuencias.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.1">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.2 · Criterio 5.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.2</strong> Identifico en un mapa formas de relieve de Andalucía y España.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.2">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.3 · Criterio 2.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.3</strong> Reconozco ríos principales y explico el ciclo del agua con ejemplos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.3">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.4 · Criterio 2.3.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.4</strong> Observo el tiempo y registro datos meteorológicos.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.4">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.5 · Criterio 2.4.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.5</strong> Diferencio tiempo y clima y describo algunas zonas climáticas.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.5">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.6 · Criterio 1.1.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.6</strong> Me oriento e interpreto mapas, leyendas y fuentes de información.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.6">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.7 · Criterio 2.5.b -->
+            <div class="eval-row">
+              <p class="eval-statement"><strong>1.7</strong> Colaboro en el atlas y presento sus mapas y conclusiones.</p>
+              <div class="auto-eval-group" role="group" aria-label="Autoevaluación 1.7">
+                <button type="button" class="eval-btn" data-rating="Casi nunca" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="eval-btn" data-rating="A veces" aria-pressed="false">A veces</button>
+                <button type="button" class="eval-btn" data-rating="Casi siempre" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="eval-btn" data-rating="Siempre" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <div class="eval-actions">
+            <button id="eval-reset" type="button" class="lnl-btn secondary">
+              Borrar respuestas
+            </button>
+            <p id="eval-status" aria-live="polite">Has valorado 0 de 7 apartados.</p>
+          </div>
+        </section>
+      </div>
+
+      <p class="closing-link">
+        <a href="/recursos/cuarto/conocimiento-medio4/">
+          ← Volver a Conocimiento del Medio 4.º
+        </a>
+      </p>
+    </div>
+  </main>
+
+  <!-- ======================================================
+       PIE INSTITUCIONAL DEL CENTRO
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img
+          src="/img/junta-educacion.png"
+          alt="Junta de Andalucía - Consejería de Educación"
+        >
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a
+          href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <a href="#contenido-principal">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interacciones reutilizadas de los HTML de Lengua 4.º. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuestionario: una caja rectangular seleccionada por pregunta.
+      const questions = Array.from(document.querySelectorAll('#quiz-cm41 .quiz-question'));
+      const quizSummary = document.getElementById('quiz-summary');
+      const quizCheck = document.getElementById('quiz-check');
+      const quizReset = document.getElementById('quiz-reset');
+
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const button = event.target.closest('.quiz-option');
+          if (!button || !question.contains(button)) {
+            return;
+          }
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          quizSummary.textContent = '';
+        });
+      });
+
+      quizCheck.addEventListener('click', function () {
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector('.quiz-option[aria-pressed="true"]');
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Sin responder.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === question.dataset.answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const answer = question.querySelector(
+              '.quiz-option[data-option="' + question.dataset.answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              answer.textContent.trim();
+          }
+        });
+
+        quizSummary.textContent = 'Resultado: ' + correct + ' de ' +
+          questions.length + ' respuestas correctas. Contestadas: ' +
+          answered + ' de ' + questions.length + '.';
+      });
+
+      quizReset.addEventListener('click', function () {
+        questions.forEach(function (question) {
+          question.querySelectorAll('.quiz-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        quizSummary.textContent = '';
+      });
+
+      // Diana de autoevaluación: cuatro niveles, una única elección por fila.
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const evalStatus = document.getElementById('eval-status');
+      const evalReset = document.getElementById('eval-reset');
+
+      function updateEvaluation() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('.eval-btn[aria-pressed="true"]');
+        }).length;
+        evalStatus.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('.eval-btn');
+          if (!button || !group.contains(button)) {
+            return;
+          }
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+          });
+          updateEvaluation();
+        });
+      });
+
+      evalReset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('.eval-btn').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateEvaluation();
+      });
+    });
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
