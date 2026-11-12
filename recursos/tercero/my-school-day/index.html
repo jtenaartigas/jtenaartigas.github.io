@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ING3.3 My school day. Inglés de 3.º de Primaria: lugares y materiales escolares, asignaturas, días, horas en punto, horario y aficiones. CEIP Joaquín Tena Artigas." name="description"/>
+<title>My school day | Inglés 3.º | CEIP Joaquín Tena Artigas</title>
+<link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+<link href="/css/base.css" rel="stylesheet"/>
+<!-- El verde institucional se emplea en todas las SdA; el violeta se reserva para el índice de Inglés. -->
+<style>
+    :root { --ing-green: #007a33; --ing-dark: #005724; --ing-pale:#e6f4ea; --ing-line:#d1e7dd; --ing-text:#1e293b; --ing-muted:#475569; --ing-bg:#f4f7f5; --ing-amber:#b45309; }
+    html { scroll-behavior:smooth; }
+    .topic-page { background:var(--ing-bg); color:var(--ing-text); font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+    .topic-page * { box-sizing:border-box; }
+    .topic-page .topic-shell { width:min(94%,1280px); margin:0 auto; padding:1.5rem 0 3rem; }
+    .topic-page .topic-content section[id] { scroll-margin-top:90px; }
+    .topic-page .topic-hero { border-radius:1.55rem; background:linear-gradient(115deg,#005724 0%,#007a33 62%,#00a847 100%); color:#fff; padding:clamp(1.5rem,4.5vw,3rem); margin:1rem 0 2rem; position:relative; overflow:hidden; display:grid; align-items:center; grid-template-columns:minmax(0,1fr) 170px; gap:1.4rem; box-shadow:0 10px 28px rgba(0,87,36,.17); }
+    .topic-page .topic-hero::before { content:"School!"; position:absolute; right:12rem; bottom:-2.8rem; font-size:clamp(3rem,10vw,8rem); font-weight:900; letter-spacing:-.06em; color:#fff; opacity:.08; pointer-events:none; }
+    .topic-page .topic-hero h1 { color:#fff; margin:0 0 .85rem; line-height:1.07; font-size:clamp(1.9rem,5vw,3.2rem); font-weight:850; }
+    .topic-page .topic-hero p { margin:0; max-width:750px; color:#effff2; line-height:1.65; font-size:clamp(.98rem,2vw,1.09rem); }
+    .topic-page .topic-tag { display:inline-block; margin:0 0 .9rem; padding:.35rem .75rem; border:1px solid rgba(255,255,255,.45); border-radius:999px; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+    .topic-page .topic-hero-image { width:100%; max-height:185px; object-fit:contain; position:relative; z-index:1; }
+    .topic-page .topic-nav { padding:1.25rem 1.35rem; margin-bottom:2rem; background:#fff; border:1px solid var(--ing-line); border-radius:1rem; box-shadow:0 2px 12px rgba(0,87,36,.04); }
+    .topic-page .topic-nav h2 { margin:0 0 .9rem; color:var(--ing-dark); font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+    .topic-page .topic-nav-links { display:flex; flex-wrap:wrap; gap:.55rem; }
+    .topic-page .nav-link { display:inline-block; padding:.52rem .76rem; border-radius:.55rem; background:#f1f5f9; color:#334155; text-decoration:none; font-size:.85rem; font-weight:650; transition:background .2s,color .2s; }
+    .topic-page .nav-link:hover,.topic-page .nav-link:focus-visible { background:var(--ing-green); color:#fff; }
+    .topic-page .nav-link.is-review { background:#fef3c7; color:#92400e; } .topic-page .nav-link.is-self { background:#e0e7ff; color:#3730a3; }
+    .topic-page .topic-content { display:grid; gap:1.75rem; }
+    .topic-page .topic-section { min-width:0; padding:clamp(1.15rem,3vw,2rem); border:1px solid #e5eee8; border-radius:1.35rem; background:#fff; box-shadow:0 4px 20px -2px rgba(0,122,51,.08); }
+    .topic-page .section-head { display:flex; align-items:center; gap:.9rem; margin-bottom:1.25rem; }
+    .topic-page .section-number { display:flex; align-items:center; justify-content:center; flex:0 0 auto; min-width:3.2rem; height:3.1rem; padding:0 .55rem; border-radius:.75rem; background:var(--ing-green); color:#fff; font-weight:850; font-size:1.07rem; }
+    .topic-page .section-title { margin:0; color:#153c28; font-size:clamp(1.25rem,2.6vw,1.65rem); font-weight:800; line-height:1.2; }
+    .topic-page .section-subtitle { margin:.35rem 0 0; color:#64748b; font-size:.85rem; }
+    .topic-page .theory-box { background:#f0f8f2; padding:1.25rem 1.35rem; border:1px solid var(--ing-line); border-left:5px solid var(--ing-green); border-radius:1rem; margin:1rem 0 1.2rem; }
+    .topic-page .theory-title { color:var(--ing-dark); font-weight:800; font-size:1.04rem; margin:0 0 .75rem; }
+    .topic-page p,.topic-page li { line-height:1.7; } .topic-page p { margin:.65rem 0; }
+    .topic-page strong { font-weight:800; } .topic-page .theory-box strong { color:#185c34; }
+    .topic-page ul,.topic-page ol { padding-left:1.3rem; margin:.65rem 0; } .topic-page li+li { margin-top:.24rem; }
+    .topic-page .example { background:#fff; padding:.85rem 1rem; margin:.85rem 0 0; border:1px solid #cce3d3; border-radius:.7rem; }
+    .topic-page .example-title { margin:0 0 .3rem; color:#115a31; font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em; }
+    .topic-page .vocab-grid,.topic-page .exercise-grid,.topic-page .cols { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .topic-page .word-card { min-width:0; border:1px solid #d8e5dd; background:#fff; padding:1rem; border-radius:.85rem; }
+    .topic-page .word-card h4 { font-size:.94rem; color:var(--ing-dark); margin:0 0 .5rem; }
+    .topic-page .word-card p { margin:.25rem 0; font-size:.92rem; }
+    .topic-page .exercise-grid { margin-top:1.05rem; }
+    .topic-page .exercise-card { background:#f8fafc; border:1px solid #e2e8f0; padding:1.1rem 1.2rem; border-radius:1rem; min-width:0; }
+    .topic-page .exercise-card p { font-size:.94rem; margin:.6rem 0; }
+    .topic-page .exercise-label { display:inline-block; background:var(--ing-green); border-radius:.35rem; color:white; font-weight:800; font-size:.77rem; padding:.27rem .56rem; margin-bottom:.3rem; }
+    .topic-page .activity-label { display:inline-block; border-radius:999px; background:#ddf5e5; padding:.24rem .7rem; color:#11552c; font-size:.79rem; font-weight:800; margin:.4rem 0 .6rem; }
+    .topic-page .exercise-card ol,.topic-page .exercise-card ul { font-size:.92rem; padding-left:1.15rem; }
+    .topic-page .writing-lines { border-top:1px dashed #cbd5e1; margin:.9rem 0 0; padding-top:.5rem; color:#64748b; font-size:.83rem; }
+    .topic-page .tbl-wrap { width:100%; overflow-x:auto; border:1px solid #d4e6d9; border-radius:.8rem; background:#fff; margin:1rem 0; }
+    .topic-page table { width:100%; border-collapse:collapse; text-align:left; font-size:.92rem; }
+    .topic-page th { background:#dff2e6; color:#124d2b; font-weight:800; } .topic-page th,.topic-page td { padding:.62rem .82rem; border-bottom:1px solid #e2eee5; vertical-align:top; }
+    .topic-page tr:last-child td { border-bottom:0; }
+    .topic-page .note { border-left:4px solid #d97706; background:#fffbeb; border-radius:.4rem; padding:.75rem .9rem; margin:.9rem 0; font-size:.91rem; }
+    .topic-page .audio-box { background:#fff; border:1px solid #d8e6de; padding:1rem 1.1rem; border-radius:.9rem; margin:1rem 0; }
+    .topic-page .audio-box audio { display:block; width:100%; margin:.6rem 0; }
+    .topic-page .audio-box .small { font-size:.8rem; color:#64748b; margin:0; }
+    .topic-page details { border:1px solid #dbe8df; background:#fff; padding:.75rem .95rem; border-radius:.65rem; margin:.65rem 0; }
+    .topic-page summary { cursor:pointer; color:#14532d; font-weight:750; }
+    .topic-page .speaker { color:#115e35; font-weight:800; }
+    .topic-page .profile-example { border:2px solid #bbdfc7; border-radius:1rem; padding:1.2rem; margin:.9rem 0; background:#fff; }
+    .topic-page .profile-example h4 { margin:0 0 .6rem; font-size:1.05rem; color:var(--ing-dark); }
+    .topic-page .info-strip { display:flex; gap:.55rem; flex-wrap:wrap; margin:.7rem 0; }
+    .topic-page .pill { display:inline-block; border:1px solid #c0dfcb; background:#f3faf5; border-radius:999px; font-size:.82rem; padding:.27rem .65rem; color:#22563b; font-weight:700; }
+    .topic-page .step-list { counter-reset:steps; list-style:none; padding:0; } .topic-page .step-list li { counter-increment:steps; padding:.6rem .5rem .6rem 2.65rem; position:relative; } .topic-page .step-list li::before { content:counter(steps); position:absolute; left:0; top:.56rem; display:grid; place-items:center; height:1.75rem; width:1.75rem; border-radius:50%; background:#dff2e6; color:#12552d; font-weight:850; }
+    .topic-page .mini-button,.topic-page button.check-btn { cursor:pointer; padding:.55rem .9rem; border:0; border-radius:.6rem; color:#fff; background:#007a33; font-weight:800; font-size:.85rem; }
+    .topic-page .mini-button:hover,.topic-page button.check-btn:hover { background:#005724; }
+    .topic-page .review-section { border:2px solid var(--ing-green); }
+    .topic-page .checklist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.6rem; }
+    .topic-page .checklist label { display:flex; align-items:flex-start; gap:.45rem; background:#f8fafc; border:1px solid #e2e8f0; padding:.75rem; border-radius:.7rem; font-size:.91rem; cursor:pointer; }
+    .topic-page .checklist input { margin-top:.25rem; accent-color:#007a33; }
+    .topic-page .self-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
+    .topic-page .self-item { border:1px solid #dce7e0; padding:.75rem; border-radius:.75rem; background:#fafdfa; }
+    .topic-page .self-item p { font-size:.89rem; font-weight:700; margin:.05rem 0 .5rem; }
+    .topic-page .self-item label { font-size:.85rem; margin-right:.9rem; white-space:nowrap; }
+    .topic-page .self-item input { accent-color:#007a33; }
+    .topic-page textarea { display:block; width:100%; min-height:5rem; padding:.7rem .8rem; border:1px solid #cbd5e1; border-radius:.6rem; font:inherit; resize:vertical; }
+    .topic-page .footer-link { display:inline-block; margin-top:1.7rem; color:#11562e; text-decoration:none; font-weight:800; }
+    .topic-page .footer-link:hover { text-decoration:underline; }
+    .topic-page :focus-visible { outline:3px solid #d97706; outline-offset:3px; }
+    @media (max-width:800px) { .topic-page .topic-hero { grid-template-columns:minmax(0,1fr) 110px; } }
+    @media (max-width:650px) { .topic-page .topic-hero { grid-template-columns:1fr; } .topic-page .topic-hero-image { width:132px; justify-self:end; } .topic-page .vocab-grid,.topic-page .exercise-grid,.topic-page .cols,.topic-page .checklist,.topic-page .self-grid { grid-template-columns:1fr; } .topic-page .section-number { min-width:2.75rem; height:2.75rem; font-size:.93rem; } .topic-page .section-head { align-items:flex-start; } }
+    @media print { .site-banner,.navigation-wrapper,.skip-link,.topic-nav, .topic-page .mini-button,.topic-page button.check-btn { display:none!important; } .topic-page .topic-section { break-inside:avoid; box-shadow:none; } .topic-page .topic-hero { box-shadow:none; } .topic-page .topic-shell { width:100%; } }
+
+    /* =========================================================
+       REPASAMOS · FICHAS DE REFUERZO Y AMPLIACIÓN
+       Clases compartidas con las SdA de Lengua 4.º y Matemáticas 4.º
+       ========================================================= */
+    .topic-page .sda-recap { border:2px solid #007a33; }
+    .topic-page .recap-heading { display:flex; gap:.9rem; align-items:flex-start; margin:0 0 1.5rem; }
+    .topic-page .recap-heading .section-title { margin:.12rem 0 0; }
+    .topic-page .recap-heading p { margin:.35rem 0 0; color:#65736b; font-size:.87rem; }
+    .topic-page .heading-icon { display:inline-grid; place-items:center; min-width:3rem; min-height:2.8rem; background:#007a33; color:#fff; border-radius:12px; font-size:1.2rem; }
+    .topic-page .heading-icon--indigo { background:#4f46e5; }
+    .topic-page .recap-sheet + .recap-sheet { margin-top:2.5rem; }
+    .topic-page .sheet-heading { padding:.85rem 1rem; border-left:4px solid #007a33; border-radius:0 12px 12px 0; background:#ecfdf3; margin:0 0 1.2rem; }
+    .topic-page .sheet-heading h3 { margin:0; font-size:1.05rem; color:#005724; font-weight:800; }
+    .topic-page .sheet-heading--ampliacion { background:#fffbeb; border-color:#d97706; }
+    .topic-page .sheet-heading--ampliacion h3 { color:#92400e; }
+    .topic-page .sheet-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .topic-page .sheet-card { min-width:0; padding:1.15rem 1.25rem; background:#f8faf9; border:1px solid #dce6e0; border-radius:16px; }
+    .topic-page .sheet-card h4 { display:inline-block; margin:0 0 .75rem; padding:.32rem .6rem; border-radius:7px; color:white; background:#007a33; font-size:.9rem; font-weight:800; line-height:1.35; }
+    .topic-page .sheet-card--ampliacion h4 { background:#b45309; }
+    .topic-page .sheet-card p { margin:0 0 .65rem; font-size:.92rem; line-height:1.55; }
+    .topic-page .sheet-questions { list-style:lower-alpha; margin:0; padding-left:1.5rem; }
+    .topic-page .sheet-questions li { margin:0 0 .55rem; line-height:1.55; font-size:.93rem; }
+    .topic-page .sheet-questions li:last-child { margin-bottom:0; }
+    /* =========================================================
+       COMPRUEBA LO APRENDIDO · cuestionario autocorregible
+       ========================================================= */
+    .topic-page .check-learning { border-radius:18px; box-shadow:0 4px 20px -2px rgba(0,122,51,.08); }
+    .topic-page .quiz-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.15rem 0; }
+    .topic-page .quiz-grid .quiz-item { min-width:0; border:1px solid #d7e6db; background:#fbfdfb; border-radius:13px; padding:1rem; }
+    .topic-page .quiz-grid .quiz-item legend { color:#274d37; font-weight:750; padding:.1rem .25rem; font-size:.94rem; }
+    /* Respuestas como tarjetas seleccionables, no radios circulares. */
+    .topic-page .quiz-options { display:grid; grid-template-columns:1fr; gap:.55rem; margin-top:.85rem; }
+    .topic-page .quiz-grid .quiz-item .quiz-option {
+      position:relative; display:flex; align-items:center; min-height:2.65rem; width:100%;
+      padding:.62rem .82rem; margin:0; border:1.5px solid #cbd5e1; border-radius:.65rem;
+      background:#fff; color:#334155; font-size:.91rem; font-weight:650;
+      line-height:1.45; cursor:pointer; transition:background .15s,border-color .15s,color .15s;
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option:hover { border-color:#007a33; background:#f0f9f3; }
+    .topic-page .quiz-grid .quiz-item .quiz-option input[type="radio"] {
+      position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;
+      clip-path:inset(50%); margin:0; padding:0;
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option:focus-within { outline:2px solid #005724; outline-offset:2px; }
+    .topic-page .quiz-grid .quiz-item .quiz-option.selected,
+    .topic-page .quiz-grid .quiz-item .quiz-option:has(input[type="radio"]:checked) {
+      background:#007a33; border-color:#005724; color:#fff; box-shadow:0 2px 8px rgba(0,87,36,.12);
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option.selected span,
+    .topic-page .quiz-grid .quiz-item .quiz-option:has(input[type="radio"]:checked) span { color:#fff; }
+    .topic-page .quiz-grid .quiz-item.correct { border-color:#3c9961; background:#f2fcf5; }
+    .topic-page .quiz-grid .quiz-item.incorrect { border-color:#d79a71; background:#fffaf5; }
+    .topic-page .quiz-grid .quiz-feedback { display:block; min-height:1em; padding:0; border:0; margin:.65rem 0 0; background:none; color:#475569; font-size:.86rem; font-weight:650; }
+    .topic-page .quiz-actions,.topic-page .button-row { display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+    .topic-page .action-button { border:0; border-radius:11px; padding:.75rem 1.1rem; background:#007a33; color:white; cursor:pointer; font:inherit; font-weight:750; }
+    .topic-page .action-button.secondary { background:#e9f3ed; color:#005724; }
+    .topic-page .action-button:hover,.topic-page .action-button:focus-visible { filter:brightness(.94); }
+    .topic-page #quiz-result { margin:1rem 0 0; font-weight:750; color:#005724; }
+    /* =========================================================
+       DIANA DE AUTOEVALUACIÓN INTERACTIVA · ocho apartados
+       ========================================================= */
+    .topic-page .self-eval { border:2px solid #c7d2fe; }
+    .topic-page .diana-list { display:grid; gap:.9rem; margin-top:1.2rem; }
+    .topic-page .diana-row { display:flex; justify-content:space-between; align-items:center; gap:1.1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:1rem; }
+    .topic-page .diana-row p { flex:1 1 350px; margin:0; line-height:1.5; }
+    .topic-page .diana-row strong { color:#007a33; margin-right:.25rem; }
+    .topic-page .diana-options { flex:0 1 430px; display:flex; flex-wrap:wrap; gap:.35rem; }
+    .topic-page .diana-option { border:1px solid #cbd5e1; background:white; color:#475569; cursor:pointer; padding:.47rem .65rem; border-radius:8px; font:inherit; font-size:.75rem; font-weight:750; }
+    .topic-page .diana-option:hover,.topic-page .diana-option:focus-visible { border-color:#4f46e5; }
+    .topic-page .diana-option[aria-pressed="true"] { color:white; background:#4f46e5; border-color:#4f46e5; }
+    .topic-page .eval-actions { display:flex; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1.3rem; }
+    .topic-page #eval-status { flex:1 1 240px; margin:0; color:#475569; }
+    .topic-page .goal-label { display:block; margin:1rem 0 .5rem; }
+    @media (max-width:900px) {
+      .topic-page .diana-row { flex-direction:column; align-items:stretch; }
+      .topic-page .diana-options { flex:auto; }
+    }
+    @media (max-width:760px) {
+      .topic-page .sheet-grid,.topic-page .quiz-grid { grid-template-columns:1fr; }
+    }
+    @media print {
+      .topic-page .diana-options,.topic-page .quiz-actions,.topic-page .eval-actions { display:none!important; }
+      .topic-page .sda-recap,.topic-page .self-eval,.topic-page .check-learning { box-shadow:none; break-inside:auto; }
+      .topic-page .sheet-card { break-inside:avoid; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+<!-- Banner y menú del centro: misma estructura y clases que los índices de Inglés y las demás SdA. -->
+<header class="site-banner"><a aria-label="Ir a la página de inicio" href="/"><img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/></a></header>
+<div class="navigation-wrapper"><div class="navigation-container">
+<a aria-label="Ir a la página de inicio" class="navigation-logo" href="/"><img alt="" src="/img/logo-centro.png"/></a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation"><ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red"><a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">🔒</span> Área privada Profesorado</a></li>
+</ul></nav>
+</div></div>
+<!-- DESTINO: /recursos/tercero/ingles3/my-school-day/index.html -->
+<main class="topic-page" id="contenido-principal"><div class="topic-shell">
+<nav aria-label="Migas de pan" class="breadcrumbs"><ol>
+<li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li>
+<li><a href="/recursos/tercero/">3.º de Primaria</a></li>
+<li><a href="/recursos/tercero/ingles3/">Inglés</a></li>
+<li aria-current="page">My school day</li>
+</ol></nav>
+<section aria-labelledby="main-title" class="topic-hero">
+<div><span class="topic-tag">Inglés · 3.º Primaria · ING3.3</span>
+<h1 id="main-title">3. MY SCHOOL DAY</h1>
+<p>Descubre las asignaturas, los espacios de tu colegio y las horas en inglés. Aprende a hablar de tu jornada escolar y crea tu propio horario ilustrado: <em>My School Timetable</em>.</p>
+</div>
+<img alt="" class="topic-hero-image" src="/img/tomatito/ingles.png"/>
+</section>
+<nav aria-label="Contenidos de la Situación de Aprendizaje" class="topic-nav">
+<h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+<div class="topic-nav-links">
+<a class="nav-link" href="#sec-1">3.1 My school day</a>
+<a class="nav-link" href="#sec-2">3.2 Read our school timetable</a>
+<a class="nav-link" href="#sec-3">3.3 What time is it?</a>
+<a class="nav-link" href="#sec-4">3.4 I like English!</a>
+<a class="nav-link" href="#sec-5">3.5 What day? What time?</a>
+<a class="nav-link" href="#sec-6">3.6 Can you read my timetable?</a>
+<a class="nav-link" href="#sec-7">3.7 Learning English step by step</a>
+<a class="nav-link" href="#sec-8">3.8 I can do it!</a>
+<a class="nav-link is-review" href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+<a class="nav-link" href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+<a class="nav-link is-self" href="#sec-diana">🎯 Autoevaluación</a>
+</div>
+</nav>
+<div class="topic-content">
+<!-- APARTADO 3.1. TAREA 1. CRITERIO ING.3.1.1 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.1.1" id="sec-1"><div class="section-head"><span class="section-number">3.1</span><div><h2 class="section-title">My school day</h2><p class="section-subtitle">Escuchamos y comprendemos las asignaturas, las actividades y las horas de una jornada escolar.</p></div></div><div class="theory-box"><h3 class="theory-title">At school — En el colegio</h3><p>En el colegio aprendemos en distintos espacios y utilizamos diferentes materiales. Escucha las palabras, léelas y relaciónalas con el lugar o el objeto que representan.</p><div class="vocab-grid"><div class="word-card"><h4>🏫 School places — Lugares</h4><p><strong>classroom</strong> — aula</p><p><strong>playground</strong> — patio</p><p><strong>library</strong> — biblioteca</p><p><strong>gym</strong> — gimnasio</p><p><strong>school</strong> — colegio</p></div><div class="word-card"><h4>🎒 School things — Materiales</h4><p><strong>book</strong> — libro</p><p><strong>pencil</strong> — lápiz</p><p><strong>ruler</strong> — regla</p><p><strong>notebook</strong> — cuaderno</p><p><strong>school bag</strong> — mochila</p><p><strong>pencil case</strong> — estuche</p></div></div><div class="example"><p class="example-title">Listen and say — Escucha y di</p><p><strong>I go to school.</strong> — Voy al colegio.<br/><strong>I have a book.</strong> — Tengo un libro.<br/><strong>I play in the playground.</strong> — Juego en el patio.</p></div></div><div class="theory-box"><h3 class="theory-title">Listen to Mia — Un día de clase</h3><p>Mia es un personaje imaginario. Antes de escuchar, fíjate en las palabras <strong>Monday</strong>, <strong>English</strong>, <strong>Maths</strong> y <strong>break time</strong>. En la segunda escucha, busca las horas.</p><div class="audio-box"><strong>🎧 Listening: Mia’s Monday</strong><p>Escucha el día escolar de Mia. Después responde sin mirar la transcripción.</p><audio controls="" preload="none"><source src="/media/ing3-3-mias-monday.mp3" type="audio/mpeg"/>Tu navegador no admite el reproductor de audio.</audio><p class="small">Archivo de audio: <code>/media/ing3-3-mias-monday.mp3</code></p><details><summary>Mostrar la transcripción después de escuchar</summary><p><span class="speaker">Mia:</span> Hello! I am Mia. On Monday, I have English at nine o’clock. I have Maths at ten o’clock. At eleven o’clock, it’s break time. I have Science at twelve o’clock. I like English. I play football at break time.</p></details></div><div class="example"><p class="example-title">Three clues — Tres pistas</p><p><strong>English at nine</strong> indica la asignatura y la hora.<br/><strong>Maths at ten</strong> indica otra clase.<br/><strong>football at break time</strong> nos dice qué juego elige Mia.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Escucha y contesta.</p><ol type="a"><li>¿Cómo se llama la niña que habla?</li><li>¿Qué asignatura tiene a las nueve?</li><li>¿Qué asignatura tiene a las diez?</li><li>¿A qué juega durante el recreo?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>True or false.</p><ol type="a"><li>Mia has English at nine o’clock.</li><li>Mia has Music at ten o’clock.</li><li>Break time is at eleven o’clock.</li><li>Mia plays football at break time.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Relaciona palabra y significado.</p><ol type="a"><li>¿Qué significa <em>playground</em>?</li><li>¿Qué significa <em>notebook</em>?</li><li>¿Qué significa <em>library</em>?</li><li>¿Qué significa <em>pencil case</em>?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Busca información en el audio.</p><ol type="a"><li>¿Qué palabra significa «lunes»?</li><li>¿Qué expresión significa «recreo»?</li><li>¿Qué palabra indica la asignatura de Ciencias?</li><li>Escribe una oración del audio que hayas entendido.</li></ol></article></div></section>
+<!-- APARTADO 3.2. TAREA 2. CRITERIO ING.3.1.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.1.2" id="sec-2"><div class="section-head"><span class="section-number">3.2</span><div><h2 class="section-title">Read our school timetable</h2><p class="section-subtitle">Interpretamos un horario con palabras conocidas, símbolos y pistas visuales.</p></div></div><div class="theory-box"><h3 class="theory-title">Days and school subjects — Días y asignaturas</h3><p>Un <strong>timetable</strong> es un horario. Para leerlo buscamos dos datos: el <strong>día</strong> en la columna y la <strong>hora</strong> en la fila. No necesitamos traducir todas las palabras al mismo tiempo.</p><div class="vocab-grid"><div class="word-card"><h4>📅 Days — Días</h4><p><strong>Monday</strong> — lunes</p><p><strong>Tuesday</strong> — martes</p><p><strong>Wednesday</strong> — miércoles</p><p><strong>Thursday</strong> — jueves</p><p><strong>Friday</strong> — viernes</p></div><div class="word-card"><h4>📚 Subjects — Asignaturas</h4><p><strong>English</strong> — Inglés</p><p><strong>Maths</strong> — Matemáticas</p><p><strong>Science</strong> — Conocimiento del Medio / Ciencias</p><p><strong>Art</strong> — Artística</p><p><strong>Music</strong> — Música</p><p><strong>PE</strong> — Educación Física</p><p><strong>Spanish</strong> — Lengua</p></div></div><div class="example"><p class="example-title">Read the timetable</p><p><strong>On Tuesday at ten o’clock: English.</strong><br/><strong>On Wednesday at twelve o’clock: English.</strong><br/>Observa cómo la fila indica la hora y la columna indica el día.</p></div></div><div class="theory-box"><h3 class="theory-title">A timetable with clues — Un horario con pistas</h3><p>Este horario es <strong>ficticio</strong> y sirve para practicar. Lee primero la fila superior (los días), después la primera columna (las horas) y finalmente busca la casilla donde se cruzan.</p><div class="tbl-wrap"><table><thead><tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead><tbody><tr><td>9 o’clock</td><td>English</td><td>Maths</td><td>Science</td><td>Spanish</td><td>PE</td></tr><tr><td>10 o’clock</td><td>Maths</td><td>English</td><td>Art</td><td>Maths</td><td>Science</td></tr><tr><td>11 o’clock</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td></tr><tr><td>12 o’clock</td><td>Science</td><td>PE</td><td>English</td><td>Art</td><td>Maths</td></tr><tr><td>1 o’clock</td><td>Art</td><td>Music</td><td>Music</td><td>Science</td><td>English</td></tr></tbody></table></div><p>La palabra <strong>Break</strong> señala el recreo; en este ejemplo es a las once todos los días. <strong>PE</strong> es la abreviatura de <em>Physical Education</em>.</p><div class="example"><p class="example-title">Reading strategy — Estrategia</p><p>Si te preguntan <strong>What is on Friday at nine?</strong>, busca <em>Friday</em> arriba y <em>9 o’clock</em> a la izquierda. La respuesta es <strong>PE</strong>.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Localiza asignaturas.</p><ol type="a"><li>¿Qué hay el martes a las diez?</li><li>¿Qué hay el viernes a las nueve?</li><li>¿Qué hay el jueves a las doce?</li><li>¿Qué hay el lunes a la una?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Localiza días.</p><ol type="a"><li>¿Qué día hay <em>Music</em> a la una y no es miércoles?</li><li>¿Qué día hay <em>English</em> a las doce?</li><li>¿Qué día hay <em>Maths</em> a las doce?</li><li>¿Qué día hay <em>Science</em> a las nueve?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>True or false.</p><ol type="a"><li>On Monday at nine, we have English.</li><li>On Tuesday at twelve, we have Art.</li><li>On Friday at one, we have English.</li><li>Break time is at eleven.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Aplica pistas.</p><ol type="a"><li>Señala la columna <em>Thursday</em>.</li><li>Señala la fila <em>10 o’clock</em>.</li><li>Escribe la asignatura donde se cruzan ambas.</li><li>Explica qué pista te ha ayudado a localizarla.</li></ol></article></div></section>
+<!-- APARTADO 3.3. TAREA 3. CRITERIO ING.3.2.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.2.2" id="sec-3"><div class="section-head"><span class="section-number">3.3</span><div><h2 class="section-title">What time is it?</h2><p class="section-subtitle">Escribimos frases sobre días, asignaturas y horas en punto.</p></div></div><div class="theory-box"><h3 class="theory-title">O’clock — La hora en punto</h3><p>En esta situación trabajamos <strong>solamente las horas en punto</strong>. Para preguntar utilizamos <strong>What time is it?</strong> (¿Qué hora es?). Para responder utilizamos <strong>It’s + hora + o’clock</strong>.</p><div class="tbl-wrap"><table><thead><tr><th>Reloj</th><th>En inglés</th></tr></thead><tbody><tr><td>9:00</td><td>It’s nine o’clock.</td></tr><tr><td>10:00</td><td>It’s ten o’clock.</td></tr><tr><td>11:00</td><td>It’s eleven o’clock.</td></tr><tr><td>12:00</td><td>It’s twelve o’clock.</td></tr><tr><td>1:00</td><td>It’s one o’clock.</td></tr></tbody></table></div><div class="example"><p class="example-title">A small difference</p><p><strong>It’s nine o’clock.</strong> — Son las nueve.<br/><strong>English is at nine o’clock.</strong> — Inglés es a las nueve.</p><p>En inglés, cuando decimos <strong>a las</strong> antes de una hora, usamos <strong>at</strong>.</p></div></div><div class="theory-box"><h3 class="theory-title">Write about your day — Escribe sobre tu día</h3><p>Las frases más útiles son <strong>I go to school</strong>, <strong>I study</strong>, <strong>I play</strong>, <strong>I like</strong> e <strong>I don’t like</strong>. Escribe palabras conocidas, deja espacios y termina con un punto.</p><div class="tbl-wrap"><table><thead><tr><th>Modelo</th><th>Significado</th></tr></thead><tbody><tr><td>I go to school at nine o’clock.</td><td>Voy al colegio a las nueve.</td></tr><tr><td>I study English on Monday.</td><td>Estudio Inglés el lunes.</td></tr><tr><td>I play football at break time.</td><td>Juego al fútbol en el recreo.</td></tr><tr><td>I like Art.</td><td>Me gusta Artística.</td></tr><tr><td>I don’t like basketball.</td><td>No me gusta el baloncesto.</td></tr></tbody></table></div><div class="example"><p class="example-title">A mini text — Un texto breve</p><p><strong>On Monday I study English. English is at nine o’clock. I like English. I play with my friends at break time.</strong></p><p>Utiliza el modelo para escribir tres o cuatro frases sobre tu propio horario o sobre un horario inventado.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Write the time.</p><ol type="a"><li>9:00 → It’s _____ o’clock.</li><li>10:00 → It’s _____ o’clock.</li><li>12:00 → It’s _____ o’clock.</li><li>1:00 → It’s _____ o’clock.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Completa las frases.</p><ol type="a"><li>English is _____ nine o’clock.</li><li>I _____ English on Monday.</li><li>I _____ football at break time.</li><li>I go _____ school at nine.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Ordena las palabras.</p><ol type="a"><li>nine / It’s / o’clock</li><li>at / is / Maths / ten / o’clock</li><li>English / like / I</li><li>on / study / I / Tuesday / Art</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Corrige los errores.</p><ol type="a"><li><em>its nine oclock.</em></li><li><em>English is in nine o’clock.</em></li><li><em>i like maths.</em></li><li><em>I dont like PE.</em></li></ol></article></div></section>
+<!-- APARTADO 3.4. TAREA 4. CRITERIO ING.3.3.1 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.3.1" id="sec-4"><div class="section-head"><span class="section-number">3.4</span><div><h2 class="section-title">I like English!</h2><p class="section-subtitle">Hablamos con una pareja de nuestras asignaturas y actividades favoritas.</p></div></div><div class="theory-box"><h3 class="theory-title">I like / I don’t like — Me gusta / No me gusta</h3><p>Para decir nuestras preferencias usamos <strong>I like</strong> o <strong>I don’t like</strong> delante de una asignatura o actividad. No es necesario que a todas las personas les gusten las mismas materias.</p><div class="tbl-wrap"><table><thead><tr><th>Frase en inglés</th><th>Significado</th></tr></thead><tbody><tr><td>I like Music.</td><td>Me gusta Música.</td></tr><tr><td>I don’t like Maths.</td><td>No me gustan las Matemáticas.</td></tr><tr><td>I like football.</td><td>Me gusta el fútbol.</td></tr><tr><td>I don’t like basketball.</td><td>No me gusta el baloncesto.</td></tr></tbody></table></div><div class="example"><p class="example-title">Remember — Recuerda</p><p><strong>I like English.</strong> ✓<br/><strong>I don’t like Art.</strong> ✓</p><p>Después de <em>I</em> usamos <strong>like</strong> o <strong>don’t like</strong>. Para preguntar a otra persona podemos decir <strong>Do you like Music?</strong>.</p></div></div><div class="theory-box"><h3 class="theory-title">Talk with a friend — Habla con alguien</h3><p>Una conversación en clase necesita <strong>escuchar</strong>, <strong>esperar nuestro turno</strong> y <strong>respetar</strong> las preferencias de otras personas.</p><div class="example"><p class="example-title">Speaking model — Conversación</p><p><span class="speaker">A:</span> Hello! Do you like Science?<br/><span class="speaker">B:</span> Yes, I do. I like Science.<br/><span class="speaker">A:</span> Do you like football?<br/><span class="speaker">B:</span> No, I don’t. I like basketball.<br/><span class="speaker">A:</span> Thank you!</p></div><div class="vocab-grid"><div class="word-card"><h4>🏀 Games and hobbies — Juegos</h4><p><strong>play football</strong> — jugar al fútbol</p><p><strong>play basketball</strong> — jugar al baloncesto</p><p><strong>draw</strong> — dibujar</p><p><strong>read</strong> — leer</p><p><strong>sing</strong> — cantar</p></div><div class="word-card"><h4>💬 Polite words — Cortesía</h4><p><strong>Hello!</strong> — ¡Hola!</p><p><strong>Please.</strong> — Por favor.</p><p><strong>Thank you.</strong> — Gracias.</p><p><strong>You’re welcome.</strong> — De nada.</p></div></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Say your favourites.</p><ol type="a"><li>Di dos asignaturas que te gusten.</li><li>Di una asignatura que no te guste.</li><li>Di un juego de recreo que te guste.</li><li>Escucha una preferencia de tu pareja.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Completa la conversación.</p><ol type="a"><li>A: Do you _____ Art?</li><li>B: Yes, I _____.</li><li>A: Do you like basketball?</li><li>B: No, I _____.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Make a mini-survey.</p><ol type="a"><li>Pregunta a un compañero por Music.</li><li>Pregunta a otro por Science.</li><li>Apunta sus respuestas sin escribir datos personales.</li><li>Explica una coincidencia en español.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Practice speaking.</p><ol type="a"><li>Empieza con <em>Hello!</em>.</li><li>Formula una pregunta con <em>Do you like…?</em>.</li><li>Responde con <em>Yes, I do</em> o <em>No, I don’t</em>.</li><li>Termina con <em>Thank you!</em>.</li></ol></article></div></section>
+<!-- APARTADO 3.5. TAREA 5. CRITERIO ING.3.3.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.3.2" id="sec-5"><div class="section-head"><span class="section-number">3.5</span><div><h2 class="section-title">What day? What time?</h2><p class="section-subtitle">Preguntamos y respondemos sobre los días, las asignaturas y las horas.</p></div></div><div class="theory-box"><h3 class="theory-title">Questions about school — Preguntas del colegio</h3><p>Para conseguir información necesitamos preguntas claras. <strong>What day…?</strong> significa «¿Qué día…?» y <strong>What time…?</strong> significa «¿A qué hora…?».</p><div class="tbl-wrap"><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody><tr><td>What day is it today?</td><td>It’s Tuesday.</td></tr><tr><td>What time is English?</td><td>English is at ten o’clock.</td></tr><tr><td>What time is break time?</td><td>Break time is at eleven o’clock.</td></tr><tr><td>Do you like English?</td><td>Yes, I do. / No, I don’t.</td></tr></tbody></table></div><div class="example"><p class="example-title">Help me, please</p><p>Si no comprendes, puedes pedir ayuda: <strong>Sorry?</strong> o <strong>Can you repeat, please?</strong>. Son formas educadas de pedir que repitan algo.</p></div></div><div class="theory-box"><h3 class="theory-title">Listen to Leo and Ana</h3><p>Leo y Ana practican preguntas sobre el horario ficticio. Escucha dos veces: primero identifica el día y después las horas y el juego.</p><div class="audio-box"><strong>🎧 Listening: A school conversation</strong><p>Escucha y averigua en qué día hablan y qué asignatura preguntan.</p><audio controls="" preload="none"><source src="/media/ing3-3-school-conversation.mp3" type="audio/mpeg"/>Tu navegador no admite el reproductor de audio.</audio><p class="small">Archivo de audio: <code>/media/ing3-3-school-conversation.mp3</code></p><details><summary>Mostrar la transcripción después de escuchar</summary><p><span class="speaker">Ana:</span> Good morning, Leo. What day is it today?</p><p><span class="speaker">Leo:</span> It’s Tuesday.</p><p><span class="speaker">Ana:</span> What time is English?</p><p><span class="speaker">Leo:</span> English is at ten o’clock.</p><p><span class="speaker">Ana:</span> What do you play at break time?</p><p><span class="speaker">Leo:</span> I play basketball.</p><p><span class="speaker">Ana:</span> Thank you!</p><p><span class="speaker">Leo:</span> You’re welcome!</p></details></div><div class="example"><p class="example-title">Ask, listen, answer</p><p><strong>A:</strong> What time is English?<br/><strong>B:</strong> English is at ten o’clock.<br/><strong>A:</strong> Can you repeat, please?<br/><strong>B:</strong> At ten o’clock.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Listen and answer.</p><ol type="a"><li>¿Qué día de la semana es?</li><li>¿A qué hora es Inglés?</li><li>¿A qué deporte juega Leo?</li><li>¿Cómo da las gracias Ana?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Match the questions.</p><ol type="a"><li>¿Qué significa <em>What day?</em>?</li><li>¿Qué significa <em>What time?</em>?</li><li>¿Qué significa <em>Sorry?</em>?</li><li>¿Qué significa <em>Can you repeat, please?</em>?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Order the dialogue.</p><ol type="a"><li>Ordena: <em>it / is / What / day / today?</em></li><li>Ordena: <em>is / English / What / time?</em></li><li>Ordena: <em>ten / at / is / English / o’clock</em></li><li>Escribe una despedida educada para terminar.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Role-play.</p><ol type="a"><li>Pregunta qué día es.</li><li>Pregunta a qué hora empieza una asignatura.</li><li>Pide que repitan una respuesta.</li><li>Agradece la ayuda y cambia de papel.</li></ol></article></div></section>
+<!-- APARTADO 3.6. TAREA 6. CRITERIO ING.3.4.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.4.2" id="sec-6"><div class="section-head"><span class="section-number">3.6</span><div><h2 class="section-title">Can you read my timetable?</h2><p class="section-subtitle">Elegimos símbolos, colores y palabras para explicar un horario a otras personas.</p></div></div><div class="theory-box"><h3 class="theory-title">Make your timetable easy — Un horario claro</h3><p>A veces una persona no comprende una palabra en inglés. Podemos ayudarla usando <strong>un símbolo</strong>, <strong>un dibujo</strong> y <strong>una palabra corta</strong>. Por ejemplo, un libro junto a <em>English</em> o una pelota junto a <em>PE</em>.</p><div class="tbl-wrap"><table><thead><tr><th>Symbol</th><th>Word</th><th>Meaning</th></tr></thead><tbody><tr><td>📖</td><td>English</td><td>Inglés</td></tr><tr><td>➕</td><td>Maths</td><td>Matemáticas</td></tr><tr><td>🎨</td><td>Art</td><td>Artística</td></tr><tr><td>🎵</td><td>Music</td><td>Música</td></tr><tr><td>⚽</td><td>PE</td><td>Educación Física</td></tr><tr><td>🍎</td><td>Break</td><td>Recreo</td></tr></tbody></table></div><div class="example"><p class="example-title">Explain with pictures</p><p>Señala la casilla <strong>Tuesday at ten</strong>, muestra el símbolo 📖 y di: <strong>English is at ten o’clock.</strong> Así transmites la información sin traducir cada palabra.</p></div></div><div class="theory-box"><h3 class="theory-title">My School Timetable — Nuestro producto final</h3><p>Elaborarás un <strong>horario escolar ilustrado</strong>. Puedes utilizar el horario real de tu clase o inventar uno. Escribe los días, las horas, las asignaturas y al menos tres frases para explicarlo.</p><div class="tbl-wrap"><table><thead><tr><th>Part</th><th>What to do</th></tr></thead><tbody><tr><td>1. Title</td><td>Escribe My School Timetable.</td></tr><tr><td>2. Days</td><td>Coloca Monday, Tuesday, Wednesday, Thursday, Friday.</td></tr><tr><td>3. Times</td><td>Añade horas en punto.</td></tr><tr><td>4. Subjects</td><td>Escribe materias y dibuja símbolos.</td></tr><tr><td>5. Speak</td><td>Explica tres casillas a otra persona.</td></tr></tbody></table></div><div class="example"><p class="example-title">My presentation — Mi presentación</p><p><strong>Hello! This is my school timetable. On Monday I have English at nine o’clock. I have Maths at ten o’clock. I like English. Thank you!</strong></p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Choose useful symbols.</p><ol type="a"><li>Dibuja un símbolo para English.</li><li>Dibuja uno para Art.</li><li>Dibuja uno para PE.</li><li>Explica por qué cada símbolo ayuda a comprender.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Build your timetable.</p><ol type="a"><li>Escribe cinco días en inglés.</li><li>Añade al menos tres horas en punto.</li><li>Distribuye seis asignaturas.</li><li>Colorea las casillas con una leyenda sencilla.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Explain a timetable.</p><ol type="a"><li>Di qué hay el lunes a las nueve.</li><li>Di qué hay el martes a las diez.</li><li>Señala un dibujo para apoyar la explicación.</li><li>Pregunta a tu compañero si lo ha entendido.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Review the final product.</p><ol type="a"><li>Comprueba la escritura de los días.</li><li>Comprueba que las horas estén claras.</li><li>Comprueba que los símbolos coincidan con las materias.</li><li>Ensaya tu presentación antes de compartirla.</li></ol></article></div></section>
+<!-- APARTADO 3.7. TAREA 7. CRITERIO ING.3.5.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.5.2" id="sec-7"><div class="section-head"><span class="section-number">3.7</span><div><h2 class="section-title">Learning English step by step</h2><p class="section-subtitle">Utilizamos tarjetas, repeticiones y modelos para aprender palabras nuevas.</p></div></div><div class="theory-box"><h3 class="theory-title">A little practice every day — Practicamos un poco cada día</h3><p>Recordamos mejor las expresiones cuando <strong>las agrupamos</strong> y <strong>las repasamos</strong> en momentos diferentes. Una tarjeta puede llevar una palabra en inglés por un lado y un dibujo por el otro.</p><div class="vocab-grid"><div class="word-card"><h4>🗂️ Subject cards — Tarjetas de asignaturas</h4><p><strong>English</strong> — 📖</p><p><strong>Maths</strong> — ➕</p><p><strong>Art</strong> — 🎨</p><p><strong>Music</strong> — 🎵</p><p><strong>PE</strong> — ⚽</p></div><div class="word-card"><h4>⏰ Time cards — Tarjetas de horas</h4><p><strong>nine o’clock</strong> — 9:00</p><p><strong>ten o’clock</strong> — 10:00</p><p><strong>eleven o’clock</strong> — 11:00</p><p><strong>twelve o’clock</strong> — 12:00</p><p><strong>one o’clock</strong> — 1:00</p></div></div><div class="example"><p class="example-title">Three steps — Tres pasos</p><p><strong>1.</strong> Look: mira la palabra y el dibujo.<br/><strong>2.</strong> Say: dilo sin leer.<br/><strong>3.</strong> Check: comprueba si lo recuerdas.</p></div></div><div class="theory-box"><h3 class="theory-title">A simple learning game — Juego de memoria</h3><p>Prepara tres grupos: <strong>days</strong>, <strong>subjects</strong> y <strong>times</strong>. Elige una tarjeta de cada grupo y forma una oración. No pasa nada si al principio necesitas mirar el modelo.</p><div class="example"><p class="example-title">Make a sentence</p><p><strong>Monday</strong> + <strong>Science</strong> + <strong>twelve o’clock</strong> → <strong>On Monday, I have Science at twelve o’clock.</strong></p><p>Elige combinaciones del horario ficticio o inventa tu propia jornada.</p></div><div class="tbl-wrap"><table><thead><tr><th>What helps me?</th><th>Example</th></tr></thead><tbody><tr><td>Pictures</td><td>Dibujo una pelota para PE.</td></tr><tr><td>Repeating</td><td>Digo Tuesday en voz alta varias veces.</td></tr><tr><td>Speaking with a partner</td><td>Pregunta: What time is Music?</td></tr><tr><td>Checking later</td><td>Repaso las tarjetas otro día.</td></tr></tbody></table></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Sort the words.</p><ol type="a"><li>Escribe tres días de la semana.</li><li>Escribe tres asignaturas.</li><li>Escribe dos horas en punto.</li><li>Clasifica <em>playground</em> como lugar escolar.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Make flashcards.</p><ol type="a"><li>Crea una tarjeta para Wednesday.</li><li>Crea una para Science.</li><li>Crea una para nine o’clock.</li><li>Practica las tres sin mirar el reverso.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Create sentences.</p><ol type="a"><li>Une Monday + English + nine.</li><li>Une Tuesday + PE + twelve.</li><li>Une Friday + English + one.</li><li>Lee una de tus frases en voz alta.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Choose your strategy.</p><ol type="a"><li>¿Te ayuda más un dibujo o repetir una palabra?</li><li>Usa esa estrategia con <em>Thursday</em>.</li><li>Comprueba si recuerdas la palabra después de cinco minutos.</li><li>Cuenta qué hiciste para recordarla.</li></ol></article></div></section>
+<!-- APARTADO 3.8. TAREA 8. CRITERIO ING.3.5.3 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.5.3" id="sec-8"><div class="section-head"><span class="section-number">3.8</span><div><h2 class="section-title">I can do it!</h2><p class="section-subtitle">Revisamos lo que hemos aprendido y elegimos una meta de mejora.</p></div></div><div class="theory-box"><h3 class="theory-title">Let’s check our progress — Revisamos nuestros avances</h3><p>Aprender inglés significa <strong>escuchar, leer, hablar y escribir</strong>. Podemos mejorar paso a paso y pedir ayuda cuando la necesitamos. Utiliza frases sencillas para explicar qué sabes hacer.</p><div class="tbl-wrap"><table><thead><tr><th>I can…</th><th>Puedo…</th></tr></thead><tbody><tr><td>I can name the days.</td><td>Nombrar los días.</td></tr><tr><td>I can read a timetable.</td><td>Leer un horario.</td></tr><tr><td>I can say the time.</td><td>Decir la hora en punto.</td></tr><tr><td>I can talk about school.</td><td>Hablar sobre el colegio.</td></tr><tr><td>I can ask for help.</td><td>Pedir ayuda.</td></tr></tbody></table></div><div class="example"><p class="example-title">It is OK to learn slowly</p><p>Si todavía no recuerdas una palabra, usa el dibujo, escucha otra vez o pide que te repitan la pregunta. <strong>Los errores ayudan a aprender.</strong></p></div></div><div class="theory-box"><h3 class="theory-title">My next step — Mi siguiente reto</h3><p>Una meta de aprendizaje es algo <strong>pequeño y concreto</strong> que queremos mejorar. Al final de la actividad, elegimos una expresión y practicamos con un compañero.</p><div class="example"><p class="example-title">A useful goal</p><p><strong>I can say: It’s nine o’clock.</strong><br/><strong>I want to practise: What time is English?</strong></p></div><p>Cuando termines los ejercicios, completa también la <strong>Diana de Autoevaluación Interactiva</strong> del final de la página.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>What can you do?</p><ol type="a"><li>Escribe una asignatura en inglés.</li><li>Escribe una frase con una hora en punto.</li><li>Escribe una pregunta para saber la hora.</li><li>Escribe una expresión de cortesía.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Choose the support.</p><ol type="a"><li>¿Qué dibujo te ayuda a reconocer PE?</li><li>¿Qué palabra buscarías primero en un horario?</li><li>¿Qué puedes decir si no oyes una respuesta?</li><li>¿Qué apoyo usarás para tu presentación?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Think about your work.</p><ol type="a"><li>Nombra una palabra que aprendiste.</li><li>Nombra una frase que ya puedes decir.</li><li>Explica qué te cuesta un poco más.</li><li>Elige una práctica corta para mejorar.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Share your progress.</p><ol type="a"><li>Explica tu horario a un compañero.</li><li>Escucha una sugerencia amable.</li><li>Mejora una oración de tu explicación.</li><li>Escribe una meta para la próxima semana.</li></ol></article></div></section>
+<!-- REPASAMOS LO APRENDIDO · DOS FICHAS -->
+<section aria-labelledby="titulo-repaso" class="topic-section lesson-section review-section sda-recap" id="sec-repaso">
+<div class="recap-heading">
+<span aria-hidden="true" class="heading-icon">🔄</span>
+<div><h2 class="section-title" id="titulo-repaso">Repasamos lo aprendido</h2><p>Dos fichas para repasar los ocho apartados: refuerzo y ampliación.</p></div>
+</div>
+<!-- FICHA DE REFUERZO -->
+<section aria-labelledby="titulo-refuerzo" class="recap-sheet review-group review-refuerzo">
+<div class="sheet-heading sheet-heading--refuerzo"><h3 id="titulo-refuerzo">🟢 Ficha de refuerzo</h3></div>
+<div class="sheet-grid review-grid"><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.1.1"><h4>Refuerzo 3.1 · Listen to Mia</h4><p>Recuerda los datos de la primera grabación.</p><ol class="sheet-questions" type="a"><li>¿A qué hora tiene Inglés Mia?</li><li>¿Qué asignatura tiene a las diez?</li><li>¿A qué hora es el recreo?</li><li>¿Qué deporte practica Mia en el recreo?</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.1.2"><h4>Refuerzo 3.2 · Read the timetable</h4><p>Consulta la tabla de clases.</p><ol class="sheet-questions" type="a"><li>¿Qué asignatura hay el lunes a las nueve?</li><li>¿Cuál hay el martes a las diez?</li><li>¿Qué hay el miércoles a las doce?</li><li>¿Qué hay el viernes a la una?</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.2.2"><h4>Refuerzo 3.3 · Say and write the time</h4><p>Practica expresiones horarias.</p><ol class="sheet-questions" type="a"><li>Escribe 9:00 con palabras inglesas.</li><li>Escribe 12:00 en inglés.</li><li>Completa: Maths is ___ ten o’clock.</li><li>Completa: I ___ to school.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.3.1"><h4>Refuerzo 3.4 · Talk about your favourites</h4><p>Usa frases de preferencias.</p><ol class="sheet-questions" type="a"><li>Completa: I ___ Art.</li><li>Completa: I ___ like football.</li><li>Pregunta a alguien si le gusta Music.</li><li>Responde afirmativamente con una frase breve.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.3.2"><h4>Refuerzo 3.5 · Ask about the time</h4><p>Recuerda la conversación de Ana y Leo.</p><ol class="sheet-questions" type="a"><li>¿Qué día menciona Leo?</li><li>¿A qué hora es Inglés?</li><li>¿Qué pregunta sirve para preguntar la hora de una asignatura?</li><li>¿Cómo pides que repitan una respuesta?</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.4.2"><h4>Refuerzo 3.6 · Explain your timetable</h4><p>Ayuda a comprender un horario.</p><ol class="sheet-questions" type="a"><li>Dibuja un símbolo para English.</li><li>Escribe el día Monday correctamente.</li><li>Di una frase sobre la hora de una clase.</li><li>Señala con el dedo la casilla de la que hablas.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.5.2"><h4>Refuerzo 3.7 · Use learning cards</h4><p>Recuerda vocabulario por grupos.</p><ol class="sheet-questions" type="a"><li>Escribe dos días de la semana.</li><li>Escribe dos asignaturas.</li><li>Escribe dos horas en punto.</li><li>Explica cómo utilizarías una tarjeta de memoria.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.5.3"><h4>Refuerzo 3.8 · My learning progress</h4><p>Piensa en lo que sabes hacer.</p><ol class="sheet-questions" type="a"><li>Escribe una expresión que ya recuerdas.</li><li>Escribe una pregunta que ya puedes formular.</li><li>Menciona un apoyo que te ha servido.</li><li>Elige una frase que necesitas practicar.</li></ol></article></div>
+</section>
+<!-- FICHA DE AMPLIACIÓN -->
+<section aria-labelledby="titulo-ampliacion" class="recap-sheet review-group review-ampliacion">
+<div class="sheet-heading sheet-heading--ampliacion"><h3 id="titulo-ampliacion">🟠 Ficha de ampliación</h3></div>
+<div class="sheet-grid review-grid"><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.1.1"><h4>Ampliación 3.1 · A new listening</h4><p>Utiliza información y crea un nuevo ejemplo.</p><ol class="sheet-questions" type="a"><li>Ordena las cuatro actividades que menciona Mia.</li><li>Escribe tres frases sobre las horas de Mia.</li><li>Cambia una asignatura y escribe otra versión ficticia.</li><li>Lee oralmente tu nueva versión con buena entonación.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.1.2"><h4>Ampliación 3.2 · Detectives of the timetable</h4><p>Razona a partir de casillas y pistas.</p><ol class="sheet-questions" type="a"><li>Busca todos los días con English y escribe las horas.</li><li>Encuentra dos asignaturas que aparezcan el martes.</li><li>Escribe dos preguntas cuya respuesta sea Music.</li><li>Inventa un dato nuevo y explica dónde lo colocarías.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.2.2"><h4>Ampliación 3.3 · My day in four sentences</h4><p>Escribe más información sobre una jornada.</p><ol class="sheet-questions" type="a"><li>Escribe cuatro frases con días y horas en punto.</li><li>Incluye una frase con <em>at</em>.</li><li>Incluye una frase con <em>I don’t like</em>.</li><li>Revisa mayúsculas, puntos y nombres de asignaturas.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.3.1"><h4>Ampliación 3.4 · Class preferences</h4><p>Explica distintas elecciones con respeto.</p><ol class="sheet-questions" type="a"><li>Prepara tres preguntas con <em>Do you like…?</em>.</li><li>Anota tres respuestas de compañeros sin nombres privados.</li><li>Escribe una frase con <em>I like</em> y otra con <em>I don’t like</em>.</li><li>Explica por qué podemos tener gustos distintos.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.3.2"><h4>Ampliación 3.5 · A helpful school dialogue</h4><p>Escribe una conversación algo más completa.</p><ol class="sheet-questions" type="a"><li>Incluye <em>What day is it today?</em>.</li><li>Añade <em>What time is Music?</em> usando un día del horario.</li><li>Pide repetición con <em>Can you repeat, please?</em>.</li><li>Cierra con una expresión cortés.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.4.2"><h4>Ampliación 3.6 · A clearer timetable</h4><p>Prepara una guía para una persona nueva.</p><ol class="sheet-questions" type="a"><li>Añade una leyenda con seis símbolos.</li><li>Escribe tres frases para describir el horario.</li><li>Comprueba que todos los símbolos se entiendan.</li><li>Explica qué cambio harías si alguien no lo comprende.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.5.2"><h4>Ampliación 3.7 · Memory challenge</h4><p>Amplía el uso de tus estrategias.</p><ol class="sheet-questions" type="a"><li>Haz una tarjeta con una pregunta en una cara y una respuesta en la otra.</li><li>Crea cinco combinaciones de día, materia y hora.</li><li>Practica en voz alta sin mirar durante un minuto.</li><li>Comprueba qué palabras recuerdas más tarde y por qué.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.5.3"><h4>Ampliación 3.8 · My learning plan</h4><p>Prepara un pequeño plan de mejora.</p><ol class="sheet-questions" type="a"><li>Escribe tres cosas que ya haces en inglés.</li><li>Identifica dos palabras que todavía te cuestan.</li><li>Elige una estrategia para cada una.</li><li>Redacta una meta para tu próxima clase de Inglés.</li></ol></article></div>
+</section>
+</section>
+<!-- COMPRUEBA LO APRENDIDO: MISMAS CLASES Y ESTRUCTURA DE LAS SdA -->
+<section aria-labelledby="titulo-comprueba" class="topic-section lesson-section check-learning" id="sec-comprueba">
+<div class="section-head"><span aria-hidden="true" class="section-number">✓</span><h2 class="section-title" id="titulo-comprueba">Comprueba lo aprendido</h2></div>
+<p>Selecciona una caja en cada pregunta. Después pulsa «Comprobar respuestas». Puedes repetir el cuestionario tantas veces como necesites.</p>
+<form id="quiz-form" novalidate="">
+<div class="quiz-grid"><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.1.1"><legend>1. Según el primer audio, ¿qué asignatura tiene Mia a las nueve?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-1" type="radio" value="0"/><span>Music</span></label><label class="quiz-option"><input name="pregunta-1" type="radio" value="1"/><span>English</span></label><label class="quiz-option"><input name="pregunta-1" type="radio" value="2"/><span>PE</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.1.1"><legend>2. ¿Qué palabra significa «biblioteca»?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-2" type="radio" value="0"/><span>library</span></label><label class="quiz-option"><input name="pregunta-2" type="radio" value="1"/><span>playground</span></label><label class="quiz-option"><input name="pregunta-2" type="radio" value="2"/><span>pencil</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.1.2"><legend>3. ¿Qué hay el martes a las diez en el horario?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-3" type="radio" value="0"/><span>Maths</span></label><label class="quiz-option"><input name="pregunta-3" type="radio" value="1"/><span>Art</span></label><label class="quiz-option"><input name="pregunta-3" type="radio" value="2"/><span>English</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.1.2"><legend>4. ¿En qué día hay English a las doce?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-4" type="radio" value="0"/><span>Tuesday</span></label><label class="quiz-option"><input name="pregunta-4" type="radio" value="1"/><span>Wednesday</span></label><label class="quiz-option"><input name="pregunta-4" type="radio" value="2"/><span>Friday</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.2.2"><legend>5. ¿Cómo se dice 9:00 en inglés?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-5" type="radio" value="0"/><span>It’s nine o’clock.</span></label><label class="quiz-option"><input name="pregunta-5" type="radio" value="1"/><span>It’s ten o’clock.</span></label><label class="quiz-option"><input name="pregunta-5" type="radio" value="2"/><span>It’s nine minutes.</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.2.2"><legend>6. Completa: Science is ___ twelve o’clock.</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-6" type="radio" value="0"/><span>on</span></label><label class="quiz-option"><input name="pregunta-6" type="radio" value="1"/><span>in</span></label><label class="quiz-option"><input name="pregunta-6" type="radio" value="2"/><span>at</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.3.1"><legend>7. ¿Qué expresión significa «Me gusta Música»?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-7" type="radio" value="0"/><span>I play Music.</span></label><label class="quiz-option"><input name="pregunta-7" type="radio" value="1"/><span>I like Music.</span></label><label class="quiz-option"><input name="pregunta-7" type="radio" value="2"/><span>I don’t like Music.</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.3.1"><legend>8. ¿Qué pregunta sirve para saber si a alguien le gusta Art?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-8" type="radio" value="0"/><span>Do you like Art?</span></label><label class="quiz-option"><input name="pregunta-8" type="radio" value="1"/><span>What time is Art?</span></label><label class="quiz-option"><input name="pregunta-8" type="radio" value="2"/><span>Where is Art?</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.3.2"><legend>9. En el segundo audio, ¿a qué hora es English?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-9" type="radio" value="0"/><span>Nine o’clock.</span></label><label class="quiz-option"><input name="pregunta-9" type="radio" value="1"/><span>Eleven o’clock.</span></label><label class="quiz-option"><input name="pregunta-9" type="radio" value="2"/><span>Ten o’clock.</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.3.2"><legend>10. ¿Qué respuesta es educada para pedir que repitan algo?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-10" type="radio" value="0"/><span>Go to school!</span></label><label class="quiz-option"><input name="pregunta-10" type="radio" value="1"/><span>Can you repeat, please?</span></label><label class="quiz-option"><input name="pregunta-10" type="radio" value="2"/><span>I like PE.</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.4.2"><legend>11. ¿Qué puede facilitar que se comprenda un horario?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-11" type="radio" value="0"/><span>Dibujos y palabras claras</span></label><label class="quiz-option"><input name="pregunta-11" type="radio" value="1"/><span>Quitar los días</span></label><label class="quiz-option"><input name="pregunta-11" type="radio" value="2"/><span>Escribir sin horas</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.5.2"><legend>12. ¿Qué ayuda a recordar palabras de Inglés?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-12" type="radio" value="0"/><span>No repasar nunca</span></label><label class="quiz-option"><input name="pregunta-12" type="radio" value="1"/><span>Copiar sin entender</span></label><label class="quiz-option"><input name="pregunta-12" type="radio" value="2"/><span>Usar tarjetas y practicar después</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset></div>
+<div class="quiz-actions button-row">
+<button class="action-button" type="submit">Comprobar respuestas</button>
+<button class="action-button secondary" type="reset">Volver a empezar</button>
+</div>
+<p aria-live="polite" id="quiz-result" role="status"></p>
+</form>
+</section>
+<!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+<section aria-labelledby="titulo-autoevaluacion" class="topic-section lesson-section self-eval diana-section" id="sec-diana">
+<div class="recap-heading">
+<span aria-hidden="true" class="heading-icon heading-icon--indigo">🎯</span>
+<div><h2 class="section-title" id="titulo-autoevaluacion">Diana de Autoevaluación Interactiva</h2><p>Selecciona una opción en cada apartado para valorar tu aprendizaje.</p></div>
+</div>
+<p>No se trata de obtener una nota, sino de reconocer qué sabes hacer y qué necesitas practicar.</p>
+<div class="diana-list self-eval-grid">
+<!-- AUTOEVALUACIÓN 3.1 · CRITERIO DOCENTE ING.3.1.1 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.1</strong> Comprendo un audio corto sobre asignaturas y la jornada escolar.</p>
+<div aria-label="Autoevaluación del apartado 3.1" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.2 · CRITERIO DOCENTE ING.3.1.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.2</strong> Encuentro información en un horario usando días, horas e imágenes.</p>
+<div aria-label="Autoevaluación del apartado 3.2" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.3 · CRITERIO DOCENTE ING.3.2.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.3</strong> Escribo frases sencillas sobre mi horario y las horas en punto.</p>
+<div aria-label="Autoevaluación del apartado 3.3" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.4 · CRITERIO DOCENTE ING.3.3.1 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.4</strong> Pregunto y respondo con cortesía sobre asignaturas y juegos.</p>
+<div aria-label="Autoevaluación del apartado 3.4" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.5 · CRITERIO DOCENTE ING.3.3.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.5</strong> Formulo preguntas con <em>What day…?</em> y <em>What time…?</em>.</p>
+<div aria-label="Autoevaluación del apartado 3.5" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.6 · CRITERIO DOCENTE ING.3.4.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.6</strong> Utilizo dibujos o símbolos para explicar un horario a otra persona.</p>
+<div aria-label="Autoevaluación del apartado 3.6" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.7 · CRITERIO DOCENTE ING.3.5.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.7</strong> Aprendo palabras de Inglés con tarjetas, repeticiones y modelos.</p>
+<div aria-label="Autoevaluación del apartado 3.7" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 3.8 · CRITERIO DOCENTE ING.3.5.3 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>3.8</strong> Reconozco mis avances y elijo una meta sencilla de mejora.</p>
+<div aria-label="Autoevaluación del apartado 3.8" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+</div>
+<label class="goal-label" for="my-goal"><strong>My next step — Mi siguiente reto:</strong> escribe una expresión que ya sabes usar y otra que quieres practicar.</label>
+<textarea id="my-goal" placeholder="Por ejemplo: Ya sé decir It’s nine o’clock. Quiero practicar What time is English?"></textarea>
+<div class="eval-actions button-row">
+<p aria-live="polite" id="eval-status" role="status">Puedes marcar una opción en cada apartado.</p>
+<button class="action-button secondary" id="reset-diana" type="button">Borrar mi autoevaluación</button>
+</div>
+</section>
+</div>
+</div></main>
+<!-- Pie de página institucional: deliberadamente sin copyright ni enlace de retorno, según las indicaciones del proyecto. -->
+<footer class="site-footer"><div class="footer-container">
+<div class="footer-junta"><img alt="Junta de Andalucía - Consejería de Educación" src="/img/junta-educacion.png"/></div>
+<div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">Web oficial del Centro <span aria-hidden="true">↗</span></a></div>
+</div></footer>
+<script src="/js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Corrección del cuestionario: misma interacción que las SdA de Lengua.
+      const form = document.getElementById('quiz-form');
+      const result = document.getElementById('quiz-result');
+      const questions = Array.from(form.querySelectorAll('fieldset.quiz-item'));
+
+      // Cada pregunta permite seleccionar una sola caja; selección verde.
+      questions.forEach(function (question) {
+        question.addEventListener('change', function () {
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            const radio = option.querySelector('input[type="radio"]');
+            option.classList.toggle('selected', Boolean(radio && radio.checked));
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let correct = 0;
+        let answered = 0;
+        questions.forEach(function (question) {
+          const selected = question.querySelector('input[type="radio"]:checked');
+          const answer = question.dataset.answer;
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+          if (!selected) {
+            feedback.textContent = 'Elige una respuesta.';
+            return;
+          }
+          answered += 1;
+          if (selected.value === answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = 'Correcto.';
+          } else {
+            question.classList.add('incorrect');
+            const choices = question.querySelectorAll('input[type="radio"]');
+            const right = choices[Number(answer)];
+            feedback.textContent = 'Repasa este contenido. Respuesta correcta: ' +
+              right.nextElementSibling.textContent.trim() + '.';
+          }
+        });
+        result.textContent = 'Has respondido ' + answered + ' de ' + questions.length +
+          ' preguntas. Aciertos: ' + correct + ' de ' + questions.length + '.';
+      });
+
+      form.addEventListener('reset', function () {
+        questions.forEach(function (question) {
+          question.classList.remove('correct', 'incorrect');
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.classList.remove('selected');
+          });
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        result.textContent = '';
+      });
+
+      // Diana interactiva: una sola opción por fila y posibilidad de reinicio.
+      const groups = Array.from(document.querySelectorAll('.diana-options'));
+      const status = document.getElementById('eval-status');
+      function updateStatus() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('button[aria-pressed="true"]');
+        }).length;
+        status.textContent = 'Has valorado ' + answered + ' de ' + groups.length + ' apartados.';
+      }
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('button.diana-option');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('button.diana-option').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+          });
+          updateStatus();
+        });
+      });
+      document.getElementById('reset-diana').addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('button.diana-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateStatus();
+      });
+    });
+  </script>
+</body>
+</html>
