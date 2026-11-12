@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to my world! Situación de Aprendizaje ING4.1 de Inglés de 4.º de Primaria. Comprensión, vocabulario, gramática, expresión e interacción en inglés.">
+  <title>Welcome to my world! | Inglés 4.º | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+  <!-- El verde institucional se emplea en todas las SdA; el violeta se reserva para el índice de Inglés. -->
+  <style>
+    :root { --ing-green: #007a33; --ing-dark: #005724; --ing-pale:#e6f4ea; --ing-line:#d1e7dd; --ing-text:#1e293b; --ing-muted:#475569; --ing-bg:#f4f7f5; --ing-amber:#b45309; }
+    html { scroll-behavior:smooth; }
+    .topic-page { background:var(--ing-bg); color:var(--ing-text); font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+    .topic-page * { box-sizing:border-box; }
+    .topic-page .topic-shell { width:min(94%,1280px); margin:0 auto; padding:1.5rem 0 3rem; }
+    .topic-page .topic-content section[id] { scroll-margin-top:90px; }
+    .topic-page .topic-hero { border-radius:1.55rem; background:linear-gradient(115deg,#005724 0%,#007a33 62%,#00a847 100%); color:#fff; padding:clamp(1.5rem,4.5vw,3rem); margin:1rem 0 2rem; position:relative; overflow:hidden; display:grid; align-items:center; grid-template-columns:minmax(0,1fr) 170px; gap:1.4rem; box-shadow:0 10px 28px rgba(0,87,36,.17); }
+    .topic-page .topic-hero::before { content:"Hello!"; position:absolute; right:12rem; bottom:-2.8rem; font-size:clamp(3rem,10vw,8rem); font-weight:900; letter-spacing:-.06em; color:#fff; opacity:.08; pointer-events:none; }
+    .topic-page .topic-hero h1 { color:#fff; margin:0 0 .85rem; line-height:1.07; font-size:clamp(1.9rem,5vw,3.2rem); font-weight:850; }
+    .topic-page .topic-hero p { margin:0; max-width:750px; color:#effff2; line-height:1.65; font-size:clamp(.98rem,2vw,1.09rem); }
+    .topic-page .topic-tag { display:inline-block; margin:0 0 .9rem; padding:.35rem .75rem; border:1px solid rgba(255,255,255,.45); border-radius:999px; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+    .topic-page .topic-hero-image { width:100%; max-height:185px; object-fit:contain; position:relative; z-index:1; }
+    .topic-page .topic-nav { padding:1.25rem 1.35rem; margin-bottom:2rem; background:#fff; border:1px solid var(--ing-line); border-radius:1rem; box-shadow:0 2px 12px rgba(0,87,36,.04); }
+    .topic-page .topic-nav h2 { margin:0 0 .9rem; color:var(--ing-dark); font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+    .topic-page .topic-nav-links { display:flex; flex-wrap:wrap; gap:.55rem; }
+    .topic-page .nav-link { display:inline-block; padding:.52rem .76rem; border-radius:.55rem; background:#f1f5f9; color:#334155; text-decoration:none; font-size:.85rem; font-weight:650; transition:background .2s,color .2s; }
+    .topic-page .nav-link:hover,.topic-page .nav-link:focus-visible { background:var(--ing-green); color:#fff; }
+    .topic-page .nav-link.is-review { background:#fef3c7; color:#92400e; } .topic-page .nav-link.is-self { background:#e0e7ff; color:#3730a3; }
+    .topic-page .topic-content { display:grid; gap:1.75rem; }
+    .topic-page .topic-section { min-width:0; padding:clamp(1.15rem,3vw,2rem); border:1px solid #e5eee8; border-radius:1.35rem; background:#fff; box-shadow:0 4px 20px -2px rgba(0,122,51,.08); }
+    .topic-page .section-head { display:flex; align-items:center; gap:.9rem; margin-bottom:1.25rem; }
+    .topic-page .section-number { display:flex; align-items:center; justify-content:center; flex:0 0 auto; min-width:3.2rem; height:3.1rem; padding:0 .55rem; border-radius:.75rem; background:var(--ing-green); color:#fff; font-weight:850; font-size:1.07rem; }
+    .topic-page .section-title { margin:0; color:#153c28; font-size:clamp(1.25rem,2.6vw,1.65rem); font-weight:800; line-height:1.2; }
+    .topic-page .section-subtitle { margin:.35rem 0 0; color:#64748b; font-size:.85rem; }
+    .topic-page .theory-box { background:#f0f8f2; padding:1.25rem 1.35rem; border:1px solid var(--ing-line); border-left:5px solid var(--ing-green); border-radius:1rem; margin:1rem 0 1.2rem; }
+    .topic-page .theory-title { color:var(--ing-dark); font-weight:800; font-size:1.04rem; margin:0 0 .75rem; }
+    .topic-page p,.topic-page li { line-height:1.7; } .topic-page p { margin:.65rem 0; }
+    .topic-page strong { font-weight:800; } .topic-page .theory-box strong { color:#185c34; }
+    .topic-page ul,.topic-page ol { padding-left:1.3rem; margin:.65rem 0; } .topic-page li+li { margin-top:.24rem; }
+    .topic-page .example { background:#fff; padding:.85rem 1rem; margin:.85rem 0 0; border:1px solid #cce3d3; border-radius:.7rem; }
+    .topic-page .example-title { margin:0 0 .3rem; color:#115a31; font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em; }
+    .topic-page .vocab-grid,.topic-page .exercise-grid,.topic-page .cols { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .topic-page .word-card { min-width:0; border:1px solid #d8e5dd; background:#fff; padding:1rem; border-radius:.85rem; }
+    .topic-page .word-card h4 { font-size:.94rem; color:var(--ing-dark); margin:0 0 .5rem; }
+    .topic-page .word-card p { margin:.25rem 0; font-size:.92rem; }
+    .topic-page .exercise-grid { margin-top:1.05rem; }
+    .topic-page .exercise-card { background:#f8fafc; border:1px solid #e2e8f0; padding:1.1rem 1.2rem; border-radius:1rem; min-width:0; }
+    .topic-page .exercise-card p { font-size:.94rem; margin:.6rem 0; }
+    .topic-page .exercise-label { display:inline-block; background:var(--ing-green); border-radius:.35rem; color:white; font-weight:800; font-size:.77rem; padding:.27rem .56rem; margin-bottom:.3rem; }
+    .topic-page .activity-label { display:inline-block; border-radius:999px; background:#ddf5e5; padding:.24rem .7rem; color:#11552c; font-size:.79rem; font-weight:800; margin:.4rem 0 .6rem; }
+    .topic-page .exercise-card ol,.topic-page .exercise-card ul { font-size:.92rem; padding-left:1.15rem; }
+    .topic-page .writing-lines { border-top:1px dashed #cbd5e1; margin:.9rem 0 0; padding-top:.5rem; color:#64748b; font-size:.83rem; }
+    .topic-page .tbl-wrap { width:100%; overflow-x:auto; border:1px solid #d4e6d9; border-radius:.8rem; background:#fff; margin:1rem 0; }
+    .topic-page table { width:100%; border-collapse:collapse; text-align:left; font-size:.92rem; }
+    .topic-page th { background:#dff2e6; color:#124d2b; font-weight:800; } .topic-page th,.topic-page td { padding:.62rem .82rem; border-bottom:1px solid #e2eee5; vertical-align:top; }
+    .topic-page tr:last-child td { border-bottom:0; }
+    .topic-page .note { border-left:4px solid #d97706; background:#fffbeb; border-radius:.4rem; padding:.75rem .9rem; margin:.9rem 0; font-size:.91rem; }
+    .topic-page .audio-box { background:#fff; border:1px solid #d8e6de; padding:1rem 1.1rem; border-radius:.9rem; margin:1rem 0; }
+    .topic-page .audio-box audio { display:block; width:100%; margin:.6rem 0; }
+    .topic-page .audio-box .small { font-size:.8rem; color:#64748b; margin:0; }
+    .topic-page details { border:1px solid #dbe8df; background:#fff; padding:.75rem .95rem; border-radius:.65rem; margin:.65rem 0; }
+    .topic-page summary { cursor:pointer; color:#14532d; font-weight:750; }
+    .topic-page .speaker { color:#115e35; font-weight:800; }
+    .topic-page .profile-example { border:2px solid #bbdfc7; border-radius:1rem; padding:1.2rem; margin:.9rem 0; background:#fff; }
+    .topic-page .profile-example h4 { margin:0 0 .6rem; font-size:1.05rem; color:var(--ing-dark); }
+    .topic-page .info-strip { display:flex; gap:.55rem; flex-wrap:wrap; margin:.7rem 0; }
+    .topic-page .pill { display:inline-block; border:1px solid #c0dfcb; background:#f3faf5; border-radius:999px; font-size:.82rem; padding:.27rem .65rem; color:#22563b; font-weight:700; }
+    .topic-page .step-list { counter-reset:steps; list-style:none; padding:0; } .topic-page .step-list li { counter-increment:steps; padding:.6rem .5rem .6rem 2.65rem; position:relative; } .topic-page .step-list li::before { content:counter(steps); position:absolute; left:0; top:.56rem; display:grid; place-items:center; height:1.75rem; width:1.75rem; border-radius:50%; background:#dff2e6; color:#12552d; font-weight:850; }
+    .topic-page .mini-button,.topic-page button.check-btn { cursor:pointer; padding:.55rem .9rem; border:0; border-radius:.6rem; color:#fff; background:#007a33; font-weight:800; font-size:.85rem; }
+    .topic-page .mini-button:hover,.topic-page button.check-btn:hover { background:#005724; }
+    .topic-page .review-section { border:2px solid var(--ing-green); }
+    .topic-page .checklist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.6rem; }
+    .topic-page .checklist label { display:flex; align-items:flex-start; gap:.45rem; background:#f8fafc; border:1px solid #e2e8f0; padding:.75rem; border-radius:.7rem; font-size:.91rem; cursor:pointer; }
+    .topic-page .checklist input { margin-top:.25rem; accent-color:#007a33; }
+    .topic-page .self-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
+    .topic-page .self-item { border:1px solid #dce7e0; padding:.75rem; border-radius:.75rem; background:#fafdfa; }
+    .topic-page .self-item p { font-size:.89rem; font-weight:700; margin:.05rem 0 .5rem; }
+    .topic-page .self-item label { font-size:.85rem; margin-right:.9rem; white-space:nowrap; }
+    .topic-page .self-item input { accent-color:#007a33; }
+    .topic-page textarea { display:block; width:100%; min-height:5rem; padding:.7rem .8rem; border:1px solid #cbd5e1; border-radius:.6rem; font:inherit; resize:vertical; }
+    .topic-page .footer-link { display:inline-block; margin-top:1.7rem; color:#11562e; text-decoration:none; font-weight:800; }
+    .topic-page .footer-link:hover { text-decoration:underline; }
+    .topic-page :focus-visible { outline:3px solid #d97706; outline-offset:3px; }
+    @media (max-width:800px) { .topic-page .topic-hero { grid-template-columns:minmax(0,1fr) 110px; } }
+    @media (max-width:650px) { .topic-page .topic-hero { grid-template-columns:1fr; } .topic-page .topic-hero-image { width:132px; justify-self:end; } .topic-page .vocab-grid,.topic-page .exercise-grid,.topic-page .cols,.topic-page .checklist,.topic-page .self-grid { grid-template-columns:1fr; } .topic-page .section-number { min-width:2.75rem; height:2.75rem; font-size:.93rem; } .topic-page .section-head { align-items:flex-start; } }
+    @media print { .site-banner,.navigation-wrapper,.skip-link,.topic-nav, .topic-page .mini-button,.topic-page button.check-btn { display:none!important; } .topic-page .topic-section { break-inside:avoid; box-shadow:none; } .topic-page .topic-hero { box-shadow:none; } .topic-page .topic-shell { width:100%; } }
+
+    /* =========================================================
+       REPASAMOS · FICHAS DE REFUERZO Y AMPLIACIÓN
+       Clases compartidas con las SdA de Lengua 4.º y Matemáticas 4.º
+       ========================================================= */
+    .topic-page .sda-recap { border:2px solid #007a33; }
+    .topic-page .recap-heading { display:flex; gap:.9rem; align-items:flex-start; margin:0 0 1.5rem; }
+    .topic-page .recap-heading .section-title { margin:.12rem 0 0; }
+    .topic-page .recap-heading p { margin:.35rem 0 0; color:#65736b; font-size:.87rem; }
+    .topic-page .heading-icon { display:inline-grid; place-items:center; min-width:3rem; min-height:2.8rem; background:#007a33; color:#fff; border-radius:12px; font-size:1.2rem; }
+    .topic-page .heading-icon--indigo { background:#4f46e5; }
+    .topic-page .recap-sheet + .recap-sheet { margin-top:2.5rem; }
+    .topic-page .sheet-heading { padding:.85rem 1rem; border-left:4px solid #007a33; border-radius:0 12px 12px 0; background:#ecfdf3; margin:0 0 1.2rem; }
+    .topic-page .sheet-heading h3 { margin:0; font-size:1.05rem; color:#005724; font-weight:800; }
+    .topic-page .sheet-heading--ampliacion { background:#fffbeb; border-color:#d97706; }
+    .topic-page .sheet-heading--ampliacion h3 { color:#92400e; }
+    .topic-page .sheet-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .topic-page .sheet-card { min-width:0; padding:1.15rem 1.25rem; background:#f8faf9; border:1px solid #dce6e0; border-radius:16px; }
+    .topic-page .sheet-card h4 { display:inline-block; margin:0 0 .75rem; padding:.32rem .6rem; border-radius:7px; color:white; background:#007a33; font-size:.9rem; font-weight:800; line-height:1.35; }
+    .topic-page .sheet-card--ampliacion h4 { background:#b45309; }
+    .topic-page .sheet-card p { margin:0 0 .65rem; font-size:.92rem; line-height:1.55; }
+    .topic-page .sheet-questions { list-style:lower-alpha; margin:0; padding-left:1.5rem; }
+    .topic-page .sheet-questions li { margin:0 0 .55rem; line-height:1.55; font-size:.93rem; }
+    .topic-page .sheet-questions li:last-child { margin-bottom:0; }
+    /* =========================================================
+       COMPRUEBA LO APRENDIDO · cuestionario autocorregible
+       ========================================================= */
+    .topic-page .check-learning { border-radius:18px; box-shadow:0 4px 20px -2px rgba(0,122,51,.08); }
+    .topic-page .quiz-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.15rem 0; }
+    .topic-page .quiz-grid .quiz-item { min-width:0; border:1px solid #d7e6db; background:#fbfdfb; border-radius:13px; padding:1rem; }
+    .topic-page .quiz-grid .quiz-item legend { color:#274d37; font-weight:750; padding:.1rem .25rem; font-size:.94rem; }
+    /* Respuestas como tarjetas seleccionables, no radios circulares. */
+    .topic-page .quiz-options { display:grid; grid-template-columns:1fr; gap:.55rem; margin-top:.85rem; }
+    .topic-page .quiz-grid .quiz-item .quiz-option {
+      position:relative; display:flex; align-items:center; min-height:2.65rem; width:100%;
+      padding:.62rem .82rem; margin:0; border:1.5px solid #cbd5e1; border-radius:.65rem;
+      background:#fff; color:#334155; font-size:.91rem; font-weight:650;
+      line-height:1.45; cursor:pointer; transition:background .15s,border-color .15s,color .15s;
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option:hover { border-color:#007a33; background:#f0f9f3; }
+    .topic-page .quiz-grid .quiz-item .quiz-option input[type="radio"] {
+      position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;
+      clip-path:inset(50%); margin:0; padding:0;
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option:focus-within { outline:2px solid #005724; outline-offset:2px; }
+    .topic-page .quiz-grid .quiz-item .quiz-option.selected,
+    .topic-page .quiz-grid .quiz-item .quiz-option:has(input[type="radio"]:checked) {
+      background:#007a33; border-color:#005724; color:#fff; box-shadow:0 2px 8px rgba(0,87,36,.12);
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option.selected span,
+    .topic-page .quiz-grid .quiz-item .quiz-option:has(input[type="radio"]:checked) span { color:#fff; }
+    .topic-page .quiz-grid .quiz-item.correct { border-color:#3c9961; background:#f2fcf5; }
+    .topic-page .quiz-grid .quiz-item.incorrect { border-color:#d79a71; background:#fffaf5; }
+    .topic-page .quiz-grid .quiz-feedback { display:block; min-height:1em; padding:0; border:0; margin:.65rem 0 0; background:none; color:#475569; font-size:.86rem; font-weight:650; }
+    .topic-page .quiz-actions,.topic-page .button-row { display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+    .topic-page .action-button { border:0; border-radius:11px; padding:.75rem 1.1rem; background:#007a33; color:white; cursor:pointer; font:inherit; font-weight:750; }
+    .topic-page .action-button.secondary { background:#e9f3ed; color:#005724; }
+    .topic-page .action-button:hover,.topic-page .action-button:focus-visible { filter:brightness(.94); }
+    .topic-page #quiz-result { margin:1rem 0 0; font-weight:750; color:#005724; }
+    /* =========================================================
+       DIANA DE AUTOEVALUACIÓN INTERACTIVA · ocho apartados
+       ========================================================= */
+    .topic-page .self-eval { border:2px solid #c7d2fe; }
+    .topic-page .diana-list { display:grid; gap:.9rem; margin-top:1.2rem; }
+    .topic-page .diana-row { display:flex; justify-content:space-between; align-items:center; gap:1.1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:1rem; }
+    .topic-page .diana-row p { flex:1 1 350px; margin:0; line-height:1.5; }
+    .topic-page .diana-row strong { color:#007a33; margin-right:.25rem; }
+    .topic-page .diana-options { flex:0 1 430px; display:flex; flex-wrap:wrap; gap:.35rem; }
+    .topic-page .diana-option { border:1px solid #cbd5e1; background:white; color:#475569; cursor:pointer; padding:.47rem .65rem; border-radius:8px; font:inherit; font-size:.75rem; font-weight:750; }
+    .topic-page .diana-option:hover,.topic-page .diana-option:focus-visible { border-color:#4f46e5; }
+    .topic-page .diana-option[aria-pressed="true"] { color:white; background:#4f46e5; border-color:#4f46e5; }
+    .topic-page .eval-actions { display:flex; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1.3rem; }
+    .topic-page #eval-status { flex:1 1 240px; margin:0; color:#475569; }
+    .topic-page .goal-label { display:block; margin:1rem 0 .5rem; }
+    @media (max-width:900px) {
+      .topic-page .diana-row { flex-direction:column; align-items:stretch; }
+      .topic-page .diana-options { flex:auto; }
+    }
+    @media (max-width:760px) {
+      .topic-page .sheet-grid,.topic-page .quiz-grid { grid-template-columns:1fr; }
+    }
+    @media print {
+      .topic-page .diana-options,.topic-page .quiz-actions,.topic-page .eval-actions { display:none!important; }
+      .topic-page .sda-recap,.topic-page .self-eval,.topic-page .check-learning { box-shadow:none; break-inside:auto; }
+      .topic-page .sheet-card { break-inside:avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+  <!-- Banner y menú del centro: misma estructura y clases que los índices de Inglés y las demás SdA. -->
+  <header class="site-banner"><a href="/" aria-label="Ir a la página de inicio"><img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image"></a></header>
+  <div class="navigation-wrapper"><div class="navigation-container">
+    <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio"><img src="/img/logo-centro.png" alt=""></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal"><ul>
+      <li class="nav-green"><a href="/">Inicio</a></li>
+      <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+      <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+      <li class="nav-red"><a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🔒</span> Área privada Profesorado</a></li>
+    </ul></nav>
+  </div></div>
+  <!-- DESTINO: /recursos/cuarto/ingles4/welcome-to-my-world/index.html -->
+  <main id="contenido-principal" class="topic-page"><div class="topic-shell">
+    <nav class="breadcrumbs" aria-label="Migas de pan"><ol>
+      <li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li>
+      <li><a href="/recursos/cuarto/">4.º de Primaria</a></li>
+      <li><a href="/recursos/cuarto/ingles4/">Inglés</a></li>
+      <li aria-current="page">Welcome to my world!</li>
+    </ol></nav>
+    <section class="topic-hero" aria-labelledby="main-title">
+      <div><span class="topic-tag">Inglés · 4.º Primaria · ING4.1</span>
+        <h1 id="main-title">1. WELCOME TO MY WORLD!</h1>
+        <p>Aprende a presentarte, hablar de tu familia y tus amistades, decir de dónde eres, describir a otras personas y hacer preguntas en inglés. Al final crearás tu propio <em>My Personal Profile</em>.</p>
+      </div>
+      <img src="/img/tomatito/ingles.png" alt="" class="topic-hero-image">
+    </section>
+    <nav class="topic-nav" aria-label="Contenidos de la Situación de Aprendizaje">
+      <h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+      <div class="topic-nav-links">
+        <a class="nav-link" href="#sec-1">1.1 Hello! My name is…</a>
+        <a class="nav-link" href="#sec-2">1.2 Reading detectives</a>
+        <a class="nav-link" href="#sec-3">1.3 My family and friends</a>
+        <a class="nav-link" href="#sec-4">1.4 My personal profile</a>
+        <a class="nav-link" href="#sec-5">1.5 Questions and interviews</a>
+        <a class="nav-link" href="#sec-6">1.6 Let's keep talking!</a>
+        <a class="nav-link" href="#sec-7">1.7 English and Spanish</a>
+        <a class="nav-link" href="#sec-8">1.8 My portfolio</a>
+        <a class="nav-link is-review" href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+        <a class="nav-link" href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+        <a class="nav-link is-self" href="#sec-diana">🎯 Autoevaluación</a>
+      </div>
+    </nav>
+    <div class="topic-content">
+<!-- =========================================================
+         APARTADO 1.1. TAREA 1. CRITERIO ING.4.1.1 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-1" class="topic-section" data-criterion="ING.4.1.1">
+  <div class="section-head"><span class="section-number">1.1</span><div><h2 class="section-title">Hello! My name is…</h2><p class="section-subtitle">Comprendemos mensajes y presentaciones personales.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">We introduce ourselves — Nos presentamos</h3><p>Cuando conoces a alguien, puedes utilizar unas pocas expresiones para decir quién eres, cuántos años tienes y de dónde vienes. Lee las frases y sus significados.</p>
+<div class="tbl-wrap"><table><thead><tr><th>English</th><th>Español</th></tr></thead><tbody>
+<tr><td>Hello! / Hi!</td><td>¡Hola!</td></tr><tr><td>My name is Ava.</td><td>Me llamo Ava.</td></tr>
+<tr><td>I am ten years old. / I'm ten.</td><td>Tengo diez años.</td></tr>
+<tr><td>I am from Spain.</td><td>Soy de España.</td></tr>
+<tr><td>I am Spanish.</td><td>Soy español/a.</td></tr>
+<tr><td>Nice to meet you!</td><td>¡Encantado/a de conocerte!</td></tr></tbody></table></div>
+<p><strong>Recuerda:</strong> para decir la edad, en inglés usamos <em>to be</em> (ser/estar): <strong>I am ten</strong>, no <em>I have ten years</em>.</p></div><div class="audio-box"><strong>🎧 Listening: Meet Ava and Ben</strong>
+<p>Escucha las dos presentaciones <strong>dos veces</strong>. La primera para conocer el tema; la segunda para buscar los datos de cada persona.</p>
+<audio controls preload="none"><source src="/media/ing4-1-profiles.mp3" type="audio/mpeg">Tu navegador no admite el reproductor de audio.</audio>
+<p class="small">Archivo de audio: <code>/media/ing4-1-profiles.mp3</code></p>
+<details><summary>Mostrar la transcripción después de escuchar</summary>
+<p><span class="speaker">Ava:</span> Hello! My name is Ava. I am nine years old. I am from England. I am English. I have got curly brown hair and green eyes. My brother is Tom. He is seven years old. I like drawing.</p>
+<p><span class="speaker">Ben:</span> Hello! I am Ben. I am ten years old. I am from Spain. I am Spanish. I have got short black hair and brown eyes. My friend is Lucas. He is kind. I like football.</p>
+</details></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Escucha el audio y completa en tu cuaderno:</p><ol type="a"><li>Ava is _____ years old.</li><li>Ben is from _____.</li><li>Ava has got _____ eyes.</li><li>Ben likes _____.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Lee otra vez la transcripción y escribe <strong>True</strong> (verdadero) o <strong>False</strong> (falso).</p><ol type="a"><li>Ava is from Spain.</li><li>Tom is Ava's brother.</li><li>Ben is ten years old.</li><li>Lucas is Ben's friend.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Une cada pregunta con una respuesta que tenga sentido.</p><ol type="a"><li>What's your name?</li><li>How old are you?</li><li>Where are you from?</li></ol><p><strong>Respuestas:</strong> I'm nine. · I'm from Spain. · My name is Leo.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Escucha a un compañero y anota tres datos: nombre, edad y procedencia. Después, comprueba con él si has entendido correctamente.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.2. TAREA 2. CRITERIO ING.4.1.2 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-2" class="topic-section" data-criterion="ING.4.1.2">
+  <div class="section-head"><span class="section-number">1.2</span><div><h2 class="section-title">Reading detectives</h2><p class="section-subtitle">Elegimos pistas para entender información.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">Reading detectives — Detectives de la lectura</h3><p>Para comprender un texto breve en inglés, <strong>no necesitas traducir cada palabra</strong>. Fíjate en las imágenes, en las palabras que ya conoces y en el contexto.</p>
+<ol class="step-list"><li><strong>Antes de leer:</strong> observa el título y las imágenes. ¿De qué crees que va a tratar el texto?</li><li><strong>Mientras lees:</strong> busca pistas como <em>name, years old, from, sister</em> o <em>likes</em>.</li><li><strong>Después de leer:</strong> vuelve al texto y comprueba si tus respuestas coinciden con la información que aparece.</li></ol>
+<div class="profile-example"><h4>Meet Noah!</h4><div class="info-strip"><span class="pill">Age: 9</span><span class="pill">From: Ireland</span><span class="pill">Favourite colour: blue</span></div>
+<p>Hi! I'm Noah. I'm nine years old. I'm from Ireland. My sister is Lily. She is eleven. I have got blue eyes and short hair. I like cycling.</p></div>
+<p class="note"><strong>Pista útil:</strong> <em>She is eleven</em> habla de Lily, porque <em>she</em> se refiere a una niña o mujer.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Antes de releer el perfil de Noah, indica qué tres palabras crees que te ayudarán a conocer su edad, su origen y su familia. Explica por qué.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Localiza en el perfil de Noah:</p><ol type="a"><li>El nombre de su hermana.</li><li>El país de procedencia.</li><li>La actividad que le gusta.</li><li>El color de sus ojos.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>¿Qué significa <em>cycling</em>? Antes de consultarlo, busca una pista en el texto o en tus conocimientos previos. Escribe la respuesta y la estrategia que has usado.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Imagina que un compañero no comprende <em>She is eleven</em>. Explícale a quién se refiere <em>she</em> y cómo lo has averiguado.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.3. TAREA 3. CRITERIO ING.4.2.1 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-3" class="topic-section" data-criterion="ING.4.2.1">
+  <div class="section-head"><span class="section-number">1.3</span><div><h2 class="section-title">My family and friends</h2><p class="section-subtitle">Describimos y presentamos oralmente a otras personas.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">People around me — Las personas que me rodean</h3><p>Podemos presentar a nuestra familia y nuestros amigos con el verbo <strong>to be</strong> (ser/estar). También utilizamos adjetivos para describir cómo son.</p>
+<div class="vocab-grid"><div class="word-card"><h4>👨‍👩‍👧 Family</h4><p><strong>mother</strong> — madre</p><p><strong>father</strong> — padre</p><p><strong>sister</strong> — hermana</p><p><strong>brother</strong> — hermano</p><p><strong>grandmother</strong> — abuela</p><p><strong>grandfather</strong> — abuelo</p><p><strong>cousin</strong> — primo/a</p></div>
+<div class="word-card"><h4>🙂 Appearance and personality</h4><p><strong>tall / short</strong> — alto/a / bajo/a</p><p><strong>long / short hair</strong> — pelo largo / corto</p><p><strong>curly / straight hair</strong> — pelo rizado / liso</p><p><strong>kind / friendly</strong> — amable / simpático/a</p><p><strong>funny / shy</strong> — divertido/a / tímido/a</p></div></div>
+<h4 class="theory-title" style="margin-top:1.25rem">The verb <em>to be</em> — ser o estar</h4>
+<div class="tbl-wrap"><table><thead><tr><th>Persona</th><th>Afirmativa</th><th>Negativa</th><th>Interrogativa</th></tr></thead><tbody>
+<tr><td>I</td><td>I am / I'm</td><td>I am not / I'm not</td><td>Am I…?</td></tr><tr><td>You</td><td>You are / You're</td><td>You aren't</td><td>Are you…?</td></tr>
+<tr><td>He / She / It</td><td>He is / He's</td><td>He isn't</td><td>Is he…?</td></tr><tr><td>We</td><td>We are / We're</td><td>We aren't</td><td>Are we…?</td></tr><tr><td>They</td><td>They are / They're</td><td>They aren't</td><td>Are they…?</td></tr></tbody></table></div>
+<div class="example"><p class="example-title">Examples</p><p><strong>This is my sister.</strong> She is tall and friendly.</p><p><strong>My friends aren't shy.</strong> They are funny.</p><p><strong>Is your brother ten?</strong> Yes, he is. / No, he isn't.</p></div>
+<p class="note"><strong>Atención:</strong> en inglés el adjetivo normalmente va delante del sustantivo: <em>a friendly girl</em>. Después de <em>to be</em> decimos <em>She is friendly</em>.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Completa con <strong>am, is</strong> o <strong>are</strong>.</p><ol type="a"><li>I _____ ten.</li><li>My friends _____ funny.</li><li>He _____ my cousin.</li><li>We _____ from Spain.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Transforma estas frases a negativa.</p><ol type="a"><li>She is tall.</li><li>They are shy.</li><li>I am from England.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Escribe las preguntas correspondientes.</p><ol type="a"><li>Your sister is nine. → _____?</li><li>They are friendly. → _____?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p><strong>Speaking:</strong> presenta oralmente a un familiar o a un personaje inventado con cuatro frases: quién es, edad, aspecto y personalidad. Puedes utilizar una tarjeta de apoyo.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.4. TAREA 4. CRITERIO ING.4.2.2 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-4" class="topic-section" data-criterion="ING.4.2.2">
+  <div class="section-head"><span class="section-number">1.4</span><div><h2 class="section-title">My personal profile</h2><p class="section-subtitle">Escribimos un perfil con posesivos y have got.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">Have got / Has got — Tener</h3><p>Utilizamos <strong>have got</strong> para hablar de pertenencias y características físicas. Con <em>he, she, it</em> usamos <strong>has got</strong>.</p>
+<div class="tbl-wrap"><table><thead><tr><th>Uso</th><th>I / You / We / They</th><th>He / She / It</th></tr></thead><tbody>
+<tr><td>Afirmativa</td><td>I have got a bike.</td><td>She has got brown eyes.</td></tr>
+<tr><td>Negativa</td><td>I haven't got a bike.</td><td>She hasn't got blue eyes.</td></tr>
+<tr><td>Pregunta</td><td>Have you got a bike?</td><td>Has she got blue eyes?</td></tr>
+<tr><td>Respuesta corta</td><td>Yes, I have. / No, I haven't.</td><td>Yes, she has. / No, she hasn't.</td></tr></tbody></table></div>
+<p><strong>Importante:</strong> después de <em>has</em> o <em>have</em> siempre escribimos <em>got</em> en estas estructuras.</p>
+<h4 class="theory-title" style="margin-top:1.15rem">Possessive adjectives — Posesivos</h4>
+<div class="tbl-wrap"><table><thead><tr><th>Persona</th><th>Posesivo</th><th>Ejemplo</th></tr></thead><tbody>
+<tr><td>I</td><td>my</td><td>my brother</td></tr><tr><td>you</td><td>your</td><td>your friend</td></tr><tr><td>he</td><td>his</td><td>his bike</td></tr><tr><td>she</td><td>her</td><td>her sister</td></tr><tr><td>it</td><td>its</td><td>its tail</td></tr><tr><td>we</td><td>our</td><td>our school</td></tr><tr><td>they</td><td>their</td><td>their family</td></tr></tbody></table></div>
+<p class="note"><strong>No confundas:</strong> <em>he</em> = él y <em>his</em> = su (de él); <em>she</em> = ella y <em>her</em> = su (de ella). <em>It's</em> significa <em>it is</em>; <em>its</em> es posesivo.</p></div><div class="profile-example"><h4>📝 Model: My Personal Profile</h4><p>My name is Olivia. I'm ten years old. I'm from Spain. I'm Spanish. I have got long brown hair and green eyes. My brother's name is Alex. He is seven. He is kind. I like music and swimming.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Completa con <strong>have got</strong> o <strong>has got</strong>.</p><ol type="a"><li>She _____ long hair.</li><li>We _____ a new book.</li><li>My friend _____ blue eyes.</li><li>I _____ two cousins.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Elige el posesivo correcto.</p><ol type="a"><li>Emma has a dog. (Her / His) dog is small.</li><li>Leo has a sister. (His / Our) sister is nine.</li><li>We are pupils. (Our / Their) school is big.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Escribe la forma negativa y una pregunta:</p><ol type="a"><li>He has got a red bike.</li><li>They have got brown hair.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p><strong>Writing:</strong> escribe un perfil de seis a ocho frases sobre ti o sobre un personaje inventado. Incluye identidad, procedencia, aspecto, familia y gustos. Revisa el modelo antes de escribir.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.5. TAREA 5. CRITERIO ING.4.3.1 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-5" class="topic-section" data-criterion="ING.4.3.1">
+  <div class="section-head"><span class="section-number">1.5</span><div><h2 class="section-title">Questions and interviews</h2><p class="section-subtitle">Participamos en entrevistas en inglés.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">Countries and nationalities — Países y nacionalidades</h3><p>Para hablar de dónde es alguien distinguimos <em>country</em> (país) y <em>nationality</em> (nacionalidad). En inglés, <strong>ambos se escriben con mayúscula inicial</strong>.</p>
+<div class="tbl-wrap"><table><thead><tr><th>Country</th><th>Nationality</th><th>Example</th></tr></thead><tbody>
+<tr><td>Spain</td><td>Spanish</td><td>I'm from Spain. I'm Spanish.</td></tr><tr><td>England</td><td>English</td><td>She's from England. She's English.</td></tr>
+<tr><td>Scotland</td><td>Scottish</td><td>He's from Scotland. He's Scottish.</td></tr><tr><td>Ireland</td><td>Irish</td><td>They're from Ireland. They're Irish.</td></tr><tr><td>France</td><td>French</td><td>I'm from France. I'm French.</td></tr></tbody></table></div>
+<h4 class="theory-title" style="margin-top:1rem">Question words — Palabras para preguntar</h4>
+<div class="tbl-wrap"><table><thead><tr><th>Question</th><th>Meaning</th><th>Answer</th></tr></thead><tbody>
+<tr><td>What's your name?</td><td>¿Cómo te llamas?</td><td>My name is Emma.</td></tr>
+<tr><td>How old are you?</td><td>¿Cuántos años tienes?</td><td>I'm ten.</td></tr>
+<tr><td>Where are you from?</td><td>¿De dónde eres?</td><td>I'm from Scotland.</td></tr>
+<tr><td>Who is he?</td><td>¿Quién es él?</td><td>He's my brother.</td></tr>
+<tr><td>Have you got a sister?</td><td>¿Tienes una hermana?</td><td>Yes, I have.</td></tr>
+<tr><td>What do you like?</td><td>¿Qué te gusta?</td><td>I like swimming.</td></tr>
+</tbody></table></div></div><div class="audio-box"><strong>🎧 Listening: An interview</strong><p>Escucha una entrevista y fíjate en las preguntas y en las respuestas completas.</p>
+<audio controls preload="none"><source src="/media/ing4-1-interview.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+<p class="small">Archivo de audio: <code>/media/ing4-1-interview.mp3</code></p>
+<details><summary>Leer la transcripción</summary><p><span class="speaker">A:</span> Hello! What's your name? <span class="speaker">B:</span> My name is Emma. <span class="speaker">A:</span> How old are you? <span class="speaker">B:</span> I am ten years old. <span class="speaker">A:</span> Where are you from? <span class="speaker">B:</span> I am from Scotland. <span class="speaker">A:</span> Have you got a brother or a sister? <span class="speaker">B:</span> Yes, I have got one sister. <span class="speaker">A:</span> What do you like? <span class="speaker">B:</span> I like music and swimming. <span class="speaker">A:</span> Thank you! <span class="speaker">B:</span> You're welcome! Goodbye!</p></details></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Escucha y responde en inglés:</p><ol type="a"><li>What is the girl's name?</li><li>How old is she?</li><li>Where is she from?</li><li>Has she got a sister?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Completa con <strong>What, Who, Where</strong> o <strong>How old</strong>.</p><ol type="a"><li>_____ are you from?</li><li>_____ is this boy?</li><li>_____ is your name?</li><li>_____ are you?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p><strong>Speaking:</strong> en parejas, realizad una entrevista siguiendo cinco preguntas. Apuntad las respuestas para presentar después a vuestro compañero.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Escribe tres frases sobre la persona entrevistada: nombre, país y un dato de su familia o aficiones. Utiliza <em>he</em> o <em>she</em>, según corresponda.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.6. TAREA 6. CRITERIO ING.4.3.2 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-6" class="topic-section" data-criterion="ING.4.3.2">
+  <div class="section-head"><span class="section-number">1.6</span><div><h2 class="section-title">Let's keep talking!</h2><p class="section-subtitle">Aprendemos a iniciar, mantener y terminar un diálogo.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">Let's keep talking! — Mantenemos una conversación</h3><p>Cuando hablamos inglés, no siempre comprendemos todo a la primera. Podemos utilizar expresiones sencillas para <strong>pedir ayuda, repetir, respetar turnos y terminar con cortesía</strong>.</p>
+<div class="tbl-wrap"><table><thead><tr><th>Situation</th><th>Say this in English</th></tr></thead><tbody>
+<tr><td>Iniciar una conversación</td><td>Hello! Can I ask you a question?</td></tr>
+<tr><td>Solicitar que repitan algo</td><td>Can you repeat, please?</td></tr>
+<tr><td>Pedir que hablen más despacio</td><td>Can you speak slowly, please?</td></tr>
+<tr><td>No entender</td><td>Sorry, I don't understand.</td></tr>
+<tr><td>Mostrar que escuchas</td><td>OK. Thank you!</td></tr>
+<tr><td>Despedirse</td><td>Thank you. Goodbye! / See you!</td></tr>
+</tbody></table></div>
+<div class="example"><p class="example-title">A short conversation</p>
+<p><span class="speaker">A:</span> Hi! Where are you from?</p>
+<p><span class="speaker">B:</span> I'm from Ireland.</p>
+<p><span class="speaker">A:</span> Sorry, can you repeat, please?</p>
+<p><span class="speaker">B:</span> I'm from Ireland.</p>
+<p><span class="speaker">A:</span> Thank you!</p></div>
+<p>Usa un tono amable, mira a la persona con la que hablas y deja que termine antes de responder.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Elige la expresión más adecuada:</p><ol type="a"><li>No has entendido una palabra. ¿Qué dices?</li><li>Necesitas que hablen más despacio. ¿Qué dices?</li><li>Has terminado una entrevista. ¿Cómo te despides?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Ordena las intervenciones para formar un diálogo: <em>Thank you!</em> · <em>I'm from England.</em> · <em>Hi! Where are you from?</em> · <em>You're welcome!</em></p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Por parejas: una persona pregunta por el nombre, edad y procedencia; la otra responde. Durante la conversación debéis usar, al menos, una petición de repetición y una despedida educada.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Explica qué podrías hacer si no recuerdas una palabra: ¿señalar una imagen, dar un ejemplo, pedir ayuda o abandonar la conversación? Justifica tu elección.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.7. TAREA 7. CRITERIO ING.4.5.1 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-7" class="topic-section" data-criterion="ING.4.5.1">
+  <div class="section-head"><span class="section-number">1.7</span><div><h2 class="section-title">English and Spanish</h2><p class="section-subtitle">Comparamos estructuras y corregimos errores frecuentes.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">English and Spanish — Comparamos dos lenguas</h3><p>El inglés y el español tienen semejanzas, pero las frases no se construyen siempre igual. Compararlas ayuda a detectar y corregir errores.</p>
+<div class="tbl-wrap"><table><thead><tr><th>En español</th><th>En inglés</th><th>¿Qué cambia?</th></tr></thead><tbody>
+<tr><td>Tengo diez años.</td><td>I am ten years old.</td><td>La edad se expresa con <em>am</em>, no con <em>have</em>.</td></tr>
+<tr><td>Ella es amable.</td><td>She is kind.</td><td>En inglés aparece normalmente el sujeto <em>she</em>.</td></tr>
+<tr><td>Una niña simpática.</td><td>A friendly girl.</td><td>El adjetivo suele ir antes del sustantivo.</td></tr>
+<tr><td>Él tiene ojos azules.</td><td>He has got blue eyes.</td><td>Con <em>he</em> usamos <em>has got</em>.</td></tr>
+<tr><td>Su hermana (de él).</td><td>His sister.</td><td><em>His</em> indica que hablamos de él.</td></tr>
+<tr><td>Su hermana (de ella).</td><td>Her sister.</td><td><em>Her</em> indica que hablamos de ella.</td></tr>
+</tbody></table></div>
+<div class="example"><p class="example-title">Remember</p><p><strong>Are you Spanish?</strong> → Yes, I am. / No, I'm not.</p><p><strong>Has he got green eyes?</strong> → Yes, he has. / No, he hasn't.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Detecta el error y escribe la frase correctamente.</p><ol type="a"><li>I have ten years old.</li><li>She have got a brother.</li><li>My sister is friendly girl a.</li><li>He are from Spain.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Indica qué opción es correcta y explica por qué.</p><ol type="a"><li>Her name is Eva. / His name is Eva. (Hablamos de una niña).</li><li>He is ten. / He has ten years.</li><li>A red bike. / A bike red.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Traduce al inglés sin cambiar el sentido:</p><ol type="a"><li>Ella es mi amiga.</li><li>Él tiene el pelo corto.</li><li>Nosotros somos de España.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>En parejas, comparad <em>her</em> y <em>his</em> con el posesivo español «su». Explicad con un ejemplo por qué el inglés permite distinguir a quién pertenece algo.</p></article></div>
+</section>
+
+<!-- =========================================================
+         APARTADO 1.8. TAREA 8. CRITERIO ING.4.5.3 (uso docente, no visible)
+         ========================================================= -->
+<section id="sec-8" class="topic-section" data-criterion="ING.4.5.3">
+  <div class="section-head"><span class="section-number">1.8</span><div><h2 class="section-title">My Personal Profile and my portfolio</h2><p class="section-subtitle">Creamos un perfil y registramos nuestros progresos.</p></div></div>
+<div class="theory-box"><h3 class="theory-title">Our final project — My Personal Profile</h3><p>Ahora vas a preparar tu propio <strong>perfil personal ilustrado</strong>. Puede ser sobre ti y una persona conocida o inventada. Recuerda que no debes compartir en internet datos personales privados.</p>
+<ol class="step-list"><li>Escribe un borrador con nombre (puede ser ficticio), edad, país, nacionalidad, aspecto, familia o amistades y dos gustos.</li><li>Añade un segundo perfil muy breve sobre un amigo o personaje imaginario, utilizando <em>he / she</em> y <em>his / her</em>.</li><li>Revisa <em>am / is / are</em>, <em>have got / has got</em> y las mayúsculas de países y nacionalidades.</li><li>Organiza las frases en una tarjeta o cartel e ilústralo con un dibujo propio.</li><li>Practica una presentación oral breve y comparte tu trabajo con tus compañeros.</li></ol>
+<div class="profile-example"><h4>My Personal Profile — Example</h4>
+<p><strong>About me:</strong> Hi! I'm Sam. I'm nine years old. I'm from Spain. I'm Spanish. I've got brown eyes and short hair. I like basketball and drawing.</p>
+<p><strong>About my friend:</strong> This is Alex. He is ten. He is kind and funny. He has got curly black hair. His favourite colour is green.</p></div>
+<p class="note"><strong>Pronunciación:</strong> ensaya frases cortas, habla despacio y haz una pequeña pausa entre ideas. Si te equivocas, puedes volver a empezar.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p><strong>Borrador:</strong> escribe seis frases sobre ti. Subraya una forma de <em>to be</em> y rodea una forma de <em>have got</em>.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p><strong>Segundo perfil:</strong> escribe cuatro frases sobre una persona ficticia. Utiliza un posesivo y dos adjetivos.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p><strong>Revisión en parejas:</strong> intercambiad los borradores. Comprobad si se entiende la información y si están bien escritos los verbos y los posesivos.</p></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p><strong>Presentación:</strong> muestra tu tarjeta y presenta a las dos personas con frases breves. Después escucha una pregunta y respóndela con educación.</p></article></div><p><strong>Mi portafolio:</strong> cuando termines tu proyecto, completa la <a href="#sec-diana">autoevaluación</a> y escribe una meta de mejora para tu próxima situación de aprendizaje.</p>
+</section>
+
+        <!-- REPASAMOS LO APRENDIDO · DOS FICHAS -->
+        <section id="sec-repaso" class="topic-section lesson-section review-section sda-recap" aria-labelledby="titulo-repaso">
+          <div class="recap-heading">
+            <span class="heading-icon" aria-hidden="true">🔄</span>
+            <div><h2 id="titulo-repaso" class="section-title">Repasamos lo aprendido</h2><p>Dos fichas con actividades de los ocho apartados: refuerzo y ampliación.</p></div>
+          </div>
+          <!-- FICHA DE REFUERZO -->
+          <section class="recap-sheet review-group review-refuerzo" aria-labelledby="titulo-refuerzo">
+            <div class="sheet-heading sheet-heading--refuerzo"><h3 id="titulo-refuerzo">🟢 Ficha de refuerzo</h3></div>
+            <div class="sheet-grid review-grid">
+              <!-- REFUERZO 1.1 · CRITERIO DOCENTE ING.4.1.1 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.1.1">
+                <h4>Refuerzo 1.1 · Comprensión de perfiles</h4>
+                <p>Lee: «Hi! I am Mia. I am ten. I am from Spain. I have got one brother. I have got brown eyes.»</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Cómo se llama la niña?</li>
+                  <li>¿Cuántos años tiene?</li>
+                  <li>¿De qué país es?</li>
+                  <li>¿Qué dice sobre su familia y sus ojos?</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.2 · CRITERIO DOCENTE ING.4.1.2 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.1.2">
+                <h4>Refuerzo 1.2 · Estrategias para comprender</h4>
+                <p>Lee: «This is Jack. He is nine. He is from London. He has got a sister.» Utiliza el contexto antes de responder.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Subraya el nombre y la edad.</li>
+                  <li>Busca la palabra que indica su procedencia.</li>
+                  <li>Localiza la pista que te permite saber si tiene hermanos.</li>
+                  <li>Explica qué palabra o dato te ha ayudado más.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.3 · CRITERIO DOCENTE ING.4.2.1 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.2.1">
+                <h4>Refuerzo 1.3 · Descripciones orales</h4>
+                <p>Imagina un personaje y ensaya primero con estas expresiones: <em>He/She is…</em>, <em>He/She has got…</em></p>
+                <ol class="sheet-questions" type="a">
+                  <li>Di su nombre y su edad en inglés.</li>
+                  <li>Di de dónde es.</li>
+                  <li>Describe su pelo y sus ojos.</li>
+                  <li>Añade dos palabras para describir su personalidad.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.4 · CRITERIO DOCENTE ING.4.2.2 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.2.2">
+                <h4>Refuerzo 1.4 · Mi perfil escrito</h4>
+                <p>Escribe frases completas para una tarjeta personal.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Completa: <em>My name ___ Alex.</em></li>
+                  <li>Escribe tu edad con <em>I am…</em></li>
+                  <li>Redacta una frase que empiece por <em>I have got…</em></li>
+                  <li>Escribe otra frase con <em>My favourite…</em></li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.5 · CRITERIO DOCENTE ING.4.3.1 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.3.1">
+                <h4>Refuerzo 1.5 · Entrevistas personales</h4>
+                <p>Trabaja con una pareja y alternad los papeles de entrevistador y entrevistado.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Saluda con cortesía.</li>
+                  <li>Pregunta su nombre: <em>What is your name?</em></li>
+                  <li>Pregunta su edad: <em>How old are you?</em></li>
+                  <li>Agradece las respuestas y despídete.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.6 · CRITERIO DOCENTE ING.4.3.2 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.3.2">
+                <h4>Refuerzo 1.6 · Conversaciones educadas</h4>
+                <p>Elige expresiones para que la conversación no se interrumpa.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Cómo pedirías que repitieran una pregunta?</li>
+                  <li>¿Cómo pedirías que hablaran más despacio?</li>
+                  <li>Escribe una fórmula para agradecer la ayuda.</li>
+                  <li>Escribe una despedida apropiada.</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.7 · CRITERIO DOCENTE ING.4.5.1 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.5.1">
+                <h4>Refuerzo 1.7 · Inglés y español</h4>
+                <p>Observa estas parejas: <em>I am nine / Tengo nueve años</em>; <em>a friendly girl / una niña simpática</em>.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Qué verbo aparece en inglés para decir la edad?</li>
+                  <li>¿Qué verbo se emplea habitualmente en español para expresar la edad?</li>
+                  <li>¿Dónde aparece el adjetivo en <em>a friendly girl</em>?</li>
+                  <li>Traduce: «mi hermano» y «su hermana» (de ella).</li>
+                </ol>
+              </article>
+              <!-- REFUERZO 1.8 · CRITERIO DOCENTE ING.4.5.3 -->
+              <article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.4.5.3">
+                <h4>Refuerzo 1.8 · Mi primer portafolio</h4>
+                <p>Piensa en lo que has aprendido durante esta situación.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe dos expresiones que ya sabes utilizar.</li>
+                  <li>Anota un ejemplo con <em>to be</em>.</li>
+                  <li>Anota un ejemplo con <em>have got</em>.</li>
+                  <li>Elige algo que necesites seguir practicando.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+          <!-- FICHA DE AMPLIACIÓN -->
+          <section class="recap-sheet review-group review-ampliacion" aria-labelledby="titulo-ampliacion">
+            <div class="sheet-heading sheet-heading--ampliacion"><h3 id="titulo-ampliacion">🟠 Ficha de ampliacion</h3></div>
+            <div class="sheet-grid review-grid">
+              <!-- AMPLIACIÓN 1.1 · CRITERIO DOCENTE ING.4.1.1 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.1.1">
+                <h4>Ampliación 1.1 · Interpretación de perfiles</h4>
+                <p>Lee: «Oliver is British. He is eleven and he lives in Bristol. His best friend is Lena, who is ten. Oliver has got short hair and green eyes.»</p>
+                <ol class="sheet-questions" type="a">
+                  <li>¿Quién es mayor: Oliver o Lena? Justifica tu respuesta.</li>
+                  <li>¿De dónde es Oliver y dónde vive?</li>
+                  <li>¿Cómo es su aspecto físico?</li>
+                  <li>Escribe en inglés dos frases que resuman la información.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.2 · CRITERIO DOCENTE ING.4.1.2 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.1.2">
+                <h4>Ampliación 1.2 · Detectives de pistas</h4>
+                <p>Lee: «Ava is from Italy. Her friend Noah is from Canada. They both love drawing. Noah has got a dog called Max.»</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Antes de traducir, identifica los nombres propios y países.</li>
+                  <li>Busca una pista para saber qué les gusta a ambos.</li>
+                  <li>¿Quién tiene mascota? ¿Cómo se llama?</li>
+                  <li>Explica cómo averiguaste el sentido de <em>both</em> usando el contexto.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.3 · CRITERIO DOCENTE ING.4.2.1 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.2.1">
+                <h4>Ampliación 1.3 · Presentación oral ampliada</h4>
+                <p>Presenta a dos personajes ficticios que sean diferentes.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Di nombre, edad y nacionalidad de ambos.</li>
+                  <li>Compara su aspecto usando dos adjetivos sencillos.</li>
+                  <li>Añade una afición de cada persona.</li>
+                  <li>Formula una pregunta a la clase al terminar.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.4 · CRITERIO DOCENTE ING.4.2.2 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.2.2">
+                <h4>Ampliación 1.4 · Perfiles más completos</h4>
+                <p>Redacta un texto de seis a ocho frases sobre una persona inventada.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Utiliza correctamente <em>is</em> y <em>has got</em>.</li>
+                  <li>Incluye dos posesivos, como <em>his</em> o <em>her</em>.</li>
+                  <li>Añade una frase negativa con <em>isn’t</em> o <em>hasn’t got</em>.</li>
+                  <li>Revisa la concordancia y las mayúsculas antes de entregar.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.5 · CRITERIO DOCENTE ING.4.3.1 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.3.1">
+                <h4>Ampliación 1.5 · Entrevista con nuevas preguntas</h4>
+                <p>Preparad una entrevista de ocho intervenciones.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Formula una pregunta sobre la procedencia.</li>
+                  <li>Pregunta por una afición favorita.</li>
+                  <li>Añade una pregunta con <em>Have you got…?</em></li>
+                  <li>Responde y termina con una despedida respetuosa.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.6 · CRITERIO DOCENTE ING.4.3.2 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.3.2">
+                <h4>Ampliación 1.6 · Resolver malentendidos</h4>
+                <p>Imagina que hablas en inglés con alguien nuevo y no comprendes una palabra.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe una petición de repetición educada.</li>
+                  <li>Pide que deletreen su nombre usando <em>Can you spell…?</em></li>
+                  <li>Pregunta si has entendido bien un dato sencillo.</li>
+                  <li>Escribe cómo agradecerías la aclaración y cerrarías el diálogo.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.7 · CRITERIO DOCENTE ING.4.5.1 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.5.1">
+                <h4>Ampliación 1.7 · Comparación entre lenguas</h4>
+                <p>Observa: <em>She is ten</em>, <em>She has got a red bag</em>, <em>Her bag is red</em>.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Explica por qué «She has ten years» no se usa para expresar la edad.</li>
+                  <li>Corrige: <em>He have got blue eyes.</em></li>
+                  <li>Explica la diferencia entre <em>she</em> y <em>her</em> en estos ejemplos.</li>
+                  <li>Escribe dos frases correctas y sus equivalentes en español.</li>
+                </ol>
+              </article>
+              <!-- AMPLIACIÓN 1.8 · CRITERIO DOCENTE ING.4.5.3 -->
+              <article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.4.5.3">
+                <h4>Ampliación 1.8 · Plan personal de mejora</h4>
+                <p>Revisa tu perfil y las actividades realizadas.</p>
+                <ol class="sheet-questions" type="a">
+                  <li>Escribe tres expresiones de las que te sientas seguro.</li>
+                  <li>Elige dos errores y corrígelos con una explicación.</li>
+                  <li>Plantea una meta concreta para la próxima SdA.</li>
+                  <li>Explica cómo practicarás esa meta y cómo comprobarás si avanzas.</li>
+                </ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- COMPRUEBA LO APRENDIDO: MISMAS CLASES Y ESTRUCTURA DE LAS SdA -->
+        <section id="sec-comprueba" class="topic-section lesson-section check-learning" aria-labelledby="titulo-comprueba">
+          <div class="section-head"><span class="section-number" aria-hidden="true">✓</span><h2 id="titulo-comprueba" class="section-title">Comprueba lo aprendido</h2></div>
+          <p>Selecciona una caja en cada pregunta. Después pulsa «Comprobar respuestas». Puedes repetir el cuestionario tantas veces como necesites.</p>
+          <form id="quiz-form" novalidate>
+            <div class="quiz-grid">
+              <fieldset class="quiz-item" data-answer="1" data-criterio="ING.4.1.1">
+                <legend>1. ¿Cómo se expresa correctamente «Tengo diez años»?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-1" value="0"> <span>I have ten years.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-1" value="1"> <span>I am ten years old.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-1" value="2"> <span>I is ten.</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="2" data-criterio="ING.4.1.1">
+                <legend>2. Completa: She _____ got green eyes.</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-2" value="0"> <span>have</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-2" value="1"> <span>are</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-2" value="2"> <span>has</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="0" data-criterio="ING.4.1.2">
+                <legend>3. ¿Qué significa «Where are you from?»?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-3" value="0"> <span>¿De dónde eres?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-3" value="1"> <span>¿Cuántos años tienes?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-3" value="2"> <span>¿Cómo estás?</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="1" data-criterio="ING.4.2.1">
+                <legend>4. Emma has a bike. _____ bike is red.</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-4" value="0"> <span>His</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-4" value="1"> <span>Her</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-4" value="2"> <span>Our</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="2" data-criterio="ING.4.2.1">
+                <legend>5. ¿Cuál es la forma correcta en negativa?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-5" value="0"> <span>They isn&#x27;t funny.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-5" value="1"> <span>They not are funny.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-5" value="2"> <span>They aren&#x27;t funny.</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="0" data-criterio="ING.4.2.2">
+                <legend>6. ¿Qué puedes decir si necesitas que alguien repita?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-6" value="0"> <span>Can you repeat, please?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-6" value="1"> <span>I am repeat.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-6" value="2"> <span>Your name is repeat.</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="1" data-criterio="ING.4.3.1">
+                <legend>7. ¿Qué grupo está ordenado correctamente?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-7" value="0"> <span>A girl friendly</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-7" value="1"> <span>A friendly girl</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-7" value="2"> <span>A girl is friendly a</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="1" data-criterio="ING.4.3.1">
+                <legend>8. ¿Cuál es una pregunta correcta?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-8" value="0"> <span>He is your brother?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-8" value="1"> <span>Is he your brother?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-8" value="2"> <span>Are he your brother?</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="2" data-criterio="ING.4.3.2">
+                <legend>9. Completa: We _____ from Spain.</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-9" value="0"> <span>is</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-9" value="1"> <span>am</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-9" value="2"> <span>are</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="0" data-criterio="ING.4.5.1">
+                <legend>10. ¿Cuál es el posesivo correspondiente a «nosotros»?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-10" value="0"> <span>our</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-10" value="1"> <span>his</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-10" value="2"> <span>her</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="0" data-criterio="ING.4.5.1">
+                <legend>11. ¿Cómo se pregunta si alguien tiene una mascota?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-11" value="0"> <span>Have you got a pet?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-11" value="1"> <span>You have got a pet?</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-11" value="2"> <span>Has you got a pet?</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+              <fieldset class="quiz-item" data-answer="0" data-criterio="ING.4.5.3">
+                <legend>12. ¿Qué frase significa «Él no tiene el pelo largo»?</legend>
+                <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="pregunta-12" value="0"> <span>He hasn&#x27;t got long hair.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-12" value="1"> <span>He isn&#x27;t got long hair.</span></label>
+                <label class="quiz-option"><input type="radio" name="pregunta-12" value="2"> <span>He haven&#x27;t long hair.</span></label>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+              </fieldset>
+            </div>
+            <div class="quiz-actions button-row">
+              <button class="action-button" type="submit">Comprobar respuestas</button>
+              <button class="action-button secondary" type="reset">Volver a empezar</button>
+            </div>
+            <p id="quiz-result" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+        <section id="sec-diana" class="topic-section lesson-section self-eval diana-section" aria-labelledby="titulo-autoevaluacion">
+          <div class="recap-heading">
+            <span class="heading-icon heading-icon--indigo" aria-hidden="true">🎯</span>
+            <div><h2 id="titulo-autoevaluacion" class="section-title">Diana de Autoevaluación Interactiva</h2><p>Selecciona una opción en cada apartado para valorar tu aprendizaje.</p></div>
+          </div>
+          <p>No se trata de obtener una nota, sino de reconocer qué sabes hacer y qué necesitas practicar.</p>
+          <div class="diana-list self-eval-grid">
+            <!-- AUTOEVALUACIÓN 1.1 · CRITERIO DOCENTE ING.4.1.1 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.1</strong> Comprendo el sentido de presentaciones sencillas en inglés.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.1">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.2 · CRITERIO DOCENTE ING.4.1.2 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.2</strong> Utilizo palabras e imágenes como pistas para comprender lo que leo o escucho.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.2">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.3 · CRITERIO DOCENTE ING.4.2.1 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.3</strong> Presento oralmente a otra persona utilizando frases breves.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.3">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.4 · CRITERIO DOCENTE ING.4.2.2 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.4</strong> Escribo perfiles con <em>to be</em>, <em>have got</em> y posesivos.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.4">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.5 · CRITERIO DOCENTE ING.4.3.1 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.5</strong> Participo en entrevistas preparadas, escuchando y respetando los turnos.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.5">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.6 · CRITERIO DOCENTE ING.4.3.2 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.6</strong> Sé pedir que repitan, aclaren una información o hablen más despacio.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.6">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.7 · CRITERIO DOCENTE ING.4.5.1 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.7</strong> Reconozco diferencias entre el español y el inglés y corrijo errores habituales.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.7">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+            <!-- AUTOEVALUACIÓN 1.8 · CRITERIO DOCENTE ING.4.5.3 -->
+            <div class="diana-row eval-row">
+              <p class="eval-statement"><strong>1.8</strong> Reviso mi trabajo, identifico avances y elijo un objetivo para mejorar.</p>
+              <div class="diana-options auto-eval-group" role="group" aria-label="Autoevaluación del apartado 1.8">
+                <button type="button" class="diana-option eval-btn" data-value="1" aria-pressed="false">Casi nunca</button>
+                <button type="button" class="diana-option eval-btn" data-value="2" aria-pressed="false">A veces</button>
+                <button type="button" class="diana-option eval-btn" data-value="3" aria-pressed="false">Casi siempre</button>
+                <button type="button" class="diana-option eval-btn" data-value="4" aria-pressed="false">Siempre</button>
+              </div>
+            </div>
+          </div>
+          <label class="goal-label" for="my-goal"><strong>My next step — Mi siguiente reto:</strong> escribe algo que ya haces bien y algo que quieras practicar.</label>
+          <textarea id="my-goal" placeholder="Por ejemplo: Ya sé presentarme. Quiero practicar las preguntas con have got."></textarea>
+          <div class="eval-actions button-row">
+            <p id="eval-status" role="status" aria-live="polite">Puedes marcar una opción en cada apartado.</p>
+            <button class="action-button secondary" id="reset-diana" type="button">Borrar mi autoevaluación</button>
+          </div>
+        </section>
+    </div>
+  </div></main>
+  <!-- Pie de página institucional: deliberadamente sin copyright ni enlace de retorno, según las indicaciones del proyecto. -->
+  <footer class="site-footer"><div class="footer-container">
+    <div class="footer-junta"><img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación"></div>
+    <div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro <span aria-hidden="true">↗</span></a></div>
+  </div></footer>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Corrección del cuestionario: misma interacción que las SdA de Lengua.
+      const form = document.getElementById('quiz-form');
+      const result = document.getElementById('quiz-result');
+      const questions = Array.from(form.querySelectorAll('fieldset.quiz-item'));
+
+      // Cada pregunta permite seleccionar una sola caja; selección verde.
+      questions.forEach(function (question) {
+        question.addEventListener('change', function () {
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            const radio = option.querySelector('input[type="radio"]');
+            option.classList.toggle('selected', Boolean(radio && radio.checked));
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let correct = 0;
+        let answered = 0;
+        questions.forEach(function (question) {
+          const selected = question.querySelector('input[type="radio"]:checked');
+          const answer = question.dataset.answer;
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+          if (!selected) {
+            feedback.textContent = 'Elige una respuesta.';
+            return;
+          }
+          answered += 1;
+          if (selected.value === answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = 'Correcto.';
+          } else {
+            question.classList.add('incorrect');
+            const choices = question.querySelectorAll('input[type="radio"]');
+            const right = choices[Number(answer)];
+            feedback.textContent = 'Repasa este contenido. Respuesta correcta: ' +
+              right.nextElementSibling.textContent.trim() + '.';
+          }
+        });
+        result.textContent = 'Has respondido ' + answered + ' de ' + questions.length +
+          ' preguntas. Aciertos: ' + correct + ' de ' + questions.length + '.';
+      });
+
+      form.addEventListener('reset', function () {
+        questions.forEach(function (question) {
+          question.classList.remove('correct', 'incorrect');
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.classList.remove('selected');
+          });
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        result.textContent = '';
+      });
+
+      // Diana interactiva: una sola opción por fila y posibilidad de reinicio.
+      const groups = Array.from(document.querySelectorAll('.diana-options'));
+      const status = document.getElementById('eval-status');
+      function updateStatus() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('button[aria-pressed="true"]');
+        }).length;
+        status.textContent = 'Has valorado ' + answered + ' de ' + groups.length + ' apartados.';
+      }
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('button.diana-option');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('button.diana-option').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+          });
+          updateStatus();
+        });
+      });
+      document.getElementById('reset-diana').addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('button.diana-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateStatus();
+      });
+    });
+  </script>
+</body>
+</html>
