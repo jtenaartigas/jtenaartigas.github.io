@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ING3.1 Hello! This is me, Inglés de 3.º de Primaria: saludos, presentaciones, edad, países, números hasta 100, colores, alfabeto y tarjeta personal." name="description"/>
+<title>Hello! This is me | Inglés 3.º | CEIP Joaquín Tena Artigas</title>
+<link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+<link href="/css/base.css" rel="stylesheet"/>
+<!-- El verde institucional se emplea en todas las SdA; el violeta se reserva para el índice de Inglés. -->
+<style>
+    :root { --ing-green: #007a33; --ing-dark: #005724; --ing-pale:#e6f4ea; --ing-line:#d1e7dd; --ing-text:#1e293b; --ing-muted:#475569; --ing-bg:#f4f7f5; --ing-amber:#b45309; }
+    html { scroll-behavior:smooth; }
+    .topic-page { background:var(--ing-bg); color:var(--ing-text); font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+    .topic-page * { box-sizing:border-box; }
+    .topic-page .topic-shell { width:min(94%,1280px); margin:0 auto; padding:1.5rem 0 3rem; }
+    .topic-page .topic-content section[id] { scroll-margin-top:90px; }
+    .topic-page .topic-hero { border-radius:1.55rem; background:linear-gradient(115deg,#005724 0%,#007a33 62%,#00a847 100%); color:#fff; padding:clamp(1.5rem,4.5vw,3rem); margin:1rem 0 2rem; position:relative; overflow:hidden; display:grid; align-items:center; grid-template-columns:minmax(0,1fr) 170px; gap:1.4rem; box-shadow:0 10px 28px rgba(0,87,36,.17); }
+    .topic-page .topic-hero::before { content:"Hello!"; position:absolute; right:12rem; bottom:-2.8rem; font-size:clamp(3rem,10vw,8rem); font-weight:900; letter-spacing:-.06em; color:#fff; opacity:.08; pointer-events:none; }
+    .topic-page .topic-hero h1 { color:#fff; margin:0 0 .85rem; line-height:1.07; font-size:clamp(1.9rem,5vw,3.2rem); font-weight:850; }
+    .topic-page .topic-hero p { margin:0; max-width:750px; color:#effff2; line-height:1.65; font-size:clamp(.98rem,2vw,1.09rem); }
+    .topic-page .topic-tag { display:inline-block; margin:0 0 .9rem; padding:.35rem .75rem; border:1px solid rgba(255,255,255,.45); border-radius:999px; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+    .topic-page .topic-hero-image { width:100%; max-height:185px; object-fit:contain; position:relative; z-index:1; }
+    .topic-page .topic-nav { padding:1.25rem 1.35rem; margin-bottom:2rem; background:#fff; border:1px solid var(--ing-line); border-radius:1rem; box-shadow:0 2px 12px rgba(0,87,36,.04); }
+    .topic-page .topic-nav h2 { margin:0 0 .9rem; color:var(--ing-dark); font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+    .topic-page .topic-nav-links { display:flex; flex-wrap:wrap; gap:.55rem; }
+    .topic-page .nav-link { display:inline-block; padding:.52rem .76rem; border-radius:.55rem; background:#f1f5f9; color:#334155; text-decoration:none; font-size:.85rem; font-weight:650; transition:background .2s,color .2s; }
+    .topic-page .nav-link:hover,.topic-page .nav-link:focus-visible { background:var(--ing-green); color:#fff; }
+    .topic-page .nav-link.is-review { background:#fef3c7; color:#92400e; } .topic-page .nav-link.is-self { background:#e0e7ff; color:#3730a3; }
+    .topic-page .topic-content { display:grid; gap:1.75rem; }
+    .topic-page .topic-section { min-width:0; padding:clamp(1.15rem,3vw,2rem); border:1px solid #e5eee8; border-radius:1.35rem; background:#fff; box-shadow:0 4px 20px -2px rgba(0,122,51,.08); }
+    .topic-page .section-head { display:flex; align-items:center; gap:.9rem; margin-bottom:1.25rem; }
+    .topic-page .section-number { display:flex; align-items:center; justify-content:center; flex:0 0 auto; min-width:3.2rem; height:3.1rem; padding:0 .55rem; border-radius:.75rem; background:var(--ing-green); color:#fff; font-weight:850; font-size:1.07rem; }
+    .topic-page .section-title { margin:0; color:#153c28; font-size:clamp(1.25rem,2.6vw,1.65rem); font-weight:800; line-height:1.2; }
+    .topic-page .section-subtitle { margin:.35rem 0 0; color:#64748b; font-size:.85rem; }
+    .topic-page .theory-box { background:#f0f8f2; padding:1.25rem 1.35rem; border:1px solid var(--ing-line); border-left:5px solid var(--ing-green); border-radius:1rem; margin:1rem 0 1.2rem; }
+    .topic-page .theory-title { color:var(--ing-dark); font-weight:800; font-size:1.04rem; margin:0 0 .75rem; }
+    .topic-page p,.topic-page li { line-height:1.7; } .topic-page p { margin:.65rem 0; }
+    .topic-page strong { font-weight:800; } .topic-page .theory-box strong { color:#185c34; }
+    .topic-page ul,.topic-page ol { padding-left:1.3rem; margin:.65rem 0; } .topic-page li+li { margin-top:.24rem; }
+    .topic-page .example { background:#fff; padding:.85rem 1rem; margin:.85rem 0 0; border:1px solid #cce3d3; border-radius:.7rem; }
+    .topic-page .example-title { margin:0 0 .3rem; color:#115a31; font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em; }
+    .topic-page .vocab-grid,.topic-page .exercise-grid,.topic-page .cols { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .topic-page .word-card { min-width:0; border:1px solid #d8e5dd; background:#fff; padding:1rem; border-radius:.85rem; }
+    .topic-page .word-card h4 { font-size:.94rem; color:var(--ing-dark); margin:0 0 .5rem; }
+    .topic-page .word-card p { margin:.25rem 0; font-size:.92rem; }
+    .topic-page .exercise-grid { margin-top:1.05rem; }
+    .topic-page .exercise-card { background:#f8fafc; border:1px solid #e2e8f0; padding:1.1rem 1.2rem; border-radius:1rem; min-width:0; }
+    .topic-page .exercise-card p { font-size:.94rem; margin:.6rem 0; }
+    .topic-page .exercise-label { display:inline-block; background:var(--ing-green); border-radius:.35rem; color:white; font-weight:800; font-size:.77rem; padding:.27rem .56rem; margin-bottom:.3rem; }
+    .topic-page .activity-label { display:inline-block; border-radius:999px; background:#ddf5e5; padding:.24rem .7rem; color:#11552c; font-size:.79rem; font-weight:800; margin:.4rem 0 .6rem; }
+    .topic-page .exercise-card ol,.topic-page .exercise-card ul { font-size:.92rem; padding-left:1.15rem; }
+    .topic-page .writing-lines { border-top:1px dashed #cbd5e1; margin:.9rem 0 0; padding-top:.5rem; color:#64748b; font-size:.83rem; }
+    .topic-page .tbl-wrap { width:100%; overflow-x:auto; border:1px solid #d4e6d9; border-radius:.8rem; background:#fff; margin:1rem 0; }
+    .topic-page table { width:100%; border-collapse:collapse; text-align:left; font-size:.92rem; }
+    .topic-page th { background:#dff2e6; color:#124d2b; font-weight:800; } .topic-page th,.topic-page td { padding:.62rem .82rem; border-bottom:1px solid #e2eee5; vertical-align:top; }
+    .topic-page tr:last-child td { border-bottom:0; }
+    .topic-page .note { border-left:4px solid #d97706; background:#fffbeb; border-radius:.4rem; padding:.75rem .9rem; margin:.9rem 0; font-size:.91rem; }
+    .topic-page .audio-box { background:#fff; border:1px solid #d8e6de; padding:1rem 1.1rem; border-radius:.9rem; margin:1rem 0; }
+    .topic-page .audio-box audio { display:block; width:100%; margin:.6rem 0; }
+    .topic-page .audio-box .small { font-size:.8rem; color:#64748b; margin:0; }
+    .topic-page details { border:1px solid #dbe8df; background:#fff; padding:.75rem .95rem; border-radius:.65rem; margin:.65rem 0; }
+    .topic-page summary { cursor:pointer; color:#14532d; font-weight:750; }
+    .topic-page .speaker { color:#115e35; font-weight:800; }
+    .topic-page .profile-example { border:2px solid #bbdfc7; border-radius:1rem; padding:1.2rem; margin:.9rem 0; background:#fff; }
+    .topic-page .profile-example h4 { margin:0 0 .6rem; font-size:1.05rem; color:var(--ing-dark); }
+    .topic-page .info-strip { display:flex; gap:.55rem; flex-wrap:wrap; margin:.7rem 0; }
+    .topic-page .pill { display:inline-block; border:1px solid #c0dfcb; background:#f3faf5; border-radius:999px; font-size:.82rem; padding:.27rem .65rem; color:#22563b; font-weight:700; }
+    .topic-page .step-list { counter-reset:steps; list-style:none; padding:0; } .topic-page .step-list li { counter-increment:steps; padding:.6rem .5rem .6rem 2.65rem; position:relative; } .topic-page .step-list li::before { content:counter(steps); position:absolute; left:0; top:.56rem; display:grid; place-items:center; height:1.75rem; width:1.75rem; border-radius:50%; background:#dff2e6; color:#12552d; font-weight:850; }
+    .topic-page .mini-button,.topic-page button.check-btn { cursor:pointer; padding:.55rem .9rem; border:0; border-radius:.6rem; color:#fff; background:#007a33; font-weight:800; font-size:.85rem; }
+    .topic-page .mini-button:hover,.topic-page button.check-btn:hover { background:#005724; }
+    .topic-page .review-section { border:2px solid var(--ing-green); }
+    .topic-page .checklist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.6rem; }
+    .topic-page .checklist label { display:flex; align-items:flex-start; gap:.45rem; background:#f8fafc; border:1px solid #e2e8f0; padding:.75rem; border-radius:.7rem; font-size:.91rem; cursor:pointer; }
+    .topic-page .checklist input { margin-top:.25rem; accent-color:#007a33; }
+    .topic-page .self-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
+    .topic-page .self-item { border:1px solid #dce7e0; padding:.75rem; border-radius:.75rem; background:#fafdfa; }
+    .topic-page .self-item p { font-size:.89rem; font-weight:700; margin:.05rem 0 .5rem; }
+    .topic-page .self-item label { font-size:.85rem; margin-right:.9rem; white-space:nowrap; }
+    .topic-page .self-item input { accent-color:#007a33; }
+    .topic-page textarea { display:block; width:100%; min-height:5rem; padding:.7rem .8rem; border:1px solid #cbd5e1; border-radius:.6rem; font:inherit; resize:vertical; }
+    .topic-page .footer-link { display:inline-block; margin-top:1.7rem; color:#11562e; text-decoration:none; font-weight:800; }
+    .topic-page .footer-link:hover { text-decoration:underline; }
+    .topic-page :focus-visible { outline:3px solid #d97706; outline-offset:3px; }
+    @media (max-width:800px) { .topic-page .topic-hero { grid-template-columns:minmax(0,1fr) 110px; } }
+    @media (max-width:650px) { .topic-page .topic-hero { grid-template-columns:1fr; } .topic-page .topic-hero-image { width:132px; justify-self:end; } .topic-page .vocab-grid,.topic-page .exercise-grid,.topic-page .cols,.topic-page .checklist,.topic-page .self-grid { grid-template-columns:1fr; } .topic-page .section-number { min-width:2.75rem; height:2.75rem; font-size:.93rem; } .topic-page .section-head { align-items:flex-start; } }
+    @media print { .site-banner,.navigation-wrapper,.skip-link,.topic-nav, .topic-page .mini-button,.topic-page button.check-btn { display:none!important; } .topic-page .topic-section { break-inside:avoid; box-shadow:none; } .topic-page .topic-hero { box-shadow:none; } .topic-page .topic-shell { width:100%; } }
+
+    /* =========================================================
+       REPASAMOS · FICHAS DE REFUERZO Y AMPLIACIÓN
+       Clases compartidas con las SdA de Lengua 4.º y Matemáticas 4.º
+       ========================================================= */
+    .topic-page .sda-recap { border:2px solid #007a33; }
+    .topic-page .recap-heading { display:flex; gap:.9rem; align-items:flex-start; margin:0 0 1.5rem; }
+    .topic-page .recap-heading .section-title { margin:.12rem 0 0; }
+    .topic-page .recap-heading p { margin:.35rem 0 0; color:#65736b; font-size:.87rem; }
+    .topic-page .heading-icon { display:inline-grid; place-items:center; min-width:3rem; min-height:2.8rem; background:#007a33; color:#fff; border-radius:12px; font-size:1.2rem; }
+    .topic-page .heading-icon--indigo { background:#4f46e5; }
+    .topic-page .recap-sheet + .recap-sheet { margin-top:2.5rem; }
+    .topic-page .sheet-heading { padding:.85rem 1rem; border-left:4px solid #007a33; border-radius:0 12px 12px 0; background:#ecfdf3; margin:0 0 1.2rem; }
+    .topic-page .sheet-heading h3 { margin:0; font-size:1.05rem; color:#005724; font-weight:800; }
+    .topic-page .sheet-heading--ampliacion { background:#fffbeb; border-color:#d97706; }
+    .topic-page .sheet-heading--ampliacion h3 { color:#92400e; }
+    .topic-page .sheet-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .topic-page .sheet-card { min-width:0; padding:1.15rem 1.25rem; background:#f8faf9; border:1px solid #dce6e0; border-radius:16px; }
+    .topic-page .sheet-card h4 { display:inline-block; margin:0 0 .75rem; padding:.32rem .6rem; border-radius:7px; color:white; background:#007a33; font-size:.9rem; font-weight:800; line-height:1.35; }
+    .topic-page .sheet-card--ampliacion h4 { background:#b45309; }
+    .topic-page .sheet-card p { margin:0 0 .65rem; font-size:.92rem; line-height:1.55; }
+    .topic-page .sheet-questions { list-style:lower-alpha; margin:0; padding-left:1.5rem; }
+    .topic-page .sheet-questions li { margin:0 0 .55rem; line-height:1.55; font-size:.93rem; }
+    .topic-page .sheet-questions li:last-child { margin-bottom:0; }
+    /* =========================================================
+       COMPRUEBA LO APRENDIDO · cuestionario autocorregible
+       ========================================================= */
+    .topic-page .check-learning { border-radius:18px; box-shadow:0 4px 20px -2px rgba(0,122,51,.08); }
+    .topic-page .quiz-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.15rem 0; }
+    .topic-page .quiz-grid .quiz-item { min-width:0; border:1px solid #d7e6db; background:#fbfdfb; border-radius:13px; padding:1rem; }
+    .topic-page .quiz-grid .quiz-item legend { color:#274d37; font-weight:750; padding:.1rem .25rem; font-size:.94rem; }
+    /* Respuestas como tarjetas seleccionables, no radios circulares. */
+    .topic-page .quiz-options { display:grid; grid-template-columns:1fr; gap:.55rem; margin-top:.85rem; }
+    .topic-page .quiz-grid .quiz-item .quiz-option {
+      position:relative; display:flex; align-items:center; min-height:2.65rem; width:100%;
+      padding:.62rem .82rem; margin:0; border:1.5px solid #cbd5e1; border-radius:.65rem;
+      background:#fff; color:#334155; font-size:.91rem; font-weight:650;
+      line-height:1.45; cursor:pointer; transition:background .15s,border-color .15s,color .15s;
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option:hover { border-color:#007a33; background:#f0f9f3; }
+    .topic-page .quiz-grid .quiz-item .quiz-option input[type="radio"] {
+      position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;
+      clip-path:inset(50%); margin:0; padding:0;
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option:focus-within { outline:2px solid #005724; outline-offset:2px; }
+    .topic-page .quiz-grid .quiz-item .quiz-option.selected,
+    .topic-page .quiz-grid .quiz-item .quiz-option:has(input[type="radio"]:checked) {
+      background:#007a33; border-color:#005724; color:#fff; box-shadow:0 2px 8px rgba(0,87,36,.12);
+    }
+    .topic-page .quiz-grid .quiz-item .quiz-option.selected span,
+    .topic-page .quiz-grid .quiz-item .quiz-option:has(input[type="radio"]:checked) span { color:#fff; }
+    .topic-page .quiz-grid .quiz-item.correct { border-color:#3c9961; background:#f2fcf5; }
+    .topic-page .quiz-grid .quiz-item.incorrect { border-color:#d79a71; background:#fffaf5; }
+    .topic-page .quiz-grid .quiz-feedback { display:block; min-height:1em; padding:0; border:0; margin:.65rem 0 0; background:none; color:#475569; font-size:.86rem; font-weight:650; }
+    .topic-page .quiz-actions,.topic-page .button-row { display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+    .topic-page .action-button { border:0; border-radius:11px; padding:.75rem 1.1rem; background:#007a33; color:white; cursor:pointer; font:inherit; font-weight:750; }
+    .topic-page .action-button.secondary { background:#e9f3ed; color:#005724; }
+    .topic-page .action-button:hover,.topic-page .action-button:focus-visible { filter:brightness(.94); }
+    .topic-page #quiz-result { margin:1rem 0 0; font-weight:750; color:#005724; }
+    /* =========================================================
+       DIANA DE AUTOEVALUACIÓN INTERACTIVA · ocho apartados
+       ========================================================= */
+    .topic-page .self-eval { border:2px solid #c7d2fe; }
+    .topic-page .diana-list { display:grid; gap:.9rem; margin-top:1.2rem; }
+    .topic-page .diana-row { display:flex; justify-content:space-between; align-items:center; gap:1.1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:1rem; }
+    .topic-page .diana-row p { flex:1 1 350px; margin:0; line-height:1.5; }
+    .topic-page .diana-row strong { color:#007a33; margin-right:.25rem; }
+    .topic-page .diana-options { flex:0 1 430px; display:flex; flex-wrap:wrap; gap:.35rem; }
+    .topic-page .diana-option { border:1px solid #cbd5e1; background:white; color:#475569; cursor:pointer; padding:.47rem .65rem; border-radius:8px; font:inherit; font-size:.75rem; font-weight:750; }
+    .topic-page .diana-option:hover,.topic-page .diana-option:focus-visible { border-color:#4f46e5; }
+    .topic-page .diana-option[aria-pressed="true"] { color:white; background:#4f46e5; border-color:#4f46e5; }
+    .topic-page .eval-actions { display:flex; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1.3rem; }
+    .topic-page #eval-status { flex:1 1 240px; margin:0; color:#475569; }
+    .topic-page .goal-label { display:block; margin:1rem 0 .5rem; }
+    @media (max-width:900px) {
+      .topic-page .diana-row { flex-direction:column; align-items:stretch; }
+      .topic-page .diana-options { flex:auto; }
+    }
+    @media (max-width:760px) {
+      .topic-page .sheet-grid,.topic-page .quiz-grid { grid-template-columns:1fr; }
+    }
+    @media print {
+      .topic-page .diana-options,.topic-page .quiz-actions,.topic-page .eval-actions { display:none!important; }
+      .topic-page .sda-recap,.topic-page .self-eval,.topic-page .check-learning { box-shadow:none; break-inside:auto; }
+      .topic-page .sheet-card { break-inside:avoid; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+<!-- Banner y menú del centro: misma estructura y clases que los índices de Inglés y las demás SdA. -->
+<header class="site-banner"><a aria-label="Ir a la página de inicio" href="/"><img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/></a></header>
+<div class="navigation-wrapper"><div class="navigation-container">
+<a aria-label="Ir a la página de inicio" class="navigation-logo" href="/"><img alt="" src="/img/logo-centro.png"/></a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation"><ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red"><a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">🔒</span> Área privada Profesorado</a></li>
+</ul></nav>
+</div></div>
+<!-- DESTINO: /recursos/tercero/ingles3/hello-this-is-me/index.html -->
+<main class="topic-page" id="contenido-principal"><div class="topic-shell">
+<nav aria-label="Migas de pan" class="breadcrumbs"><ol>
+<li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li>
+<li><a href="/recursos/tercero/">3.º de Primaria</a></li>
+<li><a href="/recursos/tercero/ingles3/">Inglés</a></li>
+<li aria-current="page">Hello! This is me</li>
+</ol></nav>
+<section aria-labelledby="main-title" class="topic-hero">
+<div><span class="topic-tag">Inglés · 3.º Primaria · ING3.1</span>
+<h1 id="main-title">1. HELLO! THIS IS ME</h1>
+<p>Aprende a saludar y presentarte en inglés: tu nombre, edad, país y color favorito. Practica el alfabeto y los números y crea tu tarjeta <em>My English ID Card</em>.</p>
+</div>
+<img alt="" class="topic-hero-image" src="/img/tomatito/ingles.png"/>
+</section>
+<nav aria-label="Contenidos de la Situación de Aprendizaje" class="topic-nav">
+<h2>📍 Contenidos de la Situación de Aprendizaje</h2>
+<div class="topic-nav-links">
+<a class="nav-link" href="#sec-1">1.1 Hello! Nice to meet you</a>
+<a class="nav-link" href="#sec-2">1.2 Look, read and discover</a>
+<a class="nav-link" href="#sec-3">1.3 This is me: my name and age</a>
+<a class="nav-link" href="#sec-4">1.4 My English ID Card</a>
+<a class="nav-link" href="#sec-5">1.5 What is your name? Let’s talk!</a>
+<a class="nav-link" href="#sec-6">1.6 Hello, please, goodbye</a>
+<a class="nav-link" href="#sec-7">1.7 English and Spanish: let’s compare</a>
+<a class="nav-link" href="#sec-8">1.8 My first English portfolio</a>
+<a class="nav-link is-review" href="#sec-repaso">🔄 Repasamos lo aprendido</a>
+<a class="nav-link" href="#sec-comprueba">✅ Comprueba lo aprendido</a>
+<a class="nav-link is-self" href="#sec-diana">🎯 Autoevaluación</a>
+</div>
+</nav>
+<div class="topic-content">
+<!-- APARTADO 1.1. TAREA 1. CRITERIO ING.3.1.1 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.1.1" id="sec-1"><div class="section-head"><span class="section-number">1.1</span><div><h2 class="section-title">Hello! Nice to meet you</h2><p class="section-subtitle">Escuchamos y reconocemos saludos, nombres y edades en mensajes breves.</p></div></div><div class="theory-box"><h3 class="theory-title">Hello and goodbye — Saludamos y nos despedimos</h3><p>Cuando conocemos a alguien, primero <strong>saludamos</strong>, después podemos decir nuestro <strong>nombre</strong> y, al terminar, nos <strong>despedimos</strong>. Estas expresiones nos ayudan a hablar en inglés desde el primer día.</p><div class="vocab-grid"><div class="word-card"><h4>👋 Greetings — Saludos</h4><p><strong>Hello!</strong> — ¡Hola!</p><p><strong>Hi!</strong> — ¡Hola! (informal)</p><p><strong>Good morning!</strong> — ¡Buenos días!</p><p><strong>Good afternoon!</strong> — ¡Buenas tardes!</p><p><strong>Nice to meet you!</strong> — ¡Encantado/a de conocerte!</p></div><div class="word-card"><h4>🙂 Goodbyes — Despedidas</h4><p><strong>Goodbye!</strong> — ¡Adiós!</p><p><strong>Bye!</strong> — ¡Adiós! (informal)</p><p><strong>See you!</strong> — ¡Hasta luego!</p><p><strong>See you tomorrow!</strong> — ¡Hasta mañana!</p><p><strong>Thank you!</strong> — ¡Gracias!</p></div></div><div class="example"><p class="example-title">Our first conversation — Nuestra primera conversación</p><p><strong>A:</strong> Hello! My name is Ana.<br/><strong>B:</strong> Hi! I'm Sam. Nice to meet you!<br/><strong>A:</strong> Nice to meet you too! Goodbye!<br/><strong>B:</strong> Bye!</p></div></div><div class="theory-box"><h3 class="theory-title">Listen and find the information — Escucha y localiza datos</h3><p>En los diálogos de presentación no hace falta entender cada palabra. Escucha las palabras conocidas: <strong>name</strong> (nombre), <strong>eight</strong> (ocho), <strong>nine</strong> (nueve) y <strong>from</strong> (de, procedencia).</p><div class="audio-box"><strong>🎧 Listening: Two new classmates</strong><p>Escucha dos veces: primero descubre quién habla y después anota nombre, edad y país.</p><audio controls="" preload="none"><source src="/media/ing3-1-hello-class.mp3" type="audio/mpeg"/>Tu navegador no admite el reproductor de audio.</audio><p class="small">Archivo de audio: <code>/media/ing3-1-hello-class.mp3</code></p><details><summary>Mostrar la transcripción después de escuchar</summary><p><span class="speaker">Mia:</span> Hello! My name is Mia. I am eight years old. I am from Spain. Nice to meet you!</p><p><span class="speaker">Leo:</span> Hi, Mia! My name is Leo. I am nine years old. I am from Ireland. Nice to meet you too!</p><p><span class="speaker">Mia:</span> Goodbye, Leo!</p><p><span class="speaker">Leo:</span> Bye, Mia!</p></details></div><div class="example"><p class="example-title">Listening clues — Pistas para escuchar</p><p>¿Quién dice <strong>eight</strong>? ¿Quién dice <strong>Ireland</strong>? Puedes escuchar de nuevo antes de responder.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Comprende el diálogo.</p><ol type="a"><li>¿Cómo se llama la niña?</li><li>¿Cómo se llama el niño?</li><li>¿Quién tiene ocho años?</li><li>¿Qué país menciona Leo?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Relaciona cada expresión.</p><ol type="a"><li><em>Hello</em> — ¿saludo o despedida?</li><li><em>Goodbye</em> — ¿saludo o despedida?</li><li><em>Nice to meet you</em> — ¿qué significa?</li><li><em>See you tomorrow</em> — ¿qué significa?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>True or false.</p><ol type="a"><li>Mia says: <em>I am eight years old.</em></li><li>Leo says: <em>I am eight years old.</em></li><li>Mia is from Spain.</li><li>Leo is from Ireland.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Escucha y practica.</p><ol type="a"><li>Repite <em>Hello!</em> con voz clara.</li><li>Repite <em>My name is…</em>.</li><li>Repite <em>Nice to meet you!</em>.</li><li>Practica <em>Goodbye!</em> con un compañero.</li></ol></article></div></section>
+<!-- APARTADO 1.2. TAREA 2. CRITERIO ING.3.1.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.1.2" id="sec-2"><div class="section-head"><span class="section-number">1.2</span><div><h2 class="section-title">Look, read and discover</h2><p class="section-subtitle">Utilizamos imágenes, colores, letras y palabras conocidas para comprender.</p></div></div><div class="theory-box"><h3 class="theory-title">Colours — Los colores</h3><p>Los <strong>colores</strong> nos dan pistas para comprender mensajes y localizar objetos. Antes de escuchar o leer, observa el dibujo y fíjate en las palabras que ya sabes.</p><div class="vocab-grid"><div class="word-card"><h4>🌈 Basic colours — Colores básicos</h4><p><strong>red 🔴</strong> — rojo</p><p><strong>blue 🔵</strong> — azul</p><p><strong>yellow 🟡</strong> — amarillo</p><p><strong>green 🟢</strong> — verde</p><p><strong>orange 🟠</strong> — naranja</p></div><div class="word-card"><h4>🖍️ More colours — Otros colores</h4><p><strong>pink 🩷</strong> — rosa</p><p><strong>purple 🟣</strong> — morado</p><p><strong>black ⚫</strong> — negro</p><p><strong>white ⚪</strong> — blanco</p><p><strong>brown 🟤</strong> — marrón</p></div></div><div class="example"><p class="example-title">Look at the colour</p><p><strong>A red pencil.</strong> — Un lápiz rojo.<br/><strong>A blue book.</strong> — Un libro azul.<br/><strong>A green bag.</strong> — Una mochila verde.</p><p>En inglés solemos decir primero el color y después el objeto: <strong>red pencil</strong>.</p></div></div><div class="theory-box"><h3 class="theory-title">The English alphabet — El alfabeto inglés</h3><p>El alfabeto inglés tiene <strong>26 letras</strong>. Muchas se escriben igual que en español, pero sus nombres se pronuncian de otra manera. Lo usaremos para <strong>deletrear</strong> nuestros nombres.</p><div class="tbl-wrap"><table><thead><tr><th>Letters</th><th>Letters</th><th>Letters</th><th>Letters</th><th>Letters</th><th>Letters</th><th>Letters</th></tr></thead><tbody><tr><td>A · B · C · D</td><td>E · F · G · H</td><td>I · J · K · L</td><td>M · N · O · P</td><td>Q · R · S · T</td><td>U · V · W · X</td><td>Y · Z</td></tr></tbody></table></div><p>Para preguntar cómo se escribe un nombre: <strong>How do you spell it?</strong> — ¿Cómo se deletrea? Puedes contestar letra por letra: <strong>A-N-A</strong>.</p><div class="example"><p class="example-title">Three useful steps — Tres pasos</p><p><strong>1.</strong> Look at the picture (observa la imagen).<br/><strong>2.</strong> Find a word you know (busca una palabra conocida).<br/><strong>3.</strong> Check your idea (comprueba si encaja).</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Asocia colores.</p><ol type="a"><li>¿Qué color es <em>yellow</em>?</li><li>¿Qué color es <em>brown</em>?</li><li>¿Qué color es <em>purple</em>?</li><li>¿Qué color es <em>green</em>?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Observa y comprende.</p><ol type="a"><li>En <em>a red book</em>, ¿qué palabra indica el color?</li><li>En <em>a blue pencil</em>, ¿qué objeto aparece?</li><li>¿Cuál es el color de <em>a green bag</em>?</li><li>¿Qué ayuda más a reconocer <em>orange</em>: una imagen naranja o una azul?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>El alfabeto.</p><ol type="a"><li>Escribe las letras A, B, C, D y E.</li><li>¿Qué letra viene después de M?</li><li>¿Qué letra va antes de Z?</li><li>Deletrea tu nombre escribiendo guiones entre letras.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Busca pistas.</p><ol type="a"><li>Lee <em>Hi, I am Zoe. I am nine.</em>: localiza el nombre.</li><li>Busca la palabra que indica la edad.</li><li>¿Qué palabra sirve para saludar?</li><li>Explica qué pista te ha ayudado a comprender la frase.</li></ol></article></div></section>
+<!-- APARTADO 1.3. TAREA 3. CRITERIO ING.3.2.1 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.2.1" id="sec-3"><div class="section-head"><span class="section-number">1.3</span><div><h2 class="section-title">This is me: my name and age</h2><p class="section-subtitle">Nos presentamos diciendo nuestro nombre, edad y procedencia.</p></div></div><div class="theory-box"><h3 class="theory-title">My name is… / I am… — Me presento</h3><p>Para presentarnos, utilizamos frases <strong>muy breves</strong> y una entonación amable. <strong>I</strong> significa «yo» y <strong>you</strong> significa «tú» o «vosotros/as» según la situación.</p><div class="tbl-wrap"><table><thead><tr><th>English</th><th>Español</th></tr></thead><tbody><tr><td>My name is Sara.</td><td>Me llamo Sara.</td></tr><tr><td>I am Sara. / I’m Sara.</td><td>Soy Sara.</td></tr><tr><td>I am eight years old.</td><td>Tengo ocho años.</td></tr><tr><td>I am from Spain.</td><td>Soy de España.</td></tr><tr><td>You are my friend.</td><td>Tú eres mi amigo/a.</td></tr></tbody></table></div><div class="example"><p class="example-title">Speaking model — Modelo para hablar</p><p><strong>Hello! My name is Sara. I am eight years old. I am from Spain. Nice to meet you!</strong></p><p>Saluda, di tu nombre, tu edad y tu país, y termina con una frase amable.</p></div></div><div class="theory-box"><h3 class="theory-title">Numbers from 1 to 100 — Números del 1 al 100</h3><p>Los números sirven para expresar la edad y otros datos de nuestra tarjeta. Aprende primero del <strong>1 al 20</strong> y después las <strong>decenas</strong>.</p><div class="tbl-wrap"><table><thead><tr><th>Number</th><th>English</th><th>Number</th><th>English</th></tr></thead><tbody><tr><td>1</td><td>one</td><td>11</td><td>eleven</td></tr><tr><td>2</td><td>two</td><td>12</td><td>twelve</td></tr><tr><td>3</td><td>three</td><td>13</td><td>thirteen</td></tr><tr><td>4</td><td>four</td><td>14</td><td>fourteen</td></tr><tr><td>5</td><td>five</td><td>15</td><td>fifteen</td></tr><tr><td>6</td><td>six</td><td>16</td><td>sixteen</td></tr><tr><td>7</td><td>seven</td><td>17</td><td>seventeen</td></tr><tr><td>8</td><td>eight</td><td>18</td><td>eighteen</td></tr><tr><td>9</td><td>nine</td><td>19</td><td>nineteen</td></tr><tr><td>10</td><td>ten</td><td>20</td><td>twenty</td></tr></tbody></table></div><div class="tbl-wrap"><table><thead><tr><th>Number</th><th>English</th><th>Number</th><th>English</th></tr></thead><tbody><tr><td>30</td><td>thirty</td><td>40</td><td>forty</td></tr><tr><td>50</td><td>fifty</td><td>60</td><td>sixty</td></tr><tr><td>70</td><td>seventy</td><td>80</td><td>eighty</td></tr><tr><td>90</td><td>ninety</td><td>100</td><td>one hundred</td></tr></tbody></table></div><p>Entre las decenas, unimos las palabras con un guion: <strong>twenty-one</strong> (21), <strong>thirty-six</strong> (36), <strong>forty-eight</strong> (48), <strong>ninety-nine</strong> (99).</p><div class="example"><p class="example-title">Countries — Países de referencia</p><p><strong>Spain</strong> — España · <strong>Ireland</strong> — Irlanda · <strong>the United Kingdom</strong> — Reino Unido · <strong>the United States</strong> — Estados Unidos · <strong>France</strong> — Francia · <strong>Morocco</strong> — Marruecos.</p><p><strong>I am from Ireland.</strong> — Soy de Irlanda. Los países se escriben con <strong>mayúscula</strong> en inglés.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Completa tu presentación.</p><ol type="a"><li>Hello! My name _____ Luis. (is / are)</li><li>I _____ eight years old. (am / is)</li><li>I am _____ Spain. (from / name)</li><li>Nice to _____ you! (meet / eight)</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Números en inglés.</p><ol type="a"><li>Escribe con letras: 9.</li><li>Escribe con letras: 16.</li><li>Escribe con letras: 40.</li><li>Escribe con letras: 67.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Where are you from?</p><ol type="a"><li>¿Qué significa <em>Spain</em>?</li><li>¿Qué significa <em>Ireland</em>?</li><li>Completa: <em>I am _____ Spain.</em></li><li>Di oralmente de qué país eres o elige uno para un personaje imaginario.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Speaking: four steps.</p><ol type="a"><li>Saluda: <em>Hello!</em>.</li><li>Di tu nombre: <em>My name is…</em>.</li><li>Di tu edad: <em>I am… years old.</em>.</li><li>Di tu procedencia y despídete con cortesía.</li></ol></article></div></section>
+<!-- APARTADO 1.4. TAREA 4. CRITERIO ING.3.2.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.2.2" id="sec-4"><div class="section-head"><span class="section-number">1.4</span><div><h2 class="section-title">My English ID Card</h2><p class="section-subtitle">Escribimos una tarjeta personal sencilla con modelos y revisamos el texto.</p></div></div><div class="theory-box"><h3 class="theory-title">What is an ID card? — ¿Qué es una tarjeta personal?</h3><p>Una <strong>ID card</strong> es una pequeña tarjeta con datos de una persona. Para nuestra actividad usaremos datos <strong>inventados o elegidos por el alumnado</strong> si preferimos no compartir información personal real.</p><div class="example"><p class="example-title">Example: My English ID Card — Ejemplo de tarjeta</p><p><strong>NAME:</strong> Alex<br/><strong>AGE:</strong> 9<br/><strong>COUNTRY:</strong> Spain<br/><strong>FAVOURITE COLOUR:</strong> green</p><p><strong>Hello! My name is Alex. I am nine years old. I am from Spain. My favourite colour is green.</strong></p></div><p>Observa: en inglés, los nombres de los países y el comienzo de las frases llevan <strong>mayúscula</strong>. Al terminar una frase, escribimos <strong>punto</strong>.</p></div><div class="theory-box"><h3 class="theory-title">Write and check — Escribe y revisa</h3><div class="tbl-wrap"><table><thead><tr><th>Plan</th><th>Write</th><th>Check</th></tr></thead><tbody><tr><td>Nombre</td><td>My name is…</td><td>¿Está escrito correctamente?</td></tr><tr><td>Edad</td><td>I am… years old.</td><td>¿Es correcto el número en inglés?</td></tr><tr><td>País</td><td>I am from…</td><td>¿Lleva mayúscula el país?</td></tr><tr><td>Color</td><td>My favourite colour is…</td><td>¿Está bien escrito el color?</td></tr></tbody></table></div><div class="example"><p class="example-title">A small reminder — Recuerda</p><p>Utiliza un modelo antes de escribir sin ayuda. Puedes añadir un dibujo de ti o de un <strong>personaje imaginario</strong>. La tarjeta debe ser <strong>legible</strong> y tener frases completas.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Completa un modelo.</p><ol type="a"><li>NAME: ______</li><li>AGE: ______</li><li>COUNTRY: ______</li><li>FAVOURITE COLOUR: ______</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Escribe cuatro frases.</p><ol type="a"><li>My name is _____.</li><li>I am _____ years old.</li><li>I am from _____.</li><li>My favourite colour is _____.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Corrige los errores.</p><ol type="a"><li><em>my name is ana.</em></li><li><em>i am nine years old.</em></li><li><em>I am from spain.</em></li><li><em>My favourite colour is Blue.</em></li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Revisa la tarjeta.</p><ol type="a"><li>Comprueba que aparece el nombre.</li><li>Comprueba que has escrito la edad con un número correcto.</li><li>Revisa la mayúscula del país.</li><li>Añade un dibujo y lee tus frases en voz alta.</li></ol></article></div></section>
+<!-- APARTADO 1.5. TAREA 5. CRITERIO ING.3.3.1 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.3.1" id="sec-5"><div class="section-head"><span class="section-number">1.5</span><div><h2 class="section-title">What is your name? Let’s talk!</h2><p class="section-subtitle">Practicamos entrevistas por parejas sobre nombre, edad y procedencia.</p></div></div><div class="theory-box"><h3 class="theory-title">Ask and answer — Preguntar y responder</h3><p>Una <strong>interview</strong> es una conversación en la que una persona pregunta y la otra contesta. En clase podemos entrevistar a alguien usando respuestas reales o las de un <strong>personaje inventado</strong>.</p><div class="tbl-wrap"><table><thead><tr><th>Question — Pregunta</th><th>Answer — Respuesta</th></tr></thead><tbody><tr><td>What is your name?</td><td>My name is Sara.</td></tr><tr><td>How old are you?</td><td>I am nine years old.</td></tr><tr><td>Where are you from?</td><td>I am from Spain.</td></tr><tr><td>What is your favourite colour?</td><td>My favourite colour is blue.</td></tr></tbody></table></div><div class="example"><p class="example-title">In pairs — En parejas</p><p><strong>Student A:</strong> Hello! What is your name?<br/><strong>Student B:</strong> My name is Eva.<br/><strong>Student A:</strong> How old are you?<br/><strong>Student B:</strong> I am eight years old.<br/><strong>Student A:</strong> Nice to meet you!<br/><strong>Student B:</strong> Nice to meet you too!</p></div></div><div class="theory-box"><h3 class="theory-title">Listen to another interview — Escucha otra entrevista</h3><p>Antes de escuchar, mira las preguntas de la tabla. Intenta reconocer los <strong>nombres, edades, países y letras</strong> sin traducir toda la conversación.</p><div class="audio-box"><strong>🎧 Listening: An interview with Sam</strong><p>Escucha el nombre, la edad, la procedencia y cómo se deletrea el nombre.</p><audio controls="" preload="none"><source src="/media/ing3-1-interview.mp3" type="audio/mpeg"/>Tu navegador no admite el reproductor de audio.</audio><p class="small">Archivo de audio: <code>/media/ing3-1-interview.mp3</code></p><details><summary>Mostrar la transcripción después de escuchar</summary><p><span class="speaker">Teacher:</span> Good morning! What is your name?</p><p><span class="speaker">Sam:</span> Good morning! My name is Sam.</p><p><span class="speaker">Teacher:</span> How do you spell it?</p><p><span class="speaker">Sam:</span> S, A, M.</p><p><span class="speaker">Teacher:</span> How old are you?</p><p><span class="speaker">Sam:</span> I am eight years old.</p><p><span class="speaker">Teacher:</span> Where are you from?</p><p><span class="speaker">Sam:</span> I am from the United Kingdom.</p><p><span class="speaker">Teacher:</span> Thank you, Sam!</p><p><span class="speaker">Sam:</span> You are welcome. Goodbye!</p></details></div><div class="example"><p class="example-title">Useful words — Palabras útiles</p><p><strong>What</strong> = qué/cuál · <strong>How old</strong> = qué edad · <strong>Where</strong> = dónde · <strong>spell</strong> = deletrear.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Escucha y responde.</p><ol type="a"><li>¿Cómo se llama el entrevistado?</li><li>¿Qué tres letras deletrea?</li><li>¿Cuántos años tiene?</li><li>¿De qué país es?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Completa las preguntas.</p><ol type="a"><li>_____ is your name? (What / Where)</li><li>How _____ are you? (old / name)</li><li>Where are you _____? (from / eight)</li><li>How do you _____ it? (spell / green)</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Entrevista a un compañero.</p><ol type="a"><li>Pregúntale su nombre o el de su personaje.</li><li>Pregúntale su edad.</li><li>Pregúntale de qué país es.</li><li>Despídete utilizando <em>Goodbye!</em>.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Cambia los papeles.</p><ol type="a"><li>Haz primero de entrevistador.</li><li>Después responde a las mismas preguntas.</li><li>Escucha sin interrumpir.</li><li>Escribe dos datos que recuerdes de la entrevista.</li></ol></article></div></section>
+<!-- APARTADO 1.6. TAREA 6. CRITERIO ING.3.3.2 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.3.2" id="sec-6"><div class="section-head"><span class="section-number">1.6</span><div><h2 class="section-title">Hello, please, goodbye</h2><p class="section-subtitle">Aprendemos a empezar, mantener y terminar una conversación con cortesía.</p></div></div><div class="theory-box"><h3 class="theory-title">Polite English — Expresiones de cortesía</h3><p>Hablar inglés también es <strong>escuchar</strong>, <strong>respetar los turnos</strong> y <strong>pedir ayuda</strong> si algo no se entiende. No pasa nada si necesitamos que repitan una palabra.</p><div class="tbl-wrap"><table><thead><tr><th>English</th><th>Español</th><th>Cuándo lo usamos</th></tr></thead><tbody><tr><td>Hello!</td><td>¡Hola!</td><td>Al empezar</td></tr><tr><td>Please.</td><td>Por favor.</td><td>Al pedir algo</td></tr><tr><td>Thank you!</td><td>¡Gracias!</td><td>Para agradecer</td></tr><tr><td>You’re welcome.</td><td>De nada.</td><td>Al responder a unas gracias</td></tr><tr><td>Sorry?</td><td>¿Perdón?</td><td>Si no entendemos</td></tr><tr><td>Can you repeat, please?</td><td>¿Puedes repetirlo, por favor?</td><td>Para pedir repetición</td></tr><tr><td>Goodbye!</td><td>¡Adiós!</td><td>Al terminar</td></tr></tbody></table></div><div class="example"><p class="example-title">When I need help — Cuando necesito ayuda</p><p><strong>A:</strong> My name is Zoe.<br/><strong>B:</strong> Sorry? Can you repeat, please?<br/><strong>A:</strong> Zoe. Z-O-E.<br/><strong>B:</strong> Thank you!<br/><strong>A:</strong> You’re welcome.</p></div></div><div class="theory-box"><h3 class="theory-title">Start → Ask → Finish — Empieza, pregunta y termina</h3><p>Para mantener una conversación breve, sigue tres pasos. <strong>1. Saluda:</strong> Hello! <strong>2. Pregunta:</strong> What is your name? <strong>3. Despídete:</strong> Goodbye!</p><div class="example"><p class="example-title">A complete dialogue</p><p><strong>A:</strong> Good morning!<br/><strong>B:</strong> Good morning!<br/><strong>A:</strong> What is your name?<br/><strong>B:</strong> My name is Ben.<br/><strong>A:</strong> Nice to meet you. Goodbye!<br/><strong>B:</strong> Goodbye!</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Ordena el diálogo.</p><ol type="a"><li><em>Goodbye!</em></li><li><em>My name is Leo.</em></li><li><em>Hello! What is your name?</em></li><li><em>Nice to meet you!</em></li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Elige la expresión apropiada.</p><ol type="a"><li>¿Cómo saludas por la mañana?</li><li>¿Qué dices para pedir que repitan?</li><li>¿Qué dices para dar las gracias?</li><li>¿Qué dices al despedirte?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Deletrea con cortesía.</p><ol type="a"><li>Pregunta: <em>How do you spell it?</em></li><li>Deletrea L-U-C-Y.</li><li>Pide repetición: <em>Can you repeat, please?</em></li><li>Termina con <em>Thank you!</em></li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Representa una conversación.</p><ol type="a"><li>Un alumno saluda y pregunta el nombre.</li><li>El otro responde y deletrea.</li><li>El primero pregunta la edad.</li><li>Los dos se despiden correctamente.</li></ol></article></div></section>
+<!-- APARTADO 1.7. TAREA 7. CRITERIO ING.3.5.1 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.5.1" id="sec-7"><div class="section-head"><span class="section-number">1.7</span><div><h2 class="section-title">English and Spanish: let’s compare</h2><p class="section-subtitle">Observamos semejanzas y diferencias entre expresiones básicas.</p></div></div><div class="theory-box"><h3 class="theory-title">I am is not “I have” — Una diferencia importante</h3><p>En español decimos <strong>«Tengo ocho años»</strong>. En inglés no usamos <em>have</em> para expresar la edad: decimos <strong>«I am eight years old»</strong>. Es normal que las lenguas no ordenen o elijan las palabras igual.</p><div class="tbl-wrap"><table><thead><tr><th>English</th><th>Español</th><th>Qué observamos</th></tr></thead><tbody><tr><td>I am Sara.</td><td>Soy Sara.</td><td>En inglés aparecen <em>I</em> y <em>am</em>.</td></tr><tr><td>I am happy.</td><td>Estoy contento/a.</td><td><em>I am</em> puede corresponder a «soy» o «estoy».</td></tr><tr><td>I am eight years old.</td><td>Tengo ocho años.</td><td>Para la edad usamos <em>am</em>, no <em>have</em>.</td></tr><tr><td>You are my friend.</td><td>Eres mi amigo/a.</td><td>En inglés se usa <em>you are</em>.</td></tr></tbody></table></div><div class="example"><p class="example-title">Remember! — Recuerda</p><p><strong>I am</strong> = yo soy / yo estoy.<br/><strong>You are</strong> = tú eres / tú estás.<br/><strong>I’m</strong> es la forma corta de <strong>I am</strong>.</p></div></div><div class="theory-box"><h3 class="theory-title">Very basic pronouns — Pronombres personales</h3><p>Los <strong>pronombres</strong> sirven para hablar de personas o cosas sin repetir sus nombres. Por ahora practicaremos sobre todo <strong>I</strong> y <strong>you</strong>, y reconoceremos algunos otros.</p><div class="tbl-wrap"><table><thead><tr><th>English</th><th>Español</th><th>Example</th></tr></thead><tbody><tr><td>I</td><td>yo</td><td>I am Ana.</td></tr><tr><td>You</td><td>tú</td><td>You are Leo.</td></tr><tr><td>He</td><td>él</td><td>He is Sam.</td></tr><tr><td>She</td><td>ella</td><td>She is Mia.</td></tr><tr><td>It</td><td>ello (animal/objeto)</td><td>It is red.</td></tr><tr><td>We</td><td>nosotros/as</td><td>We are friends.</td></tr><tr><td>They</td><td>ellos/as</td><td>They are friends.</td></tr></tbody></table></div><p>Observa la frase <strong>My name is Ana</strong>: <em>my</em> significa <strong>mi</strong>. En una presentación, <strong>My name is...</strong> e <strong>I am...</strong> sirven para dar el nombre.</p></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Compara y traduce.</p><ol type="a"><li><em>I am nine years old.</em></li><li><em>You are my friend.</em></li><li><em>I am happy.</em></li><li><em>My name is Eva.</em></li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Completa correctamente.</p><ol type="a"><li>I _____ Alex. (am / are)</li><li>You _____ my friend. (am / are)</li><li>_____ am eight. (I / You)</li><li>_____ is Mia. (She / I)</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Detecta diferencias.</p><ol type="a"><li>En español decimos «tengo ocho años». ¿Qué verbo usamos en inglés?</li><li>¿Qué dos palabras forman <em>I’m</em>?</li><li>¿Qué significa <em>you</em>?</li><li>¿Qué palabra cambia entre <em>I am</em> y <em>You are</em>?</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Explica la regla con ejemplos.</p><ol type="a"><li>Escribe una frase que comience por <em>I am</em>.</li><li>Escribe otra que comience por <em>You are</em>.</li><li>Subraya el pronombre en ambas.</li><li>Explica a un compañero una diferencia con el español.</li></ol></article></div></section>
+<!-- APARTADO 1.8. TAREA 8. CRITERIO ING.3.5.3 (uso docente, no visible) -->
+<section class="topic-section" data-criterion="ING.3.5.3" id="sec-8"><div class="section-head"><span class="section-number">1.8</span><div><h2 class="section-title">My first English portfolio</h2><p class="section-subtitle">Preparamos nuestra tarjeta final y valoramos qué sabemos hacer.</p></div></div><div class="theory-box"><h3 class="theory-title">Our final product: My English ID Card</h3><p>Vas a preparar una <strong>tarjeta personal ilustrada</strong> para presentarte oralmente. Puedes usar un <strong>personaje inventado</strong> y así compartir únicamente los datos que elijas. No escribas direcciones, teléfonos ni otros datos privados.</p><div class="example"><p class="example-title">Model of the final product — Modelo</p><p><strong>My English ID Card</strong><br/>NAME: Mia<br/>AGE: 8<br/>COUNTRY: Ireland<br/>FAVOURITE COLOUR: blue</p><p><strong>Hello! My name is Mia. I am eight years old. I am from Ireland. My favourite colour is blue. Nice to meet you!</strong></p></div><p>La tarjeta debe incluir <strong>nombre, edad, país y un color</strong>, un dibujo y <strong>una breve presentación oral</strong> que puedas ensayar con un compañero.</p></div><div class="theory-box"><h3 class="theory-title">My first learning goals — Mis primeros objetivos</h3><p>Aprender inglés significa mejorar poco a poco. Piensa en estas preguntas: ¿reconozco saludos?, ¿sé decir mi edad?, ¿puedo escribir cuatro frases?, ¿pido ayuda con cortesía?</p><div class="tbl-wrap"><table><thead><tr><th>I can… — Puedo…</th><th>My next step — Mi siguiente paso</th></tr></thead><tbody><tr><td>Say hello and goodbye</td><td>Practicar saludos y despedidas</td></tr><tr><td>Say my name and my age</td><td>Repetir una presentación oral</td></tr><tr><td>Write a short ID card</td><td>Revisar una frase escrita</td></tr><tr><td>Ask a question politely</td><td>Ensayar con un compañero</td></tr></tbody></table></div><div class="example"><p class="example-title">Your mini-portfolio — Tu pequeño portafolio</p><p>Guarda tu tarjeta, una frase que ya sabes escribir y una meta: <strong>«Quiero aprender a…»</strong>. Después completa la diana de autoevaluación que encontrarás al final.</p></div></div><div class="exercise-grid"><article class="exercise-card"><span class="exercise-label">Ejercicio 1</span><p>Prepara la tarjeta.</p><ol type="a"><li>Escribe el nombre real o inventado.</li><li>Escribe la edad en inglés.</li><li>Escribe el país con mayúscula.</li><li>Añade un color y un dibujo.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 2</span><p>Presenta tu tarjeta.</p><ol type="a"><li>Saluda al público.</li><li>Di el nombre y la edad.</li><li>Explica el país y el color favorito.</li><li>Despídete con una expresión amable.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 3</span><p>Revisa con un compañero.</p><ol type="a"><li>¿Se leen claramente los datos?</li><li>¿Están bien escritos <em>I am</em> y <em>My name is</em>?</li><li>¿Se entienden los números y los colores?</li><li>Dile al compañero algo que haya hecho bien.</li></ol></article><article class="exercise-card"><span class="exercise-label">Ejercicio 4</span><p>Valora tu aprendizaje.</p><ol type="a"><li>Anota una expresión que ya recuerdas.</li><li>Indica una palabra difícil.</li><li>Escribe qué apoyo te ha ayudado más: dibujo, audio o tabla.</li><li>Elige una pequeña meta para la próxima SdA.</li></ol></article></div></section>
+<!-- REPASAMOS LO APRENDIDO · DOS FICHAS -->
+<section aria-labelledby="titulo-repaso" class="topic-section lesson-section review-section sda-recap" id="sec-repaso">
+<div class="recap-heading">
+<span aria-hidden="true" class="heading-icon">🔄</span>
+<div><h2 class="section-title" id="titulo-repaso">Repasamos lo aprendido</h2><p>Dos fichas con actividades de los ocho apartados: refuerzo y ampliación.</p></div>
+</div>
+<!-- FICHA DE REFUERZO -->
+<section aria-labelledby="titulo-refuerzo" class="recap-sheet review-group review-refuerzo">
+<div class="sheet-heading sheet-heading--refuerzo"><h3 id="titulo-refuerzo">🟢 Ficha de refuerzo</h3></div>
+<div class="sheet-grid review-grid"><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.1.1"><h4>Refuerzo 1.1 · Greetings and names</h4><p>Recuerda el diálogo entre Mia y Leo.</p><ol class="sheet-questions" type="a"><li>¿Qué expresión utiliza Mia para saludar?</li><li>¿Cómo se llama el niño?</li><li>¿Qué edad tiene Mia?</li><li>¿De qué país es Leo?</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.1.2"><h4>Refuerzo 1.2 · Colours and clues</h4><p>Utiliza palabras e imágenes conocidas.</p><ol class="sheet-questions" type="a"><li>¿Qué color es <em>blue</em>?</li><li>¿Qué color es <em>red</em>?</li><li>Escribe las tres primeras letras del alfabeto inglés.</li><li>Deletrea tu nombre separando las letras con guiones.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.2.1"><h4>Refuerzo 1.3 · Say who you are</h4><p>Completa y practica una presentación.</p><ol class="sheet-questions" type="a"><li><em>My name _____ Eva.</em></li><li><em>I _____ eight years old.</em></li><li><em>I am _____ Spain.</em></li><li>Di las tres frases en voz alta.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.2.2"><h4>Refuerzo 1.4 · My English ID Card</h4><p>Escribe una tarjeta personal de cuatro datos.</p><ol class="sheet-questions" type="a"><li>NAME: _____</li><li>AGE: _____</li><li>COUNTRY: _____</li><li>FAVOURITE COLOUR: _____</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.3.1"><h4>Refuerzo 1.5 · An interview</h4><p>Practica preguntas sencillas.</p><ol class="sheet-questions" type="a"><li>¿Cómo se pregunta «¿Cómo te llamas?»?</li><li>¿Cómo se pregunta «¿Cuántos años tienes?»?</li><li>Responde: <em>Where are you from?</em></li><li>Pregunta y responde con un compañero.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.3.2"><h4>Refuerzo 1.6 · Polite expressions</h4><p>Ordena y completa un diálogo.</p><ol class="sheet-questions" type="a"><li>Escribe un saludo en inglés.</li><li>Escribe una petición de repetición.</li><li>¿Qué significa <em>Thank you</em>?</li><li>Termina una conversación con <em>Goodbye!</em>.</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.5.1"><h4>Refuerzo 1.7 · I and you</h4><p>Distingue dos expresiones de presentación.</p><ol class="sheet-questions" type="a"><li>Completa: <em>I _____ Ana.</em></li><li>Completa: <em>You _____ Leo.</em></li><li>¿Qué significa <em>I’m</em>?</li><li>¿Qué verbo usamos para decir la edad en inglés?</li></ol></article><article class="sheet-card sheet-card--refuerzo review-card" data-criterio="ING.3.5.3"><h4>Refuerzo 1.8 · Our first portfolio</h4><p>Completa tu tarjeta y piensa en tus avances.</p><ol class="sheet-questions" type="a"><li>Escribe una frase que ya sabes decir.</li><li>Anota una palabra de inglés que quieras practicar.</li><li>Dibuja tu tarjeta personal.</li><li>Elige una pequeña meta para mejorar.</li></ol></article></div>
+</section>
+<!-- FICHA DE AMPLIACIÓN -->
+<section aria-labelledby="titulo-ampliacion" class="recap-sheet review-group review-ampliacion">
+<div class="sheet-heading sheet-heading--ampliacion"><h3 id="titulo-ampliacion">🟠 Ficha de ampliación</h3></div>
+<div class="sheet-grid review-grid"><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.1.1"><h4>Ampliación 1.1 · Listen for details</h4><p>Añade más información a la conversación.</p><ol class="sheet-questions" type="a"><li>Explica qué palabra del audio te indica la edad de Mia.</li><li>Escribe una pregunta cuya respuesta sea <em>Ireland</em>.</li><li>Inventa una despedida distinta para Mia.</li><li>Escribe una frase de presentación para un tercer personaje.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.1.2"><h4>Ampliación 1.2 · Colours and alphabet</h4><p>Profundiza en colores y letras.</p><ol class="sheet-questions" type="a"><li>Escribe cinco colores en inglés y acompáñalos de dibujos.</li><li>Ordena alfabéticamente: <em>red, blue, green, yellow</em>.</li><li>Deletrea dos nombres diferentes en inglés.</li><li>Escribe dos objetos usando color + objeto en inglés.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.2.1"><h4>Ampliación 1.3 · Numbers and countries</h4><p>Expresa datos de más de una persona.</p><ol class="sheet-questions" type="a"><li>Escribe 28 en inglés.</li><li>Escribe 73 en inglés.</li><li>Presenta a un personaje de Francia en tres frases.</li><li>Compara la edad de dos personajes con números en inglés.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.2.2"><h4>Ampliación 1.4 · Two ID cards</h4><p>Elabora dos tarjetas diferentes.</p><ol class="sheet-questions" type="a"><li>Crea una tarjeta para un personaje de ocho años.</li><li>Crea otra para una persona de nueve años.</li><li>Utiliza países y colores distintos.</li><li>Lee las dos tarjetas en voz alta y revísalas.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.3.1"><h4>Ampliación 1.5 · A longer interview</h4><p>Añade una pregunta para deletrear.</p><ol class="sheet-questions" type="a"><li>Escribe tres preguntas de presentación.</li><li>Incluye <em>How do you spell it?</em>.</li><li>Entrevista a un compañero o personaje imaginario.</li><li>Resume oralmente dos respuestas sin mirar el modelo.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.3.2"><h4>Ampliación 1.6 · More polite English</h4><p>Resuelve una conversación con una duda.</p><ol class="sheet-questions" type="a"><li>Un compañero no entiende el nombre: pide repetición.</li><li>Deletrea el nombre con cortesía.</li><li>Agradece la ayuda y responde al agradecimiento.</li><li>Despedíos correctamente al terminar.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.5.1"><h4>Ampliación 1.7 · English is different</h4><p>Compara estructuras sin traducir palabra por palabra.</p><ol class="sheet-questions" type="a"><li>Explica la diferencia entre «Tengo nueve años» y <em>I am nine years old</em>.</li><li>Escribe una frase con <em>I am</em> y otra con <em>You are</em>.</li><li>Transforma <em>I am</em> en su forma corta.</li><li>Escribe un ejemplo sencillo con <em>he</em> o <em>she</em>.</li></ol></article><article class="sheet-card sheet-card--ampliacion review-card" data-criterio="ING.3.5.3"><h4>Ampliación 1.8 · A complete presentation</h4><p>Prepara el producto final con más detalles.</p><ol class="sheet-questions" type="a"><li>Diseña una tarjeta con nombre, edad, país y color.</li><li>Escribe una presentación oral de cinco frases.</li><li>Practica con un compañero y pide una opinión.</li><li>Anota dos progresos y un objetivo nuevo para la próxima SdA.</li></ol></article></div>
+</section>
+</section>
+<!-- COMPRUEBA LO APRENDIDO: MISMAS CLASES Y ESTRUCTURA DE LAS SdA -->
+<section aria-labelledby="titulo-comprueba" class="topic-section lesson-section check-learning" id="sec-comprueba">
+<div class="section-head"><span aria-hidden="true" class="section-number">✓</span><h2 class="section-title" id="titulo-comprueba">Comprueba lo aprendido</h2></div>
+<p>Selecciona una caja en cada pregunta. Después pulsa «Comprobar respuestas». Puedes repetir el cuestionario tantas veces como necesites.</p>
+<form id="quiz-form" novalidate="">
+<div class="quiz-grid"><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.1.1"><legend>1. ¿Qué expresión significa «¡Hola!»?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-1" type="radio" value="0"/><span>Goodbye!</span></label><label class="quiz-option"><input name="pregunta-1" type="radio" value="1"/><span>Hello!</span></label><label class="quiz-option"><input name="pregunta-1" type="radio" value="2"/><span>Thank you!</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.1.1"><legend>2. En el primer audio, ¿cuántos años tiene Mia?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-2" type="radio" value="0"/><span>Eight</span></label><label class="quiz-option"><input name="pregunta-2" type="radio" value="1"/><span>Ten</span></label><label class="quiz-option"><input name="pregunta-2" type="radio" value="2"/><span>Nine</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.1.2"><legend>3. ¿Qué color significa <em>green</em>?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-3" type="radio" value="0"/><span>Azul</span></label><label class="quiz-option"><input name="pregunta-3" type="radio" value="1"/><span>Rojo</span></label><label class="quiz-option"><input name="pregunta-3" type="radio" value="2"/><span>Verde</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.1.2"><legend>4. ¿Qué letra viene después de M en el alfabeto?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-4" type="radio" value="0"/><span>N</span></label><label class="quiz-option"><input name="pregunta-4" type="radio" value="1"/><span>L</span></label><label class="quiz-option"><input name="pregunta-4" type="radio" value="2"/><span>P</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.2.1"><legend>5. ¿Cómo se escribe 16 en inglés?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-5" type="radio" value="0"/><span>sixty</span></label><label class="quiz-option"><input name="pregunta-5" type="radio" value="1"/><span>sixteen</span></label><label class="quiz-option"><input name="pregunta-5" type="radio" value="2"/><span>six</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.2.1"><legend>6. ¿Cuál es la forma correcta de decir «Tengo ocho años»?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-6" type="radio" value="0"/><span>I have eight years.</span></label><label class="quiz-option"><input name="pregunta-6" type="radio" value="1"/><span>I are eight years old.</span></label><label class="quiz-option"><input name="pregunta-6" type="radio" value="2"/><span>I am eight years old.</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.2.2"><legend>7. Completa: My name _____ Ana.</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-7" type="radio" value="0"/><span>is</span></label><label class="quiz-option"><input name="pregunta-7" type="radio" value="1"/><span>am</span></label><label class="quiz-option"><input name="pregunta-7" type="radio" value="2"/><span>are</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.2.2"><legend>8. ¿Qué país significa <em>Ireland</em>?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-8" type="radio" value="0"/><span>Francia</span></label><label class="quiz-option"><input name="pregunta-8" type="radio" value="1"/><span>Irlanda</span></label><label class="quiz-option"><input name="pregunta-8" type="radio" value="2"/><span>España</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.3.1"><legend>9. ¿Qué pregunta sirve para conocer la edad?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-9" type="radio" value="0"/><span>What is your favourite colour?</span></label><label class="quiz-option"><input name="pregunta-9" type="radio" value="1"/><span>Where are you from?</span></label><label class="quiz-option"><input name="pregunta-9" type="radio" value="2"/><span>How old are you?</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="0" data-criterio="ING.3.3.2"><legend>10. ¿Cómo pides amablemente que repitan una palabra?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-10" type="radio" value="0"/><span>Can you repeat, please?</span></label><label class="quiz-option"><input name="pregunta-10" type="radio" value="1"/><span>Goodbye!</span></label><label class="quiz-option"><input name="pregunta-10" type="radio" value="2"/><span>I am blue.</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="1" data-criterio="ING.3.5.1"><legend>11. Completa: You _____ my friend.</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-11" type="radio" value="0"/><span>am</span></label><label class="quiz-option"><input name="pregunta-11" type="radio" value="1"/><span>are</span></label><label class="quiz-option"><input name="pregunta-11" type="radio" value="2"/><span>is</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset><fieldset class="quiz-item" data-answer="2" data-criterio="ING.3.5.3"><legend>12. ¿Qué datos son apropiados para tu tarjeta de clase?</legend><div class="quiz-options"><label class="quiz-option"><input name="pregunta-12" type="radio" value="0"/><span>Dirección y teléfono de casa</span></label><label class="quiz-option"><input name="pregunta-12" type="radio" value="1"/><span>Contraseñas y datos privados</span></label><label class="quiz-option"><input name="pregunta-12" type="radio" value="2"/><span>Nombre elegido, edad, país y color</span></label></div><p aria-live="polite" class="quiz-feedback"></p></fieldset></div>
+<div class="quiz-actions button-row">
+<button class="action-button" type="submit">Comprobar respuestas</button>
+<button class="action-button secondary" type="reset">Volver a empezar</button>
+</div>
+<p aria-live="polite" id="quiz-result" role="status"></p>
+</form>
+</section>
+<!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+<section aria-labelledby="titulo-autoevaluacion" class="topic-section lesson-section self-eval diana-section" id="sec-diana">
+<div class="recap-heading">
+<span aria-hidden="true" class="heading-icon heading-icon--indigo">🎯</span>
+<div><h2 class="section-title" id="titulo-autoevaluacion">Diana de Autoevaluación Interactiva</h2><p>Selecciona una opción en cada apartado para valorar tu aprendizaje.</p></div>
+</div>
+<p>No se trata de obtener una nota, sino de reconocer qué sabes hacer y qué necesitas practicar.</p>
+<div class="diana-list self-eval-grid">
+<!-- AUTOEVALUACIÓN 1.1 · CRITERIO DOCENTE ING.3.1.1 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.1</strong> Reconozco saludos, nombres y edades cuando escucho un diálogo breve.</p>
+<div aria-label="Autoevaluación del apartado 1.1" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.2 · CRITERIO DOCENTE ING.3.1.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.2</strong> Utilizo dibujos, colores, letras y palabras conocidas para entender mensajes.</p>
+<div aria-label="Autoevaluación del apartado 1.2" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.3 · CRITERIO DOCENTE ING.3.2.1 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.3</strong> Digo oralmente mi nombre, edad y país con ayuda de un modelo.</p>
+<div aria-label="Autoevaluación del apartado 1.3" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.4 · CRITERIO DOCENTE ING.3.2.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.4</strong> Escribo frases muy breves para crear mi tarjeta personal en inglés.</p>
+<div aria-label="Autoevaluación del apartado 1.4" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.5 · CRITERIO DOCENTE ING.3.3.1 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.5</strong> Pregunto y respondo sobre nombre, edad y procedencia respetando turnos.</p>
+<div aria-label="Autoevaluación del apartado 1.5" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.6 · CRITERIO DOCENTE ING.3.3.2 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.6</strong> Saludo, doy las gracias, pido repetición y me despido con cortesía.</p>
+<div aria-label="Autoevaluación del apartado 1.6" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.7 · CRITERIO DOCENTE ING.3.5.1 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.7</strong> Distingo <em>I am</em> y <em>You are</em> y observo diferencias con el español.</p>
+<div aria-label="Autoevaluación del apartado 1.7" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+<!-- AUTOEVALUACIÓN 1.8 · CRITERIO DOCENTE ING.3.5.3 -->
+<div class="diana-row eval-row">
+<p class="eval-statement"><strong>1.8</strong> Reconozco mis progresos y elijo un objetivo sencillo para mejorar.</p>
+<div aria-label="Autoevaluación del apartado 1.8" class="diana-options auto-eval-group" role="group">
+<button aria-pressed="false" class="diana-option eval-btn" data-value="1" type="button">Casi nunca</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="2" type="button">A veces</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="3" type="button">Casi siempre</button>
+<button aria-pressed="false" class="diana-option eval-btn" data-value="4" type="button">Siempre</button>
+</div>
+</div>
+</div>
+<label class="goal-label" for="my-goal"><strong>My next step — Mi siguiente reto:</strong> escribe una frase que ya sabes decir en inglés y una expresión que quieras practicar.</label>
+<textarea id="my-goal" placeholder="Por ejemplo: Ya sé decir My name is... Quiero aprender mejor los números."></textarea>
+<div class="eval-actions button-row">
+<p aria-live="polite" id="eval-status" role="status">Puedes marcar una opción en cada apartado.</p>
+<button class="action-button secondary" id="reset-diana" type="button">Borrar mi autoevaluación</button>
+</div>
+</section>
+</div>
+</div></main>
+<!-- Pie de página institucional: deliberadamente sin copyright ni enlace de retorno, según las indicaciones del proyecto. -->
+<footer class="site-footer"><div class="footer-container">
+<div class="footer-junta"><img alt="Junta de Andalucía - Consejería de Educación" src="/img/junta-educacion.png"/></div>
+<div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">Web oficial del Centro <span aria-hidden="true">↗</span></a></div>
+</div></footer>
+<script src="/js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Corrección del cuestionario: misma interacción que las SdA de Lengua.
+      const form = document.getElementById('quiz-form');
+      const result = document.getElementById('quiz-result');
+      const questions = Array.from(form.querySelectorAll('fieldset.quiz-item'));
+
+      // Cada pregunta permite seleccionar una sola caja; selección verde.
+      questions.forEach(function (question) {
+        question.addEventListener('change', function () {
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            const radio = option.querySelector('input[type="radio"]');
+            option.classList.toggle('selected', Boolean(radio && radio.checked));
+          });
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let correct = 0;
+        let answered = 0;
+        questions.forEach(function (question) {
+          const selected = question.querySelector('input[type="radio"]:checked');
+          const answer = question.dataset.answer;
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+          if (!selected) {
+            feedback.textContent = 'Elige una respuesta.';
+            return;
+          }
+          answered += 1;
+          if (selected.value === answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = 'Correcto.';
+          } else {
+            question.classList.add('incorrect');
+            const choices = question.querySelectorAll('input[type="radio"]');
+            const right = choices[Number(answer)];
+            feedback.textContent = 'Repasa este contenido. Respuesta correcta: ' +
+              right.nextElementSibling.textContent.trim() + '.';
+          }
+        });
+        result.textContent = 'Has respondido ' + answered + ' de ' + questions.length +
+          ' preguntas. Aciertos: ' + correct + ' de ' + questions.length + '.';
+      });
+
+      form.addEventListener('reset', function () {
+        questions.forEach(function (question) {
+          question.classList.remove('correct', 'incorrect');
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.classList.remove('selected');
+          });
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        result.textContent = '';
+      });
+
+      // Diana interactiva: una sola opción por fila y posibilidad de reinicio.
+      const groups = Array.from(document.querySelectorAll('.diana-options'));
+      const status = document.getElementById('eval-status');
+      function updateStatus() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('button[aria-pressed="true"]');
+        }).length;
+        status.textContent = 'Has valorado ' + answered + ' de ' + groups.length + ' apartados.';
+      }
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('button.diana-option');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('button.diana-option').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+          });
+          updateStatus();
+        });
+      });
+      document.getElementById('reset-diana').addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('button.diana-option').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateStatus();
+      });
+    });
+  </script>
+</body>
+</html>
