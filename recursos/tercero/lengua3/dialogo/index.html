@@ -1,0 +1,3411 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Lengua Castellana y Literatura 3.&ordm; de Primaria: LNL3.4 Hablamos y dialogamos. Turnos, escucha activa, f&oacute;rmulas de cortes&iacute;a, verbos, tiempos, signos de interrogaci&oacute;n y exclamaci&oacute;n, resoluci&oacute;n dialogada de desacuerdos." name="description"/>
+  <title>
+   Hablamos y dialogamos | Lengua 3.&ordm; | CEIP Joaqu&iacute;n Tena Artigas
+  </title>
+  <link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+  <link href="/css/base.css" rel="stylesheet"/>
+  <!-- CSS local de la SdA. Conserva el verde institucional en todos los cursos. -->
+  <style>
+   :root {
+    --lnl-green: #007a33;
+    --lnl-dark: #005724;
+    --lnl-light: #e9f7ee;
+    --lnl-text: #243447;
+    --lnl-muted: #526475;
+    --lnl-border: #d5e8da;
+  }
+
+  html { scroll-behavior: smooth; }
+  .topic-page {
+    background: #f4f7f5;
+    color: var(--lnl-text);
+    min-height: 70vh;
+  }
+  .topic-shell {
+    width: min(94%, 1180px);
+    margin: 0 auto;
+    padding: 1.7rem 0 3.5rem;
+  }
+  .topic-shell *,
+  .topic-shell *::before,
+  .topic-shell *::after { box-sizing: border-box; }
+  .topic-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    overflow: hidden;
+    min-height: 265px;
+    margin: 1.2rem 0 1.6rem;
+    padding: 2.25rem clamp(1.4rem, 4vw, 3rem);
+    border-radius: 24px;
+    background: linear-gradient(120deg, var(--lnl-dark), var(--lnl-green) 66%, #16a057);
+    color: white;
+    box-shadow: 0 14px 40px rgba(0, 87, 36, .13);
+  }
+  .topic-hero::before {
+    content: "ABC";
+    position: absolute;
+    right: 15%;
+    bottom: -2.2rem;
+    font-size: clamp(6rem, 17vw, 13rem);
+    font-weight: 900;
+    opacity: .075;
+    letter-spacing: -.09em;
+    pointer-events: none;
+  }
+  .topic-hero-content { position: relative; z-index: 1; flex: 1; max-width: 720px; }
+  .topic-kicker {
+    margin: 0 0 .7rem;
+    color: #d3f4de;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    font-size: .8rem;
+    font-weight: 750;
+  }
+  .topic-hero h1 {
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+    line-height: 1.15;
+    font-weight: 850;
+    text-align: left;
+  }
+  .topic-hero p:last-child { max-width: 55ch; line-height: 1.6; margin: 0; }
+  .topic-hero-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(23%, 215px);
+    max-height: 235px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .sda-nav,
+  .lesson-section,
+  .sda-recap,
+  .self-eval {
+    background: #fff;
+    border: 1px solid var(--lnl-border);
+    border-radius: 20px;
+    box-shadow: 0 7px 22px rgba(10, 60, 30, .05);
+  }
+  .sda-nav { padding: 1.3rem 1.5rem; margin-bottom: 1.8rem; }
+  .sda-nav h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 850;
+    color: var(--lnl-dark);
+    text-align: left;
+  }
+  .sda-nav-links { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .sda-nav-links a {
+    padding: .52rem .75rem;
+    border-radius: 10px;
+    background: #f0f5f2;
+    color: #254939;
+    text-decoration: none;
+    border: 1px solid #e1ede5;
+    font-size: .84rem;
+    font-weight: 650;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible { background: var(--lnl-dark); color: white; }
+  .topic-content { display: grid; gap: 1.6rem; }
+  .lesson-section { padding: clamp(1.1rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .lesson-heading-wrap { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1.25rem; }
+  .section-number {
+    display: inline-flex;
+    min-width: 3.3rem;
+    min-height: 2.55rem;
+    padding: .35rem .55rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--lnl-green);
+    color: #fff;
+    font-weight: 850;
+    border-radius: 10px;
+  }
+  .lesson-section-heading {
+    margin: .15rem 0 0;
+    color: #213a30;
+    font-size: clamp(1.27rem, 2.5vw, 1.72rem);
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: left;
+  }
+  .section-intro { color: var(--lnl-muted); margin: 0 0 1.2rem; line-height: 1.65; }
+  .reading-box {
+    margin: 1.3rem 0;
+    padding: clamp(1rem, 2.6vw, 1.6rem);
+    border: 1px solid #b7e5c7;
+    border-radius: 18px;
+    background: #f5fff8;
+  }
+  .reading-box h3 { margin: 0 0 1rem; color: var(--lnl-dark); font-size: 1.22rem; }
+  .reading-text { max-width: 83ch; line-height: 1.82; }
+  .reading-text p { margin: 0 0 .9rem; }
+  .reading-text p:last-child { margin-bottom: 0; }
+  .explanation {
+    margin: 1.15rem 0 1.25rem;
+    padding: 1.2rem 1.4rem;
+    border-left: 5px solid var(--lnl-green);
+    border-radius: 0 16px 16px 0;
+    background: var(--lnl-light);
+    line-height: 1.7;
+  }
+  .explanation h3 { margin: 0 0 .65rem; font-size: 1.05rem; color: var(--lnl-dark); }
+  .explanation p { margin: 0 0 .65rem; }
+  .explanation p:last-child { margin-bottom: 0; }
+  .example {
+    margin: 1rem 0 .1rem;
+    padding: .8rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #c2e1ce;
+  }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  .content-table { width: 100%; border-collapse: collapse; background: #fff; font-size: .92rem; }
+  .content-table th,
+  .content-table td { padding: .7rem .85rem; border: 1px solid #c5dfd0; text-align: left; }
+  .content-table th { color: var(--lnl-dark); background: #daf3e1; }
+  .sequence { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin: 1rem 0 .15rem; }
+  .sequence span:nth-child(odd) {
+    background: white; border: 1px solid #c6dfce; padding: .5rem .7rem;
+    border-radius: 9px; font-weight: 750; color: var(--lnl-dark);
+  }
+  .check-panel { padding: .75rem 1rem; background: #fff9e8; border-radius: 9px; margin-top: 1rem; }
+  .activities-heading {
+    margin: 1.5rem 0 1rem;
+    color: #4c6170;
+    font-size: .84rem;
+    text-transform: uppercase;
+    letter-spacing: .055em;
+    font-weight: 850;
+    text-align: left;
+  }
+  .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .activity-card { padding: 1.15rem 1.25rem; border: 1px solid #dce6e0; background: #fafcfb; border-radius: 16px; }
+  .activity-card h4 { margin: 0 0 .75rem; color: var(--lnl-dark); line-height: 1.35; font-size: .98rem; }
+  .activity-card ol { margin: 0; padding-left: 1.45rem; list-style: lower-alpha; }
+  .activity-card li { margin-bottom: .65rem; padding-left: .1rem; line-height: 1.5; font-size: .94rem; }
+  .activity-card li:last-child { margin-bottom: 0; }
+  .lesson-bottom { margin: 1.1rem 0 0; border-top: 1px dashed #dbe6df; padding-top: .9rem; color: #5e716a; font-size: .88rem; }
+  .sda-recap,
+  .self-eval { padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .sda-recap h2,
+  .self-eval h2 { text-align: left; font-size: 1.45rem; color: var(--lnl-dark); margin: 0 0 .8rem; }
+  .sda-recap > p,
+  .self-eval > p { line-height: 1.65; color: var(--lnl-muted); }
+  /* Opciones de respuesta en cajas, como en Lengua de 5.º y 6.º. */
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.15rem 0;
+  }
+  .quiz-item {
+    min-width: 0;
+    border: 1px solid #d7e6db;
+    background: #fbfdfb;
+    border-radius: 13px;
+    padding: 1rem;
+  }
+  .quiz-prompt {
+    color: #274d37;
+    font-weight: 750;
+    font-size: .94rem;
+    line-height: 1.45;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: .6rem;
+    padding: .65rem .8rem;
+    margin: .5rem 0;
+    color: #334155;
+    cursor: pointer;
+    font: inherit;
+    font-size: .875rem;
+    line-height: 1.45;
+    transition: background-color .15s, border-color .15s;
+  }
+  .quiz-option:hover {
+    border-color: var(--lnl-green);
+    background: #f0fdf4;
+  }
+  .quiz-option[aria-pressed="true"] {
+    background: #e6f4ea;
+    border-color: var(--lnl-green);
+    color: var(--lnl-dark);
+    font-weight: 650;
+  }
+  .quiz-option:focus-visible {
+    outline: 3px solid #77ba92;
+    outline-offset: 2px;
+  }
+  .quiz-item.correct { border-color: #3c9961; }
+  .quiz-item.incorrect { border-color: #d79a71; }
+  .quiz-feedback {
+    margin: .6rem 0 0;
+    min-height: 1em;
+    font-size: .86rem;
+  }
+  .quiz-actions { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .lnl-btn { border: 0; border-radius: 11px; padding: .75rem 1.1rem; cursor: pointer; font: inherit; font-weight: 750; background: var(--lnl-green); color: #fff; }
+  .lnl-btn.secondary { background: #e9f3ed; color: var(--lnl-dark); }
+  .lnl-btn:hover,
+  .lnl-btn:focus-visible { filter: brightness(.94); outline-offset: 3px; }
+  #quiz-result { margin: .9rem 0 0; font-weight: 750; color: var(--lnl-dark); }
+  .reflection-list { padding-left: 1.4rem; line-height: 1.75; }
+  .reflection-list li { margin-bottom: .45rem; }
+  /* Estilos históricos del prototipo de apoyo, conservados sin uso. */
+  .support-block {
+    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #cfe1d4;
+    background: #f9fcfa;
+  }
+  .support-block h3 { margin: 0 0 .6rem; color: var(--lnl-dark); }
+  .support-block p { line-height: 1.55; }
+  .support-block ol { list-style: lower-alpha; padding-left: 1.5rem; line-height: 1.6; }
+  .support-block li { margin-bottom: .4rem; }
+
+  /* FICHAS DE REFUERZO Y AMPLIACIÓN - COHERENCIA CON LENGUA 5.º */
+  .sda-recap {
+    border: 2px solid #007a33;
+  }
+  .recap-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    margin: 0 0 1.5rem;
+  }
+  .recap-heading p { margin: .4rem 0 0; color: #65736b; font-size: .87rem; }
+  .heading-icon {
+    display: inline-grid;
+    place-items: center;
+    min-width: 3rem;
+    min-height: 2.8rem;
+    border-radius: 12px;
+    background: #007a33;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  .heading-icon--indigo { background: #4f46e5; }
+  .recap-sheet + .recap-sheet { margin-top: 2.5rem; }
+  .sheet-heading {
+    padding: .85rem 1rem;
+    border-left: 4px solid #007a33;
+    border-radius: 0 12px 12px 0;
+    background: #ecfdf3;
+    margin-bottom: 1.2rem;
+  }
+  .sheet-heading h3 { margin: 0; font-size: 1.05rem; color: #005724; }
+  .sheet-heading--ampliacion { background: #fffbeb; border-color: #d97706; }
+  .sheet-heading--ampliacion h3 { color: #92400e; }
+  .sheet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .sheet-card {
+    min-width: 0;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid #dce6e0;
+    border-radius: 16px;
+    background: #f8faf9;
+  }
+  .sheet-card h4 {
+    display: inline-block;
+    margin: 0 0 .75rem;
+    padding: .32rem .6rem;
+    border-radius: 7px;
+    background: #007a33;
+    color: white;
+    font-size: .9rem;
+    line-height: 1.35;
+  }
+  .sheet-card--ampliacion h4 { background: #b45309; }
+  .sheet-card p { margin: 0 0 .65rem; line-height: 1.55; font-size: .92rem; }
+  .sheet-questions { list-style: lower-alpha; margin: 0; padding-left: 1.5rem; }
+  .sheet-questions li { margin-bottom: .5rem; line-height: 1.5; font-size: .94rem; }
+  .sheet-questions li:last-child { margin-bottom: 0; }
+  .check-learning,
+  .self-eval {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    scroll-margin-top: 80px;
+  }
+  .check-learning h2 { margin: 0 0 .7rem; color: #005724; font-size: 1.4rem; text-align: left; }
+  .check-learning > p { line-height: 1.6; }
+  .self-eval { border: 2px solid #c7d2fe; }
+  .self-eval-grid { display: grid; gap: .9rem; }
+  .eval-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem;
+    background: #f8fafc;
+  }
+  .eval-statement { flex: 1 1 370px; margin: 0; line-height: 1.5; }
+  .eval-statement strong { color: #007a33; margin-right: .25rem; }
+  .auto-eval-group { flex: 0 1 410px; display: flex; gap: .35rem; flex-wrap: wrap; }
+  .eval-btn {
+    padding: .47rem .65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #475569;
+    font: inherit;
+    font-size: .75rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+  .eval-btn:hover,
+  .eval-btn:focus-visible { border-color: #4f46e5; outline-offset: 2px; }
+  .eval-btn[aria-pressed="true"] { color: white; background: #4f46e5; border-color: #4f46e5; }
+  .eval-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.3rem; }
+  #eval-status { flex: 1 1 240px; margin: 0; color: #475569; }
+  @media (max-width: 900px) {
+    .eval-row { flex-direction: column; align-items: stretch; }
+    .eval-statement, .auto-eval-group { flex: auto; }
+  }
+  @media (max-width: 760px) { .sheet-grid { grid-template-columns: 1fr; } }
+  @media print {
+    .auto-eval-group, .eval-actions, .quiz-actions { display: none; }
+    .sda-recap, .self-eval, .check-learning { box-shadow: none; }
+  }
+
+  .back-to-index { display: inline-flex; margin: 1.5rem 0 0; align-items: center; gap: .35rem; color: var(--lnl-dark); font-weight: 800; }
+  .footer-bottom a { text-decoration: none; }
+  @media (max-width: 760px) {
+    .topic-hero { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
+    .topic-hero-image { align-self: center; width: min(45%, 170px); max-height: 180px; }
+    .activity-grid,
+    .quiz-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .topic-shell { width: min(96%, 1180px); padding-top: .7rem; }
+    .topic-hero { border-radius: 17px; }
+    .lesson-section { padding: 1.15rem; }
+    .sda-nav { padding: 1rem; }
+    .lesson-heading-wrap { gap: .55rem; }
+    .section-number { min-width: 2.85rem; font-size: .95rem; }
+    .reading-text { line-height: 1.72; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  
+
+/* Ajustes de navegación y presentación fijados con LNL4.2 */
+  .sda-nav {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #d1fae5;
+  }
+  .sda-nav h2 {
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    color: #007a33;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .sda-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .sda-nav-links a {
+    padding: .375rem .75rem;
+    font-size: .83rem;
+    line-height: 1.5;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #334155;
+    transition: background-color .18s, color .18s;
+    text-decoration: none;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible {
+    color: #fff;
+    background: #007a33;
+  }
+  .sda-nav-links a.nav-repaso {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-repaso:hover,
+  .sda-nav-links a.nav-repaso:focus-visible {
+    background: #d97706;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-autoevaluacion {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-autoevaluacion:hover,
+  .sda-nav-links a.nav-autoevaluacion:focus-visible {
+    background: #4f46e5;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-comprueba {
+    background: #e7f5e9;
+    color: #166534;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-comprueba:hover,
+  .sda-nav-links a.nav-comprueba:focus-visible {
+    background: #007a33;
+    color: #fff;
+  }
+  /* Las columnas no pueden forzar desplazamiento horizontal en móvil. */
+  .topic-content { grid-template-columns: minmax(0, 1fr); }
+  .topic-content > section {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .reading-box,
+  .explanation,
+  .activity-card,
+  .sheet-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  /* Protección frente a la regla general de centrado de .section-heading. */
+  .lesson-section-heading {
+    text-align: left;
+  }
+  .quiz-option {
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    padding: .65rem .8rem;
+    text-align: left;
+    cursor: pointer;
+  }
+  .quiz-option[aria-pressed="true"] {
+    border-color: #007a33;
+    background: #e6f4ea;
+    color: #005724;
+    font-weight: 700;
+  }
+  @media (max-width: 480px) {
+    .sda-nav { padding: 1rem; }
+    .sda-nav-links a { font-size: .78rem; }
+  }
+  </style>
+ </head>
+ <body>
+  <a class="skip-link" href="#contenido-principal">
+   Ir al contenido principal
+  </a>
+  <!-- BANNER INSTITUCIONAL -->
+  <header class="site-banner">
+   <a aria-label="Ir al inicio del centro" href="/">
+    <img alt="CEIP Joaqu&iacute;n Tena Artigas - Alcolea, C&oacute;rdoba" class="banner-image" src="/img/banner-principal.png"/>
+   </a>
+  </header>
+  <!-- NAVEGACIÓN GENERAL -->
+  <div class="navigation-wrapper">
+   <div class="navigation-container">
+    <a aria-label="Ir a Inicio" class="navigation-logo" href="/">
+     <img alt="" src="/img/logo-centro.png"/>
+    </a>
+    <button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir men&uacute; de navegaci&oacute;n" class="menu-toggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav aria-label="Navegaci&oacute;n principal" class="main-navigation" id="main-navigation">
+     <ul>
+      <li class="nav-green">
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li class="nav-yellow">
+       <a href="/familias/">
+        Familias
+       </a>
+      </li>
+      <li class="nav-blue">
+       <a aria-current="page" href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li class="nav-red">
+       <a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+        🔒 &Aacute;rea privada Profesorado
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <!-- CONTENIDO DE LA SITUACIÓN DE APRENDIZAJE -->
+  <main class="topic-page" id="contenido-principal">
+   <div class="topic-shell">
+    <nav aria-label="Migas de pan" class="breadcrumbs">
+     <ol>
+      <li>
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/">
+        3.&ordm; de Primaria
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/lengua3/">
+        Lengua Castellana y Literatura
+       </a>
+      </li>
+      <li aria-current="page">
+       Hablamos y dialogamos
+      </li>
+     </ol>
+    </nav>
+    <!-- PORTADA DE LA SdA -->
+    <section aria-labelledby="titulo-sda" class="topic-hero">
+     <div class="topic-hero-content">
+      <p class="topic-kicker">
+       Lengua Castellana y Literatura &middot; 3.&ordm; de Primaria
+      </p>
+      <h1 id="titulo-sda">
+       4. Hablamos y dialogamos
+      </h1>
+      <p>
+       Aprendemos a escuchar, participar por turnos, expresarnos con amabilidad y resolver desacuerdos hablando.
+      </p>
+     </div>
+     <img alt="" class="topic-hero-image" onerror="this.hidden = true" src="/img/tomatito/tomatito-dialogo.png"/>
+    </section>
+    <!-- ÍNDICE DE CONTENIDOS -->
+    <nav aria-label="Contenidos de la situaci&oacute;n de aprendizaje" class="sda-nav">
+     <h2>
+      📍 Contenidos de la Situaci&oacute;n de Aprendizaje
+     </h2>
+     <div class="sda-nav-links">
+      <a href="#sec-1">
+       4.1 Comprensi&oacute;n lectora inicial
+      </a>
+      <a href="#sec-2">
+       4.2 La conversaci&oacute;n y los turnos de palabra
+      </a>
+      <a href="#sec-3">
+       4.3 Escucha activa y f&oacute;rmulas de cortes&iacute;a
+      </a>
+      <a href="#sec-4">
+       4.4 El verbo: palabras que expresan acciones
+      </a>
+      <a href="#sec-5">
+       4.5 Presente, pasado y futuro
+      </a>
+      <a href="#sec-6">
+       4.6 Signos de interrogaci&oacute;n y exclamaci&oacute;n
+      </a>
+      <a href="#sec-7">
+       4.7 Dialogamos para resolver desacuerdos
+      </a>
+      <a href="#sec-8">
+       4.8 Comprensi&oacute;n lectora aplicada
+      </a>
+      <a href="#sec-9">
+       4.9 Producci&oacute;n escrita: nuestro di&aacute;logo para convivir
+      </a>
+      <a class="nav-repaso" href="#sec-repaso">
+       🔄 Repasamos lo aprendido
+      </a>
+      <a class="nav-comprueba" href="#sec-comprueba">
+       ✔ Comprueba lo aprendido
+      </a>
+      <a class="nav-autoevaluacion" href="#sec-autoevaluacion">
+       🎯 Autoevaluaci&oacute;n
+      </a>
+     </div>
+    </nav>
+    <div class="topic-content">
+     <section aria-labelledby="titulo-sec-1" class="lesson-section" id="sec-1">
+      <!-- APARTADO 4.1 · CRITERIO DOCENTE PRINCIPAL: LCL.4.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.1
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-1">
+        Comprensi&oacute;n lectora inicial
+       </h2>
+      </div>
+      <p class="section-intro">
+       Leemos un relato sobre una asamblea de clase y descubrimos por qu&eacute; todas las voces merecen ser escuchadas.
+      </p>
+      <article aria-label="Lectura: Un turno para cada voz" class="reading-box">
+       <h3>
+        📖 Un turno para cada voz
+       </h3>
+       <div class="reading-text">
+        <p>
+         El mi&eacute;rcoles, despu&eacute;s del recreo, la clase de tercero se reuni&oacute; para decidir c&oacute;mo organizar un rinc&oacute;n de lectura. La maestra Elena coloc&oacute; en la pizarra un cartel que dec&iacute;a: &laquo;&iquest;C&oacute;mo podemos disfrutar todos de los libros?&raquo;. Sobre la mesa hab&iacute;a una caja con tarjetas de colores.
+        </p>
+        <p>
+         &mdash;Yo quiero un sof&aacute; enorme &mdash;dijo Leo antes de que la maestra terminara la pregunta.
+        </p>
+        <p>
+         &mdash;Y yo quiero una estanter&iacute;a &mdash;a&ntilde;adi&oacute; Nora, levantando mucho la voz.
+        </p>
+        <p>
+         Al fondo, Amira hab&iacute;a levantado la mano, pero nadie la mir&oacute;. Elena pidi&oacute; silencio y puso una tarjeta azul en el centro de cada grupo. Explic&oacute; una norma sencilla: solo hablar&iacute;a quien tuviera la tarjeta; los dem&aacute;s escuchar&iacute;an hasta que terminara.
+        </p>
+        <p>
+         La primera en participar fue Nora. Propuso colocar los cuentos en cajas se&ntilde;aladas con dibujos para que los m&aacute;s peque&ntilde;os pudieran encontrarlos. Cuando acab&oacute;, entreg&oacute; la tarjeta a Leo. &Eacute;l quer&iacute;a leer en voz alta los viernes. Elena record&oacute; que las dos ideas pod&iacute;an complementarse.
+        </p>
+        <p>
+         Por fin lleg&oacute; el turno de Amira. Habl&oacute; despacio: &mdash;A m&iacute; me cuesta elegir un libro cuando todos gritan. Podr&iacute;amos tener un momento de silencio para mirar las portadas y despu&eacute;s contar cu&aacute;l nos gusta.
+        </p>
+        <p>
+         Nora iba a responder inmediatamente, pero record&oacute; la norma. Esper&oacute; a que Amira terminara y le pregunt&oacute;: &mdash;&iquest;Quieres decir que primero escoger&iacute;amos en silencio y luego hablar&iacute;amos? Amira sonri&oacute; y asinti&oacute;. Aquella pregunta hab&iacute;a servido para comprobar que se hab&iacute;an entendido.
+        </p>
+        <p>
+         Entonces apareci&oacute; un desacuerdo. Leo quer&iacute;a leer en voz alta todos los recreos, mientras que Nora prefer&iacute;a que el rinc&oacute;n fuera un espacio tranquilo. Cada uno explic&oacute; sus razones sin burlarse del otro. Elena les propuso buscar una soluci&oacute;n que tuviera en cuenta ambas necesidades.
+        </p>
+        <p>
+         Despu&eacute;s de conversar, acordaron reservar los martes para leer en silencio y los viernes para compartir cuentos en voz alta. Tambi&eacute;n dibujar&iacute;an un cartel con las normas: &laquo;Escuchamos&raquo;, &laquo;Respetamos los turnos&raquo; y &laquo;Preguntamos con amabilidad&raquo;. Amira escribi&oacute; el t&iacute;tulo con letras grandes.
+        </p>
+        <p>
+         Antes de salir, Elena pregunt&oacute; qu&eacute; les hab&iacute;a ayudado m&aacute;s. Leo respondi&oacute;: &mdash;No fue hablar m&aacute;s fuerte, sino escuchar mejor. Nora a&ntilde;adi&oacute; que hab&iacute;a cambiado de opini&oacute;n despu&eacute;s de comprender lo que sent&iacute;a Amira. Los tres colocaron el cartel junto a la biblioteca de aula y se alegraron de que la decisi&oacute;n fuera de todos.
+        </p>
+       </div>
+       <p class="lesson-bottom">
+        Lectura original para practicar la comprensi&oacute;n, la inferencia y la expresi&oacute;n personal.
+       </p>
+      </article>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Para comprender una lectura, identificamos
+        <strong>
+         qui&eacute;nes intervienen
+        </strong>
+        ,
+        <strong>
+         d&oacute;nde suceden los hechos
+        </strong>
+        ,
+        <strong>
+         qu&eacute; problema aparece
+        </strong>
+        y
+        <strong>
+         c&oacute;mo se resuelve
+        </strong>
+        . Tambi&eacute;n distinguimos entre lo que el texto dice y lo que podemos deducir por sus pistas.
+       </p>
+       <p>
+        En un di&aacute;logo los personajes
+        <strong>
+         hablan, escuchan, preguntan
+        </strong>
+        y, a veces, cambian de opini&oacute;n. Conviene fijarse en las palabras que indican c&oacute;mo se sienten y en las decisiones que toman.
+       </p>
+       <div class="example">
+        <strong>
+         Ejemplo:
+        </strong>
+        Amira sonr&iacute;e cuando Nora le pregunta si la ha entendido: podemos deducir que se sinti&oacute; escuchada.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 1. Comprendemos los detalles
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; quer&iacute;a organizar la clase de tercero?
+         </li>
+         <li>
+          &iquest;Qu&eacute; texto hab&iacute;a escrito la maestra en la pizarra?
+         </li>
+         <li>
+          &iquest;Para qu&eacute; serv&iacute;a la tarjeta azul?
+         </li>
+         <li>
+          &iquest;Qu&eacute; d&iacute;as eligieron para leer en silencio y en voz alta?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 2. Ordenamos los hechos
+        </h4>
+        <ol type="a">
+         <li>
+          Ordena: Amira propone silencio; aparece un desacuerdo; Elena reparte tarjetas; la clase llega a un acuerdo.
+         </li>
+         <li>
+          &iquest;Qui&eacute;n propuso usar cajas con dibujos?
+         </li>
+         <li>
+          &iquest;Cu&aacute;ndo pudo hablar Amira?
+         </li>
+         <li>
+          Resume la historia en cuatro oraciones.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 3. Leemos entre l&iacute;neas
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Por qu&eacute; Amira no habl&oacute; al principio?
+         </li>
+         <li>
+          &iquest;Qu&eacute; hizo Nora para comprobar que hab&iacute;a entendido a Amira?
+         </li>
+         <li>
+          &iquest;Por qu&eacute; el acuerdo final no era exactamente la idea de Leo?
+         </li>
+         <li>
+          &iquest;C&oacute;mo sabemos que Nora aprendi&oacute; a escuchar?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 4. Pensamos y opinamos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una norma del cartel de clase.
+         </li>
+         <li>
+          &iquest;Qu&eacute; habr&iacute;as preguntado a Leo para conocer mejor su propuesta?
+         </li>
+         <li>
+          Explica por qu&eacute; gritar no ayuda a tomar decisiones en grupo.
+         </li>
+         <li>
+          Inventa otro t&iacute;tulo apropiado para la lectura.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-2" class="lesson-section" id="sec-2">
+      <!-- APARTADO 4.2 · CRITERIO DOCENTE PRINCIPAL: LCL.3.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.2
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-2">
+        La conversaci&oacute;n y los turnos de palabra
+       </h2>
+      </div>
+      <p class="section-intro">
+       Aprendemos a participar sin interrumpir y a expresar nuestras ideas de forma ordenada.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Una
+        <strong>
+         conversaci&oacute;n
+        </strong>
+        es un intercambio de mensajes entre dos o m&aacute;s personas. Quien habla es el
+        <strong>
+         emisor
+        </strong>
+        y quien escucha es el
+        <strong>
+         receptor
+        </strong>
+        ; estos papeles cambian continuamente.
+       </p>
+       <p>
+        Para conversar bien debemos
+        <strong>
+         respetar el turno
+        </strong>
+        , usar un volumen adecuado, hablar con claridad, mantenernos en el tema y permitir que otras personas participen.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Situaci&oacute;n
+           </th>
+           <th>
+            Mejor opci&oacute;n
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Quiero intervenir.
+           </td>
+           <td>
+            Levanto la mano o espero a que termine la otra persona.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            No comparto una idea.
+           </td>
+           <td>
+            Explico mi opini&oacute;n con calma y doy una raz&oacute;n.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Una compa&ntilde;era no ha hablado.
+           </td>
+           <td>
+            Le pregunto si quiere participar.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="example">
+        <strong>
+         Ejemplo:
+        </strong>
+        &laquo;Cuando termines, me gustar&iacute;a explicar mi idea&raquo; es m&aacute;s adecuado que interrumpir con &laquo;&iexcl;Yo primero!&raquo;.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 1. Reconocemos las normas
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe dos normas para participar en una asamblea.
+         </li>
+         <li>
+          &iquest;Qu&eacute; hacemos cuando otra persona tiene la palabra?
+         </li>
+         <li>
+          &iquest;Por qu&eacute; no debemos hablar todos a la vez?
+         </li>
+         <li>
+          &iquest;Qu&eacute; podemos hacer si alguien a&uacute;n no ha participado?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 2. Ordenamos una conversaci&oacute;n
+        </h4>
+        <ol type="a">
+         <li>
+          Ordena estas acciones: responder, escuchar la pregunta, pedir turno, dar las gracias.
+         </li>
+         <li>
+          Escribe una f&oacute;rmula para pedir turno.
+         </li>
+         <li>
+          Escribe una frase para volver al tema si la conversaci&oacute;n se desv&iacute;a.
+         </li>
+         <li>
+          Explica cu&aacute;ndo debe cambiar el turno de palabra.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 3. Cambiamos mensajes
+        </h4>
+        <ol type="a">
+         <li>
+          Transforma &laquo;&iexcl;C&aacute;llate, quiero hablar!&raquo; en una petici&oacute;n respetuosa.
+         </li>
+         <li>
+          Cambia &laquo;&iexcl;Tu idea es mala!&raquo; por una discrepancia educada.
+         </li>
+         <li>
+          Reescribe &laquo;&iexcl;Nadie me escucha!&raquo; como una solicitud clara.
+         </li>
+         <li>
+          Explica qu&eacute; mensaje resulta m&aacute;s f&aacute;cil de aceptar y por qu&eacute;.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 4. Practicamos una asamblea
+        </h4>
+        <ol type="a">
+         <li>
+          Prop&oacute;n un tema para hablar en clase.
+         </li>
+         <li>
+          Escribe una intervenci&oacute;n breve con tu opini&oacute;n.
+         </li>
+         <li>
+          Formula una pregunta para invitar a participar a alguien.
+         </li>
+         <li>
+          Redacta un acuerdo que puedan aceptar distintas personas.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-3" class="lesson-section" id="sec-3">
+      <!-- APARTADO 4.3 · CRITERIO DOCENTE PRINCIPAL: LCL.3.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.3
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-3">
+        Escucha activa y f&oacute;rmulas de cortes&iacute;a
+       </h2>
+      </div>
+      <p class="section-intro">
+       Escuchamos de verdad, hacemos preguntas &uacute;tiles y tratamos a los dem&aacute;s con respeto.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        La
+        <strong>
+         escucha activa
+        </strong>
+        consiste en prestar atenci&oacute;n a lo que nos dicen. Podemos mirar a quien habla, evitar distracciones, esperar al final y preguntar cuando algo no se entiende. Escuchar no significa estar siempre de acuerdo: significa intentar comprender.
+       </p>
+       <p>
+        Las
+        <strong>
+         f&oacute;rmulas de cortes&iacute;a
+        </strong>
+        ayudan a convivir:
+        <em>
+         buenos d&iacute;as, por favor, gracias, disculpa, &iquest;puedes repetirlo?
+        </em>
+        Debemos elegirlas seg&uacute;n el contexto y hablar sin burlas ni insultos.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Necesito...
+           </th>
+           <th>
+            Puedo decir...
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Pedir ayuda
+           </td>
+           <td>
+            &laquo;&iquest;Me ayudas, por favor?&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Aclarar un mensaje
+           </td>
+           <td>
+            &laquo;No lo he entendido. &iquest;Puedes explicarlo otra vez?&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Discrepar
+           </td>
+           <td>
+            &laquo;Yo pienso algo diferente porque...&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Reparar un error
+           </td>
+           <td>
+            &laquo;Lo siento. No deber&iacute;a haberte interrumpido&raquo;.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 1. Escuchamos de forma activa
+        </h4>
+        <ol type="a">
+         <li>
+          Indica dos se&ntilde;ales de que una persona est&aacute; escuchando.
+         </li>
+         <li>
+          &iquest;Qu&eacute; puedes hacer si una explicaci&oacute;n no se entiende?
+         </li>
+         <li>
+          &iquest;Por qu&eacute; mirar el tel&eacute;fono mientras alguien habla dificulta escuchar?
+         </li>
+         <li>
+          Escribe una frase para comprobar que has entendido un mensaje.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 2. Usamos palabras amables
+        </h4>
+        <ol type="a">
+         <li>
+          Pide prestado un l&aacute;piz utilizando &laquo;por favor&raquo;.
+         </li>
+         <li>
+          Agradece que alguien te explique una tarea.
+         </li>
+         <li>
+          Disculpa una interrupci&oacute;n de forma sincera.
+         </li>
+         <li>
+          Pide que alguien repita su idea sin exigirlo.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 3. Distinguimos actitudes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Escucha bien alguien que termina las frases de otra persona? Explica.
+         </li>
+         <li>
+          &iquest;Escucha bien quien pregunta despu&eacute;s de esperar? Explica.
+         </li>
+         <li>
+          &iquest;Es respetuoso re&iacute;rse de un error? &iquest;Qu&eacute; podr&iacute;amos hacer?
+         </li>
+         <li>
+          Escribe una respuesta amable a &laquo;No estoy de acuerdo contigo&raquo;.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.3.2.a -->
+       <article class="activity-card" data-criterio="LCL.3.2.a">
+        <h4>
+         Actividad 4. Ensayamos peque&ntilde;os di&aacute;logos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una pregunta respetuosa para conocer una opini&oacute;n.
+         </li>
+         <li>
+          Redacta una respuesta clara a esa pregunta.
+         </li>
+         <li>
+          A&ntilde;ade una frase que demuestre que escuchaste.
+         </li>
+         <li>
+          Cierra el di&aacute;logo con una despedida apropiada.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-4" class="lesson-section" id="sec-4">
+      <!-- APARTADO 4.4 · CRITERIO DOCENTE PRINCIPAL: LCL.9.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.4
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-4">
+        El verbo: palabras que expresan acciones
+       </h2>
+      </div>
+      <p class="section-intro">
+       Descubrimos los verbos y los utilizamos para contar lo que hacemos, pensamos y sentimos.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Los
+        <strong>
+         verbos
+        </strong>
+        son palabras que expresan
+        <strong>
+         acciones
+        </strong>
+        (
+        <em>
+         leer, correr
+        </em>
+        ),
+        <strong>
+         estados
+        </strong>
+        (
+        <em>
+         estar
+        </em>
+        ) o
+        <strong>
+         procesos
+        </strong>
+        (
+        <em>
+         crecer
+        </em>
+        ). Podemos encontrarlos en distintas formas:
+        <em>
+         yo hablo, t&uacute; hablas, ellos hablan
+        </em>
+        .
+       </p>
+       <p>
+        El
+        <strong>
+         infinitivo
+        </strong>
+        es la forma que utilizamos para nombrar el verbo. Termina en
+        <strong>
+         -ar
+        </strong>
+        (
+        <em>
+         hablar
+        </em>
+        ),
+        <strong>
+         -er
+        </strong>
+        (
+        <em>
+         comer
+        </em>
+        ) o
+        <strong>
+         -ir
+        </strong>
+        (
+        <em>
+         vivir
+        </em>
+        ). La forma verbal cambia seg&uacute;n
+        <strong>
+         qui&eacute;n
+        </strong>
+        realiza la acci&oacute;n.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Infinitivo
+           </th>
+           <th>
+            &iquest;Qui&eacute;n?
+           </th>
+           <th>
+            Forma verbal
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            hablar
+           </td>
+           <td>
+            Yo
+           </td>
+           <td>
+            hablo
+           </td>
+          </tr>
+          <tr>
+           <td>
+            leer
+           </td>
+           <td>
+            Nosotros
+           </td>
+           <td>
+            leemos
+           </td>
+          </tr>
+          <tr>
+           <td>
+            escribir
+           </td>
+           <td>
+            Ellas
+           </td>
+           <td>
+            escriben
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        <strong>
+         Atenci&oacute;n:
+        </strong>
+        el verbo no expresa siempre un movimiento: &laquo;pienso&raquo;, &laquo;quiero&raquo; y &laquo;estoy&raquo; tambi&eacute;n son verbos.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 1. Localizamos verbos
+        </h4>
+        <ol type="a">
+         <li>
+          Se&ntilde;ala el verbo en &laquo;Amira escucha una historia&raquo;.
+         </li>
+         <li>
+          Se&ntilde;ala el verbo en &laquo;Los ni&ntilde;os preguntan&raquo;.
+         </li>
+         <li>
+          Se&ntilde;ala el verbo en &laquo;Mi amiga est&aacute; contenta&raquo;.
+         </li>
+         <li>
+          Escribe una oraci&oacute;n con el verbo &laquo;ayudar&raquo;.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 2. Buscamos infinitivos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe el infinitivo de &laquo;cantamos&raquo;.
+         </li>
+         <li>
+          Escribe el infinitivo de &laquo;comen&raquo;.
+         </li>
+         <li>
+          Escribe el infinitivo de &laquo;vives&raquo;.
+         </li>
+         <li>
+          Agrupa hablar, correr y partir seg&uacute;n su terminaci&oacute;n.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 3. Cambiamos de persona
+        </h4>
+        <ol type="a">
+         <li>
+          Completa: yo escucho, t&uacute; ___.
+         </li>
+         <li>
+          Completa: nosotros leemos, ellos ___.
+         </li>
+         <li>
+          Pasa &laquo;La ni&ntilde;a pregunta&raquo; a &laquo;Las ni&ntilde;as ...&raquo;.
+         </li>
+         <li>
+          Corrige &laquo;Nosotros escribe una carta&raquo; y explica el cambio.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 4. Usamos verbos en di&aacute;logos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una oraci&oacute;n con &laquo;preguntar&raquo;.
+         </li>
+         <li>
+          Escribe otra con &laquo;responder&raquo;.
+         </li>
+         <li>
+          Escribe una frase que exprese un sentimiento utilizando un verbo.
+         </li>
+         <li>
+          Une tus tres ideas en un di&aacute;logo breve y coherente.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-5" class="lesson-section" id="sec-5">
+      <!-- APARTADO 4.5 · CRITERIO DOCENTE PRINCIPAL: LCL.9.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.5
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-5">
+        Presente, pasado y futuro
+       </h2>
+      </div>
+      <p class="section-intro">
+       Contamos qu&eacute; sucede ahora, qu&eacute; ocurri&oacute; antes y qu&eacute; pasar&aacute; despu&eacute;s.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Los verbos permiten situar los hechos en el
+        <strong>
+         tiempo
+        </strong>
+        . Usamos el
+        <strong>
+         presente
+        </strong>
+        para lo que ocurre ahora o habitualmente; el
+        <strong>
+         pasado
+        </strong>
+        para lo que ya sucedi&oacute; y el
+        <strong>
+         futuro
+        </strong>
+        para lo que ocurrir&aacute;.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Tiempo
+           </th>
+           <th>
+            &iquest;Cu&aacute;ndo?
+           </th>
+           <th>
+            Ejemplo
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Presente
+           </td>
+           <td>
+            Ahora / normalmente
+           </td>
+           <td>
+            Hoy
+            <strong>
+             hablo
+            </strong>
+            con mi equipo.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Pasado
+           </td>
+           <td>
+            Ayer / antes
+           </td>
+           <td>
+            Ayer
+            <strong>
+             habl&eacute;
+            </strong>
+            con mi equipo.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Futuro
+           </td>
+           <td>
+            Ma&ntilde;ana / despu&eacute;s
+           </td>
+           <td>
+            Ma&ntilde;ana
+            <strong>
+             hablar&eacute;
+            </strong>
+            con mi equipo.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        En 3.&ordm; practicamos el reconocimiento y el uso de estos tres momentos. M&aacute;s adelante aprenderemos distintos
+        <strong>
+         tiempos concretos
+        </strong>
+        del pasado y del futuro.
+       </p>
+       <div class="example">
+        <strong>
+         Recuerda:
+        </strong>
+        &laquo;Ayer hablamos&raquo; y &laquo;Hoy hablamos&raquo; pueden tener la misma forma verbal, pero el contexto nos ayuda a comprender cu&aacute;ndo sucede.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 1. Reconocemos los tiempos
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;En qu&eacute; tiempo est&aacute; &laquo;Hoy escribo una nota&raquo;?
+         </li>
+         <li>
+          &iquest;En qu&eacute; tiempo est&aacute; &laquo;Ayer escrib&iacute; una nota&raquo;?
+         </li>
+         <li>
+          &iquest;En qu&eacute; tiempo est&aacute; &laquo;Ma&ntilde;ana escribir&eacute; una nota&raquo;?
+         </li>
+         <li>
+          Subraya la palabra que indica el momento en cada oraci&oacute;n.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 2. Cambiamos el tiempo
+        </h4>
+        <ol type="a">
+         <li>
+          Convierte &laquo;Hoy escucho&raquo; en una oraci&oacute;n con &laquo;Ayer&raquo;.
+         </li>
+         <li>
+          Convierte &laquo;Hoy hablo&raquo; en una oraci&oacute;n con &laquo;Ma&ntilde;ana&raquo;.
+         </li>
+         <li>
+          Cambia &laquo;Ayer jugamos&raquo; por una oraci&oacute;n con &laquo;Ma&ntilde;ana&raquo;.
+         </li>
+         <li>
+          Explica qu&eacute; palabra cambia para indicar el momento.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 3. Completamos di&aacute;logos
+        </h4>
+        <ol type="a">
+         <li>
+          Completa: Ahora yo ___ (leer, presente).
+         </li>
+         <li>
+          Completa: Ayer t&uacute; ___ (cantar, pasado).
+         </li>
+         <li>
+          Completa: Ma&ntilde;ana ella ___ (escribir, futuro).
+         </li>
+         <li>
+          Redacta una pregunta sobre algo que hiciste ayer.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.9.1.a -->
+       <article class="activity-card" data-criterio="LCL.9.1.a">
+        <h4>
+         Actividad 4. Escribimos tres momentos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una oraci&oacute;n sobre lo que haces hoy en clase.
+         </li>
+         <li>
+          Escribe una oraci&oacute;n sobre lo que hiciste ayer.
+         </li>
+         <li>
+          Escribe una oraci&oacute;n sobre lo que har&aacute;s ma&ntilde;ana.
+         </li>
+         <li>
+          Comprueba que las tres formas verbales correspondan al momento indicado.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-6" class="lesson-section" id="sec-6">
+      <!-- APARTADO 4.6 · CRITERIO DOCENTE PRINCIPAL: LCL.9.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.6
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-6">
+        Signos de interrogaci&oacute;n y exclamaci&oacute;n
+       </h2>
+      </div>
+      <p class="section-intro">
+       Aprendemos a escribir preguntas y exclamaciones completas y a leerlas con la entonaci&oacute;n adecuada.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Los signos de
+        <strong>
+         interrogaci&oacute;n
+        </strong>
+        (
+        <strong>
+         &iquest; ?
+        </strong>
+        ) enmarcan una pregunta: &laquo;&iquest;Qu&eacute; libro prefieres?&raquo;. Los signos de
+        <strong>
+         exclamaci&oacute;n
+        </strong>
+        (
+        <strong>
+         &iexcl; !
+        </strong>
+        ) expresan emoci&oacute;n, sorpresa o una llamada: &laquo;&iexcl;Qu&eacute; buena idea!&raquo;.
+       </p>
+       <p>
+        En espa&ntilde;ol se escribe
+        <strong>
+         el signo de apertura y el de cierre
+        </strong>
+        . Despu&eacute;s de un signo de cierre no a&ntilde;adimos otro punto: &laquo;&iquest;Vienes ma&ntilde;ana?&raquo; es correcto; &laquo;&iquest;Vienes ma&ntilde;ana?.&raquo; no lo es.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Tipo de enunciado
+           </th>
+           <th>
+            Ejemplo
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Pregunta
+           </td>
+           <td>
+            &iquest;Me prestas tu cuaderno?
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Exclamaci&oacute;n
+           </td>
+           <td>
+            &iexcl;Muchas gracias!
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Afirmaci&oacute;n
+           </td>
+           <td>
+            Te prestar&eacute; mi cuaderno.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        Al leer en voz alta, cuidamos la
+        <strong>
+         entonaci&oacute;n
+        </strong>
+        para que nuestros compa&ntilde;eros distingan las preguntas de las afirmaciones.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 1. Ponemos signos correctos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe correctamente: Como te llamas
+         </li>
+         <li>
+          Escribe correctamente: Que sorpresa
+         </li>
+         <li>
+          Escribe correctamente: Me ayudas por favor
+         </li>
+         <li>
+          Escribe correctamente: Que alegr&iacute;a verte
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 2. Distinguimos los mensajes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Es pregunta o exclamaci&oacute;n &laquo;&iquest;D&oacute;nde est&aacute; el libro?&raquo;?
+         </li>
+         <li>
+          &iquest;Es pregunta o exclamaci&oacute;n &laquo;&iexcl;Hemos llegado!&raquo;?
+         </li>
+         <li>
+          Escribe una afirmaci&oacute;n sobre la biblioteca con punto final.
+         </li>
+         <li>
+          Convierte &laquo;Vienes al patio&raquo; en una pregunta correctamente puntuada.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 3. Corregimos errores
+        </h4>
+        <ol type="a">
+         <li>
+          Corrige &laquo;?D&oacute;nde est&aacute; Laura?&raquo;.
+         </li>
+         <li>
+          Corrige &laquo;&iexcl;Qu&eacute; bien!&raquo;. Explica por qu&eacute; ya est&aacute; bien escrita.
+         </li>
+         <li>
+          Corrige &laquo;&iquest;Puedes repetirlo?.&raquo;.
+         </li>
+         <li>
+          Corrige &laquo;Que divertido!&raquo; colocando todos los signos.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 4. Escribimos un di&aacute;logo
+        </h4>
+        <ol type="a">
+         <li>
+          Inventa una pregunta para saber qu&eacute; juego quieren tus compa&ntilde;eros.
+         </li>
+         <li>
+          Escribe una respuesta con una oraci&oacute;n afirmativa.
+         </li>
+         <li>
+          A&ntilde;ade una exclamaci&oacute;n de alegr&iacute;a adecuada a la situaci&oacute;n.
+         </li>
+         <li>
+          Lee las tres intervenciones con entonaci&oacute;n diferente.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-7" class="lesson-section" id="sec-7">
+      <!-- APARTADO 4.7 · CRITERIO DOCENTE PRINCIPAL: LCL.10.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.7
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-7">
+        Dialogamos para resolver desacuerdos
+       </h2>
+      </div>
+      <p class="section-intro">
+       Aprendemos a expresar lo que sentimos, escuchar otra propuesta y llegar a acuerdos.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Un
+        <strong>
+         desacuerdo
+        </strong>
+        aparece cuando dos personas quieren cosas diferentes. Podemos intentar resolverlo
+        <strong>
+         sin gritar ni insultar
+        </strong>
+        . Primero explicamos qu&eacute; ocurre; despu&eacute;s escuchamos c&oacute;mo se siente la otra persona y, finalmente, buscamos soluciones justas.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Paso
+           </th>
+           <th>
+            Frase de ejemplo
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            1. Expreso mi necesidad
+           </td>
+           <td>
+            &laquo;Quiero jugar, pero a&uacute;n no he tenido turno&raquo;.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            2. Escucho y pregunto
+           </td>
+           <td>
+            &laquo;&iquest;T&uacute; tambi&eacute;n necesitas el bal&oacute;n?&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            3. Propongo opciones
+           </td>
+           <td>
+            &laquo;Podemos jugar diez minutos cada equipo&raquo;.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            4. Llegamos a un acuerdo
+           </td>
+           <td>
+            &laquo;De acuerdo, empezamos por turnos&raquo;.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        En el
+        <strong>
+         di&aacute;logo escrito
+        </strong>
+        , cada intervenci&oacute;n puede comenzar con una
+        <strong>
+         raya
+        </strong>
+        (&mdash;). Si es posible, ponemos una intervenci&oacute;n por l&iacute;nea.
+       </p>
+       <div class="example">
+        <strong>
+         Ejemplo:
+        </strong>
+        <p>
+         &mdash;&iquest;Jugamos juntos?
+        </p>
+        <p>
+         &mdash;S&iacute;, pero primero decidamos las reglas.
+        </p>
+        <p>
+         &mdash;&iexcl;Buena idea!
+        </p>
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.10.2.a -->
+       <article class="activity-card" data-criterio="LCL.10.2.a">
+        <h4>
+         Actividad 1. Reconocemos problemas cotidianos
+        </h4>
+        <ol type="a">
+         <li>
+          Prop&oacute;n una causa de desacuerdo en el patio.
+         </li>
+         <li>
+          Indica c&oacute;mo puede sentirse alguien que nunca recibe turno.
+         </li>
+         <li>
+          &iquest;Por qu&eacute; una burla empeora el problema?
+         </li>
+         <li>
+          Escribe una frase que explique un desacuerdo sin atacar a nadie.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.10.2.a -->
+       <article class="activity-card" data-criterio="LCL.10.2.a">
+        <h4>
+         Actividad 2. Buscamos soluciones
+        </h4>
+        <ol type="a">
+         <li>
+          Dos compa&ntilde;eros quieren el mismo libro: propone un turno justo.
+         </li>
+         <li>
+          Dos grupos quieren jugar en el mismo espacio: prop&oacute;n una alternativa.
+         </li>
+         <li>
+          Un compa&ntilde;ero ha interrumpido: escribe una disculpa adecuada.
+         </li>
+         <li>
+          Explica por qu&eacute; conviene comprobar si todos aceptan el acuerdo.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.10.2.a -->
+       <article class="activity-card" data-criterio="LCL.10.2.a">
+        <h4>
+         Actividad 3. Escribimos intervenciones
+        </h4>
+        <ol type="a">
+         <li>
+          Inicia un di&aacute;logo escrito con una raya y una pregunta.
+         </li>
+         <li>
+          Responde a la pregunta con otra intervenci&oacute;n.
+         </li>
+         <li>
+          A&ntilde;ade una propuesta que respete las necesidades de ambos.
+         </li>
+         <li>
+          Cierra la conversaci&oacute;n con un acuerdo y una despedida.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.10.2.a -->
+       <article class="activity-card" data-criterio="LCL.10.2.a">
+        <h4>
+         Actividad 4. Revisamos el respeto
+        </h4>
+        <ol type="a">
+         <li>
+          Corrige &laquo;&iexcl;Es m&iacute;o y punto!&raquo; con una petici&oacute;n educada.
+         </li>
+         <li>
+          Sustituye &laquo;&iexcl;No sabes nada!&raquo; por una frase que exprese desacuerdo.
+         </li>
+         <li>
+          Explica qu&eacute; papel tiene la escucha al negociar.
+         </li>
+         <li>
+          Escribe dos normas para dialogar si hay un conflicto.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-8" class="lesson-section" id="sec-8">
+      <!-- APARTADO 4.8 · CRITERIO DOCENTE PRINCIPAL: LCL.4.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.8
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-8">
+        Comprensi&oacute;n lectora aplicada
+       </h2>
+      </div>
+      <p class="section-intro">
+       Aplicamos la escucha, las preguntas y los acuerdos a una nueva historia cercana al colegio.
+      </p>
+      <article aria-label="Lectura: El bal&oacute;n de los dos equipos" class="reading-box">
+       <h3>
+        📖 El bal&oacute;n de los dos equipos
+       </h3>
+       <div class="reading-text">
+        <p>
+         El viernes, el patio estaba lleno de juegos. Sara llevaba un bal&oacute;n rojo que la clase utilizaba para distintas actividades. Dani y su equipo quer&iacute;an jugar a pases, pero Luc&iacute;a y sus amigas hab&iacute;an planeado un juego de punter&iacute;a con el mismo bal&oacute;n.
+        </p>
+        <p>
+         &mdash;&iexcl;Nos toca a nosotros! &mdash;grit&oacute; Dani, intentando cogerlo.
+        </p>
+        <p>
+         Luc&iacute;a sujet&oacute; el bal&oacute;n y contest&oacute;: &mdash;Nosotras lo pedimos esta ma&ntilde;ana. No es justo que lo cojas sin preguntar.
+        </p>
+        <p>
+         Sara se coloc&oacute; entre los dos grupos y les pidi&oacute; que dejaran de gritar. &mdash;Si hablamos todos a la vez, no podremos decidir &mdash;explic&oacute;. Luego pregunt&oacute; a Dani cu&aacute;nto tiempo necesitaban para jugar. &Eacute;l respondi&oacute; que unos diez minutos. Luc&iacute;a dijo que su juego tambi&eacute;n durar&iacute;a poco.
+        </p>
+        <p>
+         &mdash;Entonces, &iquest;qu&eacute; os parece si hacemos dos turnos? &mdash;propuso Sara&mdash;. Podemos usar el reloj del patio para saber cu&aacute;ndo cambia el equipo.
+        </p>
+        <p>
+         Dani frunci&oacute; el ce&ntilde;o. Pensaba que esperar ser&iacute;a aburrido. Sin embargo, Luc&iacute;a ofreci&oacute; otra idea: mientras un grupo utilizaba el bal&oacute;n, el otro podr&iacute;a preparar las marcas del suelo para el juego de punter&iacute;a. As&iacute; no perder&iacute;an tiempo.
+        </p>
+        <p>
+         Dani escuch&oacute; la explicaci&oacute;n y pregunt&oacute;: &mdash;&iquest;Podemos jugar primero a pases y despu&eacute;s dejar el bal&oacute;n junto al banco? Luc&iacute;a contest&oacute; que s&iacute;, siempre que se respetara el tiempo acordado. Sara repiti&oacute; el plan para comprobar que todos lo hab&iacute;an entendido.
+        </p>
+        <p>
+         Los dos equipos aceptaron. Primero jugaron a pases durante diez minutos. Despu&eacute;s, Dani llev&oacute; el bal&oacute;n al banco, como hab&iacute;an prometido, y el otro equipo comenz&oacute; su juego. Al terminar el recreo, los tres agradecieron la ayuda de sus compa&ntilde;eros.
+        </p>
+        <p>
+         En clase, Sara cont&oacute; lo sucedido. La maestra destac&oacute; tres cosas: hab&iacute;an hecho preguntas, hab&iacute;an propuesto alternativas y hab&iacute;an cumplido lo acordado. Dani reconoci&oacute; que hab&iacute;a empezado gritando, pero que escuchar le permiti&oacute; disfrutar del recreo sin discutir. Luc&iacute;a a&ntilde;adi&oacute; que las soluciones suelen ser mejores cuando se tienen en cuenta todas las voces.
+        </p>
+       </div>
+       <p class="lesson-bottom">
+        Lectura original para practicar la comprensi&oacute;n, la inferencia y la expresi&oacute;n personal.
+       </p>
+      </article>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Al leer una conversaci&oacute;n, localizamos
+        <strong>
+         qui&eacute;n habla
+        </strong>
+        ,
+        <strong>
+         qu&eacute; quiere cada persona
+        </strong>
+        y
+        <strong>
+         qu&eacute; soluci&oacute;n eligen
+        </strong>
+        . Las preguntas pueden aclarar un problema y las exclamaciones indican emociones, pero no siempre son gritos: importa el contexto.
+       </p>
+       <p>
+        Comprender bien un texto incluye recuperar informaci&oacute;n escrita, deducir sentimientos a partir de pistas y explicar con nuestras palabras lo aprendido.
+       </p>
+       <div class="example">
+        <strong>
+         Recuerda:
+        </strong>
+        para justificar una respuesta, se&ntilde;ala qu&eacute; frase o hecho del relato te da la pista.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 1. Localizamos datos
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;De qu&eacute; color era el bal&oacute;n?
+         </li>
+         <li>
+          &iquest;Qu&eacute; juego quer&iacute;a hacer el equipo de Dani?
+         </li>
+         <li>
+          &iquest;Qu&eacute; juego quer&iacute;a hacer el grupo de Luc&iacute;a?
+         </li>
+         <li>
+          &iquest;Cu&aacute;ntos minutos duraba el primer turno?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 2. Seguimos el acuerdo
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qui&eacute;n propuso utilizar el reloj del patio?
+         </li>
+         <li>
+          &iquest;Qu&eacute; pod&iacute;an hacer mientras esperaban turno?
+         </li>
+         <li>
+          &iquest;D&oacute;nde deb&iacute;a dejar Dani el bal&oacute;n?
+         </li>
+         <li>
+          Ordena: hacen preguntas; Dani intenta coger el bal&oacute;n; deciden turnos; cumplen el acuerdo.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 3. Comprendemos a los personajes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Por qu&eacute; Luc&iacute;a pensaba que no era justo coger el bal&oacute;n?
+         </li>
+         <li>
+          &iquest;C&oacute;mo sabemos que Dani cambi&oacute; de actitud?
+         </li>
+         <li>
+          &iquest;Qu&eacute; hizo Sara para comprobar que todos hab&iacute;an entendido?
+         </li>
+         <li>
+          &iquest;Qu&eacute; demuestra que los equipos cumplieron el acuerdo?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 4. Aplicamos lo aprendido
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una pregunta que podr&iacute;a haber hecho Dani al principio.
+         </li>
+         <li>
+          Localiza una exclamaci&oacute;n y explica qu&eacute; sentimiento expresa.
+         </li>
+         <li>
+          Escribe el verbo principal de &laquo;Luc&iacute;a ofreci&oacute; otra idea&raquo; y di su infinitivo.
+         </li>
+         <li>
+          Prop&oacute;n otra soluci&oacute;n respetuosa para compartir el bal&oacute;n.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-9" class="lesson-section" id="sec-9">
+      <!-- APARTADO 4.9 · CRITERIO DOCENTE PRINCIPAL: LCL.5.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        4.9
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-9">
+        Producci&oacute;n escrita: nuestro di&aacute;logo para convivir
+       </h2>
+      </div>
+      <p class="section-intro">
+       Planificamos, escribimos, revisamos y representamos una conversaci&oacute;n que termine en un acuerdo.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        El
+        <strong>
+         producto final
+        </strong>
+        ser&aacute; un di&aacute;logo breve, escrito por parejas o peque&ntilde;os grupos, para resolver un problema cotidiano del colegio. Tendr&aacute;
+        <strong>
+         un inicio
+        </strong>
+        que presente el desacuerdo,
+        <strong>
+         intervenciones ordenadas
+        </strong>
+        , una
+        <strong>
+         propuesta
+        </strong>
+        y un
+        <strong>
+         acuerdo final
+        </strong>
+        .
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Paso
+           </th>
+           <th>
+            Qu&eacute; revisar
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            1. Planificar
+           </td>
+           <td>
+            &iquest;Qui&eacute;nes hablan? &iquest;Qu&eacute; quiere cada uno?
+           </td>
+          </tr>
+          <tr>
+           <td>
+            2. Redactar
+           </td>
+           <td>
+            &iquest;Cada intervenci&oacute;n empieza con raya y tiene sentido?
+           </td>
+          </tr>
+          <tr>
+           <td>
+            3. Cuidar la lengua
+           </td>
+           <td>
+            &iquest;Hay signos &iquest;? y &iexcl;! completos, may&uacute;sculas y verbos adecuados?
+           </td>
+          </tr>
+          <tr>
+           <td>
+            4. Dialogar
+           </td>
+           <td>
+            &iquest;Aparecen cortes&iacute;a, escucha y una soluci&oacute;n justa?
+           </td>
+          </tr>
+          <tr>
+           <td>
+            5. Representar
+           </td>
+           <td>
+            &iquest;Se respetan los turnos y la entonaci&oacute;n?
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="example">
+        <strong>
+         Modelo breve:
+        </strong>
+        <p>
+         &mdash;&iquest;Puedes dejarme la cuerda cuando termines?
+        </p>
+        <p>
+         &mdash;S&iacute;, la usar&eacute; cinco minutos m&aacute;s.
+        </p>
+        <p>
+         &mdash;&iexcl;Gracias! Mientras tanto, preparar&eacute; el juego.
+        </p>
+        <p>
+         &mdash;De acuerdo, despu&eacute;s jugamos juntos.
+        </p>
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 1. Preparamos nuestro di&aacute;logo
+        </h4>
+        <ol type="a">
+         <li>
+          Elige un peque&ntilde;o conflicto que pueda ocurrir en el colegio.
+         </li>
+         <li>
+          Inventa dos personajes y escribe qu&eacute; necesita cada uno.
+         </li>
+         <li>
+          Anota dos f&oacute;rmulas de cortes&iacute;a que podr&iacute;an usar.
+         </li>
+         <li>
+          Prop&oacute;n una soluci&oacute;n que tenga en cuenta a ambos personajes.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 2. Escribimos el borrador
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una primera intervenci&oacute;n que explique el problema.
+         </li>
+         <li>
+          A&ntilde;ade una pregunta entre signos de apertura y cierre.
+         </li>
+         <li>
+          Escribe al menos cuatro intervenciones con raya de di&aacute;logo.
+         </li>
+         <li>
+          Termina con un acuerdo claro y una frase de agradecimiento.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 3. Revisamos la escritura
+        </h4>
+        <ol type="a">
+         <li>
+          Comprueba que las preguntas lleven &iquest; y ?.
+         </li>
+         <li>
+          Comprueba que las exclamaciones lleven &iexcl; y !.
+         </li>
+         <li>
+          Subraya tres verbos e indica si expresan presente, pasado o futuro.
+         </li>
+         <li>
+          Sustituye una frase brusca por otra m&aacute;s respetuosa.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 4. Representamos y valoramos
+        </h4>
+        <ol type="a">
+         <li>
+          Reparte los papeles y lee el di&aacute;logo con un compa&ntilde;ero.
+         </li>
+         <li>
+          Practica la entonaci&oacute;n de preguntas y exclamaciones.
+         </li>
+         <li>
+          Escucha una sugerencia para mejorar el texto.
+         </li>
+         <li>
+          Escribe qu&eacute; hab&eacute;is aprendido sobre resolver desacuerdos.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- ====================================================== -->
+     <!-- REPASAMOS LO APRENDIDO -->
+     <!-- ====================================================== -->
+     <section aria-labelledby="titulo-repaso" class="sda-recap" id="sec-repaso">
+      <div class="recap-heading">
+       <span aria-hidden="true" class="heading-icon">
+        🔄
+       </span>
+       <div>
+        <h2 class="lesson-section-heading" id="titulo-repaso">
+         Repasamos lo aprendido
+        </h2>
+        <p>
+         Una actividad de cuatro cuestiones por apartado en cada ficha.
+        </p>
+       </div>
+      </div>
+      <!-- FICHA DE REFUERZO -->
+      <section aria-labelledby="titulo-refuerzo" class="recap-sheet">
+       <div class="sheet-heading sheet-heading--refuerzo">
+        <h3 id="titulo-refuerzo">
+         🟢 Ficha de Refuerzo
+        </h3>
+       </div>
+       <div class="sheet-grid">
+        <!-- REFUERZO 4.1 · LCL.4.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.1.a">
+         <h4>
+          Refuerzo 4.1 &middot; Comprensi&oacute;n lectora inicial
+         </h4>
+         <p>
+          Recordamos las ideas centrales de la lectura.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qu&eacute; organizaba la clase?
+          </li>
+          <li>
+           &iquest;Qu&eacute; objeto indicaba qui&eacute;n pod&iacute;a hablar?
+          </li>
+          <li>
+           &iquest;Qui&eacute;n propuso elegir los libros en silencio?
+          </li>
+          <li>
+           &iquest;Qu&eacute; decidieron hacer los martes?
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.2 · LCL.3.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.2.a">
+         <h4>
+          Refuerzo 4.2 &middot; La conversaci&oacute;n y los turnos de palabra
+         </h4>
+         <p>
+          Recordamos normas para conversar.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe una norma para no interrumpir.
+          </li>
+          <li>
+           &iquest;Qu&eacute; hacer antes de responder a una pregunta?
+          </li>
+          <li>
+           Escribe una frase para pedir turno.
+          </li>
+          <li>
+           &iquest;Qu&eacute; hacer si otra persona no ha intervenido?
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.3 · LCL.3.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.2.a">
+         <h4>
+          Refuerzo 4.3 &middot; Escucha activa y f&oacute;rmulas de cortes&iacute;a
+         </h4>
+         <p>
+          Elegimos f&oacute;rmulas de cortes&iacute;a.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe una forma de saludar.
+          </li>
+          <li>
+           Pide un favor con &laquo;por favor&raquo;.
+          </li>
+          <li>
+           Da las gracias por una ayuda.
+          </li>
+          <li>
+           Pide una explicaci&oacute;n con amabilidad.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.4 · LCL.9.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.9.1.a">
+         <h4>
+          Refuerzo 4.4 &middot; El verbo: palabras que expresan acciones
+         </h4>
+         <p>
+          Reconocemos verbos y sus infinitivos.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Se&ntilde;ala el verbo en &laquo;Nora escucha&raquo;.
+          </li>
+          <li>
+           Escribe el infinitivo de &laquo;hablamos&raquo;.
+          </li>
+          <li>
+           Escribe el infinitivo de &laquo;comen&raquo;.
+          </li>
+          <li>
+           Completa: &laquo;Yo ___ una carta&raquo; con un verbo.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.5 · LCL.9.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.9.1.a">
+         <h4>
+          Refuerzo 4.5 &middot; Presente, pasado y futuro
+         </h4>
+         <p>
+          Diferenciamos los tres momentos.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Indica el tiempo de &laquo;Hoy pregunto&raquo;.
+          </li>
+          <li>
+           Indica el tiempo de &laquo;Ayer pregunt&eacute;&raquo;.
+          </li>
+          <li>
+           Indica el tiempo de &laquo;Ma&ntilde;ana preguntar&eacute;&raquo;.
+          </li>
+          <li>
+           Cambia &laquo;Hoy canto&raquo; por una oraci&oacute;n en pasado.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.6 · LCL.9.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.9.2.a">
+         <h4>
+          Refuerzo 4.6 &middot; Signos de interrogaci&oacute;n y exclamaci&oacute;n
+         </h4>
+         <p>
+          Ponemos signos de apertura y cierre.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Corrige &laquo;Como est&aacute;s?&raquo;.
+          </li>
+          <li>
+           Corrige &laquo;Que bien!&raquo;.
+          </li>
+          <li>
+           Escribe una pregunta sobre el recreo.
+          </li>
+          <li>
+           Escribe una exclamaci&oacute;n de alegr&iacute;a.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.7 · LCL.10.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.10.2.a">
+         <h4>
+          Refuerzo 4.7 &middot; Dialogamos para resolver desacuerdos
+         </h4>
+         <p>
+          Escribimos intervenciones sencillas.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qu&eacute; debemos hacer antes de proponer una soluci&oacute;n?
+          </li>
+          <li>
+           Pide un turno de forma respetuosa.
+          </li>
+          <li>
+           Escribe una propuesta para compartir un juguete.
+          </li>
+          <li>
+           Escribe una frase que cierre un acuerdo.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.8 · LCL.4.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.2.a">
+         <h4>
+          Refuerzo 4.8 &middot; Comprensi&oacute;n lectora aplicada
+         </h4>
+         <p>
+          Recordamos la segunda historia.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qui&eacute;n llevaba el bal&oacute;n rojo?
+          </li>
+          <li>
+           &iquest;Qu&eacute; grupo quer&iacute;a jugar a pases?
+          </li>
+          <li>
+           &iquest;Qui&eacute;n propuso dos turnos?
+          </li>
+          <li>
+           &iquest;D&oacute;nde deb&iacute;a dejarse el bal&oacute;n?
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 4.9 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.5.1.a">
+         <h4>
+          Refuerzo 4.9 &middot; Producci&oacute;n escrita: nuestro di&aacute;logo para convivir
+         </h4>
+         <p>
+          Organizamos el producto final.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Inventa dos personajes.
+          </li>
+          <li>
+           Escribe el problema que tienen.
+          </li>
+          <li>
+           A&ntilde;ade una pregunta con &iquest; y ?.
+          </li>
+          <li>
+           Escribe una soluci&oacute;n que respete a ambos.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </section>
+      <!-- FICHA DE AMPLIACIÓN -->
+      <section aria-labelledby="titulo-ampliacion" class="recap-sheet">
+       <div class="sheet-heading sheet-heading--ampliacion">
+        <h3 id="titulo-ampliacion">
+         🟠 Ficha de Ampliaci&oacute;n
+        </h3>
+       </div>
+       <div class="sheet-grid">
+        <!-- AMPLIACIÓN 4.1 · LCL.4.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.1.a">
+         <h4>
+          Ampliaci&oacute;n 4.1 &middot; Comprensi&oacute;n lectora inicial
+         </h4>
+         <p>
+          Interpretamos motivos y decisiones.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Explica por qu&eacute; Amira no intervino al principio.
+          </li>
+          <li>
+           Compara las primeras reacciones de Leo y Nora.
+          </li>
+          <li>
+           Prop&oacute;n otra forma de organizar la asamblea.
+          </li>
+          <li>
+           Escribe qu&eacute; aprendieron los protagonistas de la experiencia.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.2 · LCL.3.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.2.a">
+         <h4>
+          Ampliaci&oacute;n 4.2 &middot; La conversaci&oacute;n y los turnos de palabra
+         </h4>
+         <p>
+          Planificamos una conversaci&oacute;n con varias voces.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Elige un tema sobre la convivencia de clase.
+          </li>
+          <li>
+           Escribe tres turnos diferentes sin interrumpirse.
+          </li>
+          <li>
+           A&ntilde;ade una pregunta para incluir a alguien que no haya participado.
+          </li>
+          <li>
+           Redacta un acuerdo que recoja dos opiniones distintas.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.3 · LCL.3.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.2.a">
+         <h4>
+          Ampliaci&oacute;n 4.3 &middot; Escucha activa y f&oacute;rmulas de cortes&iacute;a
+         </h4>
+         <p>
+          Practicamos respuestas que demuestran atenci&oacute;n.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Transforma una interrupci&oacute;n en una pregunta amable.
+          </li>
+          <li>
+           Escribe una frase para resumir la opini&oacute;n de otra persona.
+          </li>
+          <li>
+           Imagina que no has entendido algo y pide una aclaraci&oacute;n.
+          </li>
+          <li>
+           Explica por qu&eacute; entender una idea no obliga a compartirla.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.4 · LCL.9.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.9.1.a">
+         <h4>
+          Ampliaci&oacute;n 4.4 &middot; El verbo: palabras que expresan acciones
+         </h4>
+         <p>
+          Mejoramos un peque&ntilde;o texto.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe una oraci&oacute;n con &laquo;pensar&raquo; en primera persona.
+          </li>
+          <li>
+           Escribe otra con &laquo;estar&raquo; en tercera persona.
+          </li>
+          <li>
+           Transforma &laquo;Los ni&ntilde;os hablan&raquo; a singular.
+          </li>
+          <li>
+           Explica por qu&eacute; &laquo;sentir&raquo; tambi&eacute;n es un verbo aunque no indique movimiento.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.5 · LCL.9.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.9.1.a">
+         <h4>
+          Ampliaci&oacute;n 4.5 &middot; Presente, pasado y futuro
+         </h4>
+         <p>
+          Jugamos con los momentos de la narraci&oacute;n.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe una frase sobre lo que haces ahora.
+          </li>
+          <li>
+           Convierte la frase al pasado y comprueba el verbo.
+          </li>
+          <li>
+           Convi&eacute;rtela al futuro y comprueba el verbo.
+          </li>
+          <li>
+           Une las tres oraciones en un peque&ntilde;o p&aacute;rrafo con hoy, ayer y ma&ntilde;ana.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.6 · LCL.9.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.9.2.a">
+         <h4>
+          Ampliaci&oacute;n 4.6 &middot; Signos de interrogaci&oacute;n y exclamaci&oacute;n
+         </h4>
+         <p>
+          Comparamos la intenci&oacute;n de los enunciados.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe &laquo;Te marchas&raquo; como afirmaci&oacute;n.
+          </li>
+          <li>
+           Escr&iacute;belo ahora como pregunta.
+          </li>
+          <li>
+           Escribe una exclamaci&oacute;n relacionada con una buena noticia.
+          </li>
+          <li>
+           Explica c&oacute;mo cambia la entonaci&oacute;n al leer las tres frases.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.7 · LCL.10.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.10.2.a">
+         <h4>
+          Ampliaci&oacute;n 4.7 &middot; Dialogamos para resolver desacuerdos
+         </h4>
+         <p>
+          Buscamos soluciones dialogadas.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Describe un desacuerdo sin culpar a ning&uacute;n personaje.
+          </li>
+          <li>
+           Escribe c&oacute;mo se siente cada persona utilizando un verbo.
+          </li>
+          <li>
+           Prop&oacute;n dos alternativas y explica sus ventajas.
+          </li>
+          <li>
+           Redacta cuatro intervenciones que conduzcan a un acuerdo justo.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.8 · LCL.4.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.2.a">
+         <h4>
+          Ampliaci&oacute;n 4.8 &middot; Comprensi&oacute;n lectora aplicada
+         </h4>
+         <p>
+          Analizamos el conflicto del bal&oacute;n.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Explica por qu&eacute; Sara decidi&oacute; preguntar cu&aacute;nto durar&iacute;a cada juego.
+          </li>
+          <li>
+           &iquest;C&oacute;mo ayud&oacute; la propuesta de Luc&iacute;a a que todos aprovecharan el recreo?
+          </li>
+          <li>
+           Reescribe el inicio del relato con una petici&oacute;n amable de Dani.
+          </li>
+          <li>
+           Explica qu&eacute; cambi&oacute; gracias a la escucha activa.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 4.9 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.5.1.a">
+         <h4>
+          Ampliaci&oacute;n 4.9 &middot; Producci&oacute;n escrita: nuestro di&aacute;logo para convivir
+         </h4>
+         <p>
+          Preparamos un di&aacute;logo m&aacute;s elaborado.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Crea dos personajes con necesidades distintas.
+          </li>
+          <li>
+           Escribe seis intervenciones ordenadas y a&ntilde;ade una aclaraci&oacute;n.
+          </li>
+          <li>
+           Introduce una pregunta y una exclamaci&oacute;n bien puntuadas.
+          </li>
+          <li>
+           Revisa los verbos y termina con una soluci&oacute;n que ambas partes acepten.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </section>
+     </section>
+     <!-- REPASO INTERACTIVO (NO MODIFICA LOS CRITERIOS ASOCIADOS A LAS TAREAS) -->
+     <section aria-labelledby="titulo-comprueba" class="check-learning" id="sec-comprueba">
+      <h2 id="titulo-comprueba">
+       Comprueba lo aprendido
+      </h2>
+      <p>
+       Selecciona una
+       <strong>
+        caja de respuesta
+       </strong>
+       en cada pregunta y pulsa &laquo;Comprobar respuestas&raquo;. Puedes cambiar tus respuestas y volver a intentarlo.
+      </p>
+      <form id="quiz-form">
+       <div class="quiz-grid">
+        <div aria-labelledby="quiz-pregunta-1" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-1">
+          1. &iquest;Qu&eacute; preparaba la clase de la primera lectura?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Una excursi&oacute;n
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Un rinc&oacute;n de lectura
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Una carrera
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-2" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-2">
+          2. &iquest;Para qu&eacute; serv&iacute;a la tarjeta azul?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Para indicar el turno de palabra
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Para abrir una caja
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Para elegir un premio
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-3" class="quiz-item quiz-question" data-answer="2" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-3">
+          3. &iquest;Qu&eacute; debemos hacer antes de responder a quien est&aacute; hablando?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Interrumpir
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Cambiar de tema
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Escuchar hasta el final
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-4" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-4">
+          4. &iquest;Cu&aacute;l de estas frases es una petici&oacute;n cort&eacute;s?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           &iexcl;D&aacute;melo ya!
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           &iquest;Me lo prestas, por favor?
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           &iexcl;Es m&iacute;o!
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-5" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-5">
+          5. &iquest;Cu&aacute;l de estas palabras es un verbo?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           escuchar
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           amable
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           libro
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-6" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-6">
+          6. &iquest;Cu&aacute;l es el infinitivo de &laquo;escribimos&raquo;?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           escribe
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           escribir
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           escrib&iacute;
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-7" class="quiz-item quiz-question" data-answer="2" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-7">
+          7. &iquest;Qu&eacute; frase se refiere claramente al futuro?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Ayer habl&eacute;
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Hoy hablo
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Ma&ntilde;ana hablar&eacute;
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-8" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-8">
+          8. &iquest;Qu&eacute; oraci&oacute;n est&aacute; escrita como pregunta?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           &iquest;Quieres participar?
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Quieres participar?
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           &iexcl;Quieres participar?
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-9" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-9">
+          9. &iquest;Qu&eacute; oraci&oacute;n utiliza correctamente la exclamaci&oacute;n?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Qu&eacute; sorpresa!
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           &iexcl;Qu&eacute; sorpresa!
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           &iexcl;Qu&eacute; sorpresa?
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-10" class="quiz-item quiz-question" data-answer="2" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-10">
+          10. &iquest;Qu&eacute; ayuda a resolver un desacuerdo?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Gritar m&aacute;s
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           No dejar hablar
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Escuchar y proponer alternativas
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-11" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-11">
+          11. &iquest;Qu&eacute; acordaron los equipos sobre el bal&oacute;n?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Utilizarlo por turnos
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Guardar el bal&oacute;n toda la ma&ntilde;ana
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Dejar el bal&oacute;n sin usar
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-12" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-12">
+          12. &iquest;Qu&eacute; debe incluir el di&aacute;logo final?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Solo un personaje
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Un desacuerdo, preguntas y un acuerdo respetuoso
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Solo exclamaciones
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+       </div>
+       <div class="quiz-actions">
+        <button class="lnl-btn" type="submit">
+         Comprobar respuestas
+        </button>
+        <button class="lnl-btn secondary" type="reset">
+         Volver a empezar
+        </button>
+       </div>
+       <p aria-live="polite" id="quiz-result" role="status">
+       </p>
+      </form>
+     </section>
+     <!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+     <section aria-labelledby="titulo-autoevaluacion" class="self-eval" id="sec-autoevaluacion">
+      <div class="recap-heading">
+       <span aria-hidden="true" class="heading-icon heading-icon--indigo">
+        🎯
+       </span>
+       <div>
+        <h2 class="lesson-section-heading" id="titulo-autoevaluacion">
+         Diana de Autoevaluaci&oacute;n Interactiva
+        </h2>
+        <p>
+         Selecciona la opci&oacute;n que mejor representa tu aprendizaje.
+        </p>
+       </div>
+      </div>
+      <div class="self-eval-grid">
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.1: LCL.4.1.a -->
+        <p class="eval-statement">
+         <strong>
+          4.1
+         </strong>
+         Comprendo una lectura sobre una asamblea y localizo sus ideas importantes.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.1" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.2: LCL.3.2.a -->
+        <p class="eval-statement">
+         <strong>
+          4.2
+         </strong>
+         Converso respetando los turnos y sin interrumpir.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.2" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.3: LCL.3.2.a -->
+        <p class="eval-statement">
+         <strong>
+          4.3
+         </strong>
+         Escucho con atenci&oacute;n y utilizo f&oacute;rmulas de cortes&iacute;a.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.3" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.4: LCL.9.1.a -->
+        <p class="eval-statement">
+         <strong>
+          4.4
+         </strong>
+         Reconozco verbos y encuentro sus infinitivos.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.4" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.5: LCL.9.1.a -->
+        <p class="eval-statement">
+         <strong>
+          4.5
+         </strong>
+         Diferencio presente, pasado y futuro en oraciones sencillas.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.5" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.6: LCL.9.2.a -->
+        <p class="eval-statement">
+         <strong>
+          4.6
+         </strong>
+         Escribo preguntas y exclamaciones con los signos correctos.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.6" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.7: LCL.10.2.a -->
+        <p class="eval-statement">
+         <strong>
+          4.7
+         </strong>
+         Propongo soluciones respetuosas cuando existe un desacuerdo.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.7" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.8: LCL.4.2.a -->
+        <p class="eval-statement">
+         <strong>
+          4.8
+         </strong>
+         Comprendo una segunda lectura y explico c&oacute;mo llegan a un acuerdo.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.8" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 4.9: LCL.5.1.a -->
+        <p class="eval-statement">
+         <strong>
+          4.9
+         </strong>
+         Escribo, reviso y represento un di&aacute;logo con una soluci&oacute;n justa.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 4.9" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="eval-actions">
+       <p aria-live="polite" id="eval-status" role="status">
+        Puedes marcar una opci&oacute;n en cada apartado.
+       </p>
+       <button class="lnl-btn secondary" id="eval-reset" type="button">
+        Borrar mi autoevaluaci&oacute;n
+       </button>
+      </div>
+     </section>
+    </div>
+   </div>
+  </main>
+  <!-- PIE INSTITUCIONAL -->
+  <footer class="site-footer">
+   <div class="footer-container">
+    <div class="footer-junta">
+     <img alt="Junta de Andaluc&iacute;a - Consejer&iacute;a de Educaci&oacute;n" src="/img/junta-educacion.png"/>
+    </div>
+    <div class="footer-school">
+     <p class="footer-school-name">
+      CEIP Joaqu&iacute;n Tena Artigas
+     </p>
+     <p>
+      Alcolea &middot; C&oacute;rdoba
+     </p>
+     <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">
+      Web oficial del Centro
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- CORRECCIÓN INTERACTIVA CON OPCIONES EN CAJAS, COMO LENGUA DE 5.º Y 6.º -->
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('quiz-form');
+      const summary = document.getElementById('quiz-result');
+      const questions = Array.from(form.querySelectorAll('.quiz-question'));
+
+      // Cada pregunta admite una sola caja seleccionada.
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const selected = event.target.closest('.quiz-option');
+          if (!selected || !question.contains(selected)) return;
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute(
+              'aria-pressed', option === selected ? 'true' : 'false'
+            );
+          });
+
+          // Una nueva elección permite corregir y volver a intentarlo.
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          summary.textContent = '';
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector(
+            '.quiz-option[aria-pressed="true"]'
+          );
+          const answer = question.dataset.answer;
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Elige una respuesta.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const right = question.querySelector(
+              '.quiz-option[data-option="' + answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              right.textContent.trim() + '.';
+          }
+        });
+
+        summary.textContent = 'Has respondido ' + answered + ' de ' +
+          questions.length + ' preguntas. Aciertos: ' + correct +
+          ' de ' + questions.length + '.';
+      });
+
+      form.addEventListener('reset', function () {
+        questions.forEach(function (question) {
+          question.classList.remove('correct', 'incorrect');
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        summary.textContent = '';
+      });
+    });
+  </script>
+  <!-- DIANA INTERACTIVA: SOLO UNA RESPUESTA SELECCIONADA POR APARTADO -->
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const status = document.getElementById('eval-status');
+      const reset = document.getElementById('eval-reset');
+
+      function updateStatus() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('button[aria-pressed="true"]');
+        }).length;
+        status.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('button.eval-btn');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('button.eval-btn').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+          });
+          updateStatus();
+        });
+      });
+
+      reset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('button.eval-btn').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateStatus();
+      });
+    });
+  </script>
+  <script defer="" src="/js/main.js">
+  </script>
+ </body>
+</html>
+
