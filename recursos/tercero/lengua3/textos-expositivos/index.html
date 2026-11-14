@@ -1,0 +1,3282 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Lengua Castellana y Literatura 3.&ordm; de Primaria: LNL3.5. Textos informativos, ideas principales, p&aacute;rrafos, puntuaci&oacute;n, fuentes seguras y ficha informativa." name="description"/>
+  <title>
+   Explicamos lo que aprendemos | Lengua 3.&ordm; | CEIP Joaqu&iacute;n Tena Artigas
+  </title>
+  <link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+  <link href="/css/base.css" rel="stylesheet"/>
+  <!-- CSS local de la SdA. Conserva el verde institucional en todos los cursos. -->
+  <style>
+   :root {
+    --lnl-green: #007a33;
+    --lnl-dark: #005724;
+    --lnl-light: #e9f7ee;
+    --lnl-text: #243447;
+    --lnl-muted: #526475;
+    --lnl-border: #d5e8da;
+  }
+
+  html { scroll-behavior: smooth; }
+  .topic-page {
+    background: #f4f7f5;
+    color: var(--lnl-text);
+    min-height: 70vh;
+  }
+  .topic-shell {
+    width: min(94%, 1180px);
+    margin: 0 auto;
+    padding: 1.7rem 0 3.5rem;
+  }
+  .topic-shell *,
+  .topic-shell *::before,
+  .topic-shell *::after { box-sizing: border-box; }
+  .topic-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    overflow: hidden;
+    min-height: 265px;
+    margin: 1.2rem 0 1.6rem;
+    padding: 2.25rem clamp(1.4rem, 4vw, 3rem);
+    border-radius: 24px;
+    background: linear-gradient(120deg, var(--lnl-dark), var(--lnl-green) 66%, #16a057);
+    color: white;
+    box-shadow: 0 14px 40px rgba(0, 87, 36, .13);
+  }
+  .topic-hero::before {
+    content: "ABC";
+    position: absolute;
+    right: 15%;
+    bottom: -2.2rem;
+    font-size: clamp(6rem, 17vw, 13rem);
+    font-weight: 900;
+    opacity: .075;
+    letter-spacing: -.09em;
+    pointer-events: none;
+  }
+  .topic-hero-content { position: relative; z-index: 1; flex: 1; max-width: 720px; }
+  .topic-kicker {
+    margin: 0 0 .7rem;
+    color: #d3f4de;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    font-size: .8rem;
+    font-weight: 750;
+  }
+  .topic-hero h1 {
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+    line-height: 1.15;
+    font-weight: 850;
+    text-align: left;
+  }
+  .topic-hero p:last-child { max-width: 55ch; line-height: 1.6; margin: 0; }
+  .topic-hero-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(23%, 215px);
+    max-height: 235px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .sda-nav,
+  .lesson-section,
+  .sda-recap,
+  .self-eval {
+    background: #fff;
+    border: 1px solid var(--lnl-border);
+    border-radius: 20px;
+    box-shadow: 0 7px 22px rgba(10, 60, 30, .05);
+  }
+  .sda-nav { padding: 1.3rem 1.5rem; margin-bottom: 1.8rem; }
+  .sda-nav h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 850;
+    color: var(--lnl-dark);
+    text-align: left;
+  }
+  .sda-nav-links { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .sda-nav-links a {
+    padding: .52rem .75rem;
+    border-radius: 10px;
+    background: #f0f5f2;
+    color: #254939;
+    text-decoration: none;
+    border: 1px solid #e1ede5;
+    font-size: .84rem;
+    font-weight: 650;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible { background: var(--lnl-dark); color: white; }
+  .topic-content { display: grid; gap: 1.6rem; }
+  .lesson-section { padding: clamp(1.1rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .lesson-heading-wrap { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1.25rem; }
+  .section-number {
+    display: inline-flex;
+    min-width: 3.3rem;
+    min-height: 2.55rem;
+    padding: .35rem .55rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--lnl-green);
+    color: #fff;
+    font-weight: 850;
+    border-radius: 10px;
+  }
+  .lesson-section-heading {
+    margin: .15rem 0 0;
+    color: #213a30;
+    font-size: clamp(1.27rem, 2.5vw, 1.72rem);
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: left;
+  }
+  .section-intro { color: var(--lnl-muted); margin: 0 0 1.2rem; line-height: 1.65; }
+  .reading-box {
+    margin: 1.3rem 0;
+    padding: clamp(1rem, 2.6vw, 1.6rem);
+    border: 1px solid #b7e5c7;
+    border-radius: 18px;
+    background: #f5fff8;
+  }
+  .reading-box h3 { margin: 0 0 1rem; color: var(--lnl-dark); font-size: 1.22rem; }
+  .reading-text { max-width: 83ch; line-height: 1.82; }
+  .reading-text p { margin: 0 0 .9rem; }
+  .reading-text p:last-child { margin-bottom: 0; }
+  .explanation {
+    margin: 1.15rem 0 1.25rem;
+    padding: 1.2rem 1.4rem;
+    border-left: 5px solid var(--lnl-green);
+    border-radius: 0 16px 16px 0;
+    background: var(--lnl-light);
+    line-height: 1.7;
+  }
+  .explanation h3 { margin: 0 0 .65rem; font-size: 1.05rem; color: var(--lnl-dark); }
+  .explanation p { margin: 0 0 .65rem; }
+  .explanation p:last-child { margin-bottom: 0; }
+  .example {
+    margin: 1rem 0 .1rem;
+    padding: .8rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #c2e1ce;
+  }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  .content-table { width: 100%; border-collapse: collapse; background: #fff; font-size: .92rem; }
+  .content-table th,
+  .content-table td { padding: .7rem .85rem; border: 1px solid #c5dfd0; text-align: left; }
+  .content-table th { color: var(--lnl-dark); background: #daf3e1; }
+  .sequence { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin: 1rem 0 .15rem; }
+  .sequence span:nth-child(odd) {
+    background: white; border: 1px solid #c6dfce; padding: .5rem .7rem;
+    border-radius: 9px; font-weight: 750; color: var(--lnl-dark);
+  }
+  .check-panel { padding: .75rem 1rem; background: #fff9e8; border-radius: 9px; margin-top: 1rem; }
+  .activities-heading {
+    margin: 1.5rem 0 1rem;
+    color: #4c6170;
+    font-size: .84rem;
+    text-transform: uppercase;
+    letter-spacing: .055em;
+    font-weight: 850;
+    text-align: left;
+  }
+  .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .activity-card { padding: 1.15rem 1.25rem; border: 1px solid #dce6e0; background: #fafcfb; border-radius: 16px; }
+  .activity-card h4 { margin: 0 0 .75rem; color: var(--lnl-dark); line-height: 1.35; font-size: .98rem; }
+  .activity-card ol { margin: 0; padding-left: 1.45rem; list-style: lower-alpha; }
+  .activity-card li { margin-bottom: .65rem; padding-left: .1rem; line-height: 1.5; font-size: .94rem; }
+  .activity-card li:last-child { margin-bottom: 0; }
+  .lesson-bottom { margin: 1.1rem 0 0; border-top: 1px dashed #dbe6df; padding-top: .9rem; color: #5e716a; font-size: .88rem; }
+  .sda-recap,
+  .self-eval { padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .sda-recap h2,
+  .self-eval h2 { text-align: left; font-size: 1.45rem; color: var(--lnl-dark); margin: 0 0 .8rem; }
+  .sda-recap > p,
+  .self-eval > p { line-height: 1.65; color: var(--lnl-muted); }
+  /* Opciones de respuesta en cajas, como en Lengua de 5.º y 6.º. */
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.15rem 0;
+  }
+  .quiz-item {
+    min-width: 0;
+    border: 1px solid #d7e6db;
+    background: #fbfdfb;
+    border-radius: 13px;
+    padding: 1rem;
+  }
+  .quiz-prompt {
+    color: #274d37;
+    font-weight: 750;
+    font-size: .94rem;
+    line-height: 1.45;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: .6rem;
+    padding: .65rem .8rem;
+    margin: .5rem 0;
+    color: #334155;
+    cursor: pointer;
+    font: inherit;
+    font-size: .875rem;
+    line-height: 1.45;
+    transition: background-color .15s, border-color .15s;
+  }
+  .quiz-option:hover {
+    border-color: var(--lnl-green);
+    background: #f0fdf4;
+  }
+  .quiz-option[aria-pressed="true"] {
+    background: #e6f4ea;
+    border-color: var(--lnl-green);
+    color: var(--lnl-dark);
+    font-weight: 650;
+  }
+  .quiz-option:focus-visible {
+    outline: 3px solid #77ba92;
+    outline-offset: 2px;
+  }
+  .quiz-item.correct { border-color: #3c9961; }
+  .quiz-item.incorrect { border-color: #d79a71; }
+  .quiz-feedback {
+    margin: .6rem 0 0;
+    min-height: 1em;
+    font-size: .86rem;
+  }
+  .quiz-actions { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .lnl-btn { border: 0; border-radius: 11px; padding: .75rem 1.1rem; cursor: pointer; font: inherit; font-weight: 750; background: var(--lnl-green); color: #fff; }
+  .lnl-btn.secondary { background: #e9f3ed; color: var(--lnl-dark); }
+  .lnl-btn:hover,
+  .lnl-btn:focus-visible { filter: brightness(.94); outline-offset: 3px; }
+  #quiz-result { margin: .9rem 0 0; font-weight: 750; color: var(--lnl-dark); }
+  .reflection-list { padding-left: 1.4rem; line-height: 1.75; }
+  .reflection-list li { margin-bottom: .45rem; }
+  /* Estilos históricos del prototipo de apoyo, conservados sin uso. */
+  .support-block {
+    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #cfe1d4;
+    background: #f9fcfa;
+  }
+  .support-block h3 { margin: 0 0 .6rem; color: var(--lnl-dark); }
+  .support-block p { line-height: 1.55; }
+  .support-block ol { list-style: lower-alpha; padding-left: 1.5rem; line-height: 1.6; }
+  .support-block li { margin-bottom: .4rem; }
+
+  /* FICHAS DE REFUERZO Y AMPLIACIÓN - COHERENCIA CON LENGUA 5.º */
+  .sda-recap {
+    border: 2px solid #007a33;
+  }
+  .recap-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    margin: 0 0 1.5rem;
+  }
+  .recap-heading p { margin: .4rem 0 0; color: #65736b; font-size: .87rem; }
+  .heading-icon {
+    display: inline-grid;
+    place-items: center;
+    min-width: 3rem;
+    min-height: 2.8rem;
+    border-radius: 12px;
+    background: #007a33;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  .heading-icon--indigo { background: #4f46e5; }
+  .recap-sheet + .recap-sheet { margin-top: 2.5rem; }
+  .sheet-heading {
+    padding: .85rem 1rem;
+    border-left: 4px solid #007a33;
+    border-radius: 0 12px 12px 0;
+    background: #ecfdf3;
+    margin-bottom: 1.2rem;
+  }
+  .sheet-heading h3 { margin: 0; font-size: 1.05rem; color: #005724; }
+  .sheet-heading--ampliacion { background: #fffbeb; border-color: #d97706; }
+  .sheet-heading--ampliacion h3 { color: #92400e; }
+  .sheet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .sheet-card {
+    min-width: 0;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid #dce6e0;
+    border-radius: 16px;
+    background: #f8faf9;
+  }
+  .sheet-card h4 {
+    display: inline-block;
+    margin: 0 0 .75rem;
+    padding: .32rem .6rem;
+    border-radius: 7px;
+    background: #007a33;
+    color: white;
+    font-size: .9rem;
+    line-height: 1.35;
+  }
+  .sheet-card--ampliacion h4 { background: #b45309; }
+  .sheet-card p { margin: 0 0 .65rem; line-height: 1.55; font-size: .92rem; }
+  .sheet-questions { list-style: lower-alpha; margin: 0; padding-left: 1.5rem; }
+  .sheet-questions li { margin-bottom: .5rem; line-height: 1.5; font-size: .94rem; }
+  .sheet-questions li:last-child { margin-bottom: 0; }
+  .check-learning,
+  .self-eval {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    scroll-margin-top: 80px;
+  }
+  .check-learning h2 { margin: 0 0 .7rem; color: #005724; font-size: 1.4rem; text-align: left; }
+  .check-learning > p { line-height: 1.6; }
+  .self-eval { border: 2px solid #c7d2fe; }
+  .self-eval-grid { display: grid; gap: .9rem; }
+  .eval-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem;
+    background: #f8fafc;
+  }
+  .eval-statement { flex: 1 1 370px; margin: 0; line-height: 1.5; }
+  .eval-statement strong { color: #007a33; margin-right: .25rem; }
+  .auto-eval-group { flex: 0 1 410px; display: flex; gap: .35rem; flex-wrap: wrap; }
+  .eval-btn {
+    padding: .47rem .65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #475569;
+    font: inherit;
+    font-size: .75rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+  .eval-btn:hover,
+  .eval-btn:focus-visible { border-color: #4f46e5; outline-offset: 2px; }
+  .eval-btn[aria-pressed="true"] { color: white; background: #4f46e5; border-color: #4f46e5; }
+  .eval-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.3rem; }
+  #eval-status { flex: 1 1 240px; margin: 0; color: #475569; }
+  @media (max-width: 900px) {
+    .eval-row { flex-direction: column; align-items: stretch; }
+    .eval-statement, .auto-eval-group { flex: auto; }
+  }
+  @media (max-width: 760px) { .sheet-grid { grid-template-columns: 1fr; } }
+  @media print {
+    .auto-eval-group, .eval-actions, .quiz-actions { display: none; }
+    .sda-recap, .self-eval, .check-learning { box-shadow: none; }
+  }
+
+  .back-to-index { display: inline-flex; margin: 1.5rem 0 0; align-items: center; gap: .35rem; color: var(--lnl-dark); font-weight: 800; }
+  .footer-bottom a { text-decoration: none; }
+  @media (max-width: 760px) {
+    .topic-hero { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
+    .topic-hero-image { align-self: center; width: min(45%, 170px); max-height: 180px; }
+    .activity-grid,
+    .quiz-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .topic-shell { width: min(96%, 1180px); padding-top: .7rem; }
+    .topic-hero { border-radius: 17px; }
+    .lesson-section { padding: 1.15rem; }
+    .sda-nav { padding: 1rem; }
+    .lesson-heading-wrap { gap: .55rem; }
+    .section-number { min-width: 2.85rem; font-size: .95rem; }
+    .reading-text { line-height: 1.72; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  
+
+/* Ajustes de navegación y presentación fijados con LNL4.2 */
+  .sda-nav {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #d1fae5;
+  }
+  .sda-nav h2 {
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    color: #007a33;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .sda-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .sda-nav-links a {
+    padding: .375rem .75rem;
+    font-size: .83rem;
+    line-height: 1.5;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #334155;
+    transition: background-color .18s, color .18s;
+    text-decoration: none;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible {
+    color: #fff;
+    background: #007a33;
+  }
+  .sda-nav-links a.nav-repaso {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-repaso:hover,
+  .sda-nav-links a.nav-repaso:focus-visible {
+    background: #d97706;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-autoevaluacion {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-autoevaluacion:hover,
+  .sda-nav-links a.nav-autoevaluacion:focus-visible {
+    background: #4f46e5;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-comprueba {
+    background: #e7f5e9;
+    color: #166534;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-comprueba:hover,
+  .sda-nav-links a.nav-comprueba:focus-visible {
+    background: #007a33;
+    color: #fff;
+  }
+  /* Las columnas no pueden forzar desplazamiento horizontal en móvil. */
+  .topic-content { grid-template-columns: minmax(0, 1fr); }
+  .topic-content > section {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .reading-box,
+  .explanation,
+  .activity-card,
+  .sheet-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  /* Protección frente a la regla general de centrado de .section-heading. */
+  .lesson-section-heading {
+    text-align: left;
+  }
+  .quiz-option {
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    padding: .65rem .8rem;
+    text-align: left;
+    cursor: pointer;
+  }
+  .quiz-option[aria-pressed="true"] {
+    border-color: #007a33;
+    background: #e6f4ea;
+    color: #005724;
+    font-weight: 700;
+  }
+  @media (max-width: 480px) {
+    .sda-nav { padding: 1rem; }
+    .sda-nav-links a { font-size: .78rem; }
+  }
+  </style>
+ </head>
+ <body>
+  <a class="skip-link" href="#contenido-principal">
+   Ir al contenido principal
+  </a>
+  <!-- BANNER INSTITUCIONAL -->
+  <header class="site-banner">
+   <a aria-label="Ir al inicio del centro" href="/">
+    <img alt="CEIP Joaqu&iacute;n Tena Artigas - Alcolea, C&oacute;rdoba" class="banner-image" src="/img/banner-principal.png"/>
+   </a>
+  </header>
+  <!-- NAVEGACIÓN GENERAL -->
+  <div class="navigation-wrapper">
+   <div class="navigation-container">
+    <a aria-label="Ir a Inicio" class="navigation-logo" href="/">
+     <img alt="" src="/img/logo-centro.png"/>
+    </a>
+    <button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir men&uacute; de navegaci&oacute;n" class="menu-toggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav aria-label="Navegaci&oacute;n principal" class="main-navigation" id="main-navigation">
+     <ul>
+      <li class="nav-green">
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li class="nav-yellow">
+       <a href="/familias/">
+        Familias
+       </a>
+      </li>
+      <li class="nav-blue">
+       <a aria-current="page" href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li class="nav-red">
+       <a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+        🔒 &Aacute;rea privada Profesorado
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <!-- CONTENIDO DE LA SITUACIÓN DE APRENDIZAJE -->
+  <main class="topic-page" id="contenido-principal">
+   <div class="topic-shell">
+    <nav aria-label="Migas de pan" class="breadcrumbs">
+     <ol>
+      <li>
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/">
+        3.&ordm; de Primaria
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/lengua3/">
+        Lengua Castellana y Literatura
+       </a>
+      </li>
+      <li aria-current="page">
+       Explicamos lo que aprendemos
+      </li>
+     </ol>
+    </nav>
+    <!-- PORTADA DE LA SdA -->
+    <section aria-labelledby="titulo-sda" class="topic-hero">
+     <div class="topic-hero-content">
+      <p class="topic-kicker">
+       Lengua Castellana y Literatura &middot; 3.&ordm; de Primaria
+      </p>
+      <h1 id="titulo-sda">
+       5. Explicamos lo que aprendemos
+      </h1>
+      <p>
+       Leemos textos informativos, buscamos datos con ayuda y aprendemos a explicar lo que descubrimos.
+      </p>
+     </div>
+     <img alt="" class="topic-hero-image" onerror="this.hidden = true" src="/img/tomatito/tomatito-textos-expositivos.png"/>
+    </section>
+    <!-- ÍNDICE DE CONTENIDOS -->
+    <nav aria-label="Contenidos de la situaci&oacute;n de aprendizaje" class="sda-nav">
+     <h2>
+      📍 Contenidos de la Situaci&oacute;n de Aprendizaje
+     </h2>
+     <div class="sda-nav-links">
+      <a href="#sec-1">
+       5.1 Comprensi&oacute;n lectora inicial
+      </a>
+      <a href="#sec-2">
+       5.2 El texto informativo: explicamos un tema
+      </a>
+      <a href="#sec-3">
+       5.3 Las ideas principales y los detalles
+      </a>
+      <a href="#sec-4">
+       5.4 Los p&aacute;rrafos y el orden de la informaci&oacute;n
+      </a>
+      <a href="#sec-5">
+       5.5 Puntuamos para que se entienda
+      </a>
+      <a href="#sec-6">
+       5.6 Buscamos informaci&oacute;n de forma segura
+      </a>
+      <a href="#sec-7">
+       5.7 Organizamos una ficha informativa
+      </a>
+      <a href="#sec-8">
+       5.8 Comprensi&oacute;n lectora aplicada
+      </a>
+      <a href="#sec-9">
+       5.9 Producci&oacute;n escrita: nuestra ficha informativa
+      </a>
+      <a class="nav-repaso" href="#sec-repaso">
+       🔄 Repasamos lo aprendido
+      </a>
+      <a class="nav-comprueba" href="#sec-comprueba">
+       ✔ Comprueba lo aprendido
+      </a>
+      <a class="nav-autoevaluacion" href="#sec-autoevaluacion">
+       🎯 Autoevaluaci&oacute;n
+      </a>
+     </div>
+    </nav>
+    <div class="topic-content">
+     <section aria-labelledby="titulo-sec-1" class="lesson-section" id="sec-1">
+      <!-- APARTADO 5.1 · CRITERIO DOCENTE PRINCIPAL: LCL.4.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.1
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-1">
+        Comprensi&oacute;n lectora inicial
+       </h2>
+      </div>
+      <p class="section-intro">
+       Leemos un texto informativo, localizamos datos y descubrimos c&oacute;mo se organiza una explicaci&oacute;n.
+      </p>
+      <article aria-label="Lectura: Las semillas viajan" class="reading-box">
+       <h3>
+        📖 Las semillas viajan
+       </h3>
+       <div class="reading-text">
+        <p>
+         Una semilla parece peque&ntilde;a y tranquila. Sin embargo, en su interior puede comenzar una nueva planta. Para crecer necesita encontrar un lugar adecuado, agua, aire y una temperatura apropiada. Muchas semillas no caen justo al lado de la planta que las produjo: realizan un viaje.
+        </p>
+        <p>
+         Algunas semillas se desplazan gracias al viento. Las del diente de le&oacute;n tienen una especie de paraca&iacute;das formado por pelitos. Cuando sopla el aire, pueden alejarse de la planta. Otras semillas cuentan con peque&ntilde;as alas que les permiten girar mientras descienden.
+        </p>
+        <p>
+         Tambi&eacute;n hay semillas que viajan con ayuda de los animales. Algunas se enganchan al pelo mediante peque&ntilde;os ganchos y caen m&aacute;s tarde en otro lugar. Otras est&aacute;n dentro de frutos que comen algunos animales; despu&eacute;s, las semillas pueden llegar a un sitio diferente.
+        </p>
+        <p>
+         El agua es otra forma de transporte. Ciertas semillas y frutos pueden flotar y dejarse llevar por una corriente. No todas las semillas flotan ni todas sobreviven al viaje. Cada especie tiene sus propias caracter&iacute;sticas.
+        </p>
+        <p>
+         En el huerto de la escuela podemos investigar c&oacute;mo son las semillas. Primero observamos su tama&ntilde;o y su forma. Despu&eacute;s anotamos nuestros descubrimientos en una tabla. Por &uacute;ltimo, explicamos qu&eacute; pistas nos ayudan a imaginar c&oacute;mo se dispersan.
+        </p>
+        <p>
+         La dispersi&oacute;n de semillas ayuda a que las plantas ocupen nuevos espacios. Por eso, aunque una semilla sea diminuta, su viaje puede resultar muy importante para el paisaje que conocemos.
+        </p>
+       </div>
+       <p class="lesson-bottom">
+        Lectura original para practicar la comprensi&oacute;n, la inferencia y la expresi&oacute;n personal.
+       </p>
+      </article>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Un
+        <strong>
+         texto informativo
+        </strong>
+        explica un tema real para que las personas aprendan. Su t&iacute;tulo anuncia de qu&eacute; trata. Los p&aacute;rrafos presentan ideas relacionadas y los ejemplos aclaran la informaci&oacute;n.
+       </p>
+       <p>
+        Al leer debemos localizar la
+        <strong>
+         idea principal
+        </strong>
+        y los
+        <strong>
+         datos
+        </strong>
+        que la explican. Tambi&eacute;n podemos deducir respuestas a partir de pistas del texto, sin inventar hechos.
+       </p>
+       <div class="example">
+        <strong>
+         Ejemplo:
+        </strong>
+        la idea principal del segundo p&aacute;rrafo es que algunas semillas viajan con el viento. Los pelitos del diente de le&oacute;n son un detalle que ayuda a entenderlo.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 1. Buscamos informaci&oacute;n
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; necesita una semilla para crecer?
+         </li>
+         <li>
+          &iquest;Qu&eacute; ayuda a viajar al diente de le&oacute;n?
+         </li>
+         <li>
+          &iquest;C&oacute;mo pueden transportar semillas algunos animales?
+         </li>
+         <li>
+          &iquest;Qu&eacute; puede hacer el agua con ciertas semillas?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 2. Comprendemos los p&aacute;rrafos
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;De qu&eacute; trata principalmente el primer p&aacute;rrafo?
+         </li>
+         <li>
+          &iquest;Qu&eacute; explica el segundo p&aacute;rrafo?
+         </li>
+         <li>
+          &iquest;En qu&eacute; p&aacute;rrafo se habla de semillas que flotan?
+         </li>
+         <li>
+          Pon un subt&iacute;tulo breve al p&aacute;rrafo sobre animales.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 3. Diferenciamos ideas y detalles
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una idea principal del texto.
+         </li>
+         <li>
+          Copia un ejemplo que apoye esa idea.
+         </li>
+         <li>
+          &iquest;Todas las semillas pueden flotar? Justifica con el texto.
+         </li>
+         <li>
+          Explica por qu&eacute; el texto habla del huerto escolar.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 4. Reflexionamos sobre la lectura
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; medio de transporte de semillas te ha sorprendido m&aacute;s?
+         </li>
+         <li>
+          Inventa una pregunta que pueda contestarse leyendo el texto.
+         </li>
+         <li>
+          &iquest;Qu&eacute; observar&iacute;as para investigar una semilla del patio?
+         </li>
+         <li>
+          Resume el texto en cuatro oraciones sin copiar p&aacute;rrafos enteros.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-2" class="lesson-section" id="sec-2">
+      <!-- APARTADO 5.2 · CRITERIO DOCENTE PRINCIPAL: LCL.4.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.2
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-2">
+        El texto informativo: explicamos un tema
+       </h2>
+      </div>
+      <p class="section-intro">
+       Conocemos la finalidad, las partes y el lenguaje de los textos que nos ense&ntilde;an cosas.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Los
+        <strong>
+         textos informativos
+        </strong>
+        sirven para comunicar datos y explicar conocimientos. Pueden aparecer en un libro, una revista infantil, un cartel o una p&aacute;gina web apropiada para nuestra edad.
+       </p>
+       <p>
+        Un texto informativo sencillo suele tener
+        <strong>
+         t&iacute;tulo
+        </strong>
+        , una
+        <strong>
+         introducci&oacute;n
+        </strong>
+        que presenta el tema, un
+        <strong>
+         desarrollo
+        </strong>
+        con explicaciones y un
+        <strong>
+         cierre
+        </strong>
+        o conclusi&oacute;n. Puede incluir subt&iacute;tulos, im&aacute;genes y pies de foto.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Parte
+           </th>
+           <th>
+            Funci&oacute;n
+           </th>
+           <th>
+            Ejemplo sobre las abejas
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            T&iacute;tulo
+           </td>
+           <td>
+            Indica el tema
+           </td>
+           <td>
+            &laquo;Las abejas y las flores&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Introducci&oacute;n
+           </td>
+           <td>
+            Presenta de qu&eacute; se hablar&aacute;
+           </td>
+           <td>
+            &laquo;Las abejas visitan muchas flores&raquo;.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Desarrollo
+           </td>
+           <td>
+            Aporta explicaciones y datos
+           </td>
+           <td>
+            &laquo;Algunas recogen n&eacute;ctar y polen&raquo;.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Cierre
+           </td>
+           <td>
+            Recoge la idea importante
+           </td>
+           <td>
+            &laquo;Proteger las flores favorece a muchos insectos&raquo;.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        En una informaci&oacute;n debemos buscar expresiones
+        <strong>
+         claras y precisas
+        </strong>
+        ; no basta con afirmar que algo es &laquo;muy bonito&raquo;.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 1. Distinguimos tipos de texto
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Para qu&eacute; sirve una noticia sobre la biblioteca?
+         </li>
+         <li>
+          &iquest;En qu&eacute; se diferencia de un cuento inventado?
+         </li>
+         <li>
+          &iquest;Cu&aacute;l de estos t&iacute;tulos anuncia un tema real: &laquo;Los volcanes&raquo; o &laquo;El drag&oacute;n invisible&raquo;?
+         </li>
+         <li>
+          Escribe un posible t&iacute;tulo informativo sobre los &aacute;rboles.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 2. Conocemos sus partes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Para qu&eacute; sirve el t&iacute;tulo de una explicaci&oacute;n?
+         </li>
+         <li>
+          Escribe una frase para introducir un texto sobre las mariposas.
+         </li>
+         <li>
+          A&ntilde;ade un dato que podr&iacute;a aparecer en su desarrollo.
+         </li>
+         <li>
+          Escribe una frase de cierre relacionada con el tema.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 3. Leemos apoyos visuales
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Para qu&eacute; puede servir una fotograf&iacute;a junto a un texto?
+         </li>
+         <li>
+          &iquest;Qu&eacute; informaci&oacute;n debe aportar un pie de foto?
+         </li>
+         <li>
+          Inventa un subt&iacute;tulo para explicar d&oacute;nde viven los peces.
+         </li>
+         <li>
+          Se&ntilde;ala una palabra que convendr&iacute;a aclarar en un glosario.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 4. Comparamos mensajes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; frase informa mejor: &laquo;El &aacute;rbol es genial&raquo; o &laquo;El &aacute;rbol da sombra&raquo;?
+         </li>
+         <li>
+          Reescribe &laquo;Las hormigas son superinteresantes&raquo; aportando un dato observable.
+         </li>
+         <li>
+          Explica por qu&eacute; no deben mezclarse datos inventados con una explicaci&oacute;n real.
+         </li>
+         <li>
+          Redacta tres oraciones informativas sobre un objeto de clase.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-3" class="lesson-section" id="sec-3">
+      <!-- APARTADO 5.3 · CRITERIO DOCENTE PRINCIPAL: LCL.4.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.3
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-3">
+        Las ideas principales y los detalles
+       </h2>
+      </div>
+      <p class="section-intro">
+       Aprendemos a reconocer la informaci&oacute;n m&aacute;s importante de un texto y los datos que la apoyan.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        La
+        <strong>
+         idea principal
+        </strong>
+        expresa lo m&aacute;s importante de un p&aacute;rrafo. Los
+        <strong>
+         detalles
+        </strong>
+        aportan ejemplos, explicaciones o datos que nos permiten comprenderla mejor.
+       </p>
+       <div class="example">
+        <strong>
+         Texto:
+        </strong>
+        &laquo;Las aves construyen distintos tipos de nidos. Algunas utilizan ramas y hojas. Otras aprovechan huecos de los &aacute;rboles&raquo;.
+        <p>
+         <strong>
+          Idea principal:
+         </strong>
+         las aves construyen nidos diferentes.
+         <strong>
+          Detalles:
+         </strong>
+         algunas usan ramas; otras ocupan huecos.
+        </p>
+       </div>
+       <p>
+        Para encontrar la idea principal, podemos preguntarnos:
+        <em>
+         &iquest;de qu&eacute; trata este p&aacute;rrafo?
+        </em>
+        y
+        <em>
+         &iquest;qu&eacute; deber&iacute;a recordar alguien despu&eacute;s de leerlo?
+        </em>
+        Un
+        <strong>
+         resumen
+        </strong>
+        re&uacute;ne las ideas principales con palabras propias, sin a&ntilde;adir informaci&oacute;n que el texto no contiene.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 1. Reconocemos lo esencial
+        </h4>
+        <ol type="a">
+         <li>
+          En &laquo;Los gatos descansan muchas horas; a veces duermen al sol&raquo;, &iquest;qu&eacute; es lo principal?
+         </li>
+         <li>
+          Se&ntilde;ala el detalle de esa oraci&oacute;n.
+         </li>
+         <li>
+          Escribe una idea principal sobre el cuidado de una planta.
+         </li>
+         <li>
+          A&ntilde;ade dos detalles que expliquen esa idea.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 2. Seleccionamos datos
+        </h4>
+        <ol type="a">
+         <li>
+          Lee: &laquo;Las tortugas tienen caparaz&oacute;n. Algunas viven en tierra y otras en agua&raquo;. &iquest;De qu&eacute; se habla?
+         </li>
+         <li>
+          &iquest;Qu&eacute; informaci&oacute;n a&ntilde;ade la segunda oraci&oacute;n?
+         </li>
+         <li>
+          Escribe una pregunta cuya respuesta sea &laquo;caparaz&oacute;n&raquo;.
+         </li>
+         <li>
+          Resume las dos oraciones en una sola idea.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 3. Elegimos buenos res&uacute;menes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; resumen es m&aacute;s &uacute;til: uno que repite todo o uno que recoge las ideas importantes?
+         </li>
+         <li>
+          Elimina un detalle poco necesario de una descripci&oacute;n del tiempo atmosf&eacute;rico.
+         </li>
+         <li>
+          Redacta un resumen de dos frases del texto &laquo;Las semillas viajan&raquo;.
+         </li>
+         <li>
+          Comprueba que no has a&ntilde;adido ning&uacute;n dato inventado.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.4.1.a -->
+       <article class="activity-card" data-criterio="LCL.4.1.a">
+        <h4>
+         Actividad 4. Organizamos la informaci&oacute;n
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe el tema general de un texto sobre el agua.
+         </li>
+         <li>
+          Anota dos ideas principales relacionadas con ese tema.
+         </li>
+         <li>
+          A&ntilde;ade un ejemplo a cada una.
+         </li>
+         <li>
+          Explica c&oacute;mo distinguir&iacute;as el ejemplo de la idea principal.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-4" class="lesson-section" id="sec-4">
+      <!-- APARTADO 5.4 · CRITERIO DOCENTE PRINCIPAL: LCL.5.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.4
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-4">
+        Los p&aacute;rrafos y el orden de la informaci&oacute;n
+       </h2>
+      </div>
+      <p class="section-intro">
+       Ordenamos las ideas de manera que otras personas puedan leer y comprender nuestras explicaciones.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Un
+        <strong>
+         p&aacute;rrafo
+        </strong>
+        es un grupo de oraciones que desarrolla una misma idea. Cuando empezamos a explicar una idea diferente, conviene utilizar un p&aacute;rrafo nuevo.
+       </p>
+       <p>
+        Las oraciones pueden ordenarse mediante expresiones como
+        <strong>
+         primero
+        </strong>
+        ,
+        <strong>
+         despu&eacute;s
+        </strong>
+        ,
+        <strong>
+         adem&aacute;s
+        </strong>
+        y
+        <strong>
+         por &uacute;ltimo
+        </strong>
+        . No todos los textos informativos cuentan una historia: a veces organizan la informaci&oacute;n por caracter&iacute;sticas, partes o pasos.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Parte del texto
+           </th>
+           <th>
+            Ejemplo sobre una biblioteca
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            P&aacute;rrafo 1: qu&eacute; es
+           </td>
+           <td>
+            &laquo;Una biblioteca re&uacute;ne libros para leer y consultar&raquo;.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            P&aacute;rrafo 2: c&oacute;mo se organiza
+           </td>
+           <td>
+            &laquo;Los libros se colocan en distintas secciones&raquo;.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            P&aacute;rrafo 3: c&oacute;mo se utiliza
+           </td>
+           <td>
+            &laquo;Podemos pedir un pr&eacute;stamo y devolverlo a tiempo&raquo;.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        <strong>
+         Importante:
+        </strong>
+        el punto y aparte indica que termina un p&aacute;rrafo y comienza otro. El punto y seguido separa oraciones dentro del mismo p&aacute;rrafo.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 1. Identificamos p&aacute;rrafos
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; idea aparece en el primer p&aacute;rrafo del ejemplo de la biblioteca?
+         </li>
+         <li>
+          &iquest;Qu&eacute; idea aparece en el segundo?
+         </li>
+         <li>
+          &iquest;Por qu&eacute; conviene separar las normas de pr&eacute;stamo en otro p&aacute;rrafo?
+         </li>
+         <li>
+          Escribe un t&iacute;tulo general para los tres p&aacute;rrafos.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 2. Ordenamos explicaciones
+        </h4>
+        <ol type="a">
+         <li>
+          Ordena estas ideas: cuidados de un gato; presentaci&oacute;n del gato; alimentaci&oacute;n del gato.
+         </li>
+         <li>
+          &iquest;Qu&eacute; idea deber&iacute;a aparecer en la introducci&oacute;n?
+         </li>
+         <li>
+          &iquest;C&oacute;mo unir&iacute;as dos datos sobre sus cuidados usando &laquo;adem&aacute;s&raquo;?
+         </li>
+         <li>
+          Escribe una frase para terminar la explicaci&oacute;n.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 3. Usamos conectores
+        </h4>
+        <ol type="a">
+         <li>
+          Completa: &laquo;___ elegimos el tema; despu&eacute;s buscamos informaci&oacute;n&raquo;.
+         </li>
+         <li>
+          Completa: &laquo;Los peces tienen aletas. ___, respiran mediante branquias&raquo;.
+         </li>
+         <li>
+          Completa: &laquo;Finalmente, ___&raquo;.
+         </li>
+         <li>
+          Explica qu&eacute; aporta &laquo;por &uacute;ltimo&raquo; en un texto ordenado.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 4. Redactamos tres p&aacute;rrafos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe un primer p&aacute;rrafo de dos oraciones sobre el patio.
+         </li>
+         <li>
+          Escribe un segundo p&aacute;rrafo con dos caracter&iacute;sticas distintas.
+         </li>
+         <li>
+          Escribe un tercer p&aacute;rrafo sobre c&oacute;mo cuidarlo.
+         </li>
+         <li>
+          Revisa si cada p&aacute;rrafo trata una sola idea principal.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-5" class="lesson-section" id="sec-5">
+      <!-- APARTADO 5.5 · CRITERIO DOCENTE PRINCIPAL: LCL.9.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.5
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-5">
+        Puntuamos para que se entienda
+       </h2>
+      </div>
+      <p class="section-intro">
+       Utilizamos los signos de puntuaci&oacute;n para escribir informaciones claras y bien organizadas.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Los signos de puntuaci&oacute;n ayudan a organizar las ideas y las pausas de la lectura. El
+        <strong>
+         punto y seguido
+        </strong>
+        termina una oraci&oacute;n y permite continuar en el mismo p&aacute;rrafo. El
+        <strong>
+         punto y aparte
+        </strong>
+        abre un p&aacute;rrafo nuevo. El
+        <strong>
+         punto final
+        </strong>
+        cierra el texto.
+       </p>
+       <p>
+        La
+        <strong>
+         coma
+        </strong>
+        puede separar elementos de una enumeraci&oacute;n:
+        <em>
+         En la mochila llevo l&aacute;piz, cuaderno y regla
+        </em>
+        . Los
+        <strong>
+         dos puntos
+        </strong>
+        pueden introducir una lista:
+        <em>
+         Necesitamos tres objetos: lupa, vaso y papel
+        </em>
+        . Despu&eacute;s de un punto escribimos
+        <strong>
+         may&uacute;scula
+        </strong>
+        .
+       </p>
+       <div class="example">
+        <strong>
+         Antes:
+        </strong>
+        &laquo;en el huerto hay tomates lechugas y cebollas las plantas necesitan agua&raquo;.
+        <p>
+         <strong>
+          Despu&eacute;s:
+         </strong>
+         &laquo;En el huerto hay tomates, lechugas y cebollas. Las plantas necesitan agua&raquo;.
+        </p>
+       </div>
+       <p>
+        En general, no se coloca coma entre el sujeto y el verbo:
+        <em>
+         Las semillas peque&ntilde;as viajan
+        </em>
+        , no
+        <em>
+         Las semillas peque&ntilde;as, viajan
+        </em>
+        .
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 1. Colocamos los puntos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe correctamente: &laquo;el colegio tiene una biblioteca all&iacute; leemos libros&raquo;.
+         </li>
+         <li>
+          Separa con punto y aparte dos ideas: &laquo;C&oacute;mo es el patio&raquo; y &laquo;C&oacute;mo lo cuidamos&raquo;.
+         </li>
+         <li>
+          &iquest;Qu&eacute; tipo de punto se utiliza al acabar un texto?
+         </li>
+         <li>
+          Copia dos oraciones y comprueba las may&uacute;sculas despu&eacute;s de cada punto.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 2. Escribimos enumeraciones
+        </h4>
+        <ol type="a">
+         <li>
+          Punt&uacute;a: &laquo;Trajimos tierra macetas semillas y agua&raquo;.
+         </li>
+         <li>
+          Escribe una lista de tres materiales usando comas y &laquo;y&raquo;.
+         </li>
+         <li>
+          Completa: &laquo;Para observar insectos necesitamos: ___&raquo;.
+         </li>
+         <li>
+          Explica qu&eacute; signo introduce la lista anterior.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 3. Revisamos textos
+        </h4>
+        <ol type="a">
+         <li>
+          Corrige: &laquo;las abejas visitan flores algunas transportan polen&raquo;.
+         </li>
+         <li>
+          Corrige: &laquo;el jard&iacute;n tiene rosas claveles y margaritas&raquo;.
+         </li>
+         <li>
+          Elige d&oacute;nde pondr&iacute;as punto y aparte en una explicaci&oacute;n sobre animales y plantas.
+         </li>
+         <li>
+          Explica por qu&eacute; no debe ponerse coma entre &laquo;Los alumnos&raquo; y &laquo;investigan&raquo;.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.9.2.a -->
+       <article class="activity-card" data-criterio="LCL.9.2.a">
+        <h4>
+         Actividad 4. Creamos un peque&ntilde;o texto
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una oraci&oacute;n sobre los libros.
+         </li>
+         <li>
+          A&ntilde;ade una segunda oraci&oacute;n relacionada y sep&aacute;rala con punto y seguido.
+         </li>
+         <li>
+          Redacta una enumeraci&oacute;n de tres g&eacute;neros o tipos de libro.
+         </li>
+         <li>
+          Revisa las may&uacute;sculas, las comas y el punto final.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-6" class="lesson-section" id="sec-6">
+      <!-- APARTADO 5.6 · CRITERIO DOCENTE PRINCIPAL: LCL.6.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.6
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-6">
+        Buscamos informaci&oacute;n de forma segura
+       </h2>
+      </div>
+      <p class="section-intro">
+       Aprendemos a formular preguntas, buscar con ayuda y elegir informaci&oacute;n apropiada y fiable.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Antes de investigar debemos escribir
+        <strong>
+         qu&eacute; queremos saber
+        </strong>
+        . Despu&eacute;s consultamos libros, materiales de clase o recursos digitales seleccionados por la maestra o el maestro. Es recomendable
+        <strong>
+         comparar al menos dos fuentes
+        </strong>
+        cuando sea posible.
+       </p>
+       <p>
+        Para valorar una informaci&oacute;n nos preguntamos:
+        <strong>
+         &iquest;qui&eacute;n la publica?
+        </strong>
+        ,
+        <strong>
+         &iquest;trata realmente del tema?
+        </strong>
+        ,
+        <strong>
+         &iquest;es comprensible?
+        </strong>
+        y
+        <strong>
+         &iquest;coincide con otros materiales fiables?
+        </strong>
+        Una imagen llamativa no demuestra por s&iacute; sola que una afirmaci&oacute;n sea cierta.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Qu&eacute; hacemos
+           </th>
+           <th>
+            Ejemplo
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            Pregunta concreta
+           </td>
+           <td>
+            &laquo;&iquest;C&oacute;mo se alimentan las mariposas?&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Fuentes apropiadas
+           </td>
+           <td>
+            Libro de ciencias y recurso recomendado por el docente
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Anotar informaci&oacute;n
+           </td>
+           <td>
+            &laquo;Se alimentan de l&iacute;quidos, como n&eacute;ctar&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Indicar la fuente
+           </td>
+           <td>
+            Escribir el t&iacute;tulo del libro o el nombre del recurso consultado
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        <strong>
+         Seguridad digital:
+        </strong>
+        no compartimos nuestro nombre completo, direcci&oacute;n, tel&eacute;fono, contrase&ntilde;as ni fotograf&iacute;as personales para realizar una b&uacute;squeda. Si aparece un enlace extra&ntilde;o o una petici&oacute;n de datos, avisamos a una persona adulta.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.6.1.a -->
+       <article class="activity-card" data-criterio="LCL.6.1.a">
+        <h4>
+         Actividad 1. Preparamos la investigaci&oacute;n
+        </h4>
+        <ol type="a">
+         <li>
+          Transforma &laquo;animales&raquo; en una pregunta concreta para investigar.
+         </li>
+         <li>
+          Elige tres palabras clave para buscar informaci&oacute;n sobre aves.
+         </li>
+         <li>
+          &iquest;Por qu&eacute; conviene empezar por materiales recomendados por el docente?
+         </li>
+         <li>
+          Escribe dos fuentes diferentes que podr&iacute;as consultar.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.6.1.a -->
+       <article class="activity-card" data-criterio="LCL.6.1.a">
+        <h4>
+         Actividad 2. Pensamos en las fuentes
+        </h4>
+        <ol type="a">
+         <li>
+          &iquest;Qu&eacute; indica el t&iacute;tulo de un libro informativo?
+         </li>
+         <li>
+          &iquest;Por qu&eacute; conviene saber qui&eacute;n publica una p&aacute;gina?
+         </li>
+         <li>
+          &iquest;Es suficiente un v&iacute;deo llamativo para comprobar una afirmaci&oacute;n? Razona.
+         </li>
+         <li>
+          &iquest;Qu&eacute; har&iacute;as si dos fuentes ofrecen datos diferentes?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.6.1.a -->
+       <article class="activity-card" data-criterio="LCL.6.1.a">
+        <h4>
+         Actividad 3. Buscamos con seguridad
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe dos datos personales que no debes publicar en una b&uacute;squeda.
+         </li>
+         <li>
+          &iquest;Qu&eacute; har&iacute;as si una p&aacute;gina te pide una contrase&ntilde;a?
+         </li>
+         <li>
+          Explica por qu&eacute; hay que pedir ayuda si una informaci&oacute;n causa dudas.
+         </li>
+         <li>
+          Redacta una norma de seguridad digital para el aula.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.6.1.a -->
+       <article class="activity-card" data-criterio="LCL.6.1.a">
+        <h4>
+         Actividad 4. Registramos lo que sabemos
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe una pregunta sobre las semillas.
+         </li>
+         <li>
+          Indica un libro o recurso escolar donde buscar&iacute;as la respuesta.
+         </li>
+         <li>
+          Anota un dato sobre el tema con palabras propias.
+         </li>
+         <li>
+          Dise&ntilde;a una l&iacute;nea para indicar la fuente de ese dato.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-7" class="lesson-section" id="sec-7">
+      <!-- APARTADO 5.7 · CRITERIO DOCENTE PRINCIPAL: LCL.5.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.7
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-7">
+        Organizamos una ficha informativa
+       </h2>
+      </div>
+      <p class="section-intro">
+       Convertimos las ideas importantes en una ficha breve, ordenada y f&aacute;cil de consultar.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        Una
+        <strong>
+         ficha informativa
+        </strong>
+        re&uacute;ne datos importantes sobre un tema. Puede presentar un t&iacute;tulo, una breve descripci&oacute;n, varios apartados y una ilustraci&oacute;n con pie de imagen. Debe incluir solo informaci&oacute;n que hemos comprobado.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Elemento
+           </th>
+           <th>
+            Ejemplo de una ficha sobre un &aacute;rbol
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            T&iacute;tulo
+           </td>
+           <td>
+            &laquo;El olivo&raquo;
+           </td>
+          </tr>
+          <tr>
+           <td>
+            &iquest;Qu&eacute; es?
+           </td>
+           <td>
+            Un &aacute;rbol que produce aceitunas
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Caracter&iacute;sticas
+           </td>
+           <td>
+            Hojas alargadas y frutos que maduran
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Usos
+           </td>
+           <td>
+            Las aceitunas pueden utilizarse para elaborar aceite
+           </td>
+          </tr>
+          <tr>
+           <td>
+            Fuente
+           </td>
+           <td>
+            T&iacute;tulo del libro o material consultado
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <p>
+        Un
+        <strong>
+         esquema
+        </strong>
+        permite planificar la ficha antes de escribirla: tema &rarr; caracter&iacute;sticas &rarr; datos interesantes &rarr; fuente. Los
+        <strong>
+         subt&iacute;tulos
+        </strong>
+        ayudan a encontrar la informaci&oacute;n.
+       </p>
+       <div class="example">
+        <strong>
+         Consejo:
+        </strong>
+        un dibujo debe estar relacionado con lo explicado. El pie de imagen puede a&ntilde;adir un dato, por ejemplo: &laquo;Las aceitunas son los frutos del olivo&raquo;.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 1. Elegimos la estructura
+        </h4>
+        <ol type="a">
+         <li>
+          Prop&oacute;n un t&iacute;tulo para una ficha sobre el erizo.
+         </li>
+         <li>
+          Escribe dos posibles subt&iacute;tulos.
+         </li>
+         <li>
+          &iquest;En qu&eacute; apartado pondr&iacute;as qu&eacute; come el animal?
+         </li>
+         <li>
+          &iquest;En qu&eacute; lugar anotar&iacute;as la fuente consultada?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 2. Hacemos un esquema
+        </h4>
+        <ol type="a">
+         <li>
+          Elige un tema cercano: un &aacute;rbol, un animal o una m&aacute;quina sencilla.
+         </li>
+         <li>
+          Anota tres ideas principales en un esquema.
+         </li>
+         <li>
+          A&ntilde;ade un dato breve bajo cada idea.
+         </li>
+         <li>
+          Elimina un dato que no pertenezca al tema.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 3. Escribimos informaci&oacute;n breve
+        </h4>
+        <ol type="a">
+         <li>
+          Redacta dos oraciones que expliquen qu&eacute; es tu tema.
+         </li>
+         <li>
+          Escribe tres caracter&iacute;sticas utilizando una enumeraci&oacute;n correcta.
+         </li>
+         <li>
+          Redacta una oraci&oacute;n con &laquo;adem&aacute;s&raquo; para agregar informaci&oacute;n.
+         </li>
+         <li>
+          Escribe un cierre que recuerde lo m&aacute;s importante.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 4. Completamos el dise&ntilde;o
+        </h4>
+        <ol type="a">
+         <li>
+          Indica qu&eacute; imagen ayudar&iacute;a a entender tu ficha.
+         </li>
+         <li>
+          Escribe un pie de imagen breve y relacionado.
+         </li>
+         <li>
+          Elige d&oacute;nde colocar&iacute;as el t&iacute;tulo y los subt&iacute;tulos.
+         </li>
+         <li>
+          Revisa que todas las partes puedan leerse con facilidad.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-8" class="lesson-section" id="sec-8">
+      <!-- APARTADO 5.8 · CRITERIO DOCENTE PRINCIPAL: LCL.4.2.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.8
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-8">
+        Comprensi&oacute;n lectora aplicada
+       </h2>
+      </div>
+      <p class="section-intro">
+       Leemos un segundo texto informativo y usamos las estrategias que hemos aprendido.
+      </p>
+      <article aria-label="Lectura: El agua cambia de lugar" class="reading-box">
+       <h3>
+        📖 El agua cambia de lugar
+       </h3>
+       <div class="reading-text">
+        <p>
+         El agua se encuentra en los mares, los r&iacute;os, los lagos, el suelo y tambi&eacute;n en el aire. Aunque no siempre la vemos, forma parte de muchos cambios que ocurren a nuestro alrededor.
+        </p>
+        <p>
+         Cuando el sol calienta la superficie del agua, una parte pasa lentamente al aire en forma de vapor. Este cambio se llama evaporaci&oacute;n. La ropa tendida tambi&eacute;n puede secarse porque el agua que contiene pasa al aire.
+        </p>
+        <p>
+         En el aire, el vapor puede enfriarse y convertirse en peque&ntilde;as gotas. Es la condensaci&oacute;n. Muchas de esas gotitas forman las nubes, que se desplazan con el viento.
+        </p>
+        <p>
+         Cuando las gotas de una nube crecen lo suficiente, pueden caer a la superficie como lluvia. Si hace mucho fr&iacute;o, el agua tambi&eacute;n puede caer en forma de nieve o granizo.
+        </p>
+        <p>
+         Parte de la lluvia llega a r&iacute;os y arroyos, otra parte penetra en el suelo y otra puede ser utilizada por los seres vivos. Con el tiempo, mucha agua vuelve a los mares y el proceso contin&uacute;a.
+        </p>
+        <p>
+         Este movimiento se conoce como ciclo del agua. No es un viaje que siempre siga un &uacute;nico camino: depende del lugar y de las condiciones del tiempo. Para estudiarlo podemos dibujar flechas y escribir palabras clave junto a cada cambio.
+        </p>
+       </div>
+       <p class="lesson-bottom">
+        Lectura original para practicar la comprensi&oacute;n, la inferencia y la expresi&oacute;n personal.
+       </p>
+      </article>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        En esta lectura, el
+        <strong>
+         t&iacute;tulo
+        </strong>
+        anuncia el tema y cada
+        <strong>
+         p&aacute;rrafo
+        </strong>
+        desarrolla una idea: d&oacute;nde hay agua, evaporaci&oacute;n, condensaci&oacute;n, precipitaci&oacute;n y regreso a otros lugares.
+       </p>
+       <p>
+        Las
+        <strong>
+         palabras clave
+        </strong>
+        nos ayudan a organizar un esquema. Tambi&eacute;n podemos comparar una explicaci&oacute;n escrita con un dibujo del ciclo del agua y comprobar si transmiten la misma informaci&oacute;n.
+       </p>
+       <div class="example">
+        <strong>
+         Esquema:
+        </strong>
+        agua superficial &rarr; evaporaci&oacute;n &rarr; condensaci&oacute;n &rarr; precipitaci&oacute;n &rarr; el agua sigue circulando.
+       </div>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 1. Localizamos datos
+        </h4>
+        <ol type="a">
+         <li>
+          Nombra dos lugares donde podemos encontrar agua.
+         </li>
+         <li>
+          &iquest;Qu&eacute; sucede al calentarse una parte del agua?
+         </li>
+         <li>
+          &iquest;Qu&eacute; ocurre cuando el vapor se enfr&iacute;a?
+         </li>
+         <li>
+          &iquest;Qu&eacute; formas de precipitaci&oacute;n se nombran en la lectura?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 2. Ordenamos el proceso
+        </h4>
+        <ol type="a">
+         <li>
+          Ordena: condensaci&oacute;n, precipitaci&oacute;n, evaporaci&oacute;n.
+         </li>
+         <li>
+          Explica con una oraci&oacute;n qu&eacute; significa &laquo;evaporaci&oacute;n&raquo;.
+         </li>
+         <li>
+          &iquest;Qu&eacute; p&aacute;rrafo habla de las nubes?
+         </li>
+         <li>
+          &iquest;Por qu&eacute; el texto afirma que el agua no sigue un &uacute;nico camino?
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 3. Seleccionamos lo importante
+        </h4>
+        <ol type="a">
+         <li>
+          Escribe la idea principal del segundo p&aacute;rrafo.
+         </li>
+         <li>
+          Copia un ejemplo cotidiano de evaporaci&oacute;n.
+         </li>
+         <li>
+          Elige cuatro palabras clave de la lectura.
+         </li>
+         <li>
+          Resume el ciclo del agua utilizando esas palabras.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.4.2.a -->
+       <article class="activity-card" data-criterio="LCL.4.2.a">
+        <h4>
+         Actividad 4. Aplicamos lo estudiado
+        </h4>
+        <ol type="a">
+         <li>
+          Inventa un subt&iacute;tulo para el p&aacute;rrafo de la condensaci&oacute;n.
+         </li>
+         <li>
+          Prop&oacute;n una ilustraci&oacute;n que ayude a comprender la lluvia.
+         </li>
+         <li>
+          Escribe una frase que pueda funcionar como pie de imagen.
+         </li>
+         <li>
+          Explica por qu&eacute; debemos revisar que un esquema coincida con el texto.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="titulo-sec-9" class="lesson-section" id="sec-9">
+      <!-- APARTADO 5.9 · CRITERIO DOCENTE PRINCIPAL: LCL.5.1.a -->
+      <div class="lesson-heading-wrap">
+       <span aria-hidden="true" class="section-number">
+        5.9
+       </span>
+       <h2 class="lesson-section-heading" id="titulo-sec-9">
+        Producci&oacute;n escrita: nuestra ficha informativa
+       </h2>
+      </div>
+      <p class="section-intro">
+       Preparamos, redactamos y presentamos una ficha informativa sobre un tema cercano.
+      </p>
+      <div class="explanation">
+       <h3>
+        Aprendemos
+       </h3>
+       <p>
+        El
+        <strong>
+         producto final
+        </strong>
+        ser&aacute; una
+        <strong>
+         ficha informativa
+        </strong>
+        sobre un tema que conozcamos y podamos investigar con acompa&ntilde;amiento: un animal, una planta, una m&aacute;quina sencilla o un elemento del colegio. Debe resultar comprensible para otros ni&ntilde;os y ni&ntilde;as de tercero.
+       </p>
+       <div class="table-wrap">
+        <table class="content-table">
+         <thead>
+          <tr>
+           <th>
+            Paso
+           </th>
+           <th>
+            Qu&eacute; hacemos
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            1. Planificar
+           </td>
+           <td>
+            Elegimos el tema y formulamos dos o tres preguntas.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            2. Investigar
+           </td>
+           <td>
+            Consultamos materiales adecuados y anotamos fuentes.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            3. Redactar
+           </td>
+           <td>
+            Organizamos t&iacute;tulo, dos o tres apartados y un cierre.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            4. Revisar
+           </td>
+           <td>
+            Comprobamos puntos, comas, may&uacute;sculas y claridad.
+           </td>
+          </tr>
+          <tr>
+           <td>
+            5. Presentar
+           </td>
+           <td>
+            A&ntilde;adimos un dibujo y exponemos sin leer todo el texto.
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="check-panel">
+        <strong>
+         Lista de revisi&oacute;n:
+        </strong>
+        t&iacute;tulo claro, informaci&oacute;n comprobada, ideas ordenadas, puntuaci&oacute;n correcta, fuente indicada y dibujo con pie de imagen.
+       </div>
+       <p>
+        Al exponer hablamos con calma, mostramos la ficha y respondemos a las preguntas de los compa&ntilde;eros con respeto.
+       </p>
+      </div>
+      <h3 class="activities-heading">
+       Actividades para practicar
+      </h3>
+      <div class="activity-grid">
+       <!-- Actividad 1; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 1. Planificamos el tema
+        </h4>
+        <ol type="a">
+         <li>
+          Elige el tema de tu ficha y escribe su t&iacute;tulo provisional.
+         </li>
+         <li>
+          Escribe tres preguntas que quieras responder.
+         </li>
+         <li>
+          Anota dos fuentes escolares donde buscar informaci&oacute;n.
+         </li>
+         <li>
+          Ordena tres apartados para explicar el tema.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 2; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 2. Investigamos y redactamos
+        </h4>
+        <ol type="a">
+         <li>
+          Anota cuatro datos comprobados en tus fuentes.
+         </li>
+         <li>
+          Escribe un p&aacute;rrafo inicial de dos oraciones.
+         </li>
+         <li>
+          Redacta dos apartados con sus subt&iacute;tulos.
+         </li>
+         <li>
+          A&ntilde;ade una conclusi&oacute;n breve que no repita todo el texto.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 3; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 3. Revisamos el borrador
+        </h4>
+        <ol type="a">
+         <li>
+          Subraya la idea principal de cada p&aacute;rrafo.
+         </li>
+         <li>
+          Comprueba la may&uacute;scula inicial y los puntos.
+         </li>
+         <li>
+          Revisa las comas si has escrito una enumeraci&oacute;n.
+         </li>
+         <li>
+          A&ntilde;ade la fuente y comprueba que ning&uacute;n dato sea inventado.
+         </li>
+        </ol>
+       </article>
+       <!-- Actividad 4; un criterio curricular asociado: LCL.5.1.a -->
+       <article class="activity-card" data-criterio="LCL.5.1.a">
+        <h4>
+         Actividad 4. Dise&ntilde;amos y compartimos
+        </h4>
+        <ol type="a">
+         <li>
+          Realiza una ilustraci&oacute;n que ayude a entender la informaci&oacute;n.
+         </li>
+         <li>
+          Escribe un pie de imagen relacionado con el dibujo.
+         </li>
+         <li>
+          Exp&oacute;n tu ficha en un minuto mirando a tus compa&ntilde;eros.
+         </li>
+         <li>
+          Escucha una pregunta y anota una mejora que puedas incorporar.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- ====================================================== -->
+     <!-- REPASAMOS LO APRENDIDO -->
+     <!-- ====================================================== -->
+     <section aria-labelledby="titulo-repaso" class="sda-recap" id="sec-repaso">
+      <div class="recap-heading">
+       <span aria-hidden="true" class="heading-icon">
+        🔄
+       </span>
+       <div>
+        <h2 class="lesson-section-heading" id="titulo-repaso">
+         Repasamos lo aprendido
+        </h2>
+        <p>
+         Una actividad de cuatro cuestiones por apartado en cada ficha.
+        </p>
+       </div>
+      </div>
+      <!-- FICHA DE REFUERZO -->
+      <section aria-labelledby="titulo-refuerzo" class="recap-sheet">
+       <div class="sheet-heading sheet-heading--refuerzo">
+        <h3 id="titulo-refuerzo">
+         🟢 Ficha de Refuerzo
+        </h3>
+       </div>
+       <div class="sheet-grid">
+        <!-- REFUERZO 5.1 · LCL.4.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.1.a">
+         <h4>
+          Refuerzo 5.1 &middot; Comprensi&oacute;n lectora inicial
+         </h4>
+         <p>
+          Recordamos las ideas principales.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qu&eacute; necesita una semilla para crecer?
+          </li>
+          <li>
+           Nombra un medio que transporte semillas.
+          </li>
+          <li>
+           &iquest;Qu&eacute; puede hacer el viento con algunas semillas?
+          </li>
+          <li>
+           Escribe la idea principal del texto.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.2 · LCL.4.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.2.a">
+         <h4>
+          Refuerzo 5.2 &middot; El texto informativo: explicamos un tema
+         </h4>
+         <p>
+          Identificamos sus partes.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe un t&iacute;tulo para un texto sobre las hormigas.
+          </li>
+          <li>
+           &iquest;Para qu&eacute; sirve la introducci&oacute;n?
+          </li>
+          <li>
+           &iquest;D&oacute;nde se explican los datos?
+          </li>
+          <li>
+           &iquest;Qu&eacute; debe recordar el cierre?
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.3 · LCL.4.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.1.a">
+         <h4>
+          Refuerzo 5.3 &middot; Las ideas principales y los detalles
+         </h4>
+         <p>
+          Diferenciamos lo importante del ejemplo.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe la idea principal de &laquo;Las aves construyen nidos diferentes&raquo;.
+          </li>
+          <li>
+           A&ntilde;ade un detalle que explique esa idea.
+          </li>
+          <li>
+           Se&ntilde;ala qu&eacute; es un ejemplo en &laquo;Algunas aves usan ramas&raquo;.
+          </li>
+          <li>
+           Resume dos oraciones informativas con una frase.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.4 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.5.1.a">
+         <h4>
+          Refuerzo 5.4 &middot; Los p&aacute;rrafos y el orden de la informaci&oacute;n
+         </h4>
+         <p>
+          Ordenamos un peque&ntilde;o texto.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qu&eacute; marca un punto y aparte?
+          </li>
+          <li>
+           Escribe una frase para un p&aacute;rrafo sobre c&oacute;mo es una planta.
+          </li>
+          <li>
+           Escribe otra para un p&aacute;rrafo sobre sus cuidados.
+          </li>
+          <li>
+           Elige un conector para cerrar la explicaci&oacute;n.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.5 · LCL.9.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.9.2.a">
+         <h4>
+          Refuerzo 5.5 &middot; Puntuamos para que se entienda
+         </h4>
+         <p>
+          Corregimos un texto breve.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Corrige &laquo;la rana vive cerca del r&iacute;o&raquo;.
+          </li>
+          <li>
+           Pon las comas en &laquo;Vi robles pinos y olivos&raquo;.
+          </li>
+          <li>
+           Separa con punto dos oraciones sobre el huerto.
+          </li>
+          <li>
+           Escribe el punto final de un texto breve.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.6 · LCL.6.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.6.1.a">
+         <h4>
+          Refuerzo 5.6 &middot; Buscamos informaci&oacute;n de forma segura
+         </h4>
+         <p>
+          Buscamos informaci&oacute;n con ayuda.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe una pregunta concreta para investigar.
+          </li>
+          <li>
+           Nombra una fuente escolar apropiada.
+          </li>
+          <li>
+           Di un dato personal que no debemos compartir.
+          </li>
+          <li>
+           Explica a qui&eacute;n pedir&iacute;as ayuda ante un enlace extra&ntilde;o.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.7 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.5.1.a">
+         <h4>
+          Refuerzo 5.7 &middot; Organizamos una ficha informativa
+         </h4>
+         <p>
+          Reconocemos sus partes.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe un t&iacute;tulo sobre una planta.
+          </li>
+          <li>
+           Anota dos subt&iacute;tulos.
+          </li>
+          <li>
+           Redacta una oraci&oacute;n informativa.
+          </li>
+          <li>
+           Indica d&oacute;nde escribir&iacute;as la fuente.
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.8 · LCL.4.2.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.4.2.a">
+         <h4>
+          Refuerzo 5.8 &middot; Comprensi&oacute;n lectora aplicada
+         </h4>
+         <p>
+          Recordamos el ciclo del agua.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qu&eacute; cambio produce el calor del sol?
+          </li>
+          <li>
+           &iquest;Qu&eacute; son las gotitas de una nube?
+          </li>
+          <li>
+           Nombra una forma de precipitaci&oacute;n.
+          </li>
+          <li>
+           &iquest;Para qu&eacute; sirve un esquema de flechas?
+          </li>
+         </ol>
+        </article>
+        <!-- REFUERZO 5.9 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.5.1.a">
+         <h4>
+          Refuerzo 5.9 &middot; Producci&oacute;n escrita: nuestra ficha informativa
+         </h4>
+         <p>
+          Revisamos nuestra ficha.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           &iquest;Qu&eacute; tema has elegido?
+          </li>
+          <li>
+           &iquest;Tu ficha tiene t&iacute;tulo y apartados?
+          </li>
+          <li>
+           &iquest;Has indicado la fuente consultada?
+          </li>
+          <li>
+           &iquest;Has revisado puntos, comas y may&uacute;sculas?
+          </li>
+         </ol>
+        </article>
+       </div>
+      </section>
+      <!-- FICHA DE AMPLIACIÓN -->
+      <section aria-labelledby="titulo-ampliacion" class="recap-sheet">
+       <div class="sheet-heading sheet-heading--ampliacion">
+        <h3 id="titulo-ampliacion">
+         🟠 Ficha de Ampliaci&oacute;n
+        </h3>
+       </div>
+       <div class="sheet-grid">
+        <!-- AMPLIACIÓN 5.1 · LCL.4.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.1.a">
+         <h4>
+          Ampliaci&oacute;n 5.1 &middot; Comprensi&oacute;n lectora inicial
+         </h4>
+         <p>
+          Ampliamos el an&aacute;lisis de la primera lectura.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Explica por qu&eacute; dispersarse puede ayudar a una planta.
+          </li>
+          <li>
+           Relaciona una caracter&iacute;stica de una semilla con su transporte.
+          </li>
+          <li>
+           Escribe un p&aacute;rrafo que compare viento y animales como transportadores.
+          </li>
+          <li>
+           Prop&oacute;n una pregunta para investigar con una observaci&oacute;n sencilla.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.2 · LCL.4.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.2.a">
+         <h4>
+          Ampliaci&oacute;n 5.2 &middot; El texto informativo: explicamos un tema
+         </h4>
+         <p>
+          Transformamos textos vagos en explicaciones.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Reescribe &laquo;Los p&aacute;jaros son incre&iacute;bles&raquo; a&ntilde;adiendo informaci&oacute;n comprobable.
+          </li>
+          <li>
+           Elabora un t&iacute;tulo y dos subt&iacute;tulos para un art&iacute;culo sobre la lluvia.
+          </li>
+          <li>
+           Explica qu&eacute; debe aportar una fotograf&iacute;a para ser &uacute;til.
+          </li>
+          <li>
+           Escribe una introducci&oacute;n de tres oraciones sin repetirlas.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.3 · LCL.4.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.1.a">
+         <h4>
+          Ampliaci&oacute;n 5.3 &middot; Las ideas principales y los detalles
+         </h4>
+         <p>
+          Mejoramos una s&iacute;ntesis.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Resume en una oraci&oacute;n tres datos sobre una biblioteca.
+          </li>
+          <li>
+           Escribe un ejemplo que apoye esa idea sin repetirla.
+          </li>
+          <li>
+           Explica por qu&eacute; un resumen no debe incluir datos que no est&aacute;n en las fuentes.
+          </li>
+          <li>
+           Compara dos res&uacute;menes y justifica cu&aacute;l ser&iacute;a m&aacute;s claro.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.4 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.5.1.a">
+         <h4>
+          Ampliaci&oacute;n 5.4 &middot; Los p&aacute;rrafos y el orden de la informaci&oacute;n
+         </h4>
+         <p>
+          Revisamos una explicaci&oacute;n desordenada.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Prop&oacute;n tres p&aacute;rrafos para explicar un animal.
+          </li>
+          <li>
+           Elige un subt&iacute;tulo para cada uno.
+          </li>
+          <li>
+           Conecta dos ideas con &laquo;adem&aacute;s&raquo; sin perder claridad.
+          </li>
+          <li>
+           Escribe un cierre que no repita literalmente la introducci&oacute;n.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.5 · LCL.9.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.9.2.a">
+         <h4>
+          Ampliaci&oacute;n 5.5 &middot; Puntuamos para que se entienda
+         </h4>
+         <p>
+          Corregimos y justificamos.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Corrige &laquo;los peces respiran bajo el agua tienen branquias&raquo;.
+          </li>
+          <li>
+           Punt&uacute;a &laquo;En el jard&iacute;n crecen romero lavanda y tomillo&raquo;.
+          </li>
+          <li>
+           Escribe una lista introducida por dos puntos.
+          </li>
+          <li>
+           Explica por qu&eacute; en &laquo;Los &aacute;rboles crecen&raquo; no hay coma entre sujeto y verbo.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.6 · LCL.6.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.6.1.a">
+         <h4>
+          Ampliaci&oacute;n 5.6 &middot; Buscamos informaci&oacute;n de forma segura
+         </h4>
+         <p>
+          Valoramos informaci&oacute;n de forma cr&iacute;tica.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Escribe dos preguntas que ayuden a comprobar si una p&aacute;gina es fiable.
+          </li>
+          <li>
+           Explica por qu&eacute; consultar dos fuentes puede ser &uacute;til.
+          </li>
+          <li>
+           Redacta c&oacute;mo indicar&iacute;as la procedencia de un dato.
+          </li>
+          <li>
+           Prop&oacute;n qu&eacute; har&iacute;as ante un mensaje que solicita tu contrase&ntilde;a.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.7 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.5.1.a">
+         <h4>
+          Ampliaci&oacute;n 5.7 &middot; Organizamos una ficha informativa
+         </h4>
+         <p>
+          Mejoramos el formato informativo.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Dibuja un esquema de tres apartados sobre el olivo.
+          </li>
+          <li>
+           Escribe dos datos verificables para cada apartado tras consultarlos.
+          </li>
+          <li>
+           Redacta un pie de imagen &uacute;til, no meramente decorativo.
+          </li>
+          <li>
+           Explica c&oacute;mo ayudar&iacute;an los subt&iacute;tulos a otros lectores.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.8 · LCL.4.2.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.4.2.a">
+         <h4>
+          Ampliaci&oacute;n 5.8 &middot; Comprensi&oacute;n lectora aplicada
+         </h4>
+         <p>
+          Explicamos relaciones.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Compara evaporaci&oacute;n y condensaci&oacute;n con tus palabras.
+          </li>
+          <li>
+           Explica por qu&eacute; la ropa h&uacute;meda puede secarse.
+          </li>
+          <li>
+           Escribe tres pasos del ciclo del agua con conectores.
+          </li>
+          <li>
+           Prop&oacute;n una comprobaci&oacute;n sencilla para revisar tu esquema.
+          </li>
+         </ol>
+        </article>
+        <!-- AMPLIACIÓN 5.9 · LCL.5.1.a -->
+        <article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.5.1.a">
+         <h4>
+          Ampliaci&oacute;n 5.9 &middot; Producci&oacute;n escrita: nuestra ficha informativa
+         </h4>
+         <p>
+          Preparamos una ficha para otro curso.
+         </p>
+         <ol class="sheet-questions" type="a">
+          <li>
+           Elige un t&iacute;tulo que despierte curiosidad sin exagerar.
+          </li>
+          <li>
+           Redacta una introducci&oacute;n de tres frases comprensibles.
+          </li>
+          <li>
+           A&ntilde;ade una pregunta interesante y resp&oacute;ndela con un dato comprobado.
+          </li>
+          <li>
+           Prepara dos preguntas para comprobar si tus compa&ntilde;eros entendieron.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </section>
+     </section>
+     <!-- REPASO INTERACTIVO (NO MODIFICA LOS CRITERIOS ASOCIADOS A LAS TAREAS) -->
+     <section aria-labelledby="titulo-comprueba" class="check-learning" id="sec-comprueba">
+      <h2 id="titulo-comprueba">
+       Comprueba lo aprendido
+      </h2>
+      <p>
+       Selecciona una
+       <strong>
+        caja de respuesta
+       </strong>
+       en cada pregunta y pulsa &laquo;Comprobar respuestas&raquo;. Puedes cambiar tus respuestas y volver a intentarlo.
+      </p>
+      <form id="quiz-form">
+       <div class="quiz-grid">
+        <div aria-labelledby="quiz-pregunta-1" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-1">
+          1. &iquest;Cu&aacute;l es el tema de &laquo;Las semillas viajan&raquo;?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           La construcci&oacute;n de castillos
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Las maneras en que se dispersan las semillas
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Los deportes del colegio
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-2" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-2">
+          2. &iquest;Qu&eacute; ayuda a viajar a algunas semillas de diente de le&oacute;n?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           El viento
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Un tren
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Una bicicleta
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-3" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-3">
+          3. &iquest;Para qu&eacute; sirve principalmente un texto informativo?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Para explicar conocimientos
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Para inventar personajes m&aacute;gicos
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Para ocultar datos
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-4" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-4">
+          4. &iquest;Qu&eacute; parte de un texto presenta el tema?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           La introducci&oacute;n
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           La firma de un personaje
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Una adivinanza
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-5" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-5">
+          5. &iquest;Qu&eacute; expresa una idea principal?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Un detalle sin relaci&oacute;n
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Lo m&aacute;s importante de un p&aacute;rrafo
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Una palabra elegida al azar
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-6" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-6">
+          6. &iquest;Qu&eacute; signo separa dos oraciones del mismo p&aacute;rrafo?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           El punto y seguido
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           La coma entre sujeto y verbo
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Un guion sin m&aacute;s
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-7" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-7">
+          7. &iquest;Cu&aacute;l es una enumeraci&oacute;n bien puntuada?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           L&aacute;piz cuaderno regla
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           L&aacute;piz, cuaderno y regla
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           L&aacute;piz, cuaderno, y, regla
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-8" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-8">
+          8. &iquest;Qu&eacute; debemos hacer para buscar informaci&oacute;n de forma segura?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Publicar nuestra contrase&ntilde;a
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Consultar materiales adecuados con ayuda
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Confiar en cualquier anuncio
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-9" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-9">
+          9. &iquest;Qu&eacute; conviene escribir al utilizar un dato investigado?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           La fuente consultada
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Una contrase&ntilde;a
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Un dato inventado
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-10" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-10">
+          10. &iquest;Qu&eacute; elemento puede ayudar a ordenar una ficha informativa?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Los subt&iacute;tulos
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Muchas frases sin punto
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Los cambios de tema sin avisar
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-11" class="quiz-item quiz-question" data-answer="0" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-11">
+          11. &iquest;C&oacute;mo se llama el paso del agua l&iacute;quida a vapor?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Evaporaci&oacute;n
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           Precipitaci&oacute;n
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Congelaci&oacute;n
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+        <div aria-labelledby="quiz-pregunta-12" class="quiz-item quiz-question" data-answer="1" role="group">
+         <h3 class="quiz-prompt" id="quiz-pregunta-12">
+          12. &iquest;Qu&eacute; debe incluir la ficha informativa final?
+         </h3>
+         <div class="quiz-options">
+          <button aria-pressed="false" class="quiz-option" data-option="0" type="button">
+           Solo un dibujo sin explicaci&oacute;n
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="1" type="button">
+           T&iacute;tulo, datos comprobados, apartados y fuente
+          </button>
+          <button aria-pressed="false" class="quiz-option" data-option="2" type="button">
+           Una historia inventada presentada como real
+          </button>
+         </div>
+         <p aria-live="polite" class="quiz-feedback quiz-result" role="status">
+         </p>
+        </div>
+       </div>
+       <div class="quiz-actions">
+        <button class="lnl-btn" type="submit">
+         Comprobar respuestas
+        </button>
+        <button class="lnl-btn secondary" type="reset">
+         Volver a empezar
+        </button>
+       </div>
+       <p aria-live="polite" id="quiz-result" role="status">
+       </p>
+      </form>
+     </section>
+     <!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+     <section aria-labelledby="titulo-autoevaluacion" class="self-eval" id="sec-autoevaluacion">
+      <div class="recap-heading">
+       <span aria-hidden="true" class="heading-icon heading-icon--indigo">
+        🎯
+       </span>
+       <div>
+        <h2 class="lesson-section-heading" id="titulo-autoevaluacion">
+         Diana de Autoevaluaci&oacute;n Interactiva
+        </h2>
+        <p>
+         Selecciona la opci&oacute;n que mejor representa tu aprendizaje.
+        </p>
+       </div>
+      </div>
+      <div class="self-eval-grid">
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.1: LCL.4.1.a -->
+        <p class="eval-statement">
+         <strong>
+          5.1
+         </strong>
+         Comprendo un texto informativo y localizo datos importantes.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.1" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.2: LCL.4.2.a -->
+        <p class="eval-statement">
+         <strong>
+          5.2
+         </strong>
+         Reconozco las partes de un texto informativo sencillo.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.2" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.3: LCL.4.1.a -->
+        <p class="eval-statement">
+         <strong>
+          5.3
+         </strong>
+         Distingo ideas principales de ejemplos y detalles.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.3" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.4: LCL.5.1.a -->
+        <p class="eval-statement">
+         <strong>
+          5.4
+         </strong>
+         Organizo informaci&oacute;n en p&aacute;rrafos y utilizo conectores.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.4" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.5: LCL.9.2.a -->
+        <p class="eval-statement">
+         <strong>
+          5.5
+         </strong>
+         Aplico puntos, comas y may&uacute;sculas al revisar mis textos.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.5" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.6: LCL.6.1.a -->
+        <p class="eval-statement">
+         <strong>
+          5.6
+         </strong>
+         Busco informaci&oacute;n con ayuda, comparo fuentes y me protejo en internet.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.6" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.7: LCL.5.1.a -->
+        <p class="eval-statement">
+         <strong>
+          5.7
+         </strong>
+         Elaboro esquemas y fichas informativas con subt&iacute;tulos.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.7" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.8: LCL.4.2.a -->
+        <p class="eval-statement">
+         <strong>
+          5.8
+         </strong>
+         Comprendo una segunda explicaci&oacute;n y resumo sus ideas.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.8" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="eval-row">
+        <!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 5.9: LCL.5.1.a -->
+        <p class="eval-statement">
+         <strong>
+          5.9
+         </strong>
+         Escribo, reviso e ilustro una ficha informativa y la expongo.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n 5.9" class="auto-eval-group" role="group">
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="eval-actions">
+       <p aria-live="polite" id="eval-status" role="status">
+        Puedes marcar una opci&oacute;n en cada apartado.
+       </p>
+       <button class="lnl-btn secondary" id="eval-reset" type="button">
+        Borrar mi autoevaluaci&oacute;n
+       </button>
+      </div>
+     </section>
+    </div>
+   </div>
+  </main>
+  <!-- PIE INSTITUCIONAL -->
+  <footer class="site-footer">
+   <div class="footer-container">
+    <div class="footer-junta">
+     <img alt="Junta de Andaluc&iacute;a - Consejer&iacute;a de Educaci&oacute;n" src="/img/junta-educacion.png"/>
+    </div>
+    <div class="footer-school">
+     <p class="footer-school-name">
+      CEIP Joaqu&iacute;n Tena Artigas
+     </p>
+     <p>
+      Alcolea &middot; C&oacute;rdoba
+     </p>
+     <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">
+      Web oficial del Centro
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- CORRECCIÓN INTERACTIVA CON OPCIONES EN CAJAS, COMO LENGUA DE 5.º Y 6.º -->
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('quiz-form');
+      const summary = document.getElementById('quiz-result');
+      const questions = Array.from(form.querySelectorAll('.quiz-question'));
+
+      // Cada pregunta admite una sola caja seleccionada.
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const selected = event.target.closest('.quiz-option');
+          if (!selected || !question.contains(selected)) return;
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute(
+              'aria-pressed', option === selected ? 'true' : 'false'
+            );
+          });
+
+          // Una nueva elección permite corregir y volver a intentarlo.
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          summary.textContent = '';
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector(
+            '.quiz-option[aria-pressed="true"]'
+          );
+          const answer = question.dataset.answer;
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Elige una respuesta.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const right = question.querySelector(
+              '.quiz-option[data-option="' + answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              right.textContent.trim() + '.';
+          }
+        });
+
+        summary.textContent = 'Has respondido ' + answered + ' de ' +
+          questions.length + ' preguntas. Aciertos: ' + correct +
+          ' de ' + questions.length + '.';
+      });
+
+      form.addEventListener('reset', function () {
+        questions.forEach(function (question) {
+          question.classList.remove('correct', 'incorrect');
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        summary.textContent = '';
+      });
+    });
+  </script>
+  <!-- DIANA INTERACTIVA: SOLO UNA RESPUESTA SELECCIONADA POR APARTADO -->
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const status = document.getElementById('eval-status');
+      const reset = document.getElementById('eval-reset');
+
+      function updateStatus() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('button[aria-pressed="true"]');
+        }).length;
+        status.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('button.eval-btn');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('button.eval-btn').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+          });
+          updateStatus();
+        });
+      });
+
+      reset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('button.eval-btn').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateStatus();
+      });
+    });
+  </script>
+  <script defer="" src="/js/main.js">
+  </script>
+ </body>
+</html>
+
