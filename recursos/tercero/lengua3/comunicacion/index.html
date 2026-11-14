@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Lengua Castellana y Literatura de 3.º de Primaria. LNL3.1: Nos comunicamos con palabras. Lecturas, vocabulario, sílabas, ortografía, sustantivos, artículos, comunicación y carteles." name="description"/>
+<title>Nos comunicamos con palabras | Lengua 3.º | CEIP Joaquín Tena Artigas</title>
+<link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+<link href="/css/base.css" rel="stylesheet"/>
+<!-- CSS local de la SdA. Conserva el verde institucional en todos los cursos. -->
+<style>
+  :root {
+    --lnl-green: #007a33;
+    --lnl-dark: #005724;
+    --lnl-light: #e9f7ee;
+    --lnl-text: #243447;
+    --lnl-muted: #526475;
+    --lnl-border: #d5e8da;
+  }
+
+  html { scroll-behavior: smooth; }
+  .topic-page {
+    background: #f4f7f5;
+    color: var(--lnl-text);
+    min-height: 70vh;
+  }
+  .topic-shell {
+    width: min(94%, 1180px);
+    margin: 0 auto;
+    padding: 1.7rem 0 3.5rem;
+  }
+  .topic-shell *,
+  .topic-shell *::before,
+  .topic-shell *::after { box-sizing: border-box; }
+  .topic-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    overflow: hidden;
+    min-height: 265px;
+    margin: 1.2rem 0 1.6rem;
+    padding: 2.25rem clamp(1.4rem, 4vw, 3rem);
+    border-radius: 24px;
+    background: linear-gradient(120deg, var(--lnl-dark), var(--lnl-green) 66%, #16a057);
+    color: white;
+    box-shadow: 0 14px 40px rgba(0, 87, 36, .13);
+  }
+  .topic-hero::before {
+    content: "ABC";
+    position: absolute;
+    right: 15%;
+    bottom: -2.2rem;
+    font-size: clamp(6rem, 17vw, 13rem);
+    font-weight: 900;
+    opacity: .075;
+    letter-spacing: -.09em;
+    pointer-events: none;
+  }
+  .topic-hero-content { position: relative; z-index: 1; flex: 1; max-width: 720px; }
+  .topic-kicker {
+    margin: 0 0 .7rem;
+    color: #d3f4de;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    font-size: .8rem;
+    font-weight: 750;
+  }
+  .topic-hero h1 {
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+    line-height: 1.15;
+    font-weight: 850;
+    text-align: left;
+  }
+  .topic-hero p:last-child { max-width: 55ch; line-height: 1.6; margin: 0; }
+  .topic-hero-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(23%, 215px);
+    max-height: 235px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .sda-nav,
+  .lesson-section,
+  .sda-recap,
+  .self-eval {
+    background: #fff;
+    border: 1px solid var(--lnl-border);
+    border-radius: 20px;
+    box-shadow: 0 7px 22px rgba(10, 60, 30, .05);
+  }
+  .sda-nav { padding: 1.3rem 1.5rem; margin-bottom: 1.8rem; }
+  .sda-nav h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 850;
+    color: var(--lnl-dark);
+    text-align: left;
+  }
+  .sda-nav-links { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .sda-nav-links a {
+    padding: .52rem .75rem;
+    border-radius: 10px;
+    background: #f0f5f2;
+    color: #254939;
+    text-decoration: none;
+    border: 1px solid #e1ede5;
+    font-size: .84rem;
+    font-weight: 650;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible { background: var(--lnl-dark); color: white; }
+  .topic-content { display: grid; gap: 1.6rem; }
+  .lesson-section { padding: clamp(1.1rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .lesson-heading-wrap { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1.25rem; }
+  .section-number {
+    display: inline-flex;
+    min-width: 3.3rem;
+    min-height: 2.55rem;
+    padding: .35rem .55rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--lnl-green);
+    color: #fff;
+    font-weight: 850;
+    border-radius: 10px;
+  }
+  .lesson-section-heading {
+    margin: .15rem 0 0;
+    color: #213a30;
+    font-size: clamp(1.27rem, 2.5vw, 1.72rem);
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: left;
+  }
+  .section-intro { color: var(--lnl-muted); margin: 0 0 1.2rem; line-height: 1.65; }
+  .reading-box {
+    margin: 1.3rem 0;
+    padding: clamp(1rem, 2.6vw, 1.6rem);
+    border: 1px solid #b7e5c7;
+    border-radius: 18px;
+    background: #f5fff8;
+  }
+  .reading-box h3 { margin: 0 0 1rem; color: var(--lnl-dark); font-size: 1.22rem; }
+  .reading-text { max-width: 83ch; line-height: 1.82; }
+  .reading-text p { margin: 0 0 .9rem; }
+  .reading-text p:last-child { margin-bottom: 0; }
+  .explanation {
+    margin: 1.15rem 0 1.25rem;
+    padding: 1.2rem 1.4rem;
+    border-left: 5px solid var(--lnl-green);
+    border-radius: 0 16px 16px 0;
+    background: var(--lnl-light);
+    line-height: 1.7;
+  }
+  .explanation h3 { margin: 0 0 .65rem; font-size: 1.05rem; color: var(--lnl-dark); }
+  .explanation p { margin: 0 0 .65rem; }
+  .explanation p:last-child { margin-bottom: 0; }
+  .example {
+    margin: 1rem 0 .1rem;
+    padding: .8rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #c2e1ce;
+  }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  .content-table { width: 100%; border-collapse: collapse; background: #fff; font-size: .92rem; }
+  .content-table th,
+  .content-table td { padding: .7rem .85rem; border: 1px solid #c5dfd0; text-align: left; }
+  .content-table th { color: var(--lnl-dark); background: #daf3e1; }
+  .sequence { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin: 1rem 0 .15rem; }
+  .sequence span:nth-child(odd) {
+    background: white; border: 1px solid #c6dfce; padding: .5rem .7rem;
+    border-radius: 9px; font-weight: 750; color: var(--lnl-dark);
+  }
+  .check-panel { padding: .75rem 1rem; background: #fff9e8; border-radius: 9px; margin-top: 1rem; }
+  .activities-heading {
+    margin: 1.5rem 0 1rem;
+    color: #4c6170;
+    font-size: .84rem;
+    text-transform: uppercase;
+    letter-spacing: .055em;
+    font-weight: 850;
+    text-align: left;
+  }
+  .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .activity-card { padding: 1.15rem 1.25rem; border: 1px solid #dce6e0; background: #fafcfb; border-radius: 16px; }
+  .activity-card h4 { margin: 0 0 .75rem; color: var(--lnl-dark); line-height: 1.35; font-size: .98rem; }
+  .activity-card ol { margin: 0; padding-left: 1.45rem; list-style: lower-alpha; }
+  .activity-card li { margin-bottom: .65rem; padding-left: .1rem; line-height: 1.5; font-size: .94rem; }
+  .activity-card li:last-child { margin-bottom: 0; }
+  .lesson-bottom { margin: 1.1rem 0 0; border-top: 1px dashed #dbe6df; padding-top: .9rem; color: #5e716a; font-size: .88rem; }
+  .sda-recap,
+  .self-eval { padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 80px; }
+  .sda-recap h2,
+  .self-eval h2 { text-align: left; font-size: 1.45rem; color: var(--lnl-dark); margin: 0 0 .8rem; }
+  .sda-recap > p,
+  .self-eval > p { line-height: 1.65; color: var(--lnl-muted); }
+  /* Opciones de respuesta en cajas, como en Lengua de 5.º y 6.º. */
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.15rem 0;
+  }
+  .quiz-item {
+    min-width: 0;
+    border: 1px solid #d7e6db;
+    background: #fbfdfb;
+    border-radius: 13px;
+    padding: 1rem;
+  }
+  .quiz-prompt {
+    color: #274d37;
+    font-weight: 750;
+    font-size: .94rem;
+    line-height: 1.45;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: .6rem;
+    padding: .65rem .8rem;
+    margin: .5rem 0;
+    color: #334155;
+    cursor: pointer;
+    font: inherit;
+    font-size: .875rem;
+    line-height: 1.45;
+    transition: background-color .15s, border-color .15s;
+  }
+  .quiz-option:hover {
+    border-color: var(--lnl-green);
+    background: #f0fdf4;
+  }
+  .quiz-option[aria-pressed="true"] {
+    background: #e6f4ea;
+    border-color: var(--lnl-green);
+    color: var(--lnl-dark);
+    font-weight: 650;
+  }
+  .quiz-option:focus-visible {
+    outline: 3px solid #77ba92;
+    outline-offset: 2px;
+  }
+  .quiz-item.correct { border-color: #3c9961; }
+  .quiz-item.incorrect { border-color: #d79a71; }
+  .quiz-feedback {
+    margin: .6rem 0 0;
+    min-height: 1em;
+    font-size: .86rem;
+  }
+  .quiz-actions { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .lnl-btn { border: 0; border-radius: 11px; padding: .75rem 1.1rem; cursor: pointer; font: inherit; font-weight: 750; background: var(--lnl-green); color: #fff; }
+  .lnl-btn.secondary { background: #e9f3ed; color: var(--lnl-dark); }
+  .lnl-btn:hover,
+  .lnl-btn:focus-visible { filter: brightness(.94); outline-offset: 3px; }
+  #quiz-result { margin: .9rem 0 0; font-weight: 750; color: var(--lnl-dark); }
+  .reflection-list { padding-left: 1.4rem; line-height: 1.75; }
+  .reflection-list li { margin-bottom: .45rem; }
+  /* Estilos históricos del prototipo de apoyo, conservados sin uso. */
+  .support-block {
+    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #cfe1d4;
+    background: #f9fcfa;
+  }
+  .support-block h3 { margin: 0 0 .6rem; color: var(--lnl-dark); }
+  .support-block p { line-height: 1.55; }
+  .support-block ol { list-style: lower-alpha; padding-left: 1.5rem; line-height: 1.6; }
+  .support-block li { margin-bottom: .4rem; }
+
+  /* FICHAS DE REFUERZO Y AMPLIACIÓN - COHERENCIA CON LENGUA 5.º */
+  .sda-recap {
+    border: 2px solid #007a33;
+  }
+  .recap-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    margin: 0 0 1.5rem;
+  }
+  .recap-heading p { margin: .4rem 0 0; color: #65736b; font-size: .87rem; }
+  .heading-icon {
+    display: inline-grid;
+    place-items: center;
+    min-width: 3rem;
+    min-height: 2.8rem;
+    border-radius: 12px;
+    background: #007a33;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  .heading-icon--indigo { background: #4f46e5; }
+  .recap-sheet + .recap-sheet { margin-top: 2.5rem; }
+  .sheet-heading {
+    padding: .85rem 1rem;
+    border-left: 4px solid #007a33;
+    border-radius: 0 12px 12px 0;
+    background: #ecfdf3;
+    margin-bottom: 1.2rem;
+  }
+  .sheet-heading h3 { margin: 0; font-size: 1.05rem; color: #005724; }
+  .sheet-heading--ampliacion { background: #fffbeb; border-color: #d97706; }
+  .sheet-heading--ampliacion h3 { color: #92400e; }
+  .sheet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .sheet-card {
+    min-width: 0;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid #dce6e0;
+    border-radius: 16px;
+    background: #f8faf9;
+  }
+  .sheet-card h4 {
+    display: inline-block;
+    margin: 0 0 .75rem;
+    padding: .32rem .6rem;
+    border-radius: 7px;
+    background: #007a33;
+    color: white;
+    font-size: .9rem;
+    line-height: 1.35;
+  }
+  .sheet-card--ampliacion h4 { background: #b45309; }
+  .sheet-card p { margin: 0 0 .65rem; line-height: 1.55; font-size: .92rem; }
+  .sheet-questions { list-style: lower-alpha; margin: 0; padding-left: 1.5rem; }
+  .sheet-questions li { margin-bottom: .5rem; line-height: 1.5; font-size: .94rem; }
+  .sheet-questions li:last-child { margin-bottom: 0; }
+  .check-learning,
+  .self-eval {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 20px -2px rgba(0, 122, 51, .08);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    scroll-margin-top: 80px;
+  }
+  .check-learning h2 { margin: 0 0 .7rem; color: #005724; font-size: 1.4rem; text-align: left; }
+  .check-learning > p { line-height: 1.6; }
+  .self-eval { border: 2px solid #c7d2fe; }
+  .self-eval-grid { display: grid; gap: .9rem; }
+  .eval-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem;
+    background: #f8fafc;
+  }
+  .eval-statement { flex: 1 1 370px; margin: 0; line-height: 1.5; }
+  .eval-statement strong { color: #007a33; margin-right: .25rem; }
+  .auto-eval-group { flex: 0 1 410px; display: flex; gap: .35rem; flex-wrap: wrap; }
+  .eval-btn {
+    padding: .47rem .65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #475569;
+    font: inherit;
+    font-size: .75rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+  .eval-btn:hover,
+  .eval-btn:focus-visible { border-color: #4f46e5; outline-offset: 2px; }
+  .eval-btn[aria-pressed="true"] { color: white; background: #4f46e5; border-color: #4f46e5; }
+  .eval-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.3rem; }
+  #eval-status { flex: 1 1 240px; margin: 0; color: #475569; }
+  @media (max-width: 900px) {
+    .eval-row { flex-direction: column; align-items: stretch; }
+    .eval-statement, .auto-eval-group { flex: auto; }
+  }
+  @media (max-width: 760px) { .sheet-grid { grid-template-columns: 1fr; } }
+  @media print {
+    .auto-eval-group, .eval-actions, .quiz-actions { display: none; }
+    .sda-recap, .self-eval, .check-learning { box-shadow: none; }
+  }
+
+  .back-to-index { display: inline-flex; margin: 1.5rem 0 0; align-items: center; gap: .35rem; color: var(--lnl-dark); font-weight: 800; }
+  .footer-bottom a { text-decoration: none; }
+  @media (max-width: 760px) {
+    .topic-hero { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
+    .topic-hero-image { align-self: center; width: min(45%, 170px); max-height: 180px; }
+    .activity-grid,
+    .quiz-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .topic-shell { width: min(96%, 1180px); padding-top: .7rem; }
+    .topic-hero { border-radius: 17px; }
+    .lesson-section { padding: 1.15rem; }
+    .sda-nav { padding: 1rem; }
+    .lesson-heading-wrap { gap: .55rem; }
+    .section-number { min-width: 2.85rem; font-size: .95rem; }
+    .reading-text { line-height: 1.72; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  
+
+/* Ajustes de navegación y presentación fijados con LNL4.2 */
+  .sda-nav {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #d1fae5;
+  }
+  .sda-nav h2 {
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    color: #007a33;
+    margin: 0 0 .75rem;
+    text-align: left;
+  }
+  .sda-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .sda-nav-links a {
+    padding: .375rem .75rem;
+    font-size: .83rem;
+    line-height: 1.5;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #334155;
+    transition: background-color .18s, color .18s;
+    text-decoration: none;
+  }
+  .sda-nav-links a:hover,
+  .sda-nav-links a:focus-visible {
+    color: #fff;
+    background: #007a33;
+  }
+  .sda-nav-links a.nav-repaso {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-repaso:hover,
+  .sda-nav-links a.nav-repaso:focus-visible {
+    background: #d97706;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-autoevaluacion {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-autoevaluacion:hover,
+  .sda-nav-links a.nav-autoevaluacion:focus-visible {
+    background: #4f46e5;
+    color: #fff;
+  }
+  .sda-nav-links a.nav-comprueba {
+    background: #e7f5e9;
+    color: #166534;
+    font-weight: 750;
+  }
+  .sda-nav-links a.nav-comprueba:hover,
+  .sda-nav-links a.nav-comprueba:focus-visible {
+    background: #007a33;
+    color: #fff;
+  }
+  /* Las columnas no pueden forzar desplazamiento horizontal en móvil. */
+  .topic-content { grid-template-columns: minmax(0, 1fr); }
+  .topic-content > section {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .reading-box,
+  .explanation,
+  .activity-card,
+  .sheet-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  /* Protección frente a la regla general de centrado de .section-heading. */
+  .lesson-section-heading {
+    text-align: left;
+  }
+  .quiz-option {
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    padding: .65rem .8rem;
+    text-align: left;
+    cursor: pointer;
+  }
+  .quiz-option[aria-pressed="true"] {
+    border-color: #007a33;
+    background: #e6f4ea;
+    color: #005724;
+    font-weight: 700;
+  }
+  @media (max-width: 480px) {
+    .sda-nav { padding: 1rem; }
+    .sda-nav-links a { font-size: .78rem; }
+  }
+
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+<!-- BANNER INSTITUCIONAL -->
+<header class="site-banner">
+<a aria-label="Ir al inicio del centro" href="/">
+<img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/>
+</a>
+</header>
+<!-- NAVEGACIÓN GENERAL -->
+<div class="navigation-wrapper">
+<div class="navigation-container">
+<a aria-label="Ir a Inicio" class="navigation-logo" href="/">
+<img alt="" src="/img/logo-centro.png"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation">
+<ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red">
+<a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">🔒 Área privada Profesorado</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<!-- CONTENIDO DE LA SITUACIÓN DE APRENDIZAJE -->
+<main class="topic-page" id="contenido-principal">
+<div class="topic-shell">
+<nav aria-label="Migas de pan" class="breadcrumbs">
+<ol>
+<li><a href="/">Inicio</a></li>
+<li><a href="/recursos/">Recursos educativos</a></li>
+<li><a href="/recursos/tercero/">3.º de Primaria</a></li>
+<li><a href="/recursos/tercero/lengua3/">Lengua Castellana y Literatura</a></li>
+<li aria-current="page">Nos comunicamos con palabras</li>
+</ol>
+</nav>
+<!-- PORTADA DE LA SdA -->
+<section aria-labelledby="titulo-sda" class="topic-hero">
+<div class="topic-hero-content">
+<p class="topic-kicker">Lengua Castellana y Literatura · 3.º de Primaria</p>
+<h1 id="titulo-sda">1. Nos comunicamos con palabras</h1>
+<p>Leemos, escuchamos y escribimos para compartir mensajes sencillos, correctos y claros.</p>
+</div>
+<img alt="" class="topic-hero-image" onerror="this.hidden = true" src="/img/tomatito/tomatito-comunicacion.png"/>
+</section>
+<!-- ÍNDICE DE CONTENIDOS -->
+<nav aria-label="Contenidos de la situación de aprendizaje" class="sda-nav"><h2>📍 Contenidos de la Situación de Aprendizaje</h2><div class="sda-nav-links"><a href="#sec-1">1.1 Comprensión lectora inicial</a><a href="#sec-2">1.2 Diccionario y vocabulario</a><a href="#sec-3">1.3 Sonidos, letras, sílabas y palabras</a><a href="#sec-4">1.4 Mayúsculas y signos de puntuación</a><a href="#sec-5">1.5 El sustantivo</a><a href="#sec-6">1.6 El artículo y la concordancia</a><a href="#sec-7">1.7 La comunicación oral y escrita</a><a href="#sec-8">1.8 Comprensión lectora aplicada</a><a href="#sec-9">1.9 Producción escrita: mensajes y carteles</a><a class="nav-repaso" href="#sec-repaso">🔄 Repasamos lo aprendido</a><a class="nav-comprueba" href="#sec-comprueba">✔ Comprueba lo aprendido</a><a class="nav-autoevaluacion" href="#sec-autoevaluacion">🎯 Autoevaluación</a></div></nav>
+<div class="topic-content">
+
+<section aria-labelledby="titulo-sec-1" class="lesson-section" id="sec-1">
+<!-- APARTADO 1.1 · CRITERIO PRINCIPAL DOCENTE: LCL.3.4.1 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.1</span>
+<h2 class="lesson-section-heading" id="titulo-sec-1">Comprensión lectora inicial</h2>
+</div>
+<p class="section-intro">Leemos una historia, encontramos sus datos más importantes y aprendemos a explicar lo que sucede.</p>
+<article aria-label="Lectura: El mensaje de la caja verde" class="reading-box">
+<h3>📖 El mensaje de la caja verde</h3>
+<div class="reading-text">
+<p>El lunes, la clase de tercero encontró una nota pegada en la puerta. Decía: «¡Tenemos una sorpresa!». Debajo había un dibujo de una caja y una flecha que señalaba la biblioteca. A Nuria le entró mucha curiosidad. A Pablo también, aunque pensó que quizá la flecha indicaba otro lugar.</p>
+<p>Cuando llegaron a la biblioteca, la maestra Rosa les enseñó una caja verde llena de tarjetas. Algunas estaban escritas con letras grandes, otras tenían dibujos y varias llevaban una palabra desconocida. —Vamos a organizar una pequeña feria de intercambio de cuentos —explicó—. Cada grupo preparará un aviso para invitar a otras clases.</p>
+<p>Nuria leyó una tarjeta en voz alta: «Traed un libro el jueves». Pablo levantó la mano. —¿A qué hora? ¿Y dónde debemos dejarlo? —preguntó. La maestra sonrió: —Habéis descubierto algo importante. Un aviso debe tener toda la información necesaria para que los demás lo comprendan.</p>
+<p>Primero decidieron reunir los datos: la feria sería el jueves, a las once de la mañana, en la biblioteca. Cada participante podría llevar un cuento que estuviera en buen estado y cambiarlo por otro. Después escribieron un borrador: «El jueves hay feria de libros en la biblioteca. Comienza a las once. ¡Trae un cuento y descubre otro!».</p>
+<p>Al revisarlo, Nuria observó que faltaba una mayúscula al comienzo de una de las frases. Pablo encontró dos palabras que estaban pegadas y las separó. Julia añadió el signo de exclamación que faltaba. Entre todos corrigieron el texto sin burlarse de los errores de nadie.</p>
+<p>La maestra les pidió que pensaran en los niños de primero. —¿Entenderán la palabra «intercambio»? —preguntó. Nuria propuso escribir debajo: «Trae un cuento y llévate otro». Así, los más pequeños comprenderían mejor la idea. También dibujaron dos libros con flechas entre ellos.</p>
+<p>El miércoles colocaron el cartel en un lugar visible. A la mañana siguiente llegaron estudiantes de varias clases. Muchos llevaron cuentos y algunos preguntaron qué debían hacer. Nuria y Pablo los atendieron con calma: escuchaban primero y respondían después.</p>
+<p>Al finalizar la feria, Rosa les preguntó qué habían aprendido. Pablo contestó: —Que las palabras sirven para contar cosas, pero también para ayudar a otros. Nuria añadió: —Y que antes de colocar un cartel hay que leerlo, corregirlo y pensar en quién va a recibirlo. La caja verde quedó vacía, pero la biblioteca se llenó de nuevas historias.</p>
+</div>
+</article>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Para comprender un relato, primero averiguamos <strong>de qué trata</strong>. Después buscamos los datos: <strong>quién</strong> participa, <strong>dónde</strong> ocurre, <strong>cuándo</strong> sucede y <strong>qué</strong> pasa.</p><p>Algunas respuestas aparecen directamente en el texto. Otras se descubren usando pistas. Si decimos lo que pensamos, debemos contar qué parte de la lectura nos ayuda a creerlo.</p><div class="example"><strong>Ejemplo:</strong> «Pablo preguntó a qué hora empezaba la feria». Sabemos que faltaba ese dato en el aviso; podemos deducir que deseaba informar bien a sus compañeros.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.4.1">
+<h4>Actividad 1. Localizamos los datos</h4>
+<ol>
+<li>¿Qué apareció en la puerta de tercero el lunes?</li>
+<li>¿De qué color era la caja que encontraron en la biblioteca?</li>
+<li>¿En qué lugar se celebraría la feria de cuentos?</li>
+<li>¿A qué hora empezaría la actividad?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.4.1">
+<h4>Actividad 2. Ordenamos la historia</h4>
+<ol>
+<li>Explica qué hicieron antes de escribir el cartel.</li>
+<li>¿Qué ocurrió primero: revisar el aviso o colocarlo?</li>
+<li>Ordena: recibir invitados, preparar un borrador, corregir y colocar el cartel.</li>
+<li>Escribe dos oraciones que cuenten el final de la historia.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.4.1">
+<h4>Actividad 3. Comprendemos las pistas</h4>
+<ol>
+<li>¿Por qué Pablo pidió más datos sobre la feria?</li>
+<li>¿Para qué cambiaron la palabra «intercambio» por una frase más sencilla?</li>
+<li>¿Por qué revisaron las mayúsculas y los signos?</li>
+<li>¿Qué muestra que Nuria y Pablo escucharon con respeto a los visitantes?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.4.2">
+<h4>Actividad 4. Pensamos y opinamos</h4>
+<ol>
+<li>Propón otro título adecuado para la lectura.</li>
+<li>¿Te gustaría participar en esa feria? Explica por qué.</li>
+<li>Escribe una enseñanza que aprendieron los protagonistas.</li>
+<li>Inventa una pregunta que le harías a la maestra Rosa.</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-2" class="lesson-section" id="sec-2">
+<!-- APARTADO 1.2 · CRITERIO PRINCIPAL DOCENTE: LCL.3.9.1 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.2</span>
+<h2 class="lesson-section-heading" id="titulo-sec-2">Diccionario y vocabulario</h2>
+</div>
+<p class="section-intro">Aprendemos a buscar palabras en el diccionario y a comprender lo que significan dentro de una frase.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>El <strong>diccionario</strong> explica el significado y la escritura de muchas palabras. Se organiza en <strong>orden alfabético</strong>: primero buscamos la letra inicial y después comparamos las siguientes letras.</p><p>Al buscar una palabra que está en plural, suele ser útil pasarla al singular: <em>cuentos → cuento</em>. Algunas palabras tienen más de un significado: para elegir el adecuado nos fijamos en la oración.</p><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Palabra</th><th scope="col">Significado en una oración</th></tr></thead><tbody><tr><td>banco</td><td>«Me senté en el banco del patio»: asiento.</td></tr><tr><td>carta</td><td>«Llegó una carta a clase»: mensaje escrito.</td></tr><tr><td>hoja</td><td>«Escribí en una hoja»: papel.</td></tr></tbody></table></div><div class="example"><strong>Ejemplo:</strong> Para encontrar <em>biblioteca</em> buscamos primero la letra <strong>b</strong>, luego la <strong>i</strong> y continuamos en orden alfabético.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 1. Ponemos palabras en orden</h4>
+<ol>
+<li>Ordena: cuento, caja, cartel, camino.</li>
+<li>¿Qué palabra aparece antes: biblioteca o barco?</li>
+<li>Ordena: mesa, mano, mapa, mundo.</li>
+<li>¿Qué letra compararías para ordenar «casa» y «carta»?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 2. Buscamos palabras</h4>
+<ol>
+<li>¿Cómo buscarías «libros» en el diccionario?</li>
+<li>¿Cómo buscarías «flores»?</li>
+<li>Explica con tus palabras qué significa «aviso».</li>
+<li>Escribe una palabra de la lectura que buscarías y explica por qué.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 3. Elegimos un significado</h4>
+<ol>
+<li>¿Qué significa «banco» en «El abuelo descansa en el banco»?</li>
+<li>¿Qué significa «hoja» en «El viento movió la hoja del árbol»?</li>
+<li>Inventa una oración con «carta» que signifique mensaje.</li>
+<li>¿Cómo te ayuda la frase a comprender una palabra?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 4. Ampliamos el vocabulario</h4>
+<ol>
+<li>Escribe una palabra parecida a «contento».</li>
+<li>Sustituye «grande» por una palabra de significado semejante.</li>
+<li>Explica el significado de «destinatario» usando una frase sencilla.</li>
+<li>Escribe una oración nueva con la palabra «biblioteca».</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-3" class="lesson-section" id="sec-3">
+<!-- APARTADO 1.3 · CRITERIO PRINCIPAL DOCENTE: LCL.3.9.1 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.3</span>
+<h2 class="lesson-section-heading" id="titulo-sec-3">Sonidos, letras, sílabas y palabras</h2>
+</div>
+<p class="section-intro">Recordamos cómo los sonidos se representan con letras y cómo las sílabas forman palabras.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Al hablar pronunciamos <strong>sonidos</strong>; al escribir los representamos con <strong>letras</strong>. El <strong>abecedario</strong> español tiene 27 letras. Las vocales son <strong>a, e, i, o, u</strong>; las demás letras son consonantes.</p><p>Una <strong>sílaba</strong> es cada golpe de voz en que podemos dividir una palabra. Todas las sílabas contienen al menos una vocal. Según su número de sílabas, las palabras pueden ser <strong>monosílabas</strong> (una), <strong>bisílabas</strong> (dos), <strong>trisílabas</strong> (tres) o <strong>polisílabas</strong> (cuatro o más).</p><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Palabra</th><th scope="col">Separación</th><th scope="col">N.º de sílabas</th><th scope="col">Clase</th></tr></thead><tbody><tr><td>sol</td><td>sol</td><td>1</td><td>monosílaba</td></tr><tr><td>mesa</td><td>me-sa</td><td>2</td><td>bisílaba</td></tr><tr><td>camino</td><td>ca-mi-no</td><td>3</td><td>trisílaba</td></tr><tr><td>mariposa</td><td>ma-ri-po-sa</td><td>4</td><td>polisílaba</td></tr></tbody></table></div><div class="example"><strong>Recuerda:</strong> <em>ch</em>, <em>ll</em> y <em>rr</em> representan sonidos con grupos de dos letras; no son letras independientes del abecedario.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 1. Reconocemos letras</h4>
+<ol>
+<li>Escribe las cinco vocales.</li>
+<li>Cuenta las letras de «luna».</li>
+<li>Señala las consonantes de «mesa».</li>
+<li>Escribe una palabra que empiece por cada vocal.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 2. Separamos en sílabas</h4>
+<ol>
+<li>Separa en sílabas: pelota, mesa, ventana y sol.</li>
+<li>¿Cuántas sílabas tiene «biblioteca»?</li>
+<li>Escribe una palabra de tres sílabas.</li>
+<li>Identifica la sílaba inicial de «camino».</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 3. Clasificamos palabras</h4>
+<ol>
+<li>Clasifica «tren» por su número de sílabas.</li>
+<li>Clasifica «zapato» por su número de sílabas.</li>
+<li>Escribe una palabra bisílaba y otra polisílaba.</li>
+<li>¿Qué clase de palabra es «mariposa»?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 4. Jugamos con sílabas</h4>
+<ol>
+<li>Une «ca» y «sa» para formar una palabra.</li>
+<li>Ordena las sílabas «ta–pe–lo» para formar una palabra.</li>
+<li>Cambia la primera sílaba de «pato» para formar otra palabra real.</li>
+<li>Escribe dos palabras que empiecen por «pa».</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-4" class="lesson-section" id="sec-4">
+<!-- APARTADO 1.4 · CRITERIO PRINCIPAL DOCENTE: LCL.3.9.2 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.4</span>
+<h2 class="lesson-section-heading" id="titulo-sec-4">Mayúsculas y signos de puntuación</h2>
+</div>
+<p class="section-intro">Utilizamos las mayúsculas, el punto, la coma y los signos de interrogación y exclamación.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Escribimos <strong>mayúscula</strong> al comenzar un texto, después de un punto y en nombres propios de personas, lugares y centros: <em>Lucía</em>, <em>Córdoba</em>. Los nombres comunes, como <em>escuela</em> o <em>ciudad</em>, se escriben con minúscula si no empiezan una oración.</p><p>El <strong>punto</strong> señala el final de una oración; la <strong>coma</strong> ayuda a separar palabras de una enumeración. Las preguntas llevan signos de <strong>¿ ?</strong> y las exclamaciones llevan <strong>¡ !</strong>, tanto al inicio como al final.</p><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Signo</th><th scope="col">Para qué sirve</th><th scope="col">Ejemplo</th></tr></thead><tbody><tr><td>.</td><td>Terminar una oración</td><td>Mañana hay una feria.</td></tr><tr><td>,</td><td>Separar elementos</td><td>Trae lápiz, papel y colores.</td></tr><tr><td>¿ ?</td><td>Escribir una pregunta</td><td>¿Dónde está la caja?</td></tr><tr><td>¡ !</td><td>Expresar emoción</td><td>¡Qué alegría!</td></tr></tbody></table></div><div class="example"><strong>Ejemplo corregido:</strong> «ana vive en sevilla hoy está contenta» → «Ana vive en Sevilla. Hoy está contenta».</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.9.2">
+<h4>Actividad 1. Escribimos mayúsculas</h4>
+<ol>
+<li>Corrige: «lucía vino a clase».</li>
+<li>Corrige: «visitamos córdoba en mayo».</li>
+<li>Escribe el nombre de una persona y de una ciudad.</li>
+<li>Explica por qué «Nuria» empieza con mayúscula.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.2">
+<h4>Actividad 2. Colocamos puntos</h4>
+<ol>
+<li>Puntúa: «La feria empieza a las once Trae un cuento».</li>
+<li>Separa en dos oraciones: «Me gusta leer Tengo tres libros».</li>
+<li>Escribe una oración que termine en punto.</li>
+<li>¿Qué escribimos después de un punto: mayúscula o minúscula?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.2">
+<h4>Actividad 3. Usamos la coma</h4>
+<ol>
+<li>Añade comas: «Llevo lápices gomas reglas y cuadernos».</li>
+<li>Escribe una lista de tres animales con las comas adecuadas.</li>
+<li>Corrige: «Compramos pan, leche, y queso».</li>
+<li>¿Para qué sirve la coma en una enumeración?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.2">
+<h4>Actividad 4. Preguntamos y exclamamos</h4>
+<ol>
+<li>Escribe correctamente: «donde está la biblioteca».</li>
+<li>Escribe correctamente: «que sorpresa».</li>
+<li>Inventa una pregunta para la maestra Rosa.</li>
+<li>Inventa una exclamación de alegría.</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-5" class="lesson-section" id="sec-5">
+<!-- APARTADO 1.5 · CRITERIO PRINCIPAL DOCENTE: LCL.3.9.1 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.5</span>
+<h2 class="lesson-section-heading" id="titulo-sec-5">El sustantivo</h2>
+</div>
+<p class="section-intro">Reconocemos los nombres de personas, animales, lugares, objetos y sentimientos.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Un <strong>sustantivo</strong> o <strong>nombre</strong> sirve para nombrar personas (<em>maestra</em>), animales (<em>perro</em>), lugares (<em>patio</em>), objetos (<em>libro</em>) e ideas o sentimientos (<em>alegría</em>).</p><p>Los <strong>nombres comunes</strong> designan seres o cosas de una clase: <em>niña, río</em>. Los <strong>nombres propios</strong> nombran a alguien o a un lugar concreto y comienzan con mayúscula: <em>Nuria, Guadalquivir</em>. Los sustantivos tienen <strong>género</strong> (masculino o femenino) y <strong>número</strong> (singular o plural).</p><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Sustantivo</th><th scope="col">Clase</th><th scope="col">Género</th><th scope="col">Número</th></tr></thead><tbody><tr><td>libro</td><td>común</td><td>masculino</td><td>singular</td></tr><tr><td>mesas</td><td>común</td><td>femenino</td><td>plural</td></tr><tr><td>Córdoba</td><td>propio</td><td>—</td><td>singular</td></tr><tr><td>niñas</td><td>común</td><td>femenino</td><td>plural</td></tr></tbody></table></div><div class="example"><strong>Ejemplo:</strong> <em>niña → niñas</em> cambia de singular a plural. <em>Córdoba</em> es un nombre propio y lleva mayúscula.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 1. Buscamos sustantivos</h4>
+<ol>
+<li>Copia los sustantivos: «La niña abrió un libro».</li>
+<li>Señala el sustantivo: «Nuria corre por el patio».</li>
+<li>Escribe dos sustantivos de animales.</li>
+<li>Escribe dos sustantivos de objetos de tu clase.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 2. Comunes y propios</h4>
+<ol>
+<li>Clasifica «río» y «Guadalquivir».</li>
+<li>Clasifica «maestra» y «Rosa».</li>
+<li>Escribe un nombre propio de persona y otro de lugar.</li>
+<li>Corrige: «pablo vive en alcolea».</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 3. Género de los nombres</h4>
+<ol>
+<li>Indica el género de «mesa» y «libro».</li>
+<li>Escribe el femenino de «niño».</li>
+<li>Escribe el masculino de «gato».</li>
+<li>Completa con un sustantivo femenino: «la ____».</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 4. Singular y plural</h4>
+<ol>
+<li>Escribe el plural de «cuento» y «lápiz».</li>
+<li>Escribe el singular de «mesas» y «flores».</li>
+<li>Cambia «el libro» a plural.</li>
+<li>Escribe una oración que contenga dos sustantivos en plural.</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-6" class="lesson-section" id="sec-6">
+<!-- APARTADO 1.6 · CRITERIO PRINCIPAL DOCENTE: LCL.3.9.1 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.6</span>
+<h2 class="lesson-section-heading" id="titulo-sec-6">El artículo y la concordancia</h2>
+</div>
+<p class="section-intro">Aprendemos a elegir artículos y a hacerlos concordar con los sustantivos.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Los <strong>artículos</strong> acompañan a los sustantivos y ayudan a identificarlos. Pueden ser <strong>determinados</strong> (<em>el, la, los, las</em>) o <strong>indeterminados</strong> (<em>un, una, unos, unas</em>).</p><p>El artículo y el sustantivo deben <strong>concordar en género y número</strong>: decimos <em>la mesa</em> y <em>los libros</em>, no «el mesa» ni «los libro».</p><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Número</th><th scope="col">Masculino determinado</th><th scope="col">Femenino determinado</th><th scope="col">Masculino indeterminado</th><th scope="col">Femenino indeterminado</th></tr></thead><tbody><tr><td>Singular</td><td>el</td><td>la</td><td>un</td><td>una</td></tr><tr><td>Plural</td><td>los</td><td>las</td><td>unos</td><td>unas</td></tr></tbody></table></div><p>Cuando la preposición <em>a</em> se une al artículo <em>el</em> se forma <strong>al</strong>; cuando <em>de</em> se une a <em>el</em> se forma <strong>del</strong>: <em>Vamos al patio</em>; <em>El libro del niño</em>.</p><div class="example"><strong>Ejemplo:</strong> «unas ventana» es incorrecto; escribimos «unas ventanas».</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 1. Reconocemos artículos</h4>
+<ol>
+<li>Copia los artículos: «La niña trajo un cuento».</li>
+<li>Indica los artículos de «los libros y unas carpetas».</li>
+<li>Escribe los cuatro artículos determinados.</li>
+<li>Escribe los cuatro artículos indeterminados.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 2. Elegimos el artículo</h4>
+<ol>
+<li>Completa: «___ ventana» (determinado singular).</li>
+<li>Completa: «___ gatos» (indeterminado plural).</li>
+<li>Completa: «___ flores» (determinado plural).</li>
+<li>Completa: «___ lápiz» (indeterminado singular).</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 3. Revisamos la concordancia</h4>
+<ol>
+<li>Corrige: «los cuento».</li>
+<li>Corrige: «una libros».</li>
+<li>Pasa «la mesa» a plural.</li>
+<li>Pasa «unos amigos» a singular.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.9.1">
+<h4>Actividad 4. Usamos al y del</h4>
+<ol>
+<li>Completa: «Vamos ___ recreo» (a + el).</li>
+<li>Completa: «El dibujo ___ libro» (de + el).</li>
+<li>Explica con qué palabras se forma «al».</li>
+<li>Escribe una oración con «del».</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-7" class="lesson-section" id="sec-7">
+<!-- APARTADO 1.7 · CRITERIO PRINCIPAL DOCENTE: LCL.3.3.2 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.7</span>
+<h2 class="lesson-section-heading" id="titulo-sec-7">La comunicación oral y escrita</h2>
+</div>
+<p class="section-intro">Descubrimos cómo nos comunicamos hablando, escuchando, leyendo, escribiendo y usando gestos.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>La <strong>comunicación</strong> ocurre cuando compartimos información con otras personas. El <strong>emisor</strong> transmite un mensaje y el <strong>receptor</strong> lo recibe. El <strong>mensaje</strong> es lo que queremos comunicar. Puede llegar por un <strong>canal</strong>, como la voz, un papel o una pantalla.</p><p>La comunicación puede ser <strong>oral</strong> (conversación), <strong>escrita</strong> (cartel) o <strong>no verbal</strong> (gesto o dibujo). Para entendernos mejor, escuchamos sin interrumpir, hablamos con claridad y elegimos palabras adecuadas para quien nos escucha o lee.</p><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Situación</th><th scope="col">Emisor</th><th scope="col">Receptor</th><th scope="col">Mensaje</th></tr></thead><tbody><tr><td>Nuria invita a Pablo</td><td>Nuria</td><td>Pablo</td><td>La invitación</td></tr><tr><td>Un cartel anuncia una feria</td><td>Quien lo escribe</td><td>Quien lee el cartel</td><td>Información sobre la feria</td></tr></tbody></table></div><div class="example"><strong>Ejemplo:</strong> En «¿Puedes ayudarme?», quien pregunta es emisor y quien escucha es receptor. Cuando contesta, intercambian los papeles.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.2.1">
+<h4>Actividad 1. Emisor y receptor</h4>
+<ol>
+<li>En una conversación, ¿quién es el emisor?</li>
+<li>Cuando Pablo escucha a Nuria, ¿quién es el receptor?</li>
+<li>¿Quién es el emisor de un cartel escolar?</li>
+<li>¿Puede cambiar el emisor durante una conversación? Explica.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.3.2">
+<h4>Actividad 2. Tipos de comunicación</h4>
+<ol>
+<li>Clasifica: hablar por teléfono, escribir una carta, hacer un gesto de saludo.</li>
+<li>Indica si un cartel es comunicación oral o escrita.</li>
+<li>Escribe un ejemplo de comunicación no verbal.</li>
+<li>¿Qué tipo de comunicación utilizamos al contar un cuento en voz alta?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.3.2">
+<h4>Actividad 3. Escuchamos con respeto</h4>
+<ol>
+<li>Escribe dos normas para escuchar a otra persona.</li>
+<li>Explica por qué no debemos interrumpir.</li>
+<li>Inventa una pregunta educada para pedir información.</li>
+<li>Transforma «¡Dame eso!» en una petición amable.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.3.1">
+<h4>Actividad 4. Adaptamos los mensajes</h4>
+<ol>
+<li>¿Hablarías igual a un amigo que a un bebé? Explica.</li>
+<li>Escribe una invitación breve para un compañero de tercero.</li>
+<li>Escribe una frase sencilla para informar a primero.</li>
+<li>¿Qué dato no debería faltar en un cartel de una actividad?</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-8" class="lesson-section" id="sec-8">
+<!-- APARTADO 1.8 · CRITERIO PRINCIPAL DOCENTE: LCL.3.4.2 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.8</span>
+<h2 class="lesson-section-heading" id="titulo-sec-8">Comprensión lectora aplicada</h2>
+</div>
+<p class="section-intro">Leemos un segundo texto para aplicar el vocabulario, la gramática y las normas de comunicación.</p>
+<article aria-label="Lectura: Una nota para el huerto" class="reading-box">
+<h3>📖 Una nota para el huerto</h3>
+<div class="reading-text">
+<p>En el huerto del colegio había crecido una planta que nadie recordaba haber sembrado. Tenía hojas pequeñas y unas flores amarillas. Leo quiso contar el descubrimiento a todo el centro y escribió una nota: «Ha salido. Venid a verla». La colocó en el tablón de anuncios.</p>
+<p>Pasó una hora y nadie apareció. Su amiga Amina leyó el aviso y le preguntó: —¿Qué ha salido? ¿Dónde está? Leo respondió que hablaba de la planta del huerto. —Entonces, tendremos que explicarlo —dijo Amina—. Las personas que leen la nota no pueden adivinarlo.</p>
+<p>Los dos fueron al huerto y observaron la planta sin arrancarla. En el cuaderno escribieron cuatro datos: era pequeña, tenía flores amarillas, estaba junto al limonero y la habían descubierto el martes. Después prepararon un mensaje nuevo.</p>
+<p>La nota decía: «¡Una planta nueva en el huerto! El martes encontramos una planta de flores amarillas junto al limonero. Puedes observarla durante el recreo con permiso de tu maestra o maestro. No arranques sus hojas ni sus flores».</p>
+<p>Antes de publicarla, Amina leyó las frases despacio. Encontró un punto que faltaba al final y lo añadió. Leo decidió dibujar la planta para que resultara más fácil reconocerla. Los dos comprobaron que el mensaje decía qué había ocurrido, dónde y cuándo.</p>
+<p>Después de colocar la nota, varios compañeros visitaron el huerto. Una niña de segundo preguntó: —¿Podemos tocar la planta? Leo contestó: —Es mejor mirarla sin hacerle daño. Amina señaló el dibujo del cartel y explicó por qué habían elegido palabras sencillas.</p>
+<p>Al regresar a clase, Leo escribió en su diario: «Hoy he aprendido que un mensaje claro es como un mapa: ayuda a otras personas a encontrar lo que buscan». Amina pensó que, aunque la planta era pequeña, había servido para enseñarles algo muy grande.</p>
+</div>
+</article>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Cuando lees un <strong>aviso</strong>, comprueba que puedes responder qué sucede, dónde, cuándo y qué deben hacer las personas que lo leen. Para comprenderlo, relaciona el texto con sus dibujos y con la situación.</p><p>En esta lectura también podemos descubrir <strong>sustantivos</strong> (planta, huerto), <strong>artículos</strong> (la, el), <strong>mayúsculas</strong> y <strong>signos de puntuación</strong>. Un mismo texto nos sirve para practicar varios aprendizajes.</p><div class="example"><strong>Ejemplo:</strong> «Una planta nueva en el huerto» es un título más informativo que «Ha salido» porque indica qué ha sucedido y dónde.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.4.2">
+<h4>Actividad 1. Entendemos la lectura</h4>
+<ol>
+<li>¿Qué apareció en el huerto?</li>
+<li>¿Dónde estaba la planta?</li>
+<li>¿Qué día la descubrieron?</li>
+<li>¿Qué consejo incluía el cartel para cuidar la planta?</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.4.2">
+<h4>Actividad 2. Buscamos información</h4>
+<ol>
+<li>¿Por qué nadie acudió después del primer mensaje?</li>
+<li>¿Qué dos datos añadieron al nuevo aviso?</li>
+<li>¿Para qué dibujaron la planta?</li>
+<li>Escribe un título diferente que también informe con claridad.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.4.2">
+<h4>Actividad 3. Revisamos las palabras</h4>
+<ol>
+<li>Copia tres sustantivos de la segunda lectura.</li>
+<li>Busca un artículo determinado y otro indeterminado.</li>
+<li>Elige un nombre propio del relato y explica su mayúscula.</li>
+<li>Separa en sílabas «planta», «huerto» y «limonero».</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.4.2">
+<h4>Actividad 4. Damos nuestra opinión</h4>
+<ol>
+<li>¿Hicieron bien en no arrancar la planta? ¿Por qué?</li>
+<li>¿Qué enseñanza recibió Leo al final?</li>
+<li>¿A quién podría dirigirse el cartel del huerto?</li>
+<li>Inventa una pregunta para Amina sobre su trabajo.</li>
+</ol>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="titulo-sec-9" class="lesson-section" id="sec-9">
+<!-- APARTADO 1.9 · CRITERIO PRINCIPAL DOCENTE: LCL.3.5.1 -->
+<div class="lesson-heading-wrap">
+<span aria-hidden="true" class="section-number">1.9</span>
+<h2 class="lesson-section-heading" id="titulo-sec-9">Producción escrita: mensajes y carteles</h2>
+</div>
+<p class="section-intro">Elaboramos mensajes y carteles útiles para anunciar una actividad del colegio.</p>
+<div class="explanation"><h3>Aprendemos</h3>
+<p>Un <strong>cartel</strong> debe tener un título visible, información breve y clara y, si ayuda, un dibujo. Antes de escribir, piensa en el <strong>destinatario</strong> y en la finalidad: informar, invitar o recordar una norma.</p><p>Para crear un mensaje sigue estos pasos: <strong>1.</strong> Anota qué, dónde y cuándo. <strong>2.</strong> Escribe frases cortas. <strong>3.</strong> Revisa mayúsculas, puntos, artículos y sustantivos. <strong>4.</strong> Comprueba que otras personas puedan entenderlo.</p><div aria-label="Pasos para crear un cartel" class="sequence"><span>Planifico</span><span>→</span><span>Escribo</span><span>→</span><span>Reviso</span><span>→</span><span>Comparto</span></div><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col">Elemento</th><th scope="col">Ejemplo para una feria</th></tr></thead><tbody><tr><td>Título</td><td>¡Feria de cuentos!</td></tr><tr><td>Qué</td><td>Trae un cuento en buen estado.</td></tr><tr><td>Dónde</td><td>En la biblioteca.</td></tr><tr><td>Cuándo</td><td>Jueves, a las once.</td></tr></tbody></table></div><div class="example"><strong>Producto final:</strong> Crear en equipo un cartel y una nota corta para anunciar una actividad, adaptando las palabras al público que recibirá cada mensaje.</div>
+</div>
+<h3 class="activities-heading">Actividades para practicar</h3>
+<div class="activity-grid">
+<article class="activity-card" data-criterio="LCL.3.5.1">
+<h4>Actividad 1. Planificamos el mensaje</h4>
+<ol>
+<li>Elige una actividad del colegio que quieras anunciar.</li>
+<li>Escribe quién va a leer tu cartel.</li>
+<li>Anota el lugar y la fecha de la actividad.</li>
+<li>Escribe la idea principal que quieres comunicar.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.5.1">
+<h4>Actividad 2. Redactamos el cartel</h4>
+<ol>
+<li>Inventa un título corto y llamativo.</li>
+<li>Escribe una oración que diga qué actividad se celebrará.</li>
+<li>Añade dónde y cuándo tendrá lugar.</li>
+<li>Incluye una invitación amable para participar.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.5.1">
+<h4>Actividad 3. Adaptamos el mensaje</h4>
+<ol>
+<li>Escribe una versión del aviso para niños de primero.</li>
+<li>Escribe una nota breve para las familias.</li>
+<li>Explica qué palabras has cambiado y por qué.</li>
+<li>Propón un dibujo que facilite la comprensión.</li>
+</ol>
+</article>
+<article class="activity-card" data-criterio="LCL.3.5.1">
+<h4>Actividad 4. Revisamos y compartimos</h4>
+<ol>
+<li>Subraya las mayúsculas que has utilizado.</li>
+<li>Comprueba los puntos y los signos que hayas escrito.</li>
+<li>Revisa la concordancia entre artículos y sustantivos.</li>
+<li>Lee el cartel a un compañero y anota una mejora.</li>
+</ol>
+</article>
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- REPASAMOS LO APRENDIDO -->
+<!-- ====================================================== -->
+<section aria-labelledby="titulo-repaso" class="sda-recap" id="sec-repaso">
+<div class="recap-heading">
+<span aria-hidden="true" class="heading-icon">🔄</span>
+<div>
+<h2 class="lesson-section-heading" id="titulo-repaso">
+                Repasamos lo aprendido
+              </h2>
+<p>Una actividad de cuatro cuestiones por apartado en cada ficha.</p>
+</div>
+</div>
+<!-- FICHA DE REFUERZO -->
+
+<!-- FICHA DE AMPLIACIÓN -->
+
+<section aria-labelledby="titulo-refuerzo" class="recap-sheet">
+<div class="sheet-heading sheet-heading--refuerzo"><h3 id="titulo-refuerzo">🟢 Ficha de Refuerzo</h3></div>
+<div class="sheet-grid">
+<!-- REFUERZO 1.1: Comprensión lectora inicial -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.4.1">
+<h4>Refuerzo 1.1 · Comprensión lectora inicial</h4>
+<p>Repasa «El mensaje de la caja verde».</p>
+<ol class="sheet-questions" type="a">
+<li>¿Dónde encontraron la caja verde?</li>
+<li>¿Qué actividad iban a anunciar?</li>
+<li>¿A qué hora empezaba la feria?</li>
+<li>Escribe una oración con la idea principal.</li>
+</ol>
+</article>
+<!-- REFUERZO 1.2: Diccionario y vocabulario -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.9.1">
+<h4>Refuerzo 1.2 · Diccionario y vocabulario</h4>
+<p>Practica la búsqueda de palabras.</p>
+<ol class="sheet-questions" type="a">
+<li>Ordena: botella, biblioteca, banco, barco.</li>
+<li>¿Cómo buscarías «cuentos» en el diccionario?</li>
+<li>Explica «aviso» con tus palabras.</li>
+<li>¿Qué significa «banco» en «Me siento en el banco»?</li>
+</ol>
+</article>
+<!-- REFUERZO 1.3: Sonidos, letras, sílabas y palabras -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.9.1">
+<h4>Refuerzo 1.3 · Sonidos, letras, sílabas y palabras</h4>
+<p>Recuerda las unidades de la palabra.</p>
+<ol class="sheet-questions" type="a">
+<li>Escribe las cinco vocales.</li>
+<li>Separa en sílabas «casa» y «zapato».</li>
+<li>Cuenta las sílabas de «mariposa».</li>
+<li>Clasifica «tren» según su número de sílabas.</li>
+</ol>
+</article>
+<!-- REFUERZO 1.4: Mayúsculas y signos de puntuación -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.9.2">
+<h4>Refuerzo 1.4 · Mayúsculas y signos de puntuación</h4>
+<p>Completa la puntuación de frases sencillas.</p>
+<ol class="sheet-questions" type="a">
+<li>Corrige: «pablo vive en córdoba».</li>
+<li>Separa con punto: «Llegamos Leemos un cuento».</li>
+<li>Añade comas: «Hay libros revistas y mapas».</li>
+<li>Escribe signos en «que alegría».</li>
+</ol>
+</article>
+<!-- REFUERZO 1.5: El sustantivo -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.9.1">
+<h4>Refuerzo 1.5 · El sustantivo</h4>
+<p>Reconoce nombres y cambia su forma.</p>
+<ol class="sheet-questions" type="a">
+<li>Copia los nombres de «La niña abre un cuento».</li>
+<li>Clasifica «Sara» y «ciudad» como propio o común.</li>
+<li>Pasa «libro» a plural.</li>
+<li>Escribe un sustantivo femenino singular.</li>
+</ol>
+</article>
+<!-- REFUERZO 1.6: El artículo y la concordancia -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.9.1">
+<h4>Refuerzo 1.6 · El artículo y la concordancia</h4>
+<p>Elige el artículo adecuado.</p>
+<ol class="sheet-questions" type="a">
+<li>Completa «___ libro» con un artículo determinado.</li>
+<li>Completa «___ mesas» con un artículo determinado.</li>
+<li>Corrige «las cuento».</li>
+<li>Pasa «una niña» a plural.</li>
+</ol>
+</article>
+<!-- REFUERZO 1.7: La comunicación oral y escrita -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.3.2">
+<h4>Refuerzo 1.7 · La comunicación oral y escrita</h4>
+<p>Identifica los elementos principales.</p>
+<ol class="sheet-questions" type="a">
+<li>¿Quién recibe un mensaje: emisor o receptor?</li>
+<li>Indica si un aviso escrito es comunicación oral o escrita.</li>
+<li>Escribe una fórmula de cortesía para pedir ayuda.</li>
+<li>¿Por qué es importante esperar tu turno para hablar?</li>
+</ol>
+</article>
+<!-- REFUERZO 1.8: Comprensión lectora aplicada -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.4.2">
+<h4>Refuerzo 1.8 · Comprensión lectora aplicada</h4>
+<p>Vuelve a leer «Una nota para el huerto».</p>
+<ol class="sheet-questions" type="a">
+<li>¿Qué descubrieron Leo y Amina?</li>
+<li>¿Dónde estaba la planta?</li>
+<li>¿Qué dato faltaba en el primer aviso?</li>
+<li>Escribe una norma para cuidar el huerto.</li>
+</ol>
+</article>
+<!-- REFUERZO 1.9: Producción escrita: mensajes y carteles -->
+<article class="sheet-card sheet-card--refuerzo" data-criterio="LCL.3.5.1">
+<h4>Refuerzo 1.9 · Producción escrita: mensajes y carteles</h4>
+<p>Prepara un aviso sencillo.</p>
+<ol class="sheet-questions" type="a">
+<li>Elige un título para una actividad escolar.</li>
+<li>Anota el lugar de la actividad.</li>
+<li>Escribe el día y la hora.</li>
+<li>Revisa que el título y las oraciones tengan mayúsculas.</li>
+</ol>
+</article>
+</div>
+</section><section aria-labelledby="titulo-ampliacion" class="recap-sheet">
+<div class="sheet-heading sheet-heading--ampliacion"><h3 id="titulo-ampliacion">🟠 Ficha de Ampliación</h3></div>
+<div class="sheet-grid">
+<!-- AMPLIACION 1.1: Comprensión lectora inicial -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.4.1">
+<h4>Ampliación 1.1 · Comprensión lectora inicial</h4>
+<p>Reflexiona sobre lo que el texto sugiere.</p>
+<ol class="sheet-questions" type="a">
+<li>Explica por qué Pablo se preocupaba por los datos del aviso.</li>
+<li>Inventa una pregunta que pueda hacer un alumno de primero.</li>
+<li>Propón una mejora para la feria de cuentos.</li>
+<li>Escribe un final alternativo de tres oraciones.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.2: Diccionario y vocabulario -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.9.1">
+<h4>Ampliación 1.2 · Diccionario y vocabulario</h4>
+<p>Utiliza los significados con precisión.</p>
+<ol class="sheet-questions" type="a">
+<li>Escribe dos oraciones con diferentes significados de «banco».</li>
+<li>Ordena: biblioteca, bicicleta, billete, bigote.</li>
+<li>Inventa una pista para descubrir la palabra «cartel».</li>
+<li>Busca una palabra nueva de tu lectura y crea una oración con ella.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.3: Sonidos, letras, sílabas y palabras -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.9.1">
+<h4>Ampliación 1.3 · Sonidos, letras, sílabas y palabras</h4>
+<p>Construye y transforma palabras.</p>
+<ol class="sheet-questions" type="a">
+<li>Forma tres palabras con las sílabas «ma», «sa», «ca» y otras que necesites.</li>
+<li>Escribe una palabra de una, dos, tres y cuatro sílabas.</li>
+<li>Cambia una sílaba de «camino» y forma otra palabra real.</li>
+<li>Explica por qué «ch» no se considera una letra independiente.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.4: Mayúsculas y signos de puntuación -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.9.2">
+<h4>Ampliación 1.4 · Mayúsculas y signos de puntuación</h4>
+<p>Reescribe un mensaje con errores.</p>
+<ol class="sheet-questions" type="a">
+<li>Corrige «lucía estuvo en granada ayer visitó un museo».</li>
+<li>Puntúa una enumeración de cuatro materiales.</li>
+<li>Escribe una pregunta y una exclamación sobre la biblioteca.</li>
+<li>Inventa dos oraciones que puedan formar un párrafo sobre tu colegio.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.5: El sustantivo -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.9.1">
+<h4>Ampliación 1.5 · El sustantivo</h4>
+<p>Compara diferentes nombres.</p>
+<ol class="sheet-questions" type="a">
+<li>Escribe tres nombres propios de lugares cercanos.</li>
+<li>Inventa dos oraciones con dos sustantivos comunes cada una.</li>
+<li>Escribe dos sustantivos que nombren sentimientos.</li>
+<li>Pasa a plural «la flor y el cartel», ajustando los artículos.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.6: El artículo y la concordancia -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.9.1">
+<h4>Ampliación 1.6 · El artículo y la concordancia</h4>
+<p>Aplica la concordancia a frases nuevas.</p>
+<ol class="sheet-questions" type="a">
+<li>Transforma «el cuento divertido» a plural.</li>
+<li>Transforma «unas niñas curiosas» a singular.</li>
+<li>Redacta una oración con un artículo indeterminado femenino plural.</li>
+<li>Escribe una oración con «al» y otra con «del» y explica su formación.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.7: La comunicación oral y escrita -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.3.2">
+<h4>Ampliación 1.7 · La comunicación oral y escrita</h4>
+<p>Adapta los mensajes a distintas personas.</p>
+<ol class="sheet-questions" type="a">
+<li>Escribe un aviso para un niño pequeño con frases breves.</li>
+<li>Escribe el mismo aviso para las familias e incluye un dato más.</li>
+<li>Describe qué gestos acompañan una explicación respetuosa.</li>
+<li>Explica cómo comprobarías que la otra persona te ha comprendido.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.8: Comprensión lectora aplicada -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.4.2">
+<h4>Ampliación 1.8 · Comprensión lectora aplicada</h4>
+<p>Profundiza en el mensaje del huerto.</p>
+<ol class="sheet-questions" type="a">
+<li>Compara el primer aviso de Leo con el segundo.</li>
+<li>Explica por qué una imagen ayuda a entender el cartel.</li>
+<li>Escribe dos preguntas que respondería el aviso corregido.</li>
+<li>Crea un mensaje alternativo para proteger la planta.</li>
+</ol>
+</article>
+<!-- AMPLIACION 1.9: Producción escrita: mensajes y carteles -->
+<article class="sheet-card sheet-card--ampliacion" data-criterio="LCL.3.5.1">
+<h4>Ampliación 1.9 · Producción escrita: mensajes y carteles</h4>
+<p>Mejora tu producto final.</p>
+<ol class="sheet-questions" type="a">
+<li>Diseña dos titulares posibles y elige el más claro.</li>
+<li>Redacta una versión para el tablón y otra para una nota a las familias.</li>
+<li>Justifica qué dibujos y tamaños de letra utilizarías.</li>
+<li>Elabora una lista de comprobación con cuatro aspectos para revisar tu cartel.</li>
+</ol>
+</article>
+</div>
+</section></section>
+<!-- REPASO INTERACTIVO (NO MODIFICA LOS CRITERIOS ASOCIADOS A LAS TAREAS) -->
+<section aria-labelledby="titulo-comprueba" class="check-learning" id="sec-comprueba">
+<h2 id="titulo-comprueba">Comprueba lo aprendido</h2>
+<p>
+            Selecciona una caja de respuesta en cada pregunta. Después pulsa
+            «Comprobar respuestas» para conocer tu resultado.
+            Puedes volver a intentarlo tantas veces como necesites.
+          </p>
+<form id="quiz-form">
+<div class="quiz-grid"><div aria-labelledby="quiz-pregunta-1" class="quiz-item quiz-question" data-answer="0" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-1">1. ¿Qué día se celebraría la feria de cuentos?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">El jueves</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">El lunes</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">El domingo</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-2" class="quiz-item quiz-question" data-answer="1" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-2">2. ¿Qué sirve para buscar significados de palabras?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">Un calendario</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">Un diccionario</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">Un mapa</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-3" class="quiz-item quiz-question" data-answer="2" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-3">3. ¿Cuál de estas palabras tiene tres sílabas?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">sol</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">mesa</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">zapato</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-4" class="quiz-item quiz-question" data-answer="0" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-4">4. ¿Qué grupo está formado solo por vocales?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">a, e, i, o, u</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">a, b, c, d, e</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">m, n, p, r, s</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-5" class="quiz-item quiz-question" data-answer="1" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-5">5. ¿Qué frase comienza correctamente con mayúscula?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">mañana leemos.</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">Mañana leemos.</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">Mañana leemos</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-6" class="quiz-item quiz-question" data-answer="2" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-6">6. ¿Qué signos son adecuados para una pregunta?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">¡ !</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">( )</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">¿ ?</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-7" class="quiz-item quiz-question" data-answer="0" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-7">7. ¿Qué palabra es un sustantivo propio?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">Córdoba</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">ciudad</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">libro</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-8" class="quiz-item quiz-question" data-answer="1" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-8">8. ¿Cuál de estas expresiones tiene concordancia correcta?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">las libro</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">los libros</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">una cuentos</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-9" class="quiz-item quiz-question" data-answer="2" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-9">9. ¿Qué artículo es indeterminado femenino singular?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">los</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">la</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">una</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-10" class="quiz-item quiz-question" data-answer="0" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-10">10. ¿Quién es el receptor de un mensaje?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">La persona que recibe la información</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">La persona que la envía</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">El título del cartel</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-11" class="quiz-item quiz-question" data-answer="1" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-11">11. ¿Qué dato faltaba en «Ha salido. Venid a verla»?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">El nombre de la maestra</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">Qué había aparecido y dónde</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">La cantidad de lápices</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div><div aria-labelledby="quiz-pregunta-12" class="quiz-item quiz-question" data-answer="2" role="group">
+<h3 class="quiz-prompt" id="quiz-pregunta-12">12. ¿Qué conviene hacer antes de colocar un cartel?</h3>
+<div class="quiz-options">
+<button aria-pressed="false" class="quiz-option" data-option="0" type="button">Borrar la fecha</button>
+<button aria-pressed="false" class="quiz-option" data-option="1" type="button">Escribir todo en minúsculas</button>
+<button aria-pressed="false" class="quiz-option" data-option="2" type="button">Revisar información y ortografía</button>
+</div>
+<p aria-live="polite" class="quiz-feedback quiz-result" role="status"></p>
+</div></div>
+<div class="quiz-actions">
+<button class="lnl-btn" type="submit">Comprobar respuestas</button>
+<button class="lnl-btn secondary" type="reset">Volver a empezar</button>
+</div>
+<p aria-live="polite" id="quiz-result" role="status"></p>
+</form>
+</section>
+<!-- DIANA DE AUTOEVALUACIÓN INTERACTIVA -->
+<section aria-labelledby="titulo-autoevaluacion" class="self-eval" id="sec-autoevaluacion">
+<div class="recap-heading">
+<span aria-hidden="true" class="heading-icon heading-icon--indigo">🎯</span>
+<div>
+<h2 class="lesson-section-heading" id="titulo-autoevaluacion">
+                Diana de Autoevaluación Interactiva
+              </h2>
+<p>Selecciona la opción que mejor representa tu aprendizaje.</p>
+</div>
+</div>
+<div class="self-eval-grid"><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.1: LCL.3.4.1 -->
+<p class="eval-statement"><strong>1.1</strong> Comprendo una lectura y localizo sus datos más importantes.</p>
+<div aria-label="Autoevaluación 1.1" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.2: LCL.3.9.1 -->
+<p class="eval-statement"><strong>1.2</strong> Ordeno palabras alfabéticamente y consulto el diccionario.</p>
+<div aria-label="Autoevaluación 1.2" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.3: LCL.3.9.1 -->
+<p class="eval-statement"><strong>1.3</strong> Reconozco vocales y consonantes y separo palabras en sílabas.</p>
+<div aria-label="Autoevaluación 1.3" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.4: LCL.3.9.2 -->
+<p class="eval-statement"><strong>1.4</strong> Utilizo mayúsculas, puntos, comas y signos de pregunta o exclamación.</p>
+<div aria-label="Autoevaluación 1.4" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.5: LCL.3.9.1 -->
+<p class="eval-statement"><strong>1.5</strong> Identifico sustantivos comunes y propios, su género y número.</p>
+<div aria-label="Autoevaluación 1.5" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.6: LCL.3.9.1 -->
+<p class="eval-statement"><strong>1.6</strong> Elijo artículos que concuerdan con los sustantivos.</p>
+<div aria-label="Autoevaluación 1.6" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.7: LCL.3.3.2 -->
+<p class="eval-statement"><strong>1.7</strong> Escucho con respeto e identifico quién envía y recibe un mensaje.</p>
+<div aria-label="Autoevaluación 1.7" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.8: LCL.3.4.2 -->
+<p class="eval-statement"><strong>1.8</strong> Comprendo avisos y distingo sus datos importantes.</p>
+<div aria-label="Autoevaluación 1.8" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div><div class="eval-row">
+<!-- CRITERIO DOCENTE DE AUTOEVALUACIÓN 1.9: LCL.3.5.1 -->
+<p class="eval-statement"><strong>1.9</strong> Escribo y reviso mensajes y carteles para distintos destinatarios.</p>
+<div aria-label="Autoevaluación 1.9" class="auto-eval-group" role="group">
+<button aria-pressed="false" class="eval-btn" data-rating="Casi nunca" type="button">Casi nunca</button>
+<button aria-pressed="false" class="eval-btn" data-rating="A veces" type="button">A veces</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Casi siempre" type="button">Casi siempre</button>
+<button aria-pressed="false" class="eval-btn" data-rating="Siempre" type="button">Siempre</button>
+</div>
+</div></div>
+<div class="eval-actions">
+<p aria-live="polite" id="eval-status" role="status">
+              Puedes marcar una opción en cada apartado.
+            </p>
+<button class="lnl-btn secondary" id="eval-reset" type="button">
+              Borrar mi autoevaluación
+            </button>
+</div>
+</section>
+</div>
+<a class="back-to-index" href="/recursos/tercero/lengua3/">← Volver a las situaciones de aprendizaje de Lengua de 3.º</a>
+</div>
+</main>
+<!-- PIE INSTITUCIONAL -->
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-junta">
+<img alt="Junta de Andalucía - Consejería de Educación" src="/img/junta-educacion.png"/>
+</div>
+<div class="footer-school">
+<p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+<p>Alcolea · Córdoba</p>
+<a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">
+          Web oficial del Centro
+        </a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-container">
+<p>© <span id="current-year"></span> CEIP Joaquín Tena Artigas</p>
+<a href="#contenido-principal">Volver arriba ↑</a>
+</div>
+</div>
+</footer>
+<!-- CORRECCIÓN INTERACTIVA CON OPCIONES EN CAJAS, COMO LENGUA DE 5.º Y 6.º -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('quiz-form');
+      const summary = document.getElementById('quiz-result');
+      const questions = Array.from(form.querySelectorAll('.quiz-question'));
+
+      // Cada pregunta admite una sola caja seleccionada.
+      questions.forEach(function (question) {
+        question.addEventListener('click', function (event) {
+          const selected = event.target.closest('.quiz-option');
+          if (!selected || !question.contains(selected)) return;
+
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute(
+              'aria-pressed', option === selected ? 'true' : 'false'
+            );
+          });
+
+          // Una nueva elección permite corregir y volver a intentarlo.
+          question.classList.remove('correct', 'incorrect');
+          question.querySelector('.quiz-feedback').textContent = '';
+          summary.textContent = '';
+        });
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let correct = 0;
+        let answered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector(
+            '.quiz-option[aria-pressed="true"]'
+          );
+          const answer = question.dataset.answer;
+          const feedback = question.querySelector('.quiz-feedback');
+          question.classList.remove('correct', 'incorrect');
+
+          if (!selected) {
+            feedback.textContent = 'Elige una respuesta.';
+            return;
+          }
+
+          answered += 1;
+          if (selected.dataset.option === answer) {
+            correct += 1;
+            question.classList.add('correct');
+            feedback.textContent = '✓ Respuesta correcta.';
+          } else {
+            question.classList.add('incorrect');
+            const right = question.querySelector(
+              '.quiz-option[data-option="' + answer + '"]'
+            );
+            feedback.textContent = '✗ Repasa este contenido. Respuesta correcta: ' +
+              right.textContent.trim() + '.';
+          }
+        });
+
+        summary.textContent = 'Has respondido ' + answered + ' de ' +
+          questions.length + ' preguntas. Aciertos: ' + correct +
+          ' de ' + questions.length + '.';
+      });
+
+      form.addEventListener('reset', function () {
+        questions.forEach(function (question) {
+          question.classList.remove('correct', 'incorrect');
+          question.querySelectorAll('.quiz-option').forEach(function (option) {
+            option.setAttribute('aria-pressed', 'false');
+          });
+          question.querySelector('.quiz-feedback').textContent = '';
+        });
+        summary.textContent = '';
+      });
+    });
+  </script>
+<!-- DIANA INTERACTIVA: SOLO UNA RESPUESTA SELECCIONADA POR APARTADO -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const groups = Array.from(document.querySelectorAll('.auto-eval-group'));
+      const status = document.getElementById('eval-status');
+      const reset = document.getElementById('eval-reset');
+
+      function updateStatus() {
+        const answered = groups.filter(function (group) {
+          return group.querySelector('button[aria-pressed="true"]');
+        }).length;
+        status.textContent = 'Has valorado ' + answered + ' de ' +
+          groups.length + ' apartados.';
+      }
+
+      groups.forEach(function (group) {
+        group.addEventListener('click', function (event) {
+          const button = event.target.closest('button.eval-btn');
+          if (!button || !group.contains(button)) return;
+          group.querySelectorAll('button.eval-btn').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+          });
+          updateStatus();
+        });
+      });
+
+      reset.addEventListener('click', function () {
+        groups.forEach(function (group) {
+          group.querySelectorAll('button.eval-btn').forEach(function (button) {
+            button.setAttribute('aria-pressed', 'false');
+          });
+        });
+        updateStatus();
+      });
+    });
+  </script>
+<script defer="" src="/js/main.js"></script>
+</body>
+</html>
