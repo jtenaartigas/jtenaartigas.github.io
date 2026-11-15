@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lectoescritura: recursos de Pedagogía Terapéutica y Audición y Lenguaje organizados en seis subbloques y tres niveles de actividad. CEIP Joaquín Tena Artigas.">
+  <meta name="theme-color" content="#00843d">
+  <title>Lectoescritura | Apoyo y Orientación | CEIP Joaquín Tena Artigas</title>
+
+  <!-- Estilos comunes de la web del centro -->
+  <link rel="icon" type="image/png" href="/img/logo-centro.png">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!-- Ajustes de esta página; no modifican el CSS general -->
+  <style>
+    .literacy-page {
+      --literacy-color: #bf654e;
+      --literacy-soft: #fff4f0;
+    }
+
+    .literacy-page .subjects-grid {
+      align-items: stretch;
+    }
+
+    .literacy-page .literacy-card > a {
+      height: 100%;
+      min-height: 250px;
+    }
+
+    .literacy-page .literacy-card .subject-icon {
+      background: var(--literacy-color);
+    }
+
+    .literacy-page .subject-content {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .literacy-page .subject-content h2 {
+      overflow-wrap: anywhere;
+    }
+
+    .literacy-page .subject-content p {
+      line-height: 1.65;
+    }
+
+    .literacy-page .subject-access {
+      display: inline-block;
+      margin-top: auto;
+    }
+
+    .literacy-page .literacy-card-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--literacy-color);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .literacy-page .literacy-symbol {
+      display: block;
+      width: 70px;
+      height: 70px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: none;
+    }
+
+    .literacy-page .literacy-card > a:focus-visible {
+      outline: 4px solid var(--junta-green, #00843d);
+      outline-offset: -4px;
+      border-radius: var(--radius-medium, 18px);
+    }
+
+    /* Los niveles se entienden como niveles de actividad, no de alumnado */
+    .literacy-page .literacy-levels {
+      margin-top: 38px;
+      padding: 28px;
+      border: 1px solid var(--border, #dfe8e2);
+      border-left: 5px solid var(--literacy-color);
+      border-radius: var(--radius-medium, 18px);
+      background: var(--background-soft, #f6f9f7);
+    }
+
+    .literacy-page .literacy-levels h2 {
+      margin: 0 0 12px;
+      font-size: 1.28rem;
+      line-height: 1.3;
+    }
+
+    .literacy-page .literacy-levels > p {
+      margin: 0 0 20px;
+      color: var(--text-soft, #66736c);
+      line-height: 1.65;
+    }
+
+    .literacy-page .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .literacy-page .level-item {
+      padding: 17px 18px;
+      border: 1px solid var(--border, #dfe8e2);
+      border-radius: var(--radius-small, 10px);
+      background: #fff;
+    }
+
+    .literacy-page .level-item h3 {
+      margin: 0 0 7px;
+      color: var(--literacy-color);
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    .literacy-page .level-item p {
+      margin: 0;
+      color: var(--text-soft, #66736c);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    .literacy-page .levels-clarification {
+      margin: 18px 0 0 !important;
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 800px) {
+      .literacy-page .levels-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .literacy-page .literacy-card > a {
+        min-height: 0;
+      }
+
+      .literacy-page .literacy-symbol {
+        width: 48px;
+        height: 48px;
+      }
+
+      .literacy-page .literacy-levels {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .literacy-page .literacy-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="literacy-page">
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- Cabecera institucional -->
+  <header class="site-banner">
+    <a href="/" aria-label="Ir a la página de inicio">
+      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
+    </a>
+  </header>
+
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
+        <img src="/img/logo-centro.png" alt="">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-green"><a href="/">Inicio</a></li>
+          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
+          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
+          <li class="nav-red">
+            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="contenido-principal">
+    <!-- Portada del bloque 3 -->
+    <section class="page-intro">
+      <div class="page-intro-container">
+        <nav class="breadcrumbs" aria-label="Migas de pan">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/recursos/">Recursos educativos</a></li>
+            <li><a href="/recursos/apoyo-orientacion/">Apoyo y Orientación</a></li>
+            <li aria-current="page">Lectoescritura</li>
+          </ol>
+        </nav>
+        <p class="section-label">Apoyo y Orientación · Bloque 3</p>
+        <h1>Lectoescritura</h1>
+        <p class="page-intro-text">
+          Recursos para acercarse al lenguaje escrito, aprender a leer y escribir
+          y avanzar en la comprensión y la expresión escrita. Selecciona uno de
+          los seis subbloques para trabajar estas habilidades con actividades
+          graduadas y apoyos ajustados a cada alumno o alumna.
+        </p>
+      </div>
+    </section>
+
+    <!-- Distribución de los seis subbloques -->
+    <section class="subjects-section" aria-label="Subbloques de Lectoescritura">
+      <div class="section-container">
+        <div class="subjects-grid">
+          <!-- SUBBLOQUE 3.1 -->
+          <article class="subject-card literacy-card">
+            <a href="/recursos/apoyo-orientacion/lectoescritura/aproximacion-lenguaje-escrito/" aria-label="Entrar en Aproximación al lenguaje escrito">
+              <div class="subject-icon">
+                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+                  <rect x="15" y="11" width="50" height="58" rx="6"/><path d="M27 23h25M27 32h19M27 42h25M27 51h14"/><path d="m45 53 6 6 13-15"/>
+                </svg>
+              </div>
+              <div class="subject-content">
+                <span class="literacy-card-label">Subbloque 3.1</span>
+                <h2>Aproximación al lenguaje escrito</h2>
+                <p>Descubrir para qué sirve la escritura, reconocer textos y símbolos cotidianos y desarrollar el interés por libros, palabras y mensajes.</p>
+                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- SUBBLOQUE 3.2 -->
+          <article class="subject-card literacy-card">
+            <a href="/recursos/apoyo-orientacion/lectoescritura/conciencia-fonologica/" aria-label="Entrar en Conciencia fonológica">
+              <div class="subject-icon">
+                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+                  <path d="M9 31h13l17-15v48L22 49H9z"/><path d="M48 27c8 6 8 20 0 26M56 19c13 11 13 31 0 42"/><circle cx="14" cy="40" r="2"/>
+                </svg>
+              </div>
+              <div class="subject-content">
+                <span class="literacy-card-label">Subbloque 3.2</span>
+                <h2>Conciencia fonológica</h2>
+                <p>Escuchar y reconocer palabras, sílabas y fonemas; identificar rimas, segmentar y manipular sonidos de forma progresiva.</p>
+                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- SUBBLOQUE 3.3 -->
+          <article class="subject-card literacy-card">
+            <a href="/recursos/apoyo-orientacion/lectoescritura/aprendizaje-codigo-escrito/" aria-label="Entrar en Aprendizaje del código escrito">
+              <div class="subject-icon">
+                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+                  <path d="m8 60 18-43 18 43M15 45h22"/><rect x="48" y="15" width="23" height="46" rx="4"/><path d="M54 27h11M54 37h11M54 47h8"/>
+                </svg>
+              </div>
+              <div class="subject-content">
+                <span class="literacy-card-label">Subbloque 3.3</span>
+                <h2>Aprendizaje del código escrito</h2>
+                <p>Relacionar sonidos y letras, reconocer grafías, combinar sílabas y progresar en la lectura y escritura de palabras y oraciones.</p>
+                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- SUBBLOQUE 3.4 -->
+          <article class="subject-card literacy-card">
+            <a href="/recursos/apoyo-orientacion/lectoescritura/precision-fluidez-lectora/" aria-label="Entrar en Precisión y fluidez lectora">
+              <div class="subject-icon">
+                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+                  <path d="M40 20c-9-7-22-8-33-4v43c13-3 24-1 33 5 9-6 20-8 33-5V16c-11-4-24-3-33 4Z"/><path d="M40 20v44M16 30h15M16 40h15M49 30h15M49 40h15M50 50h11"/>
+                </svg>
+              </div>
+              <div class="subject-content">
+                <span class="literacy-card-label">Subbloque 3.4</span>
+                <h2>Precisión y fluidez lectora</h2>
+                <p>Leer con exactitud y progresiva soltura, reconocer palabras frecuentes y mejorar el ritmo, las pausas y la entonación.</p>
+                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- SUBBLOQUE 3.5 -->
+          <article class="subject-card literacy-card">
+            <a href="/recursos/apoyo-orientacion/lectoescritura/comprension-lectora/" aria-label="Entrar en Comprensión lectora">
+              <div class="subject-icon">
+                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+                  <rect x="8" y="10" width="48" height="57" rx="6"/><path d="M19 23h25M19 34h25M19 45h17"/><circle cx="54" cy="52" r="13"/><path d="m64 62 10 10"/>
+                </svg>
+              </div>
+              <div class="subject-content">
+                <span class="literacy-card-label">Subbloque 3.5</span>
+                <h2>Comprensión lectora</h2>
+                <p>Localizar información, interpretar textos, realizar inferencias sencillas, ordenar ideas y comprobar lo comprendido.</p>
+                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+
+          <!-- SUBBLOQUE 3.6 -->
+          <article class="subject-card literacy-card">
+            <a href="/recursos/apoyo-orientacion/lectoescritura/escritura-produccion-textos/" aria-label="Entrar en Escritura y producción de textos">
+              <div class="subject-icon">
+                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+                  <path d="M14 13h39a6 6 0 0 1 6 6v39a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6V19a6 6 0 0 1 6-6Z"/><path d="M19 27h28M19 38h23M19 49h13"/><path d="m47 61 17-24 7 5-17 24-10 4z"/>
+                </svg>
+              </div>
+              <div class="subject-content">
+                <span class="literacy-card-label">Subbloque 3.6</span>
+                <h2>Escritura y producción de textos</h2>
+                <p>Practicar el trazo y la escritura funcional, elaborar oraciones y textos, organizar ideas y revisar las propias producciones.</p>
+                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie institucional; sin bloque de copyright -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-junta">
+        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
+      </div>
+      <div class="footer-school">
+        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
+        <p>Alcolea · Córdoba</p>
+        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">
+          Web oficial del Centro <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script común: navegación móvil -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
