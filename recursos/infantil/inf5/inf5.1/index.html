@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/base.css">
   <style>
     /* ======================================================
-       INFANTIL 5 AÑOS · BLOQUE 1
+       INFANTIL 5 AÑOS · BLOQUE 1 · EDICIÓN 2
        Estilos locales; se preservan los de /css/base.css.
        ====================================================== */
     .infant-learning {
@@ -423,6 +423,280 @@
       .infant-learning *, .infant-learning *::before,
       .infant-learning *::after { transition: none !important; scroll-behavior: auto !important; }
     }
+  
+    /* ======================================================
+       FUENTES ESCOLARES: archivos ya alojados en /fonts
+       ====================================================== */
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_G.TTF") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_N.TTF") format("truetype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Punteada";
+      src: url("/fonts/Escolar_P.TTF") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Calada";
+      src: url("/fonts/Escolar_C.TTF") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    /* La navegación del colegio y las notas docentes conservan la fuente general. */
+    .infant-learning #unit-title,
+    .infant-learning .end-project h2,
+    .infant-learning .unit-hero p:not(.unit-eyebrow),
+    .infant-learning .section-heading,
+    .infant-learning .section-intro,
+    .infant-learning .activity-card h3,
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .game-prompt,
+    .infant-learning .choice,
+    .infant-learning .game-button,
+    .infant-learning .audio-button,
+    .infant-learning .step-chip,
+    .infant-learning .game-feedback,
+    .infant-learning .sequence-output,
+    .infant-learning .child-script,
+    .infant-learning .mini-game h4,
+    .infant-learning .mini-game p:not(.access-note),
+    .infant-learning .drop-target,
+    .infant-learning .drag-piece,
+    .infant-learning .paint-instruction {
+      font-family: "Escolar", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+      font-feature-settings: "liga" 1, "clig" 1;
+      line-height: 1.48;
+      letter-spacing: 0;
+    }
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .mini-game > p,
+    .infant-learning .game-prompt { font-size: clamp(1.13rem, 1.7vw, 1.36rem); }
+    .infant-learning .activity-card h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+    .infant-learning .choice { font-size: clamp(1.06rem, 1.45vw, 1.24rem); }
+    .infant-learning .game-button { font-size: clamp(1rem, 1.35vw, 1.15rem); }
+    .infant-learning .teacher-tip,
+    .infant-learning details,
+    .infant-learning .activity-id,
+    .infant-learning .activity-type,
+    .infant-learning .access-note {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+    .infant-learning .handwriting-dotted {
+      font-family: "Escolar Punteada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-outline {
+      font-family: "Escolar Calada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-bold { font-family: "Escolar", cursive; font-weight: 700; }
+
+    /* ======================================================
+       NUEVOS MINIJUEGOS VISUALES (ratón, dedo y selección táctil)
+       ====================================================== */
+    .infant-learning .mini-game {
+      margin-top: 15px;
+      padding: clamp(12px, 2.5vw, 19px);
+      border: 2px solid #ebd7c5;
+      border-radius: 20px;
+      background: #fffdf9;
+    }
+    .infant-learning .mini-game h4 {
+      margin: 0 0 7px;
+      color: #784330;
+      font-size: clamp(1.25rem, 2vw, 1.58rem);
+      font-weight: 700;
+    }
+    .infant-learning .mini-game p { margin: 4px 0 12px; }
+    .infant-learning .access-note {
+      font-size: .86rem;
+      color: #5b6472;
+    }
+    .infant-learning .drag-bank,
+    .infant-learning .drop-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: stretch;
+      margin: 13px 0;
+    }
+    .infant-learning .drag-piece,
+    .infant-learning .drop-target {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 7px;
+      padding: 11px;
+      text-align: center;
+      color: #334155;
+      background: white;
+      border: 3px solid #d6ddd8;
+      border-radius: 17px;
+      min-width: 110px;
+      min-height: 100px;
+      font-size: clamp(1.04rem, 1.55vw, 1.26rem);
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .infant-learning .drag-piece { border-color: #e7af7f; background: #fff7ec; }
+    .infant-learning .drag-piece .item-emoji,
+    .infant-learning .drop-target .item-emoji {
+      display: block;
+      font-family: system-ui, sans-serif;
+      font-size: clamp(2.3rem, 4vw, 3.25rem);
+      line-height: 1.1;
+    }
+    .infant-learning .drag-piece.is-chosen { border-color: #1169b0; box-shadow: 0 0 0 4px #b7dfff; }
+    .infant-learning .drop-target.is-hovered { border-color: #1169b0; background: #eaf6ff; }
+    .infant-learning .drop-target.is-complete { border-color: #007a33; background: #f0fbf2; }
+    .infant-learning .drop-target .placed-token {
+      display: inline-flex;
+      gap: 5px;
+      margin: 3px;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #7daf8d;
+      font-family: "Escolar", cursive;
+      font-size: 1.13rem;
+    }
+    .infant-learning .drag-ghost {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      opacity: .88;
+      transform: translate(-50%, -50%) rotate(-3deg);
+      box-shadow: 0 9px 24px #0003;
+      min-width: 110px;
+      max-width: 165px;
+    }
+    .infant-learning .drop-hint { font-family: "Escolar", system-ui, sans-serif; font-size: 1.12rem; font-weight: 700; color: #64748b; }
+    .infant-learning .game-feedback:empty { min-height: 1em; }
+    .infant-learning .drop-row .drop-target { flex: 1 1 120px; }
+    /* Puzle de 4 piezas: imagen original reutilizada mediante JavaScript. */
+    .infant-learning .puzzle-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: clamp(12px, 3vw, 26px);
+      margin: 15px auto;
+      max-width: 650px;
+    }
+    .infant-learning .puzzle-pieces,
+    .infant-learning .puzzle-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f5eee8;
+      padding: 5px;
+      border-radius: 14px;
+    }
+    .infant-learning .puzzle-pieces .drag-piece,
+    .infant-learning .puzzle-board .drop-target {
+      position: relative;
+      width: 100%; min-width: 0; min-height: 0;
+      aspect-ratio: 1;
+      padding: 0;
+      border-radius: 9px;
+      border-width: 2px;
+      overflow: hidden;
+    }
+    .infant-learning .puzzle-slice,
+    .infant-learning .puzzle-fixed {
+      width: 100%; height: 100%;
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      flex: 1 1 auto; min-height: 0; pointer-events: none;
+    }
+    .infant-learning .puzzle-pieces .drag-piece { font-family: system-ui, sans-serif; }
+    .infant-learning .puzzle-pieces .drag-piece:disabled { opacity: .35; }
+    .infant-learning .puzzle-board .drop-target { background: #f8fafc; border-style: dashed; }
+    .infant-learning .puzzle-board .drop-target::after {
+      content: attr(data-number);
+      color: #64748b;
+      font: 700 1.5rem system-ui, sans-serif;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .infant-learning .puzzle-board .drop-target.is-complete::after { content: none; }
+    .infant-learning .puzzle-board .drop-target.is-complete { border-style: solid; padding: 0; }
+    .infant-learning .puzzle-board .drop-target .puzzle-fixed { position: relative; z-index: 1; }
+
+    /* Lámina de coloreado digital: contornos negros sobre blanco. */
+    .infant-learning .coloring-layout { max-width: 580px; margin: 4px auto; }
+    .infant-learning .paint-palette { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; justify-content: center; }
+    .infant-learning .paint-swatch {
+      appearance: none; border: 3px solid #ddd; border-radius: 50%;
+      background: var(--swatch); width: 48px; height: 48px;
+      font-size: 0; flex: 0 0 48px;
+    }
+    .infant-learning .paint-swatch.is-active { outline: 3px solid #224b6d; outline-offset: 3px; }
+    .infant-learning .paint-page { display: block; width: min(100%, 440px); height: auto; margin: 0 auto; background: white; border: 2px solid #d3dbe3; border-radius: 14px; }
+    .infant-learning .paint-page [data-paint-region] { cursor: pointer; transition: fill .12s ease; }
+    .infant-learning .paint-page [data-paint-region]:focus-visible { outline: none; stroke: #1766be; stroke-width: 5; }
+    .infant-learning .paint-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 12px 0; }
+    .infant-learning .outline-color-word {
+      display: block; width: 100%; margin: 5px auto 10px;
+      border: 2px dashed #d7c5b7; border-radius: 12px;
+      background: #fff; padding: 0 8px; color: #414141;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      line-height: 1.5; text-align: center;
+    }
+
+    /* Repaso digital: la fuente punteada permanece debajo del lienzo transparente. */
+    .infant-learning .trace-stage {
+      position: relative;
+      aspect-ratio: 900 / 220;
+      border: 2px solid #ddd1c3;
+      background: repeating-linear-gradient(to bottom, white 0, white 48%, #d5e9ed 48%, #d5e9ed 49%, white 49%, white 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      width: min(100%, 720px);
+      margin: 12px auto;
+    }
+    .infant-learning .trace-word {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(2.8rem, 9vw, 6.6rem);
+      white-space: nowrap;
+      color: #7a9aa6;
+      line-height: 1.15;
+      pointer-events: none;
+    }
+    .infant-learning .trace-canvas {
+      display: block; position: relative;
+      width: 100%; height: 100%;
+      touch-action: none; cursor: crosshair;
+    }
+    .infant-learning .script-preview { text-align: center; font-size: clamp(1.8rem, 5vw, 3.2rem); }
+    .infant-learning .trace-tools { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 620px) {
+      .infant-learning .puzzle-layout { gap: 8px; }
+      .infant-learning .drag-piece, .infant-learning .drop-target { min-width: 95px; min-height: 91px; }
+      .infant-learning .paint-swatch { width: 42px; height: 42px; flex-basis: 42px; }
+      .infant-learning .trace-stage { aspect-ratio: 900 / 260; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning .paint-page [data-paint-region] { transition: none; }
+    }
+
   </style>
 </head>
 <body class="infant-learning">
@@ -551,12 +825,28 @@
                 <button type="button" class="game-button" data-next>Otra parte</button>
               </div>
             </div>
+            
+          <div class="mini-game" data-game="trace-words">
+            <h4>✏️ Repaso palabras de mi cuerpo</h4>
+            <p>Con el dedo o el ratón, sigue los puntitos de la palabra.</p>
+            <p class="access-note">Si lo prefieres, repasa la palabra sobre papel con ayuda.</p>
+            <div class="trace-stage">
+              <span class="trace-word handwriting-dotted" data-trace-word>mano</span>
+              <canvas class="trace-canvas" width="900" height="220" aria-label="Zona para repasar la palabra con el dedo o el ratón"></canvas>
+            </div>
+            <div class="trace-tools">
+              <button class="game-button" type="button" data-trace-next>Otra palabra</button>
+              <button class="game-button" type="button" data-trace-clear>🧽 Borrar trazo</button>
+              <button class="game-button" type="button" data-say="Repasa las letras siguiendo los puntitos. Puedes hacerlo con el dedo o con el ratón.">🔊 Escuchar</button>
+            </div>
+            <p class="game-feedback" role="status" aria-live="polite" data-feedback>Repasa la palabra mano.</p>
+          </div>
             <p class="teacher-tip"><strong>En clase:</strong> repetir el juego con un espejo y un compañero, sin obligar a tocar a otras personas.</p>
           </article>
           <article class="activity-card" id="act-1-1-b">
             <div class="activity-head"><span class="activity-id">1.1.B</span><span class="activity-type">🧩 Juego + manipulación</span></div>
             <h3>Construimos nuestro cuerpo</h3>
-            <p>Completa la figura pulsando sus partes. Luego dibuja una silueta grande en papel continuo y decórala.</p>
+            <p>Completa la figura, resuelve un puzle de cuatro piezas y dibuja una silueta grande en papel continuo.</p>
             <div class="game-panel" data-game="body-builder">
               <div class="game-prompt">Añade las cuatro partes:</div>
               <div class="body-builder">
@@ -576,13 +866,72 @@
               <p class="game-feedback" data-feedback role="status" aria-live="polite"></p>
               <button class="game-button" type="button" data-reset>Empezar otra vez</button>
             </div>
+            
+          <div class="mini-game" data-game="picture-puzzle">
+            <h4>🧩 Puzle de 4 piezas</h4>
+            <p>Coloca cada pieza en su lugar y descubre la imagen.</p>
+            <p class="access-note">Arrastra cada pieza o toca una pieza y luego el hueco.</p>
+            <button class="audio-button" type="button" data-say="Vamos a hacer un puzle. Elige una pieza y colócala en el hueco que le corresponde.">🔊 Escuchar instrucciones</button>
+            <div class="puzzle-layout">
+              <div>
+                <p class="drop-hint">PIEZAS</p>
+                <div class="puzzle-pieces drag-bank" data-puzzle-bank aria-label="Piezas del puzle"></div>
+              </div>
+              <div>
+                <p class="drop-hint">TABLERO</p>
+                <div class="puzzle-board drop-row" data-puzzle-board aria-label="Tablero de cuatro piezas"></div>
+              </div>
+            </div>
+            <p class="game-feedback" data-feedback aria-live="polite" role="status">¡Vamos a montar el puzle!</p>
+            <button class="game-button" type="button" data-puzzle-reset>🔄 Volver a empezar</button>
+          </div>
             <p class="teacher-tip"><strong>En clase:</strong> formar una silueta con papel o piezas grandes e identificar las partes con tarjetas.</p>
           </article>
           <article class="activity-card" id="act-1-1-c">
             <div class="activity-head"><span class="activity-id">1.1.C</span><span class="activity-type">🎨 Actividad de aula</span></div>
             <h3>Así soy yo</h3>
-            <p>Mírate en un espejo. Fíjate en tu pelo, ojos y sonrisa. Haz tu autorretrato con pintura, lápices o materiales de collage.</p>
+            <p>Mírate en un espejo y haz tu autorretrato con pintura, lápices o collage. También puedes colorear un personaje en la pantalla.</p>
             <button type="button" class="audio-button" data-say="Mírate en el espejo. ¿Cómo son tus ojos, tu pelo y tu sonrisa? Dibuja tu propio retrato.">🔊 Escuchar consigna</button>
+            
+          <div class="mini-game" data-game="face-coloring">
+            <h4>🎨 Coloreo mi personaje</h4>
+            <p>Elige un color y toca una parte del dibujo. ¡Puedes crear tu propio personaje!</p>
+            <div class="coloring-layout">
+              <div class="paint-palette" role="group" aria-label="Elige un color">
+                <button type="button" class="paint-swatch is-active" style="--swatch:#f6bf8b" data-color="#f6bf8b" data-name="melocotón" aria-label="Color melocotón" aria-pressed="true"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#a96842" data-color="#a96842" data-name="marrón" aria-label="Color marrón" aria-pressed="false"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#e49cbe" data-color="#e49cbe" data-name="rosa" aria-label="Color rosa" aria-pressed="false"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#66c7e5" data-color="#66c7e5" data-name="azul" aria-label="Color azul" aria-pressed="false"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#84c982" data-color="#84c982" data-name="verde" aria-label="Color verde" aria-pressed="false"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#f2ca55" data-color="#f2ca55" data-name="amarillo" aria-label="Color amarillo" aria-pressed="false"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#b18be3" data-color="#b18be3" data-name="morado" aria-label="Color morado" aria-pressed="false"></button>
+                <button type="button" class="paint-swatch" style="--swatch:#ffffff" data-color="#ffffff" data-name="blanco" aria-label="Color blanco" aria-pressed="false"></button>
+              </div>
+              <svg class="paint-page" viewBox="0 0 450 390" role="group" aria-label="Dibujo de una persona para colorear por partes" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="446" height="386" rx="15" fill="#fff"/>
+                <path d="M93 377 V300 Q101 267 147 263 L303 263 Q350 267 357 302 L358 377 Z" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="ropa" tabindex="0" role="button" aria-label="Colorear ropa"/>
+                <path d="M145 267 L112 301 Q83 317 80 361 L106 374 L152 298 Z" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="brazo izquierdo" tabindex="0" role="button" aria-label="Colorear brazo izquierdo"/>
+                <path d="M307 267 L337 301 Q367 317 371 361 L344 374 L300 298 Z" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="brazo derecho" tabindex="0" role="button" aria-label="Colorear brazo derecho"/>
+                <path d="M193 262 V236 H257 V262 Q225 294 193 262 Z" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="cuello" tabindex="0" role="button" aria-label="Colorear cuello"/>
+                <ellipse cx="134" cy="176" rx="22" ry="28" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="oreja izquierda" tabindex="0" role="button" aria-label="Colorear oreja izquierda"/>
+                <ellipse cx="316" cy="176" rx="22" ry="28" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="oreja derecha" tabindex="0" role="button" aria-label="Colorear oreja derecha"/>
+                <ellipse cx="225" cy="169" rx="94" ry="109" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="cara" tabindex="0" role="button" aria-label="Colorear cara"/>
+                <path d="M132 145 C91 58 172 16 215 49 Q283 10 320 80 Q347 125 319 148 Q289 108 267 100 Q214 124 180 91 Q163 115 132 145 Z" fill="#fff" stroke="#343434" stroke-width="5" data-paint-region="pelo" tabindex="0" role="button" aria-label="Colorear pelo"/>
+                <ellipse cx="188" cy="168" rx="11" ry="14" fill="#fff" stroke="#343434" stroke-width="3" data-paint-region="ojo izquierdo" tabindex="0" role="button" aria-label="Colorear ojo izquierdo"/>
+                <ellipse cx="263" cy="168" rx="11" ry="14" fill="#fff" stroke="#343434" stroke-width="3" data-paint-region="ojo derecho" tabindex="0" role="button" aria-label="Colorear ojo derecho"/>
+                <path d="M222 182 L214 202 Q225 208 233 201" fill="none" stroke="#343434" stroke-width="4" stroke-linecap="round" pointer-events="none"/>
+                <path d="M187 223 Q225 248 265 223" fill="none" stroke="#343434" stroke-width="5" stroke-linecap="round" pointer-events="none"/>
+                <path d="M189 327 L262 327" stroke="#343434" stroke-width="3" stroke-linecap="round" pointer-events="none"/>
+              </svg>
+              <p class="child-script" style="text-align:center">También puedes colorear esta palabra:</p>
+              <button type="button" class="handwriting-outline outline-color-word" data-paint-letter aria-label="Colorear la palabra yo">yo</button>
+              <div class="paint-controls">
+                <button class="game-button" type="button" data-paint-reset>🧽 Borrar colores</button>
+                <button class="game-button" type="button" data-say="Elige un color. Después toca el pelo, la cara, los ojos o la ropa para colorear.">🔊 Escuchar</button>
+              </div>
+              <p class="game-feedback" data-feedback aria-live="polite" role="status">Has elegido el color melocotón.</p>
+            </div>
+          </div>
             <p class="teacher-tip"><strong>Materiales:</strong> espejo seguro, papel, ceras y materiales variados. Respetamos que todos somos diferentes.</p>
           </article>
           <article class="activity-card" id="act-1-1-d">
@@ -641,6 +990,17 @@
                 <button type="button" class="game-button" data-next>Otra pregunta</button>
               </div>
             </div>
+            
+          <div class="mini-game" data-game="senses-sort">
+            <h4>🧺 Clasifico con mis sentidos</h4>
+            <p>Coloca cada objeto junto al sentido que usamos para descubrirlo.</p>
+            <p class="access-note">Arrastra o toca un objeto y después elige su casilla.</p>
+            <button class="audio-button" type="button" data-say="¿Qué sentido usamos? Coloca la campana en el oído, la flor en el olfato, la estrella en la vista, el limón en el gusto y la bufanda en el tacto.">🔊 Escuchar instrucciones</button>
+            <div class="drag-bank" data-sort-bank aria-label="Objetos por clasificar"></div>
+            <div class="drop-row" data-sort-targets aria-label="Los cinco sentidos"></div>
+            <p class="game-feedback" data-feedback aria-live="polite" role="status">¿Dónde colocarías la campana?</p>
+            <button type="button" class="game-button" data-sort-reset>🔄 Empezar otra vez</button>
+          </div>
             <p class="teacher-tip"><strong>En clase:</strong> usar objetos reales para relacionar los sentidos con la experiencia.</p>
           </article>
           <article class="activity-card" id="act-1-2-b">
@@ -854,7 +1214,7 @@
           <article class="activity-card" id="act-1-5-a">
             <div class="activity-head"><span class="activity-id">1.5.A</span><span class="activity-type">🎒 Organización personal</span></div>
             <h3>Preparo mis cosas</h3>
-            <p>Comprueba visualmente los materiales que necesitas para un día de clase. Después, organiza tu mochila de verdad.</p>
+            <p>Comprueba qué necesitas, organiza los objetos del juego y, después, prepara tu mochila de verdad.</p>
             <div class="game-panel" data-game="pack-checklist">
               <div class="check-list">
                 <div class="check-item"><input id="pack-1" type="checkbox"><label for="pack-1">🎒 Tengo mi mochila</label></div>
@@ -864,6 +1224,17 @@
               </div>
               <p class="game-feedback" data-feedback role="status" aria-live="polite">Marca los elementos que hayas preparado.</p>
             </div>
+            
+          <div class="mini-game" data-game="pack-drag">
+            <h4>🎒 Preparo la mochila</h4>
+            <p>¿Dónde guardamos cada cosa? Lleva cada objeto a la mochila o al perchero.</p>
+            <p class="access-note">Arrastra los objetos o toca un objeto y después su lugar.</p>
+            <button class="audio-button" type="button" data-say="Vamos a preparar nuestras cosas. Pon el agua, la merienda y el estuche en la mochila. Cuelga el abrigo en el perchero.">🔊 Escuchar instrucciones</button>
+            <div class="drag-bank" data-pack-bank aria-label="Objetos de clase"></div>
+            <div class="drop-row" data-pack-targets aria-label="Lugares para guardar objetos"></div>
+            <p class="game-feedback" data-feedback aria-live="polite" role="status">¡Vamos a organizar nuestras cosas!</p>
+            <button type="button" class="game-button" data-pack-reset>🔄 Empezar otra vez</button>
+          </div>
             <p class="teacher-tip"><strong>En clase:</strong> adaptar la lista a las necesidades reales del centro y usar objetos físicos.</p>
           </article>
           <article class="activity-card" id="act-1-5-b">
@@ -1424,6 +1795,283 @@
         boxes.forEach(box => box.addEventListener('change', update));
         update();
       }
+
+      // =====================================================
+      // JUEGOS ADICIONALES INF5.1: piezas, puzle, coloreado y trazo
+      // =====================================================
+      const rootInf51 = document.querySelector('.infant-learning');
+      const emojiNode = (emoji, text) => {
+        const node = document.createElement('span');
+        node.className = 'item-emoji'; node.textContent = emoji;
+        node.setAttribute('aria-hidden', 'true');
+        return node;
+      };
+      function childButton(cls, label, emoji, dataKey, value) {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = cls;
+        btn.dataset[dataKey] = value;
+        if (emoji) btn.appendChild(emojiNode(emoji));
+        btn.appendChild(document.createTextNode(label));
+        btn.setAttribute('aria-label', label);
+        return btn;
+      }
+      // Sistema único de arrastre con Pointer Events y alternativa táctil:
+      // tocar primero la pieza y después el destino. Permite también teclado.
+      function makeDropInteraction(panel, onDrop) {
+        let selected = null, moved = false, initialX = 0, initialY = 0;
+        let ghost = null, active = null;
+        const getTarget = point => point && point.closest('[data-drop-zone]');
+        const clearHighlight = () => panel.querySelectorAll('.is-hovered').forEach(x=>x.classList.remove('is-hovered'));
+        const removeGhost = () => { if (ghost) ghost.remove(); ghost = null; clearHighlight(); };
+        const select = button => {
+          if (!button || button.disabled) return;
+          panel.querySelectorAll('.drag-piece').forEach(x=>x.classList.remove('is-chosen'));
+          selected = button; selected.classList.add('is-chosen');
+        };
+        const drop = zone => {
+          if (!zone || !selected || selected.disabled) return;
+          const item = selected;
+          const success = onDrop(item.dataset.dragItem, zone.dataset.dropZone, item, zone);
+          if (success) {
+            item.disabled = true; item.classList.remove('is-chosen'); selected = null;
+          } else {
+            setFeedback(panel, '¡Casi! Prueba en otro lugar.', true);
+          }
+        };
+        panel.addEventListener('click', event => {
+          const item = event.target.closest('[data-drag-item]');
+          const zone = getTarget(event.target);
+          if (item && panel.contains(item)) { select(item); return; }
+          if (zone && panel.contains(zone)) drop(zone);
+        });
+        panel.addEventListener('pointerdown', event => {
+          const item = event.target.closest('[data-drag-item]');
+          if (!item || !panel.contains(item) || item.disabled) return;
+          if (event.pointerType === 'mouse' && event.button !== 0) return;
+          active = item; moved = false; initialX = event.clientX; initialY = event.clientY;
+          // Impide arrastre nativo de imágenes en móviles.
+          event.preventDefault();
+        });
+        const onMove = event => {
+          if (!active) return;
+          if (!moved && Math.hypot(event.clientX-initialX, event.clientY-initialY) > 10) {
+            moved = true; select(active);
+            ghost = active.cloneNode(true); ghost.removeAttribute('id');
+            ghost.classList.add('drag-ghost'); ghost.removeAttribute('data-drag-item');
+            rootInf51.appendChild(ghost);
+          }
+          if (ghost) {
+            ghost.style.left = event.clientX + 'px'; ghost.style.top = event.clientY + 'px';
+            clearHighlight();
+            const zone = getTarget(document.elementFromPoint(event.clientX,event.clientY));
+            if (zone && panel.contains(zone)) zone.classList.add('is-hovered');
+          }
+        };
+        const onEnd = event => {
+          if (!active) return;
+          const source = active; active = null;
+          const zone = getTarget(document.elementFromPoint(event.clientX,event.clientY));
+          if (moved && zone && panel.contains(zone)) drop(zone);
+          else if (!moved) select(source);
+          removeGhost();
+        };
+        window.addEventListener('pointermove', onMove, {passive:true});
+        window.addEventListener('pointerup', onEnd);
+        window.addEventListener('pointercancel', () => { active=null; removeGhost(); });
+        return { clearSelection: () => { selected=null; panel.querySelectorAll('.is-chosen').forEach(x=>x.classList.remove('is-chosen')); } };
+      }
+      const announceResult = (panel, message, spoken=false) => {
+        setFeedback(panel, message); if (spoken) speak(message);
+      };
+
+      // 1.1.A Grafomotricidad digital y fuente Escolar punteada.
+      {
+        const panel = document.querySelector('[data-game="trace-words"]');
+        const canvas = panel.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        const word = panel.querySelector('[data-trace-word]');
+        const words = ['mano','pie','ojos'];
+        let index = 0, drawing = false, last = null;
+        const position = event => {
+          const r = canvas.getBoundingClientRect();
+          return {x:(event.clientX-r.left)*canvas.width/r.width,
+                  y:(event.clientY-r.top)*canvas.height/r.height};
+        };
+        const resetInk = () => {
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          setFeedback(panel, 'Repasa la palabra ' + words[index] + '.');
+        };
+        canvas.addEventListener('pointerdown', event => {
+          event.preventDefault();
+          drawing = true; canvas.setPointerCapture(event.pointerId);
+          ctx.lineWidth=9; ctx.strokeStyle='#316bb0';
+          ctx.lineCap='round'; ctx.lineJoin='round';
+          last=position(event); ctx.beginPath(); ctx.moveTo(last.x,last.y);
+          ctx.lineTo(last.x+.1,last.y+.1); ctx.stroke();
+        });
+        canvas.addEventListener('pointermove', event => {
+          if (!drawing) return;
+          event.preventDefault(); const p=position(event);
+          ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke(); last=p;
+        });
+        const stop = () => { drawing=false; last=null; };
+        canvas.addEventListener('pointerup',stop);
+        canvas.addEventListener('pointercancel',stop);
+        canvas.addEventListener('lostpointercapture',stop);
+        panel.querySelector('[data-trace-clear]').addEventListener('click',resetInk);
+        panel.querySelector('[data-trace-next]').addEventListener('click',() => {
+          index=(index+1)%words.length; word.textContent=words[index];
+          resetInk(); speak('Repasa la palabra ' + words[index]);
+        });
+      }
+
+      // 1.1.B Puzle de 4 partes recortadas de la ilustración ya integrada.
+      {
+        const panel = document.querySelector('[data-game="picture-puzzle"]');
+        const photo = document.querySelector('#apartado-1-1 .section-image');
+        const bank = panel.querySelector('[data-puzzle-bank]');
+        const board = panel.querySelector('[data-puzzle-board]');
+        const backgrounds = ['0% 0%','100% 0%','0% 100%','100% 100%'];
+        const positions = [2,0,3,1];
+        let solved = new Set();
+        makeDropInteraction(panel,(item,zone,button,slot) => {
+          if (item !== zone || solved.has(item)) return false;
+          const photoPart=document.createElement('div');
+          photoPart.className='puzzle-fixed';
+          photoPart.style.backgroundImage='url("' + photo.src + '")';
+          photoPart.style.backgroundPosition=backgrounds[Number(item)];
+          slot.appendChild(photoPart); slot.classList.add('is-complete');
+          solved.add(item);
+          if (solved.size === 4) announceResult(panel,'¡Puzle completo! ¡Muy bien!',true);
+          else announceResult(panel,'¡Has colocado una pieza!');
+          return true;
+        });
+        function render() {
+          solved = new Set(); bank.replaceChildren(); board.replaceChildren();
+          positions.forEach(n => {
+            const piece=childButton('drag-piece','',null,'dragItem',String(n));
+            piece.setAttribute('aria-label','Pieza '+(n+1)+' del puzle');
+            const picture=document.createElement('div'); picture.className='puzzle-slice';
+            picture.style.backgroundImage='url("'+photo.src+'")';
+            picture.style.backgroundPosition=backgrounds[n];
+            piece.appendChild(picture); bank.appendChild(piece);
+          });
+          backgrounds.forEach((_,n) => {
+            const slot=childButton('drop-target','',null,'dropZone',String(n));
+            slot.dataset.number=String(n+1); slot.setAttribute('aria-label','Hueco '+(n+1));
+            board.appendChild(slot);
+          });
+          setFeedback(panel,'Puedes arrastrar o tocar una pieza y después su hueco.');
+        }
+        panel.querySelector('[data-puzzle-reset]').addEventListener('click',render);
+        render();
+      }
+
+      // 1.1.C Coloreado por regiones, utilizando un SVG con fondo blanco.
+      {
+        const panel=document.querySelector('[data-game="face-coloring"]');
+        const palette=[...panel.querySelectorAll('[data-color]')];
+        const regions=[...panel.querySelectorAll('[data-paint-region]')];
+        const wordToColor=panel.querySelector('[data-paint-letter]');
+        let active=palette[0].dataset.color;
+        palette.forEach(btn=>btn.addEventListener('click',()=>{
+          active=btn.dataset.color;
+          palette.forEach(b=>{
+            const chosen=b===btn; b.classList.toggle('is-active',chosen);
+            b.setAttribute('aria-pressed',String(chosen));
+          });
+          setFeedback(panel,'Color elegido: '+btn.dataset.name+'.');
+        }));
+        const fill = shape => {
+          shape.setAttribute('fill',active);
+          setFeedback(panel,'¡Muy bien! Sigue coloreando tu dibujo.');
+        };
+        wordToColor.addEventListener('click',()=>{wordToColor.style.color=active;setFeedback(panel,'¡Has coloreado la palabra yo!');});
+        regions.forEach(shape=>{
+          shape.addEventListener('click',()=>fill(shape));
+          shape.addEventListener('keydown',event=>{
+            if(event.key==='Enter'||event.key===' '){event.preventDefault();fill(shape);}
+          });
+        });
+        panel.querySelector('[data-paint-reset]').addEventListener('click',()=>{
+          regions.forEach(s=>s.setAttribute('fill','#ffffff'));
+          wordToColor.style.color='#414141';
+          setFeedback(panel,'¡Puedes volver a colorear!');
+        });
+      }
+
+      // 1.2.A Clasificación sensorial en cinco destinos.
+      {
+        const panel=document.querySelector('[data-game="senses-sort"]');
+        const bank=panel.querySelector('[data-sort-bank]');
+        const targets=panel.querySelector('[data-sort-targets]');
+        const things=[
+          {id:'campana',name:'Campana',icon:'🔔',target:'oido'},
+          {id:'flor',name:'Flor',icon:'🌸',target:'olfato'},
+          {id:'estrella',name:'Estrella',icon:'⭐',target:'vista'},
+          {id:'limon',name:'Limón',icon:'🍋',target:'gusto'},
+          {id:'bufanda',name:'Bufanda suave',icon:'🧣',target:'tacto'}
+        ];
+        const senses=[['vista','👁️','Vista'],['oido','👂','Oído'],['olfato','👃','Olfato'],['gusto','👅','Gusto'],['tacto','✋','Tacto']];
+        let done=new Set();
+        makeDropInteraction(panel,(id,target,item,zone)=>{
+          const match=things.find(x=>x.id===id);
+          if (!match || match.target!==target || done.has(id)) return false;
+          done.add(id); const chip=document.createElement('span');
+          chip.className='placed-token'; chip.textContent=match.icon+' '+match.name;
+          zone.appendChild(chip); zone.classList.add('is-complete');
+          const message=done.size===things.length
+            ? '¡Has clasificado todos los objetos!' : '¡Correcto! ¡Sigue explorando!';
+          announceResult(panel,message,done.size===things.length);
+          return true;
+        });
+        function render(){
+          done=new Set(); bank.replaceChildren(); targets.replaceChildren();
+          things.forEach(t=>bank.appendChild(childButton('drag-piece',t.name,t.icon,'dragItem',t.id)));
+          senses.forEach(([id,icon,name])=>{
+            const b=childButton('drop-target',name,icon,'dropZone',id);
+            targets.appendChild(b);
+          });
+          setFeedback(panel,'Relaciona cada objeto con un sentido.');
+        }
+        panel.querySelector('[data-sort-reset]').addEventListener('click',render);
+        render();
+      }
+
+      // 1.5.A Mochila y perchero. Experiencia digital complementaria.
+      {
+        const panel=document.querySelector('[data-game="pack-drag"]');
+        const bank=panel.querySelector('[data-pack-bank]');
+        const targets=panel.querySelector('[data-pack-targets]');
+        const objects=[
+          {id:'botella',icon:'💧',name:'Agua',target:'mochila'},
+          {id:'merienda',icon:'🍎',name:'Merienda',target:'mochila'},
+          {id:'estuche',icon:'🖍️',name:'Estuche',target:'mochila'},
+          {id:'abrigo',icon:'🧥',name:'Abrigo',target:'perchero'}
+        ];
+        let done=new Set();
+        makeDropInteraction(panel,(id,target,item,zone)=>{
+          const match=objects.find(o=>o.id===id);
+          if (!match || match.target!==target || done.has(id)) return false;
+          done.add(id);
+          const chip=document.createElement('span');
+          chip.className='placed-token'; chip.textContent=match.icon+' '+match.name;
+          zone.appendChild(chip); zone.classList.add('is-complete');
+          const all=done.size===objects.length;
+          announceResult(panel,all?'¡Todo en su lugar! Ahora prepara tus cosas reales.':'¡Bien organizado!',all);
+          return true;
+        });
+        function render(){
+          done=new Set(); bank.replaceChildren(); targets.replaceChildren();
+          objects.forEach(obj=>bank.appendChild(childButton('drag-piece',obj.name,obj.icon,'dragItem',obj.id)));
+          targets.appendChild(childButton('drop-target','Mochila','🎒','dropZone','mochila'));
+          targets.appendChild(childButton('drop-target','Perchero','🪝','dropZone','perchero'));
+          setFeedback(panel,'Organiza los objetos.');
+        }
+        panel.querySelector('[data-pack-reset]').addEventListener('click',render);
+        render();
+      }
+
     })();
   </script>
   <script src="/js/main.js"></script>
