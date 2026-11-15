@@ -1,351 +1,2542 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Procesos cognitivos y funciones ejecutivas: recursos de Pedagogía Terapéutica y Audición y Lenguaje organizados en seis subbloques y tres niveles de actividad. CEIP Joaquín Tena Artigas.">
-  <meta name="theme-color" content="#00843d">
-  <title>Procesos cognitivos y funciones ejecutivas | Apoyo y Orientación | CEIP Joaquín Tena Artigas</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="Procesos cognitivos y funciones ejecutivas: actividades interactivas, orales y de cuaderno en tres niveles. Apoyo y Orientación, PT y AL.">
+        <meta name="theme-color" content="#007336">
+        <title>
+            Procesos cognitivos y funciones ejecutivas · Actividades | CEIP Joaquín Tena Artigas
+        </title>
+        <!-- Estilos autónomos para facilitar la revisión local y evitar cambios en base.css. -->
+        <style>
+:root { --green:#007336; --ink:#233b32; --muted:#52665d; --paper:#f5f8f5; --line:#d5e0d9; --purple:#4b5e99; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--paper); font:18px/1.65 system-ui,sans-serif; }
+a { color:var(--green); text-underline-offset:4px; }
+button,select { font:inherit; }
+button,summary,select { cursor:pointer; }
+button { min-height:48px; border:2px solid var(--line); border-radius:12px; background:white; color:var(--ink); padding:10px 16px; }
+button:hover { border-color:var(--green); background:#f0f8f2; }
+:focus-visible { outline:4px solid #ad6300; outline-offset:4px; }
+[hidden] { display:none!important; }
+.skip { position:absolute; top:-100px; background:white; z-index:20; padding:14px; }
+.skip:focus { top:0; }
+.site-banner { background:white; text-align:center; }
+.site-banner img { display:block; width:100%; max-height:240px; object-fit:cover; }
+.school-name { margin:0; padding:12px; font-weight:750; font-size:.9rem; }
+.site-nav { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; padding:15px; background:white; border-bottom:1px solid var(--line); }
+.site-nav a { font-weight:650; }
+main { max-width:1120px; margin:auto; padding:26px 24px 60px; }
+.breadcrumbs { font-size:.85rem; margin:5px 0 26px; }
+.hero { padding:38px; border-radius:24px; background:#e8f2ea; border:1px solid #c9ddce; }
+.eyebrow { text-transform:uppercase; letter-spacing:.12em; font-weight:750; font-size:.8rem; color:var(--green); }
+h1 { font-size:clamp(2rem,5vw,3.3rem); line-height:1.12; margin:14px 0 22px; max-width:720px; }
+h2,h3,h4 { line-height:1.3; }
+.hero p { max-width:800px; }
+.pills { display:flex; gap:10px; flex-wrap:wrap; }
+.pill { font-size:.85rem; background:white; padding:5px 12px; border-radius:30px; }
+.index { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0; }
+.index a { text-decoration:none; background:white; border:1px solid var(--line); padding:18px; border-radius:14px; font-weight:650; }
+.index small { display:block; color:var(--purple); }
+.tools { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:20px 0; }
+.note,details.guide { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin:20px 0; }
+summary { font-weight:700; }
+.section-heading { color:var(--green); font-size:1.75rem; border-bottom:3px solid #cee3d2; padding-bottom:14px; margin:0 0 20px; }
+.block { scroll-margin-top:20px; margin-top:44px; }
+.example { border-left:5px solid var(--purple); padding:14px 20px; background:#edf0f9; border-radius:0 12px 12px 0; }
+.level { margin-top:20px; border:1px solid var(--line); background:white; border-radius:18px; overflow:hidden; }
+.level > summary { padding:20px; background:#eff5f0; }
+.level-inner { padding:24px; }
+.learn { margin-top:0; }
+.activities { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:22px; }
+.exercise,.paper { border:1px solid var(--line); border-radius:14px; padding:20px; min-width:0; }
+.exercise { background:#fcfdfb; }
+h4 { margin:8px 0 14px; font-size:1.12rem; }
+.type { font-size:.76rem; font-weight:750; letter-spacing:.08em; text-transform:uppercase; color:var(--purple); }
+.options { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.options button { flex:1 1 110px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; text-align:center; }
+.options svg { width:76px; height:76px; }
+.options button[aria-pressed="true"] { border-color:var(--green); background:#deefdf; }
+.options button:disabled { opacity:.5; cursor:default; }
+.feedback { min-height:34px; font-weight:650; }
+.sequence-answer { min-height:50px; padding:10px; border:2px dashed var(--line); border-radius:10px; }
+.reset { font-size:.9rem; padding:6px 13px; }
+.paper ol { padding-left:24px; }
+.paper li { margin:12px 0; }
+.transfer { padding:18px 22px; border-radius:12px; background:#e8f2ea; margin-top:20px; }
+.review { margin-top:16px; }
+.review label { display:block; margin:8px 0; }
+input[type="checkbox"] { width:23px; height:23px; vertical-align:middle; accent-color:var(--green); }
+footer { padding:28px; text-align:center; background:#e4eee6; }
+code { overflow-wrap:anywhere; }
+pre { white-space:pre-wrap; font-size:.85rem; background:#f3f5f4; padding:16px; border-radius:10px; }
+.large-text { font-size:22px; }
+body.focus-mode .index,body.focus-mode .hero,body.focus-mode .site-banner,body.focus-mode .site-nav,body.focus-mode .breadcrumbs { display:none; }
+@media(max-width:760px) { .index { grid-template-columns:1fr 1fr; } .activities { grid-template-columns:1fr; } .hero { padding:24px; } }
+@media(max-width:480px) { main { padding:18px 12px 40px; } .index { grid-template-columns:1fr; } .level-inner { padding:14px; } .exercise,.paper { padding:15px; } .site-nav { gap:12px; font-size:.9rem; } }
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
 
-  <!-- Estilos comunes de la web del centro -->
-  <link rel="icon" type="image/png" href="/img/logo-centro.png">
-  <link rel="stylesheet" href="/css/base.css">
-
-  <!-- Ajustes de esta página; no modifican el CSS general -->
-  <style>
-    .cognition-page {
-      --cognition-color: #277c83;
-      --cognition-soft: #eff8f8;
-    }
-
-    .cognition-page .subjects-grid {
-      align-items: stretch;
-    }
-
-    .cognition-page .cognition-card > a {
-      height: 100%;
-      min-height: 250px;
-    }
-
-    .cognition-page .cognition-card .subject-icon {
-      background: var(--cognition-color);
-    }
-
-    .cognition-page .subject-content {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .cognition-page .subject-content h2 {
-      overflow-wrap: anywhere;
-    }
-
-    .cognition-page .subject-content p {
-      line-height: 1.65;
-    }
-
-    .cognition-page .subject-access {
-      display: inline-block;
-      margin-top: auto;
-    }
-
-    .cognition-page .cognition-card-label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--cognition-color);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .cognition-page .cognition-symbol {
-      display: block;
-      width: 70px;
-      height: 70px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex: none;
-    }
-
-    .cognition-page .cognition-card > a:focus-visible {
-      outline: 4px solid var(--junta-green, #00843d);
-      outline-offset: -4px;
-      border-radius: var(--radius-medium, 18px);
-    }
-
-    /* Los niveles se entienden como niveles de actividad, no de alumnado */
-    .cognition-page .cognition-levels {
-      margin-top: 38px;
-      padding: 28px;
-      border: 1px solid var(--border, #dfe8e2);
-      border-left: 5px solid var(--cognition-color);
-      border-radius: var(--radius-medium, 18px);
-      background: var(--background-soft, #f6f9f7);
-    }
-
-    .cognition-page .cognition-levels h2 {
-      margin: 0 0 12px;
-      font-size: 1.28rem;
-      line-height: 1.3;
-    }
-
-    .cognition-page .cognition-levels > p {
-      margin: 0 0 20px;
-      color: var(--text-soft, #66736c);
-      line-height: 1.65;
-    }
-
-    .cognition-page .levels-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .cognition-page .level-item {
-      padding: 17px 18px;
-      border: 1px solid var(--border, #dfe8e2);
-      border-radius: var(--radius-small, 10px);
-      background: #fff;
-    }
-
-    .cognition-page .level-item h3 {
-      margin: 0 0 7px;
-      color: var(--cognition-color);
-      font-size: 0.98rem;
-      line-height: 1.35;
-    }
-
-    .cognition-page .level-item p {
-      margin: 0;
-      color: var(--text-soft, #66736c);
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    .cognition-page .levels-clarification {
-      margin: 18px 0 0 !important;
-      font-size: 0.93rem;
-    }
-
-    @media (max-width: 800px) {
-      .cognition-page .levels-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .cognition-page .cognition-card > a {
-        min-height: 0;
-      }
-
-      .cognition-page .cognition-symbol {
-        width: 48px;
-        height: 48px;
-      }
-
-      .cognition-page .cognition-levels {
-        padding: 20px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .cognition-page .cognition-card {
-        transition: none;
-      }
-    }
-  </style>
-</head>
-<body class="cognition-page">
-  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
-
-  <!-- Cabecera institucional -->
-  <header class="site-banner">
-    <a href="/" aria-label="Ir a la página de inicio">
-      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
-    </a>
-  </header>
-
-  <!-- Navegación común -->
-  <div class="navigation-wrapper">
-    <div class="navigation-container">
-      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
-        <img src="/img/logo-centro.png" alt="">
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
-        <ul>
-          <li class="nav-green"><a href="/">Inicio</a></li>
-          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
-          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
-          <li class="nav-red">
-            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">🔒</span> Área privada Profesorado
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-  <main id="contenido-principal">
-    <!-- Portada del bloque 2 -->
-    <section class="page-intro">
-      <div class="page-intro-container">
-        <nav class="breadcrumbs" aria-label="Migas de pan">
-          <ol>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/recursos/">Recursos educativos</a></li>
-            <li><a href="/recursos/apoyo-orientacion/">Apoyo y Orientación</a></li>
-            <li aria-current="page">Procesos cognitivos y funciones ejecutivas</li>
-          </ol>
-        </nav>
-        <p class="section-label">Apoyo y Orientación · Bloque 2</p>
-        <h1>Procesos cognitivos y funciones ejecutivas</h1>
-        <p class="page-intro-text">
-          Recursos para estimular la atención, la memoria, el razonamiento y las
-          funciones ejecutivas. Selecciona uno de los seis subbloques para trabajar
-          habilidades cognitivas con actividades y apoyos adaptados a diferentes
-          necesidades y puntos de partida.
-        </p>
-      </div>
-    </section>
-
-    <!-- Distribución de los seis subbloques -->
-    <section class="subjects-section" aria-label="Subbloques de Procesos cognitivos y funciones ejecutivas">
-      <div class="section-container">
-        <div class="subjects-grid">
-          <!-- SUBBLOQUE 2.1 -->
-          <article class="subject-card cognition-card">
-            <a href="/recursos/apoyo-orientacion/procesos-cognitivos-funciones-ejecutivas/atencion-percepcion/" aria-label="Entrar en Atención y percepción">
-              <div class="subject-icon">
-                <svg class="cognition-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <circle cx="30" cy="35" r="19"/><circle cx="30" cy="35" r="9"/><path d="M44 49l20 20M17 58h25M19 66h22"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="cognition-card-label">Subbloque 2.1</span>
-                <h2>Atención y percepción</h2>
-                <p>Identificar información relevante, mantener y cambiar el foco de atención y discriminar estímulos visuales y auditivos.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 2.2 -->
-          <article class="subject-card cognition-card">
-            <a href="/recursos/apoyo-orientacion/procesos-cognitivos-funciones-ejecutivas/memoria-memoria-trabajo/" aria-label="Entrar en Memoria y memoria de trabajo">
-              <div class="subject-icon">
-                <svg class="cognition-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <rect x="9" y="10" width="43" height="49" rx="6"/><path d="M20 24h22M20 35h22M20 46h14"/><rect x="40" y="25" width="30" height="42" rx="5"/><path d="M49 38h12M49 47h12M49 56h8"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="cognition-card-label">Subbloque 2.2</span>
-                <h2>Memoria y memoria de trabajo</h2>
-                <p>Retener y recordar información, repetir secuencias, establecer asociaciones y organizar elementos para realizar una tarea.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 2.3 -->
-          <article class="subject-card cognition-card">
-            <a href="/recursos/apoyo-orientacion/procesos-cognitivos-funciones-ejecutivas/razonamiento-relaciones/" aria-label="Entrar en Razonamiento y relaciones">
-              <div class="subject-icon">
-                <svg class="cognition-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <rect x="7" y="12" width="22" height="22" rx="4"/><circle cx="61" cy="23" r="11"/><path d="M16 59l12-18 12 18H16ZM49 49h22v20H49zM29 23h21M40 34v10M35 46h10"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="cognition-card-label">Subbloque 2.3</span>
-                <h2>Razonamiento y relaciones</h2>
-                <p>Clasificar, ordenar series, reconocer analogías y relaciones causa-efecto; trabajar el razonamiento lógico-matemático y las nociones espaciales y temporales.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 2.4 -->
-          <article class="subject-card cognition-card">
-            <a href="/recursos/apoyo-orientacion/procesos-cognitivos-funciones-ejecutivas/control-inhibitorio-flexibilidad/" aria-label="Entrar en Control inhibitorio y flexibilidad">
-              <div class="subject-icon">
-                <svg class="cognition-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <path d="M24 17a27 27 0 0 1 43 16M67 33V18M67 33H52"/><path d="M56 62a27 27 0 0 1-43-16M13 46v15M13 46h15"/><circle cx="40" cy="40" r="11"/><path d="M40 33v7l5 3"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="cognition-card-label">Subbloque 2.4</span>
-                <h2>Control inhibitorio y flexibilidad</h2>
-                <p>Practicar la pausa antes de actuar, regular respuestas impulsivas, cambiar de criterio y buscar alternativas ante nuevas situaciones.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 2.5 -->
-          <article class="subject-card cognition-card">
-            <a href="/recursos/apoyo-orientacion/procesos-cognitivos-funciones-ejecutivas/planificacion-organizacion/" aria-label="Entrar en Planificación y organización">
-              <div class="subject-icon">
-                <svg class="cognition-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <rect x="11" y="10" width="58" height="60" rx="7"/><path d="M24 10v10M56 10v10M11 27h58"/><path d="m23 40 4 4 7-8M42 41h16M23 57l4 4 7-8M42 58h16"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="cognition-card-label">Subbloque 2.5</span>
-                <h2>Planificación y organización</h2>
-                <p>Definir metas, anticipar pasos, preparar materiales, ordenar acciones y organizar el tiempo necesario para terminar tareas.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 2.6 -->
-          <article class="subject-card cognition-card">
-            <a href="/recursos/apoyo-orientacion/procesos-cognitivos-funciones-ejecutivas/resolucion-problemas-autorrevision/" aria-label="Entrar en Resolución de problemas y autorrevisión">
-              <div class="subject-icon">
-                <svg class="cognition-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <path d="M23 11h34a8 8 0 0 1 8 8v42a8 8 0 0 1-8 8H23a8 8 0 0 1-8-8V19a8 8 0 0 1 8-8Z"/><path d="M29 29a11 11 0 0 1 22 0c0 8-11 9-11 17M40 55v2"/><path d="m51 61 5 5 11-12"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="cognition-card-label">Subbloque 2.6</span>
-                <h2>Resolución de problemas y autorrevisión</h2>
-                <p>Identificar problemas, escoger estrategias, comprobar resultados, corregir errores y pedir ayuda cuando sea necesario, también en tareas lógico-matemáticas.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Pie institucional; sin bloque de copyright -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-junta">
-        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
-      </div>
-      <div class="footer-school">
-        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
-        <p>Alcolea · Córdoba</p>
-        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">
-          Web oficial del Centro <span aria-hidden="true">↗</span>
+    
+        </style>
+    </head>
+    <body>
+        <a class="skip" href="#contenido-principal">
+            Ir al contenido principal
         </a>
-      </div>
-    </div>
-  </footer>
+        <!-- Cabecera y navegación del centro. Las imágenes usan las rutas existentes. -->
+        <header class="site-banner">
+            <a href="/">
+                <img src="/img/banner-principal.png" alt="" onerror="this.hidden=true">
+            </a>
+            <p class="school-name">
+                CEIP Joaquín Tena Artigas · Alcolea, Córdoba
+            </p>
+        </header>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a href="/">
+                Inicio
+            </a>
+            <a href="/familias/">
+                Familias
+            </a>
+            <a href="/recursos/">
+                Recursos educativos
+            </a>
+            <a href="https://profesorado.ceipjta.com/">
+                Área privada Profesorado
+            </a>
+        </nav>
+        <main id="contenido-principal">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/recursos/">
+                    Recursos
+                </a>
+                /
+                <a href="/recursos/apoyo-orientacion/">
+                    Apoyo y Orientación
+                </a>
+                / Procesos cognitivos y funciones ejecutivas
+            </nav>
+            <section class="hero" aria-labelledby="titulo">
+                <span class="eyebrow">
+                    Apoyo y Orientación · Bloque 2
+                </span>
+                <h1 id="titulo">
+                    Procesos cognitivos y funciones ejecutivas
+                </h1>
+                <p>
+                    Observamos, recordamos y planificamos. Actividades para organizar información, buscar
+                    soluciones y aprender con los apoyos que cada persona necesita.
+                </p>
+                <div class="pills">
+                    <span class="pill">
+                        6 subbloques
+                    </span>
+                    <span class="pill">
+                        3 niveles
+                    </span>
+                    <span class="pill">
+                        Pantalla · Cuaderno · Materiales
+                    </span>
+                </div>
+            </section>
+            <nav class="index" aria-label="Contenido del bloque">
+                <a href="#atencion-percepcion">
+                    <small>
+                        2.1 · Atención y percepción
+                    </small>
+                    Me fijo y descubro detalles
+                </a>
+                <a href="#memoria-memoria-trabajo">
+                    <small>
+                        2.2 · Memoria y memoria de trabajo
+                    </small>
+                    Recuerdo y utilizo la información
+                </a>
+                <a href="#razonamiento-relaciones">
+                    <small>
+                        2.3 · Razonamiento y relaciones
+                    </small>
+                    Relaciono, ordeno y descubro patrones
+                </a>
+                <a href="#control-inhibitorio-flexibilidad">
+                    <small>
+                        2.4 · Control inhibitorio y flexibilidad
+                    </small>
+                    Hago una pausa y pruebo otra manera
+                </a>
+                <a href="#planificacion-organizacion">
+                    <small>
+                        2.5 · Planificación y organización
+                    </small>
+                    Preparo los pasos de mi tarea
+                </a>
+                <a href="#resolucion-problemas-autorrevision">
+                    <small>
+                        2.6 · Resolución de problemas y autorrevisión
+                    </small>
+                    Busco soluciones y reviso mi trabajo
+                </a>
+            </nav>
+            <details class="guide">
+                <summary>
+                    Cómo utilizar estas actividades
+                </summary>
+                <p>
+                    Elige el subbloque y el nivel de la actividad. Los niveles no clasifican al alumnado. Los
+                    apoyos pueden mantenerse en todos ellos. No es necesario completar todo en una sesión.
+                </p>
+                <p>
+                    En iniciación, el docente puede leer la consigna y modelar las opciones. Los dibujos son
+                    apoyos visuales sencillos; pueden sustituirse por fotografías u otros símbolos familiares.
+                    No se requiere leer ni escribir para responder señalando.
+                </p>
+                <p>
+                    Las propuestas de cuaderno también pueden resolverse oralmente, con objetos, dibujos,
+                    gestos o el comunicador habitual. Respeta la edad, los intereses y el tiempo de respuesta.
+                </p>
+                <p>
+                    No hay cronómetro, puntuación ni grabación del alumnado. Las respuestas se reinician al
+                    recargar. El docente puede leer las consignas. Las actividades de memoria permiten volver
+                    a consultar el modelo sin límite de tiempo.
+                </p>
+            </details>
+            <div class="tools" role="group" aria-label="Ajustes de lectura">
+                <label for="level-filter">
+                    Mostrar nivel:
+                </label>
+                <select id="level-filter">
+                    <option value="all">
+                        Todos
+                    </option>
+                    <option value="1">
+                        1 · Iniciación
+                    </option>
+                    <option value="2">
+                        2 · Desarrollo
+                    </option>
+                    <option value="3">
+                        3 · Profundización
+                    </option>
+                </select>
+                <button id="text-size" type="button" aria-pressed="false">
+                    Texto grande
+                </button>
+                <button id="focus-mode" type="button" aria-pressed="false">
+                    Reducir distracciones
+                </button>
+            </div>
+            <noscript>
+                <p class="note">
+                    Las actividades de cuaderno y las propuestas orales están disponibles. Para usar las actividades
+                    interactivas, activa JavaScript.
+                </p>
+            </noscript>
+            <!-- SUBBLOQUE 2.1: Atención y percepción -->
+            <section class="block" id="atencion-percepcion" aria-labelledby="heading-1">
+                <h2 class="section-heading" id="heading-1">
+                    2.1. Me fijo y descubro detalles
+                </h2>
+                <p>
+                    Antes de responder, mira qué tienes que buscar. Puedes observar despacio, comparar y pedir
+                    que te repitan la consigna. No necesitas terminar antes que nadie.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Si busco un círculo, me fijo en la forma. El color puede cambiar y seguir siendo un
+                        círculo.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Encontrar una forma
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-1" aria-labelledby="exercise-1-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-1">
+                                    Encontrar una forma
+                                </h4>
+                                <p>
+                                    Busca el círculo. Puedes señalarlo o pulsarlo.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="15" y="15" width="50" height="50" rx="2" fill="#edc278">
+                                            </rect>
+                                        </svg>
+                                        <span>
+                                            Cuadrado
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="26" fill="#a4cbee">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Círculo
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Busca dos objetos redondos entre materiales reales.
+                                    </li>
+                                    <li>
+                                        Empareja dos dibujos iguales entre tres opciones.
+                                    </li>
+                                    <li>
+                                        Señala qué ha cambiado cuando el docente mueve un objeto.
+                                    </li>
+                                    <li>
+                                        Escucha un sonido cercano e indica de dónde viene.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Dos pistas a la vez
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-2" aria-labelledby="exercise-1-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-2">
+                                    Dos pistas a la vez
+                                </h4>
+                                <p>
+                                    Busca la figura que es un triángulo y además tiene un punto dentro.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M40 10 70 65H10Z" fill="#b8d8b1">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Triángulo sin punto
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M40 10 70 65H10Z" fill="#b8d8b1">
+                                            </path>
+                                            <circle cx="40" cy="45" r="5" fill="#233b32">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Triángulo con punto
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="26" fill="#a4cbee">
+                                            </circle>
+                                            <circle cx="40" cy="40" r="5" fill="#233b32">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Círculo con punto
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Busca en una lámina dos elementos que cumplan dos condiciones.
+                                    </li>
+                                    <li>
+                                        Compara dos dibujos y describe dos diferencias.
+                                    </li>
+                                    <li>
+                                        Revisa una fila de símbolos de izquierda a derecha, señalando cada
+                                        uno.
+                                    </li>
+                                    <li>
+                                        Escucha una instrucción y repite la información que debes recordar.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Seleccionar información útil
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-3" aria-labelledby="exercise-1-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-3">
+                                    Seleccionar información útil
+                                </h4>
+                                <p>
+                                    Para preparar una excursión necesitas saber la hora de salida. El aviso
+                                    dice: «Salimos a las 9:30. La mochila será pequeña. El cartel es azul».
+                                    ¿Qué dato necesitas?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        El color del cartel.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        La hora: 9:30.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        El tamaño de la mochila.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Lee o escucha un aviso y localiza un dato solicitado.
+                                    </li>
+                                    <li>
+                                        Revisa una lista buscando un elemento repetido.
+                                    </li>
+                                    <li>
+                                        Explica qué información puedes dejar para después en una tarea.
+                                    </li>
+                                    <li>
+                                        Elige un apoyo para mantener la atención: separar pasos, cubrir parte
+                                        de la hoja o hacer una pausa.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Utiliza una consigna de clase: identifica qué tienes que buscar y comprueba que
+                        atiendes a esa información. Reduce estímulos cuando sea necesario.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He probado una estrategia para resolver la tarea.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda a pensar o recordar.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 2.2: Memoria y memoria de trabajo -->
+            <section class="block" id="memoria-memoria-trabajo" aria-labelledby="heading-2">
+                <h2 class="section-heading" id="heading-2">
+                    2.2. Recuerdo y utilizo la información
+                </h2>
+                <p>
+                    Recordar puede resultar más fácil si agrupas, repites, dibujas o relacionas la
+                    información. Puedes consultar una ayuda cuando la necesites.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Para llevar un vaso y un libro, puedes mirar sus imágenes, nombrarlos o imaginar dónde
+                        los vas a colocar.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Recuerdo una imagen
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-1" aria-labelledby="exercise-2-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-1">
+                                    Recuerdo una imagen
+                                </h4>
+                                <p>
+                                    Observa el modelo. Cuando estés preparado, ocúltalo y busca la imagen que
+                                    viste.
+                                </p>
+                                <div class="memory-model note">
+                                    <div role="img" aria-label="Modelo: un vaso">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            width="72"
+                                            height="72"
+                                            aria-hidden="true"
+                                            stroke="#233b32"
+                                            stroke-width="3">
+                                            <path d="M20 15h40l-5 52H25Z" fill="#d9f3ff">
+                                            </path>
+                                            <path d="M23 37h34">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <button class="memory-start" type="button">
+                                    Ocultar modelo y empezar
+                                </button>
+                                <button class="memory-show" type="button" hidden>
+                                    Consultar el modelo
+                                </button>
+                                <p class="memory-task" aria-live="polite">
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M20 15h40l-5 52H25Z" fill="#d9f3ff">
+                                            </path>
+                                            <path d="M23 37h34M28 20l3 38">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Vaso
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Pelota
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Observa un objeto y reconócelo entre dos cuando se oculte.
+                                    </li>
+                                    <li>
+                                        Escucha un encargo de un paso y realízalo.
+                                    </li>
+                                    <li>
+                                        Recuerda qué material acabas de utilizar.
+                                    </li>
+                                    <li>
+                                        Prueba a repetir o señalar una imagen para recordar un encargo.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Recuerdo el orden
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-2" aria-labelledby="exercise-2-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-2">
+                                    Recuerdo el orden
+                                </h4>
+                                <p>
+                                    Observa tres imágenes. Después oculta el modelo y selecciónalas en el
+                                    mismo orden.
+                                </p>
+                                <div class="memory-model note">
+                                    <div role="img" aria-label="Orden del modelo: vaso, libro, pelota">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            width="72"
+                                            height="72"
+                                            aria-hidden="true"
+                                            stroke="#233b32"
+                                            stroke-width="3">
+                                            <path d="M20 15h40l-5 52H25Z" fill="#d9f3ff">
+                                            </path>
+                                        </svg>
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            width="72"
+                                            height="72"
+                                            aria-hidden="true"
+                                            stroke="#233b32"
+                                            stroke-width="3">
+                                            <rect x="18" y="10" width="45" height="60" rx="4" fill="#eaa3a3">
+                                            </rect>
+                                            <path d="M26 10v60">
+                                            </path>
+                                        </svg>
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            width="72"
+                                            height="72"
+                                            aria-hidden="true"
+                                            stroke="#233b32"
+                                            stroke-width="3">
+                                            <circle cx="40" cy="40" r="26" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <button class="memory-start" type="button">
+                                    Ocultar modelo y empezar
+                                </button>
+                                <button class="memory-show" type="button" hidden>
+                                    Consultar el modelo
+                                </button>
+                                <p class="memory-task" aria-live="polite">
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Pelota
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M20 15h40l-5 52H25Z" fill="#d9f3ff">
+                                            </path>
+                                            <path d="M23 37h34M28 20l3 38">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Vaso
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="18" y="10" width="45" height="60" rx="4" fill="#eaa3a3">
+                                            </rect>
+                                            <path d="M26 10v60M35 25h18M35 35h15">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Libro
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Observa tres objetos y colócalos en el mismo orden.
+                                    </li>
+                                    <li>
+                                        Escucha dos encargos relacionados y realiza ambos.
+                                    </li>
+                                    <li>
+                                        Agrupa cuatro elementos por su categoría antes de recordarlos.
+                                    </li>
+                                    <li>
+                                        Compara recordar sin ayuda y recordar con una lista: explica qué te
+                                        facilita la tarea.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Actualizo una lista
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-3" aria-labelledby="exercise-2-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-3">
+                                    Actualizo una lista
+                                </h4>
+                                <p>
+                                    Recuerda la lista. Después ocúltala: tendrás que cambiar uno de sus
+                                    elementos.
+                                </p>
+                                <div class="memory-model note">
+                                    <p>
+                                        <strong>
+                                            Lista inicial:
+                                        </strong>
+                                        pan, leche y peras.
+                                    </p>
+                                </div>
+                                <button class="memory-start" type="button">
+                                    Ocultar modelo y empezar
+                                </button>
+                                <button class="memory-show" type="button" hidden>
+                                    Consultar el modelo
+                                </button>
+                                <p class="memory-task" aria-live="polite">
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Pan, leche y peras.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Pan, agua y peras.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Agua, leche y manzanas.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Escucha una lista de tres materiales y cambia uno según una nueva
+                                        indicación.
+                                    </li>
+                                    <li>
+                                        Repite dos números en orden inverso con apoyo si lo necesitas.
+                                    </li>
+                                    <li>
+                                        Agrupa información de una tarea en pasos y realiza el primero.
+                                    </li>
+                                    <li>
+                                        Explica qué estrategia utilizaste y cuándo te convendría anotarlo.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Prepara un encargo real. Puedes recordar, consultar una lista o combinar ambas
+                        estrategias. Usar un apoyo externo también es una forma eficaz de resolver la tarea.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He probado una estrategia para resolver la tarea.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda a pensar o recordar.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 2.3: Razonamiento y relaciones -->
+            <section class="block" id="razonamiento-relaciones" aria-labelledby="heading-3">
+                <h2 class="section-heading" id="heading-3">
+                    2.3. Relaciono, ordeno y descubro patrones
+                </h2>
+                <p>
+                    Comparamos, agrupamos y buscamos reglas. Para resolver una situación, podemos usar
+                    objetos, dibujos o números y explicar cómo lo hemos pensado.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        En la serie círculo, cuadrado, círculo, cuadrado se alternan dos formas. Después viene
+                        otro círculo.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Continuar una serie
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-1" aria-labelledby="exercise-3-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-1">
+                                    Continuar una serie
+                                </h4>
+                                <p>
+                                    Observa el patrón y elige la figura que sigue.
+                                </p>
+                                <div
+                                    style="display:flex;flex-wrap:wrap;gap:8px"
+                                    class="visual-model"
+                                    role="img"
+                                    aria-label="Círculo, cuadrado, círculo, cuadrado. ¿Qué sigue?">
+                                    <svg
+                                        viewbox="0 0 80 80"
+                                        width="72"
+                                        height="72"
+                                        aria-hidden="true"
+                                        stroke="#233b32"
+                                        stroke-width="3">
+                                        <circle cx="40" cy="40" r="25" fill="#a4cbee">
+                                        </circle>
+                                    </svg>
+                                    <svg
+                                        viewbox="0 0 80 80"
+                                        width="72"
+                                        height="72"
+                                        aria-hidden="true"
+                                        stroke="#233b32"
+                                        stroke-width="3">
+                                        <rect x="15" y="15" width="50" height="50" fill="#edc278">
+                                        </rect>
+                                    </svg>
+                                    <svg
+                                        viewbox="0 0 80 80"
+                                        width="72"
+                                        height="72"
+                                        aria-hidden="true"
+                                        stroke="#233b32"
+                                        stroke-width="3">
+                                        <circle cx="40" cy="40" r="25" fill="#a4cbee">
+                                        </circle>
+                                    </svg>
+                                    <svg
+                                        viewbox="0 0 80 80"
+                                        width="72"
+                                        height="72"
+                                        aria-hidden="true"
+                                        stroke="#233b32"
+                                        stroke-width="3">
+                                        <rect x="15" y="15" width="50" height="50" fill="#edc278">
+                                        </rect>
+                                    </svg>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="15" y="15" width="50" height="50" rx="2" fill="#edc278">
+                                            </rect>
+                                        </svg>
+                                        <span>
+                                            Cuadrado
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="26" fill="#a4cbee">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Círculo
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Agrupa objetos por una característica visible.
+                                    </li>
+                                    <li>
+                                        Continúa una serie alternando dos materiales.
+                                    </li>
+                                    <li>
+                                        Reparte un objeto a cada persona y comprueba si todos tienen uno.
+                                    </li>
+                                    <li>
+                                        Coloca un objeto dentro y otro fuera de una caja.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Comparar cantidades
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-2" aria-labelledby="exercise-3-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-2">
+                                    Comparar cantidades
+                                </h4>
+                                <p>
+                                    Ana tiene 3 fichas y recibe 2 más. ¿Cuántas tiene ahora? Usa objetos o
+                                    dibujos si lo necesitas.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        4 fichas
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        5 fichas
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        6 fichas
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Ordena tres objetos de menor a mayor.
+                                    </li>
+                                    <li>
+                                        Reparte seis fichas entre dos personas, dando la misma cantidad a cada
+                                        una.
+                                    </li>
+                                    <li>
+                                        Explica qué puede pasar si una planta no recibe agua durante mucho
+                                        tiempo.
+                                    </li>
+                                    <li>
+                                        Relaciona cada objeto con su función y explica una semejanza.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Encontrar una regla
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-3" aria-labelledby="exercise-3-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-3">
+                                    Encontrar una regla
+                                </h4>
+                                <p>
+                                    En la serie 2, 5, 8, 11… se suma siempre la misma cantidad. ¿Qué número
+                                    sigue?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        12
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        13
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        14
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Inventa una serie numérica y explica la regla.
+                                    </li>
+                                    <li>
+                                        Resuelve: tienes 10 euros y gastas 6. ¿Cuánto queda? Representa la
+                                        situación.
+                                    </li>
+                                    <li>
+                                        Ordena tres acontecimientos y explica su relación de causa y
+                                        consecuencia.
+                                    </li>
+                                    <li>
+                                        Compara dos maneras de resolver un mismo reparto.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Aplica una relación a una tarea cotidiana: repartir materiales, comparar cantidades o
+                        anticipar qué ocurre después. Explica o muestra el razonamiento con tus apoyos.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He probado una estrategia para resolver la tarea.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda a pensar o recordar.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 2.4: Control inhibitorio y flexibilidad -->
+            <section class="block" id="control-inhibitorio-flexibilidad" aria-labelledby="heading-4">
+                <h2 class="section-heading" id="heading-4">
+                    2.4. Hago una pausa y pruebo otra manera
+                </h2>
+                <p>
+                    Antes de actuar, comprueba la regla. Si cambia la situación, puedes cambiar tu plan, pedir
+                    una explicación o proponer una alternativa. No es una prueba de velocidad.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Si una regla cambia de «buscar círculos» a «buscar cuadrados», paro, miro la nueva
+                        regla y elijo de nuevo.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Miro la regla
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-1" aria-labelledby="exercise-4-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-1">
+                                    Miro la regla
+                                </h4>
+                                <p>
+                                    La regla es elegir la mano de PARAR. Observa y selecciona.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="m22 12 42 28-42 28Z" fill="#b8d8b1">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Seguir
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M23 43V25q0-7 6-3V13q0-7 7-2V8q4-6 8 0v7q7-6 7 2v23l6-9q6-6 10 0L55 59q-5 13-19 9L19 52q-7-13 1-14Z"
+                                                fill="#f6cb9b">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Parar
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Juega con tarjetas de seguir y parar, sin eliminar participantes.
+                                    </li>
+                                    <li>
+                                        Espera una señal acordada para comenzar una acción sencilla.
+                                    </li>
+                                    <li>
+                                        Practica pedir tiempo antes de responder.
+                                    </li>
+                                    <li>
+                                        Prueba otra acción cuando el docente cambie la tarjeta.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Cambio de criterio
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-2" aria-labelledby="exercise-4-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-2">
+                                    Cambio de criterio
+                                </h4>
+                                <p>
+                                    Primero busca una forma. Después cambiará la regla: lee o escucha la nueva
+                                    consigna.
+                                </p>
+                                <p class="rule note" aria-live="polite">
+                                    <strong>
+                                        Regla 1:
+                                    </strong>
+                                    elige el círculo.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="26" fill="#a4cbee">
+                                            </circle>
+                                            <circle cx="40" cy="40" r="5" fill="#233b32">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Círculo con punto
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="15" y="15" width="50" height="50" rx="2" fill="#edc278">
+                                            </rect>
+                                        </svg>
+                                        <span>
+                                            Cuadrado sin punto
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M40 10 70 65H10Z" fill="#b8d8b1">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Triángulo sin punto
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Clasifica tarjetas por forma y después por otro criterio.
+                                    </li>
+                                    <li>
+                                        Explica qué cambió entre las dos reglas.
+                                    </li>
+                                    <li>
+                                        Busca dos usos posibles de una caja.
+                                    </li>
+                                    <li>
+                                        Pide aclaración si una nueva regla no está clara.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Busco alternativas
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-3" aria-labelledby="exercise-4-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-3">
+                                    Busco alternativas
+                                </h4>
+                                <p>
+                                    Querías hacer una actividad en el patio, pero está cerrado. ¿Qué plan
+                                    permite continuar de otra manera?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Buscar con el docente un espacio disponible y adaptar la actividad.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Intentar entrar aunque esté cerrado.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Decidir que nunca podrás hacer esa actividad.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Propón dos soluciones cuando falta un material.
+                                    </li>
+                                    <li>
+                                        Explica qué parte de una tarea puede cambiar y cuál debe mantenerse.
+                                    </li>
+                                    <li>
+                                        Revisa una primera respuesta después de recibir nueva información.
+                                    </li>
+                                    <li>
+                                        Expresa desacuerdo con una propuesta y plantea otra opción.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Cuando una rutina cambie, anticipa lo posible con apoyos. Practica alternativas sin
+                        convertir la flexibilidad en obediencia: se puede expresar malestar, rechazar y pedir
+                        ayuda.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He probado una estrategia para resolver la tarea.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda a pensar o recordar.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 2.5: Planificación y organización -->
+            <section class="block" id="planificacion-organizacion" aria-labelledby="heading-5">
+                <h2 class="section-heading" id="heading-5">
+                    2.5. Preparo los pasos de mi tarea
+                </h2>
+                <p>
+                    Piensa qué quieres conseguir, qué necesitas y qué harás primero. Un plan puede ser una
+                    lista, dibujos o una explicación compartida. Puedes modificarlo durante la tarea.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Para dibujar: preparo papel y lápiz, hago el dibujo y guardo los materiales.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Primero, después y al final
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-1" aria-labelledby="exercise-5-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-1">
+                                    Primero, después y al final
+                                </h4>
+                                <p>
+                                    Ordena los tres pasos para dibujar. Pulsa las imágenes en el orden que
+                                    seguirías.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M10 38h60v32H10Z" fill="#edc278">
+                                            </path>
+                                            <path d="M26 9v23M43 12v20M30 47h20M21 26l5 7 6-7M38 26l5 7 6-7">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Guardo los materiales
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="10" y="17" width="39" height="50" fill="#fff">
+                                            </rect>
+                                            <path d="m51 58 6-42 9 2-6 42-7 9Z" fill="#edc278">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Preparo materiales
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="8" y="15" width="50" height="54" fill="#fff">
+                                            </rect>
+                                            <circle cx="30" cy="40" r="12">
+                                            </circle>
+                                            <path d="m46 42 14-30 7 4-15 30-8 6Z" fill="#edc278">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Hago el dibujo
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Elige una tarea corta y señala lo que necesitas.
+                                    </li>
+                                    <li>
+                                        Ordena dos fotos de una rutina conocida.
+                                    </li>
+                                    <li>
+                                        Prepara una bandeja con los materiales de una actividad.
+                                    </li>
+                                    <li>
+                                        Señala el paso que ya has terminado.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Seleccionar materiales
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-2" aria-labelledby="exercise-5-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-2">
+                                    Seleccionar materiales
+                                </h4>
+                                <p>
+                                    Vas a recortar y pegar figuras en una cartulina. ¿Qué conjunto necesitas?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Pelota, vaso y cuento.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Cartulina, tijeras adecuadas y pegamento.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Regla y botella de agua solamente.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Prepara una lista de materiales para una tarea.
+                                    </li>
+                                    <li>
+                                        Divide una actividad en tres pasos.
+                                    </li>
+                                    <li>
+                                        Estima qué paso necesitará más tiempo y explica por qué.
+                                    </li>
+                                    <li>
+                                        Marca los pasos realizados y comprueba qué queda por hacer.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Organizar con condiciones
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-3" aria-labelledby="exercise-5-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-3">
+                                    Organizar con condiciones
+                                </h4>
+                                <p>
+                                    Para presentar un cartel, antes hay que revisarlo; para revisarlo, antes
+                                    hay que elaborarlo. Ordena las acciones.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Presentar el cartel.
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Elaborar el cartel.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Revisar el contenido y los materiales.
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Planifica una tarea con una meta y cuatro pasos.
+                                    </li>
+                                    <li>
+                                        Anticipa una dificultad y prepara una alternativa.
+                                    </li>
+                                    <li>
+                                        Distribuye el trabajo entre dos personas de forma acordada.
+                                    </li>
+                                    <li>
+                                        Revisa el plan y modifica un paso si las condiciones cambian.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Utiliza una lista real para preparar la mochila o comenzar un trabajo. Comprueba su
+                        utilidad y conserva los apoyos que faciliten la autonomía.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He probado una estrategia para resolver la tarea.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda a pensar o recordar.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 2.6: Resolución de problemas y autorrevisión -->
+            <section class="block" id="resolucion-problemas-autorrevision" aria-labelledby="heading-6">
+                <h2 class="section-heading" id="heading-6">
+                    2.6. Busco soluciones y reviso mi trabajo
+                </h2>
+                <p>
+                    Comprueba qué ocurre, qué quieres conseguir y qué puedes probar. Después revisa si la
+                    solución funciona. Pedir ayuda y corregir forman parte del aprendizaje.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Si hay tres personas y solo dos vasos, comparo las cantidades: falta un vaso. Busco
+                        uno más y vuelvo a comprobar.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Completar lo que falta
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-1" aria-labelledby="exercise-6-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-1">
+                                    Completar lo que falta
+                                </h4>
+                                <p>
+                                    Hay tres personas y dos vasos. ¿Qué necesitas añadir para que cada persona
+                                    tenga un vaso?
+                                </p>
+                                <div class="note">
+                                    <p aria-label="Tres personas y dos vasos">
+                                        <span aria-hidden="true" style="font-size:2rem">
+                                            👤 👤 👤
+                                            <br>
+                                            🥛 🥛
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M20 15h40l-5 52H25Z" fill="#d9f3ff">
+                                            </path>
+                                            <path d="M23 37h34M28 20l3 38">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Un vaso
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Una pelota
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Reparte un material a cada compañero y comprueba si falta alguno.
+                                    </li>
+                                    <li>
+                                        Observa un dibujo incompleto y señala qué falta.
+                                    </li>
+                                    <li>
+                                        Pide ayuda cuando un material no funciona.
+                                    </li>
+                                    <li>
+                                        Comprueba si el problema quedó resuelto después de actuar.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Revisar una cantidad
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-2" aria-labelledby="exercise-6-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-2">
+                                    Revisar una cantidad
+                                </h4>
+                                <p>
+                                    Hay 4 personas. Cada una necesita 2 fichas. Has preparado 6. ¿Qué debes
+                                    hacer?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Quitar 2 fichas.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Añadir 2 fichas.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Dejar las 6 fichas.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Representa el problema con fichas y personas dibujadas.
+                                    </li>
+                                    <li>
+                                        Explica qué dato necesitas conocer antes de resolver un reparto.
+                                    </li>
+                                    <li>
+                                        Revisa una respuesta comparándola con la pregunta.
+                                    </li>
+                                    <li>
+                                        Corrige un error sencillo y explica qué cambiaste.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Comprobar la solución
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-3" aria-labelledby="exercise-6-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-3">
+                                    Comprobar la solución
+                                </h4>
+                                <p>
+                                    Tu lista para una salida dice «botella de agua y cuaderno». Ya tienes el
+                                    cuaderno. ¿Qué acción completa la revisión?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Decir que la mochila está lista sin mirar.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Comprobar si está la botella y añadirla si falta.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Sacar el cuaderno porque ya lo has visto.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Resuelve una situación cotidiana y comprueba si el resultado tiene
+                                        sentido.
+                                    </li>
+                                    <li>
+                                        Compara dos soluciones posibles y explica cuál eliges.
+                                    </li>
+                                    <li>
+                                        Describe un error que hayas corregido y cómo lo detectaste.
+                                    </li>
+                                    <li>
+                                        Completa oralmente o por escrito: mi plan fue…, me ayudó…, la próxima
+                                        vez…
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Antes de dar una tarea por terminada, utiliza tres preguntas: ¿he hecho lo que se
+                        pedía?, ¿cómo lo compruebo?, ¿necesito cambiar algo o pedir ayuda?
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He probado una estrategia para resolver la tarea.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda a pensar o recordar.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- Orientaciones de uso, separadas de las propuestas del alumnado. -->
+            <details class="guide">
+                <summary>
+                    Para el profesorado: adaptar las actividades y observar el proceso
+                </summary>
+                <p>
+                    En iniciación, lee las consignas y presenta primero los dibujos con objetos reales. Se
+                    puede responder señalando, con gestos, oralmente o mediante un comunicador. Ningún
+                    ejercicio requiere arrastrar: todas las acciones se realizan con botones y teclado.
+                </p>
+                <p>
+                    En memoria, el modelo se oculta cuando el alumno decide comenzar. Puede volver a
+                    consultarlo. Anota si lo resolvió con el modelo visible, tras volver a mirarlo o sin
+                    consultarlo; son condiciones distintas y todas pueden servir para aprender.
+                </p>
+                <p>
+                    En el cambio de regla, comprueba primero que se ha comprendido cada consigna. Diferencia
+                    una dificultad de comprensión de una dificultad para cambiar de criterio.
+                </p>
+                <p>
+                    Gradúa el número de opciones, la cantidad de pasos y la familiaridad de los materiales.
+                    Una dificultad de lectura, visión o movimiento no debe confundirse con la habilidad
+                    trabajada. Usa descripciones y objetos táctiles cuando el apoyo visual no sea accesible.
+                </p>
+                <p>
+                    Estas actividades son recursos educativos, no pruebas diagnósticas ni baremos. Observa las
+                    estrategias, la ayuda utilizada y su aplicación en situaciones reales. No se guardan datos
+                    personales ni se registran respuestas al recargar la página.
+                </p>
+                <p>
+                    Los tres niveles están disponibles desde el comienzo. Una persona puede necesitar niveles
+                    diferentes en distintos subbloques. Mantén las ayudas útiles y adapta la presentación a su
+                    edad.
+                </p>
+            </details>
+        </main>
+        <footer>
+            CEIP Joaquín Tena Artigas · Apoyo y Orientación · PT y AL
+        </footer>
+        <script>
+        "use strict";
+        const EXERCISES = {
+    "1-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "El círculo tiene un borde curvo y no tiene esquinas.",
+        "labels": [
+            "Cuadrado",
+            "Círculo"
+        ]
+    },
+    "1-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La figura elegida cumple las dos condiciones: tres lados y un punto dentro.",
+        "labels": [
+            "Triángulo sin punto",
+            "Triángulo con punto",
+            "Círculo con punto"
+        ]
+    },
+    "1-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La hora responde a la pregunta concreta, aunque otros datos puedan servir para otras decisiones.",
+        "labels": [
+            "El color del cartel.",
+            "La hora: 9:30.",
+            "El tamaño de la mochila."
+        ]
+    },
+    "2-1": {
+        "kind": "memory",
+        "answer": 0,
+        "explain": "El modelo mostraba un vaso. Si lo necesitas, puedes volver a mirarlo.",
+        "labels": [
+            "Vaso",
+            "Pelota"
+        ],
+        "recallPrompt": "Selecciona la imagen que recuerdas."
+    },
+    "2-2": {
+        "kind": "memory-sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "El orden era vaso, libro y pelota. Repetir los nombres o asociarlos a una historia puede ayudar.",
+        "labels": [
+            "Vaso",
+            "Libro",
+            "Pelota"
+        ],
+        "recallPrompt": "Selecciona las imágenes en el orden que recuerdas."
+    },
+    "2-3": {
+        "kind": "memory",
+        "answer": 1,
+        "explain": "Se conserva pan y peras; agua sustituye a leche. El resultado es pan, agua y peras.",
+        "labels": [
+            "Pan, leche y peras.",
+            "Pan, agua y peras.",
+            "Agua, leche y manzanas."
+        ],
+        "recallPrompt": "Cambia leche por agua. Elige cómo queda la lista."
+    },
+    "3-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Se repite círculo y cuadrado. Después del último cuadrado viene un círculo.",
+        "labels": [
+            "Cuadrado",
+            "Círculo"
+        ]
+    },
+    "3-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Al juntar 3 fichas y 2 fichas contamos 5 en total.",
+        "labels": [
+            "4 fichas",
+            "5 fichas",
+            "6 fichas"
+        ]
+    },
+    "3-3": {
+        "kind": "quiz",
+        "answer": 2,
+        "explain": "Cada número aumenta en 3. Después de 11 viene 14.",
+        "labels": [
+            "12",
+            "13",
+            "14"
+        ]
+    },
+    "4-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La mano indica parar. Puedes hacer una pausa y revisar la regla antes de responder.",
+        "labels": [
+            "Seguir",
+            "Parar"
+        ]
+    },
+    "4-2": {
+        "kind": "switch",
+        "answer": [
+            0,
+            1
+        ],
+        "explain": "Al cambiar la regla hay que revisar el criterio: primero círculo y después cuadrado.",
+        "labels": [
+            "Círculo con punto",
+            "Cuadrado sin punto",
+            "Triángulo sin punto"
+        ]
+    },
+    "4-3": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "Revisar los espacios y adaptar el plan permite buscar una alternativa viable.",
+        "labels": [
+            "Buscar con el docente un espacio disponible y adaptar la actividad.",
+            "Intentar entrar aunque esté cerrado.",
+            "Decidir que nunca podrás hacer esa actividad."
+        ]
+    },
+    "5-1": {
+        "kind": "sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "Primero preparo los materiales; después dibujo; al final los guardo.",
+        "labels": [
+            "Preparo materiales",
+            "Hago el dibujo",
+            "Guardo los materiales"
+        ]
+    },
+    "5-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Los materiales responden a las acciones previstas: recortar y pegar sobre una cartulina.",
+        "labels": [
+            "Pelota, vaso y cuento.",
+            "Cartulina, tijeras adecuadas y pegamento.",
+            "Regla y botella de agua solamente."
+        ]
+    },
+    "5-3": {
+        "kind": "sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "La revisión se realiza después de elaborar y antes de presentar. Puedes volver a elaborar una parte si encuentras algo que mejorar.",
+        "labels": [
+            "Elaborar el cartel.",
+            "Revisar el contenido y los materiales.",
+            "Presentar el cartel."
+        ]
+    },
+    "6-1": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "Falta un vaso para que haya tres vasos, uno por persona.",
+        "labels": [
+            "Un vaso",
+            "Una pelota"
+        ]
+    },
+    "6-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Se necesitan 8 fichas: 2 para cada una de las 4 personas. Como hay 6, faltan 2.",
+        "labels": [
+            "Quitar 2 fichas.",
+            "Añadir 2 fichas.",
+            "Dejar las 6 fichas."
+        ]
+    },
+    "6-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Revisar implica contrastar lo preparado con la lista y actuar si falta algo.",
+        "labels": [
+            "Decir que la mochila está lista sin mirar.",
+            "Comprobar si está la botella y añadirla si falta.",
+            "Sacar el cuaderno porque ya lo has visto."
+        ]
+    }
+};
+        // Un estado independiente por actividad. Sin puntuaciones, tiempo límite ni almacenamiento.
+        document.querySelectorAll('[data-exercise]').forEach((exercise) => {
+            const config = EXERCISES[exercise.dataset.exercise];
+            const feedback = exercise.querySelector('.feedback');
+            const buttons = [...exercise.querySelectorAll('[data-option]')];
+            const options = exercise.querySelector('.options');
+            const selected = [];
+            const isSequence = config.kind === 'sequence' || config.kind === 'memory-sequence';
+            const isMemory = config.kind.startsWith('memory');
+            const sequenceOutput = exercise.querySelector('.sequence-answer');
+            const check = exercise.querySelector('.check');
+            let phase = 0;
+            let started = !isMemory;
+            const model = exercise.querySelector('.memory-model');
+            const start = exercise.querySelector('.memory-start');
+            const show = exercise.querySelector('.memory-show');
+            const task = exercise.querySelector('.memory-task');
+            const rule = exercise.querySelector('.rule');
 
-  <!-- Script común: navegación móvil -->
-  <script src="/js/main.js"></script>
-</body>
+            function clearSelection() {
+                selected.length = 0;
+                buttons.forEach((button) => {
+                    button.disabled = false;
+                    button.setAttribute('aria-pressed', 'false');
+                });
+                if (sequenceOutput) sequenceOutput.textContent = 'Tu secuencia aparecerá aquí.';
+            }
+            function prepareMemory() {
+                if (!isMemory) return;
+                started = false;
+                model.hidden = false;
+                options.hidden = true;
+                start.hidden = false;
+                show.hidden = true;
+                show.textContent = 'Consultar el modelo';
+                task.textContent = '';
+                if (check) check.hidden = true;
+                if (sequenceOutput) sequenceOutput.hidden = true;
+            }
+            if (isMemory) {
+                prepareMemory();
+                start.addEventListener('click', () => {
+                    started = true;
+                    model.hidden = true;
+                    options.hidden = false;
+                    start.hidden = true;
+                    show.hidden = false;
+                    task.textContent = config.recallPrompt;
+                    if (check) check.hidden = false;
+                    if (sequenceOutput) sequenceOutput.hidden = false;
+                    buttons[0].focus();
+                });
+                show.addEventListener('click', () => {
+                    model.hidden = !model.hidden;
+                    show.textContent = model.hidden ? 'Consultar el modelo' : 'Ocultar el modelo';
+                    feedback.textContent = model.hidden
+                        ? 'Puedes continuar con la actividad.'
+                        : 'Puedes mirar el modelo el tiempo que necesites.';
+                });
+            }
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    if (!started || (config.kind === 'switch' && phase === 2)) return;
+                    const index = Number(button.dataset.option);
+                    if (isSequence) {
+                        selected.push(index);
+                        button.disabled = true;
+                        button.setAttribute('aria-pressed', 'true');
+                        sequenceOutput.textContent = selected.map((n) => config.labels[n]).join(' → ');
+                        feedback.textContent = '';
+                        const next = buttons.find((item) => !item.disabled);
+                        (next || check).focus();
+                        return;
+                    }
+                    buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+                    if (config.kind === 'switch') {
+                        if (index !== config.answer[phase]) {
+                            feedback.textContent = 'Haz una pausa y revisa la regla que aparece encima. Puedes pedir que te la lean.';
+                        } else if (phase === 0) {
+                            phase = 1;
+                            clearSelection();
+                            rule.textContent = 'Regla 2: ahora elige el cuadrado. Ya no buscamos el círculo.';
+                            feedback.textContent = 'Has encontrado el círculo. La regla ha cambiado; puedes tomarte tu tiempo.';
+                        } else {
+                            phase = 2;
+                            feedback.textContent = 'Sí. ' + config.explain;
+                        }
+                        return;
+                    }
+                    feedback.textContent = index === config.answer
+                        ? 'Sí. ' + config.explain
+                        : 'Vamos a revisarlo. Mira o escucha la consigna otra vez; puedes pedir ayuda y probar otra opción.';
+                });
+            });
+            if (check) {
+                check.addEventListener('click', () => {
+                    if (!started) return;
+                    if (selected.length !== config.answer.length) {
+                        feedback.textContent = 'Todavía faltan elementos. Selecciona todos antes de comprobar.';
+                        return;
+                    }
+                    const correct = selected.every((value, i) => value === config.answer[i]);
+                    feedback.textContent = correct
+                        ? 'Sí. ' + config.explain
+                        : 'Revisa el orden con esta pista: ' + config.explain + ' Pulsa «Empezar de nuevo» para probar.';
+                });
+            }
+            exercise.querySelector('.reset').addEventListener('click', () => {
+                clearSelection();
+                phase = 0;
+                if (rule) rule.textContent = 'Regla 1: elige el círculo.';
+                prepareMemory();
+                feedback.textContent = 'Puedes empezar otra vez.';
+                (isMemory ? start : buttons[0]).focus();
+            });
+        });
+        document.getElementById('level-filter').addEventListener('change', (event) => {
+            document.querySelectorAll('.level').forEach((level) => {
+                const show = event.target.value === 'all' || level.dataset.level === event.target.value;
+                level.hidden = !show;
+                if (event.target.value !== 'all' && show) level.open = true;
+            });
+        });
+        [['text-size', 'large-text'], ['focus-mode', 'focus-mode']].forEach(([id, className]) => {
+            const button = document.getElementById(id);
+            button.addEventListener('click', () => {
+                const active = document.body.classList.toggle(className);
+                button.setAttribute('aria-pressed', String(active));
+            });
+        });
+
+    
+        </script>
+    </body>
 </html>
