@@ -1,352 +1,2396 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Desarrollo socioemocional y autonomía: recursos de Pedagogía Terapéutica y Audición y Lenguaje organizados en seis subbloques y tres niveles de actividad. CEIP Joaquín Tena Artigas.">
-  <meta name="theme-color" content="#00843d">
-  <title>Desarrollo socioemocional y autonomía | Apoyo y Orientación | CEIP Joaquín Tena Artigas</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="Desarrollo socioemocional y autonomía: actividades interactivas, orales y de cuaderno en tres niveles. Apoyo y Orientación, PT y AL.">
+        <meta name="theme-color" content="#007336">
+        <title>
+            Desarrollo socioemocional y autonomía · Actividades | CEIP Joaquín Tena Artigas
+        </title>
+        <!-- Estilos autónomos para facilitar la revisión local y evitar cambios en base.css. -->
+        <style>
+:root { --green:#007336; --ink:#233b32; --muted:#52665d; --paper:#f5f8f5; --line:#d5e0d9; --purple:#4b5e99; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--paper); font:18px/1.65 system-ui,sans-serif; }
+a { color:var(--green); text-underline-offset:4px; }
+button,select { font:inherit; }
+button,summary,select { cursor:pointer; }
+button { min-height:48px; border:2px solid var(--line); border-radius:12px; background:white; color:var(--ink); padding:10px 16px; }
+button:hover { border-color:var(--green); background:#f0f8f2; }
+:focus-visible { outline:4px solid #ad6300; outline-offset:4px; }
+[hidden] { display:none!important; }
+.skip { position:absolute; top:-100px; background:white; z-index:20; padding:14px; }
+.skip:focus { top:0; }
+.site-banner { background:white; text-align:center; }
+.site-banner img { display:block; width:100%; max-height:240px; object-fit:cover; }
+.school-name { margin:0; padding:12px; font-weight:750; font-size:.9rem; }
+.site-nav { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; padding:15px; background:white; border-bottom:1px solid var(--line); }
+.site-nav a { font-weight:650; }
+main { max-width:1120px; margin:auto; padding:26px 24px 60px; }
+.breadcrumbs { font-size:.85rem; margin:5px 0 26px; }
+.hero { padding:38px; border-radius:24px; background:#e8f2ea; border:1px solid #c9ddce; }
+.eyebrow { text-transform:uppercase; letter-spacing:.12em; font-weight:750; font-size:.8rem; color:var(--green); }
+h1 { font-size:clamp(2rem,5vw,3.3rem); line-height:1.12; margin:14px 0 22px; max-width:720px; }
+h2,h3,h4 { line-height:1.3; }
+.hero p { max-width:800px; }
+.pills { display:flex; gap:10px; flex-wrap:wrap; }
+.pill { font-size:.85rem; background:white; padding:5px 12px; border-radius:30px; }
+.index { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0; }
+.index a { text-decoration:none; background:white; border:1px solid var(--line); padding:18px; border-radius:14px; font-weight:650; }
+.index small { display:block; color:var(--purple); }
+.tools { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:20px 0; }
+.note,details.guide { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin:20px 0; }
+summary { font-weight:700; }
+.section-heading { color:var(--green); font-size:1.75rem; border-bottom:3px solid #cee3d2; padding-bottom:14px; margin:0 0 20px; }
+.block { scroll-margin-top:20px; margin-top:44px; }
+.example { border-left:5px solid var(--purple); padding:14px 20px; background:#edf0f9; border-radius:0 12px 12px 0; }
+.level { margin-top:20px; border:1px solid var(--line); background:white; border-radius:18px; overflow:hidden; }
+.level > summary { padding:20px; background:#eff5f0; }
+.level-inner { padding:24px; }
+.learn { margin-top:0; }
+.activities { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:22px; }
+.exercise,.paper { border:1px solid var(--line); border-radius:14px; padding:20px; min-width:0; }
+.exercise { background:#fcfdfb; }
+h4 { margin:8px 0 14px; font-size:1.12rem; }
+.type { font-size:.76rem; font-weight:750; letter-spacing:.08em; text-transform:uppercase; color:var(--purple); }
+.options { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.options button { flex:1 1 110px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; text-align:center; }
+.options svg { width:76px; height:76px; }
+.options button[aria-pressed="true"] { border-color:var(--green); background:#deefdf; }
+.options button:disabled { opacity:.5; cursor:default; }
+.feedback { min-height:34px; font-weight:650; }
+.sequence-answer { min-height:50px; padding:10px; border:2px dashed var(--line); border-radius:10px; }
+.reset { font-size:.9rem; padding:6px 13px; }
+.paper ol { padding-left:24px; }
+.paper li { margin:12px 0; }
+.transfer { padding:18px 22px; border-radius:12px; background:#e8f2ea; margin-top:20px; }
+.review { margin-top:16px; }
+.review label { display:block; margin:8px 0; }
+input[type="checkbox"] { width:23px; height:23px; vertical-align:middle; accent-color:var(--green); }
+footer { padding:28px; text-align:center; background:#e4eee6; }
+code { overflow-wrap:anywhere; }
+pre { white-space:pre-wrap; font-size:.85rem; background:#f3f5f4; padding:16px; border-radius:10px; }
+.large-text { font-size:22px; }
+body.focus-mode .index,body.focus-mode .hero,body.focus-mode .site-banner,body.focus-mode .site-nav,body.focus-mode .breadcrumbs { display:none; }
+@media(max-width:760px) { .index { grid-template-columns:1fr 1fr; } .activities { grid-template-columns:1fr; } .hero { padding:24px; } }
+@media(max-width:480px) { main { padding:18px 12px 40px; } .index { grid-template-columns:1fr; } .level-inner { padding:14px; } .exercise,.paper { padding:15px; } .site-nav { gap:12px; font-size:.9rem; } }
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
 
-  <!-- Estilos comunes de la web del centro -->
-  <link rel="icon" type="image/png" href="/img/logo-centro.png">
-  <link rel="stylesheet" href="/css/base.css">
-
-  <!-- Ajustes de esta página; no modifican el CSS general -->
-  <style>
-    .socioemotional-page {
-      --socioemotional-color: #8c659e;
-      --socioemotional-soft: #f7f1fa;
-    }
-
-    .socioemotional-page .subjects-grid {
-      align-items: stretch;
-    }
-
-    .socioemotional-page .socioemotional-card > a {
-      height: 100%;
-      min-height: 250px;
-    }
-
-    .socioemotional-page .socioemotional-card .subject-icon {
-      background: var(--socioemotional-color);
-    }
-
-    .socioemotional-page .subject-content {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .socioemotional-page .subject-content h2 {
-      overflow-wrap: anywhere;
-    }
-
-    .socioemotional-page .subject-content p {
-      line-height: 1.65;
-    }
-
-    .socioemotional-page .subject-access {
-      display: inline-block;
-      margin-top: auto;
-    }
-
-    .socioemotional-page .socioemotional-card-label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--socioemotional-color);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .socioemotional-page .socioemotional-symbol {
-      display: block;
-      width: 70px;
-      height: 70px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex: none;
-    }
-
-    .socioemotional-page .socioemotional-card > a:focus-visible {
-      outline: 4px solid var(--junta-green, #00843d);
-      outline-offset: -4px;
-      border-radius: var(--radius-medium, 18px);
-    }
-
-    /* Los niveles se entienden como niveles de actividad, no de alumnado */
-    .socioemotional-page .socioemotional-levels {
-      margin-top: 38px;
-      padding: 28px;
-      border: 1px solid var(--border, #dfe8e2);
-      border-left: 5px solid var(--socioemotional-color);
-      border-radius: var(--radius-medium, 18px);
-      background: var(--background-soft, #f6f9f7);
-    }
-
-    .socioemotional-page .socioemotional-levels h2 {
-      margin: 0 0 12px;
-      font-size: 1.28rem;
-      line-height: 1.3;
-    }
-
-    .socioemotional-page .socioemotional-levels > p {
-      margin: 0 0 20px;
-      color: var(--text-soft, #66736c);
-      line-height: 1.65;
-    }
-
-    .socioemotional-page .levels-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .socioemotional-page .level-item {
-      padding: 17px 18px;
-      border: 1px solid var(--border, #dfe8e2);
-      border-radius: var(--radius-small, 10px);
-      background: #fff;
-    }
-
-    .socioemotional-page .level-item h3 {
-      margin: 0 0 7px;
-      color: var(--socioemotional-color);
-      font-size: 0.98rem;
-      line-height: 1.35;
-    }
-
-    .socioemotional-page .level-item p {
-      margin: 0;
-      color: var(--text-soft, #66736c);
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    .socioemotional-page .levels-clarification {
-      margin: 18px 0 0 !important;
-      font-size: 0.93rem;
-    }
-
-    @media (max-width: 800px) {
-      .socioemotional-page .levels-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .socioemotional-page .socioemotional-card > a {
-        min-height: 0;
-      }
-
-      .socioemotional-page .socioemotional-symbol {
-        width: 48px;
-        height: 48px;
-      }
-
-      .socioemotional-page .socioemotional-levels {
-        padding: 20px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .socioemotional-page .socioemotional-card {
-        transition: none;
-      }
-    }
-  </style>
-</head>
-<body class="socioemotional-page">
-  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
-
-  <!-- Cabecera institucional -->
-  <header class="site-banner">
-    <a href="/" aria-label="Ir a la página de inicio">
-      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
-    </a>
-  </header>
-
-  <!-- Navegación común -->
-  <div class="navigation-wrapper">
-    <div class="navigation-container">
-      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
-        <img src="/img/logo-centro.png" alt="">
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
-        <ul>
-          <li class="nav-green"><a href="/">Inicio</a></li>
-          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
-          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
-          <li class="nav-red">
-            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">🔒</span> Área privada Profesorado
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-  <main id="contenido-principal">
-    <!-- Portada del bloque 4 -->
-    <section class="page-intro">
-      <div class="page-intro-container">
-        <nav class="breadcrumbs" aria-label="Migas de pan">
-          <ol>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/recursos/">Recursos educativos</a></li>
-            <li><a href="/recursos/apoyo-orientacion/">Apoyo y Orientación</a></li>
-            <li aria-current="page">Desarrollo socioemocional y autonomía</li>
-          </ol>
-        </nav>
-        <p class="section-label">Apoyo y Orientación · Bloque 4</p>
-        <h1>Desarrollo socioemocional y autonomía</h1>
-        <p class="page-intro-text">
-          Recursos para conocerse mejor, comprender y expresar emociones, desarrollar
-          estrategias de autorregulación, convivir y ganar autonomía en la vida
-          cotidiana y escolar. Selecciona uno de los seis subbloques para trabajar
-          estas habilidades con actividades graduadas y apoyos ajustados a cada
-          alumno o alumna.
-        </p>
-      </div>
-    </section>
-
-    <!-- Distribución de los seis subbloques -->
-    <section class="subjects-section" aria-label="Subbloques de Desarrollo socioemocional y autonomía">
-      <div class="section-container">
-        <div class="subjects-grid">
-          <!-- SUBBLOQUE 4.1 -->
-          <article class="subject-card socioemotional-card">
-            <a href="/recursos/apoyo-orientacion/desarrollo-socioemocional-autonomia/autoconocimiento-autoestima/" aria-label="Entrar en Autoconocimiento y autoestima">
-              <div class="subject-icon">
-                <svg class="socioemotional-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <circle cx="40" cy="23" r="12"/><path d="M19 67V58c0-12 9-21 21-21s21 9 21 21v9"/><path d="m16 23-5-4m58 4 5-4M40 7V3"/><path d="m34 54 6 5 7-10"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="socioemotional-card-label">Subbloque 4.1</span>
-                <h2>Autoconocimiento y autoestima</h2>
-                <p>Reconocer las propias características, intereses, capacidades y logros; construir una imagen positiva y realista de uno mismo.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 4.2 -->
-          <article class="subject-card socioemotional-card">
-            <a href="/recursos/apoyo-orientacion/desarrollo-socioemocional-autonomia/comprension-expresion-emocional/" aria-label="Entrar en Comprensión y expresión emocional">
-              <div class="subject-icon">
-                <svg class="socioemotional-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <circle cx="32" cy="34" r="21"/><path d="M24 29h1M39 29h1M24 42c4 5 12 5 16 0"/><path d="M51 14h16a7 7 0 0 1 7 7v16a7 7 0 0 1-7 7h-3l-7 7v-7h-3"/><path d="M62 25v9M58 29h8"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="socioemotional-card-label">Subbloque 4.2</span>
-                <h2>Comprensión y expresión emocional</h2>
-                <p>Identificar emociones propias y ajenas, reconocer sus señales y expresarlas mediante palabras, gestos o apoyos visuales.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 4.3 -->
-          <article class="subject-card socioemotional-card">
-            <a href="/recursos/apoyo-orientacion/desarrollo-socioemocional-autonomia/regulacion-emocional/" aria-label="Entrar en Regulación emocional">
-              <div class="subject-icon">
-                <svg class="socioemotional-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <circle cx="40" cy="39" r="27"/><path d="M20 39c7-11 14-11 20 0s13 11 20 0"/><path d="M29 22c4-4 8-4 11 0M40 55c5 5 10 5 14 0"/><path d="M40 5v5M40 68v5M6 39h5M69 39h5"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="socioemotional-card-label">Subbloque 4.3</span>
-                <h2>Regulación emocional</h2>
-                <p>Detectar necesidades y señales de activación, practicar estrategias de calma, pedir ayuda y afrontar la frustración.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 4.4 -->
-          <article class="subject-card socioemotional-card">
-            <a href="/recursos/apoyo-orientacion/desarrollo-socioemocional-autonomia/relaciones-convivencia/" aria-label="Entrar en Relaciones y convivencia">
-              <div class="subject-icon">
-                <svg class="socioemotional-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <circle cx="23" cy="23" r="9"/><circle cx="57" cy="23" r="9"/><path d="M8 56V49c0-10 7-17 15-17s15 7 15 17v7M42 56v-7c0-10 7-17 15-17s15 7 15 17v7"/><path d="M32 54l8 7 8-7"/><path d="M30 67h20"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="socioemotional-card-label">Subbloque 4.4</span>
-                <h2>Relaciones y convivencia</h2>
-                <p>Practicar la cooperación, la escucha, el respeto de turnos, la empatía y la resolución dialogada de conflictos.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 4.5 -->
-          <article class="subject-card socioemotional-card">
-            <a href="/recursos/apoyo-orientacion/desarrollo-socioemocional-autonomia/autonomia-personal-escolar/" aria-label="Entrar en Autonomía personal y escolar">
-              <div class="subject-icon">
-                <svg class="socioemotional-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <rect x="17" y="10" width="46" height="60" rx="5"/><path d="M28 23l4 4 7-8M44 24h11M28 42l4 4 7-8M44 43h11M28 59l4 4 7-8M44 60h11"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="socioemotional-card-label">Subbloque 4.5</span>
-                <h2>Autonomía personal y escolar</h2>
-                <p>Desarrollar rutinas de autocuidado, organización de materiales, seguimiento de secuencias y participación autónoma en tareas.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 4.6 -->
-          <article class="subject-card socioemotional-card">
-            <a href="/recursos/apoyo-orientacion/desarrollo-socioemocional-autonomia/autodeterminacion-participacion/" aria-label="Entrar en Autodeterminación y participación">
-              <div class="subject-icon">
-                <svg class="socioemotional-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <circle cx="17" cy="15" r="6"/><path d="M17 21v18M17 39h22M39 39v17"/><path d="m30 29 9 10 9-10"/><path d="M48 29h19v25H48z"/><path d="m53 41 5 5 6-9"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="socioemotional-card-label">Subbloque 4.6</span>
-                <h2>Autodeterminación y participación</h2>
-                <p>Expresar preferencias, elegir entre opciones, tomar decisiones, plantear metas y participar en la vida del aula.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Pie institucional; sin bloque de copyright -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-junta">
-        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
-      </div>
-      <div class="footer-school">
-        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
-        <p>Alcolea · Córdoba</p>
-        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">
-          Web oficial del Centro <span aria-hidden="true">↗</span>
+    
+        </style>
+    </head>
+    <body>
+        <a class="skip" href="#contenido-principal">
+            Ir al contenido principal
         </a>
-      </div>
-    </div>
-  </footer>
+        <!-- Cabecera y navegación del centro. Las imágenes usan las rutas existentes. -->
+        <header class="site-banner">
+            <a href="/">
+                <img src="/img/banner-principal.png" alt="" onerror="this.hidden=true">
+            </a>
+            <p class="school-name">
+                CEIP Joaquín Tena Artigas · Alcolea, Córdoba
+            </p>
+        </header>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a href="/">
+                Inicio
+            </a>
+            <a href="/familias/">
+                Familias
+            </a>
+            <a href="/recursos/">
+                Recursos educativos
+            </a>
+            <a href="https://profesorado.ceipjta.com/">
+                Área privada Profesorado
+            </a>
+        </nav>
+        <main id="contenido-principal">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/recursos/">
+                    Recursos
+                </a>
+                /
+                <a href="/recursos/apoyo-orientacion/">
+                    Apoyo y Orientación
+                </a>
+                / Desarrollo socioemocional y autonomía
+            </nav>
+            <section class="hero" aria-labelledby="titulo">
+                <span class="eyebrow">
+                    Apoyo y Orientación · Bloque 4
+                </span>
+                <h1 id="titulo">
+                    Desarrollo socioemocional y autonomía
+                </h1>
+                <p>
+                    Nos conocemos, convivimos y participamos. Actividades para expresar necesidades, tomar
+                    decisiones y practicar rutinas con los apoyos que cada persona necesita.
+                </p>
+                <div class="pills">
+                    <span class="pill">
+                        6 subbloques
+                    </span>
+                    <span class="pill">
+                        3 niveles
+                    </span>
+                    <span class="pill">
+                        Pantalla · Cuaderno · Conversación
+                    </span>
+                </div>
+            </section>
+            <nav class="index" aria-label="Contenido del bloque">
+                <a href="#autoconocimiento-autoestima">
+                    <small>
+                        4.1 · Autoconocimiento y autoestima
+                    </small>
+                    Descubro mis gustos y mis capacidades
+                </a>
+                <a href="#comprension-expresion-emocional">
+                    <small>
+                        4.2 · Comprensión y expresión emocional
+                    </small>
+                    Reconozco y expreso cómo me siento
+                </a>
+                <a href="#regulacion-emocional">
+                    <small>
+                        4.3 · Regulación emocional
+                    </small>
+                    Busco apoyos para encontrarme mejor
+                </a>
+                <a href="#relaciones-convivencia">
+                    <small>
+                        4.4 · Relaciones y convivencia
+                    </small>
+                    Me relaciono y respeto los límites
+                </a>
+                <a href="#autonomia-personal-escolar">
+                    <small>
+                        4.5 · Autonomía personal y escolar
+                    </small>
+                    Participo en mis rutinas
+                </a>
+                <a href="#autodeterminacion-participacion">
+                    <small>
+                        4.6 · Autodeterminación y participación
+                    </small>
+                    Elijo, opino y participo
+                </a>
+            </nav>
+            <details class="guide">
+                <summary>
+                    Cómo utilizar estas actividades
+                </summary>
+                <p>
+                    Elige el subbloque y el nivel de la actividad. Los niveles no clasifican al alumnado. Los
+                    apoyos pueden mantenerse en todos ellos. No es necesario completar todo en una sesión.
+                </p>
+                <p>
+                    En iniciación, el docente puede leer la consigna y modelar las opciones. Los dibujos son
+                    apoyos visuales sencillos; pueden sustituirse por fotografías u otros símbolos familiares.
+                    No se requiere leer ni escribir para responder señalando.
+                </p>
+                <p>
+                    Las propuestas de cuaderno también pueden resolverse oralmente, con objetos, dibujos,
+                    gestos o el comunicador habitual. Respeta la edad, los intereses y el tiempo de respuesta.
+                </p>
+                <p>
+                    No hay cronómetro, puntuación ni grabación del alumnado. Las respuestas se reinician al
+                    recargar. El docente puede leer las consignas. Puedes responder sobre personajes
+                    ficticios, no compartir información personal y detener una actividad.
+                </p>
+            </details>
+            <div class="note">
+                <strong>
+                    Tus decisiones cuentan
+                </strong>
+                <p>
+                    Puedes trabajar con personajes inventados. No tienes que contar algo personal. En las
+                    actividades de elección no hay respuestas incorrectas: puedes probar otra opción, pedir
+                    ayuda o parar. Los apoyos se acuerdan con la persona que te acompaña.
+                </p>
+            </div>
+            <div class="tools" role="group" aria-label="Ajustes de lectura">
+                <label for="level-filter">
+                    Mostrar nivel:
+                </label>
+                <select id="level-filter">
+                    <option value="all">
+                        Todos
+                    </option>
+                    <option value="1">
+                        1 · Iniciación
+                    </option>
+                    <option value="2">
+                        2 · Desarrollo
+                    </option>
+                    <option value="3">
+                        3 · Profundización
+                    </option>
+                </select>
+                <button id="text-size" type="button" aria-pressed="false">
+                    Texto grande
+                </button>
+                <button id="focus-mode" type="button" aria-pressed="false">
+                    Reducir distracciones
+                </button>
+            </div>
+            <noscript>
+                <p class="note">
+                    Las actividades de cuaderno y las propuestas orales están disponibles. Para usar las
+                    actividades interactivas, activa JavaScript.
+                </p>
+            </noscript>
+            <!-- SUBBLOQUE 4.1: Autoconocimiento y autoestima -->
+            <section class="block" id="autoconocimiento-autoestima" aria-labelledby="heading-1">
+                <h2 class="section-heading" id="heading-1">
+                    4.1. Descubro mis gustos y mis capacidades
+                </h2>
+                <p>
+                    Cada persona tiene gustos, fortalezas y necesidades diferentes. Podemos reconocer lo que
+                    nos ayuda, disfrutar de nuestros avances y seguir aprendiendo sin compararnos con los
+                    demás.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Puedo decir: «Me gusta dibujar. Estoy aprendiendo a recortar y me ayuda que sujeten el
+                        papel».
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Elijo algo que me gusta
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-1" aria-labelledby="exercise-1-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-1">
+                                    Elijo algo que me gusta
+                                </h4>
+                                <p>
+                                    Elige una actividad que te apetezca. También puedes proponer otra o
+                                    decidir no responder.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M40 20Q24 9 8 17v45q18-8 32 3 14-11 32-3V17q-16-8-32 3Z" fill="#c8deff">
+                                            </path>
+                                            <path d="M40 20v45M16 27l16 2M16 37l16 2M48 29l16-2M48 39l16-2">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Mirar un libro
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Jugar con una pelota
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M16 40h48M40 16v48" stroke-width="8">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Otra actividad
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M23 43V25q0-7 6-3V13q0-7 7-2V8q4-6 8 0v7q7-6 7 2v23l6-9q6-6 10 0L55 59q-5 13-19 9L19 52q-7-13 1-14Z"
+                                                fill="#f6cb9b">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Prefiero no responder
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Elige entre dos materiales conocidos y comunica tu preferencia.
+                                    </li>
+                                    <li>
+                                        Señala una actividad que disfrutes o propón otra.
+                                    </li>
+                                    <li>
+                                        Muestra algo que sabes hacer con tus apoyos.
+                                    </li>
+                                    <li>
+                                        Representa con un dibujo o un objeto algo que te interese.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Reconozco un avance
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-2" aria-labelledby="exercise-1-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-2">
+                                    Reconozco un avance
+                                </h4>
+                                <p>
+                                    A Dani le cuesta organizar sus materiales. Hoy lo ha conseguido con una
+                                    lista. ¿Qué mensaje reconoce su avance?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Con una lista no cuenta.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Has organizado tus materiales usando una ayuda útil.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Tienes que hacerlo siempre sin ayuda.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Explica algo que hayas aprendido, o utiliza un ejemplo inventado.
+                                    </li>
+                                    <li>
+                                        Identifica qué apoyo te ayudó en una tarea.
+                                    </li>
+                                    <li>
+                                        Describe una cualidad de un personaje mediante un ejemplo.
+                                    </li>
+                                    <li>
+                                        Completa: «Estoy aprendiendo a… y me ayuda…». Puedes no compartirlo.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Una meta posible
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-3" aria-labelledby="exercise-1-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-3">
+                                    Una meta posible
+                                </h4>
+                                <p>
+                                    Alex quiere aprender a preparar su mochila. ¿Qué meta permite empezar y
+                                    observar el avance?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        No equivocarme nunca en ninguna tarea.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Preparar los materiales de mañana consultando una lista.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Hacer todo igual que otras personas.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Formula una meta concreta sobre una actividad que te interese.
+                                    </li>
+                                    <li>
+                                        Divide esa meta en un primer paso pequeño.
+                                    </li>
+                                    <li>
+                                        Elige un apoyo que quieras mantener.
+                                    </li>
+                                    <li>
+                                        Describe el avance comparándolo con tu punto de partida, sin
+                                        compararte con otra persona.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Reconoce un esfuerzo, una estrategia o un logro concreto durante una actividad real.
+                        No es necesario demostrar una habilidad delante del grupo ni compartir información
+                        personal.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He podido expresar una preferencia o una necesidad.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He identificado un apoyo que me resulta útil.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 4.2: Comprensión y expresión emocional -->
+            <section class="block" id="comprension-expresion-emocional" aria-labelledby="heading-2">
+                <h2 class="section-heading" id="heading-2">
+                    4.2. Reconozco y expreso cómo me siento
+                </h2>
+                <p>
+                    Las emociones pueden cambiar y mezclarse. Una misma situación puede provocar emociones
+                    distintas. Podemos preguntar a otra persona cómo se siente; su cara no nos permite saberlo
+                    con certeza.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Antes de una excursión, una persona puede sentir ilusión y otra preocupación. También
+                        se pueden sentir ambas cosas a la vez.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Busco una palabra para mi emoción
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-1" aria-labelledby="exercise-2-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-1">
+                                    Busco una palabra para mi emoción
+                                </h4>
+                                <p>
+                                    Si quieres, elige una opción para expresar cómo te sientes ahora o cómo
+                                    podría sentirse un personaje.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="29" fill="#f6df8d">
+                                            </circle>
+                                            <path d="M28 30h1M51 30h1M24 45q16 21 32 0">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Alegría
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="29" fill="#b9d7eb">
+                                            </circle>
+                                            <path d="M28 31h1M51 31h1M25 55q15-18 30 0">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Tristeza
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="29" fill="#edb4a4">
+                                            </circle>
+                                            <path d="m23 24 11 5m12 0 11-5M29 35h1M50 35h1M27 55q13-11 26 0">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Enfado
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="29" fill="#e4e7f3">
+                                            </circle>
+                                            <path d="M29 28q0-14 16-10 17 5 1 19-6 4-6 10M40 57v3" stroke-width="5">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            No lo sé, otra emoción o prefiero no decirlo
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Relaciona una palabra emocional con un ejemplo propuesto por el
+                                        docente.
+                                    </li>
+                                    <li>
+                                        Señala cómo podría sentirse un personaje de un cuento.
+                                    </li>
+                                    <li>
+                                        Representa una emoción mediante un color, un dibujo o un gesto, si
+                                        quieres.
+                                    </li>
+                                    <li>
+                                        Practica «No sé cómo me siento» o «Prefiero no decirlo».
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Escucho antes de suponer
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-2" aria-labelledby="exercise-2-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-2">
+                                    Escucho antes de suponer
+                                </h4>
+                                <p>
+                                    Lola está callada. ¿Qué puedes hacer para conocer cómo se siente sin darlo
+                                    por supuesto?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Decidir que está enfadada solo porque no habla.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Preguntarle si quiere contar cómo se siente y respetar su respuesta.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Insistir hasta que hable delante del grupo.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Propón dos emociones posibles ante el inicio de una actividad nueva.
+                                    </li>
+                                    <li>
+                                        Explica qué pistas da un relato sobre un personaje.
+                                    </li>
+                                    <li>
+                                        Formula una pregunta respetuosa sobre cómo se siente alguien.
+                                    </li>
+                                    <li>
+                                        Distingue «creo que siente…» de «me ha dicho que siente…».
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Emociones diferentes
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-3" aria-labelledby="exercise-2-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-3">
+                                    Emociones diferentes
+                                </h4>
+                                <p>
+                                    Dos compañeros van a participar en una obra. Uno está ilusionado y otro
+                                    preocupado. ¿Qué afirmación respeta ambas experiencias?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Solo puede ser válida una emoción.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Ambas emociones son posibles; podemos preguntar qué necesita cada uno.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        La preocupación demuestra que no quiere participar.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Describe dos emociones que podrían coexistir en una situación
+                                        inventada.
+                                    </li>
+                                    <li>
+                                        Relaciona una emoción con una posible causa, sin presentarla como la
+                                        única.
+                                    </li>
+                                    <li>
+                                        Escribe o comunica una frase que exprese una emoción y una necesidad.
+                                    </li>
+                                    <li>
+                                        Explica por qué no podemos deducir siempre una emoción a partir de una
+                                        cara.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Utiliza un cuento o una situación ficticia para hablar de emociones. Ofrece siempre la
+                        posibilidad de no responder o de hablar en privado con un adulto de confianza.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He podido expresar una preferencia o una necesidad.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He identificado un apoyo que me resulta útil.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 4.3: Regulación emocional -->
+            <section class="block" id="regulacion-emocional" aria-labelledby="heading-3">
+                <h2 class="section-heading" id="heading-3">
+                    4.3. Busco apoyos para encontrarme mejor
+                </h2>
+                <p>
+                    Podemos reconocer que necesitamos ayuda, descanso o un cambio en el entorno. No hay una
+                    estrategia que funcione para todas las personas ni en todos los momentos.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Si el ruido me molesta, puedo comunicarlo y pedir un lugar más tranquilo o un apoyo
+                        acordado con el docente.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Comunico lo que necesito
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-1" aria-labelledby="exercise-3-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-1">
+                                    Comunico lo que necesito
+                                </h4>
+                                <p>
+                                    Elige un apoyo que quieras pedir, o practica cómo lo pediría un personaje.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="19" y="13" width="15" height="54" rx="4" fill="#5367a5">
+                                            </rect>
+                                            <rect x="46" y="13" width="15" height="54" rx="4" fill="#5367a5">
+                                            </rect>
+                                        </svg>
+                                        <span>
+                                            Una pausa
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="m10 28 17-9 14 9 13-7 17 10-18 28-9 7-24-15Z" fill="#f6cb9b">
+                                            </path>
+                                            <path d="m41 28-12 13q0 8 9 4l8-5 16 12M20 51l7-9M27 57l7-10M35 62l7-10">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Ayuda
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M12 65V24l28-15 28 15v41Z" fill="#cce1ce">
+                                            </path>
+                                            <path d="M30 65V38h20v27M22 29h6M52 29h6">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Un lugar tranquilo
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="29" fill="#e4e7f3">
+                                            </circle>
+                                            <path d="M29 28q0-14 16-10 17 5 1 19-6 4-6 10M40 57v3" stroke-width="5">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Otro apoyo o todavía no lo sé
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Practica cómo pedir una pausa.
+                                    </li>
+                                    <li>
+                                        Señala una tarjeta de ayuda o usa tu comunicador.
+                                    </li>
+                                    <li>
+                                        Explora con el docente un lugar acordado para descansar.
+                                    </li>
+                                    <li>
+                                        Prueba una actividad tranquila y decide si te resulta útil, sin
+                                        obligación de continuar.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Selecciono una estrategia
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-2" aria-labelledby="exercise-3-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-2">
+                                    Selecciono una estrategia
+                                </h4>
+                                <p>
+                                    Un personaje se siente sobrepasado por una actividad. ¿Qué apoyo podría
+                                    probar? Elige uno para comentarlo.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Dividir la actividad en pasos más pequeños.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Pedir acompañamiento a un adulto.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Hacer una pausa acordada.
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        Proponer otro apoyo.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Identifica una señal que indique necesidad de descanso en un ejemplo
+                                        ficticio.
+                                    </li>
+                                    <li>
+                                        Practica una petición concreta de ayuda.
+                                    </li>
+                                    <li>
+                                        Prueba una estrategia elegida voluntariamente: moverte, descansar o
+                                        realizar una actividad tranquila.
+                                    </li>
+                                    <li>
+                                        Comenta si la estrategia fue útil y qué cambiarías.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Preparo un plan de apoyo
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-3" aria-labelledby="exercise-3-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-3">
+                                    Preparo un plan de apoyo
+                                </h4>
+                                <p>
+                                    ¿Qué elemento quieres incluir en un plan para una situación difícil?
+                                    Puedes explorar todas las opciones una a una.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Una señal para pedir ayuda.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Un cambio que reduzca la dificultad del entorno.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Una persona de apoyo y una alternativa.
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        Un momento posterior para revisar el plan.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Describe una situación ficticia y un cambio del entorno que podría
+                                        ayudar.
+                                    </li>
+                                    <li>
+                                        Acuerda cómo pedir apoyo y a quién recurrir.
+                                    </li>
+                                    <li>
+                                        Prepara una alternativa si la primera estrategia no funciona.
+                                    </li>
+                                    <li>
+                                        Revisa después qué ayudó, sin convertir estar tranquilo en una
+                                        condición para recibir ayuda.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Practica los apoyos en momentos tranquilos. Ante malestar real, prioriza el
+                        acompañamiento y ajusta el entorno; no exijas terminar el ejercicio ni explicar las
+                        emociones en ese momento.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He podido expresar una preferencia o una necesidad.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He identificado un apoyo que me resulta útil.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 4.4: Relaciones y convivencia -->
+            <section class="block" id="relaciones-convivencia" aria-labelledby="heading-4">
+                <h2 class="section-heading" id="heading-4">
+                    4.4. Me relaciono y respeto los límites
+                </h2>
+                <p>
+                    Convivir incluye escuchar, cooperar y respetar las decisiones y los límites de otras
+                    personas. Puedes expresar desacuerdo y pedir ayuda cuando una situación te incomoda.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Si alguien dice «No quiero un abrazo», respetamos su decisión. Podemos preguntar si
+                        prefiere saludar de otra manera o no hacerlo.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Elijo cómo saludar
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-1" aria-labelledby="exercise-4-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-1">
+                                    Elijo cómo saludar
+                                </h4>
+                                <p>
+                                    Elige una manera de saludar que te resulte cómoda. También puedes decidir
+                                    no saludar en este momento.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M24 47V28q0-6 6-2V15q1-6 7-2V10q4-6 7 0v9q7-6 7 1v22l5-8q7-5 9 2L54 60q-9 15-24 4L18 50q-5-9 2-10Z"
+                                                fill="#f6cb9b">
+                                            </path>
+                                            <path d="M9 23 5 13M63 16l7-8">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Saludar con la mano
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M10 15h60v40H35L18 70V55h-8Z" fill="#c8deff">
+                                            </path>
+                                            <path d="M22 29h36M22 41h25">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Decir hola o usar mi comunicador
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M23 43V25q0-7 6-3V13q0-7 7-2V8q4-6 8 0v7q7-6 7 2v23l6-9q6-6 10 0L55 59q-5 13-19 9L19 52q-7-13 1-14Z"
+                                                fill="#f6cb9b">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Ahora no quiero
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Practica un saludo elegido libremente.
+                                    </li>
+                                    <li>
+                                        Juega a intercambiar un objeto con turnos flexibles.
+                                    </li>
+                                    <li>
+                                        Comunica «No quiero» o «Para» con tu apoyo habitual.
+                                    </li>
+                                    <li>
+                                        Practica respetar cuando otra persona dice que no.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Respeto un límite
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-2" aria-labelledby="exercise-4-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-2">
+                                    Respeto un límite
+                                </h4>
+                                <p>
+                                    Quieres abrazar a una compañera y ella dice que no. ¿Qué debes hacer?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Abrazarla porque tú tienes ganas.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Respetar su no y darle espacio.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Insistir hasta que acepte.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Formula una petición antes de coger un material ajeno.
+                                    </li>
+                                    <li>
+                                        Practica una frase para expresar desacuerdo sin insultar.
+                                    </li>
+                                    <li>
+                                        Propón una forma de repartir turnos en un juego.
+                                    </li>
+                                    <li>
+                                        Identifica a un adulto al que pedir ayuda si alguien no respeta un
+                                        límite.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Buscamos un acuerdo
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-3" aria-labelledby="exercise-4-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-3">
+                                    Buscamos un acuerdo
+                                </h4>
+                                <p>
+                                    Dos personas quieren usar el mismo material. Nadie está en peligro. Ordena
+                                    una posible forma de buscar un acuerdo.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Probar el acuerdo y revisar si funciona.
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Escuchar qué necesita cada persona.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Proponer opciones y acordar una.
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Describe un conflicto inventado sin atribuir intenciones que no
+                                        conoces.
+                                    </li>
+                                    <li>
+                                        Propón dos soluciones que respeten a ambas personas.
+                                    </li>
+                                    <li>
+                                        Explica cómo comprobarías si un acuerdo funciona.
+                                    </li>
+                                    <li>
+                                        Practica pedir ayuda cuando un conflicto continúa o alguien resulta
+                                        dañado.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Aplica un acuerdo breve en una actividad cooperativa y revísalo con el grupo. La
+                        participación no exige contacto físico, contacto ocular ni aceptar situaciones
+                        incómodas.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He podido expresar una preferencia o una necesidad.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He identificado un apoyo que me resulta útil.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 4.5: Autonomía personal y escolar -->
+            <section class="block" id="autonomia-personal-escolar" aria-labelledby="heading-5">
+                <h2 class="section-heading" id="heading-5">
+                    4.5. Participo en mis rutinas
+                </h2>
+                <p>
+                    La autonomía incluye decidir, participar y utilizar los apoyos que necesitamos. Podemos
+                    aprender rutinas de cuidado y organización con imágenes, listas, ayuda física acordada u
+                    otras adaptaciones.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Para preparar una tarea, consulto la lista, reúno los materiales y compruebo si falta
+                        algo. Si necesito ayuda, puedo pedirla.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Me preparo para trabajar
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-1" aria-labelledby="exercise-5-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-1">
+                                    Me preparo para trabajar
+                                </h4>
+                                <p>
+                                    Vas a dibujar. ¿Qué necesitas preparar?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="10" y="17" width="39" height="50" fill="#fff">
+                                            </rect>
+                                            <path d="m51 58 6-42 9 2-6 42-7 9Z" fill="#edc278">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Papel y lápiz
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Una pelota
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Elige los materiales para una tarea sencilla.
+                                    </li>
+                                    <li>
+                                        Participa en guardar un objeto en su lugar habitual.
+                                    </li>
+                                    <li>
+                                        Sigue dos imágenes de una rutina conocida.
+                                    </li>
+                                    <li>
+                                        Pide el apoyo que necesitas para participar en un paso.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Organizo mi mochila
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-2" aria-labelledby="exercise-5-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-2">
+                                    Organizo mi mochila
+                                </h4>
+                                <p>
+                                    Ordena los pasos para preparar los materiales del día siguiente.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Comprobar con la lista que están preparados.
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Consultar qué materiales necesito.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Colocar los materiales en la mochila.
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Crea una lista con dibujos o palabras de tres materiales.
+                                    </li>
+                                    <li>
+                                        Practica un paso de una rutina de autocuidado con el apoyo acordado.
+                                    </li>
+                                    <li>
+                                        Prepara tu espacio antes de comenzar una actividad.
+                                    </li>
+                                    <li>
+                                        Comprueba qué paso has realizado y cuál queda.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Adapto una rutina
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-3" aria-labelledby="exercise-5-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-3">
+                                    Adapto una rutina
+                                </h4>
+                                <p>
+                                    Una persona no puede abrir un recipiente con el cierre habitual. ¿Qué
+                                    opción favorece su participación?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Retirar siempre la actividad sin preguntarle.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Acordar un cierre accesible o un apoyo y permitirle participar.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Exigir que lo abra sin ayuda para demostrar autonomía.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Revisa una rutina y detecta qué paso necesita adaptación.
+                                    </li>
+                                    <li>
+                                        Propón una ayuda que permita participar más en esa rutina.
+                                    </li>
+                                    <li>
+                                        Organiza el tiempo incluyendo las pausas que necesites.
+                                    </li>
+                                    <li>
+                                        Valora qué apoyo conviene conservar y qué cambio quieres probar.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Selecciona una rutina relevante para la edad y los intereses del alumnado. Respeta la
+                        intimidad en el autocuidado y acuerda los apoyos; las tareas digitales no sustituyen
+                        la práctica real.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He podido expresar una preferencia o una necesidad.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He identificado un apoyo que me resulta útil.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 4.6: Autodeterminación y participación -->
+            <section class="block" id="autodeterminacion-participacion" aria-labelledby="heading-6">
+                <h2 class="section-heading" id="heading-6">
+                    4.6. Elijo, opino y participo
+                </h2>
+                <p>
+                    Tu opinión cuenta. Puedes elegir, pedir información, cambiar de idea y participar en
+                    decisiones. Algunas situaciones tienen límites de seguridad que el adulto debe explicar de
+                    forma comprensible.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Antes de una actividad puedes preguntar qué se va a hacer y elegir una forma de
+                        participar entre las opciones disponibles.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Elijo mi forma de participar
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-1" aria-labelledby="exercise-6-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-1">
+                                    Elijo mi forma de participar
+                                </h4>
+                                <p>
+                                    ¿Cómo quieres participar en una actividad compartida? Explora una opción o
+                                    propone otra.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M14 69q4-24 26-24t26 24" fill="#b7dfca">
+                                            </path>
+                                            <circle cx="40" cy="29" r="19" fill="#f6cb9b">
+                                            </circle>
+                                            <path d="M20 28Q15 0 40 7q25-2 21 25l-10-16q-13 12-31 12" fill="#795548">
+                                            </path>
+                                            <path d="M33 31h1m12 0h1M34 39q6 5 12 0">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Hacer una parte con apoyo
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M40 20Q24 9 8 17v45q18-8 32 3 14-11 32-3V17q-16-8-32 3Z" fill="#c8deff">
+                                            </path>
+                                            <path d="M40 20v45M16 27l16 2M16 37l16 2M48 29l16-2M48 39l16-2">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Observar primero
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="19" y="13" width="15" height="54" rx="4" fill="#5367a5">
+                                            </rect>
+                                            <rect x="46" y="13" width="15" height="54" rx="4" fill="#5367a5">
+                                            </rect>
+                                        </svg>
+                                        <span>
+                                            Pedir una pausa
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M16 40h48M40 16v48" stroke-width="8">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Proponer otra forma
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Elige entre dos actividades disponibles.
+                                    </li>
+                                    <li>
+                                        Practica pedir más información antes de elegir.
+                                    </li>
+                                    <li>
+                                        Comunica que has cambiado de idea.
+                                    </li>
+                                    <li>
+                                        Elige una función sencilla dentro de una tarea compartida.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Pido información para decidir
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-2" aria-labelledby="exercise-6-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-2">
+                                    Pido información para decidir
+                                </h4>
+                                <p>
+                                    Te proponen dos talleres y no sabes en qué consisten. ¿Qué puede ayudarte
+                                    a elegir?
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Elegir sin poder preguntar nunca.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Pedir que expliquen o muestren qué se hace en cada taller.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Dejar que otra persona decida siempre por ti.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Compara dos opciones con dibujos, objetos o explicaciones.
+                                    </li>
+                                    <li>
+                                        Expresa una preferencia y, si quieres, un motivo.
+                                    </li>
+                                    <li>
+                                        Solicita un apoyo para participar en la opción elegida.
+                                    </li>
+                                    <li>
+                                        Practica decir que ninguna opción te convence y proponer otra.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Hago una propuesta al grupo
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-3" aria-labelledby="exercise-6-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-3">
+                                    Hago una propuesta al grupo
+                                </h4>
+                                <p>
+                                    ¿Qué quieres incluir al proponer una actividad para la clase? Puedes
+                                    explorar cada elemento.
+                                </p>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Qué actividad propongo y por qué.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Qué necesitamos y qué apoyos facilitarían participar.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Cómo recogeremos las opiniones del grupo.
+                                    </button>
+                                    <button type="button" data-option="3" aria-pressed="false">
+                                        Cómo revisaremos el acuerdo después.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Prepara una propuesta para una actividad de clase.
+                                    </li>
+                                    <li>
+                                        Incluye materiales, apoyos y posibles alternativas.
+                                    </li>
+                                    <li>
+                                        Explica cómo darías voz a quienes usan otras formas de comunicación.
+                                    </li>
+                                    <li>
+                                        Revisa una decisión colectiva y comunica qué mantendrías o cambiarías.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Ofrece elecciones reales y accesibles en la vida del aula. Explica los límites que
+                        existan y busca alternativas; una elección no debe ser una pregunta cuya única
+                        respuesta aceptada ya esté decidida.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He podido expresar una preferencia o una necesidad.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He identificado un apoyo que me resulta útil.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- Orientaciones para acompañar las actividades sin convertirlas en una evaluación emocional. -->
+            <details class="guide">
+                <summary>
+                    Para el profesorado: acompañar, adaptar y respetar decisiones
+                </summary>
+                <p>
+                    Utiliza situaciones ficticias cuando no sea necesario hablar de experiencias propias. No
+                    pidas al alumnado que comparta vivencias íntimas ni que justifique su decisión de no
+                    responder.
+                </p>
+                <p>
+                    Las elecciones sobre gustos, emociones y apoyos no reciben puntuación. Los dibujos
+                    emocionales son convenciones visuales: no permiten diagnosticar ni conocer con certeza lo
+                    que siente otra persona.
+                </p>
+                <p>
+                    Las preguntas con respuesta concreta practican criterios explícitos: respetar un límite,
+                    identificar un material o consultar una información. Acertar en pantalla no demuestra por
+                    sí solo que esa habilidad se utilice en la vida cotidiana.
+                </p>
+                <p>
+                    Ofrece modelos, comunicación aumentativa, objetos, fotografías, instrucciones breves y
+                    tiempo de respuesta. No exijas habla, contacto ocular o contacto físico para participar.
+                </p>
+                <p>
+                    En regulación emocional, acuerda apoyos voluntarios y adapta el entorno. Ante malestar
+                    real, detén la actividad si es necesario y acompaña a la persona. No retires su
+                    comunicador ni condiciones la ayuda a terminar una tarea.
+                </p>
+                <p>
+                    En autonomía, observa qué hace la persona, qué decisiones toma y qué apoyos utiliza. No
+                    confundas autonomía con ausencia de ayuda. Respeta la intimidad en el autocuidado.
+                </p>
+                <p>
+                    Si se menciona una situación real de daño o intimidación, escucha y busca el apoyo de los
+                    responsables del centro. No la conviertas en un juego de mediación ni pidas al alumnado
+                    que la resuelva a solas.
+                </p>
+                <p>
+                    La página no guarda respuestas ni datos personales. La observación educativa se realiza
+                    por el profesorado en los medios del centro destinados a ello, atendiendo a los objetivos
+                    individualizados.
+                </p>
+            </details>
+        </main>
+        <footer>
+            CEIP Joaquín Tena Artigas · Apoyo y Orientación · PT y AL
+        </footer>
+        <script>
+        'use strict';
+        // Datos de corrección: las elecciones personales no se puntúan.
+        const EXERCISES = {
+    "1-1": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Tu preferencia puede cambiar. Puedes comunicarla con palabras, gestos, imágenes o tu comunicador.",
+        "labels": [
+            "Mirar un libro",
+            "Jugar con una pelota",
+            "Otra actividad",
+            "Prefiero no responder"
+        ]
+    },
+    "1-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Utilizar una lista es una estrategia. Podemos reconocer el logro y conservar el apoyo.",
+        "labels": [
+            "Con una lista no cuenta.",
+            "Has organizado tus materiales usando una ayuda útil.",
+            "Tienes que hacerlo siempre sin ayuda."
+        ]
+    },
+    "1-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La meta describe una acción concreta y permite usar una ayuda para comprobarla.",
+        "labels": [
+            "No equivocarme nunca en ninguna tarea.",
+            "Preparar los materiales de mañana consultando una lista.",
+            "Hacer todo igual que otras personas."
+        ]
+    },
+    "2-1": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "No hay una emoción obligatoria. Los dibujos son pistas, no pruebas de lo que siente alguien. Puedes elegir otra palabra o no compartirla.",
+        "labels": [
+            "Alegría",
+            "Tristeza",
+            "Enfado",
+            "No lo sé, otra emoción o prefiero no decirlo"
+        ]
+    },
+    "2-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Podemos preguntar con respeto. Estar callado no identifica por sí solo una emoción.",
+        "labels": [
+            "Decidir que está enfadada solo porque no habla.",
+            "Preguntarle si quiere contar cómo se siente y respetar su respuesta.",
+            "Insistir hasta que hable delante del grupo."
+        ]
+    },
+    "2-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Las emociones no tienen que coincidir. La necesidad de apoyo se puede preguntar sin interpretar por la otra persona.",
+        "labels": [
+            "Solo puede ser válida una emoción.",
+            "Ambas emociones son posibles; podemos preguntar qué necesita cada uno.",
+            "La preocupación demuestra que no quiere participar."
+        ]
+    },
+    "3-1": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Comunica tu elección al adulto que te acompaña. La pantalla no sustituye su ayuda; podéis acordar un apoyo accesible y seguro.",
+        "labels": [
+            "Una pausa",
+            "Ayuda",
+            "Un lugar tranquilo",
+            "Otro apoyo o todavía no lo sé"
+        ]
+    },
+    "3-2": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Son posibilidades para explorar. Pregunta qué prefiere la persona y comprueba si el apoyo ayuda; puede necesitar otra alternativa.",
+        "labels": [
+            "Dividir la actividad en pasos más pequeños.",
+            "Pedir acompañamiento a un adulto.",
+            "Hacer una pausa acordada.",
+            "Proponer otro apoyo."
+        ]
+    },
+    "3-3": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Un plan puede combinar varios elementos. Se acuerda con la persona y se revisa cuando está disponible para hacerlo.",
+        "labels": [
+            "Una señal para pedir ayuda.",
+            "Un cambio que reduzca la dificultad del entorno.",
+            "Una persona de apoyo y una alternativa.",
+            "Un momento posterior para revisar el plan."
+        ]
+    },
+    "4-1": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Puedes elegir cómo participar. No es necesario tocar a otra persona ni mirar a los ojos para saludar.",
+        "labels": [
+            "Saludar con la mano",
+            "Decir hola o usar mi comunicador",
+            "Ahora no quiero"
+        ]
+    },
+    "4-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Su decisión debe respetarse. El afecto o el juego no justifican ignorar un límite.",
+        "labels": [
+            "Abrazarla porque tú tienes ganas.",
+            "Respetar su no y darle espacio.",
+            "Insistir hasta que acepte."
+        ]
+    },
+    "4-3": {
+        "kind": "sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "Escuchamos, acordamos y revisamos. Si hay intimidación o daño, se pide ayuda a un adulto; no se exige resolverlo a solas.",
+        "labels": [
+            "Escuchar qué necesita cada persona.",
+            "Proponer opciones y acordar una.",
+            "Probar el acuerdo y revisar si funciona."
+        ]
+    },
+    "5-1": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "El papel y el lápiz sirven para dibujar. También puedes necesitar una adaptación para sujetarlos o una herramienta alternativa.",
+        "labels": [
+            "Papel y lápiz",
+            "Una pelota"
+        ]
+    },
+    "5-2": {
+        "kind": "sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "La lista orienta la preparación y permite comprobar el resultado. Si falta algo, se busca o se pide ayuda.",
+        "labels": [
+            "Consultar qué materiales necesito.",
+            "Colocar los materiales en la mochila.",
+            "Comprobar con la lista que están preparados."
+        ]
+    },
+    "5-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Adaptar el material y acordar el apoyo facilita la participación. Autonomía no significa hacerlo todo sin ayuda.",
+        "labels": [
+            "Retirar siempre la actividad sin preguntarle.",
+            "Acordar un cierre accesible o un apoyo y permitirle participar.",
+            "Exigir que lo abra sin ayuda para demostrar autonomía."
+        ]
+    },
+    "6-1": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Comunica tu elección al docente. Podéis acordar cómo hacerla posible y revisarla si cambias de idea.",
+        "labels": [
+            "Hacer una parte con apoyo",
+            "Observar primero",
+            "Pedir una pausa",
+            "Proponer otra forma"
+        ]
+    },
+    "6-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La información accesible permite expresar una preferencia con más conocimiento.",
+        "labels": [
+            "Elegir sin poder preguntar nunca.",
+            "Pedir que expliquen o muestren qué se hace en cada taller.",
+            "Dejar que otra persona decida siempre por ti."
+        ]
+    },
+    "6-3": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Una propuesta puede reunir todos esos elementos. Escucha otras opiniones y conserva el derecho a expresar desacuerdo.",
+        "labels": [
+            "Qué actividad propongo y por qué.",
+            "Qué necesitamos y qué apoyos facilitarían participar.",
+            "Cómo recogeremos las opiniones del grupo.",
+            "Cómo revisaremos el acuerdo después."
+        ]
+    }
+};
 
-  <!-- Script común: navegación móvil -->
-  <script src="/js/main.js"></script>
-</body>
+        document.querySelectorAll('[data-exercise]').forEach((exercise) => {
+            const config = EXERCISES[exercise.dataset.exercise];
+            const feedback = exercise.querySelector('.feedback');
+            const buttons = [...exercise.querySelectorAll('[data-option]')];
+            const selected = [];
+            const sequenceOutput = exercise.querySelector('.sequence-answer');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const index = Number(button.dataset.option);
+                    if (config.kind === 'sequence') {
+                        selected.push(index);
+                        button.disabled = true;
+                        button.setAttribute('aria-pressed', 'true');
+                        sequenceOutput.textContent = selected.map((n) => config.labels[n]).join(' → ');
+                        feedback.textContent = '';
+                        const next = buttons.find((item) => !item.disabled);
+                        (next || exercise.querySelector('.check')).focus();
+                        return;
+                    }
+                    buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+                    if (config.kind === 'choice') {
+                        feedback.textContent = 'Has elegido: «' + config.labels[index] + '». ' + config.explain;
+                    } else if (index === config.answer) {
+                        feedback.textContent = 'Sí. ' + config.explain;
+                    } else {
+                        feedback.textContent = 'Vamos a revisarlo. Escucha o lee la consigna otra vez; puedes pedir ayuda y probar otra opción.';
+                    }
+                });
+            });
+
+            const check = exercise.querySelector('.check');
+            if (check) {
+                check.addEventListener('click', () => {
+                    if (selected.length !== config.answer.length) {
+                        feedback.textContent = 'Todavía faltan elementos. Selecciona todos antes de comprobar.';
+                        return;
+                    }
+                    const correct = selected.every((value, i) => value === config.answer[i]);
+                    feedback.textContent = correct
+                        ? 'Sí. ' + config.explain
+                        : 'Revisa el orden con esta pista: ' + config.explain + ' Pulsa «Empezar de nuevo» para probar.';
+                });
+            }
+            exercise.querySelector('.reset').addEventListener('click', () => {
+                selected.length = 0;
+                buttons.forEach((button) => {
+                    button.disabled = false;
+                    button.setAttribute('aria-pressed', 'false');
+                });
+                if (sequenceOutput) sequenceOutput.textContent = 'Tu secuencia aparecerá aquí.';
+                feedback.textContent = 'Puedes empezar otra vez.';
+                buttons[0].focus();
+            });
+        });
+
+        document.getElementById('level-filter').addEventListener('change', (event) => {
+            document.querySelectorAll('.level').forEach((level) => {
+                const show = event.target.value === 'all' || level.dataset.level === event.target.value;
+                level.hidden = !show;
+                if (event.target.value !== 'all' && show) level.open = true;
+
+            });
+        });
+        [['text-size', 'large-text'], ['focus-mode', 'focus-mode']].forEach(([id, className]) => {
+            const button = document.getElementById(id);
+            button.addEventListener('click', () => {
+                const active = document.body.classList.toggle(className);
+                button.setAttribute('aria-pressed', String(active));
+            });
+        });
+
+    
+        </script>
+    </body>
 </html>
