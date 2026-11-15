@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Infantil 5 años: INF5.6 Exploro la naturaleza. Animales, plantas, estaciones, materiales y cuidado ambiental. CEIP Joaquín Tena Artigas.">
+<meta name="theme-color" content="#edf8ed">
+<title>INF5.6 · Exploro la naturaleza | CEIP Joaquín Tena Artigas</title>
+<link rel="icon" href="/img/logo-centro.png" type="image/png">
+<link rel="stylesheet" href="/css/base.css">
+<style>
+    /* ======================================================
+       INFANTIL 5 AÑOS · BLOQUE 2 · EMOCIONES Y CONVIVENCIA
+       Estilos locales; se preservan los de /css/base.css.
+       ====================================================== */
+    .infant-learning {
+      --ink: #24364a;
+      --muted: #52657a;
+      --orange: #ad5435;
+      --orange-soft: #fff0e7;
+      --page: #fffdfa;
+      --green: #006c3c;
+      --border-soft: #eadfd5;
+      color: var(--ink);
+      background: var(--page);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    .infant-learning *, .infant-learning *::before,
+    .infant-learning *::after { box-sizing: border-box; }
+    .infant-learning button { font: inherit; }
+    .infant-learning button:not(:disabled) { cursor: pointer; }
+    .infant-learning a:focus-visible,
+    .infant-learning button:focus-visible,
+    .infant-learning summary:focus-visible,
+    .infant-learning input:focus-visible + label {
+      outline: 3px solid #175ba6;
+      outline-offset: 4px;
+    }
+    .infant-learning .lesson-shell {
+      width: min(94%, 1160px);
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .infant-learning .breadcrumbs { margin-bottom: 20px; }
+    .infant-learning .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .86rem;
+      color: #617084;
+    }
+    .infant-learning .breadcrumbs li + li::before {
+      content: '/';
+      padding-right: 9px;
+      color: #9ca7b3;
+    }
+    .infant-learning .breadcrumbs a { color: #355c72; }
+    .infant-learning .unit-hero {
+      display: grid;
+      grid-template-columns: 1.28fr .84fr;
+      align-items: center;
+      gap: clamp(18px, 4vw, 50px);
+      padding: clamp(24px, 4vw, 48px);
+      background: linear-gradient(130deg, #fff4eb 0%, #fffae7 100%);
+      border: 1px solid #f2ded1;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .infant-learning .unit-eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-size: .85rem;
+      color: #99522f;
+      letter-spacing: .06em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .infant-learning .unit-hero h1 {
+      margin: 0 0 15px;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      line-height: 1.15;
+      color: #29364b;
+      text-wrap: balance;
+    }
+    .infant-learning .unit-hero p:not(.unit-eyebrow) {
+      max-width: 600px;
+      margin: 0 0 18px;
+      color: #4e5a6a;
+      font-size: 1.07rem;
+      line-height: 1.7;
+    }
+    .infant-learning .unit-hero img {
+      width: 100%;
+      max-height: 340px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 5px solid #ffffff;
+      box-shadow: 0 15px 30px #a56b3a24;
+    }
+    .infant-learning .play-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #e5d9b9;
+      color: #7a5b25;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .infant-learning .audio-button,
+    .infant-learning .small-button,
+    .infant-learning .game-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 10px 16px;
+      border: 2px solid #e9c8b4;
+      border-radius: 13px;
+      background: #fff;
+      color: #753d29;
+      font-weight: 800;
+      text-align: center;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .infant-learning .audio-button:hover,
+    .infant-learning .small-button:hover,
+    .infant-learning .game-button:hover { background: #fff7ee; }
+    .infant-learning .audio-button:active,
+    .infant-learning .small-button:active,
+    .infant-learning .game-button:active { transform: scale(.98); }
+    .infant-learning .unit-nav {
+      margin: 25px 0 35px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #e8e5df;
+      border-radius: 19px;
+    }
+    .infant-learning .unit-nav h2 { margin: 0 0 13px; font-size: 1.03rem; }
+    .infant-learning .unit-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .infant-learning .unit-nav a {
+      display: inline-flex;
+      gap: 8px;
+      padding: 11px 14px;
+      background: #fff8ef;
+      border: 1px solid #f0dfcb;
+      border-radius: 12px;
+      color: #6d4530;
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+    }
+    .infant-learning .unit-nav a:hover { background: #ffe9d6; }
+    .infant-learning .lesson-section {
+      --section-color: #ba6a4b;
+      --section-pale: #ffede5;
+      margin: 42px 0 0;
+      padding: clamp(18px, 2.6vw, 32px);
+      background: #fff;
+      border: 1px solid #e7e1d9;
+      border-radius: 24px;
+      box-shadow: 0 7px 30px #2a364d09;
+      scroll-margin-top: 100px;
+    }
+    .infant-learning .lesson-section.senses { --section-color: #8355aa; --section-pale: #f5eafb; }
+    .infant-learning .lesson-section.movement { --section-color: #2378ad; --section-pale: #e9f5fc; }
+    .infant-learning .lesson-section.health { --section-color: #438147; --section-pale: #ecf7eb; }
+    .infant-learning .lesson-section.autonomy { --section-color: #ac771b; --section-pale: #fff4dd; }
+    .infant-learning .section-top {
+      display: grid;
+      grid-template-columns: 1fr minmax(190px, 235px);
+      align-items: center;
+      gap: 22px;
+      padding: 5px 2px 20px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .infant-learning .section-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--section-color);
+      font-size: .91rem;
+      font-weight: 850;
+    }
+    .infant-learning .section-heading {
+      margin: 0 0 10px;
+      color: #28374b;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    .infant-learning .section-intro { margin: 0; line-height: 1.6; color: #596677; }
+    .infant-learning .section-image {
+      display: block;
+      width: 100%;
+      max-height: 195px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 17px;
+      background: var(--section-pale);
+      border: 3px solid #fff;
+      box-shadow: 0 5px 15px #26364c15;
+    }
+    .infant-learning .section-sound { margin-top: 12px; }
+    .infant-learning .section-sound .audio-button { min-height: 42px; font-size: .9rem; }
+    .infant-learning .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+    .infant-learning .activity-card {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 19px;
+      border: 1px solid #eee1d6;
+      border-radius: 19px;
+      background: #fffefa;
+    }
+    .infant-learning .activity-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .infant-learning .activity-id {
+      padding: 6px 9px;
+      background: var(--section-pale);
+      color: var(--section-color);
+      border-radius: 10px;
+      font-size: .81rem;
+      font-weight: 850;
+    }
+    .infant-learning .activity-type {
+      font-size: .79rem;
+      color: #536377;
+      font-weight: 750;
+    }
+    .infant-learning .activity-card h3 {
+      margin: 0;
+      color: #2b3a4c;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+    .infant-learning .activity-card p {
+      margin: 0;
+      color: #4d5d70;
+      line-height: 1.6;
+      font-size: .96rem;
+    }
+    .infant-learning .activity-card .teacher-tip {
+      margin-top: auto;
+      padding: 10px 12px;
+      border-left: 3px solid var(--section-color);
+      background: var(--section-pale);
+      color: #4c5362;
+      border-radius: 4px 8px 8px 4px;
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+    .infant-learning .activity-card .audio-button { align-self: flex-start; min-height: 40px; font-size: .82rem; }
+    .infant-learning .game-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+      padding: 15px;
+      border: 1px dashed #d5b7a1;
+      border-radius: 15px;
+      background: #fff9f3;
+    }
+    .infant-learning .game-prompt {
+      min-height: 32px;
+      color: #344254;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .infant-learning .answer-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .infant-learning .answer-options.five { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+    .infant-learning .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 88px;
+      padding: 10px 6px;
+      background: #fff;
+      border: 2px solid #e5d7c8;
+      border-radius: 14px;
+      color: #33455b;
+      font-weight: 800;
+      text-align: center;
+      font-size: .95rem;
+    }
+    .infant-learning .choice .big-icon { font-size: clamp(2rem, 5vw, 2.5rem); line-height: 1.1; }
+    .infant-learning .choice:hover { background: #fff0df; }
+    .infant-learning .choice.is-selected,
+    .infant-learning .choice[aria-pressed="true"] {
+      border-color: #437f53;
+      background: #e8f5e9;
+    }
+    .infant-learning .choice:disabled { opacity: .65; cursor: default; }
+    .infant-learning .game-feedback {
+      min-height: 1.45em;
+      margin: 0;
+      font-size: .9rem;
+      font-weight: 750;
+      color: #396047;
+    }
+    .infant-learning .game-feedback.try-again { color: #925b2b; }
+    .infant-learning .game-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+    .infant-learning .game-button { min-height: 43px; font-size: .87rem; }
+    .infant-learning .small-label { font-size: .83rem; color: #566b7b; }
+    .infant-learning .progress-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+    .infant-learning .progress-dots span {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #e9ddd2; border: 1px solid #cebda9;
+    }
+    .infant-learning .progress-dots span.done { background: #5f9972; border-color: #3c7950; }
+    .infant-learning .body-builder { display: grid; grid-template-columns: 100px 1fr; gap: 14px; align-items: center; }
+    .infant-learning .body-builder svg { width: 100%; max-width: 110px; display: block; }
+    .infant-learning .body-builder svg [data-part] { fill: #f4e5d8; stroke: #b78c70; stroke-width: 3; }
+    .infant-learning .body-builder svg [data-part].revealed { fill: #6db9ce; stroke: #397d90; }
+    .infant-learning .traffic-light {
+      display: flex; gap: 12px; padding: 10px; width: max-content;
+      border-radius: 15px; background: #415063;
+    }
+    .infant-learning .bulb { width: 39px; height: 39px; border-radius: 50%; opacity: .24; border: 3px solid #fff4; }
+    .infant-learning .bulb.red { background: #f34c4c; }
+    .infant-learning .bulb.amber { background: #ffcb4c; }
+    .infant-learning .bulb.green { background: #5ddb80; }
+    .infant-learning .bulb.active { opacity: 1; box-shadow: 0 0 14px currentColor; }
+    .infant-learning .sequence-output {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 8px; min-height: 62px; font-size: 2.25rem; padding: 8px;
+      border-radius: 12px; background: #fff;
+    }
+    .infant-learning .steps-done { display: flex; flex-wrap: wrap; gap: 7px; min-height: 28px; align-items: center; }
+    .infant-learning .step-chip { padding: 8px 10px; font-size: .88rem; font-weight: 750; background: #def0e2; border-radius: 9px; color: #2c6540; }
+    .infant-learning .check-list { display: flex; flex-direction: column; gap: 10px; }
+    .infant-learning .check-item { display: flex; gap: 9px; align-items: center; padding: 9px 11px; border: 1px solid #e8e0d7; border-radius: 12px; background: #fff; }
+    .infant-learning input[type="checkbox"] { width: 22px; height: 22px; accent-color: #398251; }
+    .infant-learning label { cursor: pointer; font-weight: 650; }
+    .infant-learning .lesson-note {
+      margin: 22px 0 0; padding: 16px 19px; border-radius: 14px;
+      background: var(--section-pale); color: #47576a; line-height: 1.55;
+    }
+    .infant-learning .end-project {
+      margin-top: 46px; padding: clamp(20px, 4vw, 35px);
+      border-radius: 25px; border: 1px solid #d9e7d4;
+      background: linear-gradient(145deg, #eff9ee, #fdf9ed);
+      scroll-margin-top: 90px;
+    }
+    .infant-learning .end-project h2 { margin: 0 0 10px; color: #285a39; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+    .infant-learning .end-project > p { color: #466253; line-height: 1.6; }
+    .infant-learning .passport-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; margin-top: 21px; }
+    .infant-learning .passport-item { position: relative; min-width: 0; }
+    .infant-learning .passport-item input { position: absolute; opacity: 0; top: 12px; left: 12px; }
+    .infant-learning .passport-item label {
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; gap: 9px;
+      min-height: 150px; padding: 12px 7px;
+      background: #fff; color: #475567; border: 2px solid #d6e4d4;
+      border-radius: 15px; text-align: center; font-size: .88rem;
+    }
+    .infant-learning .passport-item label .seal { font-size: 2.5rem; }
+    .infant-learning .passport-item input:checked + label { background: #e4f5e6; border-color: #3e8656; }
+    .infant-learning .passport-item input:checked + label::after { content: '✓'; color: #18713b; font-size: 1.1rem; font-weight: 900; }
+    .infant-learning .passport-progress { margin: 20px 0 0; font-weight: 800; color: #326444; }
+    .infant-learning .passport-meter { overflow: hidden; height: 13px; margin-top: 8px; border-radius: 10px; background: #d9e9d8; }
+    .infant-learning .passport-fill { width: 0%; height: 100%; border-radius: inherit; background: #408d5c; transition: width .25s; }
+    .infant-learning .teacher-notes { margin-top: 28px; padding: 19px 22px; background: #fff; border: 1px solid #dedfdc; border-radius: 17px; }
+    .infant-learning .teacher-notes summary { cursor: pointer; color: #4d5967; font-weight: 800; }
+    .infant-learning .teacher-notes p,
+    .infant-learning .teacher-notes li { font-size: .91rem; color: #4d5967; line-height: 1.65; }
+    .infant-learning .teacher-notes table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .infant-learning .teacher-notes th,
+    .infant-learning .teacher-notes td { padding: 10px 9px; text-align: left; border-bottom: 1px solid #e5e6e4; }
+    .infant-learning .teacher-notes th { background: #f5f6f5; }
+    .infant-learning .site-footer .footer-school-name { margin-bottom: 8px; }
+    @media (max-width: 900px) {
+      .infant-learning .activity-grid { grid-template-columns: 1fr; }
+      .infant-learning .passport-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+      .infant-learning .unit-hero { grid-template-columns: 1fr; }
+      .infant-learning .unit-hero img { max-height: 260px; }
+      .infant-learning .section-top { grid-template-columns: 1fr; }
+      .infant-learning .section-image { max-height: 220px; }
+      .infant-learning .unit-nav ul { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 460px) {
+      .infant-learning .unit-nav ul,
+      .infant-learning .passport-grid { grid-template-columns: 1fr 1fr; }
+      .infant-learning .lesson-shell { padding-top: 15px; }
+      .infant-learning .body-builder { grid-template-columns: 90px 1fr; }
+      .infant-learning .activity-card { padding: 14px; }
+      .infant-learning .teacher-notes { overflow-x: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning *, .infant-learning *::before,
+      .infant-learning *::after { transition: none !important; scroll-behavior: auto !important; }
+    }
+  
+    /* ======================================================
+       FUENTES ESCOLARES: archivos ya alojados en /fonts
+       ====================================================== */
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_G.TTF") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_N.TTF") format("truetype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Punteada";
+      src: url("/fonts/Escolar_P.TTF") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Calada";
+      src: url("/fonts/Escolar_C.TTF") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    /* La navegación del colegio y las notas docentes conservan la fuente general. */
+    .infant-learning #unit-title,
+    .infant-learning .end-project h2,
+    .infant-learning .unit-hero p:not(.unit-eyebrow),
+    .infant-learning .section-heading,
+    .infant-learning .section-intro,
+    .infant-learning .activity-card h3,
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .game-prompt,
+    .infant-learning .choice,
+    .infant-learning .game-button,
+    .infant-learning .audio-button,
+    .infant-learning .step-chip,
+    .infant-learning .game-feedback,
+    .infant-learning .sequence-output,
+    .infant-learning .child-script,
+    .infant-learning .mini-game h4,
+    .infant-learning .mini-game p:not(.access-note),
+    .infant-learning .drop-target,
+    .infant-learning .drag-piece,
+    .infant-learning .paint-instruction {
+      font-family: "Escolar", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+      font-feature-settings: "liga" 1, "clig" 1;
+      line-height: 1.48;
+      letter-spacing: 0;
+    }
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .mini-game > p,
+    .infant-learning .game-prompt { font-size: clamp(1.13rem, 1.7vw, 1.36rem); }
+    .infant-learning .activity-card h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+    .infant-learning .choice { font-size: clamp(1.06rem, 1.45vw, 1.24rem); }
+    .infant-learning .game-button { font-size: clamp(1rem, 1.35vw, 1.15rem); }
+    .infant-learning .teacher-tip,
+    .infant-learning details,
+    .infant-learning .activity-id,
+    .infant-learning .activity-type,
+    .infant-learning .access-note {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+    .infant-learning .handwriting-dotted {
+      font-family: "Escolar Punteada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-outline {
+      font-family: "Escolar Calada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-bold { font-family: "Escolar", cursive; font-weight: 700; }
+
+    /* ======================================================
+       NUEVOS MINIJUEGOS VISUALES (ratón, dedo y selección táctil)
+       ====================================================== */
+    .infant-learning .mini-game {
+      margin-top: 15px;
+      padding: clamp(12px, 2.5vw, 19px);
+      border: 2px solid #ebd7c5;
+      border-radius: 20px;
+      background: #fffdf9;
+    }
+    .infant-learning .mini-game h4 {
+      margin: 0 0 7px;
+      color: #784330;
+      font-size: clamp(1.25rem, 2vw, 1.58rem);
+      font-weight: 700;
+    }
+    .infant-learning .mini-game p { margin: 4px 0 12px; }
+    .infant-learning .access-note {
+      font-size: .86rem;
+      color: #5b6472;
+    }
+    .infant-learning .drag-bank,
+    .infant-learning .drop-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: stretch;
+      margin: 13px 0;
+    }
+    .infant-learning .drag-piece,
+    .infant-learning .drop-target {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 7px;
+      padding: 11px;
+      text-align: center;
+      color: #334155;
+      background: white;
+      border: 3px solid #d6ddd8;
+      border-radius: 17px;
+      min-width: 110px;
+      min-height: 100px;
+      font-size: clamp(1.04rem, 1.55vw, 1.26rem);
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .infant-learning .drag-piece { border-color: #e7af7f; background: #fff7ec; }
+    .infant-learning .drag-piece .item-emoji,
+    .infant-learning .drop-target .item-emoji {
+      display: block;
+      font-family: system-ui, sans-serif;
+      font-size: clamp(2.3rem, 4vw, 3.25rem);
+      line-height: 1.1;
+    }
+    .infant-learning .drag-piece.is-chosen { border-color: #1169b0; box-shadow: 0 0 0 4px #b7dfff; }
+    .infant-learning .drop-target.is-hovered { border-color: #1169b0; background: #eaf6ff; }
+    .infant-learning .drop-target.is-complete { border-color: #007a33; background: #f0fbf2; }
+    .infant-learning .drop-target .placed-token {
+      display: inline-flex;
+      gap: 5px;
+      margin: 3px;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #7daf8d;
+      font-family: "Escolar", cursive;
+      font-size: 1.13rem;
+    }
+    .infant-learning .drag-ghost {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      opacity: .88;
+      transform: translate(-50%, -50%) rotate(-3deg);
+      box-shadow: 0 9px 24px #0003;
+      min-width: 110px;
+      max-width: 165px;
+    }
+    .infant-learning .drop-hint { font-family: "Escolar", system-ui, sans-serif; font-size: 1.12rem; font-weight: 700; color: #64748b; }
+    .infant-learning .game-feedback:empty { min-height: 1em; }
+    .infant-learning .drop-row .drop-target { flex: 1 1 120px; }
+    /* Puzle de 4 piezas: imagen original reutilizada mediante JavaScript. */
+    .infant-learning .puzzle-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: clamp(12px, 3vw, 26px);
+      margin: 15px auto;
+      max-width: 650px;
+    }
+    .infant-learning .puzzle-pieces,
+    .infant-learning .puzzle-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f5eee8;
+      padding: 5px;
+      border-radius: 14px;
+    }
+    .infant-learning .puzzle-pieces .drag-piece,
+    .infant-learning .puzzle-board .drop-target {
+      position: relative;
+      width: 100%; min-width: 0; min-height: 0;
+      aspect-ratio: 1;
+      padding: 0;
+      border-radius: 9px;
+      border-width: 2px;
+      overflow: hidden;
+    }
+    .infant-learning .puzzle-slice,
+    .infant-learning .puzzle-fixed {
+      width: 100%; height: 100%;
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      flex: 1 1 auto; min-height: 0; pointer-events: none;
+    }
+    .infant-learning .puzzle-pieces .drag-piece { font-family: system-ui, sans-serif; }
+    .infant-learning .puzzle-pieces .drag-piece:disabled { opacity: .35; }
+    .infant-learning .puzzle-board .drop-target { background: #f8fafc; border-style: dashed; }
+    .infant-learning .puzzle-board .drop-target::after {
+      content: attr(data-number);
+      color: #64748b;
+      font: 700 1.5rem system-ui, sans-serif;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .infant-learning .puzzle-board .drop-target.is-complete::after { content: none; }
+    .infant-learning .puzzle-board .drop-target.is-complete { border-style: solid; padding: 0; }
+    .infant-learning .puzzle-board .drop-target .puzzle-fixed { position: relative; z-index: 1; }
+
+    /* Lámina de coloreado digital: contornos negros sobre blanco. */
+    .infant-learning .coloring-layout { max-width: 580px; margin: 4px auto; }
+    .infant-learning .paint-palette { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; justify-content: center; }
+    .infant-learning .paint-swatch {
+      appearance: none; border: 3px solid #ddd; border-radius: 50%;
+      background: var(--swatch); width: 48px; height: 48px;
+      font-size: 0; flex: 0 0 48px;
+    }
+    .infant-learning .paint-swatch.is-active { outline: 3px solid #224b6d; outline-offset: 3px; }
+    .infant-learning .paint-page { display: block; width: min(100%, 440px); height: auto; margin: 0 auto; background: white; border: 2px solid #d3dbe3; border-radius: 14px; }
+    .infant-learning .paint-page [data-paint-region] { cursor: pointer; transition: fill .12s ease; }
+    .infant-learning .paint-page [data-paint-region]:focus-visible { outline: none; stroke: #1766be; stroke-width: 5; }
+    .infant-learning .paint-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 12px 0; }
+    .infant-learning .outline-color-word {
+      display: block; width: 100%; margin: 5px auto 10px;
+      border: 2px dashed #d7c5b7; border-radius: 12px;
+      background: #fff; padding: 0 8px; color: #414141;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      line-height: 1.5; text-align: center;
+    }
+
+    /* Repaso digital: la fuente punteada permanece debajo del lienzo transparente. */
+    .infant-learning .trace-stage {
+      position: relative;
+      aspect-ratio: 900 / 220;
+      border: 2px solid #ddd1c3;
+      background: repeating-linear-gradient(to bottom, white 0, white 48%, #d5e9ed 48%, #d5e9ed 49%, white 49%, white 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      width: min(100%, 720px);
+      margin: 12px auto;
+    }
+    .infant-learning .trace-word {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(2.8rem, 9vw, 6.6rem);
+      white-space: nowrap;
+      color: #7a9aa6;
+      line-height: 1.15;
+      pointer-events: none;
+    }
+    .infant-learning .trace-canvas {
+      display: block; position: relative;
+      width: 100%; height: 100%;
+      touch-action: none; cursor: crosshair;
+    }
+    .infant-learning .script-preview { text-align: center; font-size: clamp(1.8rem, 5vw, 3.2rem); }
+    .infant-learning .trace-tools { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 620px) {
+      .infant-learning .puzzle-layout { gap: 8px; }
+      .infant-learning .drag-piece, .infant-learning .drop-target { min-width: 95px; min-height: 91px; }
+      .infant-learning .paint-swatch { width: 42px; height: 42px; flex-basis: 42px; }
+      .infant-learning .trace-stage { aspect-ratio: 900 / 260; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning .paint-page [data-paint-region] { transition: none; }
+    }
+
+  
+
+/* INF5.2 · Juegos emocionales y de convivencia */
+.infant-learning .lesson-section.emotions { --section-color: #bd5a75; --section-pale: #fff0f4; }
+.infant-learning .lesson-section.expression { --section-color: #9462b6; --section-pale: #f6eefe; }
+.infant-learning .lesson-section.calm { --section-color: #3586a0; --section-pale: #e9f7fb; }
+.infant-learning .lesson-section.together { --section-color: #34865f; --section-pale: #e9f8ed; }
+.infant-learning .lesson-section.solutions { --section-color: #be7b2a; --section-pale: #fff4e4; }
+.infant-learning .emotion-face { font-size: clamp(4.6rem, 9vw, 7rem); line-height: 1.13; text-align:center; filter:drop-shadow(0 5px 6px #3331); }
+.infant-learning .emotion-prompt { display:flex; align-items:center; justify-content:center; gap: 10px; flex-wrap:wrap; text-align:center; background:white; border:2px solid #efdfd4; border-radius:16px; padding:12px; }
+.infant-learning .emotions-row { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.infant-learning .emotions-row .choice { flex:1 1 106px; }
+.infant-learning .big-emotion {font-size:2.4rem;line-height:1.1;display:block;}
+.infant-learning .illustrated-face {max-width:280px;width:100%;margin:auto;display:block;}
+.infant-learning .situation {display:grid;gap:8px;padding:15px;background:#fff;border:1px solid #e7d9c9;border-radius:15px;font-family:"Escolar",cursive;font-size:1.35rem;line-height:1.5;}
+.infant-learning .mini-game {margin-top:10px;}
+.infant-learning .choice.is-personal {border-color:#7f72b6;background:#f3eeff;}
+.infant-learning .chosen-message {border-radius:12px;padding:12px;background:#eaf4f7;color:#28576a;font-size:1.12rem;font-family:"Escolar",cursive;}
+.infant-learning .teacher-tip strong {font-family:inherit;}
+.infant-learning .breath-circle {width:min(220px,70vw);height:min(220px,70vw);margin:12px auto;border-radius:50%;border:8px solid #cbe0ee;background:radial-gradient(circle at 35% 30%,#fefefe,#9bd5e4);display:grid;place-items:center;position:relative;font-size:clamp(2.3rem,5vw,4.5rem);box-shadow:0 0 0 7px #e6f5f9 inset;}
+.infant-learning .breath-circle.is-breathing {animation:slow-breath 8s ease-in-out infinite;}
+.infant-learning .breath-circle span {pointer-events:none;}
+@keyframes slow-breath {0%,100%{transform:scale(.86)}50%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.infant-learning .breath-circle.is-breathing {animation:none;}}
+.infant-learning .counted-steps {display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.infant-learning .counted-steps .game-button {flex:1 1 115px;min-height:85px;flex-direction:column;}
+.infant-learning .counted-steps .game-button[aria-pressed=true] {background:#e0f2e3;border-color:#378357;}
+.infant-learning .reveal-text {padding:12px 14px;border-radius:12px;background:#e7f3f7;min-height:60px;font-family:"Escolar",cursive;font-size:1.3rem;}
+.infant-learning .face-canvas {display:block;margin:6px auto;width:min(100%,380px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .face-canvas [data-paint-region],
+.infant-learning .tree-canvas [data-paint-region] {cursor:pointer;}
+.infant-learning .tree-canvas {display:block;margin:6px auto;width:min(100%,410px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .color-swatch {appearance:none;width:45px;height:45px;border-radius:50%;border:3px solid #ece6de;background:var(--swatch);}
+.infant-learning .color-swatch.is-active {outline:3px solid #1e5f8b;outline-offset:2px;}
+.infant-learning .puzzle-slice,.infant-learning .puzzle-fixed { background-color:#fff; }
+.infant-learning .game-panel [data-feedback],
+.infant-learning .mini-game [data-feedback] {font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:.88rem;}
+.infant-learning .soft-reminder {background:#e8f5ec;border-left:5px solid #55a17a;padding:12px 14px;border-radius:10px;line-height:1.55;}
+.infant-learning .emotion-words {display:flex;flex-wrap:wrap;gap:10px;}
+.infant-learning .emotion-words button {flex:1 1 110px;}
+.infant-learning .quiet-icon {font-size:3rem;line-height:1.15;}
+.infant-learning .teacher-notes summary {font-family:system-ui,sans-serif;}
+.infant-learning .lesson-note {font-family:system-ui,sans-serif;}
+.infant-learning .final-mantra {margin-top:18px;background:white;border-radius:16px;padding:18px;border:1px solid #cfe7d4;font-family:"Escolar",cursive;text-align:center;font-size:1.5rem;}
+.infant-learning .teacher-table-wrap {overflow-x:auto;}
+.infant-learning .unit-eyebrow,.infant-learning .unit-nav,.infant-learning .section-tag {font-family:system-ui,sans-serif;}
+@media(max-width:600px){.infant-learning .emotion-prompt {flex-direction:column;}.infant-learning .passport-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+
+/* INF5.6 · Color y juegos específicos; diseño heredado de INF5.2. */
+.infant-learning { --orange:#27775e; --orange-soft:#eaf8ee; --page:#fbfefa; --border-soft:#d7e9d8; }
+.infant-learning .unit-hero {background:linear-gradient(128deg,#e8f8ed,#fff9e4);border-color:#cfebd5;}
+.infant-learning .unit-eyebrow {color:#267456;}
+.infant-learning .play-pill {color:#357351;border-color:#c7e8d0;background:#fff;}
+.infant-learning .unit-nav a {color:#27664d;background:#f0fbf3;border-color:#d0ecd7;}
+.infant-learning .unit-nav a:hover {background:#dff7e7;}
+.infant-learning .lesson-section.animals {--section-color:#ad7642;--section-pale:#fff2df;}
+.infant-learning .lesson-section.plants {--section-color:#258451;--section-pale:#e7f8ea;}
+.infant-learning .lesson-section.weather {--section-color:#377fa6;--section-pale:#e7f4fb;}
+.infant-learning .lesson-section.materials {--section-color:#608ab0;--section-pale:#e8f1fa;}
+.infant-learning .lesson-section.care {--section-color:#478847;--section-pale:#e9f7e3;}
+.infant-learning .mini-game h4 {color:#276e54;}
+.infant-learning .drag-piece {border-color:#9fcba4;background:#f4fff6;}
+.infant-learning .end-project {background:linear-gradient(130deg,#ebf8ef,#fff9dc);border-color:#d6eac8;}
+.infant-learning .nature-check {display:flex;align-items:center;gap:9px;padding:11px;background:#fff;border:2px solid #d9ecdc;border-radius:13px;font-family:"Escolar",cursive;font-size:1.3rem;cursor:pointer;}
+.infant-learning .nature-check input {width:22px;height:22px;accent-color:#36834d;flex-shrink:0;}
+.infant-learning .nature-check:has(input:checked) {background:#e6f7ea;border-color:#4aaf6a;}
+.infant-learning .sightings-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+.infant-learning .nature-check .item-emoji {font-family:system-ui;font-size:2.2rem;}
+.infant-learning .plant-progress {display:flex;align-items:center;justify-content:center;gap:13px;background:#f0f9e9;border:2px solid #bbdda9;border-radius:15px;padding:13px;font-family:"Escolar",cursive;font-size:1.3rem;}
+.infant-learning .plant-emoji {font-family:system-ui;font-size:clamp(2.6rem,7vw,4.2rem);}
+.infant-learning .draw-canvas {display:block;width:100%;height:auto;min-height:200px;background:#fff;border:2px solid #c6dfd2;border-radius:12px;touch-action:none;cursor:crosshair;}
+.infant-learning .weather-display {padding:13px;border-radius:13px;background:#e9f5ff;font-family:"Escolar",cursive;font-size:1.4rem;text-align:center;}
+.infant-learning .big-symbol {display:block;font-family:system-ui;font-size:2.45rem;line-height:1.15;}
+.infant-learning .day-row {display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:9px 0;padding:9px;border-radius:12px;background:#f7fcff;}
+.infant-learning .day-title {min-width:58px;font-size:.93rem;font-weight:750;}
+.infant-learning .day-result {font-family:"Escolar",cursive;font-size:1.3rem;color:#276a53;min-width:25px;}
+.infant-learning .weather-mini {min-width:44px;min-height:44px;background:#fff;border:2px solid #bed6e3;border-radius:10px;font-size:1.4rem;}
+.infant-learning .weather-mini.is-active {background:#d9f5dc;border-color:#398452;}
+.infant-learning .nature-coloring,.infant-learning .park-clean {display:block;width:100%;height:auto;border-radius:12px;background:#fff;}
+.infant-learning [data-paint-region],.infant-learning [data-litter] {cursor:pointer;}
+.infant-learning [data-litter]:focus-visible,.infant-learning [data-paint-region]:focus-visible {outline:3px solid #2b70bd;}
+.infant-learning [data-litter].is-removed {opacity:0;pointer-events:none;}
+.infant-learning .big-outline {font-size:clamp(2.5rem,5vw,4rem);text-align:center;margin:5px 0;color:#618ba0;}
+.infant-learning .game-button, .infant-learning .audio-button, .infant-learning .choice {min-height:47px;}
+.infant-learning .game-feedback {font-family:"Escolar",cursive;font-size:1.18rem;}
+.infant-learning .teacher-notes,.infant-learning .teacher-tip {font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
+.infant-learning .teacher-table-wrap {max-width:100%;overflow-x:auto;}
+.infant-learning .lesson-section .section-image {object-fit:cover;}
+@media(max-width:570px){
+ .infant-learning .sightings-grid {grid-template-columns:1fr;}
+ .infant-learning .nature-check {font-size:1.13rem;}
+ .infant-learning .day-row {gap:5px;}
+ .infant-learning .weather-mini {min-width:40px;min-height:43px;}
+ .infant-learning .drag-piece, .infant-learning .drop-target {min-width:95px;}
+}
+@media(max-width:360px){.infant-learning .unit-nav ul {grid-template-columns:1fr;}.infant-learning .day-row{padding:6px}.infant-learning .weather-mini{min-width:37px}.infant-learning .activity-card{padding:12px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+<!-- CABECERA INSTITUCIONAL -->
+<header class="site-banner">
+<a aria-label="Ir a la página de inicio" href="/">
+<img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/>
+</a>
+</header>
+<!-- NAVEGACIÓN PRINCIPAL -->
+<div class="navigation-wrapper">
+<div class="navigation-container">
+<a aria-label="Inicio" class="navigation-logo" href="/">
+<img alt="" src="/img/logo-centro.png"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation">
+<ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red">
+<a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<!-- CONTENIDO INFANTIL · INF5.6 -->
+<main class="infant-learning" id="contenido-principal">
+<div class="lesson-shell">
+<nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li><li><a href="/recursos/infantil/inf5/">Infantil 5 años</a></li><li aria-current="page">INF5.6 · Naturaleza</li></ol></nav>
+<section class="unit-hero" aria-labelledby="unit-title"><div>
+<p class="unit-eyebrow">Infantil · 5 años · Bloque 6</p>
+<h1 id="unit-title">Exploro la naturaleza</h1>
+<p>¡Nos convertimos en exploradores! Vamos a conocer animales y plantas, mirar el cielo, experimentar y cuidar nuestro planeta.</p>
+<span class="play-pill">🌱 Observo · Descubro · Cuido</span>
+<div style="margin-top:17px"><button type="button" class="audio-button" data-say="¡Hola, exploradores! Hoy descubriremos seres vivos, plantas, el tiempo, el agua y maneras de cuidar la naturaleza." data-audio="/media/infantil/inf5/inf5.6-introduccion.mp3">🔊 Escuchar presentación</button></div></div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTE4IDE1NSkgc2NhbGUoMC45MSkiPjxwYXRoIGQ9Ik0tMTggMjAwIEwtMTIgNzUgTDEwIDc1IEwyMCAyMDAiIGZpbGw9IiNhNjdhNTMiIHN0cm9rZT0iIzkzNmI0YyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iLTQzIiBjeT0iNzIiIHI9IjU3IiBmaWxsPSIjNjliNzc3Ii8+PGNpcmNsZSBjeD0iMTgiIGN5PSI0OCIgcj0iNjUiIGZpbGw9IiM1YWFhNjgiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjEwMCIgcj0iNTEiIGZpbGw9IiM3OGM4ODAiLz48Y2lyY2xlIGN4PSItMTIiIGN5PSIxNCIgcj0iNTQiIGZpbGw9IiM4NWM5ODEiLz48Y2lyY2xlIGN4PSIyMiIgY3k9IjkzIiByPSI1NiIgZmlsbD0iIzZkYzM3NCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTggMTcxKSBzY2FsZSgxKSI+PHBhdGggZD0iTS0xOSAxNDUgTC0yOCAyMDAgTTIxIDE0NSBMMjggMjAwIiBzdHJva2U9IiM0NzY5ODciIHN0cm9rZS13aWR0aD0iMTciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0tMjQgNzAgUTAgNTUgMjUgNzAgTDM1IDE0MiBILTM1WiIgZmlsbD0iIzhjY2FlOCIgc3Ryb2tlPSIjZDg4MDgwIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNLTI3IDgyIEwtNTQgMTI0IE0yNSA4MiBMNDggMTE1IiBzdHJva2U9IiNlN2FhODYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjAiIGN5PSIyOSIgcj0iMzYiIGZpbGw9IiNmMWMzOWYiLz48cGF0aCBkPSJNLTM0IDE3IFEtMzIgLTI5IDQgLTE4IFEzNSAtOSAzNiAxNSBRMTUgLTQgLTggNCBRLTI3IDEgLTM0IDE3IiBmaWxsPSIjNWM0ODNmIi8+PGNpcmNsZSBjeD0iLTEzIiBjeT0iMzAiIHI9IjMiIGZpbGw9IiMzNzQxNGIiLz48Y2lyY2xlIGN4PSIxMyIgY3k9IjMwIiByPSIzIiBmaWxsPSIjMzc0MTRiIi8+PHBhdGggZD0iTS0xMiA0NCBRMCA1NSAxMiA0MyIgc3Ryb2tlPSIjYjY2ZTY1IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyODYgMTc0KSBzY2FsZSgwLjk0KSI+PHBhdGggZD0iTS0xOSAxNDUgTC0yOCAyMDAgTTIxIDE0NSBMMjggMjAwIiBzdHJva2U9IiM0NzY5ODciIHN0cm9rZS13aWR0aD0iMTciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0tMjQgNzAgUTAgNTUgMjUgNzAgTDM1IDE0MiBILTM1WiIgZmlsbD0iI2YzYTZhOSIgc3Ryb2tlPSIjZDg4MDgwIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNLTI3IDgyIEwtNTQgMTI0IE0yNSA4MiBMNDggMTE1IiBzdHJva2U9IiNlN2FhODYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjAiIGN5PSIyOSIgcj0iMzYiIGZpbGw9IiNmMWMzOWYiLz48cGF0aCBkPSJNLTM0IDE3IFEtMzIgLTI5IDQgLTE4IFEzNSAtOSAzNiAxNSBRMTUgLTQgLTggNCBRLTI3IDEgLTM0IDE3IiBmaWxsPSIjNWM0ODNmIi8+PGNpcmNsZSBjeD0iLTEzIiBjeT0iMzAiIHI9IjMiIGZpbGw9IiMzNzQxNGIiLz48Y2lyY2xlIGN4PSIxMyIgY3k9IjMwIiByPSIzIiBmaWxsPSIjMzc0MTRiIi8+PHBhdGggZD0iTS0xMiA0NCBRMCA1NSAxMiA0MyIgc3Ryb2tlPSIjYjY2ZTY1IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MzAgMzA3KSBzY2FsZSgwLjUyKSI+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9IjU1IiByeD0iNzMiIHJ5PSI1MiIgZmlsbD0iI2Y0ZDRiYyIvPjxjaXJjbGUgY3g9IjQ1IiBjeT0iMTgiIHI9IjQyIiBmaWxsPSIjZjRkNGJjIi8+PGVsbGlwc2UgY3g9IjI2IiBjeT0iLTY2IiByeD0iMTgiIHJ5PSI2OSIgZmlsbD0iI2YzZDBiNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTEzIDI2IC02NikiLz48ZWxsaXBzZSBjeD0iNjMiIGN5PSItNjUiIHJ4PSIxOCIgcnk9IjY3IiBmaWxsPSIjZjNkMGI0IiB0cmFuc2Zvcm09InJvdGF0ZSgxMSA2MyAtNjUpIi8+PGVsbGlwc2UgY3g9IjI4IiBjeT0iLTY1IiByeD0iOCIgcnk9IjQ3IiBmaWxsPSIjZWFhZWIzIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTMgMjggLTY1KSIvPjxlbGxpcHNlIGN4PSI2MiIgY3k9Ii02NSIgcng9IjgiIHJ5PSI0NyIgZmlsbD0iI2VhYWViMyIgdHJhbnNmb3JtPSJyb3RhdGUoMTEgNjIgLTY1KSIvPjxjaXJjbGUgY3g9IjU3IiBjeT0iMTEiIHI9IjUiIGZpbGw9IiMyODM4NGIiLz48Y2lyY2xlIGN4PSI4MSIgY3k9IjI4IiByPSI0IiBmaWxsPSIjYzA4MDdhIi8+PHBhdGggZD0iTTczIDMzIFE2NCA0NiA1NSAzNyIgc3Ryb2tlPSIjOTE2NzY5IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSItNzYiIGN5PSIzMSIgcj0iMTkiIGZpbGw9IiNmZmYzZTciLz48ZWxsaXBzZSBjeD0iLTQ1IiBjeT0iMTAzIiByeD0iMzAiIHJ5PSIxNCIgZmlsbD0iI2VkYzNhYyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTIgMTIzKSBzY2FsZSgwLjgzKSI+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9Ii0xNSIgcng9IjI1IiByeT0iMzAiIGZpbGw9IiNmNTliYWEiIHN0cm9rZT0iI2I5NjQ4ZCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iLTE1IiByeD0iMjUiIHJ5PSIzMCIgZmlsbD0iI2Y1OWJhYSIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48ZWxsaXBzZSBjeD0iLTE4IiBjeT0iMjIiIHJ4PSIxOSIgcnk9IjI1IiBmaWxsPSIjZjhjMjhkIiBzdHJva2U9IiNiOTY0OGQiIHN0cm9rZS13aWR0aD0iMyIvPjxlbGxpcHNlIGN4PSIxOCIgY3k9IjIyIiByeD0iMTkiIHJ5PSIyNSIgZmlsbD0iI2Y4YzI4ZCIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNMCAtMjAgVjQwIiBzdHJva2U9IiM2ZTU5N2EiIHN0cm9rZS13aWR0aD0iOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zIC0yMyBRLTE4IC00NSAtMjEgLTQyIE0zIC0yMyBRMTggLTQ1IDIxIC00MiIgc3Ryb2tlPSIjNmU1OTdhIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSItMjAiIGN5PSItMTUiIHI9IjYiIGZpbGw9IiNmZmYzZDAiLz48Y2lyY2xlIGN4PSIyMCIgY3k9Ii0xNSIgcj0iNiIgZmlsbD0iI2ZmZjNkMCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjAgMTAyKSBzY2FsZSgwLjQ0KSI+PGVsbGlwc2Ugcng9IjQzIiByeT0iMjkiIGZpbGw9IiNkMWEwN2MiLz48Y2lyY2xlIGN4PSIzMCIgY3k9Ii0yMCIgcj0iMjMiIGZpbGw9IiNlMWIxOGEiLz48cGF0aCBkPSJNNDkgLTIwIEw3MiAtMTAgTDQ5IC00IiBmaWxsPSIjZmZiYzY5Ii8+PHBhdGggZD0iTS0xNCAtOCBRMTIgLTI0IDE4IDEzIFEtMiAyOSAtMjMgOCIgZmlsbD0iI2JiN2M2YiIvPjxjaXJjbGUgY3g9IjM2IiBjeT0iLTI0IiByPSIzIiBmaWxsPSIjMmMzYjQyIi8+PHBhdGggZD0iTS00MyAtOSBMLTY2IC00MCBMLTU3IDgiIGZpbGw9IiNiYjdjNmIiLz48cGF0aCBkPSJNLTYgMzAgTC05IDUxIE0xNCAyNiBMMTggNTAiIHN0cm9rZT0iI2I4Nzk0NyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ1IDMzNCkiPjxwYXRoIGQ9Ik0wIDI4IFYwIiBzdHJva2U9IiMzODk3NjUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0wIDEyIFEtMTUgLTQgLTIwIDggUS00IDIyIDAgMTIiIGZpbGw9IiM1Y2I5NzYiLz48Y2lyY2xlIGN5PSItOCIgcj0iOSIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9Ii0xMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii0xNSIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii01IiByPSI2IiBmaWxsPSIjZmZlNzgwIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0NSAzNTQpIj48cGF0aCBkPSJNMCAyOCBWMCIgc3Ryb2tlPSIjMzg5NzY1IiBzdHJva2Utd2lkdGg9IjQiLz48cGF0aCBkPSJNMCAxMiBRLTE1IC00IC0yMCA4IFEtNCAyMiAwIDEyIiBmaWxsPSIjNWNiOTc2Ii8+PGNpcmNsZSBjeT0iLTgiIHI9IjkiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSItMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItMTUiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItNSIgcj0iNiIgZmlsbD0iI2ZmZTc4MCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NjcgMzUxKSI+PHBhdGggZD0iTTAgMjggVjAiIHN0cm9rZT0iIzM4OTc2NSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTAgMTIgUS0xNSAtNCAtMjAgOCBRLTQgMjIgMCAxMiIgZmlsbD0iIzVjYjk3NiIvPjxjaXJjbGUgY3k9Ii04IiByPSI5IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iLTEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTE1IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTUiIHI9IjYiIGZpbGw9IiNmZmU3ODAiLz48L2c+PC9zdmc+" alt="Ilustración infantil de niños explorando un jardín con animales, plantas y mariposas" width="640" height="440"></section><nav class="unit-nav" aria-label="Apartados del bloque"><h2>🌈 Elige lo que quieres explorar</h2><ul><li><a href="#apartado-6-1">🐾 Animales</a></li><li><a href="#apartado-6-2">🌱 Plantas</a></li><li><a href="#apartado-6-3">🌦️ Tiempo y estaciones</a></li><li><a href="#apartado-6-4">💧 Agua y materiales</a></li><li><a href="#apartado-6-5">♻️ Cuidamos la Tierra</a></li><li><a href="#pasaporte">🌟 Pasaporte</a></li></ul></nav><!-- ======================================================
+         APARTADO 6.1 · ANIMALES DE MI ENTORNO
+         ====================================================== -->
+    <section class="lesson-section animals" id="apartado-6-1" aria-labelledby="title-6-1">
+      <div class="section-top"><div><span class="section-tag">🐾 Conocemos seres vivos · 6.1</span><h2 id="title-6-1" class="section-heading">Animales de mi entorno</h2><p class="section-intro">Los animales tienen características diferentes, se desplazan de muchas maneras y necesitan un entorno que los cuide.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Los animales tienen características diferentes, se desplazan de muchas maneras y necesitan un entorno que los cuide." data-audio="/media/infantil/inf5/inf5.6-apartado-6-1.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTI5IDE3Nikgc2NhbGUoMC44MikiPjxwYXRoIGQ9Ik0tMTggMjAwIEwtMTIgNzUgTDEwIDc1IEwyMCAyMDAiIGZpbGw9IiNhNjdhNTMiIHN0cm9rZT0iIzkzNmI0YyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iLTQzIiBjeT0iNzIiIHI9IjU3IiBmaWxsPSIjNjliNzc3Ii8+PGNpcmNsZSBjeD0iMTgiIGN5PSI0OCIgcj0iNjUiIGZpbGw9IiM1YWFhNjgiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjEwMCIgcj0iNTEiIGZpbGw9IiM3OGM4ODAiLz48Y2lyY2xlIGN4PSItMTIiIGN5PSIxNCIgcj0iNTQiIGZpbGw9IiM4NWM5ODEiLz48Y2lyY2xlIGN4PSIyMiIgY3k9IjkzIiByPSI1NiIgZmlsbD0iIzZkYzM3NCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNzUgMjkxKSBzY2FsZSgwLjk2KSI+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9IjU1IiByeD0iNzMiIHJ5PSI1MiIgZmlsbD0iI2Y0ZDRiYyIvPjxjaXJjbGUgY3g9IjQ1IiBjeT0iMTgiIHI9IjQyIiBmaWxsPSIjZjRkNGJjIi8+PGVsbGlwc2UgY3g9IjI2IiBjeT0iLTY2IiByeD0iMTgiIHJ5PSI2OSIgZmlsbD0iI2YzZDBiNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTEzIDI2IC02NikiLz48ZWxsaXBzZSBjeD0iNjMiIGN5PSItNjUiIHJ4PSIxOCIgcnk9IjY3IiBmaWxsPSIjZjNkMGI0IiB0cmFuc2Zvcm09InJvdGF0ZSgxMSA2MyAtNjUpIi8+PGVsbGlwc2UgY3g9IjI4IiBjeT0iLTY1IiByeD0iOCIgcnk9IjQ3IiBmaWxsPSIjZWFhZWIzIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTMgMjggLTY1KSIvPjxlbGxpcHNlIGN4PSI2MiIgY3k9Ii02NSIgcng9IjgiIHJ5PSI0NyIgZmlsbD0iI2VhYWViMyIgdHJhbnNmb3JtPSJyb3RhdGUoMTEgNjIgLTY1KSIvPjxjaXJjbGUgY3g9IjU3IiBjeT0iMTEiIHI9IjUiIGZpbGw9IiMyODM4NGIiLz48Y2lyY2xlIGN4PSI4MSIgY3k9IjI4IiByPSI0IiBmaWxsPSIjYzA4MDdhIi8+PHBhdGggZD0iTTczIDMzIFE2NCA0NiA1NSAzNyIgc3Ryb2tlPSIjOTE2NzY5IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSItNzYiIGN5PSIzMSIgcj0iMTkiIGZpbGw9IiNmZmYzZTciLz48ZWxsaXBzZSBjeD0iLTQ1IiBjeT0iMTAzIiByeD0iMzAiIHJ5PSIxNCIgZmlsbD0iI2VkYzNhYyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDQgMTk1KSBzY2FsZSgwLjc2KSI+PGVsbGlwc2Ugcng9IjQzIiByeT0iMjkiIGZpbGw9IiNkMWEwN2MiLz48Y2lyY2xlIGN4PSIzMCIgY3k9Ii0yMCIgcj0iMjMiIGZpbGw9IiNlMWIxOGEiLz48cGF0aCBkPSJNNDkgLTIwIEw3MiAtMTAgTDQ5IC00IiBmaWxsPSIjZmZiYzY5Ii8+PHBhdGggZD0iTS0xNCAtOCBRMTIgLTI0IDE4IDEzIFEtMiAyOSAtMjMgOCIgZmlsbD0iI2JiN2M2YiIvPjxjaXJjbGUgY3g9IjM2IiBjeT0iLTI0IiByPSIzIiBmaWxsPSIjMmMzYjQyIi8+PHBhdGggZD0iTS00MyAtOSBMLTY2IC00MCBMLTU3IDgiIGZpbGw9IiNiYjdjNmIiLz48cGF0aCBkPSJNLTYgMzAgTC05IDUxIE0xNCAyNiBMMTggNTAiIHN0cm9rZT0iI2I4Nzk0NyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQwMCAxNTMpIHNjYWxlKDEpIj48ZWxsaXBzZSBjeD0iLTIwIiBjeT0iLTE1IiByeD0iMjUiIHJ5PSIzMCIgZmlsbD0iI2Y1OWJhYSIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSItMTUiIHJ4PSIyNSIgcnk9IjMwIiBmaWxsPSIjZjU5YmFhIiBzdHJva2U9IiNiOTY0OGQiIHN0cm9rZS13aWR0aD0iMyIvPjxlbGxpcHNlIGN4PSItMTgiIGN5PSIyMiIgcng9IjE5IiByeT0iMjUiIGZpbGw9IiNmOGMyOGQiIHN0cm9rZT0iI2I5NjQ4ZCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGVsbGlwc2UgY3g9IjE4IiBjeT0iMjIiIHJ4PSIxOSIgcnk9IjI1IiBmaWxsPSIjZjhjMjhkIiBzdHJva2U9IiNiOTY0OGQiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik0wIC0yMCBWNDAiIHN0cm9rZT0iIzZlNTk3YSIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMgLTIzIFEtMTggLTQ1IC0yMSAtNDIgTTMgLTIzIFExOCAtNDUgMjEgLTQyIiBzdHJva2U9IiM2ZTU5N2EiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9Ii0yMCIgY3k9Ii0xNSIgcj0iNiIgZmlsbD0iI2ZmZjNkMCIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iLTE1IiByPSI2IiBmaWxsPSIjZmZmM2QwIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcxIDMzMCkiPjxwYXRoIGQ9Ik0wIDI4IFYwIiBzdHJva2U9IiMzODk3NjUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0wIDEyIFEtMTUgLTQgLTIwIDggUS00IDIyIDAgMTIiIGZpbGw9IiM1Y2I5NzYiLz48Y2lyY2xlIGN5PSItOCIgcj0iOSIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9Ii0xMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii0xNSIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii01IiByPSI2IiBmaWxsPSIjZmZlNzgwIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQzNyAzNTcpIj48cGF0aCBkPSJNMCAyOCBWMCIgc3Ryb2tlPSIjMzg5NzY1IiBzdHJva2Utd2lkdGg9IjQiLz48cGF0aCBkPSJNMCAxMiBRLTE1IC00IC0yMCA4IFEtNCAyMiAwIDEyIiBmaWxsPSIjNWNiOTc2Ii8+PGNpcmNsZSBjeT0iLTgiIHI9IjkiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSItMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItMTUiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItNSIgcj0iNiIgZmlsbD0iI2ZmZTc4MCIvPjwvZz48L3N2Zz4=" alt="Ilustración infantil de animales de mi entorno" loading="lazy" width="640" height="440"></div>
+      <div class="activity-grid"><article class="activity-card" id="act-6-1-a" data-criterion="DEE 3.3">
+      <div class="activity-head"><span class="activity-id">6.1.A</span><span class="activity-type">🐾 Clasificar y arrastrar</span></div>
+      <h3>¿Cómo se desplazan los animales?</h3>
+      <p>Observa los animales y clasifícalos según se desplacen nadando, volando o caminando.</p>
+      <button type="button" class="audio-button" data-say="Observa los animales y clasifícalos según se desplacen nadando, volando o caminando." data-audio="/media/infantil/inf5/inf5.6-actividad-1-a.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="animal-moves"><h4>🐟 🦋 🐕 Cada animal se mueve a su manera</h4><p>¿Dónde colocarías cada uno?</p><p class="access-note">Arrastra con el dedo o ratón. También puedes tocar una tarjeta y después su destino.</p><div class="drag-bank"><button type="button" class="drag-piece" data-drag-item="pez" data-category="nadan"><span class="item-emoji">🐟</span>pez</button><button type="button" class="drag-piece" data-drag-item="delfin" data-category="nadan"><span class="item-emoji">🐬</span>delfín</button><button type="button" class="drag-piece" data-drag-item="mariposa" data-category="vuelan"><span class="item-emoji">🦋</span>mariposa</button><button type="button" class="drag-piece" data-drag-item="pajaro" data-category="vuelan"><span class="item-emoji">🐦</span>pájaro</button><button type="button" class="drag-piece" data-drag-item="perro" data-category="caminan"><span class="item-emoji">🐕</span>perro</button><button type="button" class="drag-piece" data-drag-item="hormiga" data-category="caminan"><span class="item-emoji">🐜</span>hormiga</button></div><div class="drop-row"><button type="button" class="drop-target" data-drop-zone="nadan"><span class="item-emoji">💧</span>Nadan</button><button type="button" class="drop-target" data-drop-zone="vuelan"><span class="item-emoji">☁️</span>Vuelan</button><button type="button" class="drop-target" data-drop-zone="caminan"><span class="item-emoji">🌿</span>Caminan</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-reset-sort>↺ Volver a empezar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Observar cómo se desplazan animales reales y representar sus movimientos. Algunos animales tienen varias formas de desplazamiento.</p>
+    </article><article class="activity-card" id="act-6-1-b" data-criterion="DEE 3.5">
+      <div class="activity-head"><span class="activity-id">6.1.B</span><span class="activity-type">🧩 Puzle + construcción</span></div>
+      <h3>El puzle del conejo</h3>
+      <p>Completa un puzle de cuatro piezas. Después crea con plastilina un animal que conozcas.</p>
+      <button type="button" class="audio-button" data-say="Completa un puzle de cuatro piezas. Después crea con plastilina un animal que conozcas." data-audio="/media/infantil/inf5/inf5.6-actividad-1-b.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="nature-puzzle"><h4>🧩 El conejo escondido</h4><p>Toca una pieza y luego su hueco o arrástrala al lugar correcto.</p><div class="puzzle-layout"><div class="puzzle-pieces" data-puzzle-bank></div><div class="puzzle-board" data-puzzle-board></div></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-puzzle-reset>↺ Mezclar piezas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Observar imágenes de fauna andaluza cercana sin atribuir a todos los animales un único hábitat.</p>
+    </article><article class="activity-card" id="act-6-1-c" data-criterion="DEE 3.3">
+      <div class="activity-head"><span class="activity-id">6.1.C</span><span class="activity-type">🌸 Elegir y descubrir</span></div>
+      <h3>¿Qué necesitan los animales?</h3>
+      <p>Escucha pequeñas situaciones y elige lo que puede ayudar a cada ser vivo.</p>
+      <button type="button" class="audio-button" data-say="Escucha pequeñas situaciones y elige lo que puede ayudar a cada ser vivo." data-audio="/media/infantil/inf5/inf5.6-actividad-1-c.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="animal-needs"><h4>🐝 Cuidamos a los seres vivos</h4><p class="game-prompt" data-quiz-question>¿Qué necesita una abeja?</p><div class="answer-options" data-quiz-options></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><div class="game-controls"><button type="button" class="game-button" data-quiz-read>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-quiz-next>Siguiente pregunta</button></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Conversar sobre agua, alimento, refugio y respeto. Evitar manipular animales silvestres.</p>
+    </article><article class="activity-card" id="act-6-1-d" data-criterion="DEE 3.5">
+      <div class="activity-head"><span class="activity-id">6.1.D</span><span class="activity-type">🔎 Salida y observación</span></div>
+      <h3>Exploradores del patio</h3>
+      <p>Sal al patio o a un espacio natural cercano. Observa seres vivos y señala los que encuentres; no hace falta encontrarlos todos.</p>
+      <button type="button" class="audio-button" data-say="Sal al patio o a un espacio natural cercano. Observa seres vivos y señala los que encuentres; no hace falta encontrarlos todos." data-audio="/media/infantil/inf5/inf5.6-actividad-1-d.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="sightings"><h4>🔎 Mi cuaderno de explorador</h4><div class="sightings-grid"><label class="nature-check"><input type="checkbox" data-sighting><span class="item-emoji">🐜</span><span>Una hormiga</span></label><label class="nature-check"><input type="checkbox" data-sighting><span class="item-emoji">🦋</span><span>Una mariposa</span></label><label class="nature-check"><input type="checkbox" data-sighting><span class="item-emoji">🐦</span><span>Un pájaro</span></label><label class="nature-check"><input type="checkbox" data-sighting><span class="item-emoji">🌱</span><span>Una planta</span></label></div><p class="game-feedback" data-sight-output aria-live="polite">¡Mira con atención y sin molestar a los animales!</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Observar con respeto y dibujar algún hallazgo; no arrancar plantas ni capturar insectos. Las casillas no se califican.</p>
+    </article></div>
+      <p class="lesson-note">💡 <strong>Para recordar:</strong> Observamos a los animales sin hacerles daño ni molestar sus refugios.</p>
+    </section>
+<!-- ======================================================
+         APARTADO 6.2 · LAS PLANTAS
+         ====================================================== -->
+    <section class="lesson-section plants" id="apartado-6-2" aria-labelledby="title-6-2">
+      <div class="section-top"><div><span class="section-tag">🌱 Crecemos y cuidamos · 6.2</span><h2 id="title-6-2" class="section-heading">Las plantas</h2><p class="section-intro">Las plantas son seres vivos. Algunas nacen de semillas y necesitan unas condiciones adecuadas para desarrollarse.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Las plantas son seres vivos. Algunas nacen de semillas y necesitan unas condiciones adecuadas para desarrollarse." data-audio="/media/infantil/inf5/inf5.6-apartado-6-2.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPHBhdGggZD0iTTI0NSAzNTggTDM3MiAzNTggTDM0NyA0MjAgSDI2OVoiIGZpbGw9IiNlNGE0NzciIHN0cm9rZT0iI2I0Nzc1MyIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzEwIDIzOCkgc2NhbGUoMS4zKSI+PHBhdGggZD0iTTAgMjAgVjEyMCIgc3Ryb2tlPSIjM2U5NjY1IiBzdHJva2Utd2lkdGg9IjkiLz48cGF0aCBkPSJNMCA3MyBRLTY1IDI1IC01NyA3NSBRLTE3IDEwMCAwIDczIiBmaWxsPSIjNjliZDZlIi8+PHBhdGggZD0iTTAgOTIgUTUzIDQwIDU2IDgzIFEyNCAxMTAgMCA5MiIgZmlsbD0iIzY5YmQ2ZSIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTI2IiByeD0iMTMiIHJ5PSIyMyIgZmlsbD0iI2Y0YmI4MCIgc3Ryb2tlPSIjZTY5YjY2IiBzdHJva2Utd2lkdGg9IjIiIHRyYW5zZm9ybT0icm90YXRlKDApIi8+PGVsbGlwc2UgY3g9IjAiIGN5PSItMjYiIHJ4PSIxMyIgcnk9IjIzIiBmaWxsPSIjZjRiYjgwIiBzdHJva2U9IiNlNjliNjYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+PGVsbGlwc2UgY3g9IjAiIGN5PSItMjYiIHJ4PSIxMyIgcnk9IjIzIiBmaWxsPSIjZjRiYjgwIiBzdHJva2U9IiNlNjliNjYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoOTApIi8+PGVsbGlwc2UgY3g9IjAiIGN5PSItMjYiIHJ4PSIxMyIgcnk9IjIzIiBmaWxsPSIjZjRiYjgwIiBzdHJva2U9IiNlNjliNjYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoMTM1KSIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTI2IiByeD0iMTMiIHJ5PSIyMyIgZmlsbD0iI2Y0YmI4MCIgc3Ryb2tlPSIjZTY5YjY2IiBzdHJva2Utd2lkdGg9IjIiIHRyYW5zZm9ybT0icm90YXRlKDE4MCkiLz48ZWxsaXBzZSBjeD0iMCIgY3k9Ii0yNiIgcng9IjEzIiByeT0iMjMiIGZpbGw9IiNmNGJiODAiIHN0cm9rZT0iI2U2OWI2NiIgc3Ryb2tlLXdpZHRoPSIyIiB0cmFuc2Zvcm09InJvdGF0ZSgyMjUpIi8+PGVsbGlwc2UgY3g9IjAiIGN5PSItMjYiIHJ4PSIxMyIgcnk9IjIzIiBmaWxsPSIjZjRiYjgwIiBzdHJva2U9IiNlNjliNjYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoMjcwKSIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTI2IiByeD0iMTMiIHJ5PSIyMyIgZmlsbD0iI2Y0YmI4MCIgc3Ryb2tlPSIjZTY5YjY2IiBzdHJva2Utd2lkdGg9IjIiIHRyYW5zZm9ybT0icm90YXRlKDMxNSkiLz48Y2lyY2xlIHI9IjI1IiBmaWxsPSIjODg1ZDQyIi8+PGNpcmNsZSByPSIxNyIgZmlsbD0iI2Y2ZDQ3YiIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDkgMTc2KSBzY2FsZSgwLjc4KSI+PHBhdGggZD0iTS0xOSAxNDUgTC0yOCAyMDAgTTIxIDE0NSBMMjggMjAwIiBzdHJva2U9IiM0NzY5ODciIHN0cm9rZS13aWR0aD0iMTciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0tMjQgNzAgUTAgNTUgMjUgNzAgTDM1IDE0MiBILTM1WiIgZmlsbD0iIzg1YzlkOCIgc3Ryb2tlPSIjZDg4MDgwIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNLTI3IDgyIEwtNTQgMTI0IE0yNSA4MiBMNDggMTE1IiBzdHJva2U9IiNlN2FhODYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjAiIGN5PSIyOSIgcj0iMzYiIGZpbGw9IiNmMWMzOWYiLz48cGF0aCBkPSJNLTM0IDE3IFEtMzIgLTI5IDQgLTE4IFEzNSAtOSAzNiAxNSBRMTUgLTQgLTggNCBRLTI3IDEgLTM0IDE3IiBmaWxsPSIjNWM0ODNmIi8+PGNpcmNsZSBjeD0iLTEzIiBjeT0iMzAiIHI9IjMiIGZpbGw9IiMzNzQxNGIiLz48Y2lyY2xlIGN4PSIxMyIgY3k9IjMwIiByPSIzIiBmaWxsPSIjMzc0MTRiIi8+PHBhdGggZD0iTS0xMiA0NCBRMCA1NSAxMiA0MyIgc3Ryb2tlPSIjYjY2ZTY1IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MjYgMzM1KSI+PHBhdGggZD0iTTAgMjggVjAiIHN0cm9rZT0iIzM4OTc2NSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTAgMTIgUS0xNSAtNCAtMjAgOCBRLTQgMjIgMCAxMiIgZmlsbD0iIzVjYjk3NiIvPjxjaXJjbGUgY3k9Ii04IiByPSI5IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iLTEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTE1IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTUiIHI9IjYiIGZpbGw9IiNmZmU3ODAiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDczIDM2NSkiPjxwYXRoIGQ9Ik0wIDI4IFYwIiBzdHJva2U9IiMzODk3NjUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0wIDEyIFEtMTUgLTQgLTIwIDggUS00IDIyIDAgMTIiIGZpbGw9IiM1Y2I5NzYiLz48Y2lyY2xlIGN5PSItOCIgcj0iOSIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9Ii0xMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii0xNSIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii01IiByPSI2IiBmaWxsPSIjZmZlNzgwIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ3MiAxNDUpIHNjYWxlKDAuNykiPjxlbGxpcHNlIGN4PSItMjAiIGN5PSItMTUiIHJ4PSIyNSIgcnk9IjMwIiBmaWxsPSIjZjU5YmFhIiBzdHJva2U9IiNiOTY0OGQiIHN0cm9rZS13aWR0aD0iMyIvPjxlbGxpcHNlIGN4PSIyMCIgY3k9Ii0xNSIgcng9IjI1IiByeT0iMzAiIGZpbGw9IiNmNTliYWEiIHN0cm9rZT0iI2I5NjQ4ZCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGVsbGlwc2UgY3g9Ii0xOCIgY3k9IjIyIiByeD0iMTkiIHJ5PSIyNSIgZmlsbD0iI2Y4YzI4ZCIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48ZWxsaXBzZSBjeD0iMTgiIGN5PSIyMiIgcng9IjE5IiByeT0iMjUiIGZpbGw9IiNmOGMyOGQiIHN0cm9rZT0iI2I5NjQ4ZCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTTAgLTIwIFY0MCIgc3Ryb2tlPSIjNmU1OTdhIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0tMyAtMjMgUS0xOCAtNDUgLTIxIC00MiBNMyAtMjMgUTE4IC00NSAyMSAtNDIiIHN0cm9rZT0iIzZlNTk3YSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PGNpcmNsZSBjeD0iLTIwIiBjeT0iLTE1IiByPSI2IiBmaWxsPSIjZmZmM2QwIi8+PGNpcmNsZSBjeD0iMjAiIGN5PSItMTUiIHI9IjYiIGZpbGw9IiNmZmYzZDAiLz48L2c+PC9zdmc+" alt="Ilustración infantil de las plantas" loading="lazy" width="640" height="440"></div>
+      <div class="activity-grid"><article class="activity-card" id="act-6-2-a" data-criterion="DEE 2.5">
+      <div class="activity-head"><span class="activity-id">6.2.A</span><span class="activity-type">🌱 Secuencia interactiva</span></div>
+      <h3>Del grano a la planta</h3>
+      <p>Pon en orden cuatro escenas del crecimiento de una planta. Después prueba con semillas reales.</p>
+      <button type="button" class="audio-button" data-say="Pon en orden cuatro escenas del crecimiento de una planta. Después prueba con semillas reales." data-audio="/media/infantil/inf5/inf5.6-actividad-2-a.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="seed-steps"><h4>🌱 ¿Qué ocurre primero?</h4><p>Toca las imágenes en el orden en que podrían suceder.</p><div class="drag-bank" data-seq-bank></div><div class="steps-done" data-seq-done></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-seq-reset>↺ Empezar otra vez</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Germinar lentejas o judías en condiciones adecuadas y observar los cambios durante varias semanas.</p>
+    </article><article class="activity-card" id="act-6-2-b" data-criterion="DEE 3.3">
+      <div class="activity-head"><span class="activity-id">6.2.B</span><span class="activity-type">🌸 Arrastrar y relacionar</span></div>
+      <h3>Las partes de una planta</h3>
+      <p>Relaciona raíces, tallo, hojas y flor con sus nombres y dibujos.</p>
+      <button type="button" class="audio-button" data-say="Relaciona raíces, tallo, hojas y flor con sus nombres y dibujos." data-audio="/media/infantil/inf5/inf5.6-actividad-2-b.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="plant-parts"><h4>🌿 Descubro las partes</h4><p>Coloca cada tarjeta en su lugar.</p><p class="access-note">Arrastra con el dedo o ratón. También puedes tocar una tarjeta y después su destino.</p><div class="drag-bank"><button type="button" class="drag-piece" data-drag-item="raiz" data-category="raiz"><span class="item-emoji">🪴</span>raíces</button><button type="button" class="drag-piece" data-drag-item="tallo" data-category="tallo"><span class="item-emoji">🌾</span>tallo</button><button type="button" class="drag-piece" data-drag-item="hoja" data-category="hoja"><span class="item-emoji">🍃</span>hoja</button><button type="button" class="drag-piece" data-drag-item="flor" data-category="flor"><span class="item-emoji">🌸</span>flor</button></div><div class="drop-row"><button type="button" class="drop-target" data-drop-zone="raiz"><span class="item-emoji">🪴</span>Raíces</button><button type="button" class="drop-target" data-drop-zone="tallo"><span class="item-emoji">🌾</span>Tallo</button><button type="button" class="drop-target" data-drop-zone="hoja"><span class="item-emoji">🍃</span>Hojas</button><button type="button" class="drop-target" data-drop-zone="flor"><span class="item-emoji">🌸</span>Flor</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-reset-sort>↺ Volver a empezar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Observar una planta en maceta para señalar las partes visibles. No desenterrar plantas del patio; usar una muestra preparada.</p>
+    </article><article class="activity-card" id="act-6-2-c" data-criterion="DEE 3.1">
+      <div class="activity-head"><span class="activity-id">6.2.C</span><span class="activity-type">💧 Pequeños cuidados</span></div>
+      <h3>¿Qué necesita nuestra planta?</h3>
+      <p>Elige lo que necesita una planta de maceta y explica cómo puedes ayudar a cuidarla.</p>
+      <button type="button" class="audio-button" data-say="Elige lo que necesita una planta de maceta y explica cómo puedes ayudar a cuidarla." data-audio="/media/infantil/inf5/inf5.6-actividad-2-c.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="plant-care"><h4>🪴 Ayudo a mi planta</h4><p>Esta planta de la maceta necesita cuidados. Escoge lo que puede ayudarla a crecer.</p><div class="plant-progress"><span class="plant-emoji" data-plant-face>🌱</span><span data-plant-message>¿Qué necesita?</span></div><div class="answer-options"><button type="button" class="choice" data-plant-need="agua">💧 Agua</button><button type="button" class="choice" data-plant-need="luz">☀️ Luz</button><button type="button" class="choice" data-plant-need="aire">🌬️ Aire</button><button type="button" class="choice" data-plant-need="sustrato">🪴 Sustrato adecuado</button><button type="button" class="choice" data-plant-need="ruido">📢 Mucho ruido</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-plant-reset>↺ Volver a cuidar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Regar con medida, buscar luz suficiente y observar sin arrancar hojas. No todas las plantas requieren la misma frecuencia de riego.</p>
+    </article><article class="activity-card" id="act-6-2-d" data-criterion="DEE 2.6">
+      <div class="activity-head"><span class="activity-id">6.2.D</span><span class="activity-type">🎨 Dibujo + experimento</span></div>
+      <h3>Mi diario del semillero</h3>
+      <p>Dibuja en pantalla lo que ves en tu planta. También puedes registrarlo en una hoja de papel durante varios días.</p>
+      <button type="button" class="audio-button" data-say="Dibuja en pantalla lo que ves en tu planta. También puedes registrarlo en una hoja de papel durante varios días." data-audio="/media/infantil/inf5/inf5.6-actividad-2-d.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="plant-drawing"><h4>✏️ Dibujo mi planta</h4><p>Elige un color y dibuja lo que has observado.</p><div class="paint-palette"><button type="button" class="color-swatch" data-draw-color="#3e9567" aria-label="Pintar con verde" title="verde" style="background:#3e9567"></button><button type="button" class="color-swatch" data-draw-color="#f3aa7c" aria-label="Pintar con naranja" title="naranja" style="background:#f3aa7c"></button><button type="button" class="color-swatch" data-draw-color="#82c6e4" aria-label="Pintar con azul" title="azul" style="background:#82c6e4"></button><button type="button" class="color-swatch" data-draw-color="#a6714e" aria-label="Pintar con marrón" title="marrón" style="background:#a6714e"></button><button type="button" class="color-swatch" data-draw-color="#ef9cb5" aria-label="Pintar con rosa" title="rosa" style="background:#ef9cb5"></button></div><canvas class="draw-canvas" data-draw-canvas width="800" height="360" aria-label="Lienzo para dibujar tu semillero con dedo o ratón"></canvas><div class="game-controls"><button type="button" class="game-button" data-draw-clear>🧽 Borrar dibujo</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Crear un diario real con observaciones fechadas, dibujos o fotografías. Respetar diferencias en el ritmo de germinación.</p>
+    </article></div>
+      <p class="lesson-note">💡 <strong>Para recordar:</strong> La paciencia y el cuidado nos ayudan a observar cómo cambian las plantas.</p>
+    </section>
+<!-- ======================================================
+         APARTADO 6.3 · EL TIEMPO Y LAS ESTACIONES
+         ====================================================== -->
+    <section class="lesson-section weather" id="apartado-6-3" aria-labelledby="title-6-3">
+      <div class="section-top"><div><span class="section-tag">🌦️ Miramos el cielo · 6.3</span><h2 id="title-6-3" class="section-heading">El tiempo y las estaciones</h2><p class="section-intro">El cielo cambia: a veces hay sol, lluvia, nubes o viento. También observamos cambios a lo largo del año.</p><div class="section-sound"><button type="button" class="audio-button" data-say="El cielo cambia: a veces hay sol, lluvia, nubes o viento. También observamos cambios a lo largo del año." data-audio="/media/infantil/inf5/inf5.6-apartado-6-3.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjEzIDE2OSkiPjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI2NCIgZmlsbD0iI2ZmZGY5MyIvPjxnIGZpbGw9IiNmZmYiPjxjaXJjbGUgY3g9IjEyNSIgY3k9Ii0yMCIgcj0iMzkiLz48Y2lyY2xlIGN4PSIxNjUiIGN5PSItMyIgcj0iNTMiLz48ZWxsaXBzZSBjeD0iMTQ2IiBjeT0iMjAiIHJ4PSI4MSIgcnk9IjI0Ii8+PC9nPjxwYXRoIGQ9Ik05OCA2MiBsLTkgMjcgTTEzOSA2NSBsLTkgMjcgTTE4MCA2MiBsLTkgMjciIHN0cm9rZT0iIzY4YWZlMCIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDExIDE3NSkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xOSAxNDUgTC0yOCAyMDAgTTIxIDE0NSBMMjggMjAwIiBzdHJva2U9IiM0NzY5ODciIHN0cm9rZS13aWR0aD0iMTciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0tMjQgNzAgUTAgNTUgMjUgNzAgTDM1IDE0MiBILTM1WiIgZmlsbD0iI2Y3Yjg4ZSIgc3Ryb2tlPSIjZDg4MDgwIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNLTI3IDgyIEwtNTQgMTI0IE0yNSA4MiBMNDggMTE1IiBzdHJva2U9IiNlN2FhODYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjAiIGN5PSIyOSIgcj0iMzYiIGZpbGw9IiNmMWMzOWYiLz48cGF0aCBkPSJNLTM0IDE3IFEtMzIgLTI5IDQgLTE4IFEzNSAtOSAzNiAxNSBRMTUgLTQgLTggNCBRLTI3IDEgLTM0IDE3IiBmaWxsPSIjNWM0ODNmIi8+PGNpcmNsZSBjeD0iLTEzIiBjeT0iMzAiIHI9IjMiIGZpbGw9IiMzNzQxNGIiLz48Y2lyY2xlIGN4PSIxMyIgY3k9IjMwIiByPSIzIiBmaWxsPSIjMzc0MTRiIi8+PHBhdGggZD0iTS0xMiA0NCBRMCA1NSAxMiA0MyIgc3Ryb2tlPSIjYjY2ZTY1IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MyAzNTEpIj48cGF0aCBkPSJNMCAyOCBWMCIgc3Ryb2tlPSIjMzg5NzY1IiBzdHJva2Utd2lkdGg9IjQiLz48cGF0aCBkPSJNMCAxMiBRLTE1IC00IC0yMCA4IFEtNCAyMiAwIDEyIiBmaWxsPSIjNWNiOTc2Ii8+PGNpcmNsZSBjeT0iLTgiIHI9IjkiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSItMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItMTUiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItNSIgcj0iNiIgZmlsbD0iI2ZmZTc4MCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTAgMzUyKSI+PHBhdGggZD0iTTAgMjggVjAiIHN0cm9rZT0iIzM4OTc2NSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTAgMTIgUS0xNSAtNCAtMjAgOCBRLTQgMjIgMCAxMiIgZmlsbD0iIzVjYjk3NiIvPjxjaXJjbGUgY3k9Ii04IiByPSI5IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iLTEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTE1IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTUiIHI9IjYiIGZpbGw9IiNmZmU3ODAiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUyIDM0OSkiPjxwYXRoIGQ9Ik0wIDI4IFYwIiBzdHJva2U9IiMzODk3NjUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0wIDEyIFEtMTUgLTQgLTIwIDggUS00IDIyIDAgMTIiIGZpbGw9IiM1Y2I5NzYiLz48Y2lyY2xlIGN5PSItOCIgcj0iOSIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9Ii0xMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii0xNSIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii01IiByPSI2IiBmaWxsPSIjZmZlNzgwIi8+PC9nPjwvc3ZnPg==" alt="Ilustración infantil de el tiempo y las estaciones" loading="lazy" width="640" height="440"></div>
+      <div class="activity-grid"><article class="activity-card" id="act-6-3-a" data-criterion="DEE 3.4">
+      <div class="activity-head"><span class="activity-id">6.3.A</span><span class="activity-type">☀️ Observación personal</span></div>
+      <h3>¿Qué tiempo hace hoy?</h3>
+      <p>Mira por la ventana o sal al patio y elige la tarjeta que mejor describe el tiempo. A veces puede haber varias a la vez.</p>
+      <button type="button" class="audio-button" data-say="Mira por la ventana o sal al patio y elige la tarjeta que mejor describe el tiempo. A veces puede haber varias a la vez." data-audio="/media/infantil/inf5/inf5.6-actividad-3-a.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="weather-today"><h4>🌤️ Nuestro cielo de hoy</h4><div class="answer-options"><button type="button" class="choice" data-weather="sol">☀️<span>Hace sol</span></button><button type="button" class="choice" data-weather="nubes">☁️<span>Hay nubes</span></button><button type="button" class="choice" data-weather="lluvia">🌧️<span>Llueve</span></button><button type="button" class="choice" data-weather="viento">💨<span>Hace viento</span></button></div><p class="weather-display" data-weather-result aria-live="polite">¡Observa el cielo para empezar!</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Observar directamente el cielo. El registro digital depende de lo observado, no de un pronóstico automático.</p>
+    </article><article class="activity-card" id="act-6-3-b" data-criterion="DEE 3.4">
+      <div class="activity-head"><span class="activity-id">6.3.B</span><span class="activity-type">🎧 Escucha y reconoce</span></div>
+      <h3>Los sonidos de la naturaleza</h3>
+      <p>Escucha tres sonidos y busca qué fenómeno o ser vivo puede producirlos.</p>
+      <button type="button" class="audio-button" data-say="Escucha tres sonidos y busca qué fenómeno o ser vivo puede producirlos." data-audio="/media/infantil/inf5/inf5.6-actividad-3-b.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="nature-sounds"><h4>👂 ¿Qué escuchamos?</h4><p>Escucha el sonido, después toca la imagen correcta.</p><button type="button" class="game-button" data-sound-play>▶️ Escuchar sonido</button><div class="answer-options"><button type="button" class="choice" data-sound-answer="lluvia"><span class="big-symbol">🌧️</span>lluvia</button><button type="button" class="choice" data-sound-answer="viento"><span class="big-symbol">💨</span>viento</button><button type="button" class="choice" data-sound-answer="pájaros"><span class="big-symbol">🐦</span>pájaros</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-sound-next>Otro sonido</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Completar con escucha real en el patio. Los tres efectos sonoros incluidos son recreaciones sintéticas orientativas.</p>
+    </article><article class="activity-card" id="act-6-3-c" data-criterion="DEE 3.4">
+      <div class="activity-head"><span class="activity-id">6.3.C</span><span class="activity-type">🍂 Clasificar imágenes</span></div>
+      <h3>Las cuatro estaciones</h3>
+      <p>Relaciona escenas habituales con primavera, verano, otoño e invierno.</p>
+      <button type="button" class="audio-button" data-say="Relaciona escenas habituales con primavera, verano, otoño e invierno." data-audio="/media/infantil/inf5/inf5.6-actividad-3-c.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="seasons"><h4>🌼 Las estaciones</h4><p>Observa algunas imágenes que solemos asociar a cada estación.</p><p class="access-note">Arrastra con el dedo o ratón. También puedes tocar una tarjeta y después su destino.</p><div class="drag-bank"><button type="button" class="drag-piece" data-drag-item="flores" data-category="primavera"><span class="item-emoji">🌷</span>Flores nuevas</button><button type="button" class="drag-piece" data-drag-item="abanico" data-category="verano"><span class="item-emoji">🕶️</span>Busco sombra</button><button type="button" class="drag-piece" data-drag-item="hojas" data-category="otono"><span class="item-emoji">🍂</span>Hojas que caen</button><button type="button" class="drag-piece" data-drag-item="bufanda" data-category="invierno"><span class="item-emoji">🧣</span>Me abrigo</button></div><div class="drop-row"><button type="button" class="drop-target" data-drop-zone="primavera"><span class="item-emoji">🌷</span>Primavera</button><button type="button" class="drop-target" data-drop-zone="verano"><span class="item-emoji">☀️</span>Verano</button><button type="button" class="drop-target" data-drop-zone="otono"><span class="item-emoji">🍂</span>Otoño</button><button type="button" class="drop-target" data-drop-zone="invierno"><span class="item-emoji">❄️</span>Invierno</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-reset-sort>↺ Volver a empezar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Comentar que el clima y el aspecto de la naturaleza varían según los lugares y los años.</p>
+    </article><article class="activity-card" id="act-6-3-d" data-criterion="DEE 2.6">
+      <div class="activity-head"><span class="activity-id">6.3.D</span><span class="activity-type">📅 Registro y diálogo</span></div>
+      <h3>Nuestro calendario del cielo</h3>
+      <p>Registra el tiempo de tres días diferentes. Después comparad qué habéis observado.</p>
+      <button type="button" class="audio-button" data-say="Registra el tiempo de tres días diferentes. Después comparad qué habéis observado." data-audio="/media/infantil/inf5/inf5.6-actividad-3-d.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="weather-calendar"><h4>📅 Tres días mirando al cielo</h4><p>Para cada día, selecciona lo que observaste. Puedes cambiarlo cuando quieras.</p><div class="day-row"><span class="day-title">Día 1</span><button type="button" class="weather-mini" data-day="1" data-day-weather="sol">☀️</button><button type="button" class="weather-mini" data-day="1" data-day-weather="nubes">☁️</button><button type="button" class="weather-mini" data-day="1" data-day-weather="lluvia">🌧️</button><button type="button" class="weather-mini" data-day="1" data-day-weather="viento">💨</button><span class="day-result" data-day-result="1">—</span></div><div class="day-row"><span class="day-title">Día 2</span><button type="button" class="weather-mini" data-day="2" data-day-weather="sol">☀️</button><button type="button" class="weather-mini" data-day="2" data-day-weather="nubes">☁️</button><button type="button" class="weather-mini" data-day="2" data-day-weather="lluvia">🌧️</button><button type="button" class="weather-mini" data-day="2" data-day-weather="viento">💨</button><span class="day-result" data-day-result="2">—</span></div><div class="day-row"><span class="day-title">Día 3</span><button type="button" class="weather-mini" data-day="3" data-day-weather="sol">☀️</button><button type="button" class="weather-mini" data-day="3" data-day-weather="nubes">☁️</button><button type="button" class="weather-mini" data-day="3" data-day-weather="lluvia">🌧️</button><button type="button" class="weather-mini" data-day="3" data-day-weather="viento">💨</button><span class="day-result" data-day-result="3">—</span></div><p class="game-feedback" data-day-summary role="status" aria-live="polite">Vamos a mirar el cielo durante tres días.</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Usar un calendario de aula con símbolos y comentar los cambios sin exigir registros escritos.</p>
+    </article></div>
+      <p class="lesson-note">💡 <strong>Para recordar:</strong> Miramos nuestro entorno antes de elegir un dibujo. No hay un tiempo igual en todos los lugares.</p>
+    </section>
+<!-- ======================================================
+         APARTADO 6.4 · AGUA, TIERRA Y MATERIALES
+         ====================================================== -->
+    <section class="lesson-section materials" id="apartado-6-4" aria-labelledby="title-6-4">
+      <div class="section-top"><div><span class="section-tag">💧 Tocamos e investigamos · 6.4</span><h2 id="title-6-4" class="section-heading">Agua, tierra y materiales</h2><p class="section-intro">Podemos observar, comparar y hacer pequeños experimentos con agua y materiales de nuestro entorno.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Podemos observar, comparar y hacer pequeños experimentos con agua y materiales de nuestro entorno." data-audio="/media/infantil/inf5/inf5.6-apartado-6-4.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzggMTcxKSI+PHJlY3QgeD0iMCIgeT0iMTEyIiB3aWR0aD0iNDc0IiBoZWlnaHQ9IjI1IiByeD0iMTEiIGZpbGw9IiNkY2FjNzgiLz48cGF0aCBkPSJNMjUgMTQwIHYxMTUgTTQ0NiAxNDAgdjExNSIgc3Ryb2tlPSIjYTg3YzU0IiBzdHJva2Utd2lkdGg9IjE5Ii8+PHBhdGggZD0iTTQ3IDAgaDEyNyBsLTEzIDExNyBINTlaIiBmaWxsPSIjY2NlZmZkIiBmaWxsLW9wYWNpdHk9Ii44MCIgc3Ryb2tlPSIjNzRiNWM3IiBzdHJva2Utd2lkdGg9IjYiLz48cGF0aCBkPSJNNTggNjQgaDEwNyBsLTkgNDggSDY2WiIgZmlsbD0iIzdiY2NlNiIgZmlsbC1vcGFjaXR5PSIuNzAiLz48cmVjdCB4PSIyMjciIHk9IjM1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgyIiByeD0iMTQiIGZpbGw9IiNmM2Q3YTIiIHN0cm9rZT0iI2JlOWY3MiIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMjg5IiBjeT0iNzQiIHI9IjI0IiBmaWxsPSIjZTdlZmYwIiBzdHJva2U9IiM5N2FmYjYiIHN0cm9rZS13aWR0aD0iNSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OTEgMTAyKSBzY2FsZSgwLjY1KSI+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9Ii0xNSIgcng9IjI1IiByeT0iMzAiIGZpbGw9IiNmNTliYWEiIHN0cm9rZT0iI2I5NjQ4ZCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iLTE1IiByeD0iMjUiIHJ5PSIzMCIgZmlsbD0iI2Y1OWJhYSIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48ZWxsaXBzZSBjeD0iLTE4IiBjeT0iMjIiIHJ4PSIxOSIgcnk9IjI1IiBmaWxsPSIjZjhjMjhkIiBzdHJva2U9IiNiOTY0OGQiIHN0cm9rZS13aWR0aD0iMyIvPjxlbGxpcHNlIGN4PSIxOCIgY3k9IjIyIiByeD0iMTkiIHJ5PSIyNSIgZmlsbD0iI2Y4YzI4ZCIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNMCAtMjAgVjQwIiBzdHJva2U9IiM2ZTU5N2EiIHN0cm9rZS13aWR0aD0iOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zIC0yMyBRLTE4IC00NSAtMjEgLTQyIE0zIC0yMyBRMTggLTQ1IDIxIC00MiIgc3Ryb2tlPSIjNmU1OTdhIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSItMjAiIGN5PSItMTUiIHI9IjYiIGZpbGw9IiNmZmYzZDAiLz48Y2lyY2xlIGN4PSIyMCIgY3k9Ii0xNSIgcj0iNiIgZmlsbD0iI2ZmZjNkMCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OCAzNjUpIj48cGF0aCBkPSJNMCAyOCBWMCIgc3Ryb2tlPSIjMzg5NzY1IiBzdHJva2Utd2lkdGg9IjQiLz48cGF0aCBkPSJNMCAxMiBRLTE1IC00IC0yMCA4IFEtNCAyMiAwIDEyIiBmaWxsPSIjNWNiOTc2Ii8+PGNpcmNsZSBjeT0iLTgiIHI9IjkiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSItMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItMTUiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN5PSItNSIgcj0iNiIgZmlsbD0iI2ZmZTc4MCIvPjwvZz48L3N2Zz4=" alt="Ilustración infantil de agua, tierra y materiales" loading="lazy" width="640" height="440"></div>
+      <div class="activity-grid"><article class="activity-card" id="act-6-4-a" data-criterion="DEE 2.3">
+      <div class="activity-head"><span class="activity-id">6.4.A</span><span class="activity-type">🧪 Predicción + experimento</span></div>
+      <h3>¿Flota o se hunde?</h3>
+      <p>Antes de probar con agua, imagina qué puede ocurrir con diferentes materiales. Después comprobadlo con ayuda adulta.</p>
+      <button type="button" class="audio-button" data-say="Antes de probar con agua, imagina qué puede ocurrir con diferentes materiales. Después comprobadlo con ayuda adulta." data-audio="/media/infantil/inf5/inf5.6-actividad-4-a.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="float-test"><h4>🧪 ¿Flota o se hunde?</h4><p data-float-object>Vamos a probar con un corcho.</p><div class="answer-options"><button type="button" class="choice" data-float-pred="flota">🛟 Creo que flota</button><button type="button" class="choice" data-float-pred="hunde">⬇️ Creo que se hunde</button></div><p class="game-feedback" data-float-result aria-live="polite">Haz una predicción. Después compruébala con agua y ayuda adulta.</p><button type="button" class="game-button" data-float-next>Otro objeto</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Usar recipiente estable, materiales seguros y supervisión continua. La predicción no se puntúa; interesa contrastarla con la observación real.</p>
+    </article><article class="activity-card" id="act-6-4-b" data-criterion="DEE 1.1">
+      <div class="activity-head"><span class="activity-id">6.4.B</span><span class="activity-type">🖐️ Tocar y clasificar</span></div>
+      <h3>¿Duro o blando?</h3>
+      <p>Toca materiales reales y agrupa las imágenes según su tacto.</p>
+      <button type="button" class="audio-button" data-say="Toca materiales reales y agrupa las imágenes según su tacto." data-audio="/media/infantil/inf5/inf5.6-actividad-4-b.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="materials-sort"><h4>🖐️ Conozco materiales</h4><p>Arrastra cada material a su grupo.</p><p class="access-note">Arrastra con el dedo o ratón. También puedes tocar una tarjeta y después su destino.</p><div class="drag-bank"><button type="button" class="drag-piece" data-drag-item="piedra" data-category="duro"><span class="item-emoji">🪨</span>Piedra</button><button type="button" class="drag-piece" data-drag-item="madera" data-category="duro"><span class="item-emoji">🪵</span>Madera</button><button type="button" class="drag-piece" data-drag-item="algodon" data-category="blando"><span class="item-emoji">☁️</span>Algodón</button><button type="button" class="drag-piece" data-drag-item="almohada" data-category="blando"><span class="item-emoji">🛏️</span>Almohada</button></div><div class="drop-row"><button type="button" class="drop-target" data-drop-zone="duro"><span class="item-emoji">🪨</span>Duro</button><button type="button" class="drop-target" data-drop-zone="blando"><span class="item-emoji">🧸</span>Blando</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-reset-sort>↺ Volver a empezar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Ofrecer una bandeja sensorial real con alternativas para quien no quiera tocar un material.</p>
+    </article><article class="activity-card" id="act-6-4-c" data-criterion="DEE 2.5">
+      <div class="activity-head"><span class="activity-id">6.4.C</span><span class="activity-type">🧊 Ordenar cambios</span></div>
+      <h3>El hielo cambia</h3>
+      <p>Observa cómo se transforma un cubito de hielo cuando se calienta. Pon las escenas en orden.</p>
+      <button type="button" class="audio-button" data-say="Observa cómo se transforma un cubito de hielo cuando se calienta. Pon las escenas en orden." data-audio="/media/infantil/inf5/inf5.6-actividad-4-c.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="ice-steps"><h4>🧊 De hielo a agua</h4><p>Toca las escenas en orden: primero, después y al final.</p><div class="drag-bank" data-seq-bank></div><div class="steps-done" data-seq-done></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-seq-reset>↺ Empezar otra vez</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Usar cubitos de hielo sin riesgos térmicos; observar que el hielo es agua en estado sólido.</p>
+    </article><article class="activity-card" id="act-6-4-d" data-criterion="DEE 2.3">
+      <div class="activity-head"><span class="activity-id">6.4.D</span><span class="activity-type">🎨 Coloreado + trasvase</span></div>
+      <h3>Pinto el paisaje del agua</h3>
+      <p>Colorea un paisaje de río y después explora con recipientes cuánto agua cabe en cada uno.</p>
+      <button type="button" class="audio-button" data-say="Colorea un paisaje de río y después explora con recipientes cuánto agua cabe en cada uno." data-audio="/media/infantil/inf5/inf5.6-actividad-4-d.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="paint-landscape"><h4>🎨 Un río de colores</h4><p>Elige un color y toca una parte del dibujo.</p><div class="paint-palette"><button type="button" class="color-swatch" aria-label="Color verde" title="verde" data-color="#78c67a" style="background:#78c67a"></button><button type="button" class="color-swatch" aria-label="Color azul" title="azul" data-color="#82cde9" style="background:#82cde9"></button><button type="button" class="color-swatch" aria-label="Color amarillo" title="amarillo" data-color="#fbd17a" style="background:#fbd17a"></button><button type="button" class="color-swatch" aria-label="Color rosa" title="rosa" data-color="#f19cb3" style="background:#f19cb3"></button><button type="button" class="color-swatch" aria-label="Color marrón" title="marrón" data-color="#b8885d" style="background:#b8885d"></button><button type="button" class="color-swatch" aria-label="Color violeta" title="violeta" data-color="#bca0ed" style="background:#bca0ed"></button></div><svg class="nature-coloring" viewBox="0 0 430 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paisaje con río, flores y nubes que se puede colorear">
+ <rect width="430" height="290" fill="white"/>
+ <path d="M0 166 Q115 117 216 157 T430 162 V290 H0Z" fill="white" stroke="#40596a" stroke-width="4" data-paint-region="pradera" tabindex="0" role="button" aria-label="Colorear pradera"/>
+ <path d="M147 161 Q180 191 107 230 T159 290 H296 Q242 237 285 192 L267 170Z" fill="white" stroke="#40596a" stroke-width="4" data-paint-region="rio" tabindex="0" role="button" aria-label="Colorear río"/>
+ <circle cx="351" cy="61" r="37" fill="white" stroke="#40596a" stroke-width="4" data-paint-region="sol" tabindex="0" role="button" aria-label="Colorear sol"/>
+ <path d="M61 82 Q29 73 42 52 Q46 36 68 40 Q91 12 112 41 Q138 37 144 59 Q167 88 127 91 Z" fill="white" stroke="#40596a" stroke-width="4" data-paint-region="nube" tabindex="0" role="button" aria-label="Colorear nube"/>
+ <path d="M44 224 V164" stroke="#40596a" stroke-width="4"/><circle cx="44" cy="160" r="24" fill="white" stroke="#40596a" stroke-width="4" data-paint-region="flor" tabindex="0" role="button" aria-label="Colorear flor"/>
+ <path d="M375 231 V153" stroke="#40596a" stroke-width="4"/><circle cx="375" cy="152" r="26" fill="white" stroke="#40596a" stroke-width="4" data-paint-region="flor2" tabindex="0" role="button" aria-label="Colorear otra flor"/>
+</svg><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-clear-paint>🧽 Quitar colores</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Experimentar con trasvases en bandejas, comprobando que la misma agua adopta la forma del recipiente. El agua es transparente: el azul es una convención gráfica.</p>
+    </article></div>
+      <p class="lesson-note">💡 <strong>Para recordar:</strong> Investigamos con materiales seguros y siempre con acompañamiento adulto.</p>
+    </section>
+<!-- ======================================================
+         APARTADO 6.5 · CUIDAMOS NUESTRO PLANETA
+         ====================================================== -->
+    <section class="lesson-section care" id="apartado-6-5" aria-labelledby="title-6-5">
+      <div class="section-top"><div><span class="section-tag">♻️ Pequeños gestos · 6.5</span><h2 id="title-6-5" class="section-heading">Cuidamos nuestro planeta</h2><p class="section-intro">Las personas formamos parte de la naturaleza. Podemos proteger el agua, las plantas, los animales y los lugares que compartimos.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Las personas formamos parte de la naturaleza. Podemos proteger el agua, las plantas, los animales y los lugares que compartimos." data-audio="/media/infantil/inf5/inf5.6-apartado-6-5.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPGNpcmNsZSBjeD0iMzE2IiBjeT0iMjEyIiByPSIxMTkiIGZpbGw9IiM3YWMyZGIiIHN0cm9rZT0iIzU0YTljNiIgc3Ryb2tlLXdpZHRoPSI4Ii8+PHBhdGggZD0iTTI2MCAxMTIgTDI0MiAxNzAgMjg4IDE4MSAyNzAgMjMxIDMyMSAyNjcgMzQ3IDIyMyAzNzAgMjIxIDM3NyAxNzYgMzQ3IDE0OVoiIGZpbGw9IiM4MmNhODciLz48cGF0aCBkPSJNMzY1IDI4NSBMNDEwIDI0NCA0MDIgMTkyIDQzOSAyMDMgNDI1IDI4MiAzODkgMzA5WiIgZmlsbD0iIzgyY2E4NyIvPjxwYXRoIGQ9Ik0yMzUgMjU3IEwyMjMgMjEyIDE5MSAyMTMgMjIyIDI5NyAyNzQgMzI3WiIgZmlsbD0iIzgyY2E4NyIvPjxjaXJjbGUgY3g9IjMxNiIgY3k9IjIxMiIgcj0iMTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNlNGY0ZTQiIHN0cm9rZS13aWR0aD0iOCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg1IDE5Nykgc2NhbGUoMC44MykiPjxwYXRoIGQ9Ik0tMTkgMTQ1IEwtMjggMjAwIE0yMSAxNDUgTDI4IDIwMCIgc3Ryb2tlPSIjNDc2OTg3IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTI0IDcwIFEwIDU1IDI1IDcwIEwzNSAxNDIgSC0zNVoiIGZpbGw9IiNlZmFiOGMiIHN0cm9rZT0iI2Q4ODA4MCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTS0yNyA4MiBMLTU0IDEyNCBNMjUgODIgTDQ4IDExNSIgc3Ryb2tlPSIjZTdhYTg2IiBzdHJva2Utd2lkdGg9IjE1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIwIiBjeT0iMjkiIHI9IjM2IiBmaWxsPSIjZjFjMzlmIi8+PHBhdGggZD0iTS0zNCAxNyBRLTMyIC0yOSA0IC0xOCBRMzUgLTkgMzYgMTUgUTE1IC00IC04IDQgUS0yNyAxIC0zNCAxNyIgZmlsbD0iIzVjNDgzZiIvPjxjaXJjbGUgY3g9Ii0xMyIgY3k9IjMwIiByPSIzIiBmaWxsPSIjMzc0MTRiIi8+PGNpcmNsZSBjeD0iMTMiIGN5PSIzMCIgcj0iMyIgZmlsbD0iIzM3NDE0YiIvPjxwYXRoIGQ9Ik0tMTIgNDQgUTAgNTUgMTIgNDMiIHN0cm9rZT0iI2I2NmU2NSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTA2IDE5OSkgc2NhbGUoMC43OSkiPjxwYXRoIGQ9Ik0tMTkgMTQ1IEwtMjggMjAwIE0yMSAxNDUgTDI4IDIwMCIgc3Ryb2tlPSIjNDc2OTg3IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTI0IDcwIFEwIDU1IDI1IDcwIEwzNSAxNDIgSC0zNVoiIGZpbGw9IiNhOWI2ZjIiIHN0cm9rZT0iI2Q4ODA4MCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTS0yNyA4MiBMLTU0IDEyNCBNMjUgODIgTDQ4IDExNSIgc3Ryb2tlPSIjZTdhYTg2IiBzdHJva2Utd2lkdGg9IjE1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIwIiBjeT0iMjkiIHI9IjM2IiBmaWxsPSIjZjFjMzlmIi8+PHBhdGggZD0iTS0zNCAxNyBRLTMyIC0yOSA0IC0xOCBRMzUgLTkgMzYgMTUgUTE1IC00IC04IDQgUS0yNyAxIC0zNCAxNyIgZmlsbD0iIzVjNDgzZiIvPjxjaXJjbGUgY3g9Ii0xMyIgY3k9IjMwIiByPSIzIiBmaWxsPSIjMzc0MTRiIi8+PGNpcmNsZSBjeD0iMTMiIGN5PSIzMCIgcj0iMyIgZmlsbD0iIzM3NDE0YiIvPjxwYXRoIGQ9Ik0tMTIgNDQgUTAgNTUgMTIgNDMiIHN0cm9rZT0iI2I2NmU2NSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjggMzU3KSI+PHBhdGggZD0iTTAgMjggVjAiIHN0cm9rZT0iIzM4OTc2NSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTAgMTIgUS0xNSAtNCAtMjAgOCBRLTQgMjIgMCAxMiIgZmlsbD0iIzVjYjk3NiIvPjxjaXJjbGUgY3k9Ii04IiByPSI5IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iLTEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTE1IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTUiIHI9IjYiIGZpbGw9IiNmZmU3ODAiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTE4IDM2MCkiPjxwYXRoIGQ9Ik0wIDI4IFYwIiBzdHJva2U9IiMzODk3NjUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0wIDEyIFEtMTUgLTQgLTIwIDggUS00IDIyIDAgMTIiIGZpbGw9IiM1Y2I5NzYiLz48Y2lyY2xlIGN5PSItOCIgcj0iOSIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9Ii0xMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii0xNSIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii01IiByPSI2IiBmaWxsPSIjZmZlNzgwIi8+PC9nPjwvc3ZnPg==" alt="Ilustración infantil de cuidamos nuestro planeta" loading="lazy" width="640" height="440"></div>
+      <div class="activity-grid"><article class="activity-card" id="act-6-5-a" data-criterion="DEE 3.2">
+      <div class="activity-head"><span class="activity-id">6.5.A</span><span class="activity-type">♻️ Clasificar residuos</span></div>
+      <h3>¿Dónde lo depositamos?</h3>
+      <p>Relaciona envases y papel con el contenedor que les corresponde.</p>
+      <button type="button" class="audio-button" data-say="Relaciona envases y papel con el contenedor que les corresponde." data-audio="/media/infantil/inf5/inf5.6-actividad-5-a.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="waste-sort"><h4>♻️ Cuidamos los materiales</h4><p>Clasifica los residuos habituales.</p><p class="access-note">Arrastra con el dedo o ratón. También puedes tocar una tarjeta y después su destino.</p><div class="drag-bank"><button type="button" class="drag-piece" data-drag-item="periodico" data-category="azul"><span class="item-emoji">📰</span>Periódico</button><button type="button" class="drag-piece" data-drag-item="caja" data-category="azul"><span class="item-emoji">📦</span>Caja de cartón</button><button type="button" class="drag-piece" data-drag-item="lata" data-category="amarillo"><span class="item-emoji">🥫</span>Lata de bebida</button><button type="button" class="drag-piece" data-drag-item="botella" data-category="amarillo"><span class="item-emoji">🧴</span>Botella de plástico</button></div><div class="drop-row"><button type="button" class="drop-target" data-drop-zone="azul"><span class="item-emoji">🔵</span>Papel y cartón</button><button type="button" class="drop-target" data-drop-zone="amarillo"><span class="item-emoji">🟡</span>Envases ligeros</button></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><button type="button" class="game-button" data-reset-sort>↺ Volver a empezar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Mostrar los contenedores reales de la localidad. Solo se utilizan envases vacíos, limpios y sin bordes cortantes.</p>
+    </article><article class="activity-card" id="act-6-5-b" data-criterion="DEE 3.1">
+      <div class="activity-head"><span class="activity-id">6.5.B</span><span class="activity-type">🚰 Buenas decisiones</span></div>
+      <h3>Cuidamos el agua</h3>
+      <p>Escucha situaciones cotidianas y elige maneras de usar el agua con responsabilidad.</p>
+      <button type="button" class="audio-button" data-say="Escucha situaciones cotidianas y elige maneras de usar el agua con responsabilidad." data-audio="/media/infantil/inf5/inf5.6-actividad-5-b.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="water-saving"><h4>🚰 ¡El agua es valiosa!</h4><p class="game-prompt" data-quiz-question>¿Qué hacemos mientras nos cepillamos los dientes?</p><div class="answer-options" data-quiz-options></div><p class="game-feedback" role="status" aria-live="polite" data-feedback></p><div class="game-controls"><button type="button" class="game-button" data-quiz-read>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-quiz-next>Siguiente pregunta</button></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Practicar rutinas de ahorro con autonomía progresiva. No culpabilizar al alumnado por consumos domésticos.</p>
+    </article><article class="activity-card" id="act-6-5-c" data-criterion="DEE 3.1">
+      <div class="activity-head"><span class="activity-id">6.5.C</span><span class="activity-type">🧹 Juego de observación</span></div>
+      <h3>Guardianes del parque</h3>
+      <p>Observa el dibujo y toca los cinco residuos que no deberían estar en el suelo.</p>
+      <button type="button" class="audio-button" data-say="Observa el dibujo y toca los cinco residuos que no deberían estar en el suelo." data-audio="/media/infantil/inf5/inf5.6-actividad-5-c.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="clean-park"><h4>🌳 Cuidamos el parque</h4><p>¿Ves algo fuera de lugar? Tócalo para ayudar a dejar limpio el parque.</p><svg class="park-clean" viewBox="0 0 430 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parque infantil con objetos de basura que se pueden seleccionar">
+ <rect width="430" height="290" rx="13" fill="#dff1ff"/>
+ <circle cx="353" cy="48" r="27" fill="#ffd982"/><path d="M0 209 Q184 169 430 208 V290 H0Z" fill="#c4e9aa"/>
+ <path d="M92 217 V105" stroke="#a77b58" stroke-width="19"/><circle cx="92" cy="93" r="61" fill="#74c484"/><circle cx="58" cy="70" r="34" fill="#83ce8d"/><circle cx="128" cy="90" r="35" fill="#69b876"/>
+ <path d="M218 232 V144" stroke="#a77b58" stroke-width="11"/><circle cx="218" cy="134" r="37" fill="#9dce81"/>
+ <path d="M290 224 h94 v12 h-94 Z M298 238 v24 M376 238 v24" stroke="#9b7157" stroke-width="8" fill="#c59d74"/>
+ <g data-litter="1" tabindex="0" role="button" aria-label="Recoger papel del suelo" transform="translate(143 242)"><rect width="42" height="32" rx="3" fill="white" stroke="#af725e" stroke-width="3"/><path d="M7 8 H34 M7 16 H34 M7 24 H28" stroke="#96a0aa" stroke-width="2"/></g>
+ <g data-litter="2" tabindex="0" role="button" aria-label="Recoger botella vacía" transform="translate(248 250)"><rect x="8" y="6" width="20" height="32" rx="7" fill="#e8f6ff" stroke="#3d98bd" stroke-width="3"/><path d="M13 6 V0 H24 V6" stroke="#3d98bd" stroke-width="3"/></g>
+ <g data-litter="3" tabindex="0" role="button" aria-label="Recoger un envoltorio" transform="translate(43 252)"><path d="M0 10 L39 0 L55 24 L15 35 Z" fill="#ffd6a1" stroke="#b7846d" stroke-width="3"/></g>
+ <g data-litter="4" tabindex="0" role="button" aria-label="Recoger otra hoja de papel" transform="translate(348 252)"><path d="M3 5 L32 0 L39 30 L0 36Z" fill="#fafafa" stroke="#a5a5a5" stroke-width="3"/></g>
+ <g data-litter="5" tabindex="0" role="button" aria-label="Recoger lata vacía" transform="translate(188 247)"><rect width="22" height="36" rx="3" fill="#e6d6f1" stroke="#8b6fa2" stroke-width="3"/><ellipse cx="11" cy="2" rx="11" ry="4" fill="#f6f6f8" stroke="#8b6fa2" stroke-width="2"/></g>
+</svg><p class="game-feedback" data-park-status role="status" aria-live="polite">Residuos encontrados: 0 de 5.</p><button type="button" class="game-button" data-park-reset>↺ Repetir juego</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> En el patio, identificar acciones de cuidado. Solo las personas adultas deben recoger objetos desconocidos o peligrosos.</p>
+    </article><article class="activity-card" id="act-6-5-d" data-criterion="DEE 3.2">
+      <div class="activity-head"><span class="activity-id">6.5.D</span><span class="activity-type">✏️ Letra escolar + creación</span></div>
+      <h3>Nuestro cartel de la naturaleza</h3>
+      <p>Repasa las palabras «agua», «árbol» y «vida». Después crea en grupo un cartel con dibujos y mensajes para cuidar el entorno.</p>
+      <button type="button" class="audio-button" data-say="Repasa las palabras «agua», «árbol» y «vida». Después crea en grupo un cartel con dibujos y mensajes para cuidar el entorno." data-audio="/media/infantil/inf5/inf5.6-actividad-5-d.mp3">🔊 Escuchar consigna</button>
+      <div class="mini-game" data-game="nature-tracing"><h4>✏️ Decimos y repasamos</h4><p>Escucha una palabra y síguela con el dedo, ratón o lápiz digital. También puedes crear un cartel de papel.</p><div class="trace-stage"><span class="trace-word handwriting-dotted" data-trace-word>agua</span><canvas class="trace-canvas" width="900" height="220" aria-label="Lienzo para repasar la palabra punteada"></canvas></div><div class="game-controls"><button type="button" class="game-button" data-trace-clear>🧽 Borrar trazo</button><button type="button" class="game-button" data-trace-next>Otra palabra</button></div><p class="handwriting-outline big-outline" data-outline-word>agua</p><p class="game-feedback" role="status" aria-live="polite" data-feedback></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> La actividad de trazo es voluntaria y no exige escritura convencional. Se pueden dictar los mensajes al adulto o usar pictogramas.</p>
+    </article></div>
+      <p class="lesson-note">💡 <strong>Para recordar:</strong> Cuidar, reducir, reutilizar y separar residuos son gestos que podemos aprender poco a poco.</p>
+    </section><!-- ======================================================
+     PRODUCTO FINAL INTEGRADOR
+     ====================================================== -->
+<section class="end-project" id="pasaporte" aria-labelledby="passport-title">
+  <span class="section-tag">🌟 Reto final</span>
+  <h2 id="passport-title">Mi pasaporte de explorador de la naturaleza</h2>
+  <p>Prepara con tu clase un pequeño <strong>rincón de naturaleza</strong>: muestra un dibujo de un animal, cuida un semillero, observa el cielo, enseña un experimento seguro y propone un gesto de cuidado ambiental.</p>
+  <p>Señala cada descubrimiento cuando lo hayas practicado. No es un examen: puedes expresar tus experiencias con dibujos, fotos, palabras o pictogramas.</p>
+  <div class="passport-grid" data-game="passport"><div class="passport-item"><input id="seal-56-1" type="checkbox"><label for="seal-56-1"><span class="seal">🐾</span> Observo animales con respeto</label></div><div class="passport-item"><input id="seal-56-2" type="checkbox"><label for="seal-56-2"><span class="seal">🌱</span> Cuido una planta</label></div><div class="passport-item"><input id="seal-56-3" type="checkbox"><label for="seal-56-3"><span class="seal">🌤️</span> Miro el cielo</label></div><div class="passport-item"><input id="seal-56-4" type="checkbox"><label for="seal-56-4"><span class="seal">💧</span> Experimento con agua</label></div><div class="passport-item"><input id="seal-56-5" type="checkbox"><label for="seal-56-5"><span class="seal">♻️</span> Cuido mi entorno</label></div></div>
+  <p class="passport-progress" data-passport-status aria-live="polite">Mis descubrimientos: 0 de 5</p>
+  <div class="passport-meter" role="progressbar" aria-label="Avance del pasaporte" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div class="passport-fill"></div></div>
+  <p class="final-mantra">🌎 ¡Observo, pregunto, descubro y cuido la naturaleza!</p>
+  <div style="margin-top:16px"><button type="button" class="audio-button" data-say="¡Enhorabuena, exploradores! Hemos conocido animales, cultivado plantas, observado el tiempo, experimentado con el agua y aprendido a cuidar nuestro entorno." data-audio="/media/infantil/inf5/inf5.6-despedida.mp3">🔊 Escuchar despedida</button></div>
+</section><details class="teacher-notes"><summary>📋 Orientaciones docentes, progresión y criterios de evaluación</summary>
+<p><strong>Área principal:</strong> Descubrimiento y Exploración del Entorno (2.º ciclo). <strong>Nivel:</strong> Infantil, 5 años.</p>
+<p><strong>Progresión flexible:</strong> 1. Descubro, observo y manipulo con apoyos; 2. Relaciono, clasifico y experimento; 3. Explico mis hallazgos y los aplico en el aula o entorno cercano. No son niveles cerrados.</p>
+<p><strong>Saberes básicos orientativos:</strong> DEE.02.A.01, DEE.02.A.02, DEE.02.B.01, DEE.02.B.02, DEE.02.B.03, DEE.02.B.04, DEE.02.B.05 y DEE.02.C.01 a DEE.02.C.09. Su concreción depende de la tarea y de la propuesta pedagógica del centro.</p>
+<p><strong>Metodología:</strong> el eje principal son la observación directa, el juego, los materiales reales, las salidas al patio, el diálogo y las experiencias cooperativas. Las actividades de pantalla sirven como acompañamiento.</p>
+<p><strong>Accesibilidad:</strong> consignas con audio, apoyos visuales, selección por dos toques como alternativa al arrastre y posibilidad de respuesta oral, gráfica, gestual o mediante sistemas aumentativos de comunicación.</p>
+<p><strong>Seguridad:</strong> supervisar las experiencias con agua y tierra; comprobar alergias y sensibilidades; lavarse las manos tras manipular materiales; no coger seres vivos ni residuos peligrosos.</p>
+<p><strong>Evaluación:</strong> observación directa y sistemática, anecdotarios, fotografías y listas de control. No se evalúa la rapidez, la lectura convencional ni el número de aciertos digitales.</p>
+<h3>Criterio principal asociado a cada actividad</h3>
+<div class="teacher-table-wrap"><table><thead><tr><th>Actividad</th><th>Propuesta</th><th>Criterio</th></tr></thead><tbody><tr><td>6.1.A</td><td>¿Cómo se desplazan los animales?</td><td>DEE 3.3</td></tr><tr><td>6.1.B</td><td>El puzle del conejo</td><td>DEE 3.5</td></tr><tr><td>6.1.C</td><td>¿Qué necesitan los animales?</td><td>DEE 3.3</td></tr><tr><td>6.1.D</td><td>Exploradores del patio</td><td>DEE 3.5</td></tr><tr><td>6.2.A</td><td>Del grano a la planta</td><td>DEE 2.5</td></tr><tr><td>6.2.B</td><td>Las partes de una planta</td><td>DEE 3.3</td></tr><tr><td>6.2.C</td><td>¿Qué necesita nuestra planta?</td><td>DEE 3.1</td></tr><tr><td>6.2.D</td><td>Mi diario del semillero</td><td>DEE 2.6</td></tr><tr><td>6.3.A</td><td>¿Qué tiempo hace hoy?</td><td>DEE 3.4</td></tr><tr><td>6.3.B</td><td>Los sonidos de la naturaleza</td><td>DEE 3.4</td></tr><tr><td>6.3.C</td><td>Las cuatro estaciones</td><td>DEE 3.4</td></tr><tr><td>6.3.D</td><td>Nuestro calendario del cielo</td><td>DEE 2.6</td></tr><tr><td>6.4.A</td><td>¿Flota o se hunde?</td><td>DEE 2.3</td></tr><tr><td>6.4.B</td><td>¿Duro o blando?</td><td>DEE 1.1</td></tr><tr><td>6.4.C</td><td>El hielo cambia</td><td>DEE 2.5</td></tr><tr><td>6.4.D</td><td>Pinto el paisaje del agua</td><td>DEE 2.3</td></tr><tr><td>6.5.A</td><td>¿Dónde lo depositamos?</td><td>DEE 3.2</td></tr><tr><td>6.5.B</td><td>Cuidamos el agua</td><td>DEE 3.1</td></tr><tr><td>6.5.C</td><td>Guardianes del parque</td><td>DEE 3.1</td></tr><tr><td>6.5.D</td><td>Nuestro cartel de la naturaleza</td><td>DEE 3.2</td></tr></tbody></table></div>
+<h3>Referencia de los criterios empleados (resumen didáctico)</h3><ul><li><strong>DEE 1.1:</strong> Relacionar materiales y objetos por cualidades, explorar sus propiedades y observar efectos.</li><li><strong>DEE 2.3:</strong> Plantear hipótesis sobre materiales o elementos y contrastarlas mediante la acción y manipulación.</li><li><strong>DEE 2.5:</strong> Organizar secuencias de acciones para resolver tareas analógicas y digitales.</li><li><strong>DEE 2.6:</strong> Participar en proyectos cooperativos y comunicar observaciones y conclusiones.</li><li><strong>DEE 3.1:</strong> Mostrar respeto y cuidado hacia el medio natural y reconocer el efecto de las acciones humanas.</li><li><strong>DEE 3.2:</strong> Adquirir progresivamente hábitos de cuidado, reducción, reutilización y reciclaje.</li><li><strong>DEE 3.3:</strong> Reconocer características comunes y diferencias entre elementos vivos e inertes.</li><li><strong>DEE 3.4:</strong> Conocer componentes y fenómenos naturales y relacionarlos con el entorno.</li><li><strong>DEE 3.5:</strong> Conocer y apreciar la riqueza del patrimonio natural y la biodiversidad de Andalucía.</li></ul>
+<p><strong>Normativa:</strong> Orden de 30 de mayo de 2023 de la Consejería de Desarrollo Educativo y Formación Profesional (Andalucía), Anexo I. Esta tabla resume el sentido de cada criterio, no sustituye su redacción normativa oficial.</p>
+</details>
+</div>
+</main>
+<!-- PIE INSTITUCIONAL (sin copyright ni enlaces superfluos) -->
+<footer class="site-footer"><div class="footer-container"><div class="footer-junta"><img alt="Junta de Andalucía - Consejería de Educación" src="/img/junta-educacion.png"/></div><div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">Web oficial del Centro</a></div></div></footer>
+<script>(() => {
+'use strict';
+const root=document.querySelector('.infant-learning');
+if(!root)return;
+const $=(s,r=root)=>r.querySelector(s);
+const $$=(s,r=root)=>[...r.querySelectorAll(s)];
+let activeAudio=null;
+function speak(text){if(!text)return;try{if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='es-ES';u.rate=.86;u.pitch=1.02;speechSynthesis.speak(u);}}catch(e){}}
+function narrate(path,text){if(activeAudio){activeAudio.pause();activeAudio=null;}if('speechSynthesis' in window)speechSynthesis.cancel();if(!path){speak(text);return;}const a=new Audio(path);activeAudio=a;let used=false;const fallback=()=>{if(!used){used=true;speak(text)}};a.addEventListener('error',fallback,{once:true});const p=a.play();if(p?.catch)p.catch(fallback)}
+$$('[data-say]').forEach(b=>b.addEventListener('click',()=>narrate(b.dataset.audio||'',b.dataset.say)));
+function report(p,t,oral=false){const e=$('[data-feedback]',p);if(e)e.textContent=t;if(oral)speak(t)}
+function makeButton(text,attrs={}){const b=document.createElement('button');b.type='button';b.textContent=text;for(const [k,v] of Object.entries(attrs))b.setAttribute(k,v);return b;}
+function emojiButton(icon,label,attrs={}){const b=makeButton('',attrs);b.innerHTML='<span class="item-emoji">'+icon+'</span>'+label;return b;}
+// Ratón, dedo y alternativa de dos toques. No se impide hacer scroll si no se inicia un arrastre.
+function sortable(panel,onDrop){let selected=null,active=null,start=null,ghost=null,moved=false;
+ const zones=()=>$$('[data-drop-zone]',panel);
+ function clear(){if(ghost)ghost.remove();ghost=null;zones().forEach(z=>z.classList.remove('is-hovered'));}
+ function choose(item){if(!item||item.disabled)return;$$('.drag-piece',panel).forEach(x=>x.classList.remove('is-chosen'));selected=item;item.classList.add('is-chosen');}
+ function complete(zone){if(!selected||!zone||selected.disabled)return;const ok=onDrop(selected.dataset.dragItem,zone.dataset.dropZone,selected,zone);if(ok!==false){selected.classList.remove('is-chosen');selected=null;}}
+ panel.addEventListener('click',e=>{if(moved){moved=false;return;}const piece=e.target.closest('[data-drag-item]');if(piece&&panel.contains(piece)){choose(piece);return;}const zone=e.target.closest('[data-drop-zone]');if(zone&&panel.contains(zone))complete(zone);});
+ panel.addEventListener('pointerdown',e=>{const p=e.target.closest('[data-drag-item]');if(!p||!panel.contains(p)||p.disabled||e.pointerType==='mouse'&&e.button!==0)return;active=p;start={x:e.clientX,y:e.clientY,id:e.pointerId};moved=false;});
+ window.addEventListener('pointermove',e=>{if(!active||!start||e.pointerId!==start.id)return;const d=Math.hypot(e.clientX-start.x,e.clientY-start.y);if(!moved&&d>10){moved=true;choose(active);ghost=active.cloneNode(true);ghost.classList.add('drag-ghost');document.body.appendChild(ghost);}if(moved){e.preventDefault();ghost.style.left=e.clientX+'px';ghost.style.top=e.clientY+'px';zones().forEach(z=>{const r=z.getBoundingClientRect();z.classList.toggle('is-hovered',e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom)})}}, {passive:false});
+ window.addEventListener('pointerup',e=>{if(!active||!start||e.pointerId!==start.id)return;const wasMoved=moved;if(wasMoved){const target=document.elementFromPoint(e.clientX,e.clientY);const zone=target?.closest('[data-drop-zone]');if(zone&&panel.contains(zone))complete(zone);}clear();active=null;start=null;if(!wasMoved)moved=false;else setTimeout(()=>moved=false,0);});
+ window.addEventListener('pointercancel',()=>{active=null;start=null;moved=false;clear();});
+ return {clear:()=>{selected=null;$$('.drag-piece',panel).forEach(x=>x.classList.remove('is-chosen'));clear();}};
+}
+function initSort(name){const p=$('[data-game="'+name+'"]');if(!p)return;let count=0;const initial=$$('.drag-piece',p).length;
+ const handler=sortable(p,(key,cat,item,zone)=>{if(item.dataset.category!==cat){report(p,'Prueba con otro grupo.');return false;}const label=item.textContent.trim();item.disabled=true;const token=document.createElement('span');token.className='placed-token';token.textContent=label;zone.appendChild(token);count++;report(p,count===initial?'¡Has terminado! Ahora pruébalo con materiales reales.':'¡Bien! Sigue clasificando.');return true;});
+ $('[data-reset-sort]',p)?.addEventListener('click',()=>{count=0;$$('.drag-piece',p).forEach(x=>{x.disabled=false;x.classList.remove('is-chosen')});$$('.placed-token',p).forEach(x=>x.remove());handler.clear();report(p,'Vamos a intentarlo de nuevo.')});}
+['animal-moves','plant-parts','seasons','materials-sort','waste-sort'].forEach(initSort);
+// Puzle de 4 piezas, recorte de la ilustración de conejo mediante fondo SVG local.
+const puzz=$('[data-game="nature-puzzle"]');
+if(puzz){const bank=$('[data-puzzle-bank]',puzz),board=$('[data-puzzle-board]',puzz),src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIj48ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4Mj0iMCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNlYWY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmY4ZWIiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJlYXJ0aCI+PHN0b3Agc3RvcC1jb2xvcj0iI2M4ZWI5ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzkwY2Q4NSIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0NDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNza3kpIi8+CjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI0MCIgZmlsbD0iI2ZmZGM3ZiIvPjxjaXJjbGUgY3g9IjUzNyIgY3k9IjY3IiByPSI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkZjg4IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMTQiLz4KPGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjExMCIgY3k9Ijg4IiByeD0iNTUiIHJ5PSIxOSIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzUiIHI9IjIzIi8+PGNpcmNsZSBjeD0iMTIyIiBjeT0iNzAiIHI9IjI2Ii8+PGVsbGlwc2UgY3g9IjMxNiIgY3k9IjUyIiByeD0iMzMiIHJ5PSIxMiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjQzIiByPSIxNiIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjQwIiByPSIxOSIvPjwvZz4KPHBhdGggZD0iTTAgMzI3IFExOTAgMjg2IDM0MCAzMjEgVDY0MCAzMjAgVjQ0MCBIMFoiIGZpbGw9InVybCgjZWFydGgpIi8+CjxwYXRoIGQ9Ik0wIDM3MyBRMTc1IDM0MSAzMzUgMzcwIFQ2NDAgMzcxIFY0NDAgSDBaIiBmaWxsPSIjODJjNjdmIiBvcGFjaXR5PSIuNDUiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDg1IDEzMCkgc2NhbGUoMC44MykiPjxwYXRoIGQ9Ik0tMTggMjAwIEwtMTIgNzUgTDEwIDc1IEwyMCAyMDAiIGZpbGw9IiNhNjdhNTMiIHN0cm9rZT0iIzkzNmI0YyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iLTQzIiBjeT0iNzIiIHI9IjU3IiBmaWxsPSIjNjliNzc3Ii8+PGNpcmNsZSBjeD0iMTgiIGN5PSI0OCIgcj0iNjUiIGZpbGw9IiM1YWFhNjgiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjEwMCIgcj0iNTEiIGZpbGw9IiM3OGM4ODAiLz48Y2lyY2xlIGN4PSItMTIiIGN5PSIxNCIgcj0iNTQiIGZpbGw9IiM4NWM5ODEiLz48Y2lyY2xlIGN4PSIyMiIgY3k9IjkzIiByPSI1NiIgZmlsbD0iIzZkYzM3NCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyODQgMzAwKSBzY2FsZSgxLjA1KSI+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9IjU1IiByeD0iNzMiIHJ5PSI1MiIgZmlsbD0iI2Y0ZDRiYyIvPjxjaXJjbGUgY3g9IjQ1IiBjeT0iMTgiIHI9IjQyIiBmaWxsPSIjZjRkNGJjIi8+PGVsbGlwc2UgY3g9IjI2IiBjeT0iLTY2IiByeD0iMTgiIHJ5PSI2OSIgZmlsbD0iI2YzZDBiNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTEzIDI2IC02NikiLz48ZWxsaXBzZSBjeD0iNjMiIGN5PSItNjUiIHJ4PSIxOCIgcnk9IjY3IiBmaWxsPSIjZjNkMGI0IiB0cmFuc2Zvcm09InJvdGF0ZSgxMSA2MyAtNjUpIi8+PGVsbGlwc2UgY3g9IjI4IiBjeT0iLTY1IiByeD0iOCIgcnk9IjQ3IiBmaWxsPSIjZWFhZWIzIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTMgMjggLTY1KSIvPjxlbGxpcHNlIGN4PSI2MiIgY3k9Ii02NSIgcng9IjgiIHJ5PSI0NyIgZmlsbD0iI2VhYWViMyIgdHJhbnNmb3JtPSJyb3RhdGUoMTEgNjIgLTY1KSIvPjxjaXJjbGUgY3g9IjU3IiBjeT0iMTEiIHI9IjUiIGZpbGw9IiMyODM4NGIiLz48Y2lyY2xlIGN4PSI4MSIgY3k9IjI4IiByPSI0IiBmaWxsPSIjYzA4MDdhIi8+PHBhdGggZD0iTTczIDMzIFE2NCA0NiA1NSAzNyIgc3Ryb2tlPSIjOTE2NzY5IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSItNzYiIGN5PSIzMSIgcj0iMTkiIGZpbGw9IiNmZmYzZTciLz48ZWxsaXBzZSBjeD0iLTQ1IiBjeT0iMTAzIiByeD0iMzAiIHJ5PSIxNCIgZmlsbD0iI2VkYzNhYyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTYgMTUwKSBzY2FsZSgwLjc1KSI+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9Ii0xNSIgcng9IjI1IiByeT0iMzAiIGZpbGw9IiNmNTliYWEiIHN0cm9rZT0iI2I5NjQ4ZCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iLTE1IiByeD0iMjUiIHJ5PSIzMCIgZmlsbD0iI2Y1OWJhYSIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48ZWxsaXBzZSBjeD0iLTE4IiBjeT0iMjIiIHJ4PSIxOSIgcnk9IjI1IiBmaWxsPSIjZjhjMjhkIiBzdHJva2U9IiNiOTY0OGQiIHN0cm9rZS13aWR0aD0iMyIvPjxlbGxpcHNlIGN4PSIxOCIgY3k9IjIyIiByeD0iMTkiIHJ5PSIyNSIgZmlsbD0iI2Y4YzI4ZCIgc3Ryb2tlPSIjYjk2NDhkIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNMCAtMjAgVjQwIiBzdHJva2U9IiM2ZTU5N2EiIHN0cm9rZS13aWR0aD0iOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zIC0yMyBRLTE4IC00NSAtMjEgLTQyIE0zIC0yMyBRMTggLTQ1IDIxIC00MiIgc3Ryb2tlPSIjNmU1OTdhIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSItMjAiIGN5PSItMTUiIHI9IjYiIGZpbGw9IiNmZmYzZDAiLz48Y2lyY2xlIGN4PSIyMCIgY3k9Ii0xNSIgcj0iNiIgZmlsbD0iI2ZmZjNkMCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTQgMzQzKSI+PHBhdGggZD0iTTAgMjggVjAiIHN0cm9rZT0iIzM4OTc2NSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTAgMTIgUS0xNSAtNCAtMjAgOCBRLTQgMjIgMCAxMiIgZmlsbD0iIzVjYjk3NiIvPjxjaXJjbGUgY3k9Ii04IiByPSI5IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iLTEwIiBjeT0iLTYiIHI9IjgiIGZpbGw9IiNmMmE4YjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTE1IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeT0iLTUiIHI9IjYiIGZpbGw9IiNmZmU3ODAiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDE3IDM2MCkiPjxwYXRoIGQ9Ik0wIDI4IFYwIiBzdHJva2U9IiMzODk3NjUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0wIDEyIFEtMTUgLTQgLTIwIDggUS00IDIyIDAgMTIiIGZpbGw9IiM1Y2I5NzYiLz48Y2lyY2xlIGN5PSItOCIgcj0iOSIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3g9Ii0xMCIgY3k9Ii02IiByPSI4IiBmaWxsPSIjZjJhOGI0Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNiIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii0xNSIgcj0iOCIgZmlsbD0iI2YyYThiNCIvPjxjaXJjbGUgY3k9Ii01IiByPSI2IiBmaWxsPSIjZmZlNzgwIi8+PC9nPjwvc3ZnPg==";let success=0;
+ function fill(){bank.innerHTML='';board.innerHTML='';success=0;[2,0,3,1].forEach(i=>{const p=makeButton('',{'class':'drag-piece','data-drag-item':String(i),'aria-label':'Pieza de puzle '+(i+1)});const art=document.createElement('div');art.className='puzzle-slice';art.style.backgroundImage=`url("${src}")`;art.style.backgroundPosition=(i%2?'100%':'0%')+' '+(i>1?'100%':'0%');p.appendChild(art);bank.appendChild(p)});for(let i=0;i<4;i++)board.appendChild(makeButton('',{'class':'drop-target','data-drop-zone':String(i),'aria-label':'Hueco '+(i+1)}));report(puzz,'Elige una pieza y colócala en su hueco.');}
+ fill();sortable(puzz,(id,zone,item,target)=>{if(id!==zone){report(puzz,'Esa pieza va en otro hueco. Prueba otra vez.');return false;}if(target.dataset.filled)return false;target.innerHTML='';const art=document.createElement('div');art.className='puzzle-fixed';art.style.backgroundImage=`url("${src}")`;art.style.backgroundPosition=(+id%2?'100%':'0%')+' '+(+id>1?'100%':'0%');target.appendChild(art);target.dataset.filled='1';target.classList.add('is-complete');item.disabled=true;success++;report(puzz,success===4?'¡Puzle completo! ¡Muy bien observado!':'¡Bien! Busca la siguiente pieza.');return true;});
+ $('[data-puzzle-reset]',puzz).addEventListener('click',()=>{fill();$$('[data-drop-zone]',puzz).forEach(x=>{delete x.dataset.filled;x.classList.remove('is-complete')})});}
+// Preguntas visuales adaptadas, sin exigencias de lectura convencional.
+const quizzes={
+ 'animal-needs':[
+  ['¿Qué necesita un pez para vivir?',[['💧 Agua','agua'],['🏜️ Arena seca','arena'],['🛴 Patinete','patinete']],'agua','Los peces viven en el agua.'],
+  ['¿Qué visita una abeja para alimentarse?',[['🌸 Flores','flores'],['🧱 Ladrillos','ladrillos'],['🧸 Juguetes','juguetes']],'flores','Las abejas visitan flores para obtener alimento.'],
+  ['¿Qué necesita un conejo para estar protegido?',[['🏡 Un refugio adecuado','refugio'],['📢 Ruidos fuertes','ruido'],['🚗 Una carretera','carretera']],'refugio','Los animales necesitan lugares seguros.']
+ ],
+ 'water-saving':[
+  ['Mientras nos cepillamos los dientes…',[['🚰 Cerramos el grifo','cerrar'],['🚿 Dejamos correr el agua','abierto']],'cerrar','Cerrar el grifo ayuda a ahorrar agua.'],
+  ['Si vemos un grifo que gotea…',[['👩 Avisamos a una persona adulta','avisar'],['🙈 Lo ignoramos','ignorar']],'avisar','Avisar permite reparar una fuga.'],
+  ['Para regar una planta en maceta…',[['💧 Ponemos el agua que necesita','medida'],['🌊 Inundamos la maceta','inundar']],'medida','Regar con cuidado evita desperdiciar agua.']
+ ]
+};
+function initQuiz(name){const p=$('[data-game="'+name+'"]');if(!p)return;let idx=0;function render(){const [q,answers]=quizzes[name][idx];$('[data-quiz-question]',p).textContent=q;const out=$('[data-quiz-options]',p);out.innerHTML='';answers.forEach(([t,k])=>out.appendChild(makeButton(t,{'class':'choice','data-answer':k})));report(p,'Escucha, observa y elige una opción.')};render();$('[data-quiz-options]',p).addEventListener('click',e=>{const b=e.target.closest('[data-answer]');if(!b)return;const answer=quizzes[name][idx][2],note=quizzes[name][idx][3];report(p,b.dataset.answer===answer?'¡Muy bien! '+note:'Vamos a observarlo otra vez. '+note,true);});$('[data-quiz-next]',p).addEventListener('click',()=>{idx=(idx+1)%quizzes[name].length;render()});$('[data-quiz-read]',p).addEventListener('click',()=>speak(quizzes[name][idx][0]))}
+Object.keys(quizzes).forEach(initQuiz);
+// Listado de avistamientos voluntarios.
+const observations=$('[data-game="sightings"]');if(observations)$$('[data-sighting]',observations).forEach(x=>x.addEventListener('change',()=>{const n=$$('[data-sighting]:checked',observations).length;$('[data-sight-output]',observations).textContent=n?'¡Has señalado '+n+' observaciones! Puedes contarlas o dibujarlas.':'¡Mira con atención y sin molestar a los seres vivos!'}));
+// Secuencias de crecimiento y transformación del hielo.
+const sequences={
+ 'seed-steps':[['1','🫘','Semilla'],['2','🪴','Sale una raíz'],['3','🌱','Aparece el brote'],['4','🌿','Crece la planta']],
+ 'ice-steps':[['1','🧊','Hielo'],['2','🌤️','Se va derritiendo'],['3','💧','Agua líquida']]
+};
+function initSequence(name){const p=$('[data-game="'+name+'"]');if(!p)return;const bank=$('[data-seq-bank]',p),done=$('[data-seq-done]',p);let step=0;function build(){step=0;bank.innerHTML='';done.innerHTML='';const arr=sequences[name];const order=name==='seed-steps'?[2,0,3,1]:[2,0,1];order.forEach(i=>{const [key,icon,label]=arr[i];bank.appendChild(emojiButton(icon,label,{'class':'drag-piece','data-seq':key}))});report(p,'Toca la primera escena de la historia.');}build();bank.addEventListener('click',e=>{const b=e.target.closest('[data-seq]');if(!b)return;const val=sequences[name][step];if(b.dataset.seq===val[0]){const s=document.createElement('span');s.className='step-chip';s.textContent=val[1]+' '+val[2];done.appendChild(s);b.remove();step++;report(p,step===sequences[name].length?'¡Secuencia terminada! Ahora comprueba cómo sucede en la realidad.':'¡Bien! ¿Qué ocurre después?');}else report(p,'Prueba a buscar qué ocurrió antes.');});$('[data-seq-reset]',p).addEventListener('click',build);}
+Object.keys(sequences).forEach(initSequence);
+// Cuidado de planta en maceta: se aceptan 4 necesidades, se explica por qué el ruido no es un recurso.
+const grow=$('[data-game="plant-care"]');if(grow){let used=new Set;const required=new Set(['agua','luz','aire','sustrato']);function paint(){const n=used.size;$('[data-plant-face]',grow).textContent=n===4?'🪴':n>=2?'🌿':'🌱';$('[data-plant-message]',grow).textContent=n===4?'¡Le hemos dado los cuidados básicos!':n+' de 4 cuidados importantes';}$$('[data-plant-need]',grow).forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.plantNeed;if(!required.has(k)){report(grow,'El ruido no ayuda a crecer una planta. Prueba otra cosa.');return;}used.add(k);b.classList.add('is-active');paint();report(grow,used.size===4?'¡Muy bien! Recuerda que cada planta necesita una cantidad adecuada de agua y luz.':'¡Bien! ¿Qué otra cosa necesita nuestra planta?')}));$('[data-plant-reset]',grow).addEventListener('click',()=>{used.clear();$$('[data-plant-need]',grow).forEach(b=>b.classList.remove('is-active'));paint();report(grow,'Vamos a cuidar la planta de nuevo.')});paint();}
+// Lienzo libre con trazo táctil, sin guardar datos personales.
+function initCanvas(canvas,buttons,clear){const ctx=canvas.getContext('2d');let down=false,color='#3e9567';ctx.lineWidth=9;ctx.lineCap='round';ctx.lineJoin='round';function loc(e){const r=canvas.getBoundingClientRect();return [(e.clientX-r.left)*canvas.width/r.width,(e.clientY-r.top)*canvas.height/r.height]};canvas.addEventListener('pointerdown',e=>{down=true;canvas.setPointerCapture(e.pointerId);ctx.beginPath();const [x,y]=loc(e);ctx.moveTo(x,y);ctx.lineTo(x+.01,y+.01);ctx.strokeStyle=color;ctx.stroke()});canvas.addEventListener('pointermove',e=>{if(!down)return;const [x,y]=loc(e);ctx.lineTo(x,y);ctx.stroke()});['pointerup','pointercancel','lostpointercapture'].forEach(t=>canvas.addEventListener(t,()=>down=false));buttons.forEach(b=>b.addEventListener('click',()=>{color=b.dataset.drawColor;buttons.forEach(x=>x.classList.toggle('is-active',x===b))}));clear?.addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height));}
+const draw=$('[data-game="plant-drawing"]');if(draw)initCanvas($('[data-draw-canvas]',draw),$$('[data-draw-color]',draw),$('[data-draw-clear]',draw));
+// Registro del tiempo real (no afirmación meteorológica automática).
+const weather=$('[data-game="weather-today"]');if(weather){$$('[data-weather]',weather).forEach(b=>b.addEventListener('click',()=>{b.classList.toggle('is-active');const selected=$$('[data-weather].is-active',weather).map(x=>x.textContent.trim());$('[data-weather-result]',weather).textContent=selected.length?'Hoy he observado: '+selected.join(', ')+'.':'¡Observa el cielo para empezar!'}));}
+// Sonidos originales generados para este material; sin palabra audible añadida al sonido.
+const sound=$('[data-game="nature-sounds"]');if(sound){const sounds=[['lluvia','inf5.6-lluvia.mp3'],['viento','inf5.6-viento.mp3'],['pájaros','inf5.6-pajaros.mp3']];let idx=0;function show(){report(sound,'Escucha el sonido y elige una imagen.');}$('[data-sound-play]',sound).addEventListener('click',()=>narrate('/media/infantil/inf5/'+sounds[idx][1],''));$$('[data-sound-answer]',sound).forEach(b=>b.addEventListener('click',()=>report(sound,b.dataset.soundAnswer===sounds[idx][0]?'¡Eso es! Has reconocido '+sounds[idx][0]+'.':'Escucha otra vez y compara los sonidos.')));$('[data-sound-next]',sound).addEventListener('click',()=>{idx=(idx+1)%sounds.length;show()});show();}
+// Calendario de tres días sin almacenamiento.
+const days=$('[data-game="weather-calendar"]');if(days){const choices=new Map;$$('[data-day-weather]',days).forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.day;choices.set(k,b.textContent.trim());$$('[data-day="'+k+'"]',days).forEach(x=>x.classList.toggle('is-active',x===b));$('[data-day-result="'+k+'"]',days).textContent=b.textContent;const n=choices.size;$('[data-day-summary]',days).textContent=n===3?'¡Tres días observados! ¿Se parecen o son diferentes?':'¡Bien! Tienes '+n+' de 3 días señalados.'}));}
+// Predicción de flotación: no se trata como acertar o fallar, sino como hipótesis a comprobar.
+const float=$('[data-game="float-test"]');if(float){const vals=['tapón de corcho','piedra corriente','cuchara metálica'];let i=0;function render(){$('[data-float-object]',float).textContent='¿Qué crees que pasará con '+vals[i]+' en el agua?';$('[data-float-result]',float).textContent='Elige una predicción. Después compruébala con una persona adulta.'}render();$$('[data-float-pred]',float).forEach(b=>b.addEventListener('click',()=>{$('[data-float-result]',float).textContent='Has previsto que '+vals[i]+' '+(b.dataset.floatPred==='flota'?'flotará.':'se hundirá.')+' ¡Ahora toca experimentarlo!';}));$('[data-float-next]',float).addEventListener('click',()=>{i=(i+1)%vals.length;render()});}
+// Colorear por zonas con ratón o dedo. Navegable por teclado.
+const coloring=$('[data-game="paint-landscape"]');if(coloring){let chosen='#82cde9';$$('[data-color]',coloring).forEach(b=>b.addEventListener('click',()=>{chosen=b.dataset.color;$$('[data-color]',coloring).forEach(x=>x.classList.toggle('is-active',x===b))}));const regions=$$('[data-paint-region]',coloring);function color(e){e.setAttribute('fill',chosen);report(coloring,'¡Qué bonito! Puedes elegir otro color.')}regions.forEach(r=>{r.addEventListener('click',()=>color(r));r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();color(r)}})});$('[data-clear-paint]',coloring).addEventListener('click',()=>{regions.forEach(r=>r.setAttribute('fill','white'));report(coloring,'¡Listo para colorear de nuevo!')});}
+// Parque: cinco residuos visibles se retiran tocando o con teclado.
+const park=$('[data-game="clean-park"]');if(park){const items=$$('[data-litter]',park);function update(){const n=items.filter(x=>x.classList.contains('is-removed')).length;$('[data-park-status]',park).textContent=n===5?'¡Parque limpio! En la vida real, buscamos ayuda adulta para recoger residuos.':'Residuos encontrados: '+n+' de 5.'}items.forEach(item=>{const run=()=>{item.classList.add('is-removed');update()};item.addEventListener('click',run);item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();run()}})});$('[data-park-reset]',park).addEventListener('click',()=>{items.forEach(x=>x.classList.remove('is-removed'));update()})}
+// Repaso con fuente escolar punteada; es una invitación, no una evaluación del trazo.
+const trace=$('[data-game="nature-tracing"]');if(trace){const canvas=$('.trace-canvas',trace),ctx=canvas.getContext('2d');let down=false,i=0;const words=['agua','árbol','vida'];ctx.strokeStyle='#277e72';ctx.lineWidth=9;ctx.lineCap='round';ctx.lineJoin='round';function xy(e){const r=canvas.getBoundingClientRect();return [(e.clientX-r.left)*canvas.width/r.width,(e.clientY-r.top)*canvas.height/r.height]};canvas.addEventListener('pointerdown',e=>{down=true;canvas.setPointerCapture(e.pointerId);const [x,y]=xy(e);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+.01,y+.01);ctx.stroke()});canvas.addEventListener('pointermove',e=>{if(!down)return;const [x,y]=xy(e);ctx.lineTo(x,y);ctx.stroke()});['pointerup','pointercancel','lostpointercapture'].forEach(k=>canvas.addEventListener(k,()=>down=false));function clear(){ctx.clearRect(0,0,canvas.width,canvas.height)}$('[data-trace-clear]',trace).addEventListener('click',clear);$('[data-trace-next]',trace).addEventListener('click',()=>{i=(i+1)%words.length;$('[data-trace-word]',trace).textContent=words[i];$('[data-outline-word]',trace).textContent=words[i];clear();speak(words[i])});}
+// Pasaporte de aula: seguimiento visual, no calificación.
+const passports=$$('[data-game="passport"] input[type=checkbox]');function updatePassport(){const n=passports.filter(x=>x.checked).length;$('[data-passport-status]').textContent='Mis descubrimientos: '+n+' de 5';const meter=$('.passport-meter');meter.setAttribute('aria-valuenow',n);$('.passport-fill',meter).style.width=(n*20)+'%'}passports.forEach(x=>x.addEventListener('change',updatePassport));updatePassport();
+})();</script>
+<script src="/js/main.js"></script>
+</body>
+</html>
