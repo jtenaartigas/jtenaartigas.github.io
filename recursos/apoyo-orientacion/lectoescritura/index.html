@@ -1,351 +1,2752 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lectoescritura: recursos de Pedagogía Terapéutica y Audición y Lenguaje organizados en seis subbloques y tres niveles de actividad. CEIP Joaquín Tena Artigas.">
-  <meta name="theme-color" content="#00843d">
-  <title>Lectoescritura | Apoyo y Orientación | CEIP Joaquín Tena Artigas</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="Lectoescritura: actividades interactivas, orales y de cuaderno en tres niveles. Apoyo y Orientación, PT y AL.">
+        <meta name="theme-color" content="#007336">
+        <title>
+            Lectoescritura · Actividades | CEIP Joaquín Tena Artigas
+        </title>
+        <!-- Estilos autónomos para facilitar la revisión local y evitar cambios en base.css. -->
+        <style>
+:root { --green:#007336; --ink:#233b32; --muted:#52665d; --paper:#f5f8f5; --line:#d5e0d9; --purple:#4b5e99; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--paper); font:18px/1.65 system-ui,sans-serif; }
+a { color:var(--green); text-underline-offset:4px; }
+button,select { font:inherit; }
+button,summary,select { cursor:pointer; }
+button { min-height:48px; border:2px solid var(--line); border-radius:12px; background:white; color:var(--ink); padding:10px 16px; }
+button:hover { border-color:var(--green); background:#f0f8f2; }
+:focus-visible { outline:4px solid #ad6300; outline-offset:4px; }
+[hidden] { display:none!important; }
+.skip { position:absolute; top:-100px; background:white; z-index:20; padding:14px; }
+.skip:focus { top:0; }
+.site-banner { background:white; text-align:center; }
+.site-banner img { display:block; width:100%; max-height:240px; object-fit:cover; }
+.school-name { margin:0; padding:12px; font-weight:750; font-size:.9rem; }
+.site-nav { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; padding:15px; background:white; border-bottom:1px solid var(--line); }
+.site-nav a { font-weight:650; }
+main { max-width:1120px; margin:auto; padding:26px 24px 60px; }
+.breadcrumbs { font-size:.85rem; margin:5px 0 26px; }
+.hero { padding:38px; border-radius:24px; background:#e8f2ea; border:1px solid #c9ddce; }
+.eyebrow { text-transform:uppercase; letter-spacing:.12em; font-weight:750; font-size:.8rem; color:var(--green); }
+h1 { font-size:clamp(2rem,5vw,3.3rem); line-height:1.12; margin:14px 0 22px; max-width:720px; }
+h2,h3,h4 { line-height:1.3; }
+.hero p { max-width:800px; }
+.pills { display:flex; gap:10px; flex-wrap:wrap; }
+.pill { font-size:.85rem; background:white; padding:5px 12px; border-radius:30px; }
+.index { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0; }
+.index a { text-decoration:none; background:white; border:1px solid var(--line); padding:18px; border-radius:14px; font-weight:650; }
+.index small { display:block; color:var(--purple); }
+.tools { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:20px 0; }
+.note,details.guide { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin:20px 0; }
+summary { font-weight:700; }
+.section-heading { color:var(--green); font-size:1.75rem; border-bottom:3px solid #cee3d2; padding-bottom:14px; margin:0 0 20px; }
+.block { scroll-margin-top:20px; margin-top:44px; }
+.example { border-left:5px solid var(--purple); padding:14px 20px; background:#edf0f9; border-radius:0 12px 12px 0; }
+.level { margin-top:20px; border:1px solid var(--line); background:white; border-radius:18px; overflow:hidden; }
+.level > summary { padding:20px; background:#eff5f0; }
+.level-inner { padding:24px; }
+.learn { margin-top:0; }
+.activities { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:22px; }
+.exercise,.paper { border:1px solid var(--line); border-radius:14px; padding:20px; min-width:0; }
+.exercise { background:#fcfdfb; }
+h4 { margin:8px 0 14px; font-size:1.12rem; }
+.type { font-size:.76rem; font-weight:750; letter-spacing:.08em; text-transform:uppercase; color:var(--purple); }
+.options { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.options button { flex:1 1 110px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; text-align:center; }
+.options svg { width:76px; height:76px; }
+.options button[aria-pressed="true"] { border-color:var(--green); background:#deefdf; }
+.options button:disabled { opacity:.5; cursor:default; }
+.feedback { min-height:34px; font-weight:650; }
+.sequence-answer { min-height:50px; padding:10px; border:2px dashed var(--line); border-radius:10px; }
+.reset { font-size:.9rem; padding:6px 13px; }
+.paper ol { padding-left:24px; }
+.paper li { margin:12px 0; }
+.audio-box { margin:16px 0; border-top:1px solid var(--line); padding-top:14px; }
+.audio-box audio { width:100%; max-width:100%; }
+.audio-hint { font-size:.85rem; color:var(--muted); }
+.audio-box details { font-size:.9rem; }
+.transfer { padding:18px 22px; border-radius:12px; background:#e8f2ea; margin-top:20px; }
+.review { margin-top:16px; }
+.review label { display:block; margin:8px 0; }
+input[type="checkbox"] { width:23px; height:23px; vertical-align:middle; accent-color:var(--green); }
+footer { padding:28px; text-align:center; background:#e4eee6; }
+code { overflow-wrap:anywhere; }
+pre { white-space:pre-wrap; font-size:.85rem; background:#f3f5f4; padding:16px; border-radius:10px; }
+.large-text { font-size:22px; }
+body.focus-mode .index,body.focus-mode .hero,body.focus-mode .site-banner,body.focus-mode .site-nav,body.focus-mode .breadcrumbs { display:none; }
+@media(max-width:760px) { .index { grid-template-columns:1fr 1fr; } .activities { grid-template-columns:1fr; } .hero { padding:24px; } }
+@media(max-width:480px) { main { padding:18px 12px 40px; } .index { grid-template-columns:1fr; } .level-inner { padding:14px; } .exercise,.paper { padding:15px; } .site-nav { gap:12px; font-size:.9rem; } }
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
 
-  <!-- Estilos comunes de la web del centro -->
-  <link rel="icon" type="image/png" href="/img/logo-centro.png">
-  <link rel="stylesheet" href="/css/base.css">
 
-  <!-- Ajustes de esta página; no modifican el CSS general -->
-  <style>
-    .literacy-page {
-      --literacy-color: #bf654e;
-      --literacy-soft: #fff4f0;
-    }
-
-    .literacy-page .subjects-grid {
-      align-items: stretch;
-    }
-
-    .literacy-page .literacy-card > a {
-      height: 100%;
-      min-height: 250px;
-    }
-
-    .literacy-page .literacy-card .subject-icon {
-      background: var(--literacy-color);
-    }
-
-    .literacy-page .subject-content {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .literacy-page .subject-content h2 {
-      overflow-wrap: anywhere;
-    }
-
-    .literacy-page .subject-content p {
-      line-height: 1.65;
-    }
-
-    .literacy-page .subject-access {
-      display: inline-block;
-      margin-top: auto;
-    }
-
-    .literacy-page .literacy-card-label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--literacy-color);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .literacy-page .literacy-symbol {
-      display: block;
-      width: 70px;
-      height: 70px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex: none;
-    }
-
-    .literacy-page .literacy-card > a:focus-visible {
-      outline: 4px solid var(--junta-green, #00843d);
-      outline-offset: -4px;
-      border-radius: var(--radius-medium, 18px);
-    }
-
-    /* Los niveles se entienden como niveles de actividad, no de alumnado */
-    .literacy-page .literacy-levels {
-      margin-top: 38px;
-      padding: 28px;
-      border: 1px solid var(--border, #dfe8e2);
-      border-left: 5px solid var(--literacy-color);
-      border-radius: var(--radius-medium, 18px);
-      background: var(--background-soft, #f6f9f7);
-    }
-
-    .literacy-page .literacy-levels h2 {
-      margin: 0 0 12px;
-      font-size: 1.28rem;
-      line-height: 1.3;
-    }
-
-    .literacy-page .literacy-levels > p {
-      margin: 0 0 20px;
-      color: var(--text-soft, #66736c);
-      line-height: 1.65;
-    }
-
-    .literacy-page .levels-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .literacy-page .level-item {
-      padding: 17px 18px;
-      border: 1px solid var(--border, #dfe8e2);
-      border-radius: var(--radius-small, 10px);
-      background: #fff;
-    }
-
-    .literacy-page .level-item h3 {
-      margin: 0 0 7px;
-      color: var(--literacy-color);
-      font-size: 0.98rem;
-      line-height: 1.35;
-    }
-
-    .literacy-page .level-item p {
-      margin: 0;
-      color: var(--text-soft, #66736c);
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    .literacy-page .levels-clarification {
-      margin: 18px 0 0 !important;
-      font-size: 0.93rem;
-    }
-
-    @media (max-width: 800px) {
-      .literacy-page .levels-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .literacy-page .literacy-card > a {
-        min-height: 0;
-      }
-
-      .literacy-page .literacy-symbol {
-        width: 48px;
-        height: 48px;
-      }
-
-      .literacy-page .literacy-levels {
-        padding: 20px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .literacy-page .literacy-card {
-        transition: none;
-      }
-    }
-  </style>
-</head>
-<body class="literacy-page">
-  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
-
-  <!-- Cabecera institucional -->
-  <header class="site-banner">
-    <a href="/" aria-label="Ir a la página de inicio">
-      <img src="/img/banner-principal.png" alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image">
-    </a>
-  </header>
-
-  <!-- Navegación común -->
-  <div class="navigation-wrapper">
-    <div class="navigation-container">
-      <a href="/" class="navigation-logo" aria-label="Ir a la página de inicio">
-        <img src="/img/logo-centro.png" alt="">
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
-        <ul>
-          <li class="nav-green"><a href="/">Inicio</a></li>
-          <li class="nav-yellow"><a href="/familias/">Familias</a></li>
-          <li class="nav-blue"><a href="/recursos/" aria-current="page">Recursos educativos</a></li>
-          <li class="nav-red">
-            <a href="https://profesorado.ceipjta.com/" target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">🔒</span> Área privada Profesorado
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-  <main id="contenido-principal">
-    <!-- Portada del bloque 3 -->
-    <section class="page-intro">
-      <div class="page-intro-container">
-        <nav class="breadcrumbs" aria-label="Migas de pan">
-          <ol>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/recursos/">Recursos educativos</a></li>
-            <li><a href="/recursos/apoyo-orientacion/">Apoyo y Orientación</a></li>
-            <li aria-current="page">Lectoescritura</li>
-          </ol>
-        </nav>
-        <p class="section-label">Apoyo y Orientación · Bloque 3</p>
-        <h1>Lectoescritura</h1>
-        <p class="page-intro-text">
-          Recursos para acercarse al lenguaje escrito, aprender a leer y escribir
-          y avanzar en la comprensión y la expresión escrita. Selecciona uno de
-          los seis subbloques para trabajar estas habilidades con actividades
-          graduadas y apoyos ajustados a cada alumno o alumna.
-        </p>
-      </div>
-    </section>
-
-    <!-- Distribución de los seis subbloques -->
-    <section class="subjects-section" aria-label="Subbloques de Lectoescritura">
-      <div class="section-container">
-        <div class="subjects-grid">
-          <!-- SUBBLOQUE 3.1 -->
-          <article class="subject-card literacy-card">
-            <a href="/recursos/apoyo-orientacion/lectoescritura/aproximacion-lenguaje-escrito/" aria-label="Entrar en Aproximación al lenguaje escrito">
-              <div class="subject-icon">
-                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <rect x="15" y="11" width="50" height="58" rx="6"/><path d="M27 23h25M27 32h19M27 42h25M27 51h14"/><path d="m45 53 6 6 13-15"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="literacy-card-label">Subbloque 3.1</span>
-                <h2>Aproximación al lenguaje escrito</h2>
-                <p>Descubrir para qué sirve la escritura, reconocer textos y símbolos cotidianos y desarrollar el interés por libros, palabras y mensajes.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 3.2 -->
-          <article class="subject-card literacy-card">
-            <a href="/recursos/apoyo-orientacion/lectoescritura/conciencia-fonologica/" aria-label="Entrar en Conciencia fonológica">
-              <div class="subject-icon">
-                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <path d="M9 31h13l17-15v48L22 49H9z"/><path d="M48 27c8 6 8 20 0 26M56 19c13 11 13 31 0 42"/><circle cx="14" cy="40" r="2"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="literacy-card-label">Subbloque 3.2</span>
-                <h2>Conciencia fonológica</h2>
-                <p>Escuchar y reconocer palabras, sílabas y fonemas; identificar rimas, segmentar y manipular sonidos de forma progresiva.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 3.3 -->
-          <article class="subject-card literacy-card">
-            <a href="/recursos/apoyo-orientacion/lectoescritura/aprendizaje-codigo-escrito/" aria-label="Entrar en Aprendizaje del código escrito">
-              <div class="subject-icon">
-                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <path d="m8 60 18-43 18 43M15 45h22"/><rect x="48" y="15" width="23" height="46" rx="4"/><path d="M54 27h11M54 37h11M54 47h8"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="literacy-card-label">Subbloque 3.3</span>
-                <h2>Aprendizaje del código escrito</h2>
-                <p>Relacionar sonidos y letras, reconocer grafías, combinar sílabas y progresar en la lectura y escritura de palabras y oraciones.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 3.4 -->
-          <article class="subject-card literacy-card">
-            <a href="/recursos/apoyo-orientacion/lectoescritura/precision-fluidez-lectora/" aria-label="Entrar en Precisión y fluidez lectora">
-              <div class="subject-icon">
-                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <path d="M40 20c-9-7-22-8-33-4v43c13-3 24-1 33 5 9-6 20-8 33-5V16c-11-4-24-3-33 4Z"/><path d="M40 20v44M16 30h15M16 40h15M49 30h15M49 40h15M50 50h11"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="literacy-card-label">Subbloque 3.4</span>
-                <h2>Precisión y fluidez lectora</h2>
-                <p>Leer con exactitud y progresiva soltura, reconocer palabras frecuentes y mejorar el ritmo, las pausas y la entonación.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 3.5 -->
-          <article class="subject-card literacy-card">
-            <a href="/recursos/apoyo-orientacion/lectoescritura/comprension-lectora/" aria-label="Entrar en Comprensión lectora">
-              <div class="subject-icon">
-                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <rect x="8" y="10" width="48" height="57" rx="6"/><path d="M19 23h25M19 34h25M19 45h17"/><circle cx="54" cy="52" r="13"/><path d="m64 62 10 10"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="literacy-card-label">Subbloque 3.5</span>
-                <h2>Comprensión lectora</h2>
-                <p>Localizar información, interpretar textos, realizar inferencias sencillas, ordenar ideas y comprobar lo comprendido.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-
-          <!-- SUBBLOQUE 3.6 -->
-          <article class="subject-card literacy-card">
-            <a href="/recursos/apoyo-orientacion/lectoescritura/escritura-produccion-textos/" aria-label="Entrar en Escritura y producción de textos">
-              <div class="subject-icon">
-                <svg class="literacy-symbol" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-                  <path d="M14 13h39a6 6 0 0 1 6 6v39a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6V19a6 6 0 0 1 6-6Z"/><path d="M19 27h28M19 38h23M19 49h13"/><path d="m47 61 17-24 7 5-17 24-10 4z"/>
-                </svg>
-              </div>
-              <div class="subject-content">
-                <span class="literacy-card-label">Subbloque 3.6</span>
-                <h2>Escritura y producción de textos</h2>
-                <p>Practicar el trazo y la escritura funcional, elaborar oraciones y textos, organizar ideas y revisar las propias producciones.</p>
-                <span class="subject-access">Explorar recursos <span aria-hidden="true">→</span></span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Pie institucional; sin bloque de copyright -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-junta">
-        <img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación">
-      </div>
-      <div class="footer-school">
-        <p class="footer-school-name">CEIP Joaquín Tena Artigas</p>
-        <p>Alcolea · Córdoba</p>
-        <a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">
-          Web oficial del Centro <span aria-hidden="true">↗</span>
+.draft-box { margin-top:22px; padding-top:16px; border-top:1px solid var(--line); }
+.draft-box textarea { display:block; width:100%; max-width:100%; margin:12px 0;
+    border:2px solid var(--line); border-radius:10px; padding:12px;
+    font:inherit; color:var(--ink); background:white; resize:vertical; }
+.draft-feedback { font-size:.95rem; }
+    
+        </style>
+    </head>
+    <body>
+        <a class="skip" href="#contenido-principal">
+            Ir al contenido principal
         </a>
-      </div>
-    </div>
-  </footer>
+        <!-- Cabecera y navegación del centro. Las imágenes usan las rutas existentes. -->
+        <header class="site-banner">
+            <a href="/">
+                <img src="/img/banner-principal.png" alt="" onerror="this.hidden=true">
+            </a>
+            <p class="school-name">
+                CEIP Joaquín Tena Artigas · Alcolea, Córdoba
+            </p>
+        </header>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a href="/">
+                Inicio
+            </a>
+            <a href="/familias/">
+                Familias
+            </a>
+            <a href="/recursos/">
+                Recursos educativos
+            </a>
+            <a href="https://profesorado.ceipjta.com/">
+                Área privada Profesorado
+            </a>
+        </nav>
+        <main id="contenido-principal">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/recursos/">
+                    Recursos
+                </a>
+                /
+                <a href="/recursos/apoyo-orientacion/">
+                    Apoyo y Orientación
+                </a>
+                / Lectoescritura
+            </nav>
+            <section class="hero" aria-labelledby="titulo">
+                <span class="eyebrow">
+                    Apoyo y Orientación · Bloque 3
+                </span>
+                <h1 id="titulo">
+                    Lectoescritura
+                </h1>
+                <p>
+                    Descubrimos palabras, leemos y escribimos. Actividades para comprender mensajes, crear
+                    textos y participar con los apoyos que cada persona necesita.
+                </p>
+                <div class="pills">
+                    <span class="pill">
+                        6 subbloques
+                    </span>
+                    <span class="pill">
+                        3 niveles
+                    </span>
+                    <span class="pill">
+                        Pantalla · Cuaderno · Conversación
+                    </span>
+                </div>
+            </section>
+            <nav class="index" aria-label="Contenido del bloque">
+                <a href="#aproximacion-lenguaje-escrito">
+                    <small>
+                        3.1 · Aproximación al lenguaje escrito
+                    </small>
+                    Descubro para qué sirve escribir
+                </a>
+                <a href="#conciencia-fonologica">
+                    <small>
+                        3.2 · Conciencia fonológica
+                    </small>
+                    Juego con palabras y sonidos
+                </a>
+                <a href="#aprendizaje-codigo-escrito">
+                    <small>
+                        3.3 · Aprendizaje del código escrito
+                    </small>
+                    Relaciono sonidos, letras y palabras
+                </a>
+                <a href="#precision-fluidez-lectora">
+                    <small>
+                        3.4 · Precisión y fluidez lectora
+                    </small>
+                    Leo con precisión y sentido
+                </a>
+                <a href="#comprension-lectora">
+                    <small>
+                        3.5 · Comprensión lectora
+                    </small>
+                    Leo y comprendo los mensajes
+                </a>
+                <a href="#escritura-produccion-textos">
+                    <small>
+                        3.6 · Escritura y producción de textos
+                    </small>
+                    Escribo para comunicar
+                </a>
+            </nav>
+            <details class="guide">
+                <summary>
+                    Cómo utilizar estas actividades
+                </summary>
+                <p>
+                    Elige el subbloque y el nivel de la actividad. Los niveles no clasifican al alumnado. Los
+                    apoyos pueden mantenerse en todos ellos. No es necesario completar todo en una sesión.
+                </p>
+                <p>
+                    En iniciación, el docente puede leer la consigna y modelar las opciones. Los dibujos son
+                    apoyos visuales sencillos; pueden sustituirse por fotografías u otros símbolos familiares.
+                    No se requiere leer ni escribir para responder señalando.
+                </p>
+                <p>
+                    Las propuestas de cuaderno también pueden resolverse oralmente, con objetos, dibujos,
+                    gestos o el comunicador habitual. Respeta la edad, los intereses y el tiempo de respuesta.
+                </p>
+                <p>
+                    No hay cronómetro, puntuación ni grabación del alumnado. Las respuestas se reinician al
+                    recargar. Los audios opcionales todavía no están incorporados: los guiones permiten
+                    trabajar con lectura del docente.
+                </p>
+            </details>
+            <details class="guide">
+                <summary>
+                    Apoyos para leer y escribir
+                </summary>
+                <p>
+                    El docente puede leer todas las consignas y nombrar las opciones. En conciencia
+                    fonológica, lo importante es escuchar y manipular sonidos: no es necesario leer las
+                    palabras de la pantalla.
+                </p>
+                <p>
+                    En código escrito y fluidez, selecciona letras y palabras previamente enseñadas. Las
+                    tareas de elección sirven para practicar, pero no sustituyen la observación de la lectura.
+                </p>
+                <p>
+                    En comprensión, distingue si el alumno ha leído el texto o si otra persona se lo ha leído.
+                    Ambas condiciones permiten trabajar el significado, pero no muestran lo mismo sobre la
+                    lectura autónoma.
+                </p>
+                <p>
+                    Las actividades iniciales no son requisitos que deban dominarse todos a una misma edad.
+                    Adapta los textos y los dibujos a la edad, los intereses y las necesidades de cada
+                    persona.
+                </p>
+            </details>
+            <div class="tools" role="group" aria-label="Ajustes de lectura">
+                <label for="level-filter">
+                    Mostrar nivel:
+                </label>
+                <select id="level-filter">
+                    <option value="all">
+                        Todos
+                    </option>
+                    <option value="1">
+                        1 · Iniciación
+                    </option>
+                    <option value="2">
+                        2 · Desarrollo
+                    </option>
+                    <option value="3">
+                        3 · Profundización
+                    </option>
+                </select>
+                <button id="text-size" type="button" aria-pressed="false">
+                    Texto grande
+                </button>
+                <button id="focus-mode" type="button" aria-pressed="false">
+                    Reducir distracciones
+                </button>
+            </div>
+            <noscript>
+                <p class="note">
+                    Las actividades de cuaderno y los guiones están disponibles. Para usar las actividades
+                    interactivas, activa JavaScript.
+                </p>
+            </noscript>
+            <!-- SUBBLOQUE 3.1: Aproximación al lenguaje escrito -->
+            <section class="block" id="aproximacion-lenguaje-escrito" aria-labelledby="heading-1">
+                <h2 class="section-heading" id="heading-1">
+                    3.1. Descubro para qué sirve escribir
+                </h2>
+                <p>
+                    La escritura nos ayuda a recordar, informar y compartir ideas. Hay palabras en los libros,
+                    las etiquetas, los carteles y los mensajes que usamos cada día.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Una lista nos ayuda a recordar qué comprar. Un cartel puede indicar dónde está la
+                        biblioteca.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Busco un libro
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-1" aria-labelledby="exercise-1-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-1">
+                                    Busco un libro
+                                </h4>
+                                <p>
+                                    ¿Dónde puedes encontrar un cuento escrito? Señala una imagen.
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-1-1.mp3.
+                     Activar la clave "1-1" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="1-1">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Busco un libro"
+                                        data-src="/media/al/al-b3-1-1.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            ¿Dónde puedes encontrar un cuento escrito? Señala una imagen.
+                                            Pelota. Libro abierto.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Pelota
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M40 20Q24 9 8 17v45q18-8 32 3 14-11 32-3V17q-16-8-32 3Z" fill="#c8deff">
+                                            </path>
+                                            <path d="M40 20v45M16 27l16 2M16 37l16 2M48 29l16-2M48 39l16-2">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Libro abierto
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Explora un libro y señala su portada.
+                                    </li>
+                                    <li>
+                                        Busca tu nombre entre dos tarjetas con ayuda si la necesitas.
+                                    </li>
+                                    <li>
+                                        Distingue un dibujo de una palabra en una etiqueta.
+                                    </li>
+                                    <li>
+                                        Elige un cuento para que alguien lo lea contigo.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — La función de una lista
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-2" aria-labelledby="exercise-1-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-2">
+                                    La función de una lista
+                                </h4>
+                                <p>
+                                    Tienes que recordar pan, leche y peras. ¿Qué texto te ayuda a comprarlo?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-1-2.mp3.
+                     Activar la clave "1-2" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="1-2">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de La función de una lista"
+                                        data-src="/media/al/al-b3-1-2.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Tienes que recordar pan, leche y peras. ¿Qué texto te ayuda a
+                                            comprarlo? Una lista de la compra.. Un cuento de aventuras.. Una
+                                            invitación de cumpleaños..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Una lista de la compra.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Un cuento de aventuras.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Una invitación de cumpleaños.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Haz una lista de tres materiales mediante dibujos o palabras.
+                                    </li>
+                                    <li>
+                                        Busca un cartel y explica para qué sirve.
+                                    </li>
+                                    <li>
+                                        Compara una nota y un cuento: ¿qué comunica cada uno?
+                                    </li>
+                                    <li>
+                                        Escribe o compón tu nombre para identificar un trabajo.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Elegir el tipo de texto
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="1-3" aria-labelledby="exercise-1-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-1-3">
+                                    Elegir el tipo de texto
+                                </h4>
+                                <p>
+                                    Quieres explicar los pasos de un juego a otra clase. ¿Qué texto conviene
+                                    preparar?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-1-3.mp3.
+                     Activar la clave "1-3" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="1-3">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Elegir el tipo de texto"
+                                        data-src="/media/al/al-b3-1-3.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Quieres explicar los pasos de un juego a otra clase. ¿Qué texto
+                                            conviene preparar? Un listado de nombres sin explicación.. Un
+                                            texto de instrucciones.. Una etiqueta con un precio..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Un listado de nombres sin explicación.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Un texto de instrucciones.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Una etiqueta con un precio.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Elige el tipo de texto para invitar a una actividad y explica por qué.
+                                    </li>
+                                    <li>
+                                        Identifica quién escribe y a quién se dirige una nota.
+                                    </li>
+                                    <li>
+                                        Compara dos carteles que informen sobre el mismo evento.
+                                    </li>
+                                    <li>
+                                        Prepara un mensaje breve con una finalidad real.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Busca un texto real del colegio y utilízalo: consultar un cartel, identificar un
+                        material o dejar una nota. Respeta la edad y los intereses al elegir los ejemplos.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He practicado una actividad de lectura o escritura con mis apoyos.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 3.2: Conciencia fonológica -->
+            <section class="block" id="conciencia-fonologica" aria-labelledby="heading-2">
+                <h2 class="section-heading" id="heading-2">
+                    3.2. Juego con palabras y sonidos
+                </h2>
+                <p>
+                    Escuchamos las palabras y descubrimos sus partes. Podemos reconocer rimas, separar sílabas
+                    y jugar con sonidos sin necesidad de leer letras.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Al decir «mesa» despacio escuchamos dos sílabas: me-sa. Podemos acompañarlas con dos
+                        fichas o dos golpes suaves.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Contamos sílabas
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-1" aria-labelledby="exercise-2-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-1">
+                                    Contamos sílabas
+                                </h4>
+                                <p>
+                                    Escucha «mesa». Di sus partes o señálalas con fichas. ¿Cuántas sílabas
+                                    tiene?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-2-1.mp3.
+                     Activar la clave "2-1" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="2-1">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Contamos sílabas"
+                                        data-src="/media/al/al-b3-2-1.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Escucha: mesa. [Pausa]. Me-sa. [Pausa]. ¿Cuántas sílabas tiene?
+                                            Elige un punto para una sílaba o dos puntos para dos sílabas.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="13" fill="#5367a5">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Una sílaba
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="22" cy="40" r="12" fill="#5367a5">
+                                            </circle>
+                                            <circle cx="58" cy="40" r="12" fill="#5367a5">
+                                            </circle>
+                                        </svg>
+                                        <span>
+                                            Dos sílabas
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Escucha «sol» y represéntalo con una ficha.
+                                    </li>
+                                    <li>
+                                        Separa «casa» en sílabas usando dos fichas.
+                                    </li>
+                                    <li>
+                                        Escucha «gato» y «pato»: observa que riman.
+                                    </li>
+                                    <li>
+                                        Propón una palabra conocida y separa sus sílabas con ayuda.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Quitamos una sílaba
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-2" aria-labelledby="exercise-2-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-2">
+                                    Quitamos una sílaba
+                                </h4>
+                                <p>
+                                    Escucha «zapato». Si quitamos la primera sílaba, «za», ¿qué queda?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-2-2.mp3.
+                     Activar la clave "2-2" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="2-2">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Quitamos una sílaba"
+                                        data-src="/media/al/al-b3-2-2.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Escucha: zapato. Za-pa-to. Si quitamos la primera sílaba, za, ¿qué
+                                            queda? Escucha las opciones: pato; sapo; zapato.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Pato.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Sapo.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Zapato.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Cuenta las sílabas de «pelota».
+                                    </li>
+                                    <li>
+                                        Une las sílabas ca y sa y di la palabra.
+                                    </li>
+                                    <li>
+                                        Quita la primera sílaba de «camisa»: ¿qué queda?
+                                    </li>
+                                    <li>
+                                        Busca dos palabras que empiecen por la sílaba ma.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Cambiamos un sonido
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="2-3" aria-labelledby="exercise-2-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-2-3">
+                                    Cambiamos un sonido
+                                </h4>
+                                <p>
+                                    Escucha «pato». Si cambiamos su primer sonido /p/ por /g/, ¿qué palabra
+                                    obtenemos?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-2-3.mp3.
+                     Activar la clave "2-3" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="2-3">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Cambiamos un sonido"
+                                        data-src="/media/al/al-b3-2-3.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Escucha: pato. Cambia el primer sonido, /p/, por /g/. [El
+                                            especialista produce los sonidos brevemente, sin decir pe o ge y
+                                            sin añadir vocales]. ¿Qué palabra queda? Opciones: palo; gato;
+                                            pato.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Palo.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Gato.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Pato.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Identifica el primer sonido de «mesa».
+                                    </li>
+                                    <li>
+                                        Di «sol» separando sus sonidos con ayuda del docente.
+                                    </li>
+                                    <li>
+                                        Cambia /p/ por /g/ al inicio de «pato».
+                                    </li>
+                                    <li>
+                                        Compara «pato» y «palo»: indica qué sonido cambia.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Juega oralmente con palabras familiares. El adulto nombra las opciones y modela los
+                        sonidos, sin confundir el sonido de una letra con su nombre. No es necesario escribir
+                        las respuestas.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He practicado una actividad de lectura o escritura con mis apoyos.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 3.3: Aprendizaje del código escrito -->
+            <section class="block" id="aprendizaje-codigo-escrito" aria-labelledby="heading-3">
+                <h2 class="section-heading" id="heading-3">
+                    3.3. Relaciono sonidos, letras y palabras
+                </h2>
+                <p>
+                    Relacionamos sonidos y letras para leer y escribir. Practicamos con las correspondencias
+                    que ya se han enseñado y añadimos otras de forma gradual.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Las letras m y a forman «ma». Si juntamos «ma» y «pa», podemos leer «mapa».
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Encuentro la letra
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-1" aria-labelledby="exercise-3-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-1">
+                                    Encuentro la letra
+                                </h4>
+                                <p>
+                                    Escucha el sonido inicial de «mesa»: /m/. ¿Qué letra lo representa?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-3-1.mp3.
+                     Activar la clave "3-1" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="3-1">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Encuentro la letra"
+                                        data-src="/media/al/al-b3-3-1.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Escucha el sonido inicial de mesa: /m/. [Prolongar suavemente el
+                                            sonido, sin decir eme]. Señala la letra que representa ese sonido.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        s
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        m
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Busca la letra m entre dos letras móviles.
+                                    </li>
+                                    <li>
+                                        Relaciona una letra enseñada con su sonido.
+                                    </li>
+                                    <li>
+                                        Forma ma con letras móviles y lee con ayuda.
+                                    </li>
+                                    <li>
+                                        Busca una letra conocida en tu nombre.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Construyo una palabra
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-2" aria-labelledby="exercise-3-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-2">
+                                    Construyo una palabra
+                                </h4>
+                                <p>
+                                    Ordena estas sílabas para formar la palabra «paloma». Pulsa en el orden
+                                    adecuado.
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-3-2.mp3.
+                     Activar la clave "3-2" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="3-2">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Construyo una palabra"
+                                        data-src="/media/al/al-b3-3-2.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Ordena estas sílabas para formar la palabra «paloma». Pulsa en el
+                                            orden adecuado. pa. lo. ma.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        ma
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        pa
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        lo
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Forma «mapa» con letras o sílabas móviles.
+                                    </li>
+                                    <li>
+                                        Lee «mesa» y «masa» y señala qué letra cambia.
+                                    </li>
+                                    <li>
+                                        Escribe una palabra dictada con correspondencias ya trabajadas.
+                                    </li>
+                                    <li>
+                                        Relaciona tres palabras conocidas con sus objetos o imágenes.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Leo todas las letras
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="3-3" aria-labelledby="exercise-3-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-3-3">
+                                    Leo todas las letras
+                                </h4>
+                                <p>
+                                    Compara «plato» y «pato». ¿Qué letra aparece en plato y no aparece en
+                                    pato?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-3-3.mp3.
+                     Activar la clave "3-3" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="3-3">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Leo todas las letras"
+                                        data-src="/media/al/al-b3-3-3.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Compara «plato» y «pato». ¿Qué letra aparece en plato y no aparece
+                                            en pato? La t.. La l.. La o..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        La t.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        La l.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        La o.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Lee «plato» y «pato» despacio y compara sus letras.
+                                    </li>
+                                    <li>
+                                        Forma una palabra con un grupo consonántico ya enseñado.
+                                    </li>
+                                    <li>
+                                        Escribe una frase breve utilizando dos palabras practicadas.
+                                    </li>
+                                    <li>
+                                        Revisa si has añadido, cambiado u omitido alguna letra.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Lee o compón una palabra necesaria en una actividad real. Ajusta las letras y
+                        estructuras a lo trabajado: estos niveles no son un método cerrado ni una secuencia
+                        obligatoria.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He practicado una actividad de lectura o escritura con mis apoyos.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 3.4: Precisión y fluidez lectora -->
+            <section class="block" id="precision-fluidez-lectora" aria-labelledby="heading-4">
+                <h2 class="section-heading" id="heading-4">
+                    3.4. Leo con precisión y sentido
+                </h2>
+                <p>
+                    Leer con soltura incluye reconocer las palabras, respetar las pausas y comprender. Puedes
+                    releer, seguir el texto con una guía y escuchar un modelo. No hay cronómetro.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        En «Lola lee. Después dibuja», el punto marca el final de una idea. Hacemos una pausa
+                        antes de continuar.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Me fijo en la palabra
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-1" aria-labelledby="exercise-4-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-1">
+                                    Me fijo en la palabra
+                                </h4>
+                                <p>
+                                    Observa el modelo «sol». Elige la misma palabra. Después intenta leerla
+                                    con tu docente.
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-4-1.mp3.
+                     Activar la clave "4-1" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="4-1">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Me fijo en la palabra"
+                                        data-src="/media/al/al-b3-4-1.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Sol. [Pausa para mirar y leer de nuevo].
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        los
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        sol
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Lee dos palabras conocidas con ayuda si la necesitas.
+                                    </li>
+                                    <li>
+                                        Sigue una palabra con el dedo mientras la lees.
+                                    </li>
+                                    <li>
+                                        Escucha un modelo y vuelve a leer esa misma palabra.
+                                    </li>
+                                    <li>
+                                        Comprueba con el docente si has leído todas las letras.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Una pausa para comprender
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-2" aria-labelledby="exercise-4-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-2">
+                                    Una pausa para comprender
+                                </h4>
+                                <p>
+                                    Lee «Lola mira el mapa. Después busca el parque». ¿Dónde termina la
+                                    primera oración?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-4-2.mp3.
+                     Activar la clave "4-2" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="4-2">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Una pausa para comprender"
+                                        data-src="/media/al/al-b3-4-2.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Lola mira el mapa. [Pausa natural de punto]. Después busca el
+                                            parque.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Después de Lola.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Después de mapa.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Después de busca.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Escucha un modelo de lectura del texto.
+                                    </li>
+                                    <li>
+                                        Lee de nuevo respetando el punto.
+                                    </li>
+                                    <li>
+                                        Agrupa «Lola mira el mapa» sin separar cada sílaba, cuando puedas.
+                                    </li>
+                                    <li>
+                                        Explica qué hace Lola para comprobar que has comprendido.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Leo un diálogo
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="4-3" aria-labelledby="exercise-4-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-4-3">
+                                    Leo un diálogo
+                                </h4>
+                                <p>
+                                    En el diálogo «—¿Vienes al huerto? —Sí, llevo la regadera», ¿qué
+                                    intervención hace una pregunta?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-4-3.mp3.
+                     Activar la clave "4-3" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="4-3">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Leo un diálogo"
+                                        data-src="/media/al/al-b3-4-3.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            ¿Vienes al huerto? [Entonación interrogativa y pausa]. Sí, llevo
+                                            la regadera.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Sí, llevo la regadera.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        ¿Vienes al huerto?
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Las dos son preguntas.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Lee el diálogo con otra persona, alternando las intervenciones.
+                                    </li>
+                                    <li>
+                                        Practica la entonación después de escuchar un modelo.
+                                    </li>
+                                    <li>
+                                        Relee un texto breve atendiendo a precisión, pausas y sentido.
+                                    </li>
+                                    <li>
+                                        Explica qué mejoró al releer y qué apoyo sigue siendo útil.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Elige un texto breve adecuado a tu edad e intereses. El docente observa la lectura
+                        real: la corrección de estas preguntas no evalúa por sí sola fluidez ni pronunciación.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He practicado una actividad de lectura o escritura con mis apoyos.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 3.5: Comprensión lectora -->
+            <section class="block" id="comprension-lectora" aria-labelledby="heading-5">
+                <h2 class="section-heading" id="heading-5">
+                    3.5. Leo y comprendo los mensajes
+                </h2>
+                <p>
+                    Buscamos información, relacionamos ideas y comprobamos qué significa el texto. Puedes leer
+                    con ayuda, escuchar una lectura o usar imágenes. Indica qué apoyo has utilizado.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        En «Lola lleva un vaso», la respuesta a «¿qué lleva?» aparece en el texto: un vaso.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Relaciono texto e imagen
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-1" aria-labelledby="exercise-5-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-1">
+                                    Relaciono texto e imagen
+                                </h4>
+                                <p>
+                                    Lee con ayuda: «Lola lleva un vaso». ¿Qué lleva Lola?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-5-1.mp3.
+                     Activar la clave "5-1" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="5-1">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Relaciono texto e imagen"
+                                        data-src="/media/al/al-b3-5-1.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Lee con ayuda: «Lola lleva un vaso». ¿Qué lleva Lola? Un vaso. Una
+                                            pelota.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M20 15h40l-5 52H25Z" fill="#d9f3ff">
+                                            </path>
+                                            <path d="M23 37h34M28 20l3 38">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Un vaso
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="40" cy="40" r="28" fill="#fff">
+                                            </circle>
+                                            <path d="m40 27 13 9-5 15H32l-5-15Z" fill="#334155">
+                                            </path>
+                                            <path d="m40 12 0 15M13 32l14 4M22 62l10-11M58 62 48 51M67 32l-14 4">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Una pelota
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Relaciona una palabra conocida con una imagen.
+                                    </li>
+                                    <li>
+                                        Escucha o lee una frase y señala de quién habla.
+                                    </li>
+                                    <li>
+                                        Dibuja lo que ocurre en una frase breve.
+                                    </li>
+                                    <li>
+                                        Indica qué parte del texto te ayudó a responder.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Busco una información
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-2" aria-labelledby="exercise-5-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-2">
+                                    Busco una información
+                                </h4>
+                                <p>
+                                    Lee: «La biblioteca abre el martes por la tarde. Ana irá después de comer
+                                    y llevará su carné». ¿Qué llevará Ana?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-5-2.mp3.
+                     Activar la clave "5-2" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="5-2">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Busco una información"
+                                        data-src="/media/al/al-b3-5-2.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Lee: «La biblioteca abre el martes por la tarde. Ana irá después
+                                            de comer y llevará su carné». ¿Qué llevará Ana? Una pelota.. Su
+                                            carné.. Una regadera..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Una pelota.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Su carné.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Una regadera.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Indica cuándo abre la biblioteca según el texto.
+                                    </li>
+                                    <li>
+                                        Explica qué hará Ana después de comer.
+                                    </li>
+                                    <li>
+                                        Formula una pregunta cuya respuesta aparezca escrita.
+                                    </li>
+                                    <li>
+                                        Señala una pregunta que el texto no permita responder: por ejemplo, la
+                                        edad de Ana.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Deduzco con pistas
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="5-3" aria-labelledby="exercise-5-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-5-3">
+                                    Deduzco con pistas
+                                </h4>
+                                <p>
+                                    Lee: «Nora salió al patio. Vio que el suelo estaba mojado y guardó la tiza
+                                    para otro momento». ¿Por qué pudo guardar la tiza?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-5-3.mp3.
+                     Activar la clave "5-3" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="5-3">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Deduzco con pistas"
+                                        data-src="/media/al/al-b3-5-3.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Lee: «Nora salió al patio. Vio que el suelo estaba mojado y guardó
+                                            la tiza para otro momento». ¿Por qué pudo guardar la tiza? Porque
+                                            el suelo mojado dificultaba dibujar con ella.. Porque el texto
+                                            dice que se rompió.. Porque no sabía dónde estaba el patio..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Porque el suelo mojado dificultaba dibujar con ella.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        Porque el texto dice que se rompió.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Porque no sabía dónde estaba el patio.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Distingue lo que el texto dice de lo que tú deduces.
+                                    </li>
+                                    <li>
+                                        Resume el texto en una oración.
+                                    </li>
+                                    <li>
+                                        Explica qué pista apoya tu inferencia.
+                                    </li>
+                                    <li>
+                                        Escribe o comunica otra pregunta y señala si se puede responder con el
+                                        texto.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Utiliza un texto funcional para hacer algo: seguir una instrucción, consultar un
+                        horario o preparar un material. Distingue la comprensión con lectura propia de la
+                        comprensión mediante lectura de otra persona.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He practicado una actividad de lectura o escritura con mis apoyos.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- SUBBLOQUE 3.6: Escritura y producción de textos -->
+            <section class="block" id="escritura-produccion-textos" aria-labelledby="heading-6">
+                <h2 class="section-heading" id="heading-6">
+                    3.6. Escribo para comunicar
+                </h2>
+                <p>
+                    Escribir permite dejar un mensaje para otra persona. Puedes dibujar, usar letras móviles,
+                    teclear o dictar a un adulto. Primero piensa qué quieres comunicar y después revisa.
+                </p>
+                <div class="example">
+                    <strong>
+                        Observamos un ejemplo
+                    </strong>
+                    <p>
+                        Para pedir un material puedo escribir: «Necesito una regla, por favor». El mensaje
+                        tiene una finalidad y alguien que lo recibe.
+                    </p>
+                </div>
+                <details class="level" data-level="1" open>
+                    <summary>
+                        Nivel 1 · Iniciación — Elijo mi mensaje
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-1" aria-labelledby="exercise-6-1">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-1">
+                                    Elijo mi mensaje
+                                </h4>
+                                <p>
+                                    Elige un mensaje que quieras componer. Todas las opciones son válidas.
+                                    Puedes copiarlo, usar letras móviles o dictarlo.
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-6-1.mp3.
+                     Activar la clave "6-1" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="6-1">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Elijo mi mensaje"
+                                        data-src="/media/al/al-b3-6-1.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Elige un mensaje que quieras componer. Todas las opciones son
+                                            válidas. Puedes copiarlo, usar letras móviles o dictarlo. Hola.
+                                            Ayuda. No quiero.
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M24 47V28q0-6 6-2V15q1-6 7-2V10q4-6 7 0v9q7-6 7 1v22l5-8q7-5 9 2L54 60q-9 15-24 4L18 50q-5-9 2-10Z"
+                                                fill="#f6cb9b">
+                                            </path>
+                                            <path d="M9 23 5 13M63 16l7-8">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Hola
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="m10 28 17-9 14 9 13-7 17 10-18 28-9 7-24-15Z" fill="#f6cb9b">
+                                            </path>
+                                            <path d="m41 28-12 13q0 8 9 4l8-5 16 12M20 51l7-9M27 57l7-10M35 62l7-10">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            Ayuda
+                                        </span>
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        <svg
+                                            viewbox="0 0 80 80"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill="none"
+                                            stroke="#243748"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M23 43V25q0-7 6-3V13q0-7 7-2V8q4-6 8 0v7q7-6 7 2v23l6-9q6-6 10 0L55 59q-5 13-19 9L19 52q-7-13 1-14Z"
+                                                fill="#f6cb9b">
+                                            </path>
+                                        </svg>
+                                        <span>
+                                            No quiero
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                                <div class="draft-box">
+                                    <label for="draft-1">
+                                        <strong>
+                                            Compón tu mensaje
+                                        </strong>
+                                    </label>
+                                    <textarea
+                                        id="draft-1"
+                                        rows="5"
+                                        spellcheck="true"
+                                        aria-describedby="draft-note-1"
+                                        placeholder="Puedes escribir aquí con ayuda si la necesitas.">
+                                    </textarea>
+                                    <p id="draft-note-1" class="audio-hint">
+                                        Espacio de práctica. No se envía ni se guarda al recargar. También
+                                        puedes utilizar el cuaderno, letras móviles o dictar el mensaje.
+                                    </p>
+                                    <button type="button" class="review-draft" data-draft="draft-1">
+                                        Revisar mi mensaje
+                                    </button>
+                                    <p class="draft-feedback" role="status" aria-live="polite">
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Elige a quién quieres dirigir un mensaje.
+                                    </li>
+                                    <li>
+                                        Compón tu nombre con letras móviles, teclado o escritura.
+                                    </li>
+                                    <li>
+                                        Acompaña un dibujo con una palabra o un mensaje dictado.
+                                    </li>
+                                    <li>
+                                        Practica un trazo útil para tu escritura solo si forma parte de tus
+                                        objetivos.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="2">
+                    <summary>
+                        Nivel 2 · Desarrollo — Ordeno una frase
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-2" aria-labelledby="exercise-6-2">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-2">
+                                    Ordeno una frase
+                                </h4>
+                                <p>
+                                    Ordena los fragmentos para escribir una petición.
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-6-2.mp3.
+                     Activar la clave "6-2" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="6-2">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Ordeno una frase"
+                                        data-src="/media/al/al-b3-6-2.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Ordena los fragmentos para escribir una petición. Necesito. una
+                                            regla,. por favor..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        por favor.
+                                    </button>
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        Necesito
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        una regla,
+                                    </button>
+                                </div>
+                                <p class="sequence-answer" aria-live="polite">
+                                    Tu secuencia aparecerá aquí.
+                                </p>
+                                <button type="button" class="check">
+                                    Comprobar orden
+                                </button>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                                <div class="draft-box">
+                                    <label for="draft-2">
+                                        <strong>
+                                            Escribe una nota para pedir un material
+                                        </strong>
+                                    </label>
+                                    <textarea
+                                        id="draft-2"
+                                        rows="5"
+                                        spellcheck="true"
+                                        aria-describedby="draft-note-2"
+                                        placeholder="Puedes escribir aquí con ayuda si la necesitas.">
+                                    </textarea>
+                                    <p id="draft-note-2" class="audio-hint">
+                                        Espacio de práctica. No se envía ni se guarda al recargar. También
+                                        puedes utilizar el cuaderno, letras móviles o dictar el mensaje.
+                                    </p>
+                                    <button type="button" class="review-draft" data-draft="draft-2">
+                                        Revisar mi mensaje
+                                    </button>
+                                    <p class="draft-feedback" role="status" aria-live="polite">
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Escribe o dicta una nota breve para pedir un material.
+                                    </li>
+                                    <li>
+                                        Separa las palabras de una frase con espacios.
+                                    </li>
+                                    <li>
+                                        Revisa la mayúscula inicial y el punto final.
+                                    </li>
+                                    <li>
+                                        Lee la nota a otra persona y comprueba si entiende la petición.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <details class="level" data-level="3">
+                    <summary>
+                        Nivel 3 · Profundización — Reviso una invitación
+                    </summary>
+                    <div class="level-inner">
+                        <div class="activities">
+                            <article class="exercise" data-exercise="6-3" aria-labelledby="exercise-6-3">
+                                <span class="type">
+                                    Actividad interactiva
+                                </span>
+                                <h4 id="exercise-6-3">
+                                    Reviso una invitación
+                                </h4>
+                                <p>
+                                    Tu invitación dice: «Ven a mi taller el sábado». ¿Qué información ayudaría
+                                    a asistir?
+                                </p>
+                                <!-- AUDIO OPCIONAL: subir al repositorio /media/al/al-b3-6-3.mp3.
+                     Activar la clave "6-3" en AUDIO_DISPONIBLES al final del archivo.
+                     No grabar las indicaciones entre corchetes del guion. -->
+                                <div class="audio-box" data-audio-key="6-3">
+                                    <audio
+                                        controls
+                                        preload="none"
+                                        hidden
+                                        aria-label="Audio de Reviso una invitación"
+                                        data-src="/media/al/al-b3-6-3.mp3">
+                                    </audio>
+                                    <p class="audio-hint">
+                                        Consigna con lectura del docente. Audio opcional pendiente.
+                                    </p>
+                                    <details>
+                                        <summary>
+                                            Guion para lectura o grabación
+                                        </summary>
+                                        <p>
+                                            Tu invitación dice: «Ven a mi taller el sábado». ¿Qué información
+                                            ayudaría a asistir? La hora y el lugar del taller.. El color
+                                            favorito de quien escribe.. Una lista de animales sin relación..
+                                        </p>
+                                    </details>
+                                </div>
+                                <div class="options">
+                                    <button type="button" data-option="0" aria-pressed="false">
+                                        La hora y el lugar del taller.
+                                    </button>
+                                    <button type="button" data-option="1" aria-pressed="false">
+                                        El color favorito de quien escribe.
+                                    </button>
+                                    <button type="button" data-option="2" aria-pressed="false">
+                                        Una lista de animales sin relación.
+                                    </button>
+                                </div>
+                                <p class="feedback" role="status" aria-live="polite">
+                                </p>
+                                <button class="reset" type="button">
+                                    Empezar de nuevo
+                                </button>
+                                <div class="draft-box">
+                                    <label for="draft-3">
+                                        <strong>
+                                            Escribe tu invitación
+                                        </strong>
+                                    </label>
+                                    <textarea
+                                        id="draft-3"
+                                        rows="5"
+                                        spellcheck="true"
+                                        aria-describedby="draft-note-3"
+                                        placeholder="Puedes escribir aquí con ayuda si la necesitas.">
+                                    </textarea>
+                                    <p id="draft-note-3" class="audio-hint">
+                                        Espacio de práctica. No se envía ni se guarda al recargar. También
+                                        puedes utilizar el cuaderno, letras móviles o dictar el mensaje.
+                                    </p>
+                                    <button type="button" class="review-draft" data-draft="draft-3">
+                                        Revisar mi mensaje
+                                    </button>
+                                    <p class="draft-feedback" role="status" aria-live="polite">
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="paper">
+                                <span class="type">
+                                    Actividad oral o de cuaderno
+                                </span>
+                                <h4>
+                                    Ahora lo practicamos juntos
+                                </h4>
+                                <p>
+                                    Responde hablando, señalando, dibujando, escribiendo o con tu comunicador.
+                                </p>
+                                <ol type="a">
+                                    <li>
+                                        Planifica una invitación: destinatario, actividad, fecha, hora y
+                                        lugar.
+                                    </li>
+                                    <li>
+                                        Escribe un primer borrador con el apoyo que necesites.
+                                    </li>
+                                    <li>
+                                        Revisa si falta información y corrige la ortografía trabajada.
+                                    </li>
+                                    <li>
+                                        Prepara la versión final y comprueba que comunica lo que querías.
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+                    </div>
+                </details>
+                <div class="transfer">
+                    <strong>
+                        Lo utilizamos en una situación real
+                    </strong>
+                    <p>
+                        Crea un texto con destinatario y propósito reales. Diferencia la composición de ideas
+                        de la escritura manual: puedes trabajar el mensaje con teclado o dictado aunque
+                        necesites apoyo motor.
+                    </p>
+                </div>
+                <details class="guide review">
+                    <summary>
+                        Revisamos cómo ha ido
+                    </summary>
+                    <p>
+                        Valora con el docente lo que has practicado hoy. Puedes marcar más de una opción.
+                    </p>
+                    <label>
+                        <input type="checkbox">
+                        He practicado una actividad de lectura o escritura con mis apoyos.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        He utilizado un apoyo que me ayuda.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Quiero seguir practicando.
+                    </label>
+                    <p>
+                        Para el docente: anota fuera de esta página la situación, la respuesta observada y los
+                        apoyos utilizados. No uses el resultado de una actividad aislada para asignar un nivel
+                        global.
+                    </p>
+                </details>
+            </section>
+            <!-- Orientaciones técnicas separadas de las actividades del alumnado. -->
+            <details class="guide" id="guia-audios">
+                <summary>
+                    Para el profesorado: incorporar audios y adaptar materiales
+                </summary>
+                <p>
+                    Las 18 actividades interactivas tienen un guion y una ruta preparada en
+                    <code>
+/media/al
+                    </code>
+                    . El nombre sigue el patrón
+                    <code>
+al-b3-SUBBLOQUE-NIVEL.mp3
+                    </code>
+                    ; por ejemplo,
+                    <code>
+/media/al/al-b3-2-1.mp3
+                    </code>
+                    .
+                </p>
+                <p>
+                    Graba el guion con voz clara y pausas naturales. En los ejercicios de sonidos, AL
+                    selecciona y supervisa el modelo; las indicaciones entre corchetes no se leen.
+                </p>
+                <p>
+                    Sube el MP3 y cambia a
+                    <code>
+true
+                    </code>
+                    su clave en
+                    <code>
+AUDIO_DISPONIBLES
+                    </code>
+                    . Si no existe una grabación, deja
+                    <code>
+false
+                    </code>
+                    : el recurso sigue funcionando con lectura del docente y no solicita archivos
+                    inexistentes.
+                </p>
+                <pre>
+                    <code>
+// Ejemplo: habilitar el audio del subbloque 3.2, nivel 1.
+"2-1": true
+                        &lt;
+audio controls preload="none"
+                        &gt;
+                        &lt;
+source src="/media/al/al-b3-2-1.mp3" type="audio/mpeg"
+                        &gt;
+    Tu navegador no admite audio. Lee el guion de apoyo.
+                        &lt;
+/audio
+                        &gt;
+                    </code>
+                </pre>
+                <p>
+                    La reproducción es manual y se pausa el audio anterior al iniciar otro. Si falla un
+                    archivo, se ofrece el guion. No se usa voz sintética como modelo de articulación.
+                </p>
+                <p>
+                    Los dibujos de elección son SVG integrados y no requieren descargas. Adapta el número de
+                    opciones, el vocabulario y los símbolos a cada persona. Las respuestas abiertas y la
+                    producción oral necesitan observación profesional.
+                </p>
+            </details>
+        </main>
+        <footer>
+            CEIP Joaquín Tena Artigas · Apoyo y Orientación · PT y AL
+        </footer>
+        <script>
+        'use strict';
+        // CONFIGURACIÓN DE AUDIOS. Activar solo después de subir cada MP3.
+        const AUDIO_DISPONIBLES = {
 
-  <!-- Script común: navegación móvil -->
-  <script src="/js/main.js"></script>
-</body>
+            "1-1": false,
+            "1-2": false,
+            "1-3": false,
+            "2-1": false,
+            "2-2": false,
+            "2-3": false,
+            "3-1": false,
+            "3-2": false,
+            "3-3": false,
+            "4-1": false,
+            "4-2": false,
+            "4-3": false,
+            "5-1": false,
+            "5-2": false,
+            "5-3": false,
+            "6-1": false,
+            "6-2": false,
+            "6-3": false
+
+        };
+        // Datos de corrección: las elecciones personales no se puntúan.
+        const EXERCISES = {
+    "1-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Un libro puede contener un cuento. Podemos explorar sus imágenes y pedir que nos lo lean.",
+        "labels": [
+            "Pelota",
+            "Libro abierto"
+        ]
+    },
+    "1-2": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "Una lista reúne los elementos que necesitas recordar.",
+        "labels": [
+            "Una lista de la compra.",
+            "Un cuento de aventuras.",
+            "Una invitación de cumpleaños."
+        ]
+    },
+    "1-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Las instrucciones explican qué se necesita y qué pasos hay que seguir.",
+        "labels": [
+            "Un listado de nombres sin explicación.",
+            "Un texto de instrucciones.",
+            "Una etiqueta con un precio."
+        ]
+    },
+    "2-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Mesa tiene dos sílabas: me-sa. Cada punto representa una sílaba.",
+        "labels": [
+            "Una sílaba",
+            "Dos sílabas"
+        ]
+    },
+    "2-2": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "Za-pa-to sin za queda pa-to.",
+        "labels": [
+            "Pato.",
+            "Sapo.",
+            "Zapato."
+        ]
+    },
+    "2-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "El cambio del sonido inicial transforma pato en gato.",
+        "labels": [
+            "Palo.",
+            "Gato.",
+            "Pato."
+        ]
+    },
+    "3-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La letra m representa el sonido /m/ al inicio de mesa.",
+        "labels": [
+            "s",
+            "m"
+        ]
+    },
+    "3-2": {
+        "kind": "sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "Pa + lo + ma forman paloma.",
+        "labels": [
+            "pa",
+            "lo",
+            "ma"
+        ]
+    },
+    "3-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Plato contiene una l después de la p. Mirar todas las letras ayuda a distinguir las palabras.",
+        "labels": [
+            "La t.",
+            "La l.",
+            "La o."
+        ]
+    },
+    "4-1": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La palabra del modelo es sol: s-o-l. La coincidencia visual no basta para comprobar la lectura; léela con el docente.",
+        "labels": [
+            "los",
+            "sol"
+        ]
+    },
+    "4-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "El punto después de mapa cierra la primera oración.",
+        "labels": [
+            "Después de Lola.",
+            "Después de mapa.",
+            "Después de busca."
+        ]
+    },
+    "4-3": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "Los signos de interrogación señalan la pregunta. La respuesta afirma que sí y añade información.",
+        "labels": [
+            "Sí, llevo la regadera.",
+            "¿Vienes al huerto?",
+            "Las dos son preguntas."
+        ]
+    },
+    "5-1": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "El texto dice que Lola lleva un vaso. Puedes volver a leerlo o pedir que te lo lean.",
+        "labels": [
+            "Un vaso",
+            "Una pelota"
+        ]
+    },
+    "5-2": {
+        "kind": "quiz",
+        "answer": 1,
+        "explain": "La última parte del texto indica que llevará su carné.",
+        "labels": [
+            "Una pelota.",
+            "Su carné.",
+            "Una regadera."
+        ]
+    },
+    "5-3": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "La humedad del suelo es una pista para deducir una razón posible. El texto no dice que la tiza se rompiera.",
+        "labels": [
+            "Porque el suelo mojado dificultaba dibujar con ella.",
+            "Porque el texto dice que se rompió.",
+            "Porque no sabía dónde estaba el patio."
+        ]
+    },
+    "6-1": {
+        "kind": "choice",
+        "answer": null,
+        "explain": "Ahora compón tu mensaje con el apoyo que necesites y compártelo con alguien.",
+        "labels": [
+            "Hola",
+            "Ayuda",
+            "No quiero"
+        ]
+    },
+    "6-2": {
+        "kind": "sequence",
+        "answer": [
+            0,
+            1,
+            2
+        ],
+        "explain": "La petición queda: «Necesito una regla, por favor».",
+        "labels": [
+            "Necesito",
+            "una regla,",
+            "por favor."
+        ]
+    },
+    "6-3": {
+        "kind": "quiz",
+        "answer": 0,
+        "explain": "La hora y el lugar permiten saber cuándo y dónde asistir.",
+        "labels": [
+            "La hora y el lugar del taller.",
+            "El color favorito de quien escribe.",
+            "Una lista de animales sin relación."
+        ]
+    }
+};
+
+        document.querySelectorAll('[data-exercise]').forEach((exercise) => {
+            const config = EXERCISES[exercise.dataset.exercise];
+            const feedback = exercise.querySelector('.feedback');
+            const buttons = [...exercise.querySelectorAll('[data-option]')];
+            const selected = [];
+            const sequenceOutput = exercise.querySelector('.sequence-answer');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const index = Number(button.dataset.option);
+                    if (config.kind === 'sequence') {
+                        selected.push(index);
+                        button.disabled = true;
+                        button.setAttribute('aria-pressed', 'true');
+                        sequenceOutput.textContent = selected.map((n) => config.labels[n]).join(' → ');
+                        feedback.textContent = '';
+                        const next = buttons.find((item) => !item.disabled);
+                        (next || exercise.querySelector('.check')).focus();
+                        return;
+                    }
+                    buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+                    if (config.kind === 'choice') {
+                        feedback.textContent = 'Has elegido: «' + config.labels[index] + '». ' + config.explain;
+                    } else if (index === config.answer) {
+                        feedback.textContent = 'Sí. ' + config.explain;
+                    } else {
+                        feedback.textContent = 'Vamos a revisarlo. Escucha o lee la consigna otra vez; puedes pedir ayuda y probar otra opción.';
+                    }
+                });
+            });
+
+            const check = exercise.querySelector('.check');
+            if (check) {
+                check.addEventListener('click', () => {
+                    if (selected.length !== config.answer.length) {
+                        feedback.textContent = 'Todavía faltan elementos. Selecciona todos antes de comprobar.';
+                        return;
+                    }
+                    const correct = selected.every((value, i) => value === config.answer[i]);
+                    feedback.textContent = correct
+                        ? 'Sí. ' + config.explain
+                        : 'Revisa el orden con esta pista: ' + config.explain + ' Pulsa «Empezar de nuevo» para probar.';
+                });
+            }
+            exercise.querySelector('.reset').addEventListener('click', () => {
+                selected.length = 0;
+                buttons.forEach((button) => {
+                    button.disabled = false;
+                    button.setAttribute('aria-pressed', 'false');
+                });
+                if (sequenceOutput) sequenceOutput.textContent = 'Tu secuencia aparecerá aquí.';
+                feedback.textContent = 'Puedes empezar otra vez.';
+                buttons[0].focus();
+            });
+        });
+
+        // La escritura libre recibe preguntas de revisión, no una nota automática.
+        document.querySelectorAll('.review-draft').forEach((button) => {
+            button.addEventListener('click', () => {
+                const draft = document.getElementById(button.dataset.draft);
+                const output = button.parentElement.querySelector('.draft-feedback');
+                output.textContent = draft.value.trim()
+                    ? 'Léelo o pide que te lo lean. ¿Se entiende lo que quieres comunicar? ¿Falta información? Revisa con tu docente las letras, los espacios y la puntuación que estás trabajando.'
+                    : 'Puedes empezar con un dibujo, letras móviles, una palabra o un mensaje dictado. Escribe aquí cuando estés preparado.';
+            });
+        });
+
+        // No se descarga audio hasta que se habilita y se solicita su reproducción.
+        document.querySelectorAll('[data-audio-key]').forEach((box) => {
+            if (!AUDIO_DISPONIBLES[box.dataset.audioKey]) return;
+            const audio = box.querySelector('audio');
+            const hint = box.querySelector('.audio-hint');
+            audio.src = audio.dataset.src;
+            audio.hidden = false;
+            hint.textContent = 'Escucha. Puedes pausar o repetir el audio.';
+            audio.addEventListener('play', () => {
+                document.querySelectorAll('audio').forEach((other) => {
+                    if (other !== audio) other.pause();
+                });
+            });
+            audio.addEventListener('error', () => {
+                hint.textContent = 'Este audio no está disponible. Utiliza el guion con el docente.';
+                box.querySelector('details').open = true;
+                audio.hidden = true;
+            });
+        });
+
+        document.getElementById('level-filter').addEventListener('change', (event) => {
+            document.querySelectorAll('.level').forEach((level) => {
+                const show = event.target.value === 'all' || level.dataset.level === event.target.value;
+                level.hidden = !show;
+                if (event.target.value !== 'all' && show) level.open = true;
+                if (!show) level.querySelectorAll('audio').forEach((audio) => audio.pause());
+            });
+        });
+        [['text-size', 'large-text'], ['focus-mode', 'focus-mode']].forEach(([id, className]) => {
+            const button = document.getElementById(id);
+            button.addEventListener('click', () => {
+                const active = document.body.classList.toggle(className);
+                button.setAttribute('aria-pressed', String(active));
+            });
+        });
+        document.querySelectorAll('.level').forEach((level) => {
+            level.addEventListener('toggle', () => {
+                if (!level.open) level.querySelectorAll('audio').forEach((audio) => audio.pause());
+            });
+        });
+    
+        </script>
+    </body>
 </html>
