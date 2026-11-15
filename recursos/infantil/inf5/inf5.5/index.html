@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INF5.5 Juego con números, formas y cantidades: Infantil de 5 años. Clasificación, conteo, reparto, figuras, medidas y tiempo.">
+  <title>INF5.5 · Juego con números, formas y cantidades | CEIP Joaquín Tena Artigas</title>
+  <link rel="icon" type="image/png" href="/img/logo-centro.png"><link rel="stylesheet" href="/css/base.css">
+  <style>
+    /* ======================================================
+       INFANTIL 5 AÑOS · BLOQUE 5 · NÚMEROS, FORMAS Y CANTIDADES
+       Estilos locales; se preservan los de /css/base.css.
+       ====================================================== */
+    .infant-learning {
+      --ink: #24364a;
+      --muted: #52657a;
+      --orange: #ad5435;
+      --orange-soft: #fff0e7;
+      --page: #fffdfa;
+      --green: #006c3c;
+      --border-soft: #eadfd5;
+      color: var(--ink);
+      background: var(--page);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    .infant-learning *, .infant-learning *::before,
+    .infant-learning *::after { box-sizing: border-box; }
+    .infant-learning button { font: inherit; }
+    .infant-learning button:not(:disabled) { cursor: pointer; }
+    .infant-learning a:focus-visible,
+    .infant-learning button:focus-visible,
+    .infant-learning summary:focus-visible,
+    .infant-learning input:focus-visible + label {
+      outline: 3px solid #175ba6;
+      outline-offset: 4px;
+    }
+    .infant-learning .lesson-shell {
+      width: min(94%, 1160px);
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .infant-learning .breadcrumbs { margin-bottom: 20px; }
+    .infant-learning .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .86rem;
+      color: #617084;
+    }
+    .infant-learning .breadcrumbs li + li::before {
+      content: '/';
+      padding-right: 9px;
+      color: #9ca7b3;
+    }
+    .infant-learning .breadcrumbs a { color: #355c72; }
+    .infant-learning .unit-hero {
+      display: grid;
+      grid-template-columns: 1.28fr .84fr;
+      align-items: center;
+      gap: clamp(18px, 4vw, 50px);
+      padding: clamp(24px, 4vw, 48px);
+      background: linear-gradient(130deg, #fff4eb 0%, #fffae7 100%);
+      border: 1px solid #f2ded1;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .infant-learning .unit-eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-size: .85rem;
+      color: #99522f;
+      letter-spacing: .06em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .infant-learning .unit-hero h1 {
+      margin: 0 0 15px;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      line-height: 1.15;
+      color: #29364b;
+      text-wrap: balance;
+    }
+    .infant-learning .unit-hero p:not(.unit-eyebrow) {
+      max-width: 600px;
+      margin: 0 0 18px;
+      color: #4e5a6a;
+      font-size: 1.07rem;
+      line-height: 1.7;
+    }
+    .infant-learning .unit-hero img {
+      width: 100%;
+      max-height: 340px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 5px solid #ffffff;
+      box-shadow: 0 15px 30px #a56b3a24;
+    }
+    .infant-learning .play-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #e5d9b9;
+      color: #7a5b25;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .infant-learning .audio-button,
+    .infant-learning .small-button,
+    .infant-learning .game-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 10px 16px;
+      border: 2px solid #e9c8b4;
+      border-radius: 13px;
+      background: #fff;
+      color: #753d29;
+      font-weight: 800;
+      text-align: center;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .infant-learning .audio-button:hover,
+    .infant-learning .small-button:hover,
+    .infant-learning .game-button:hover { background: #fff7ee; }
+    .infant-learning .audio-button:active,
+    .infant-learning .small-button:active,
+    .infant-learning .game-button:active { transform: scale(.98); }
+    .infant-learning .unit-nav {
+      margin: 25px 0 35px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #e8e5df;
+      border-radius: 19px;
+    }
+    .infant-learning .unit-nav h2 { margin: 0 0 13px; font-size: 1.03rem; }
+    .infant-learning .unit-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .infant-learning .unit-nav a {
+      display: inline-flex;
+      gap: 8px;
+      padding: 11px 14px;
+      background: #fff8ef;
+      border: 1px solid #f0dfcb;
+      border-radius: 12px;
+      color: #6d4530;
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+    }
+    .infant-learning .unit-nav a:hover { background: #ffe9d6; }
+    .infant-learning .lesson-section {
+      --section-color: #ba6a4b;
+      --section-pale: #ffede5;
+      margin: 42px 0 0;
+      padding: clamp(18px, 2.6vw, 32px);
+      background: #fff;
+      border: 1px solid #e7e1d9;
+      border-radius: 24px;
+      box-shadow: 0 7px 30px #2a364d09;
+      scroll-margin-top: 100px;
+    }
+    .infant-learning .lesson-section.senses { --section-color: #8355aa; --section-pale: #f5eafb; }
+    .infant-learning .lesson-section.movement { --section-color: #2378ad; --section-pale: #e9f5fc; }
+    .infant-learning .lesson-section.health { --section-color: #438147; --section-pale: #ecf7eb; }
+    .infant-learning .lesson-section.autonomy { --section-color: #ac771b; --section-pale: #fff4dd; }
+    .infant-learning .section-top {
+      display: grid;
+      grid-template-columns: 1fr minmax(190px, 235px);
+      align-items: center;
+      gap: 22px;
+      padding: 5px 2px 20px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .infant-learning .section-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--section-color);
+      font-size: .91rem;
+      font-weight: 850;
+    }
+    .infant-learning .section-heading {
+      margin: 0 0 10px;
+      color: #28374b;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    .infant-learning .section-intro { margin: 0; line-height: 1.6; color: #596677; }
+    .infant-learning .section-image {
+      display: block;
+      width: 100%;
+      max-height: 195px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 17px;
+      background: var(--section-pale);
+      border: 3px solid #fff;
+      box-shadow: 0 5px 15px #26364c15;
+    }
+    .infant-learning .section-sound { margin-top: 12px; }
+    .infant-learning .section-sound .audio-button { min-height: 42px; font-size: .9rem; }
+    .infant-learning .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+    .infant-learning .activity-card {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 19px;
+      border: 1px solid #eee1d6;
+      border-radius: 19px;
+      background: #fffefa;
+    }
+    .infant-learning .activity-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .infant-learning .activity-id {
+      padding: 6px 9px;
+      background: var(--section-pale);
+      color: var(--section-color);
+      border-radius: 10px;
+      font-size: .81rem;
+      font-weight: 850;
+    }
+    .infant-learning .activity-type {
+      font-size: .79rem;
+      color: #536377;
+      font-weight: 750;
+    }
+    .infant-learning .activity-card h3 {
+      margin: 0;
+      color: #2b3a4c;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+    .infant-learning .activity-card p {
+      margin: 0;
+      color: #4d5d70;
+      line-height: 1.6;
+      font-size: .96rem;
+    }
+    .infant-learning .activity-card .teacher-tip {
+      margin-top: auto;
+      padding: 10px 12px;
+      border-left: 3px solid var(--section-color);
+      background: var(--section-pale);
+      color: #4c5362;
+      border-radius: 4px 8px 8px 4px;
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+    .infant-learning .activity-card .audio-button { align-self: flex-start; min-height: 40px; font-size: .82rem; }
+    .infant-learning .game-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+      padding: 15px;
+      border: 1px dashed #d5b7a1;
+      border-radius: 15px;
+      background: #fff9f3;
+    }
+    .infant-learning .game-prompt {
+      min-height: 32px;
+      color: #344254;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .infant-learning .answer-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .infant-learning .answer-options.five { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+    .infant-learning .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 88px;
+      padding: 10px 6px;
+      background: #fff;
+      border: 2px solid #e5d7c8;
+      border-radius: 14px;
+      color: #33455b;
+      font-weight: 800;
+      text-align: center;
+      font-size: .95rem;
+    }
+    .infant-learning .choice .big-icon { font-size: clamp(2rem, 5vw, 2.5rem); line-height: 1.1; }
+    .infant-learning .choice:hover { background: #fff0df; }
+    .infant-learning .choice.is-selected,
+    .infant-learning .choice[aria-pressed="true"] {
+      border-color: #437f53;
+      background: #e8f5e9;
+    }
+    .infant-learning .choice:disabled { opacity: .65; cursor: default; }
+    .infant-learning .game-feedback {
+      min-height: 1.45em;
+      margin: 0;
+      font-size: .9rem;
+      font-weight: 750;
+      color: #396047;
+    }
+    .infant-learning .game-feedback.try-again { color: #925b2b; }
+    .infant-learning .game-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+    .infant-learning .game-button { min-height: 43px; font-size: .87rem; }
+    .infant-learning .small-label { font-size: .83rem; color: #566b7b; }
+    .infant-learning .progress-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+    .infant-learning .progress-dots span {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #e9ddd2; border: 1px solid #cebda9;
+    }
+    .infant-learning .progress-dots span.done { background: #5f9972; border-color: #3c7950; }
+    .infant-learning .body-builder { display: grid; grid-template-columns: 100px 1fr; gap: 14px; align-items: center; }
+    .infant-learning .body-builder svg { width: 100%; max-width: 110px; display: block; }
+    .infant-learning .body-builder svg [data-part] { fill: #f4e5d8; stroke: #b78c70; stroke-width: 3; }
+    .infant-learning .body-builder svg [data-part].revealed { fill: #6db9ce; stroke: #397d90; }
+    .infant-learning .traffic-light {
+      display: flex; gap: 12px; padding: 10px; width: max-content;
+      border-radius: 15px; background: #415063;
+    }
+    .infant-learning .bulb { width: 39px; height: 39px; border-radius: 50%; opacity: .24; border: 3px solid #fff4; }
+    .infant-learning .bulb.red { background: #f34c4c; }
+    .infant-learning .bulb.amber { background: #ffcb4c; }
+    .infant-learning .bulb.green { background: #5ddb80; }
+    .infant-learning .bulb.active { opacity: 1; box-shadow: 0 0 14px currentColor; }
+    .infant-learning .sequence-output {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 8px; min-height: 62px; font-size: 2.25rem; padding: 8px;
+      border-radius: 12px; background: #fff;
+    }
+    .infant-learning .steps-done { display: flex; flex-wrap: wrap; gap: 7px; min-height: 28px; align-items: center; }
+    .infant-learning .step-chip { padding: 8px 10px; font-size: .88rem; font-weight: 750; background: #def0e2; border-radius: 9px; color: #2c6540; }
+    .infant-learning .check-list { display: flex; flex-direction: column; gap: 10px; }
+    .infant-learning .check-item { display: flex; gap: 9px; align-items: center; padding: 9px 11px; border: 1px solid #e8e0d7; border-radius: 12px; background: #fff; }
+    .infant-learning input[type="checkbox"] { width: 22px; height: 22px; accent-color: #398251; }
+    .infant-learning label { cursor: pointer; font-weight: 650; }
+    .infant-learning .lesson-note {
+      margin: 22px 0 0; padding: 16px 19px; border-radius: 14px;
+      background: var(--section-pale); color: #47576a; line-height: 1.55;
+    }
+    .infant-learning .end-project {
+      margin-top: 46px; padding: clamp(20px, 4vw, 35px);
+      border-radius: 25px; border: 1px solid #d9e7d4;
+      background: linear-gradient(145deg, #eff9ee, #fdf9ed);
+      scroll-margin-top: 90px;
+    }
+    .infant-learning .end-project h2 { margin: 0 0 10px; color: #285a39; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+    .infant-learning .end-project > p { color: #466253; line-height: 1.6; }
+    .infant-learning .passport-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; margin-top: 21px; }
+    .infant-learning .passport-item { position: relative; min-width: 0; }
+    .infant-learning .passport-item input { position: absolute; opacity: 0; top: 12px; left: 12px; }
+    .infant-learning .passport-item label {
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; gap: 9px;
+      min-height: 150px; padding: 12px 7px;
+      background: #fff; color: #475567; border: 2px solid #d6e4d4;
+      border-radius: 15px; text-align: center; font-size: .88rem;
+    }
+    .infant-learning .passport-item label .seal { font-size: 2.5rem; }
+    .infant-learning .passport-item input:checked + label { background: #e4f5e6; border-color: #3e8656; }
+    .infant-learning .passport-item input:checked + label::after { content: '✓'; color: #18713b; font-size: 1.1rem; font-weight: 900; }
+    .infant-learning .passport-progress { margin: 20px 0 0; font-weight: 800; color: #326444; }
+    .infant-learning .passport-meter { overflow: hidden; height: 13px; margin-top: 8px; border-radius: 10px; background: #d9e9d8; }
+    .infant-learning .passport-fill { width: 0%; height: 100%; border-radius: inherit; background: #408d5c; transition: width .25s; }
+    .infant-learning .teacher-notes { margin-top: 28px; padding: 19px 22px; background: #fff; border: 1px solid #dedfdc; border-radius: 17px; }
+    .infant-learning .teacher-notes summary { cursor: pointer; color: #4d5967; font-weight: 800; }
+    .infant-learning .teacher-notes p,
+    .infant-learning .teacher-notes li { font-size: .91rem; color: #4d5967; line-height: 1.65; }
+    .infant-learning .teacher-notes table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .infant-learning .teacher-notes th,
+    .infant-learning .teacher-notes td { padding: 10px 9px; text-align: left; border-bottom: 1px solid #e5e6e4; }
+    .infant-learning .teacher-notes th { background: #f5f6f5; }
+    .infant-learning .site-footer .footer-school-name { margin-bottom: 8px; }
+    @media (max-width: 900px) {
+      .infant-learning .activity-grid { grid-template-columns: 1fr; }
+      .infant-learning .passport-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+      .infant-learning .unit-hero { grid-template-columns: 1fr; }
+      .infant-learning .unit-hero img { max-height: 260px; }
+      .infant-learning .section-top { grid-template-columns: 1fr; }
+      .infant-learning .section-image { max-height: 220px; }
+      .infant-learning .unit-nav ul { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 460px) {
+      .infant-learning .unit-nav ul,
+      .infant-learning .passport-grid { grid-template-columns: 1fr 1fr; }
+      .infant-learning .lesson-shell { padding-top: 15px; }
+      .infant-learning .body-builder { grid-template-columns: 90px 1fr; }
+      .infant-learning .activity-card { padding: 14px; }
+      .infant-learning .teacher-notes { overflow-x: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning *, .infant-learning *::before,
+      .infant-learning *::after { transition: none !important; scroll-behavior: auto !important; }
+    }
+  
+    /* ======================================================
+       FUENTES ESCOLARES: archivos ya alojados en /fonts
+       ====================================================== */
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_G.TTF") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_N.TTF") format("truetype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Punteada";
+      src: url("/fonts/Escolar_P.TTF") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Calada";
+      src: url("/fonts/Escolar_C.TTF") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    /* La navegación del colegio y las notas docentes conservan la fuente general. */
+    .infant-learning #unit-title,
+    .infant-learning .end-project h2,
+    .infant-learning .unit-hero p:not(.unit-eyebrow),
+    .infant-learning .section-heading,
+    .infant-learning .section-intro,
+    .infant-learning .activity-card h3,
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .game-prompt,
+    .infant-learning .choice,
+    .infant-learning .game-button,
+    .infant-learning .audio-button,
+    .infant-learning .step-chip,
+    .infant-learning .game-feedback,
+    .infant-learning .sequence-output,
+    .infant-learning .child-script,
+    .infant-learning .mini-game h4,
+    .infant-learning .mini-game p:not(.access-note),
+    .infant-learning .drop-target,
+    .infant-learning .drag-piece,
+    .infant-learning .paint-instruction {
+      font-family: "Escolar", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+      font-feature-settings: "liga" 1, "clig" 1;
+      line-height: 1.48;
+      letter-spacing: 0;
+    }
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .mini-game > p,
+    .infant-learning .game-prompt { font-size: clamp(1.13rem, 1.7vw, 1.36rem); }
+    .infant-learning .activity-card h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+    .infant-learning .choice { font-size: clamp(1.06rem, 1.45vw, 1.24rem); }
+    .infant-learning .game-button { font-size: clamp(1rem, 1.35vw, 1.15rem); }
+    .infant-learning .teacher-tip,
+    .infant-learning details,
+    .infant-learning .activity-id,
+    .infant-learning .activity-type,
+    .infant-learning .access-note {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+    .infant-learning .handwriting-dotted {
+      font-family: "Escolar Punteada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-outline {
+      font-family: "Escolar Calada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-bold { font-family: "Escolar", cursive; font-weight: 700; }
+
+    /* ======================================================
+       NUEVOS MINIJUEGOS VISUALES (ratón, dedo y selección táctil)
+       ====================================================== */
+    .infant-learning .mini-game {
+      margin-top: 15px;
+      padding: clamp(12px, 2.5vw, 19px);
+      border: 2px solid #ebd7c5;
+      border-radius: 20px;
+      background: #fffdf9;
+    }
+    .infant-learning .mini-game h4 {
+      margin: 0 0 7px;
+      color: #784330;
+      font-size: clamp(1.25rem, 2vw, 1.58rem);
+      font-weight: 700;
+    }
+    .infant-learning .mini-game p { margin: 4px 0 12px; }
+    .infant-learning .access-note {
+      font-size: .86rem;
+      color: #5b6472;
+    }
+    .infant-learning .drag-bank,
+    .infant-learning .drop-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: stretch;
+      margin: 13px 0;
+    }
+    .infant-learning .drag-piece,
+    .infant-learning .drop-target {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 7px;
+      padding: 11px;
+      text-align: center;
+      color: #334155;
+      background: white;
+      border: 3px solid #d6ddd8;
+      border-radius: 17px;
+      min-width: 110px;
+      min-height: 100px;
+      font-size: clamp(1.04rem, 1.55vw, 1.26rem);
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .infant-learning .drag-piece { border-color: #e7af7f; background: #fff7ec; }
+    .infant-learning .drag-piece .item-emoji,
+    .infant-learning .drop-target .item-emoji {
+      display: block;
+      font-family: system-ui, sans-serif;
+      font-size: clamp(2.3rem, 4vw, 3.25rem);
+      line-height: 1.1;
+    }
+    .infant-learning .drag-piece.is-chosen { border-color: #1169b0; box-shadow: 0 0 0 4px #b7dfff; }
+    .infant-learning .drop-target.is-hovered { border-color: #1169b0; background: #eaf6ff; }
+    .infant-learning .drop-target.is-complete { border-color: #007a33; background: #f0fbf2; }
+    .infant-learning .drop-target .placed-token {
+      display: inline-flex;
+      gap: 5px;
+      margin: 3px;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #7daf8d;
+      font-family: "Escolar", cursive;
+      font-size: 1.13rem;
+    }
+    .infant-learning .drag-ghost {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      opacity: .88;
+      transform: translate(-50%, -50%) rotate(-3deg);
+      box-shadow: 0 9px 24px #0003;
+      min-width: 110px;
+      max-width: 165px;
+    }
+    .infant-learning .drop-hint { font-family: "Escolar", system-ui, sans-serif; font-size: 1.12rem; font-weight: 700; color: #64748b; }
+    .infant-learning .game-feedback:empty { min-height: 1em; }
+    .infant-learning .drop-row .drop-target { flex: 1 1 120px; }
+    /* Puzle de 4 piezas: imagen original reutilizada mediante JavaScript. */
+    .infant-learning .puzzle-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: clamp(12px, 3vw, 26px);
+      margin: 15px auto;
+      max-width: 650px;
+    }
+    .infant-learning .puzzle-pieces,
+    .infant-learning .puzzle-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f5eee8;
+      padding: 5px;
+      border-radius: 14px;
+    }
+    .infant-learning .puzzle-pieces .drag-piece,
+    .infant-learning .puzzle-board .drop-target {
+      position: relative;
+      width: 100%; min-width: 0; min-height: 0;
+      aspect-ratio: 1;
+      padding: 0;
+      border-radius: 9px;
+      border-width: 2px;
+      overflow: hidden;
+    }
+    .infant-learning .puzzle-slice,
+    .infant-learning .puzzle-fixed {
+      width: 100%; height: 100%;
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      flex: 1 1 auto; min-height: 0; pointer-events: none;
+    }
+    .infant-learning .puzzle-pieces .drag-piece { font-family: system-ui, sans-serif; }
+    .infant-learning .puzzle-pieces .drag-piece:disabled { opacity: .35; }
+    .infant-learning .puzzle-board .drop-target { background: #f8fafc; border-style: dashed; }
+    .infant-learning .puzzle-board .drop-target::after {
+      content: attr(data-number);
+      color: #64748b;
+      font: 700 1.5rem system-ui, sans-serif;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .infant-learning .puzzle-board .drop-target.is-complete::after { content: none; }
+    .infant-learning .puzzle-board .drop-target.is-complete { border-style: solid; padding: 0; }
+    .infant-learning .puzzle-board .drop-target .puzzle-fixed { position: relative; z-index: 1; }
+
+    /* Lámina de coloreado digital: contornos negros sobre blanco. */
+    .infant-learning .coloring-layout { max-width: 580px; margin: 4px auto; }
+    .infant-learning .paint-palette { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; justify-content: center; }
+    .infant-learning .paint-swatch {
+      appearance: none; border: 3px solid #ddd; border-radius: 50%;
+      background: var(--swatch); width: 48px; height: 48px;
+      font-size: 0; flex: 0 0 48px;
+    }
+    .infant-learning .paint-swatch.is-active { outline: 3px solid #224b6d; outline-offset: 3px; }
+    .infant-learning .paint-page { display: block; width: min(100%, 440px); height: auto; margin: 0 auto; background: white; border: 2px solid #d3dbe3; border-radius: 14px; }
+    .infant-learning .paint-page [data-paint-region] { cursor: pointer; transition: fill .12s ease; }
+    .infant-learning .paint-page [data-paint-region]:focus-visible { outline: none; stroke: #1766be; stroke-width: 5; }
+    .infant-learning .paint-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 12px 0; }
+    .infant-learning .outline-color-word {
+      display: block; width: 100%; margin: 5px auto 10px;
+      border: 2px dashed #d7c5b7; border-radius: 12px;
+      background: #fff; padding: 0 8px; color: #414141;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      line-height: 1.5; text-align: center;
+    }
+
+    /* Repaso digital: la fuente punteada permanece debajo del lienzo transparente. */
+    .infant-learning .trace-stage {
+      position: relative;
+      aspect-ratio: 900 / 220;
+      border: 2px solid #ddd1c3;
+      background: repeating-linear-gradient(to bottom, white 0, white 48%, #d5e9ed 48%, #d5e9ed 49%, white 49%, white 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      width: min(100%, 720px);
+      margin: 12px auto;
+    }
+    .infant-learning .trace-word {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(2.8rem, 9vw, 6.6rem);
+      white-space: nowrap;
+      color: #7a9aa6;
+      line-height: 1.15;
+      pointer-events: none;
+    }
+    .infant-learning .trace-canvas {
+      display: block; position: relative;
+      width: 100%; height: 100%;
+      touch-action: none; cursor: crosshair;
+    }
+    .infant-learning .script-preview { text-align: center; font-size: clamp(1.8rem, 5vw, 3.2rem); }
+    .infant-learning .trace-tools { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 620px) {
+      .infant-learning .puzzle-layout { gap: 8px; }
+      .infant-learning .drag-piece, .infant-learning .drop-target { min-width: 95px; min-height: 91px; }
+      .infant-learning .paint-swatch { width: 42px; height: 42px; flex-basis: 42px; }
+      .infant-learning .trace-stage { aspect-ratio: 900 / 260; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning .paint-page [data-paint-region] { transition: none; }
+    }
+
+  
+
+/* INF5.2 · Juegos emocionales y de convivencia */
+.infant-learning .lesson-section.emotions { --section-color: #bd5a75; --section-pale: #fff0f4; }
+.infant-learning .lesson-section.expression { --section-color: #9462b6; --section-pale: #f6eefe; }
+.infant-learning .lesson-section.calm { --section-color: #3586a0; --section-pale: #e9f7fb; }
+.infant-learning .lesson-section.together { --section-color: #34865f; --section-pale: #e9f8ed; }
+.infant-learning .lesson-section.solutions { --section-color: #be7b2a; --section-pale: #fff4e4; }
+.infant-learning .emotion-face { font-size: clamp(4.6rem, 9vw, 7rem); line-height: 1.13; text-align:center; filter:drop-shadow(0 5px 6px #3331); }
+.infant-learning .emotion-prompt { display:flex; align-items:center; justify-content:center; gap: 10px; flex-wrap:wrap; text-align:center; background:white; border:2px solid #efdfd4; border-radius:16px; padding:12px; }
+.infant-learning .emotions-row { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.infant-learning .emotions-row .choice { flex:1 1 106px; }
+.infant-learning .big-emotion {font-size:2.4rem;line-height:1.1;display:block;}
+.infant-learning .illustrated-face {max-width:280px;width:100%;margin:auto;display:block;}
+.infant-learning .situation {display:grid;gap:8px;padding:15px;background:#fff;border:1px solid #e7d9c9;border-radius:15px;font-family:"Escolar",cursive;font-size:1.35rem;line-height:1.5;}
+.infant-learning .mini-game {margin-top:10px;}
+.infant-learning .choice.is-personal {border-color:#7f72b6;background:#f3eeff;}
+.infant-learning .chosen-message {border-radius:12px;padding:12px;background:#eaf4f7;color:#28576a;font-size:1.12rem;font-family:"Escolar",cursive;}
+.infant-learning .teacher-tip strong {font-family:inherit;}
+.infant-learning .breath-circle {width:min(220px,70vw);height:min(220px,70vw);margin:12px auto;border-radius:50%;border:8px solid #cbe0ee;background:radial-gradient(circle at 35% 30%,#fefefe,#9bd5e4);display:grid;place-items:center;position:relative;font-size:clamp(2.3rem,5vw,4.5rem);box-shadow:0 0 0 7px #e6f5f9 inset;}
+.infant-learning .breath-circle.is-breathing {animation:slow-breath 8s ease-in-out infinite;}
+.infant-learning .breath-circle span {pointer-events:none;}
+@keyframes slow-breath {0%,100%{transform:scale(.86)}50%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.infant-learning .breath-circle.is-breathing {animation:none;}}
+.infant-learning .counted-steps {display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.infant-learning .counted-steps .game-button {flex:1 1 115px;min-height:85px;flex-direction:column;}
+.infant-learning .counted-steps .game-button[aria-pressed=true] {background:#e0f2e3;border-color:#378357;}
+.infant-learning .reveal-text {padding:12px 14px;border-radius:12px;background:#e7f3f7;min-height:60px;font-family:"Escolar",cursive;font-size:1.3rem;}
+.infant-learning .face-canvas {display:block;margin:6px auto;width:min(100%,380px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .face-canvas [data-paint-region],
+.infant-learning .tree-canvas [data-paint-region] {cursor:pointer;}
+.infant-learning .tree-canvas {display:block;margin:6px auto;width:min(100%,410px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .color-swatch {appearance:none;width:45px;height:45px;border-radius:50%;border:3px solid #ece6de;background:var(--swatch);}
+.infant-learning .color-swatch.is-active {outline:3px solid #1e5f8b;outline-offset:2px;}
+.infant-learning .puzzle-slice,.infant-learning .puzzle-fixed { background-color:#fff; }
+.infant-learning .game-panel [data-feedback],
+.infant-learning .mini-game [data-feedback] {font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:.88rem;}
+.infant-learning .soft-reminder {background:#e8f5ec;border-left:5px solid #55a17a;padding:12px 14px;border-radius:10px;line-height:1.55;}
+.infant-learning .emotion-words {display:flex;flex-wrap:wrap;gap:10px;}
+.infant-learning .emotion-words button {flex:1 1 110px;}
+.infant-learning .quiet-icon {font-size:3rem;line-height:1.15;}
+.infant-learning .teacher-notes summary {font-family:system-ui,sans-serif;}
+.infant-learning .lesson-note {font-family:system-ui,sans-serif;}
+.infant-learning .final-mantra {margin-top:18px;background:white;border-radius:16px;padding:18px;border:1px solid #cfe7d4;font-family:"Escolar",cursive;text-align:center;font-size:1.5rem;}
+.infant-learning .teacher-table-wrap {overflow-x:auto;}
+.infant-learning .unit-eyebrow,.infant-learning .unit-nav,.infant-learning .section-tag {font-family:system-ui,sans-serif;}
+@media(max-width:600px){.infant-learning .emotion-prompt {flex-direction:column;}.infant-learning .passport-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* ======================================================
+   INF5.5 · Juegos matemáticos: ampliaciones a INF5.2
+   ====================================================== */
+.infant-learning .lesson-section.classify {--section-color:#b26845;--section-pale:#fff1e6}
+.infant-learning .lesson-section.numbers {--section-color:#4979ba;--section-pale:#edf4ff}
+.infant-learning .lesson-section.calculate {--section-color:#6b8a3d;--section-pale:#f2f8e8}
+.infant-learning .lesson-section.geometry {--section-color:#9764a9;--section-pale:#f8edfc}
+.infant-learning .lesson-section.measure {--section-color:#288c91;--section-pale:#eaf9f8}
+.infant-learning .activity-sound{margin:7px 0 13px}
+.infant-learning .math-inside-box{width:125px;height:110px;border:8px solid #ba855d;border-radius:12px;background:#ffead2;display:grid;place-items:center;font-size:4rem;margin:auto}
+.infant-learning .math-stimulus {display:grid;place-items:center;gap:8px;margin:8px auto 15px;background:#fff;border:2px solid #e6d9cb;border-radius:20px;padding:16px;min-height:95px;text-align:center}
+.infant-learning .math-emoji {font-family:system-ui,sans-serif;display:block;font-size:clamp(2.4rem,6vw,4rem);line-height:1.33;overflow-wrap:anywhere}
+.infant-learning [data-quiz="length"] .math-emoji{font-size:clamp(1.3rem,2.4vw,2rem);white-space:pre!important;text-align:left;line-height:1.45;letter-spacing:-.06em}
+.infant-learning .math-question {font-family:"Escolar",cursive;font-size:clamp(1.55rem,3vw,2.05rem);line-height:1.35;text-align:center}
+.infant-learning .math-subtitle{font-family:system-ui,sans-serif;font-size:.92rem;color:#556579}
+.infant-learning .math-answer-row{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:12px 0}
+.infant-learning .math-answer{min-width:78px;min-height:76px;border:2px solid #d9c6b5;border-radius:17px;background:#fff;color:#334155;padding:9px 14px;display:grid;place-items:center;gap:4px;font-family:"Escolar",cursive;font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.2}
+.infant-learning .math-answer:focus-visible{outline:3px solid #2377ad;outline-offset:3px}
+.infant-learning .math-answer.is-right{background:#e4f5e8;border-color:#4c9f70}
+.infant-learning .math-answer.is-wrong{background:#fff2e8;border-color:#d98b53}
+.infant-learning .math-answer .math-picture{font-family:system-ui,sans-serif;font-size:2rem}
+.infant-learning .math-answer:disabled{cursor:default;opacity:.8}
+.infant-learning .math-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:12px 0}
+.infant-learning .math-hint{font-size:.9rem;font-family:system-ui,sans-serif;color:#596b7d}
+.infant-learning .math-count-row{display:flex;justify-content:center;align-items:center;gap:5px;flex-wrap:wrap;min-height:80px}
+.infant-learning .math-count-icon{font-family:system-ui,sans-serif;font-size:clamp(1.9rem,5vw,3.3rem);line-height:1.2}
+.infant-learning .math-count-symbol{font-size:2.5rem;font-family:system-ui,sans-serif;color:#596478}
+.infant-learning .math-sort-zones{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:14px 0}
+.infant-learning .math-sort-zones .drop-target{min-height:128px;flex:1 1 125px;display:flex;flex-direction:column;gap:6px;font-family:"Escolar",cursive;line-height:1.2;font-size:1.35rem}
+.infant-learning .math-sort-zones .drop-target .placed-token{font-family:system-ui,sans-serif;font-size:1.4rem}
+.infant-learning .math-drag-bank{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:12px;background:#fff;border:1px solid #e9e0d8;border-radius:16px;min-height:85px}
+.infant-learning .math-drag-bank .drag-piece{font-family:system-ui,sans-serif;font-size:2.15rem;min-width:79px;min-height:78px;display:grid;place-items:center;gap:0}
+.infant-learning .math-drag-bank .drag-piece small{font-family:"Escolar",cursive;font-size:1.13rem}
+.infant-learning .math-drag-bank .drag-piece.is-chosen {border-color:#2f78a6;background:#eaf5fb;outline:2px solid #2f78a6}
+.infant-learning .math-drag-bank .drag-piece:disabled{opacity:.36}
+.infant-learning .math-sort-zones .drop-target.is-hovered{border-color:#3e88ad;background:#e7f7fc}
+.infant-learning .math-slot-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:12px 0}
+.infant-learning .math-slot-row .math-slot{display:grid;place-items:center;min-width:52px;min-height:62px;border:2px dashed #8ca5ba;border-radius:13px;background:#f6fbff;font-family:"Escolar",cursive;font-size:2rem}
+.infant-learning .math-slot.done{background:#e5f7e9;border-style:solid;border-color:#4b9a68}
+.infant-learning .math-large-figure{font-family:system-ui,sans-serif;font-size:clamp(2.4rem,6vw,4rem);text-align:center}
+.infant-learning .bead-row{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border-radius:14px;padding:15px;min-height:85px;margin:12px 0}
+.infant-learning .bead{width:42px;height:42px;border-radius:50%;border:3px solid #4449;box-shadow:inset -7px -7px 0 #0001;display:inline-block}
+.infant-learning .bead.red{background:#e46b63}.infant-learning .bead.blue{background:#74b6ed}.infant-learning .bead.green{background:#80c99b}
+.infant-learning .bead.blank{background:#fff;border:3px dashed #aaa}
+.infant-learning .math-counter{min-height:63px;min-width:63px;border:2px solid #d3bfae;border-radius:15px;background:#fff;padding:8px 12px;font-family:"Escolar",cursive;font-size:2rem}
+.infant-learning .math-counter:active{transform:scale(.96)}
+.infant-learning .math-display{font-family:"Escolar",cursive;font-size:clamp(1.65rem,4vw,2.5rem);text-align:center;background:#fff;border:2px solid #e5d7c9;border-radius:14px;padding:11px;min-height:72px}
+.infant-learning .math-basket{display:flex;justify-content:center;flex-wrap:wrap;gap:5px;min-height:115px;align-items:center;border:3px dashed #a7bd91;border-radius:19px;background:#f7fcf2;padding:13px}
+.infant-learning .math-basket-icon{font-size:2.6rem}
+.infant-learning .math-two-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px auto}
+.infant-learning .math-group{display:grid;justify-items:center;align-content:start;gap:9px;border:3px dashed #bad3cc;border-radius:18px;padding:12px;min-height:138px;background:#fff}
+.infant-learning .math-group strong{font-family:"Escolar",cursive;font-size:1.45rem}
+.infant-learning .math-group .group-items{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;font-size:2.1rem}
+.infant-learning .math-lines{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;margin:15px 0}
+.infant-learning .math-bar{height:34px;border-radius:8px;background:repeating-linear-gradient(90deg,#78b5d9 0 34px,#f8fbfc 34px 37px);border:2px solid #377899;min-width:50px;position:relative}
+.infant-learning .math-bar.green{background:repeating-linear-gradient(90deg,#94cfaa 0 34px,#f8fbfc 34px 37px);border-color:#46936b}
+.infant-learning .math-rule{width:min(100%,400px);height:45px;background:#fff;display:flex;justify-content:flex-start;align-items:stretch;margin:12px auto;border:2px solid #94a3b8;border-radius:8px;overflow:hidden}
+.infant-learning .math-rule .math-unit{flex:0 0 42px;max-width:42px;border-right:2px solid #94a3b8;background:#f4ca88;display:grid;place-items:center;font:750 1rem system-ui,sans-serif}
+.infant-learning .math-rule .math-unit:last-child{border-right:0}
+.infant-learning .math-place{display:grid;place-items:center;gap:6px;padding:10px;border-radius:15px;background:white;border:2px solid #e1d3c4}
+.infant-learning .math-place-label{font-family:"Escolar",cursive;font-size:1.35rem}
+.infant-learning .math-place-icon{font-size:3.2rem;font-family:system-ui,sans-serif;min-height:55px}
+.infant-learning .math-shape-sheet{display:block;width:min(100%,470px);height:auto;margin:8px auto;background:white;border:2px solid #d9cabb;border-radius:14px}
+.infant-learning .math-shape-sheet [data-paint-region]{cursor:pointer;stroke:#4b5563;stroke-width:3.5px}
+.infant-learning .math-shape-sheet [data-paint-region]:focus{outline:4px solid #2377ab}
+.infant-learning .math-palette{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.infant-learning .math-swatch{width:44px;height:44px;min-height:44px;border-radius:50%;border:3px solid #e0dbd3;background:var(--swatch);padding:0}
+.infant-learning .math-swatch.is-active{outline:3px solid #246c99;outline-offset:3px}
+.infant-learning .math-trace-stage{width:min(100%,600px);aspect-ratio:900/200;position:relative;border:2px solid #c9d9e2;border-radius:15px;overflow:hidden;background:repeating-linear-gradient(to bottom,#fff 0,#fff 49%,#dcebf2 49%,#dcebf2 50%,#fff 50%);margin:12px auto}
+.infant-learning .math-trace-word{font-family:"Escolar Punteada","Escolar",cursive;font-size:clamp(2.9rem,9vw,6rem);position:absolute;inset:0;display:grid;place-items:center;color:#7e9caa;line-height:1;pointer-events:none}
+.infant-learning .math-trace-stage canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+.infant-learning .math-outline{font-family:"Escolar Calada","Escolar",cursive;font-size:clamp(2.9rem,8vw,4.8rem);text-align:center;display:block;line-height:1.35}
+.infant-learning .math-story-result{font-size:1.25rem;font-family:"Escolar",cursive;text-align:center;background:#fff;padding:10px;border-radius:13px;min-height:45px}
+.infant-learning .math-puzzle-layout{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:670px;margin:12px auto}
+.infant-learning .math-puzzle-bank,.infant-learning .math-puzzle-board{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;aspect-ratio:1;padding:5px;background:#f7efe6;border-radius:13px}
+.infant-learning .math-puzzle-bank button,.infant-learning .math-puzzle-board button{width:100%;height:100%;min-width:0;min-height:0;aspect-ratio:1;padding:0;border:2px dashed #b4a795;overflow:hidden;position:relative;border-radius:9px;background:#fff;display:block}
+.infant-learning .math-puzzle-bank button.is-chosen{outline:3px solid #2379a5}
+.infant-learning .math-puzzle-bank button:disabled{opacity:.25}
+.infant-learning .math-puzzle-board button:after{content:attr(data-number);font:700 1.5rem system-ui,sans-serif;color:#8391a2;position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.infant-learning .math-puzzle-board button.is-complete:after{content:none}
+.infant-learning .math-slice{display:block;width:100%;height:100%;background-size:200% 200%;background-repeat:no-repeat;pointer-events:none}
+.infant-learning .math-puzzle-board .math-slice{position:relative;z-index:1}
+.infant-learning .teacher-notes summary,.infant-learning .teacher-tip,.infant-learning .lesson-note{font-family:system-ui,sans-serif}
+.infant-learning .math-answer-row .math-answer small{font-family:system-ui,sans-serif;font-size:.76rem}
+.infant-learning .activity-grid,.infant-learning .activity-card,.infant-learning .game-panel{min-width:0}
+.infant-learning .math-lines{width:min(100%,400px);margin:15px auto;justify-content:flex-start}
+.infant-learning .math-rule{margin:12px auto}
+.infant-learning .math-bar{background:repeating-linear-gradient(90deg,#78b5d9 0 40px,#fff 40px 42px)}
+@media(max-width:650px){.infant-learning .math-sort-zones .drop-target{min-height:112px;flex-basis:105px}.infant-learning .math-two-groups{gap:7px}.infant-learning .math-group{padding:8px}.infant-learning .math-puzzle-layout{gap:8px}.infant-learning .math-puzzle-bank,.infant-learning .math-puzzle-board{gap:3px}.infant-learning .math-answer{min-width:65px;min-height:70px}.infant-learning .passport-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:370px){.infant-learning .math-drag-bank .drag-piece{min-width:65px;min-height:70px}.infant-learning .math-answer{min-width:54px}.infant-learning .math-unit{max-width:36px}}
+</style>
+</head>
+<body class="infant-learning"><a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+<header class="site-banner">
+<a aria-label="Ir a la página de inicio" href="/">
+<img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/>
+</a>
+</header>
+<div class="navigation-wrapper">
+<div class="navigation-container">
+<a aria-label="Inicio" class="navigation-logo" href="/">
+<img alt="" src="/img/logo-centro.png"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation">
+<ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red">
+<a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<main id="contenido-principal"><div class="lesson-shell"><nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li><li><a href="/recursos/infantil/inf5/">Infantil · 5 años</a></li><li aria-current="page">INF5.5</li></ol></nav>
+<section class="unit-hero" aria-labelledby="unit-title"><div><p class="unit-eyebrow">Infantil · 5 años · Bloque 5</p><h1 id="unit-title">Juego con números, formas y cantidades</h1><p>¡Las matemáticas están en nuestras manos y a nuestro alrededor! Vamos a clasificar, contar, construir, repartir y medir jugando.</p><span class="play-pill">🔢 ¡Toco, descubro y pienso!</span><div style="margin-top:16px"><button type="button" class="audio-button" data-say="¡Hola! Hoy vamos a descubrir patrones, contar objetos, repartir, jugar con figuras y medir con cubitos." data-audio="/media/infantil/inf5/inf5.5-introduccion.mp3">🔊 Escuchar presentación</button></div></div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IklsdXN0cmFjacOzbiBpbmZhbnRpbCBkZSBqdWVnb3MgbWF0ZW3DoXRpY29zIj48cmVjdCB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCIgcng9IjI2IiBmaWxsPSIjZmZmMGRmIi8+PGNpcmNsZSBjeD0iNDYiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii44NSIvPjxjaXJjbGUgY3g9IjUxNiIgY3k9IjY1IiByPSIxOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjc2Ii8+PHBhdGggZD0iTTAgMzEzUTI0MCAyNzYgNTYwIDMyMFYzODBIMFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii41Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2IDEyMCkgc2NhbGUoMC43NykiPjxwYXRoIGQ9Ik0tMTYgMTMwdjUyIE0xNiAxMzB2NTIiIHN0cm9rZT0iIzZmODJhNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0xNyAxODBoLTE2IE0xNCAxODBoMTgiIHN0cm9rZT0iIzM5NGQ2ZSIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zMyA1NlEtNDIgNzgtMzMgMTMzSDMyUTQ0IDgzIDMxIDU2UTAgNDQtMzMgNTZaIiBmaWxsPSIjZWU5YzkyIiBzdHJva2U9IiNhNDZhNjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMzEgNzlRLTUzIDEwNC02NiA2NSBNMzEgNzhRNTcgMTAxIDY5IDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmMWJlOTQiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgcj0iMzgiIGZpbGw9IiNmMWJlOTQiIHN0cm9rZT0iIzlmNmY1NiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zOCAtNlEtNTIgLTQ4LTE3IC00M1ExMS01MiAzNC0yOVE0MC0xNyAzNy02TDI3LTI1UTEwLTIxIDQtMzNRLTEyLTE2LTMzLTIwWiIgZmlsbD0iIzZjNDc0MCIvPjxjaXJjbGUgY3g9Ii0xMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48Y2lyY2xlIGN4PSIxMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48cGF0aCBkPSJNLTEzIDE0UTAgMjcgMTMgMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhhNTQ0YSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUwIDExOCkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xNiAxMzB2NTIgTTE2IDEzMHY1MiIgc3Ryb2tlPSIjNmY4MmE0IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTE3IDE4MGgtMTYgTTE0IDE4MGgxOCIgc3Ryb2tlPSIjMzk0ZDZlIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMzIDU2US00MiA3OC0zMyAxMzNIMzJRNDQgODMgMzEgNTZRMCA0NC0zMyA1NloiIGZpbGw9IiM4Y2JjYjEiIHN0cm9rZT0iI2E0NmE2MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zMSA3OVEtNTMgMTA0LTY2IDY1IE0zMSA3OFE1NyAxMDEgNjkgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0OGM2YSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSByPSIzOCIgZmlsbD0iI2M0OGM2YSIgc3Ryb2tlPSIjOWY2ZjU2IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNLTM4IC02US01MiAtNDgtMTcgLTQzUTExLTUyIDM0LTI5UTQwLTE3IDM3LTZMMjctMjVRMTAtMjEgNC0zM1EtMTItMTYtMzMtMjBaIiBmaWxsPSIjNDgzODNlIi8+PGNpcmNsZSBjeD0iLTEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxwYXRoIGQ9Ik0tMTMgMTRRMCAyNyAxMyAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1NDRhIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjAgMTA3KSI+PHJlY3QgeD0iLTQwIiB5PSIzOCIgd2lkdGg9IjEzMiIgaGVpZ2h0PSIxMjMiIHJ4PSIxNyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjOGI5NGFhIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSItOCIgY3k9Ijc4IiByPSIyMiIgZmlsbD0iI2VjOTg3ZSIvPjxyZWN0IHg9IjI5IiB5PSI1NyIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQyIiByeD0iNyIgZmlsbD0iIzg4YzZmMSIvPjxwYXRoIGQ9Ik0tMTAgMTQ0bDI1LTQxIDI1IDQxWiIgZmlsbD0iIzkxY2JhMiIvPjx0ZXh0IHg9IjE1IiB5PSIyNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIzNCIgZmlsbD0iIzU4NjE4NCIgZm9udC13ZWlnaHQ9ImJvbGQiPjEgMiAzPC90ZXh0PjwvZz48L3N2Zz4=" alt="Niños jugando con figuras, números y construcciones" width="560" height="380"></section>
+<nav class="unit-nav" aria-label="Apartados de este bloque"><h2>¿Qué vamos a descubrir?</h2><ul><li><a href="#apartado-5-1">🧺 5.1 Clasifico</a></li><li><a href="#apartado-5-2">🔢 5.2 Números</a></li><li><a href="#apartado-5-3">🍪 5.3 Calculo</a></li><li><a href="#apartado-5-4">🏠 5.4 Formas</a></li><li><a href="#apartado-5-5">📏 5.5 Medidas</a></li><li><a href="#pasaporte">🌟 Mi feria matemática</a></li></ul></nav>
+<!-- ======================================== INF5.5 · 5.1 ======================================== -->
+<section class="lesson-section classify" id="apartado-5-1" aria-labelledby="title-5-1"><div class="section-top"><div><span class="section-tag">🧺 Observo y encuentro relaciones · 5.1</span><h2 class="section-heading" id="title-5-1">Clasifico y ordeno</h2><p class="section-intro">Podemos agrupar objetos por sus colores, tamaños y formas, comparar colecciones y descubrir patrones.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Podemos agrupar objetos por sus colores, tamaños y formas, comparar colecciones y descubrir patrones." data-audio="/media/infantil/inf5/inf5.5-apartado-5-1.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IklsdXN0cmFjacOzbiBpbmZhbnRpbCBkZSBqdWVnb3MgbWF0ZW3DoXRpY29zIj48cmVjdCB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCIgcng9IjI2IiBmaWxsPSIjZmZmMmVjIi8+PGNpcmNsZSBjeD0iNDYiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii44NSIvPjxjaXJjbGUgY3g9IjUxNiIgY3k9IjY1IiByPSIxOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjc2Ii8+PHBhdGggZD0iTTAgMzEzUTI0MCAyNzYgNTYwIDMyMFYzODBIMFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii41Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2IDEyMCkgc2NhbGUoMC43NykiPjxwYXRoIGQ9Ik0tMTYgMTMwdjUyIE0xNiAxMzB2NTIiIHN0cm9rZT0iIzZmODJhNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0xNyAxODBoLTE2IE0xNCAxODBoMTgiIHN0cm9rZT0iIzM5NGQ2ZSIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zMyA1NlEtNDIgNzgtMzMgMTMzSDMyUTQ0IDgzIDMxIDU2UTAgNDQtMzMgNTZaIiBmaWxsPSIjZWU5YzkyIiBzdHJva2U9IiNhNDZhNjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMzEgNzlRLTUzIDEwNC02NiA2NSBNMzEgNzhRNTcgMTAxIDY5IDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmMWJlOTQiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgcj0iMzgiIGZpbGw9IiNmMWJlOTQiIHN0cm9rZT0iIzlmNmY1NiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zOCAtNlEtNTIgLTQ4LTE3IC00M1ExMS01MiAzNC0yOVE0MC0xNyAzNy02TDI3LTI1UTEwLTIxIDQtMzNRLTEyLTE2LTMzLTIwWiIgZmlsbD0iIzZjNDc0MCIvPjxjaXJjbGUgY3g9Ii0xMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48Y2lyY2xlIGN4PSIxMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48cGF0aCBkPSJNLTEzIDE0UTAgMjcgMTMgMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhhNTQ0YSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUwIDExOCkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xNiAxMzB2NTIgTTE2IDEzMHY1MiIgc3Ryb2tlPSIjNmY4MmE0IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTE3IDE4MGgtMTYgTTE0IDE4MGgxOCIgc3Ryb2tlPSIjMzk0ZDZlIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMzIDU2US00MiA3OC0zMyAxMzNIMzJRNDQgODMgMzEgNTZRMCA0NC0zMyA1NloiIGZpbGw9IiM4Y2JjYjEiIHN0cm9rZT0iI2E0NmE2MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zMSA3OVEtNTMgMTA0LTY2IDY1IE0zMSA3OFE1NyAxMDEgNjkgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0OGM2YSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSByPSIzOCIgZmlsbD0iI2M0OGM2YSIgc3Ryb2tlPSIjOWY2ZjU2IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNLTM4IC02US01MiAtNDgtMTcgLTQzUTExLTUyIDM0LTI5UTQwLTE3IDM3LTZMMjctMjVRMTAtMjEgNC0zM1EtMTItMTYtMzMtMjBaIiBmaWxsPSIjNDgzODNlIi8+PGNpcmNsZSBjeD0iLTEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxwYXRoIGQ9Ik0tMTMgMTRRMCAyNyAxMyAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1NDRhIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48Zz48cmVjdCB4PSIxODAiIHk9IjE0MCIgd2lkdGg9Ijg4IiBoZWlnaHQ9IjExMyIgcng9IjE2IiBmaWxsPSIjZmZmIiBzdHJva2U9IiNhOGIxYzMiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjI5MCIgeT0iMTQwIiB3aWR0aD0iODgiIGhlaWdodD0iMTEzIiByeD0iMTYiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2E4YjFjMyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iMjIzIiBjeT0iMTc3IiByPSIxNyIgZmlsbD0iI2U5Nzk3MiIvPjxjaXJjbGUgY3g9IjIyMyIgY3k9IjIxOSIgcj0iMTciIGZpbGw9IiNlOTc5NzIiLz48Y2lyY2xlIGN4PSIzMzIiIGN5PSIxNzciIHI9IjE3IiBmaWxsPSIjNzRiM2UzIi8+PGNpcmNsZSBjeD0iMzMyIiBjeT0iMjE5IiByPSIxNyIgZmlsbD0iIzc0YjNlMyIvPjxwYXRoIGQ9Ik0yMDEgMTA4aDQ1IE0zMTEgMTA4aDQ1IiBzdHJva2U9IiNkMmI5OTIiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjwvc3ZnPg==" alt="Ilustración de clasifico y ordeno" loading="lazy" width="560" height="380"></div><div class="activity-grid"><article class="activity-card" id="act-5-1-a" data-criterion="DEE 1.1"><div class="activity-head"><span class="activity-id">5.1.A</span><span class="activity-type">🧩 Arrastrar y clasificar</span></div><h3>Cada cosa con su color</h3><p>Clasifica las figuras por su color. Puedes arrastrarlas o tocar primero una pieza y luego una caja.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Clasifica las figuras por su color. Puedes arrastrarlas o tocar primero una pieza y luego una caja." data-audio="/media/infantil/inf5/inf5.5-actividad-5-1-a.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="sort" data-sort="colors"><p class="math-hint">Toca una pieza y después su lugar, o arrástrala.</p><div class="math-drag-bank" data-sort-bank></div><div class="math-sort-zones" data-sort-zones></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Reiniciar</button><p class="access-note">También puedes jugar sin arrastrar, con dos toques.</p></div><p class="teacher-tip"><strong>En clase:</strong> Clasificar tapones, bloques o piezas grandes según el color; después cambiar el criterio por tamaño o material.</p></article><article class="activity-card" id="act-5-1-b" data-criterion="DEE 1.1"><div class="activity-head"><span class="activity-id">5.1.B</span><span class="activity-type">🧠 Series visuales</span></div><h3>¿Qué viene después?</h3><p>Observa una serie de figuras y elige la siguiente. Escucha la consigna cuando quieras.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Observa una serie de figuras y elige la siguiente. Escucha la consigna cuando quieras." data-audio="/media/infantil/inf5/inf5.5-actividad-5-1-b.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="patterns"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Construir seriaciones con cuentas o bloques de dos colores, aumentando la complejidad según el grupo.</p></article><article class="activity-card" id="act-5-1-c" data-criterion="DEE 1.2"><div class="activity-head"><span class="activity-id">5.1.C</span><span class="activity-type">🍎 Más, menos, igual</span></div><h3>¿Dónde hay más?</h3><p>Mira las dos colecciones. Compara sus cantidades y elige la respuesta.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Mira las dos colecciones. Compara sus cantidades y elige la respuesta." data-audio="/media/infantil/inf5/inf5.5-actividad-5-1-c.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="compare"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Disponer dos grupos de objetos, emparejar uno a uno y conversar sobre cuál tiene más, menos o la misma cantidad.</p></article><article class="activity-card" id="act-5-1-d" data-criterion="DEE 1.1"><div class="activity-head"><span class="activity-id">5.1.D</span><span class="activity-type">🎨 Crear patrones</span></div><h3>Mi collar de colores</h3><p>Mira el patrón y continúa el collar colocando cuentas de colores.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Mira el patrón y continúa el collar colocando cuentas de colores." data-audio="/media/infantil/inf5/inf5.5-actividad-5-1-d.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="beads" ><div class="bead-row" data-bead-row></div><div class="math-actions"><button type="button" class="game-button" data-bead-add=red>🔴 Roja</button><button type="button" class="game-button" data-bead-add=blue>🔵 Azul</button><button type="button" class="game-button" data-bead-add=green>🟢 Verde</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-bead-reset>↺ Nuevo collar</button></div><p class="teacher-tip"><strong>En clase:</strong> Crear collares con cuentas grandes y cordones adecuados para la edad. Supervisar materiales pequeños.</p></article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Una serie es un patrón que se repite; puedo observarlo y construirlo con objetos.</p></section><!-- ======================================== INF5.5 · 5.2 ======================================== -->
+<section class="lesson-section numbers" id="apartado-5-2" aria-labelledby="title-5-2"><div class="section-top"><div><span class="section-tag">🔢 Contamos para descubrir · 5.2</span><h2 class="section-heading" id="title-5-2">Números y cantidades</h2><p class="section-intro">Los números nos ayudan a contar, repartir, recordar cantidades y organizar objetos en la vida diaria.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Los números nos ayudan a contar, repartir, recordar cantidades y organizar objetos en la vida diaria." data-audio="/media/infantil/inf5/inf5.5-apartado-5-2.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IklsdXN0cmFjacOzbiBpbmZhbnRpbCBkZSBqdWVnb3MgbWF0ZW3DoXRpY29zIj48cmVjdCB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCIgcng9IjI2IiBmaWxsPSIjZWFmM2ZmIi8+PGNpcmNsZSBjeD0iNDYiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii44NSIvPjxjaXJjbGUgY3g9IjUxNiIgY3k9IjY1IiByPSIxOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjc2Ii8+PHBhdGggZD0iTTAgMzEzUTI0MCAyNzYgNTYwIDMyMFYzODBIMFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii41Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2IDEyMCkgc2NhbGUoMC43NykiPjxwYXRoIGQ9Ik0tMTYgMTMwdjUyIE0xNiAxMzB2NTIiIHN0cm9rZT0iIzZmODJhNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0xNyAxODBoLTE2IE0xNCAxODBoMTgiIHN0cm9rZT0iIzM5NGQ2ZSIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zMyA1NlEtNDIgNzgtMzMgMTMzSDMyUTQ0IDgzIDMxIDU2UTAgNDQtMzMgNTZaIiBmaWxsPSIjZWU5YzkyIiBzdHJva2U9IiNhNDZhNjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMzEgNzlRLTUzIDEwNC02NiA2NSBNMzEgNzhRNTcgMTAxIDY5IDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmMWJlOTQiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgcj0iMzgiIGZpbGw9IiNmMWJlOTQiIHN0cm9rZT0iIzlmNmY1NiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zOCAtNlEtNTIgLTQ4LTE3IC00M1ExMS01MiAzNC0yOVE0MC0xNyAzNy02TDI3LTI1UTEwLTIxIDQtMzNRLTEyLTE2LTMzLTIwWiIgZmlsbD0iIzZjNDc0MCIvPjxjaXJjbGUgY3g9Ii0xMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48Y2lyY2xlIGN4PSIxMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48cGF0aCBkPSJNLTEzIDE0UTAgMjcgMTMgMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhhNTQ0YSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUwIDExOCkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xNiAxMzB2NTIgTTE2IDEzMHY1MiIgc3Ryb2tlPSIjNmY4MmE0IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTE3IDE4MGgtMTYgTTE0IDE4MGgxOCIgc3Ryb2tlPSIjMzk0ZDZlIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMzIDU2US00MiA3OC0zMyAxMzNIMzJRNDQgODMgMzEgNTZRMCA0NC0zMyA1NloiIGZpbGw9IiM4Y2JjYjEiIHN0cm9rZT0iI2E0NmE2MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zMSA3OVEtNTMgMTA0LTY2IDY1IE0zMSA3OFE1NyAxMDEgNjkgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0OGM2YSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSByPSIzOCIgZmlsbD0iI2M0OGM2YSIgc3Ryb2tlPSIjOWY2ZjU2IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNLTM4IC02US01MiAtNDgtMTcgLTQzUTExLTUyIDM0LTI5UTQwLTE3IDM3LTZMMjctMjVRMTAtMjEgNC0zM1EtMTItMTYtMzMtMjBaIiBmaWxsPSIjNDgzODNlIi8+PGNpcmNsZSBjeD0iLTEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxwYXRoIGQ9Ik0tMTMgMTRRMCAyNyAxMyAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1NDRhIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxOTUgMTA1KSI+PHJlY3Qgd2lkdGg9IjE3OCIgaGVpZ2h0PSIxNjEiIHJ4PSIxOCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjOTRiYmRjIiBzdHJva2Utd2lkdGg9IjQiLz48ZyBmaWxsPSIjNzhiODk2Ij48Y2lyY2xlIGN4PSIzNSIgY3k9IjQ4IiByPSIxNSIvPjxjaXJjbGUgY3g9IjgzIiBjeT0iNDgiIHI9IjE1Ii8+PGNpcmNsZSBjeD0iMTMwIiBjeT0iNDgiIHI9IjE1Ii8+PGNpcmNsZSBjeD0iMzUiIGN5PSIxMDMiIHI9IjE1Ii8+PGNpcmNsZSBjeD0iODMiIGN5PSIxMDMiIHI9IjE1Ii8+PC9nPjx0ZXh0IHg9IjE0NSIgeT0iMTQ3IiBmb250LXNpemU9IjM0IiBmaWxsPSIjM2Y3OWE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+NTwvdGV4dD48L2c+PC9zdmc+" alt="Ilustración de números y cantidades" loading="lazy" width="560" height="380"></div><div class="activity-grid"><article class="activity-card" id="act-5-2-a" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.2.A</span><span class="activity-type">🔢 Conteo visual</span></div><h3>¿Cuántos hay?</h3><p>Cuenta despacio las figuras que aparecen y elige el número que representa la colección.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Cuenta despacio las figuras que aparecen y elige el número que representa la colección." data-audio="/media/infantil/inf5/inf5.5-actividad-5-2-a.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="count"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Contar materiales reales, tocando cada objeto una vez. Comenzar por cantidades pequeñas y ampliar cuando proceda.</p></article><article class="activity-card" id="act-5-2-b" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.2.B</span><span class="activity-type">🧩 Correspondencias</span></div><h3>El número y sus puntos</h3><p>Arrastra o coloca cada tarjeta con número junto a la colección que representa.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Arrastra o coloca cada tarjeta con número junto a la colección que representa." data-audio="/media/infantil/inf5/inf5.5-actividad-5-2-b.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="sort" data-sort="number-pairs"><p class="math-hint">Toca una pieza y después su lugar, o arrástrala.</p><div class="math-drag-bank" data-sort-bank></div><div class="math-sort-zones" data-sort-zones></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Reiniciar</button><p class="access-note">También puedes jugar sin arrastrar, con dos toques.</p></div><p class="teacher-tip"><strong>En clase:</strong> Utilizar tarjetas de puntos, dados y conjuntos de materiales para establecer correspondencias.</p></article><article class="activity-card" id="act-5-2-c" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.2.C</span><span class="activity-type">🔢 Ordeno numerales</span></div><h3>Construimos la recta de números</h3><p>Busca y coloca los números del 0 al 10 en orden. Puedes hacerlo tocando los números.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Busca y coloca los números del 0 al 10 en orden. Puedes hacerlo tocando los números." data-audio="/media/infantil/inf5/inf5.5-actividad-5-2-c.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="numberline" ><div class="math-stimulus"><span class="math-question">Busca el siguiente número</span></div><div class="math-slot-row" data-number-slots></div><div class="math-drag-bank" data-number-bank></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-number-reset>↺ Empezar de nuevo</button></div><p class="teacher-tip"><strong>En clase:</strong> Construir en el suelo una recta numérica grande. Caminar o saltar sobre las tarjetas mientras se cuenta.</p></article><article class="activity-card" id="act-5-2-d" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.2.D</span><span class="activity-type">🧺 Cantidades útiles</span></div><h3>La frutería de clase</h3><p>Prepara una cesta con el número de frutas que pide el cartel. Puedes poner y quitar frutas.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Prepara una cesta con el número de frutas que pide el cartel. Puedes poner y quitar frutas." data-audio="/media/infantil/inf5/inf5.5-actividad-5-2-d.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="market" ><div class="math-display" data-market-prompt>Necesito 4 manzanas.</div><div class="math-basket" data-market-basket></div><div class="math-actions"><button type="button" class="game-button" data-market-add>➕ Poner una manzana</button><button type="button" class="game-button" data-market-minus>➖ Quitar una</button><button type="button" class="game-button" data-market-check>✔ Comprobar</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-market-next>Otra compra</button></div><p class="teacher-tip"><strong>En clase:</strong> Organizar una frutería simbólica con frutas de juguete y etiquetas de precios o cantidades.</p></article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Los números tienen muchos usos. No hace falta memorizar todos a la vez.</p></section><!-- ======================================== INF5.5 · 5.3 ======================================== -->
+<section class="lesson-section calculate" id="apartado-5-3" aria-labelledby="title-5-3"><div class="section-top"><div><span class="section-tag">🍪 Junto, quito y reparto · 5.3</span><h2 class="section-heading" id="title-5-3">Jugamos a calcular</h2><p class="section-intro">Con materiales reales podemos añadir objetos, quitar algunos, repartir y encontrar distintas formas de obtener una cantidad.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Con materiales reales podemos añadir objetos, quitar algunos, repartir y encontrar distintas formas de obtener una cantidad." data-audio="/media/infantil/inf5/inf5.5-apartado-5-3.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IklsdXN0cmFjacOzbiBpbmZhbnRpbCBkZSBqdWVnb3MgbWF0ZW3DoXRpY29zIj48cmVjdCB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCIgcng9IjI2IiBmaWxsPSIjZWRmOGU3Ii8+PGNpcmNsZSBjeD0iNDYiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii44NSIvPjxjaXJjbGUgY3g9IjUxNiIgY3k9IjY1IiByPSIxOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjc2Ii8+PHBhdGggZD0iTTAgMzEzUTI0MCAyNzYgNTYwIDMyMFYzODBIMFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii41Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2IDEyMCkgc2NhbGUoMC43NykiPjxwYXRoIGQ9Ik0tMTYgMTMwdjUyIE0xNiAxMzB2NTIiIHN0cm9rZT0iIzZmODJhNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0xNyAxODBoLTE2IE0xNCAxODBoMTgiIHN0cm9rZT0iIzM5NGQ2ZSIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zMyA1NlEtNDIgNzgtMzMgMTMzSDMyUTQ0IDgzIDMxIDU2UTAgNDQtMzMgNTZaIiBmaWxsPSIjZWU5YzkyIiBzdHJva2U9IiNhNDZhNjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMzEgNzlRLTUzIDEwNC02NiA2NSBNMzEgNzhRNTcgMTAxIDY5IDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmMWJlOTQiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgcj0iMzgiIGZpbGw9IiNmMWJlOTQiIHN0cm9rZT0iIzlmNmY1NiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zOCAtNlEtNTIgLTQ4LTE3IC00M1ExMS01MiAzNC0yOVE0MC0xNyAzNy02TDI3LTI1UTEwLTIxIDQtMzNRLTEyLTE2LTMzLTIwWiIgZmlsbD0iIzZjNDc0MCIvPjxjaXJjbGUgY3g9Ii0xMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48Y2lyY2xlIGN4PSIxMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48cGF0aCBkPSJNLTEzIDE0UTAgMjcgMTMgMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhhNTQ0YSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUwIDExOCkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xNiAxMzB2NTIgTTE2IDEzMHY1MiIgc3Ryb2tlPSIjNmY4MmE0IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTE3IDE4MGgtMTYgTTE0IDE4MGgxOCIgc3Ryb2tlPSIjMzk0ZDZlIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMzIDU2US00MiA3OC0zMyAxMzNIMzJRNDQgODMgMzEgNTZRMCA0NC0zMyA1NloiIGZpbGw9IiM4Y2JjYjEiIHN0cm9rZT0iI2E0NmE2MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zMSA3OVEtNTMgMTA0LTY2IDY1IE0zMSA3OFE1NyAxMDEgNjkgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0OGM2YSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSByPSIzOCIgZmlsbD0iI2M0OGM2YSIgc3Ryb2tlPSIjOWY2ZjU2IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNLTM4IC02US01MiAtNDgtMTcgLTQzUTExLTUyIDM0LTI5UTQwLTE3IDM3LTZMMjctMjVRMTAtMjEgNC0zM1EtMTItMTYtMzMtMjBaIiBmaWxsPSIjNDgzODNlIi8+PGNpcmNsZSBjeD0iLTEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxwYXRoIGQ9Ik0tMTMgMTRRMCAyNyAxMyAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1NDRhIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODUgMTAwKSI+PHJlY3Qgd2lkdGg9IjE5MyIgaGVpZ2h0PSIxNzciIHJ4PSIxNyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjOTliZDlhIiBzdHJva2Utd2lkdGg9IjQiLz48ZyBmaWxsPSIjZTk4OTY2Ij48Y2lyY2xlIGN4PSI0MCIgY3k9IjQ5IiByPSIxOCIvPjxjaXJjbGUgY3g9IjgzIiBjeT0iNDkiIHI9IjE4Ii8+PGNpcmNsZSBjeD0iMTI3IiBjeT0iNDkiIHI9IjE4Ii8+PC9nPjxwYXRoIGQ9Ik00MiA5NWgzMCBNNTcgODB2MzAiIHN0cm9rZT0iIzU4N2Q2MCIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZyBmaWxsPSIjZjRjNzdmIj48Y2lyY2xlIGN4PSIxMTEiIGN5PSI5NSIgcj0iMTciLz48Y2lyY2xlIGN4PSIxNTMiIGN5PSI5NSIgcj0iMTciLz48L2c+PHBhdGggZD0iTTQwIDEzNmgxMTAiIHN0cm9rZT0iIzU4N2Q2MCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PC9nPjwvc3ZnPg==" alt="Ilustración de jugamos a calcular" loading="lazy" width="560" height="380"></div><div class="activity-grid"><article class="activity-card" id="act-5-3-a" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.3.A</span><span class="activity-type">➕ Añadir objetos</span></div><h3>Juntamos colecciones</h3><p>Mira dos grupos de objetos y descubre cuántos hay al reunirlos.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Mira dos grupos de objetos y descubre cuántos hay al reunirlos." data-audio="/media/infantil/inf5/inf5.5-actividad-5-3-a.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="add"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Juntar dos pequeños grupos de pinzas, piedras grandes o piezas, contando el resultado con ayuda.</p></article><article class="activity-card" id="act-5-3-b" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.3.B</span><span class="activity-type">➖ Quitar objetos</span></div><h3>Quitamos objetos</h3><p>Observa cuántos objetos había y cuántos retiramos. Cuenta los que quedan.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Observa cuántos objetos había y cuántos retiramos. Cuenta los que quedan." data-audio="/media/infantil/inf5/inf5.5-actividad-5-3-b.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="subtract"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Representar pequeñas historias con muñecos y objetos reales: llegan, se marchan, se añaden y se retiran.</p></article><article class="activity-card" id="act-5-3-c" data-criterion="DEE 1.2"><div class="activity-head"><span class="activity-id">5.3.C</span><span class="activity-type">🤝 Reparto equitativo</span></div><h3>Repartimos entre dos</h3><p>Reparte seis galletas entre dos personajes tocando el plato de cada uno. ¿Conseguirás que ambos tengan la misma cantidad?</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Reparte seis galletas entre dos personajes tocando el plato de cada uno. ¿Conseguirás que ambos tengan la misma cantidad?" data-audio="/media/infantil/inf5/inf5.5-actividad-5-3-c.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="share" ><p class="math-display">Hay <strong>6 galletas</strong> para repartir por igual.</p><div class="math-display" data-share-left>🍪 🍪 🍪 🍪 🍪 🍪</div><div class="math-two-groups"><button type="button" class="math-group" data-share-child="0"><strong>👧 El plato de Ana</strong><span class="group-items" data-share-items="0"></span></button><button type="button" class="math-group" data-share-child="1"><strong>🧒 El plato de Leo</strong><span class="group-items" data-share-items="1"></span></button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-share-check>✔ Comprobar reparto</button><button type="button" class="game-button" data-share-reset>↺ Repartir otra vez</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Repartir fichas, bloques o frutas de juguete en dos platos. Explorar repartos por turnos y compartir estrategias.</p></article><article class="activity-card" id="act-5-3-d" data-criterion="DEE 1.8"><div class="activity-head"><span class="activity-id">5.3.D</span><span class="activity-type">🟡 Componer cantidades</span></div><h3>Muchas maneras de formar cinco</h3><p>Elige cuántas fichas pondrás en el primer aro y descubre cuántas quedan para el segundo.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Elige cuántas fichas pondrás en el primer aro y descubre cuántas quedan para el segundo." data-audio="/media/infantil/inf5/inf5.5-actividad-5-3-d.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="split" ><p class="math-display">Vamos a formar el número <strong>5</strong>.</p><div class="math-answer-row"><button type="button" class="math-counter" data-split="0">0</button><button type="button" class="math-counter" data-split="1">1</button><button type="button" class="math-counter" data-split="2">2</button><button type="button" class="math-counter" data-split="3">3</button><button type="button" class="math-counter" data-split="4">4</button><button type="button" class="math-counter" data-split="5">5</button></div><div class="math-two-groups"><div class="math-group"><strong>Primer aro</strong><span class="group-items" data-split-a></span></div><div class="math-group"><strong>Segundo aro</strong><span class="group-items" data-split-b></span></div></div><p class="math-story-result" data-split-equation>Elige una cantidad para empezar.</p>{feedback()}</div><p class="teacher-tip"><strong>En clase:</strong> Formar el cinco con piezas de dos colores o dos aros; explicar que hay varias posibilidades correctas.</p></article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Para calcular podemos usar los dedos, dibujos, fichas y objetos reales.</p></section><!-- ======================================== INF5.5 · 5.4 ======================================== -->
+<section class="lesson-section geometry" id="apartado-5-4" aria-labelledby="title-5-4"><div class="section-top"><div><span class="section-tag">🏠 Figuras que nos rodean · 5.4</span><h2 class="section-heading" id="title-5-4">Formas y espacios</h2><p class="section-intro">Nuestro entorno tiene muchas figuras y podemos expresar dónde están los objetos: arriba, abajo, dentro o fuera.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Nuestro entorno tiene muchas figuras y podemos expresar dónde están los objetos: arriba, abajo, dentro o fuera." data-audio="/media/infantil/inf5/inf5.5-apartado-5-4.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IklsdXN0cmFjacOzbiBpbmZhbnRpbCBkZSBqdWVnb3MgbWF0ZW3DoXRpY29zIj48cmVjdCB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCIgcng9IjI2IiBmaWxsPSIjZjVlYmZjIi8+PGNpcmNsZSBjeD0iNDYiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii44NSIvPjxjaXJjbGUgY3g9IjUxNiIgY3k9IjY1IiByPSIxOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjc2Ii8+PHBhdGggZD0iTTAgMzEzUTI0MCAyNzYgNTYwIDMyMFYzODBIMFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii41Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2IDEyMCkgc2NhbGUoMC43NykiPjxwYXRoIGQ9Ik0tMTYgMTMwdjUyIE0xNiAxMzB2NTIiIHN0cm9rZT0iIzZmODJhNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0xNyAxODBoLTE2IE0xNCAxODBoMTgiIHN0cm9rZT0iIzM5NGQ2ZSIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zMyA1NlEtNDIgNzgtMzMgMTMzSDMyUTQ0IDgzIDMxIDU2UTAgNDQtMzMgNTZaIiBmaWxsPSIjZWU5YzkyIiBzdHJva2U9IiNhNDZhNjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMzEgNzlRLTUzIDEwNC02NiA2NSBNMzEgNzhRNTcgMTAxIDY5IDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmMWJlOTQiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgcj0iMzgiIGZpbGw9IiNmMWJlOTQiIHN0cm9rZT0iIzlmNmY1NiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zOCAtNlEtNTIgLTQ4LTE3IC00M1ExMS01MiAzNC0yOVE0MC0xNyAzNy02TDI3LTI1UTEwLTIxIDQtMzNRLTEyLTE2LTMzLTIwWiIgZmlsbD0iIzZjNDc0MCIvPjxjaXJjbGUgY3g9Ii0xMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48Y2lyY2xlIGN4PSIxMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48cGF0aCBkPSJNLTEzIDE0UTAgMjcgMTMgMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhhNTQ0YSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUwIDExOCkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xNiAxMzB2NTIgTTE2IDEzMHY1MiIgc3Ryb2tlPSIjNmY4MmE0IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTE3IDE4MGgtMTYgTTE0IDE4MGgxOCIgc3Ryb2tlPSIjMzk0ZDZlIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMzIDU2US00MiA3OC0zMyAxMzNIMzJRNDQgODMgMzEgNTZRMCA0NC0zMyA1NloiIGZpbGw9IiM4Y2JjYjEiIHN0cm9rZT0iI2E0NmE2MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zMSA3OVEtNTMgMTA0LTY2IDY1IE0zMSA3OFE1NyAxMDEgNjkgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0OGM2YSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSByPSIzOCIgZmlsbD0iI2M0OGM2YSIgc3Ryb2tlPSIjOWY2ZjU2IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNLTM4IC02US01MiAtNDgtMTcgLTQzUTExLTUyIDM0LTI5UTQwLTE3IDM3LTZMMjctMjVRMTAtMjEgNC0zM1EtMTItMTYtMzMtMjBaIiBmaWxsPSIjNDgzODNlIi8+PGNpcmNsZSBjeD0iLTEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxwYXRoIGQ9Ik0tMTMgMTRRMCAyNyAxMyAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1NDRhIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzUgOTApIj48cGF0aCBkPSJNMjIgMTEyTDEwMCAzMmw3OCA4MFoiIGZpbGw9IiNlZmFlODMiIHN0cm9rZT0iI2IyNzc0ZCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHJlY3QgeD0iNDIiIHk9IjExMSIgd2lkdGg9IjExNyIgaGVpZ2h0PSIxMjEiIGZpbGw9IiNmOWRjYjIiIHN0cm9rZT0iI2IwOGI3MiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHJlY3QgeD0iODMiIHk9IjE1MyIgd2lkdGg9IjQxIiBoZWlnaHQ9Ijc5IiBmaWxsPSIjYjZjYWVhIiBzdHJva2U9IiM3OThkYTgiIHN0cm9rZS13aWR0aD0iMyIvPjxjaXJjbGUgY3g9Ijk3IiBjeT0iNTciIHI9IjE2IiBmaWxsPSIjZmZmOGRiIi8+PGNpcmNsZSBjeD0iMjA0IiBjeT0iNDMiIHI9IjIzIiBmaWxsPSIjZjNjZTY5Ii8+PHBhdGggZD0iTTIxNCA3MWgyNiIgc3Ryb2tlPSIjZWNjMzZkIiBzdHJva2Utd2lkdGg9IjUiLz48L2c+PC9zdmc+" alt="Ilustración de formas y espacios" loading="lazy" width="560" height="380"></div><div class="activity-grid"><article class="activity-card" id="act-5-4-a" data-criterion="DEE 1.7"><div class="activity-head"><span class="activity-id">5.4.A</span><span class="activity-type">🔺 Reconocer formas</span></div><h3>Detectives de figuras</h3><p>Observa la figura y elige su nombre. Busca después otras figuras semejantes en el aula.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Observa la figura y elige su nombre. Busca después otras figuras semejantes en el aula." data-audio="/media/infantil/inf5/inf5.5-actividad-5-4-a.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="shapes"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Buscar círculos, cuadrados, rectángulos y triángulos en objetos cotidianos y representarlos con cuerdas o piezas.</p></article><article class="activity-card" id="act-5-4-b" data-criterion="DEE 1.6"><div class="activity-head"><span class="activity-id">5.4.B</span><span class="activity-type">🧩 Puzle de cuatro piezas</span></div><h3>Puzle de nuestra casa</h3><p>Une las cuatro piezas para descubrir una escena formada por figuras geométricas.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Une las cuatro piezas para descubrir una escena formada por figuras geométricas." data-audio="/media/infantil/inf5/inf5.5-actividad-5-4-b.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="puzzle" ><p class="math-hint">Reconstruye la imagen. Arrastra las cuatro piezas o toca una pieza y luego un hueco.</p><div class="math-puzzle-layout"><div class="math-puzzle-bank" data-puzzle-bank aria-label="Piezas del puzle"></div><div class="math-puzzle-board" data-puzzle-board aria-label="Huecos del puzle"></div></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-puzzle-reset>↺ Mezclar piezas</button></div><p class="teacher-tip"><strong>En clase:</strong> Construir casas y figuras con piezas geométricas de cartulina, tangram o bloques.</p></article><article class="activity-card" id="act-5-4-c" data-criterion="DEE 1.6"><div class="activity-head"><span class="activity-id">5.4.C</span><span class="activity-type">🎨 Colorear + trazar</span></div><h3>Pinto una casa geométrica</h3><p>Elige un color y toca las figuras de la casa para pintarlas. Después repasa la palabra «sol» con el dedo o el ratón.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Elige un color y toca las figuras de la casa para pintarlas. Después repasa la palabra «sol» con el dedo o el ratón." data-audio="/media/infantil/inf5/inf5.5-actividad-5-4-c.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="painttrace" ><div class="math-palette"><button type="button" class="math-swatch is-active" data-color="#e77b6d" aria-label="Color coral" aria-pressed="true" style="--swatch:#e77b6d"></button><button type="button" class="math-swatch" data-color="#78b5e3" aria-label="Color azul" aria-pressed="false" style="--swatch:#78b5e3"></button><button type="button" class="math-swatch" data-color="#95cba0" aria-label="Color verde" aria-pressed="false" style="--swatch:#95cba0"></button><button type="button" class="math-swatch" data-color="#f7cb73" aria-label="Color amarillo" aria-pressed="false" style="--swatch:#f7cb73"></button><button type="button" class="math-swatch" data-color="#bb9fe1" aria-label="Color lila" aria-pressed="false" style="--swatch:#bb9fe1"></button></div><svg class="math-shape-sheet" viewBox="0 0 400 275" role="img" aria-label="Casa geométrica para colorear; toca sus figuras"><rect width="400" height="275" fill="white"/><circle role="button" tabindex="0" data-paint-region aria-label="Sol circular" cx="337" cy="55" r="29" fill="#fff"/><path role="button" tabindex="0" data-paint-region aria-label="Tejado triangular" d="M90 118 L200 29 L310 118Z" fill="#fff"/><rect role="button" tabindex="0" data-paint-region aria-label="Fachada cuadrada" x="113" y="117" width="174" height="147" rx="2" fill="#fff"/><rect role="button" tabindex="0" data-paint-region aria-label="Puerta rectangular" x="177" y="183" width="45" height="81" fill="#fff"/><rect role="button" tabindex="0" data-paint-region aria-label="Ventana cuadrada izquierda" x="134" y="151" width="34" height="33" fill="#fff"/><rect role="button" tabindex="0" data-paint-region aria-label="Ventana cuadrada derecha" x="233" y="151" width="34" height="33" fill="#fff"/><path d="M0 270H400" stroke="#c4d3a4" stroke-width="5"/></svg><p class="math-outline">sol</p><p class="math-hint">Repasa con el dedo la palabra punteada.</p><div class="math-trace-stage"><span class="math-trace-word">sol</span><canvas width="900" height="200" aria-label="Lienzo para repasar la palabra sol"></canvas></div><div class="math-actions"><button type="button" class="game-button" data-paint-reset>🧽 Borrar pintura</button><button type="button" class="game-button" data-trace-reset>🧽 Borrar trazos</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div><p class="teacher-tip"><strong>En clase:</strong> Dibujar una casa usando figuras, colorearla y repasar formas con el dedo sobre arena o papel, sin exigir escritura.</p></article><article class="activity-card" id="act-5-4-d" data-criterion="DEE 1.3"><div class="activity-head"><span class="activity-id">5.4.D</span><span class="activity-type">🧭 Posiciones espaciales</span></div><h3>¿Dónde está el juguete?</h3><p>Escucha una indicación y coloca mentalmente un juguete: arriba, abajo, dentro o fuera.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Escucha una indicación y coloca mentalmente un juguete: arriba, abajo, dentro o fuera." data-audio="/media/infantil/inf5/inf5.5-actividad-5-4-d.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="spatial"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Jugar con cajas, muñecos y sillas siguiendo consignas: dentro/fuera, encima/debajo, delante/detrás.</p></article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Las formas se reconocen mejor cuando las tocamos, construimos y vemos en nuestro entorno.</p></section><!-- ======================================== INF5.5 · 5.5 ======================================== -->
+<section class="lesson-section measure" id="apartado-5-5" aria-labelledby="title-5-5"><div class="section-top"><div><span class="section-tag">📏 Medir, comparar y ordenar · 5.5</span><h2 class="section-heading" id="title-5-5">Medimos y organizamos el tiempo</h2><p class="section-intro">Aprendemos a comparar medidas usando objetos y a ordenar las acciones de nuestro día.</p><div class="section-sound"><button type="button" class="audio-button" data-say="Aprendemos a comparar medidas usando objetos y a ordenar las acciones de nuestro día." data-audio="/media/infantil/inf5/inf5.5-apartado-5-5.mp3">🔊 Escuchar explicación</button></div></div><img class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IklsdXN0cmFjacOzbiBpbmZhbnRpbCBkZSBqdWVnb3MgbWF0ZW3DoXRpY29zIj48cmVjdCB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCIgcng9IjI2IiBmaWxsPSIjZTlmOWY4Ii8+PGNpcmNsZSBjeD0iNDYiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii44NSIvPjxjaXJjbGUgY3g9IjUxNiIgY3k9IjY1IiByPSIxOCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjc2Ii8+PHBhdGggZD0iTTAgMzEzUTI0MCAyNzYgNTYwIDMyMFYzODBIMFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii41Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2IDEyMCkgc2NhbGUoMC43NykiPjxwYXRoIGQ9Ik0tMTYgMTMwdjUyIE0xNiAxMzB2NTIiIHN0cm9rZT0iIzZmODJhNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0xNyAxODBoLTE2IE0xNCAxODBoMTgiIHN0cm9rZT0iIzM5NGQ2ZSIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTS0zMyA1NlEtNDIgNzgtMzMgMTMzSDMyUTQ0IDgzIDMxIDU2UTAgNDQtMzMgNTZaIiBmaWxsPSIjZWU5YzkyIiBzdHJva2U9IiNhNDZhNjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMzEgNzlRLTUzIDEwNC02NiA2NSBNMzEgNzhRNTcgMTAxIDY5IDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmMWJlOTQiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgcj0iMzgiIGZpbGw9IiNmMWJlOTQiIHN0cm9rZT0iIzlmNmY1NiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zOCAtNlEtNTIgLTQ4LTE3IC00M1ExMS01MiAzNC0yOVE0MC0xNyAzNy02TDI3LTI1UTEwLTIxIDQtMzNRLTEyLTE2LTMzLTIwWiIgZmlsbD0iIzZjNDc0MCIvPjxjaXJjbGUgY3g9Ii0xMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48Y2lyY2xlIGN4PSIxMiIgY3k9Ii0xIiByPSIzLjYiIGZpbGw9IiMzOTQyNGEiLz48cGF0aCBkPSJNLTEzIDE0UTAgMjcgMTMgMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhhNTQ0YSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDUwIDExOCkgc2NhbGUoMC44KSI+PHBhdGggZD0iTS0xNiAxMzB2NTIgTTE2IDEzMHY1MiIgc3Ryb2tlPSIjNmY4MmE0IiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTE3IDE4MGgtMTYgTTE0IDE4MGgxOCIgc3Ryb2tlPSIjMzk0ZDZlIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNLTMzIDU2US00MiA3OC0zMyAxMzNIMzJRNDQgODMgMzEgNTZRMCA0NC0zMyA1NloiIGZpbGw9IiM4Y2JjYjEiIHN0cm9rZT0iI2E0NmE2MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTS0zMSA3OVEtNTMgMTA0LTY2IDY1IE0zMSA3OFE1NyAxMDEgNjkgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0OGM2YSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSByPSIzOCIgZmlsbD0iI2M0OGM2YSIgc3Ryb2tlPSIjOWY2ZjU2IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNLTM4IC02US01MiAtNDgtMTcgLTQzUTExLTUyIDM0LTI5UTQwLTE3IDM3LTZMMjctMjVRMTAtMjEgNC0zM1EtMTItMTYtMzMtMjBaIiBmaWxsPSIjNDgzODNlIi8+PGNpcmNsZSBjeD0iLTEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iLTEiIHI9IjMuNiIgZmlsbD0iIzM5NDI0YSIvPjxwYXRoIGQ9Ik0tMTMgMTRRMCAyNyAxMyAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGE1NDRhIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzcgMTAwKSI+PHJlY3QgeD0iMTUiIHk9IjE0MCIgd2lkdGg9IjIxMSIgaGVpZ2h0PSI0OCIgcng9IjEyIiBmaWxsPSIjZjdjODg5IiBzdHJva2U9IiNiYTk0NjAiIHN0cm9rZS13aWR0aD0iMyIvPjxnIHN0cm9rZT0iIzlmODE1YSIgc3Ryb2tlLXdpZHRoPSIzIj48cGF0aCBkPSJNNTAgMTQwdjMyIE04MSAxNDB2MjEgTTExMiAxNDB2MzIgTTE0MyAxNDB2MjEgTTE3NCAxNDB2MzIgTTIwNSAxNDB2MjEiLz48L2c+PHBhdGggZD0iTTI1IDkyaDE0MSIgc3Ryb2tlPSIjNjVhOGNkIiBzdHJva2Utd2lkdGg9IjI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMjUgNDZoOTEiIHN0cm9rZT0iIzhlYzc5OCIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjwvc3ZnPg==" alt="Ilustración de medimos y organizamos el tiempo" loading="lazy" width="560" height="380"></div><div class="activity-grid"><article class="activity-card" id="act-5-5-a" data-criterion="DEE 1.4"><div class="activity-head"><span class="activity-id">5.5.A</span><span class="activity-type">📏 Comparar longitudes</span></div><h3>¿Cuál mide más?</h3><p>Compara dos cintas que empiezan en el mismo lugar. Señala la que es más larga.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Compara dos cintas que empiezan en el mismo lugar. Señala la que es más larga." data-audio="/media/infantil/inf5/inf5.5-actividad-5-5-a.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="length"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Comparar cintas, lápices y bloques alineando uno de sus extremos y verbalizando más largo o más corto.</p></article><article class="activity-card" id="act-5-5-b" data-criterion="DEE 1.4"><div class="activity-head"><span class="activity-id">5.5.B</span><span class="activity-type">📐 Medición no convencional</span></div><h3>Mido con cubitos</h3><p>Mira el objeto y pon tantos cubitos como necesites para medirlo. Cada cubito es una unidad.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Mira el objeto y pon tantos cubitos como necesites para medirlo. Cada cubito es una unidad." data-audio="/media/infantil/inf5/inf5.5-actividad-5-5-b.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="measure" ><p class="math-display" data-measure-label>¿Cuántos cubitos mide esta cinta?</p><div class="math-lines"><div class="math-bar" data-measure-target style="width:168px"></div></div><div class="math-rule" data-measure-ruler></div><div class="math-actions"><button type="button" class="game-button" data-measure-add>➕ Añadir cubito</button><button type="button" class="game-button" data-measure-minus>➖ Quitar cubito</button><button type="button" class="game-button" data-measure-check>✔ Comprobar</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-measure-next>Otra medida</button></div><p class="teacher-tip"><strong>En clase:</strong> Medir mesas y objetos del aula utilizando bloques iguales, manos o palmos; conversar sobre el tamaño de las unidades.</p></article><article class="activity-card" id="act-5-5-c" data-criterion="DEE 1.5"><div class="activity-head"><span class="activity-id">5.5.C</span><span class="activity-type">☀️ Secuencias temporales</span></div><h3>Organizamos nuestro día</h3><p>Coloca las imágenes de la rutina en orden desde la mañana hasta la noche.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Coloca las imágenes de la rutina en orden desde la mañana hasta la noche." data-audio="/media/infantil/inf5/inf5.5-actividad-5-5-c.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="sort" data-sort="routine"><p class="math-hint">Toca una pieza y después su lugar, o arrástrala.</p><div class="math-drag-bank" data-sort-bank></div><div class="math-sort-zones" data-sort-zones></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Reiniciar</button><p class="access-note">También puedes jugar sin arrastrar, con dos toques.</p></div><p class="teacher-tip"><strong>En clase:</strong> Ordenar fotografías de rutinas reales del aula, usar calendarios y conversar sobre antes y después.</p></article><article class="activity-card" id="act-5-5-d" data-criterion="DEE 1.5"><div class="activity-head"><span class="activity-id">5.5.D</span><span class="activity-type">⏰ Tiempo y sucesos</span></div><h3>Antes y después</h3><p>Escucha qué ocurre en una historia cotidiana y elige qué sucede antes o después.</p><div class="activity-sound"><button type="button" class="audio-button" data-say="Escucha qué ocurre en una historia cotidiana y elige qué sucede antes o después." data-audio="/media/infantil/inf5/inf5.5-actividad-5-5-d.mp3">🔊 Escuchar actividad</button></div><div class="game-panel" data-game="quiz" data-quiz="time"><div class="math-stimulus"><div class="math-emoji" data-q-visual>🔴 🔵 🔴</div><p class="math-question" data-q-prompt>¿Qué viene después?</p></div><div class="math-answer-row" data-q-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="math-actions"><button type="button" class="game-button" data-q-say>🔊 Escuchar pregunta</button><button type="button" class="game-button" data-q-next>Otra pregunta</button></div></div><p class="teacher-tip"><strong>En clase:</strong> Recrear secuencias con tarjetas grandes, dramatizar rutinas y explicar qué acciones son anteriores o posteriores.</p></article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Para medir usamos unidades iguales; para ordenar el tiempo hablamos de antes y después.</p></section>
+<section class="end-project" id="pasaporte" aria-labelledby="passport-title"><span class="section-tag">🌟 Proyecto final</span><h2 id="passport-title">La feria de las matemáticas</h2><p>Organizamos cinco pequeños puestos con materiales reales. Podremos jugar a clasificar, contar, repartir, construir figuras y medir. Cada niño participa de la manera que le resulte accesible.</p><div class="passport-grid" data-game="passport">
+<div class="passport-item"><input id="seal-55-1" type="checkbox"><label for="seal-55-1"><span class="seal">🧺</span>Clasifiqué</label></div><div class="passport-item"><input id="seal-55-2" type="checkbox"><label for="seal-55-2"><span class="seal">🔢</span>Conté</label></div><div class="passport-item"><input id="seal-55-3" type="checkbox"><label for="seal-55-3"><span class="seal">🍪</span>Repartí</label></div><div class="passport-item"><input id="seal-55-4" type="checkbox"><label for="seal-55-4"><span class="seal">🔺</span>Construí formas</label></div><div class="passport-item"><input id="seal-55-5" type="checkbox"><label for="seal-55-5"><span class="seal">📏</span>Medí</label></div></div><p class="passport-progress" data-passport-status aria-live="polite">Mis descubrimientos: 0 de 5</p><div class="passport-meter" role="progressbar" aria-label="Progreso de la feria" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div class="passport-fill"></div></div><p class="final-mantra">🌟 Las matemáticas me ayudan a descubrir y jugar.</p><button type="button" class="audio-button" data-say="¡Bien hecho! Has jugado a clasificar, contar, repartir, construir y medir. ¡La feria de las matemáticas está llena de descubrimientos!" data-audio="/media/infantil/inf5/inf5.5-despedida.mp3">🔊 Escuchar despedida</button><p class="soft-reminder">La feria se completa con experiencias reales, sin exigir que todos resuelvan las actividades del mismo modo o al mismo ritmo.</p></section>
+<details class="teacher-notes"><summary>📋 Orientaciones docentes, progresión y criterios de evaluación</summary>
+<p><strong>Etapa:</strong> Educación Infantil · 5 años. <strong>Área principal:</strong> Descubrimiento y Exploración del Entorno (segundo ciclo), con tratamiento globalizado de otras áreas.</p>
+<p><strong>Producto final:</strong> La feria de las matemáticas: cinco pequeños puestos cooperativos, uno para clasificar objetos, otro para contar, otro para repartir, otro para construir figuras y otro para medir. Cada grupo presenta una muestra manipulativa, oral o gráfica.</p>
+<p><strong>Progresión:</strong> (1) Exploro con objetos reales y apoyos visuales; (2) establezco relaciones, comparo y explico con ayuda; (3) aplico estrategias sencillas en nuevas situaciones del aula y en juegos cooperativos. Adaptar cantidades, tiempos y apoyos a cada alumno; no son niveles cerrados.</p>
+<p><strong>Referencia numérica didáctica:</strong> para buena parte de los juegos se utilizan cantidades de 0 a 10, ampliables o reducibles. No constituye una exigencia curricular de dominio completo del intervalo al finalizar Infantil.</p>
+<p><strong>Saberes básicos especialmente relacionados:</strong> DEE.02.A.01 (objetos y materiales), DEE.02.A.02 (atributos, clasificación y comparación), DEE.02.A.03 (cuantificadores y conteo), DEE.02.A.04 (números en contextos cotidianos), DEE.02.A.05 (medida), DEE.02.A.06 (nociones espaciales), DEE.02.A.07 (tiempo), así como los procesos de exploración y resolución de retos propios del área.</p>
+<p><strong>Metodología:</strong> empezar cada reto con material real, usar la pantalla para explorar o consolidar, y terminar con manipulación, conversación o creación. Las respuestas pueden expresarse señalando, verbalizando, haciendo gestos o mediante apoyos de comunicación.</p>
+<p><strong>Evaluación:</strong> observación directa y sistemática; registrar curiosidad, identificación de atributos, conteo significativo, correspondencia, estrategias para añadir o repartir, reconocimiento de formas y lenguaje espacial/temporal. No calificar al alumnado según las puntuaciones del navegador.</p>
+<div class="teacher-table-wrap"><table><thead><tr><th>Actividad</th><th>Propuesta</th><th>Criterio principal</th></tr></thead><tbody><tr><td>5.1.A</td><td>Cada cosa con su color</td><td>DEE 1.1</td></tr><tr><td>5.1.B</td><td>¿Qué viene después?</td><td>DEE 1.1</td></tr><tr><td>5.1.C</td><td>¿Dónde hay más?</td><td>DEE 1.2</td></tr><tr><td>5.1.D</td><td>Mi collar de colores</td><td>DEE 1.1</td></tr><tr><td>5.2.A</td><td>¿Cuántos hay?</td><td>DEE 1.8</td></tr><tr><td>5.2.B</td><td>El número y sus puntos</td><td>DEE 1.8</td></tr><tr><td>5.2.C</td><td>Construimos la recta de números</td><td>DEE 1.8</td></tr><tr><td>5.2.D</td><td>La frutería de clase</td><td>DEE 1.8</td></tr><tr><td>5.3.A</td><td>Juntamos colecciones</td><td>DEE 1.8</td></tr><tr><td>5.3.B</td><td>Quitamos objetos</td><td>DEE 1.8</td></tr><tr><td>5.3.C</td><td>Repartimos entre dos</td><td>DEE 1.2</td></tr><tr><td>5.3.D</td><td>Muchas maneras de formar cinco</td><td>DEE 1.8</td></tr><tr><td>5.4.A</td><td>Detectives de figuras</td><td>DEE 1.7</td></tr><tr><td>5.4.B</td><td>Puzle de nuestra casa</td><td>DEE 1.6</td></tr><tr><td>5.4.C</td><td>Pinto una casa geométrica</td><td>DEE 1.6</td></tr><tr><td>5.4.D</td><td>¿Dónde está el juguete?</td><td>DEE 1.3</td></tr><tr><td>5.5.A</td><td>¿Cuál mide más?</td><td>DEE 1.4</td></tr><tr><td>5.5.B</td><td>Mido con cubitos</td><td>DEE 1.4</td></tr><tr><td>5.5.C</td><td>Organizamos nuestro día</td><td>DEE 1.5</td></tr><tr><td>5.5.D</td><td>Antes y después</td><td>DEE 1.5</td></tr></tbody></table></div>
+<h3>Correspondencia de los criterios (síntesis didáctica)</h3><ul><li><strong>DEE 1.1:</strong> Relacionar y comparar objetos según sus cualidades y atributos.</li><li><strong>DEE 1.2:</strong> Utilizar cuantificadores básicos en juegos y situaciones cotidianas.</li><li><strong>DEE 1.3:</strong> Aplicar nociones espaciales básicas con el cuerpo y objetos.</li><li><strong>DEE 1.4:</strong> Reconocer situaciones en las que es necesario comparar y medir.</li><li><strong>DEE 1.5:</strong> Organizar secuencias de acciones y usar nociones temporales básicas.</li><li><strong>DEE 1.6:</strong> Representar espacios y objetos mediante relaciones geométricas.</li><li><strong>DEE 1.7:</strong> Reconocer formas y cuerpos geométricos mediante experiencias manipulativas.</li><li><strong>DEE 1.8:</strong> Descubrir y utilizar los números en situaciones cotidianas con sentido.</li></ul>
+<p><strong>Normativa:</strong> Orden de 30 de mayo de 2023 por la que se desarrolla el currículo de Educación Infantil en Andalucía, Anexo I (segundo ciclo). Los enunciados de esta tabla son resúmenes orientativos y no sustituyen los oficiales.</p>
+<p><strong>Uso seguro y accesible:</strong> juegos táctiles y de ratón; las actividades de arrastre admiten tocar pieza y destino. Evitar obligar a niños con dificultades motrices a arrastrar. Proponer piezas grandes que no puedan tragarse en el aula.</p>
+<p><strong>Tipografía:</strong> fuentes Escolar normal, negrita, punteada y calada en <code>/fonts/</code>. Audios opcionales en <code>/media/infantil/inf5/</code>; si falta un MP3 de narración, se intenta la voz del navegador.</p>
+</details>
+</div></main>
+<footer class="site-footer"><div class="footer-container"><div class="footer-junta"><img alt="Junta de Andalucía - Consejería de Educación" src="/img/junta-educacion.png"/></div><div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" rel="noopener noreferrer" target="_blank">Web oficial del Centro</a></div></div></footer>
+<script>(() => {
+'use strict';
+const root=document.querySelector('.infant-learning');
+if(!root)return;
+const $=(selector,scope=document)=>scope.querySelector(selector);
+const $$=(selector,scope=document)=>Array.from(scope.querySelectorAll(selector));
+const el=(tag,cls,text)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x;};
+const pick=(items)=>items[Math.floor(Math.random()*items.length)];
+const shuffle=(list)=>[...list].sort(()=>Math.random()-.5);
+let currentAudio=null;
+function say(text){if(!text)return;try{if(window.speechSynthesis){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(String(text));u.lang='es-ES';u.rate=.86;u.pitch=1.06;window.speechSynthesis.speak(u);}}catch(e){/* speech is optional */}}
+function narrate(path,text){try{if(currentAudio){currentAudio.pause();currentAudio=null;}if(window.speechSynthesis)window.speechSynthesis.cancel();if(!path){say(text);return;}let tried=false;const fallback=()=>{if(!tried){tried=true;say(text);}};const a=new Audio(path);currentAudio=a;a.addEventListener('error',fallback,{once:true});const promise=a.play();if(promise&&promise.catch)promise.catch(fallback);}catch(e){say(text);}}
+$$('[data-say]',root).forEach(b=>b.addEventListener('click',()=>narrate(b.dataset.audio||'',b.dataset.say)));
+function feedback(panel,msg,spoken=false,again=false){let p=$('[data-feedback]',panel);if(p){p.textContent=msg;p.classList.toggle('try-again',again);}if(spoken)say(msg);}
+function button(cls,label,attr,value){const b=el('button',cls,label);b.type='button';if(attr)b.dataset[attr]=value;return b;}
+function symbolSeries(icon,n){return new Array(n).fill(icon).join(' ');}
+
+// Preguntas visuales con audición, sin depender de la lectura.
+const quizData={
+ patterns:[
+   {visual:'🔴 🔵 🔴 🔵 ❔',question:'¿Qué color viene ahora?',options:[['🔴','Rojo'],['🔵','Azul'],['🟢','Verde']],correct:'🔴'},
+   {visual:'⭐ 🌙 ⭐ 🌙 ❔',question:'¿Qué figura sigue?',options:[['⭐','Estrella'],['🌙','Luna'],['☁️','Nube']],correct:'⭐'},
+   {visual:'🟢 🟢 🟡 🟢 🟢 🟡 ❔',question:'¿Qué color sigue?',options:[['🟢','Verde'],['🟡','Amarillo'],['🔴','Rojo']],correct:'🟢'}],
+ compare:[
+   {visual:'🍐 🍐 🍐　│　🍐 🍐',question:'¿En qué lado hay más peras?',options:[['left','Izquierda'],['right','Derecha'],['equal','Igual']],correct:'left'},
+   {visual:'🐠 🐠　│　🐠 🐠 🐠 🐠',question:'¿En qué lado hay más peces?',options:[['left','Izquierda'],['right','Derecha'],['equal','Igual']],correct:'right'},
+   {visual:'⭐ ⭐ ⭐　│　⭐ ⭐ ⭐',question:'¿Dónde hay la misma cantidad?',options:[['left','Izquierda'],['right','Derecha'],['equal','Son iguales']],correct:'equal'}],
+ count:[
+   ...[2,4,6,8,10,3,5,7].map((n,i)=>({visual:symbolSeries(['🍎','🐞','⭐','🌻'][i%4],n),question:'¿Cuántas figuras hay?',options:shuffle([n,...[n-1,n+1,n+2].filter(x=>x>=0&&x<=10).slice(0,2)]).map(x=>[String(x),String(x)]),correct:String(n)}))],
+ add:[
+   {visual:'🍎 🍎　+　🍎',question:'Juntamos dos manzanas y una manzana. ¿Cuántas hay?',options:[['2','2'],['3','3'],['4','4']],correct:'3'},
+   {visual:'⭐ ⭐ ⭐　+　⭐ ⭐',question:'Juntamos tres estrellas y dos estrellas. ¿Cuántas hay?',options:[['4','4'],['5','5'],['6','6']],correct:'5'},
+   {visual:'🐞　+　🐞 🐞 🐞',question:'Una mariquita y tres mariquitas. ¿Cuántas hay?',options:[['3','3'],['4','4'],['5','5']],correct:'4'}],
+ subtract:[
+   {visual:'🍪 🍪 🍪 🍪　→　quitamos 🍪',question:'Había cuatro galletas y quitamos una. ¿Cuántas quedan?',options:[['2','2'],['3','3'],['4','4']],correct:'3'},
+   {visual:'🌼 🌼 🌼 🌼 🌼　→　quitamos 🌼 🌼',question:'Había cinco flores y quitamos dos. ¿Cuántas quedan?',options:[['2','2'],['3','3'],['4','4']],correct:'3'},
+   {visual:'🐟 🐟 🐟　→　quitamos 🐟',question:'Había tres peces y se marcha uno. ¿Cuántos quedan?',options:[['1','1'],['2','2'],['3','3']],correct:'2'}],
+ shapes:[
+   {visual:'⚪',question:'¿Qué figura es?',options:[['círculo','Círculo'],['cuadrado','Cuadrado'],['triángulo','Triángulo']],correct:'círculo'},
+   {visual:'🔺',question:'¿Qué figura es?',options:[['círculo','Círculo'],['triángulo','Triángulo'],['rectángulo','Rectángulo']],correct:'triángulo'},
+   {visual:'🟦',question:'¿Qué figura representa?',options:[['cuadrado','Cuadrado'],['círculo','Círculo'],['triángulo','Triángulo']],correct:'cuadrado'},
+   {visual:'▭',question:'¿Qué figura es?',options:[['rectángulo','Rectángulo'],['triángulo','Triángulo'],['círculo','Círculo']],correct:'rectángulo'}],
+ spatial:[
+   {visual:'☁️\n🏠',question:'¿Dónde está la nube respecto a la casa?',options:[['encima','Encima'],['debajo','Debajo'],['dentro','Dentro']],correct:'encima'},
+   {visual:'🏠\n🌼',question:'¿Dónde está la flor respecto a la casa?',options:[['encima','Encima'],['debajo','Debajo'],['dentro','Dentro']],correct:'debajo'},
+   {visual:'📦 🧸',question:'¿El osito está dentro o fuera de la caja?',options:[['dentro','Dentro'],['fuera','Fuera'],['encima','Encima']],correct:'fuera'},
+   {visual:'insideBox',question:'El osito está guardado en la caja. ¿Dónde está?',options:[['dentro','Dentro'],['fuera','Fuera'],['debajo','Debajo']],correct:'dentro'}],
+ length:[
+   {visual:'🟦 🟦 🟦 🟦 🟦\n🟩 🟩 🟩',question:'Las dos tiras empiezan en el mismo sitio. ¿Cuál es más larga?',options:[['azul','Azul'],['verde','Verde']],correct:'azul'},
+   {visual:'🟦 🟦\n🟩 🟩 🟩 🟩',question:'¿Qué tira es más larga?',options:[['azul','Azul'],['verde','Verde']],correct:'verde'},
+   {visual:'🟦 🟦 🟦\n🟩 🟩 🟩',question:'¿Qué sucede con estas dos tiras?',options:[['azul','Azul es más larga'],['verde','Verde es más larga'],['iguales','Miden igual']],correct:'iguales'}],
+ time:[
+   {visual:'🧼 ➜ 🍽️',question:'¿Qué hacemos antes de comer?',options:[['lavarse','Lavarnos las manos'],['dormir','Dormir'],['guardar','Guardar juguetes']],correct:'lavarse'},
+   {visual:'🌱 ➜ 🌿 ➜ 🌻',question:'¿Qué sucede después de sembrar una semilla?',options:[['brote','Nace un brote'],['fruta','Recogemos fruta inmediatamente'],['seca','Sale seca']],correct:'brote'},
+   {visual:'🪥 ➜ 🛏️',question:'¿Qué hacemos después de lavarnos los dientes por la noche?',options:[['acostarse','Nos acostamos'],['desayunar','Desayunamos'],['almorzar','Almorzamos']],correct:'acostarse'}]
+};
+$$('[data-game="quiz"]',root).forEach(p=>{
+ const list=quizData[p.dataset.quiz]||[];let pos=0,solved=false;
+ const visual=$('[data-q-visual]',p),question=$('[data-q-prompt]',p),choices=$('[data-q-options]',p);
+ function render(){const item=list[pos%list.length];solved=false;if(item.visual==='insideBox'){visual.replaceChildren(el('span','math-inside-box','🧸'));}else visual.textContent=item.visual;visual.style.whiteSpace='pre-line';question.textContent=item.question;choices.replaceChildren();item.options.forEach(([id,caption])=>{const b=button('math-answer',caption,'answer',id);b.setAttribute('aria-label',caption);b.addEventListener('click',()=>{
+   if(solved)return;
+   if(id===item.correct){solved=true;b.classList.add('is-right');feedback(p,'¡Muy bien! Puedes explicar cómo lo descubriste.',true);}
+   else {b.classList.add('is-wrong');feedback(p,'Vamos a mirar las figuras otra vez.',false,true);}
+ });choices.append(b);});feedback(p,'');}
+ $('[data-q-say]',p).addEventListener('click',()=>say(list[pos%list.length].question));
+ $('[data-q-next]',p).addEventListener('click',()=>{pos=(pos+1)%list.length;render();});render();
+});
+
+// Colocar piezas arrastrando con puntero o tocando pieza y destino.
+function pointerArrange(p,onDrop){let chosen=null,active=null,ghost=null,moved=false,sx=0,sy=0;
+ const clear=()=>{$$('.is-hovered',p).forEach(x=>x.classList.remove('is-hovered'));if(ghost){ghost.remove();ghost=null;}};
+ function select(b){if(!b||b.disabled)return;$$('[data-drag-item]',p).forEach(x=>x.classList.remove('is-chosen'));chosen=b;chosen.classList.add('is-chosen');}
+ function drop(zone){if(!zone||!chosen||chosen.disabled)return;const piece=chosen;const ok=onDrop(piece.dataset.dragItem,zone.dataset.dropZone,piece,zone);if(ok){piece.disabled=true;piece.classList.remove('is-chosen');chosen=null;}else feedback(p,'Revisa el lugar y prueba de nuevo.',false,true);}
+ p.addEventListener('click',e=>{const piece=e.target.closest('[data-drag-item]'),zone=e.target.closest('[data-drop-zone]');if(piece&&p.contains(piece))select(piece);else if(zone&&p.contains(zone))drop(zone);});
+ p.addEventListener('pointerdown',e=>{const piece=e.target.closest('[data-drag-item]');if(!piece||piece.disabled||e.pointerType==='mouse'&&e.button!==0)return;active=piece;sx=e.clientX;sy=e.clientY;moved=false;});
+ const move=e=>{if(!active)return;if(!moved&&Math.hypot(e.clientX-sx,e.clientY-sy)>9){moved=true;select(active);ghost=active.cloneNode(true);ghost.removeAttribute('data-drag-item');ghost.style.cssText='position:fixed;z-index:99999;pointer-events:none;opacity:.78;width:83px;height:83px;transform:translate(-50%,-50%);box-shadow:0 6px 24px #0002;';document.body.append(ghost);}if(ghost){ghost.style.left=e.clientX+'px';ghost.style.top=e.clientY+'px';$$('[data-drop-zone]',p).forEach(x=>x.classList.remove('is-hovered'));const z=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-drop-zone]');if(z&&p.contains(z))z.classList.add('is-hovered');}};
+ const end=e=>{if(!active)return;const z=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-drop-zone]');if(moved&&z&&p.contains(z))drop(z);else if(!moved)select(active);active=null;clear();};
+ window.addEventListener('pointermove',move,{passive:true});window.addEventListener('pointerup',end);window.addEventListener('pointercancel',()=>{active=null;clear();});
+ return {reset(){chosen=null;clear();$$('.is-chosen',p).forEach(x=>x.classList.remove('is-chosen'));}};
+}
+const sortConfig={
+ colors:{zones:[['red','🔴','Rojos'],['blue','🔵','Azules'],['green','🟢','Verdes']],items:[['red1','🔴','Roja','red'],['blue1','🔵','Azul','blue'],['green1','🟢','Verde','green'],['red2','❤️','Corazón rojo','red'],['blue2','🦋','Mariposa azul','blue'],['green2','🍀','Trébol verde','green']]},
+ 'number-pairs':{zones:[['2','••','Dos'],['3','•••','Tres'],['4','••••','Cuatro']],items:[['num2','2','Dos','2'],['num4','4','Cuatro','4'],['num3','3','Tres','3']]},
+ routine:{zones:[['1','☀️','1 · Por la mañana'],['2','🍽️','2 · A mediodía'],['3','🛏️','3 · Por la noche']],items:[['desayuno','🥛','Desayuno','1'],['comida','🍲','Comida','2'],['dormir','😴','Dormir','3']]}
+};
+$$('[data-game="sort"]',root).forEach(p=>{const cfg=sortConfig[p.dataset.sort];const bank=$('[data-sort-bank]',p),zones=$('[data-sort-zones]',p);let complete=0;
+ const interaction=pointerArrange(p,(id,dest,piece,zone)=>{const item=cfg.items.find(x=>x[0]===id);if(!item||item[3]!==dest)return false;const token=el('span','placed-token',item[1]);zone.append(token);complete++;feedback(p,complete===cfg.items.length?'¡Has colocado todas las piezas!':'¡Esta pieza está en su lugar!',complete===cfg.items.length);return true;});
+ function reset(){interaction.reset();complete=0;bank.replaceChildren();zones.replaceChildren();shuffle(cfg.items).forEach(([id,icon,name])=>{const b=button('drag-piece','', 'dragItem',id);b.setAttribute('aria-label',name);const s=el('span','',icon);b.append(s);bank.append(b);});cfg.zones.forEach(([id,icon,name])=>{const b=button('drop-target','', 'dropZone',id);b.setAttribute('aria-label','Colocar en '+name);b.append(el('span','math-large-figure',icon),el('strong','',name));zones.append(b);});feedback(p,'');}
+ $('[data-sort-reset]',p).addEventListener('click',reset);reset();
+});
+
+// Continúa el collar según un patrón repetido.
+{
+ const p=$('[data-game="beads"]');let model=[],level=0;
+ const patterns=[['red','blue','red','blue','red','blue'],['green','green','blue','green','green','blue'],['red','blue','green','red','blue','green']];
+ const names={red:'roja',blue:'azul',green:'verde'};
+ function reset(){model=[];const pattern=patterns[level%patterns.length];const row=$('[data-bead-row]',p);row.replaceChildren();pattern.slice(0,3).forEach(id=>{const b=el('span','bead '+id);b.setAttribute('aria-label','Cuenta '+names[id]);b.setAttribute('role','img');row.append(b);});for(let i=0;i<3;i++)row.append(el('span','bead blank'));feedback(p,'');}
+ $$('[data-bead-add]',p).forEach(b=>b.addEventListener('click',()=>{const expected=patterns[level%patterns.length][3+model.length];if(model.length>=3)return;const chosen=b.dataset.beadAdd;if(chosen!==expected){feedback(p,'Observa qué color se repite y vuelve a probar.',false,true);return;}model.push(chosen);const blank=$('.bead.blank',p);if(blank)blank.className='bead '+chosen;feedback(p,model.length===3?'¡Has completado el patrón!':'¡Así continúa el collar!',model.length===3);}));
+ $('[data-bead-reset]',p).addEventListener('click',()=>{level++;reset();});reset();
+}
+
+// Ordenación numérica: los botones permiten resolver sin arrastrar.
+{
+ const p=$('[data-game="numberline"]'),bank=$('[data-number-bank]',p),slots=$('[data-number-slots]',p);let next=0;
+ function reset(){next=0;bank.replaceChildren();slots.replaceChildren();for(let i=0;i<=10;i++){const x=el('span','math-slot','?');x.setAttribute('aria-label','Posición '+(i+1));slots.append(x);}shuffle(Array.from({length:11},(_,i)=>i)).forEach(num=>{const b=button('math-counter',String(num),'num',String(num));b.addEventListener('click',()=>{if(Number(b.dataset.num)!==next){feedback(p,'Busca el número que sigue.',false,true);return;}$$('.math-slot',slots)[next].textContent=String(next);$$('.math-slot',slots)[next].classList.add('done');b.disabled=true;next++;feedback(p,next===11?'¡Has completado la recta de números!':'¡Muy bien! Busca el que sigue.',next===11);});bank.append(b);});feedback(p,'');}
+ $('[data-number-reset]',p).addEventListener('click',reset);reset();
+}
+
+// Frutería: cantidad objetivo con controles de añadir y retirar.
+{
+ const p=$('[data-game="market"]');let target=4,n=0,level=0;const targets=[4,6,3,5,8];
+ function render(){const box=$('[data-market-basket]',p);box.replaceChildren();if(!n)box.textContent='🧺 Cesta vacía';for(let j=0;j<n;j++)box.append(el('span','math-basket-icon','🍎'));$('[data-market-prompt]',p).textContent='Necesito '+target+' manzanas.';}
+ $('[data-market-add]',p).addEventListener('click',()=>{n=Math.min(10,n+1);render();feedback(p,'Cuenta las manzanas que has puesto.');});
+ $('[data-market-minus]',p).addEventListener('click',()=>{n=Math.max(0,n-1);render();feedback(p,'Cuenta las que quedan.');});
+ $('[data-market-check]',p).addEventListener('click',()=>{feedback(p,n===target?'¡Compra preparada!':n<target?'Faltan algunas manzanas.':'Hay más manzanas de las que pide el cartel.',n===target,n!==target);});
+ $('[data-market-next]',p).addEventListener('click',()=>{level++;target=targets[level%targets.length];n=0;feedback(p,'');render();});render();
+}
+
+// Reparto realista y flexible: la comprobación ocurre tras distribuir todo.
+{
+ const p=$('[data-game="share"]');let groups=[0,0];const left=$('[data-share-left]',p);
+ function render(){left.textContent=symbolSeries('🍪',6-groups[0]-groups[1]);$$('[data-share-child]',p).forEach((b,i)=>{$('[data-share-items="'+i+'"]',p).textContent=symbolSeries('🍪',groups[i]);});}
+ $$('[data-share-child]',p).forEach((b,i)=>b.addEventListener('click',()=>{if(groups[0]+groups[1]>=6)return;groups[i]++;render();feedback(p,'Puedes seguir repartiendo.');}));
+ $('[data-share-check]',p).addEventListener('click',()=>{const done=groups[0]+groups[1]===6&&groups[0]===groups[1];feedback(p,done?'¡Cada plato tiene tres galletas!':groups[0]+groups[1]<6?'Aún quedan galletas por repartir.':'Los platos tienen cantidades distintas. ¿Puedes intentarlo de nuevo?',done,!done);});
+ $('[data-share-reset]',p).addEventListener('click',()=>{groups=[0,0];render();feedback(p,'');});render();
+}
+{
+ const p=$('[data-game="split"]');$$('[data-split]',p).forEach(b=>b.addEventListener('click',()=>{const x=Number(b.dataset.split),y=5-x;$('[data-split-a]',p).textContent=symbolSeries('🟡',x)||'—';$('[data-split-b]',p).textContent=symbolSeries('🟡',y)||'—';$('[data-split-equation]',p).textContent=x+' y '+y+' forman 5.';feedback(p,'¡Has descubierto otra manera de formar cinco!');}));
+}
+
+// Puzle de cuatro piezas, imagen integrada de geometría.
+{
+ const p=$('[data-game="puzzle"]'),src=$('#apartado-5-4 .section-image').src,bank=$('[data-puzzle-bank]',p),board=$('[data-puzzle-board]',p),pos=['0% 0%','100% 0%','0% 100%','100% 100%'];let found=new Set();
+ const interaction=pointerArrange(p,(id,to,piece,slot)=>{if(id!==to||found.has(id))return false;const img=el('span','math-slice');img.style.backgroundImage='url("'+src+'")';img.style.backgroundPosition=pos[Number(id)];slot.append(img);slot.classList.add('is-complete');found.add(id);feedback(p,found.size===4?'¡Puzle completo!':'¡Pieza colocada!',found.size===4);return true;});
+ function reset(){interaction.reset();found=new Set();bank.replaceChildren();board.replaceChildren();[2,0,3,1].forEach(num=>{const b=button('','', 'dragItem',String(num));b.setAttribute('aria-label','Pieza '+(num+1));const im=el('span','math-slice');im.style.backgroundImage='url("'+src+'")';im.style.backgroundPosition=pos[num];b.append(im);bank.append(b);});pos.forEach((_,i)=>{const b=button('','', 'dropZone',String(i));b.dataset.number=String(i+1);b.setAttribute('aria-label','Hueco '+(i+1));board.append(b);});feedback(p,'');}
+ $('[data-puzzle-reset]',p).addEventListener('click',reset);reset();
+}
+
+// Casa geométrica: colorear zonas con clic, teclado o toque y repasar 'sol'.
+{
+ const p=$('[data-game="painttrace"]');let color=$('[data-color]',p).dataset.color;const regions=$$('[data-paint-region]',p);
+ $$('[data-color]',p).forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;$$('[data-color]',p).forEach(x=>{x.classList.toggle('is-active',x===b);x.setAttribute('aria-pressed',String(x===b));});}));
+ regions.forEach(r=>{function paint(){r.setAttribute('fill',color);feedback(p,'¡Has dado color a una figura!');}r.addEventListener('click',paint);r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();paint();}});});
+ $('[data-paint-reset]',p).addEventListener('click',()=>{regions.forEach(r=>r.setAttribute('fill','#fff'));feedback(p,'Lista para colorear de nuevo.');});
+ const canvas=$('canvas',p),ctx=canvas.getContext('2d');let drawing=false;
+ function location(e){const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};}
+ canvas.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;drawing=true;canvas.setPointerCapture(e.pointerId);const pt=location(e);ctx.strokeStyle='#4187bd';ctx.lineWidth=8;ctx.lineJoin='round';ctx.lineCap='round';ctx.beginPath();ctx.moveTo(pt.x,pt.y);ctx.lineTo(pt.x+.1,pt.y+.1);ctx.stroke();});
+ canvas.addEventListener('pointermove',e=>{if(!drawing)return;const pt=location(e);ctx.lineTo(pt.x,pt.y);ctx.stroke();});
+ ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>canvas.addEventListener(ev,()=>{drawing=false;}));
+ $('[data-trace-reset]',p).addEventListener('click',()=>{ctx.clearRect(0,0,canvas.width,canvas.height);feedback(p,'Puedes repasar el trazo otra vez.');});
+}
+
+// Medición con unidades visibles de 42 px: la cinta coincide con la longitud de cubitos.
+{
+ const p=$('[data-game="measure"]');let n=0,target=4,level=0;const units=[4,6,3,5,7];
+ function render(){const ruler=$('[data-measure-ruler]',p);ruler.replaceChildren();for(let i=0;i<n;i++)ruler.append(el('span','math-unit',String(i+1)));$('[data-measure-target]',p).style.width=(target*42)+'px';$('[data-measure-label]',p).textContent='¿Cuántos cubitos mide esta cinta?';}
+ $('[data-measure-add]',p).addEventListener('click',()=>{n=Math.min(n+1,9);render();});
+ $('[data-measure-minus]',p).addEventListener('click',()=>{n=Math.max(n-1,0);render();});
+ $('[data-measure-check]',p).addEventListener('click',()=>{feedback(p,n===target?'¡La cinta mide '+target+' cubitos!':n<target?'Faltan cubitos para igualar la cinta.':'Has puesto más cubitos que la longitud de la cinta.',n===target,n!==target);});
+ $('[data-measure-next]',p).addEventListener('click',()=>{level++;target=units[level%units.length];n=0;feedback(p,'');render();});render();
+}
+
+// Pasaporte final: los sellos son un recordatorio de experiencias, no una nota.
+{
+ const box=$('[data-game="passport"]');if(box){const inputs=$$('input[type="checkbox"]',box),meter=$('.passport-meter'),fill=$('.passport-fill'),text=$('[data-passport-status]');function update(){const n=inputs.filter(i=>i.checked).length;text.textContent='Mis descubrimientos: '+n+' de '+inputs.length+(n===inputs.length?' · ¡Feria completada!':'');meter.setAttribute('aria-valuenow',String(n));fill.style.width=(n/inputs.length*100)+'%';}inputs.forEach(i=>i.addEventListener('change',update));update();}
+}
+})();
+</script><script src="/js/main.js"></script>
+</body></html>
