@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="INF5.8: Arte, música y movimiento para Educación Infantil de 5 años. Recursos de expresión plástica, ritmo, baile y teatro.">
+ <meta name="theme-color" content="#fff4e5">
+ <title>INF5.8 · Me expreso con arte, música y movimiento | CEIP Joaquín Tena Artigas</title>
+ <link rel="icon" href="/img/logo-centro.png" type="image/png">
+ <link rel="stylesheet" href="/css/base.css">
+ <style>
+    /* ======================================================
+       INFANTIL 5 AÑOS · BLOQUE 8 · ARTE, MÚSICA Y MOVIMIENTO
+       Estilos locales; se preservan los de /css/base.css.
+       ====================================================== */
+    .infant-learning {
+      --ink: #24364a;
+      --muted: #52657a;
+      --orange: #ad5435;
+      --orange-soft: #fff0e7;
+      --page: #fffdfa;
+      --green: #006c3c;
+      --border-soft: #eadfd5;
+      color: var(--ink);
+      background: var(--page);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    .infant-learning *, .infant-learning *::before,
+    .infant-learning *::after { box-sizing: border-box; }
+    .infant-learning button { font: inherit; }
+    .infant-learning button:not(:disabled) { cursor: pointer; }
+    .infant-learning a:focus-visible,
+    .infant-learning button:focus-visible,
+    .infant-learning summary:focus-visible,
+    .infant-learning input:focus-visible + label {
+      outline: 3px solid #175ba6;
+      outline-offset: 4px;
+    }
+    .infant-learning .lesson-shell {
+      width: min(94%, 1160px);
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .infant-learning .breadcrumbs { margin-bottom: 20px; }
+    .infant-learning .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .86rem;
+      color: #617084;
+    }
+    .infant-learning .breadcrumbs li + li::before {
+      content: '/';
+      padding-right: 9px;
+      color: #9ca7b3;
+    }
+    .infant-learning .breadcrumbs a { color: #355c72; }
+    .infant-learning .unit-hero {
+      display: grid;
+      grid-template-columns: 1.28fr .84fr;
+      align-items: center;
+      gap: clamp(18px, 4vw, 50px);
+      padding: clamp(24px, 4vw, 48px);
+      background: linear-gradient(130deg, #fff4eb 0%, #fffae7 100%);
+      border: 1px solid #f2ded1;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .infant-learning .unit-eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-size: .85rem;
+      color: #99522f;
+      letter-spacing: .06em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .infant-learning .unit-hero h1 {
+      margin: 0 0 15px;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      line-height: 1.15;
+      color: #29364b;
+      text-wrap: balance;
+    }
+    .infant-learning .unit-hero p:not(.unit-eyebrow) {
+      max-width: 600px;
+      margin: 0 0 18px;
+      color: #4e5a6a;
+      font-size: 1.07rem;
+      line-height: 1.7;
+    }
+    .infant-learning .unit-hero img {
+      width: 100%;
+      max-height: 340px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 5px solid #ffffff;
+      box-shadow: 0 15px 30px #a56b3a24;
+    }
+    .infant-learning .play-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #e5d9b9;
+      color: #7a5b25;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .infant-learning .audio-button,
+    .infant-learning .small-button,
+    .infant-learning .game-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 10px 16px;
+      border: 2px solid #e9c8b4;
+      border-radius: 13px;
+      background: #fff;
+      color: #753d29;
+      font-weight: 800;
+      text-align: center;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .infant-learning .audio-button:hover,
+    .infant-learning .small-button:hover,
+    .infant-learning .game-button:hover { background: #fff7ee; }
+    .infant-learning .audio-button:active,
+    .infant-learning .small-button:active,
+    .infant-learning .game-button:active { transform: scale(.98); }
+    .infant-learning .unit-nav {
+      margin: 25px 0 35px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #e8e5df;
+      border-radius: 19px;
+    }
+    .infant-learning .unit-nav h2 { margin: 0 0 13px; font-size: 1.03rem; }
+    .infant-learning .unit-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .infant-learning .unit-nav a {
+      display: inline-flex;
+      gap: 8px;
+      padding: 11px 14px;
+      background: #fff8ef;
+      border: 1px solid #f0dfcb;
+      border-radius: 12px;
+      color: #6d4530;
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+    }
+    .infant-learning .unit-nav a:hover { background: #ffe9d6; }
+    .infant-learning .lesson-section {
+      --section-color: #ba6a4b;
+      --section-pale: #ffede5;
+      margin: 42px 0 0;
+      padding: clamp(18px, 2.6vw, 32px);
+      background: #fff;
+      border: 1px solid #e7e1d9;
+      border-radius: 24px;
+      box-shadow: 0 7px 30px #2a364d09;
+      scroll-margin-top: 100px;
+    }
+    .infant-learning .lesson-section.senses { --section-color: #8355aa; --section-pale: #f5eafb; }
+    .infant-learning .lesson-section.movement { --section-color: #2378ad; --section-pale: #e9f5fc; }
+    .infant-learning .lesson-section.health { --section-color: #438147; --section-pale: #ecf7eb; }
+    .infant-learning .lesson-section.autonomy { --section-color: #ac771b; --section-pale: #fff4dd; }
+    .infant-learning .section-top {
+      display: grid;
+      grid-template-columns: 1fr minmax(190px, 235px);
+      align-items: center;
+      gap: 22px;
+      padding: 5px 2px 20px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .infant-learning .section-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--section-color);
+      font-size: .91rem;
+      font-weight: 850;
+    }
+    .infant-learning .section-heading {
+      margin: 0 0 10px;
+      color: #28374b;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    .infant-learning .section-intro { margin: 0; line-height: 1.6; color: #596677; }
+    .infant-learning .section-image {
+      display: block;
+      width: 100%;
+      max-height: 195px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 17px;
+      background: var(--section-pale);
+      border: 3px solid #fff;
+      box-shadow: 0 5px 15px #26364c15;
+    }
+    .infant-learning .section-sound { margin-top: 12px; }
+    .infant-learning .section-sound .audio-button { min-height: 42px; font-size: .9rem; }
+    .infant-learning .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+    .infant-learning .activity-card {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 19px;
+      border: 1px solid #eee1d6;
+      border-radius: 19px;
+      background: #fffefa;
+    }
+    .infant-learning .activity-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .infant-learning .activity-id {
+      padding: 6px 9px;
+      background: var(--section-pale);
+      color: var(--section-color);
+      border-radius: 10px;
+      font-size: .81rem;
+      font-weight: 850;
+    }
+    .infant-learning .activity-type {
+      font-size: .79rem;
+      color: #536377;
+      font-weight: 750;
+    }
+    .infant-learning .activity-card h3 {
+      margin: 0;
+      color: #2b3a4c;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+    .infant-learning .activity-card p {
+      margin: 0;
+      color: #4d5d70;
+      line-height: 1.6;
+      font-size: .96rem;
+    }
+    .infant-learning .activity-card .teacher-tip {
+      margin-top: auto;
+      padding: 10px 12px;
+      border-left: 3px solid var(--section-color);
+      background: var(--section-pale);
+      color: #4c5362;
+      border-radius: 4px 8px 8px 4px;
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+    .infant-learning .activity-card .audio-button { align-self: flex-start; min-height: 40px; font-size: .82rem; }
+    .infant-learning .game-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+      padding: 15px;
+      border: 1px dashed #d5b7a1;
+      border-radius: 15px;
+      background: #fff9f3;
+    }
+    .infant-learning .game-prompt {
+      min-height: 32px;
+      color: #344254;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .infant-learning .answer-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .infant-learning .answer-options.five { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+    .infant-learning .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 88px;
+      padding: 10px 6px;
+      background: #fff;
+      border: 2px solid #e5d7c8;
+      border-radius: 14px;
+      color: #33455b;
+      font-weight: 800;
+      text-align: center;
+      font-size: .95rem;
+    }
+    .infant-learning .choice .big-icon { font-size: clamp(2rem, 5vw, 2.5rem); line-height: 1.1; }
+    .infant-learning .choice:hover { background: #fff0df; }
+    .infant-learning .choice.is-selected,
+    .infant-learning .choice[aria-pressed="true"] {
+      border-color: #437f53;
+      background: #e8f5e9;
+    }
+    .infant-learning .choice:disabled { opacity: .65; cursor: default; }
+    .infant-learning .game-feedback {
+      min-height: 1.45em;
+      margin: 0;
+      font-size: .9rem;
+      font-weight: 750;
+      color: #396047;
+    }
+    .infant-learning .game-feedback.try-again { color: #925b2b; }
+    .infant-learning .game-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+    .infant-learning .game-button { min-height: 43px; font-size: .87rem; }
+    .infant-learning .small-label { font-size: .83rem; color: #566b7b; }
+    .infant-learning .progress-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+    .infant-learning .progress-dots span {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #e9ddd2; border: 1px solid #cebda9;
+    }
+    .infant-learning .progress-dots span.done { background: #5f9972; border-color: #3c7950; }
+    .infant-learning .body-builder { display: grid; grid-template-columns: 100px 1fr; gap: 14px; align-items: center; }
+    .infant-learning .body-builder svg { width: 100%; max-width: 110px; display: block; }
+    .infant-learning .body-builder svg [data-part] { fill: #f4e5d8; stroke: #b78c70; stroke-width: 3; }
+    .infant-learning .body-builder svg [data-part].revealed { fill: #6db9ce; stroke: #397d90; }
+    .infant-learning .traffic-light {
+      display: flex; gap: 12px; padding: 10px; width: max-content;
+      border-radius: 15px; background: #415063;
+    }
+    .infant-learning .bulb { width: 39px; height: 39px; border-radius: 50%; opacity: .24; border: 3px solid #fff4; }
+    .infant-learning .bulb.red { background: #f34c4c; }
+    .infant-learning .bulb.amber { background: #ffcb4c; }
+    .infant-learning .bulb.green { background: #5ddb80; }
+    .infant-learning .bulb.active { opacity: 1; box-shadow: 0 0 14px currentColor; }
+    .infant-learning .sequence-output {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 8px; min-height: 62px; font-size: 2.25rem; padding: 8px;
+      border-radius: 12px; background: #fff;
+    }
+    .infant-learning .steps-done { display: flex; flex-wrap: wrap; gap: 7px; min-height: 28px; align-items: center; }
+    .infant-learning .step-chip { padding: 8px 10px; font-size: .88rem; font-weight: 750; background: #def0e2; border-radius: 9px; color: #2c6540; }
+    .infant-learning .check-list { display: flex; flex-direction: column; gap: 10px; }
+    .infant-learning .check-item { display: flex; gap: 9px; align-items: center; padding: 9px 11px; border: 1px solid #e8e0d7; border-radius: 12px; background: #fff; }
+    .infant-learning input[type="checkbox"] { width: 22px; height: 22px; accent-color: #398251; }
+    .infant-learning label { cursor: pointer; font-weight: 650; }
+    .infant-learning .lesson-note {
+      margin: 22px 0 0; padding: 16px 19px; border-radius: 14px;
+      background: var(--section-pale); color: #47576a; line-height: 1.55;
+    }
+    .infant-learning .end-project {
+      margin-top: 46px; padding: clamp(20px, 4vw, 35px);
+      border-radius: 25px; border: 1px solid #d9e7d4;
+      background: linear-gradient(145deg, #eff9ee, #fdf9ed);
+      scroll-margin-top: 90px;
+    }
+    .infant-learning .end-project h2 { margin: 0 0 10px; color: #285a39; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+    .infant-learning .end-project > p { color: #466253; line-height: 1.6; }
+    .infant-learning .passport-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; margin-top: 21px; }
+    .infant-learning .passport-item { position: relative; min-width: 0; }
+    .infant-learning .passport-item input { position: absolute; opacity: 0; top: 12px; left: 12px; }
+    .infant-learning .passport-item label {
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; gap: 9px;
+      min-height: 150px; padding: 12px 7px;
+      background: #fff; color: #475567; border: 2px solid #d6e4d4;
+      border-radius: 15px; text-align: center; font-size: .88rem;
+    }
+    .infant-learning .passport-item label .seal { font-size: 2.5rem; }
+    .infant-learning .passport-item input:checked + label { background: #e4f5e6; border-color: #3e8656; }
+    .infant-learning .passport-item input:checked + label::after { content: '✓'; color: #18713b; font-size: 1.1rem; font-weight: 900; }
+    .infant-learning .passport-progress { margin: 20px 0 0; font-weight: 800; color: #326444; }
+    .infant-learning .passport-meter { overflow: hidden; height: 13px; margin-top: 8px; border-radius: 10px; background: #d9e9d8; }
+    .infant-learning .passport-fill { width: 0%; height: 100%; border-radius: inherit; background: #408d5c; transition: width .25s; }
+    .infant-learning .teacher-notes { margin-top: 28px; padding: 19px 22px; background: #fff; border: 1px solid #dedfdc; border-radius: 17px; }
+    .infant-learning .teacher-notes summary { cursor: pointer; color: #4d5967; font-weight: 800; }
+    .infant-learning .teacher-notes p,
+    .infant-learning .teacher-notes li { font-size: .91rem; color: #4d5967; line-height: 1.65; }
+    .infant-learning .teacher-notes table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .infant-learning .teacher-notes th,
+    .infant-learning .teacher-notes td { padding: 10px 9px; text-align: left; border-bottom: 1px solid #e5e6e4; }
+    .infant-learning .teacher-notes th { background: #f5f6f5; }
+    .infant-learning .site-footer .footer-school-name { margin-bottom: 8px; }
+    @media (max-width: 900px) {
+      .infant-learning .activity-grid { grid-template-columns: 1fr; }
+      .infant-learning .passport-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+      .infant-learning .unit-hero { grid-template-columns: 1fr; }
+      .infant-learning .unit-hero img { max-height: 260px; }
+      .infant-learning .section-top { grid-template-columns: 1fr; }
+      .infant-learning .section-image { max-height: 220px; }
+      .infant-learning .unit-nav ul { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 460px) {
+      .infant-learning .unit-nav ul,
+      .infant-learning .passport-grid { grid-template-columns: 1fr 1fr; }
+      .infant-learning .lesson-shell { padding-top: 15px; }
+      .infant-learning .body-builder { grid-template-columns: 90px 1fr; }
+      .infant-learning .activity-card { padding: 14px; }
+      .infant-learning .teacher-notes { overflow-x: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning *, .infant-learning *::before,
+      .infant-learning *::after { transition: none !important; scroll-behavior: auto !important; }
+    }
+  
+    /* ======================================================
+       FUENTES ESCOLARES: archivos ya alojados en /fonts
+       ====================================================== */
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_G.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_N.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Punteada";
+      src: url("/fonts/Escolar_P.ttf") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Calada";
+      src: url("/fonts/Escolar_C.ttf") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    /* La navegación del colegio y las notas docentes conservan la fuente general. */
+    .infant-learning #unit-title,
+    .infant-learning .end-project h2,
+    .infant-learning .unit-hero p:not(.unit-eyebrow),
+    .infant-learning .section-heading,
+    .infant-learning .section-intro,
+    .infant-learning .activity-card h3,
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .game-prompt,
+    .infant-learning .choice,
+    .infant-learning .game-button,
+    .infant-learning .audio-button,
+    .infant-learning .step-chip,
+    .infant-learning .game-feedback,
+    .infant-learning .sequence-output,
+    .infant-learning .child-script,
+    .infant-learning .mini-game h4,
+    .infant-learning .mini-game p:not(.access-note),
+    .infant-learning .drop-target,
+    .infant-learning .drag-piece,
+    .infant-learning .paint-instruction {
+      font-family: "Escolar", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+      font-feature-settings: "liga" 1, "clig" 1;
+      line-height: 1.48;
+      letter-spacing: 0;
+    }
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .mini-game > p,
+    .infant-learning .game-prompt { font-size: clamp(1.13rem, 1.7vw, 1.36rem); }
+    .infant-learning .activity-card h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+    .infant-learning .choice { font-size: clamp(1.06rem, 1.45vw, 1.24rem); }
+    .infant-learning .game-button { font-size: clamp(1rem, 1.35vw, 1.15rem); }
+    .infant-learning .teacher-tip,
+    .infant-learning details,
+    .infant-learning .activity-id,
+    .infant-learning .activity-type,
+    .infant-learning .access-note {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+    .infant-learning .handwriting-dotted {
+      font-family: "Escolar Punteada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-outline {
+      font-family: "Escolar Calada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-bold { font-family: "Escolar", cursive; font-weight: 700; }
+
+    /* ======================================================
+       NUEVOS MINIJUEGOS VISUALES (ratón, dedo y selección táctil)
+       ====================================================== */
+    .infant-learning .mini-game {
+      margin-top: 15px;
+      padding: clamp(12px, 2.5vw, 19px);
+      border: 2px solid #ebd7c5;
+      border-radius: 20px;
+      background: #fffdf9;
+    }
+    .infant-learning .mini-game h4 {
+      margin: 0 0 7px;
+      color: #784330;
+      font-size: clamp(1.25rem, 2vw, 1.58rem);
+      font-weight: 700;
+    }
+    .infant-learning .mini-game p { margin: 4px 0 12px; }
+    .infant-learning .access-note {
+      font-size: .86rem;
+      color: #5b6472;
+    }
+    .infant-learning .drag-bank,
+    .infant-learning .drop-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: stretch;
+      margin: 13px 0;
+    }
+    .infant-learning .drag-piece,
+    .infant-learning .drop-target {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 7px;
+      padding: 11px;
+      text-align: center;
+      color: #334155;
+      background: white;
+      border: 3px solid #d6ddd8;
+      border-radius: 17px;
+      min-width: 110px;
+      min-height: 100px;
+      font-size: clamp(1.04rem, 1.55vw, 1.26rem);
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .infant-learning .drag-piece { border-color: #e7af7f; background: #fff7ec; }
+    .infant-learning .drag-piece .item-emoji,
+    .infant-learning .drop-target .item-emoji {
+      display: block;
+      font-family: system-ui, sans-serif;
+      font-size: clamp(2.3rem, 4vw, 3.25rem);
+      line-height: 1.1;
+    }
+    .infant-learning .drag-piece.is-chosen { border-color: #1169b0; box-shadow: 0 0 0 4px #b7dfff; }
+    .infant-learning .drop-target.is-hovered { border-color: #1169b0; background: #eaf6ff; }
+    .infant-learning .drop-target.is-complete { border-color: #007a33; background: #f0fbf2; }
+    .infant-learning .drop-target .placed-token {
+      display: inline-flex;
+      gap: 5px;
+      margin: 3px;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #7daf8d;
+      font-family: "Escolar", cursive;
+      font-size: 1.13rem;
+    }
+    .infant-learning .drag-ghost {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      opacity: .88;
+      transform: translate(-50%, -50%) rotate(-3deg);
+      box-shadow: 0 9px 24px #0003;
+      min-width: 110px;
+      max-width: 165px;
+    }
+    .infant-learning .drop-hint { font-family: "Escolar", system-ui, sans-serif; font-size: 1.12rem; font-weight: 700; color: #64748b; }
+    .infant-learning .game-feedback:empty { min-height: 1em; }
+    .infant-learning .drop-row .drop-target { flex: 1 1 120px; }
+    /* Puzle de 4 piezas: imagen original reutilizada mediante JavaScript. */
+    .infant-learning .puzzle-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: clamp(12px, 3vw, 26px);
+      margin: 15px auto;
+      max-width: 650px;
+    }
+    .infant-learning .puzzle-pieces,
+    .infant-learning .puzzle-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f5eee8;
+      padding: 5px;
+      border-radius: 14px;
+    }
+    .infant-learning .puzzle-pieces .drag-piece,
+    .infant-learning .puzzle-board .drop-target {
+      position: relative;
+      width: 100%; min-width: 0; min-height: 0;
+      aspect-ratio: 1;
+      padding: 0;
+      border-radius: 9px;
+      border-width: 2px;
+      overflow: hidden;
+    }
+    .infant-learning .puzzle-slice,
+    .infant-learning .puzzle-fixed {
+      width: 100%; height: 100%;
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      flex: 1 1 auto; min-height: 0; pointer-events: none;
+    }
+    .infant-learning .puzzle-pieces .drag-piece { font-family: system-ui, sans-serif; }
+    .infant-learning .puzzle-pieces .drag-piece:disabled { opacity: .35; }
+    .infant-learning .puzzle-board .drop-target { background: #f8fafc; border-style: dashed; }
+    .infant-learning .puzzle-board .drop-target::after {
+      content: attr(data-number);
+      color: #64748b;
+      font: 700 1.5rem system-ui, sans-serif;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .infant-learning .puzzle-board .drop-target.is-complete::after { content: none; }
+    .infant-learning .puzzle-board .drop-target.is-complete { border-style: solid; padding: 0; }
+    .infant-learning .puzzle-board .drop-target .puzzle-fixed { position: relative; z-index: 1; }
+
+    /* Lámina de coloreado digital: contornos negros sobre blanco. */
+    .infant-learning .coloring-layout { max-width: 580px; margin: 4px auto; }
+    .infant-learning .paint-palette { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; justify-content: center; }
+    .infant-learning .paint-swatch {
+      appearance: none; border: 3px solid #ddd; border-radius: 50%;
+      background: var(--swatch); width: 48px; height: 48px;
+      font-size: 0; flex: 0 0 48px;
+    }
+    .infant-learning .paint-swatch.is-active { outline: 3px solid #224b6d; outline-offset: 3px; }
+    .infant-learning .paint-page { display: block; width: min(100%, 440px); height: auto; margin: 0 auto; background: white; border: 2px solid #d3dbe3; border-radius: 14px; }
+    .infant-learning .paint-page [data-paint-region] { cursor: pointer; transition: fill .12s ease; }
+    .infant-learning .paint-page [data-paint-region]:focus-visible { outline: none; stroke: #1766be; stroke-width: 5; }
+    .infant-learning .paint-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 12px 0; }
+    .infant-learning .outline-color-word {
+      display: block; width: 100%; margin: 5px auto 10px;
+      border: 2px dashed #d7c5b7; border-radius: 12px;
+      background: #fff; padding: 0 8px; color: #414141;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      line-height: 1.5; text-align: center;
+    }
+
+    /* Repaso digital: la fuente punteada permanece debajo del lienzo transparente. */
+    .infant-learning .trace-stage {
+      position: relative;
+      aspect-ratio: 900 / 220;
+      border: 2px solid #ddd1c3;
+      background: repeating-linear-gradient(to bottom, white 0, white 48%, #d5e9ed 48%, #d5e9ed 49%, white 49%, white 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      width: min(100%, 720px);
+      margin: 12px auto;
+    }
+    .infant-learning .trace-word {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(2.8rem, 9vw, 6.6rem);
+      white-space: nowrap;
+      color: #7a9aa6;
+      line-height: 1.15;
+      pointer-events: none;
+    }
+    .infant-learning .trace-canvas {
+      display: block; position: relative;
+      width: 100%; height: 100%;
+      touch-action: none; cursor: crosshair;
+    }
+    .infant-learning .script-preview { text-align: center; font-size: clamp(1.8rem, 5vw, 3.2rem); }
+    .infant-learning .trace-tools { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 620px) {
+      .infant-learning .puzzle-layout { gap: 8px; }
+      .infant-learning .drag-piece, .infant-learning .drop-target { min-width: 95px; min-height: 91px; }
+      .infant-learning .paint-swatch { width: 42px; height: 42px; flex-basis: 42px; }
+      .infant-learning .trace-stage { aspect-ratio: 900 / 260; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning .paint-page [data-paint-region] { transition: none; }
+    }
+
+  
+
+/* INF5.2 · Juegos emocionales y de convivencia */
+.infant-learning .lesson-section.emotions { --section-color: #bd5a75; --section-pale: #fff0f4; }
+.infant-learning .lesson-section.expression { --section-color: #9462b6; --section-pale: #f6eefe; }
+.infant-learning .lesson-section.calm { --section-color: #3586a0; --section-pale: #e9f7fb; }
+.infant-learning .lesson-section.together { --section-color: #34865f; --section-pale: #e9f8ed; }
+.infant-learning .lesson-section.solutions { --section-color: #be7b2a; --section-pale: #fff4e4; }
+.infant-learning .emotion-face { font-size: clamp(4.6rem, 9vw, 7rem); line-height: 1.13; text-align:center; filter:drop-shadow(0 5px 6px #3331); }
+.infant-learning .emotion-prompt { display:flex; align-items:center; justify-content:center; gap: 10px; flex-wrap:wrap; text-align:center; background:white; border:2px solid #efdfd4; border-radius:16px; padding:12px; }
+.infant-learning .emotions-row { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.infant-learning .emotions-row .choice { flex:1 1 106px; }
+.infant-learning .big-emotion {font-size:2.4rem;line-height:1.1;display:block;}
+.infant-learning .illustrated-face {max-width:280px;width:100%;margin:auto;display:block;}
+.infant-learning .situation {display:grid;gap:8px;padding:15px;background:#fff;border:1px solid #e7d9c9;border-radius:15px;font-family:"Escolar",cursive;font-size:1.35rem;line-height:1.5;}
+.infant-learning .mini-game {margin-top:10px;}
+.infant-learning .choice.is-personal {border-color:#7f72b6;background:#f3eeff;}
+.infant-learning .chosen-message {border-radius:12px;padding:12px;background:#eaf4f7;color:#28576a;font-size:1.12rem;font-family:"Escolar",cursive;}
+.infant-learning .teacher-tip strong {font-family:inherit;}
+.infant-learning .breath-circle {width:min(220px,70vw);height:min(220px,70vw);margin:12px auto;border-radius:50%;border:8px solid #cbe0ee;background:radial-gradient(circle at 35% 30%,#fefefe,#9bd5e4);display:grid;place-items:center;position:relative;font-size:clamp(2.3rem,5vw,4.5rem);box-shadow:0 0 0 7px #e6f5f9 inset;}
+.infant-learning .breath-circle.is-breathing {animation:slow-breath 8s ease-in-out infinite;}
+.infant-learning .breath-circle span {pointer-events:none;}
+@keyframes slow-breath {0%,100%{transform:scale(.86)}50%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.infant-learning .breath-circle.is-breathing {animation:none;}}
+.infant-learning .counted-steps {display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.infant-learning .counted-steps .game-button {flex:1 1 115px;min-height:85px;flex-direction:column;}
+.infant-learning .counted-steps .game-button[aria-pressed=true] {background:#e0f2e3;border-color:#378357;}
+.infant-learning .reveal-text {padding:12px 14px;border-radius:12px;background:#e7f3f7;min-height:60px;font-family:"Escolar",cursive;font-size:1.3rem;}
+.infant-learning .face-canvas {display:block;margin:6px auto;width:min(100%,380px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .face-canvas [data-paint-region],
+.infant-learning .tree-canvas [data-paint-region] {cursor:pointer;}
+.infant-learning .tree-canvas {display:block;margin:6px auto;width:min(100%,410px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .color-swatch {appearance:none;width:45px;height:45px;border-radius:50%;border:3px solid #ece6de;background:var(--swatch);}
+.infant-learning .color-swatch.is-active {outline:3px solid #1e5f8b;outline-offset:2px;}
+.infant-learning .puzzle-slice,.infant-learning .puzzle-fixed { background-color:#fff; }
+.infant-learning .game-panel [data-feedback],
+.infant-learning .mini-game [data-feedback] {font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:.88rem;}
+.infant-learning .soft-reminder {background:#e8f5ec;border-left:5px solid #55a17a;padding:12px 14px;border-radius:10px;line-height:1.55;}
+.infant-learning .emotion-words {display:flex;flex-wrap:wrap;gap:10px;}
+.infant-learning .emotion-words button {flex:1 1 110px;}
+.infant-learning .quiet-icon {font-size:3rem;line-height:1.15;}
+.infant-learning .teacher-notes summary {font-family:system-ui,sans-serif;}
+.infant-learning .lesson-note {font-family:system-ui,sans-serif;}
+.infant-learning .final-mantra {margin-top:18px;background:white;border-radius:16px;padding:18px;border:1px solid #cfe7d4;font-family:"Escolar",cursive;text-align:center;font-size:1.5rem;}
+.infant-learning .teacher-table-wrap {overflow-x:auto;}
+.infant-learning .unit-eyebrow,.infant-learning .unit-nav,.infant-learning .section-tag {font-family:system-ui,sans-serif;}
+@media(max-width:600px){.infant-learning .emotion-prompt {flex-direction:column;}.infant-learning .passport-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* INF5.8 · Arte, música, movimiento y teatro; se conservan las reglas de INF5.2. */
+.infant-learning .lesson-section.emotions{--section-color:#ad4c85;--section-pale:#fff0f8}
+.infant-learning .lesson-section.expression{--section-color:#a16f39;--section-pale:#fff4df}
+.infant-learning .lesson-section.calm{--section-color:#357fa9;--section-pale:#e9f7ff}
+.infant-learning .lesson-section.together{--section-color:#43865d;--section-pale:#eff9ed}
+.infant-learning .lesson-section.solutions{--section-color:#845bb1;--section-pale:#f3ecff}
+.infant-learning .lesson-section .audio-button{margin-top:10px}
+.infant-learning .activity-card .audio-button{margin-top:0}
+.infant-learning .gallery-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.infant-learning .gallery-choices .choice{min-height:105px}
+.infant-learning .choice .big-icon,.infant-learning .quiz-emblem{font-family:system-ui,sans-serif;font-size:2.3rem;line-height:1.1}
+.infant-learning .quiz-emblem{text-align:center;font-size:3rem}
+.infant-learning .mix-controls{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0}
+.infant-learning .mix-palette{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.infant-learning .mix-palette button{min-width:48px;min-height:48px;border:3px solid #ddd;border-radius:50%;font-size:0}
+.infant-learning .mix-palette button.selected{outline:3px solid #245f83;outline-offset:3px}
+.infant-learning .mixed-result{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;min-height:95px;background:#fff;border:2px dashed #e9dbc8;border-radius:14px;padding:10px}
+.infant-learning .paint-blot{height:75px;width:90px;border-radius:40% 53% 46% 59%;background:#f0f0f0;border:3px solid #dedede}
+.infant-learning .collage-bank{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.infant-learning .collage-bank .choice{flex:1 1 105px;min-height:73px}
+.infant-learning .collage-paper{position:relative;height:275px;max-width:560px;margin:12px auto;background:linear-gradient(160deg,#fffefd,#f9f5ec);border:3px solid #b5c0cd;border-radius:15px;touch-action:manipulation;cursor:crosshair;overflow:hidden}
+.infant-learning .collage-paper .paper-hint{position:absolute;top:14px;left:14px;right:14px;color:#677681;font-family:system-ui,sans-serif;font-size:.84rem;pointer-events:none}
+.infant-learning .collage-paper .sticker{position:absolute;transform:translate(-50%,-50%);font-family:system-ui,sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1}
+.infant-learning .collage-paper .sticker-geometric{font-size:3rem}
+.infant-learning .sound-bank{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.infant-learning .sound-bank .choice{font-family:system-ui,sans-serif;font-size:2.1rem;min-height:100px}
+.infant-learning .sound-bank .choice span{font-family:"Escolar",cursive;font-size:1.25rem}
+.infant-learning .choice small{display:block;font-family:"Escolar",cursive;font-size:.98rem}
+.infant-learning .stamp-shapes{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.infant-learning .stamp-shapes .game-button.is-selected{background:#e0f3ef;border-color:#427b67}
+.infant-learning .canvas-frame{width:100%;padding:5px;background:#fff;border:2px solid #e4d8c8;border-radius:14px;margin:11px 0}
+.infant-learning .canvas-frame canvas{width:100%;height:auto;display:block;touch-action:none;background:#fff;border-radius:10px;cursor:crosshair}
+.infant-learning .drop-bank,.infant-learning .drop-fields,.infant-learning .order-fields{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.infant-learning .move-piece{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px;border:2px solid #d9bcaa;background:#fff8ef;border-radius:15px;min-width:100px;min-height:84px;touch-action:none;cursor:grab;user-select:none;font-family:"Escolar",cursive;color:#334155;font-size:1.13rem}
+.infant-learning .move-piece.picked{outline:3px solid #2b79aa;background:#e8f6ff}
+.infant-learning .move-piece:disabled{opacity:.3}
+.infant-learning .move-piece .item-emoji{font:2rem system-ui,sans-serif}
+.infant-learning .target-box{flex:1 1 115px;min-height:100px;border:3px dashed #a4bcac;background:#f3fbf6;border-radius:13px;padding:10px;text-align:center;color:#405360;overflow-wrap:anywhere}
+.infant-learning .target-box h5{font:750 1.06rem system-ui,sans-serif;margin:0 0 8px}
+.infant-learning .placed-piece{display:inline-block;background:#fff;border:1px solid #b5d1bd;border-radius:8px;padding:5px;margin:4px;font-size:1.05rem}
+.infant-learning .order-fields .target-box{flex:1 1 78px;min-height:105px}
+.infant-learning .new-puzzle .puzzle-pieces,.infant-learning .new-puzzle .puzzle-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;width:100%;aspect-ratio:560/380}
+.infant-learning .new-puzzle .puzzle-cell{position:relative;overflow:hidden;width:100%;aspect-ratio:280/190;border:3px solid #dabfba;border-radius:9px;padding:0;background:#fff;touch-action:none}
+.infant-learning .new-puzzle .puzzle-cell.picked{outline:3px solid #3078b8}
+.infant-learning .new-puzzle .puzzle-cell.drop{border-style:dashed;background:#f7f7f5}
+.infant-learning .new-puzzle .puzzle-cell.drop:empty::after{content:"?";color:#9eabb9;font-size:2rem}
+.infant-learning .new-puzzle .puzzle-cell.done{border-color:#458a64}
+.infant-learning .new-puzzle .piece-view{display:block;width:100%;height:100%;background-size:200% 200%;background-repeat:no-repeat}
+.infant-learning .paint-page{max-width:440px;display:block;width:100%;height:auto;margin:0 auto;border:2px solid #d1dce2;background:white;border-radius:12px}
+.infant-learning .paint-page [data-paint-region]{cursor:pointer}
+.infant-learning .paint-palette{display:flex;flex-wrap:wrap;justify-content:center;gap:11px;margin:10px 0}
+.infant-learning .paint-swatch{height:45px;width:45px;border:3px solid #f1efe8;border-radius:50%;cursor:pointer}
+.infant-learning .paint-swatch.is-active{outline:3px solid #245f83;outline-offset:3px}
+.infant-learning .criteria-scroll{overflow-x:auto}
+.infant-learning .lesson-section .mini-game button:not(:disabled){cursor:pointer}
+@media(max-width:620px){.infant-learning .gallery-choices,.infant-learning .sound-bank{grid-template-columns:1fr 1fr}.infant-learning .puzzle-layout{grid-template-columns:repeat(2,minmax(0,1fr))}.infant-learning .collage-paper{height:230px}.infant-learning .move-piece{min-width:75px}.infant-learning .mix-controls{grid-template-columns:1fr 1fr}}
+@media(max-width:365px){.infant-learning .gallery-choices{grid-template-columns:1fr}.infant-learning .mix-controls{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body class="infant-learning">
+ <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+ <header class="site-banner">
+<a aria-label="Ir a la página de inicio" href="/">
+<img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/>
+</a>
+</header>
+ <div class="navigation-wrapper">
+<div class="navigation-container">
+<a aria-label="Inicio" class="navigation-logo" href="/">
+<img alt="" src="/img/logo-centro.png"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation">
+<ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red">
+<a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+ <main id="contenido-principal"><div class="lesson-shell"><nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li><li><a href="/recursos/infantil/inf5/">Infantil · 5 años</a></li><li aria-current="page">INF5.8</li></ol></nav><section class="unit-hero" aria-labelledby="unit-title"><div><p class="unit-eyebrow">Infantil · 5 años · Bloque 8</p><h1 id="unit-title">Me expreso con arte, música y movimiento</h1><p>¡Vamos a crear! Jugaremos con colores y formas, escucharemos sonidos, bailaremos e inventaremos personajes y pequeñas historias.</p><span class="play-pill">🎨 🎵 💃 ¡Cada creación es diferente!</span><div style="margin-top:16px"><button type="button" class="audio-button spoken" data-say="¡Hola! En este bloque vamos a pintar, modelar, hacer música, movernos y jugar al teatro. Puedes expresarte de muchas maneras." data-audio="/media/infantil/inf5/inf5.8-introduccion.mp3">🔊 Escuchar la presentación</button></div></div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2ZmZjFlNiIvPjxjaXJjbGUgY3g9IjUwMSIgY3k9IjY2IiByPSIzMiIgZmlsbD0iI2ZmZTJhMCIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTAgMzE5IFEyMTAgMjkwIDM1MCAzMTYgVDU2MCAyOTggVjM4MCBIMFoiIGZpbGw9IiNlNmVhZDEiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDUgODUpIHNjYWxlKDAuOTUpIj48cGF0aCBkPSJNNTcgMjcgTDE5IDI1NiBNNTcgMjcgTDExNSAyNTYgTTU2IDE2MyBMNjAgMjU4IiBzdHJva2U9IiM5NjcyNWQiIHN0cm9rZS13aWR0aD0iMTMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjAiIHk9IjEwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjE2NSIgcng9IjEwIiBmaWxsPSIjZmRmYWY0IiBzdHJva2U9IiNjN2E5OGQiIHN0cm9rZS13aWR0aD0iOSIvPjxjaXJjbGUgY3g9IjM5IiBjeT0iNzUiIHI9IjI0IiBmaWxsPSIjZmE5ODdmIi8+PHJlY3QgeD0iNjgiIHk9IjQ4IiB3aWR0aD0iNDAiIGhlaWdodD0iMzUiIHJ4PSIzIiBmaWxsPSIjOGRiYWQ5Ii8+PHBhdGggZD0iTTI0IDE0MyBMNjIgOTYgOTMgMTQyWiIgZmlsbD0iIzhkYmQ5NiIvPjwvZz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNSAxNDUpIHNjYWxlKDAuNjgpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iI2VkOTE4OSIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjZjNjMzlmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzU5M2MzYiIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIGZpbGw9IiMzZDM0NDAiPjxjaXJjbGUgY3g9Ii0xMyIgY3k9Ii0yIiByPSIzLjUiIC8+PGNpcmNsZSBjeD0iMTMiIGN5PSItMiIgcj0iMy41IiAvPjwvZz48ZyBzdHJva2U9IiM3NzQ4M2YiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNLTEzIDkgUTAgMjUgMTMgOSIgLz48L2c+PC9nPjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDU5IDE1MSkgc2NhbGUoMC42NSkiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYmI4MDVmIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYmI4MDVmIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjNzFiNGQ4IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNiYjgwNWYiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjMmUyYTM4IiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgc3Ryb2tlPSIjNGU0YjU0IiBzdHJva2Utd2lkdGg9IjIuNiIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTS0yMCAwIHE3IDUgMTQgMCBNNiAwIHE3IDUgMTQgMCIgLz48L2c+PGcgc3Ryb2tlPSIjNzc0ODNmIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTS0xMCAxMSBRMCAxNyAxMCAxMSIgLz48L2c+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4IDIxMCkgc2NhbGUoMS4xKSI+PHBhdGggZD0iTTE1IDIyIFE2NyAtOCAxMTcgMjggUTE1NSA2NCAxMTQgMTE1IFE5NyAxMzAgNzggMTE1IFE2NyAxMDIgODAgODkgUTk0IDczIDc0IDY2IFE1NiA2MyA1MCA4NiBRNDEgMTEzIDE1IDk3IFEtNiA3OCAxNSAyMloiIGZpbGw9IiNmMGNlOWMiIHN0cm9rZT0iI2E0N2I1MiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iMzMiIGN5PSI0MCIgcj0iMTIiIGZpbGw9IiNlNzdkNzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iNjkiIGN5PSIyMyIgcj0iMTIiIGZpbGw9IiNmMGJjNTYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iOTkiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiM3OGIzOWIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTA0IiBjeT0iNzciIHI9IjEyIiBmaWxsPSIjOGM5ZGM5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjU5IiBjeT0iMTAwIiByPSIxMiIgZmlsbD0iI2E3OGNjOCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48ZWxsaXBzZSBjeD0iMzMiIGN5PSI3MiIgcng9IjE2IiByeT0iMTMiIGZpbGw9IiNmZmY2ZTgiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzc1IDI2NCkgc2NhbGUoMC41NSkiPjxlbGxpcHNlIGN4PSI3NSIgY3k9IjQwIiByeD0iNjgiIHJ5PSIyNCIgZmlsbD0iI2ZmZjhkYyIgc3Ryb2tlPSIjYTc3OTYwIiBzdHJva2Utd2lkdGg9IjUiLz48cGF0aCBkPSJNNyA0MSBMMTcgMTE4IFE3NSAxNDcgMTM0IDExOCBMMTQzIDQwIiBmaWxsPSIjZTc5NjgwIiBzdHJva2U9IiNhNzc5NjAiIHN0cm9rZS13aWR0aD0iNSIvPjxlbGxpcHNlIGN4PSI3NSIgY3k9IjExOSIgcng9IjU4IiByeT0iMTkiIGZpbGw9IiNlMGE2OGMiIHN0cm9rZT0iI2E3Nzk2MCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHBhdGggZD0iTTI3IDQ1IEw0NSAxMTcgTTczIDYxIEw3NSAxMzUgTTEyMSA0OSBMMTA1IDEyMiIgc3Ryb2tlPSIjZmZmNmU0IiBzdHJva2Utd2lkdGg9IjYiLz48cGF0aCBkPSJNMzAgNCBMODEgLTE2IE0xMjkgNSBMODYgLTE5IiBzdHJva2U9IiM5MjZiNTAiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ1MCAxMTEpIHNjYWxlKDAuOCkiIGZpbGw9IiM2ZDdmYWYiIHN0cm9rZT0iIzZkN2ZhZiIgc3Ryb2tlLXdpZHRoPSI2Ij48ZWxsaXBzZSBjeD0iNSIgY3k9IjQ1IiByeD0iMTQiIHJ5PSIxMCIgdHJhbnNmb3JtPSJyb3RhdGUoLTE4IDUgNDUpIi8+PHBhdGggZD0iTTE4IDQyIFYtMTQgTDU3IC0yNSBWMjkiIGZpbGw9Im5vbmUiLz48ZWxsaXBzZSBjeD0iNDYiIGN5PSIzMSIgcng9IjE0IiByeT0iMTAiIHRyYW5zZm9ybT0icm90YXRlKC0xOCA0NiAzMSkiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzI2IDI5MSkgcm90YXRlKC0yNCkgc2NhbGUoMC41KSI+PHBhdGggZD0iTTAgMCBIMTggVjEwNyBMOSAxMjIgMCAxMDcgWiIgZmlsbD0iI2VkYWM2NCIgc3Ryb2tlPSIjOTM3ZDZhIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCAxMDcgSDE4IEw5IDEyMiBaIiBmaWxsPSIjZWNkNWI1Ii8+PHBhdGggZD0iTTUgMTE3IEw5IDEyMiAxMyAxMTciIGZpbGw9IiM0NjRmNWYiLz48cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iOSIgcng9IjMiIGZpbGw9IiNkZjZlNzgiLz48L2c+PC9zdmc+" alt="Ilustración infantil de niños pintando, tocando instrumentos y creando arte" width="560" height="380"></section><nav class="unit-nav" aria-label="Apartados de este bloque"><h2>¿Qué vamos a descubrir?</h2><ul><li><a href="#apartado-8-1">🎨 8.1 Colores y formas</a></li><li><a href="#apartado-8-2">🖌️ 8.2 Creo mis obras</a></li><li><a href="#apartado-8-3">🎵 8.3 Escucho y hago música</a></li><li><a href="#apartado-8-4">💃 8.4 Canto y me muevo</a></li><li><a href="#apartado-8-5">🎭 8.5 Me convierto en personaje</a></li><li><a href="#pasaporte">🌟 Mi pasaporte</a></li></ul></nav><!-- 8.1 · Colores y formas -->
+<section id="apartado-8-1" class="lesson-section emotions" aria-labelledby="title-8-1"><div class="section-top"><div><span class="section-tag">🎨 Exploramos y aprendemos · 8.1</span><h2 id="title-8-1" class="section-heading">Colores y formas</h2><p class="section-intro">Jugamos con colores, líneas, formas y texturas para inventar nuestras propias creaciones.</p><button type="button" class="audio-button spoken" data-say="Podemos mirar, tocar y mezclar materiales para descubrir nuevas posibilidades." data-audio="/media/infantil/inf5/inf5.8-8-1.mp3">🔊 Escucha la explicación</button></div><img id="art-colors" class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2Y4ZWZmZCIvPjxjaXJjbGUgY3g9IjUwMSIgY3k9IjY2IiByPSIzMiIgZmlsbD0iI2ZmZTJhMCIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTAgMzE5IFEyMTAgMjkwIDM1MCAzMTYgVDU2MCAyOTggVjM4MCBIMFoiIGZpbGw9IiNlNmVhZDEiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjEgNDIpIHNjYWxlKDEuMDYpIj48cGF0aCBkPSJNNTcgMjcgTDE5IDI1NiBNNTcgMjcgTDExNSAyNTYgTTU2IDE2MyBMNjAgMjU4IiBzdHJva2U9IiM5NjcyNWQiIHN0cm9rZS13aWR0aD0iMTMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjAiIHk9IjEwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjE2NSIgcng9IjEwIiBmaWxsPSIjZmRmYWY0IiBzdHJva2U9IiNjN2E5OGQiIHN0cm9rZS13aWR0aD0iOSIvPjxjaXJjbGUgY3g9IjM5IiBjeT0iNzUiIHI9IjI0IiBmaWxsPSIjZmE5ODdmIi8+PHJlY3QgeD0iNjgiIHk9IjQ4IiB3aWR0aD0iNDAiIGhlaWdodD0iMzUiIHJ4PSIzIiBmaWxsPSIjOGRiYWQ5Ii8+PHBhdGggZD0iTTI0IDE0MyBMNjIgOTYgOTMgMTQyWiIgZmlsbD0iIzhkYmQ5NiIvPjwvZz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgzIDE0Mikgc2NhbGUoMC42OSkiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjNjMzlmIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjNjMzlmIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjZWQ5MTg5IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNmM2MzOWYiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjNTkzYzNiIiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgZmlsbD0iIzNkMzQ0MCI+PGNpcmNsZSBjeD0iLTEzIiBjeT0iLTIiIHI9IjMuNSIgLz48Y2lyY2xlIGN4PSIxMyIgY3k9Ii0yIiByPSIzLjUiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMTMgOSBRMCAyNSAxMyA5IiAvPjwvZz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzM1IDIxOCkgc2NhbGUoMC45KSI+PHBhdGggZD0iTTE1IDIyIFE2NyAtOCAxMTcgMjggUTE1NSA2NCAxMTQgMTE1IFE5NyAxMzAgNzggMTE1IFE2NyAxMDIgODAgODkgUTk0IDczIDc0IDY2IFE1NiA2MyA1MCA4NiBRNDEgMTEzIDE1IDk3IFEtNiA3OCAxNSAyMloiIGZpbGw9IiNmMGNlOWMiIHN0cm9rZT0iI2E0N2I1MiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iMzMiIGN5PSI0MCIgcj0iMTIiIGZpbGw9IiNlNzdkNzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iNjkiIGN5PSIyMyIgcj0iMTIiIGZpbGw9IiNmMGJjNTYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iOTkiIGN5PSI0NSIgcj0iMTIiIGZpbGw9IiM3OGIzOWIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTA0IiBjeT0iNzciIHI9IjEyIiBmaWxsPSIjOGM5ZGM5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjU5IiBjeT0iMTAwIiByPSIxMiIgZmlsbD0iI2E3OGNjOCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48ZWxsaXBzZSBjeD0iMzMiIGN5PSI3MiIgcng9IjE2IiByeT0iMTMiIGZpbGw9IiNmZmY2ZTgiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDY2IDE5MCkgcm90YXRlKDIwKSBzY2FsZSgwLjgpIj48cGF0aCBkPSJNMCAwIEgxOCBWMTA3IEw5IDEyMiAwIDEwNyBaIiBmaWxsPSIjZWRhYzY0IiBzdHJva2U9IiM5MzdkNmEiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0wIDEwNyBIMTggTDkgMTIyIFoiIGZpbGw9IiNlY2Q1YjUiLz48cGF0aCBkPSJNNSAxMTcgTDkgMTIyIDEzIDExNyIgZmlsbD0iIzQ2NGY1ZiIvPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSI5IiByeD0iMyIgZmlsbD0iI2RmNmU3OCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0ODAgMTkxKSByb3RhdGUoLTE0KSBzY2FsZSgwLjgpIj48cGF0aCBkPSJNMCAwIEgxOCBWMTA3IEw5IDEyMiAwIDEwNyBaIiBmaWxsPSIjOTBiN2Q5IiBzdHJva2U9IiM5MzdkNmEiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0wIDEwNyBIMTggTDkgMTIyIFoiIGZpbGw9IiNlY2Q1YjUiLz48cGF0aCBkPSJNNSAxMTcgTDkgMTIyIDEzIDExNyIgZmlsbD0iIzQ2NGY1ZiIvPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSI5IiByeD0iMyIgZmlsbD0iI2RmNmU3OCIvPjwvZz48L3N2Zz4=" alt="Ilustración infantil sobre colores y formas" width="560" height="380" loading="lazy"></div><div class="activity-grid"><article class="activity-card" id="act-8-1-a" data-criterion="CRR 3.4">
+      <div class="activity-head"><span class="activity-id">8.1.A</span><span class="activity-type">🎨 Mezcla y experimentación</span></div>
+      <h3>Mis primeras mezclas</h3><p>Elige dos pinturas y descubre qué color puedes conseguir. Después mezcla témperas en papel o bandejas.</p>
+      <button type="button" class="audio-button spoken" data-say="Elige dos pinturas y descubre qué color puedes conseguir. Después mezcla témperas en papel o bandejas.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de mezclas"><h4>🎨 ¡Mezclamos pintura!</h4><p>Elige dos pinturas y observa el color que aparece. Después pruébalo con témperas reales.</p><div class="mix-controls"><div><span class="small-label">Pintura 1</span><div class="mix-palette" data-mix-first></div></div><div><span class="small-label">Pintura 2</span><div class="mix-palette" data-mix-second></div></div></div><div class="mixed-result"><div class="paint-blot" data-mixed-blob></div><p class="game-prompt" data-mix-label>Elige las dos pinturas</p></div><p class="access-note">Son aproximaciones visuales a mezclas de témperas; los colores reales dependen de los pigmentos.</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Proporcionar témperas, pinceles y recipientes; permitir experimentar, sin exigir un resultado idéntico al digital.</p>
+    </article><article class="activity-card" id="act-8-1-b" data-criterion="DEE 1.1">
+      <div class="activity-head"><span class="activity-id">8.1.B</span><span class="activity-type">🔍 Observación visual</span></div>
+      <h3>Detectives de formas</h3><p>Observa figuras y busca el círculo, el cuadrado o el triángulo. También puedes encontrarlos en objetos reales del aula.</p>
+      <button type="button" class="audio-button spoken" data-say="Observa figuras y busca el círculo, el cuadrado o el triángulo. También puedes encontrarlos en objetos reales del aula.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de observación"><div class="game-panel quiz-frame" data-quiz="shapes"><div class="quiz-emblem" data-quiz-emoji>🎨</div><p class="game-prompt" data-quiz-prompt></p><div class="answer-options" data-quiz-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><div class="game-controls"><button class="game-button" type="button" data-quiz-read>🔊 Escuchar</button><button class="game-button" type="button" data-quiz-next>Otra propuesta</button></div></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Clasificar objetos del aula según formas y características observables, aceptando distintas interpretaciones justificadas.</p>
+    </article><article class="activity-card" id="act-8-1-c" data-criterion="CRR 3.4">
+      <div class="activity-head"><span class="activity-id">8.1.C</span><span class="activity-type">✏️ Dibujo libre</span></div>
+      <h3>Un cuadro de líneas</h3><p>Dibuja líneas libres con el dedo o el ratón y colorea una mariposa. Después crea un cuadro de líneas largas, cortas, curvas o rectas en cartulina.</p>
+      <button type="button" class="audio-button spoken" data-say="Dibuja líneas libres con el dedo o el ratón y colorea una mariposa. Después crea un cuadro de líneas largas, cortas, curvas o rectas en cartulina.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Dibujo libre digital"><h4>🎨 Dibuja con el dedo o el ratón</h4><p>Elige un color y dibuja. También puedes usar ceras y papel en clase.</p>
+      <div class="paint-palette" data-draw-palette="lineas"><button class="paint-swatch is-active" data-color="#395f94" style="background:#395f94" aria-label="Azul" aria-pressed="true" type="button"></button><button class="paint-swatch" data-color="#eb806d" style="background:#eb806d" aria-label="Coral" aria-pressed="false" type="button"></button><button class="paint-swatch" data-color="#77b887" style="background:#77b887" aria-label="Verde" aria-pressed="false" type="button"></button><button class="paint-swatch" data-color="#d9aa47" style="background:#d9aa47" aria-label="Amarillo" aria-pressed="false" type="button"></button></div>
+      <div class="canvas-frame"><canvas width="660" height="310" data-drawing="lineas" aria-label="Pizarra de dibujo libre"></canvas></div><button type="button" class="game-button" data-draw-clear>↺ Borrar dibujo</button></div><div class="mini-game" aria-label="Coloreado por zonas"><h4>🦋 Coloreo mi mariposa</h4><p>Elige un color y toca las partes de la mariposa. No hay colores incorrectos.</p><div data-paint-game><div class="paint-palette"><button type="button" class="paint-swatch is-active" data-color="#f2a4ba" aria-label="Color rosa" aria-pressed="true" style="background:#f2a4ba"></button><button type="button" class="paint-swatch" data-color="#f5d272" aria-label="Color amarillo" aria-pressed="false" style="background:#f5d272"></button><button type="button" class="paint-swatch" data-color="#8ec3e8" aria-label="Color azul" aria-pressed="false" style="background:#8ec3e8"></button><button type="button" class="paint-swatch" data-color="#9ccf9a" aria-label="Color verde" aria-pressed="false" style="background:#9ccf9a"></button><button type="button" class="paint-swatch" data-color="#ae9bdc" aria-label="Color morado" aria-pressed="false" style="background:#ae9bdc"></button></div><svg viewBox="0 0 440 290" class="paint-page" xmlns="http://www.w3.org/2000/svg" aria-label="Mariposa grande para colorear" role="img"><rect width="440" height="290" fill="#fff"/><path d="M221 137 Q160 13 91 43 Q40 71 117 146 Q50 177 111 246 Q167 267 216 164Z" data-paint-region="wing-left" fill="#fff" stroke="#303e53" stroke-width="5" tabindex="0" role="button" aria-label="Colorear alas izquierdas"/><path d="M219 137 Q284 13 351 43 Q402 71 326 146 Q393 177 329 246 Q277 267 224 164Z" data-paint-region="wing-right" fill="#fff" stroke="#303e53" stroke-width="5" tabindex="0" role="button" aria-label="Colorear alas derechas"/><ellipse cx="221" cy="159" rx="18" ry="81" data-paint-region="body" fill="#fff" stroke="#303e53" stroke-width="5" tabindex="0" role="button" aria-label="Colorear el cuerpo"/><circle cx="162" cy="109" r="24" data-paint-region="dot-left" fill="#fff" stroke="#303e53" stroke-width="4" tabindex="0" role="button" aria-label="Colorear círculo izquierdo"/><circle cx="278" cy="109" r="24" data-paint-region="dot-right" fill="#fff" stroke="#303e53" stroke-width="4" tabindex="0" role="button" aria-label="Colorear círculo derecho"/><path d="M213 87 Q186 48 170 54 M229 87 Q250 45 268 54" stroke="#303e53" stroke-width="5" fill="none" stroke-linecap="round"/></svg><p class="access-note">También puedes colorear con ceras en papel.</p></div><button type="button" class="game-button" data-paint-reset>↺ Dejar en blanco</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Dejar materiales gruesos y diferentes formatos; valorar la intención y la exploración, no la exactitud del trazo.</p>
+    </article><article class="activity-card" id="act-8-1-d" data-criterion="CRR 3.4">
+      <div class="activity-head"><span class="activity-id">8.1.D</span><span class="activity-type">🖐️ Mesa sensorial</span></div>
+      <h3>Exploro las texturas</h3><p>Escucha ideas para tocar papel, tela y otros materiales seguros. Compara suave, áspero o rugoso mediante experiencias reales.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha ideas para tocar papel, tela y otros materiales seguros. Compara suave, áspero o rugoso mediante experiencias reales.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego interactivo"><h4>🖐️ ¿Qué material exploramos?</h4><div class="gallery-choices" data-gallery="textures"></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Preparar una caja con materiales limpios y seguros. La pantalla muestra imágenes pero no sustituye la experiencia táctil.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> No hay un único color para pintar lo que imaginamos.</p></section><!-- 8.2 · Creo mis obras -->
+<section id="apartado-8-2" class="lesson-section expression" aria-labelledby="title-8-2"><div class="section-top"><div><span class="section-tag">🖌️ Exploramos y aprendemos · 8.2</span><h2 id="title-8-2" class="section-heading">Creo mis obras</h2><p class="section-intro">Pintamos, recortamos, estampamos y modelamos. Lo importante es experimentar y expresarnos.</p><button type="button" class="audio-button spoken" data-say="El arte nos permite inventar obras diferentes y compartir cómo las hemos creado." data-audio="/media/infantil/inf5/inf5.8-8-2.mp3">🔊 Escucha la explicación</button></div><img id="art-making" class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2ZmZjFlNiIvPjxjaXJjbGUgY3g9IjUwMSIgY3k9IjY2IiByPSIzMiIgZmlsbD0iI2ZmZTJhMCIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTAgMzE5IFEyMTAgMjkwIDM1MCAzMTYgVDU2MCAyOTggVjM4MCBIMFoiIGZpbGw9IiNlNmVhZDEiLz48cmVjdCB4PSIxNjIiIHk9IjYwIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjI0NyIgcng9IjIwIiBmaWxsPSIjZmZmZGZhIiBzdHJva2U9IiNkNGM2YjgiIHN0cm9rZS13aWR0aD0iNiIvPjxjaXJjbGUgY3g9IjIzNyIgY3k9IjEyNiIgcj0iNDAiIGZpbGw9IiNlNGExYjEiLz48cGF0aCBkPSJNMzEwIDEwNSBMMzc5IDIyMSBMMjQ1IDIyMVoiIGZpbGw9IiM4M2I4YzQiLz48cmVjdCB4PSIxOTYiIHk9IjIzNyIgd2lkdGg9IjEwNCIgaGVpZ2h0PSIzNiIgcng9IjciIGZpbGw9IiNlZWM3NzkiLz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4IDE1Nikgc2NhbGUoMC42OCkiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjOGRiZjg0IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNkNmFkODAiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjOWI1ODM4IiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgZmlsbD0iIzNkMzQ0MCI+PGNpcmNsZSBjeD0iLTEzIiBjeT0iLTIiIHI9IjMuNSIgLz48Y2lyY2xlIGN4PSIxMyIgY3k9Ii0yIiByPSIzLjUiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxlbGxpcHNlIGN4PSIwIiBjeT0iMTQiIHJ4PSI1LjUiIHJ5PSI5IiAvPjwvZz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzkxIDI0Nykgc2NhbGUoMC41NSkiPjxwYXRoIGQ9Ik0xNSAyMiBRNjcgLTggMTE3IDI4IFExNTUgNjQgMTE0IDExNSBROTcgMTMwIDc4IDExNSBRNjcgMTAyIDgwIDg5IFE5NCA3MyA3NCA2NiBRNTYgNjMgNTAgODYgUTQxIDExMyAxNSA5NyBRLTYgNzggMTUgMjJaIiBmaWxsPSIjZjBjZTljIiBzdHJva2U9IiNhNDdiNTIiIHN0cm9rZS13aWR0aD0iNCIvPjxjaXJjbGUgY3g9IjMzIiBjeT0iNDAiIHI9IjEyIiBmaWxsPSIjZTc3ZDc4IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjY5IiBjeT0iMjMiIHI9IjEyIiBmaWxsPSIjZjBiYzU2IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9Ijk5IiBjeT0iNDUiIHI9IjEyIiBmaWxsPSIjNzhiMzliIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjEwNCIgY3k9Ijc3IiByPSIxMiIgZmlsbD0iIzhjOWRjOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSI1OSIgY3k9IjEwMCIgcj0iMTIiIGZpbGw9IiNhNzhjYzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGVsbGlwc2UgY3g9IjMzIiBjeT0iNzIiIHJ4PSIxNiIgcnk9IjEzIiBmaWxsPSIjZmZmNmU4Ii8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQxNiA3MCkgcm90YXRlKC0yNykgc2NhbGUoMC43KSI+PHBhdGggZD0iTTAgMCBIMTggVjEwNyBMOSAxMjIgMCAxMDcgWiIgZmlsbD0iI2VkYWM2NCIgc3Ryb2tlPSIjOTM3ZDZhIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCAxMDcgSDE4IEw5IDEyMiBaIiBmaWxsPSIjZWNkNWI1Ii8+PHBhdGggZD0iTTUgMTE3IEw5IDEyMiAxMyAxMTciIGZpbGw9IiM0NjRmNWYiLz48cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iOSIgcng9IjMiIGZpbGw9IiNkZjZlNzgiLz48L2c+PC9zdmc+" alt="Ilustración infantil sobre creo mis obras" width="560" height="380" loading="lazy"></div><div class="activity-grid"><article class="activity-card" id="act-8-2-a" data-criterion="CRR 3.4">
+      <div class="activity-head"><span class="activity-id">8.2.A</span><span class="activity-type">🧩 Collage digital</span></div>
+      <h3>Un collage a mi manera</h3><p>Elige figuras y colócalas sobre un papel digital. Después crea otro collage recortando y pegando materiales de diferentes texturas.</p>
+      <button type="button" class="audio-button spoken" data-say="Elige figuras y colócalas sobre un papel digital. Después crea otro collage recortando y pegando materiales de diferentes texturas.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Collage digital creativo"><h4>✂️ Creo mi collage</h4><p>Elige una pieza y toca el lugar del papel donde quieres colocarla. Puedes añadir muchas piezas.</p><div class="collage-bank"><button class="choice" type="button" data-sticker="🌼" aria-pressed="true">🌼 Flor</button><button class="choice" type="button" data-sticker="⭐" aria-pressed="false">⭐ Estrella</button><button class="choice" type="button" data-sticker="●" aria-pressed="false">● Círculo</button><button class="choice" type="button" data-sticker="▲" aria-pressed="false">▲ Triángulo</button></div><div class="collage-paper" data-collage-paper role="group" aria-label="Papel para colocar figuras"><span class="paper-hint">Toca aquí para colocar las piezas</span></div><div class="game-controls"><button type="button" class="game-button" data-collage-center>Poner pieza en el centro</button><button type="button" class="game-button" data-collage-reset>↺ Vaciar papel</button></div><p class="access-note">Se puede colocar con el dedo o el ratón. El botón permite hacerlo sin señalar el papel.</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Crear composiciones con papeles grandes, recortes seguros, pegamento y distintos soportes.</p>
+    </article><article class="activity-card" id="act-8-2-b" data-criterion="CRR 2.2">
+      <div class="activity-head"><span class="activity-id">8.2.B</span><span class="activity-type">🧩 Puzle visual</span></div>
+      <h3>Reconstruyo una ilustración</h3><p>Completa un puzle de cuatro piezas de una escena artística. Después describe los colores y las formas que reconoces.</p>
+      <button type="button" class="audio-button spoken" data-say="Completa un puzle de cuatro piezas de una escena artística. Después describe los colores y las formas que reconoces.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Puzle interactivo"><h4>🧩 Puzle de cuatro piezas</h4>
+      <p class="access-note">Toca la pieza y después su hueco, o arrástrala. Puedes ver la imagen de referencia.</p>
+      <div class="puzzle-layout new-puzzle" data-puzzle="making"><div class="puzzle-pieces" data-puzzle-bank></div><div class="puzzle-board" data-puzzle-board></div></div>
+      <p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-puzzle-reset>↺ Mezclar piezas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Ofrecer reproducciones de imágenes infantiles para observarlas y hablar de colores, detalles y emociones.</p>
+    </article><article class="activity-card" id="act-8-2-c" data-criterion="CRR 3.4">
+      <div class="activity-head"><span class="activity-id">8.2.C</span><span class="activity-type">🟠 Estampación</span></div>
+      <h3>Estampo círculos y figuras</h3><p>Estampa formas sobre el papel digital y experimenta con sellos, esponjas u objetos reciclados en clase.</p>
+      <button type="button" class="audio-button spoken" data-say="Estampa formas sobre el papel digital y experimenta con sellos, esponjas u objetos reciclados en clase.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Estampación digital"><h4>🟠 Estampamos formas</h4><p>Escoge una figura y un color. Después toca el papel para estampar.</p><div class="stamp-controls"><div class="paint-palette"><button type="button" class="paint-swatch is-active" data-color="#e77f7e" style="background:#e77f7e" aria-label="Rosa" aria-pressed="true"></button><button type="button" class="paint-swatch" data-color="#e5bd5f" style="background:#e5bd5f" aria-label="Amarillo" aria-pressed="false"></button><button type="button" class="paint-swatch" data-color="#87bba2" style="background:#87bba2" aria-label="Verde" aria-pressed="false"></button><button type="button" class="paint-swatch" data-color="#8caee4" style="background:#8caee4" aria-label="Azul" aria-pressed="false"></button></div><div class="stamp-shapes"><button type="button" class="game-button is-selected" data-shape="circle" aria-pressed="true">● Círculo</button><button type="button" class="game-button" data-shape="square" aria-pressed="false">■ Cuadrado</button><button type="button" class="game-button" data-shape="triangle" aria-pressed="false">▲ Triángulo</button></div></div><div class="canvas-frame"><canvas data-stamp-canvas width="660" height="310" aria-label="Papel de estampación digital"></canvas></div><button class="game-button" type="button" data-stamp-reset>↺ Borrar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Preparar sellos con materiales lavables y seguros. Cambiar presión, color y tamaño sin juzgar la obra final.</p>
+    </article><article class="activity-card" id="act-8-2-d" data-criterion="CRR 3.4">
+      <div class="activity-head"><span class="activity-id">8.2.D</span><span class="activity-type">👐 Modelado real</span></div>
+      <h3>Mi pequeña escultura</h3><p>Escoge una idea y constrúyela con plastilina, arcilla blanda o materiales reutilizables. Cuenta qué has imaginado.</p>
+      <button type="button" class="audio-button spoken" data-say="Escoge una idea y constrúyela con plastilina, arcilla blanda o materiales reutilizables. Cuenta qué has imaginado.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Expresión dramática"><h4>🎭 Invento y represento</h4><p>Toca una propuesta, imagina y represéntala como prefieras.</p><div class="gallery-choices" data-gallery="sculpture"></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Modelar con pasta segura, evitar piezas pequeñas donde exista riesgo y respetar que los niños prefieran no manipular algunas texturas.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Cada creación es especial y merece respeto.</p></section><!-- 8.3 · Escucho y hago música -->
+<section id="apartado-8-3" class="lesson-section calm" aria-labelledby="title-8-3"><div class="section-top"><div><span class="section-tag">🎵 Exploramos y aprendemos · 8.3</span><h2 id="title-8-3" class="section-heading">Escucho y hago música</h2><p class="section-intro">Investigamos sonidos, silencios, intensidad y ritmos con el cuerpo y con instrumentos.</p><button type="button" class="audio-button spoken" data-say="La música también se puede crear con sonidos de objetos y con nuestro cuerpo." data-audio="/media/infantil/inf5/inf5.8-8-3.mp3">🔊 Escucha la explicación</button></div><img id="art-sounds" class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2VkZjZmZiIvPjxjaXJjbGUgY3g9IjUwMSIgY3k9IjY2IiByPSIzMiIgZmlsbD0iI2ZmZTJhMCIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTAgMzE5IFEyMTAgMjkwIDM1MCAzMTYgVDU2MCAyOTggVjM4MCBIMFoiIGZpbGw9IiNlNmVhZDEiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OCAxMjUpIHNjYWxlKDEuMTgpIj48ZWxsaXBzZSBjeD0iNzUiIGN5PSI0MCIgcng9IjY4IiByeT0iMjQiIGZpbGw9IiNmZmY4ZGMiIHN0cm9rZT0iI2E3Nzk2MCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHBhdGggZD0iTTcgNDEgTDE3IDExOCBRNzUgMTQ3IDEzNCAxMTggTDE0MyA0MCIgZmlsbD0iI2U3OTY4MCIgc3Ryb2tlPSIjYTc3OTYwIiBzdHJva2Utd2lkdGg9IjUiLz48ZWxsaXBzZSBjeD0iNzUiIGN5PSIxMTkiIHJ4PSI1OCIgcnk9IjE5IiBmaWxsPSIjZTBhNjhjIiBzdHJva2U9IiNhNzc5NjAiIHN0cm9rZS13aWR0aD0iNSIvPjxwYXRoIGQ9Ik0yNyA0NSBMNDUgMTE3IE03MyA2MSBMNzUgMTM1IE0xMjEgNDkgTDEwNSAxMjIiIHN0cm9rZT0iI2ZmZjZlNCIgc3Ryb2tlLXdpZHRoPSI2Ii8+PHBhdGggZD0iTTMwIDQgTDgxIC0xNiBNMTI5IDUgTDg2IC0xOSIgc3Ryb2tlPSIjOTI2YjUwIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMDUgMTY1KSI+PHJlY3QgeD0iMCIgeT0iMCIgcng9IjE1IiB3aWR0aD0iNTUiIGhlaWdodD0iMTM1IiBmaWxsPSIjZTJiMzZmIiBzdHJva2U9IiM5YTdkNWEiIHN0cm9rZS13aWR0aD0iNSIvPjxjaXJjbGUgY3g9IjI3IiBjeT0iNTUiIHI9IjkiIGZpbGw9IiNmOGU3YzIiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIwIDk1KSBzY2FsZSgxLjQpIiBmaWxsPSIjNmQ3ZmFmIiBzdHJva2U9IiM2ZDdmYWYiIHN0cm9rZS13aWR0aD0iNiI+PGVsbGlwc2UgY3g9IjUiIGN5PSI0NSIgcng9IjE0IiByeT0iMTAiIHRyYW5zZm9ybT0icm90YXRlKC0xOCA1IDQ1KSIvPjxwYXRoIGQ9Ik0xOCA0MiBWLTE0IEw1NyAtMjUgVjI5IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjQ2IiBjeT0iMzEiIHJ4PSIxNCIgcnk9IjEwIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTggNDYgMzEpIi8+PC9nPjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDQ1IDE4Nykgc2NhbGUoMC41OCkiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjNjMzlmIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjNjMzlmIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjZWQ5MTg5IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNmM2MzOWYiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjNTkzYzNiIiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgZmlsbD0iIzNkMzQ0MCI+PGNpcmNsZSBjeD0iLTEzIiBjeT0iLTIiIHI9IjMuNSIgLz48Y2lyY2xlIGN4PSIxMyIgY3k9Ii0yIiByPSIzLjUiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMTMgOSBRMCAyNSAxMyA5IiAvPjwvZz48L2c+PC9zdmc+" alt="Ilustración infantil sobre escucho y hago música" width="560" height="380" loading="lazy"></div><div class="activity-grid"><article class="activity-card" id="act-8-3-a" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.3.A</span><span class="activity-type">🔊 Discriminación auditiva</span></div>
+      <h3>¿Qué instrumento suena?</h3><p>Escucha tres sonidos originales e identifica si suena un tambor, una campana o un sonajero.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha tres sonidos originales e identifica si suena un tambor, una campana o un sonajero.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego auditivo"><h4>🎧 Escucho y descubro</h4><p>Escucha sin subir demasiado el volumen y elige una imagen.</p><div data-audio-quiz="instrument"><button type="button" class="audio-button" data-clip-play>▶️ Escuchar sonido</button><div class="answer-options" data-clip-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-clip-next>Otro sonido</button></div></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Explorar instrumentos de pequeña percusión, dejando que todos puedan escucharlos sin sobrecarga auditiva.</p>
+    </article><article class="activity-card" id="act-8-3-b" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.3.B</span><span class="activity-type">🔊 Intensidad</span></div>
+      <h3>Fuerte y suave</h3><p>Escucha dos sonidos del mismo instrumento a distinto volumen y observa cuál es más suave o más fuerte.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha dos sonidos del mismo instrumento a distinto volumen y observa cuál es más suave o más fuerte.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego auditivo"><h4>🎧 Escucho y descubro</h4><p>Escucha sin subir demasiado el volumen y elige una imagen.</p><div data-audio-quiz="volume"><button type="button" class="audio-button" data-clip-play>▶️ Escuchar sonido</button><div class="answer-options" data-clip-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-clip-next>Otro sonido</button></div></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Golpear un instrumento con distinta intensidad sin molestar a los demás. Ajustar volumen al nivel cómodo del aula.</p>
+    </article><article class="activity-card" id="act-8-3-c" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.3.C</span><span class="activity-type">👏 Eco rítmico</span></div>
+      <h3>Escucho, imito y creo ritmos</h3><p>Escucha dos secuencias de palmadas y encuentra el dibujo de sus pausas. Después inventa tu propio ritmo con palmas.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha dos secuencias de palmadas y encuentra el dibujo de sus pausas. Después inventa tu propio ritmo con palmas.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de pulso y pausa"><h4>👏 ¿Cómo suena el ritmo?</h4><p>Escucha las palmadas y escoge el dibujo que representa lo que has oído.</p><div data-rhythm-match><button type="button" class="audio-button" data-rhythm-play>▶️ Escuchar palmadas</button><div class="answer-options"><button type="button" class="choice" data-rhythm-answer="juntas">👏 👏<small>Dos palmadas juntas</small></button><button type="button" class="choice" data-rhythm-answer="separadas">👏 · 👏<small>Con una pausa</small></button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-rhythm-next>Otro ritmo</button></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Reproducir secuencias libres con palmas, piernas o instrumentos, atendiendo a las posibilidades motoras de cada niño.</p>
+    </article><article class="activity-card" id="act-8-3-d" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.3.D</span><span class="activity-type">🥁 Música compartida</span></div>
+      <h3>La orquesta del aula</h3><p>Escucha los instrumentos. Después organizad una orquesta de aula con objetos sonoros y turnos para tocar y escuchar.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha los instrumentos. Después organizad una orquesta de aula con objetos sonoros y turnos para tocar y escuchar.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Exploración sonora"><h4>🥁 Nuestra pequeña orquesta</h4><p>Toca cada instrumento y escucha su sonido. Después imítalo con objetos del aula.</p><div class="sound-bank"><button type="button" class="choice" data-sound="tambor">🥁<span>Tambor</span></button><button type="button" class="choice" data-sound="sonajero">🪇<span>Sonajero</span></button><button type="button" class="choice" data-sound="campana">🔔<span>Campana</span></button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Construir instrumentos con material reutilizado y dirigir pequeños turnos sin exigir sincronización perfecta.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Escuchamos con atención y cuidamos el volumen.</p></section><!-- 8.4 · Canto y me muevo -->
+<section id="apartado-8-4" class="lesson-section together" aria-labelledby="title-8-4"><div class="section-top"><div><span class="section-tag">💃 Exploramos y aprendemos · 8.4</span><h2 id="title-8-4" class="section-heading">Canto y me muevo</h2><p class="section-intro">Escuchamos ritmos, nos movemos de muchas maneras y expresamos lo que sentimos con el cuerpo.</p><button type="button" class="audio-button spoken" data-say="Cada persona puede moverse a su manera. Compartir el espacio es parte del baile." data-audio="/media/infantil/inf5/inf5.8-8-4.mp3">🔊 Escucha la explicación</button></div><img id="art-dance" class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2VlZjhlZSIvPjxjaXJjbGUgY3g9IjUwMSIgY3k9IjY2IiByPSIzMiIgZmlsbD0iI2ZmZTJhMCIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTAgMzE5IFEyMTAgMjkwIDM1MCAzMTYgVDU2MCAyOTggVjM4MCBIMFoiIGZpbGw9IiNlNmVhZDEiLz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MiAxMzApIHNjYWxlKDAuNzUpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JiODA1ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JiODA1ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iIzcxYjRkOCIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjYmI4MDVmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzJlMmEzOCIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIHN0cm9rZT0iIzRlNGI1NCIgc3Ryb2tlLXdpZHRoPSIyLjYiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMjAgMCBxNyA1IDE0IDAgTTYgMCBxNyA1IDE0IDAiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMTAgMTEgUTAgMTcgMTAgMTEiIC8+PC9nPjwvZz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI5NSAxMjEpIHNjYWxlKDAuNzQpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iI2VkOTE4OSIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjZjNjMzlmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzU5M2MzYiIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIGZpbGw9IiMzZDM0NDAiPjxjaXJjbGUgY3g9Ii0xMyIgY3k9Ii0yIiByPSIzLjUiIC8+PGNpcmNsZSBjeD0iMTMiIGN5PSItMiIgcj0iMy41IiAvPjwvZz48ZyBzdHJva2U9IiM3NzQ4M2YiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNLTEzIDkgUTAgMjUgMTMgOSIgLz48L2c+PC9nPjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDM2IDE0Nikgc2NhbGUoMC43MSkiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjOGRiZjg0IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNkNmFkODAiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjOWI1ODM4IiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgZmlsbD0iIzNkMzQ0MCI+PGNpcmNsZSBjeD0iLTEzIiBjeT0iLTIiIHI9IjMuNSIgLz48Y2lyY2xlIGN4PSIxMyIgY3k9Ii0yIiByPSIzLjUiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxlbGxpcHNlIGN4PSIwIiBjeT0iMTQiIHJ4PSI1LjUiIHJ5PSI5IiAvPjwvZz48L2c+PGcgZmlsbD0iI2Y2Yzc2YiI+PHBhdGggZD0iTTU1IDE2MSBsMTIgMjIgMjQgMiAtMTcgMTcgNSAyNCAtMjQgLTEyIC0yMiAxMiA1IC0yNCAtMTcgLTE3IDI0IC0yWiIvPjxjaXJjbGUgY3g9IjQ5MCIgY3k9IjY4IiByPSIxMyIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MiA4NSkgc2NhbGUoMS4xKSIgZmlsbD0iIzZkN2ZhZiIgc3Ryb2tlPSIjNmQ3ZmFmIiBzdHJva2Utd2lkdGg9IjYiPjxlbGxpcHNlIGN4PSI1IiBjeT0iNDUiIHJ4PSIxNCIgcnk9IjEwIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTggNSA0NSkiLz48cGF0aCBkPSJNMTggNDIgVi0xNCBMNTcgLTI1IFYyOSIgZmlsbD0ibm9uZSIvPjxlbGxpcHNlIGN4PSI0NiIgY3k9IjMxIiByeD0iMTQiIHJ5PSIxMCIgdHJhbnNmb3JtPSJyb3RhdGUoLTE4IDQ2IDMxKSIvPjwvZz48L3N2Zz4=" alt="Ilustración infantil sobre canto y me muevo" width="560" height="380" loading="lazy"></div><div class="activity-grid"><article class="activity-card" id="act-8-4-a" data-criterion="CRR 3.6">
+      <div class="activity-head"><span class="activity-id">8.4.A</span><span class="activity-type">🐢🐇 Pulso y movimiento</span></div>
+      <h3>Mi cuerpo sigue el pulso</h3><p>Escucha pulsos lentos y rápidos. Muévete, balancea las manos o marca el ritmo a tu manera.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha pulsos lentos y rápidos. Muévete, balancea las manos o marca el ritmo a tu manera.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Movimiento y pulso"><h4>🪇 Vamos a movernos</h4><p>Escucha un pulso lento o rápido. Puedes moverte, usar manos o simplemente seguirlo con los ojos.</p><div class="game-controls"><button type="button" class="game-button" data-tempo="lento">🐢 Pulso lento</button><button type="button" class="game-button" data-tempo="rapido">🐇 Pulso rápido</button><button type="button" class="game-button" data-stop-audio>■ Parar</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Ofrecer danza de pie, sentado o con movimiento de brazos. No valorar velocidad ni coordinación como competición.</p>
+    </article><article class="activity-card" id="act-8-4-b" data-criterion="CRR 3.6">
+      <div class="activity-head"><span class="activity-id">8.4.B</span><span class="activity-type">🧩 Secuencias motrices</span></div>
+      <h3>Bailo siguiendo una secuencia</h3><p>Ordena tres acciones: levantar brazos, girar y dar una palmada. Practícalas solo o en grupo como parte de una danza.</p>
+      <button type="button" class="audio-button spoken" data-say="Ordena tres acciones: levantar brazos, girar y dar una palmada. Practícalas solo o en grupo como parte de una danza.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de ordenación"><h4>🔢 Ordenamos una historia</h4><p class="access-note">Arrastra cada tarjeta al hueco correcto o usa dos toques.</p><div class="drop-bank" data-sort-bank="dance"></div><div class="order-fields" data-sort-buckets></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Mezclar tarjetas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Explicar que se trata de una secuencia inventada para el juego, no de una coreografía tradicional.</p>
+    </article><article class="activity-card" id="act-8-4-c" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.4.C</span><span class="activity-type">🌞 Cultura y movimiento</span></div>
+      <h3>Palmas, canciones y danza</h3><p>Escucha un ritmo de palmas original, canta una frase inventada y muévete libremente. Descubre también músicas y bailes del entorno.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha un ritmo de palmas original, canta una frase inventada y muévete libremente. Descubre también músicas y bailes del entorno.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de pulso y pausa"><h4>👏 ¿Cómo suena el ritmo?</h4><p>Escucha las palmadas y escoge el dibujo que representa lo que has oído.</p><div data-rhythm-match><button type="button" class="audio-button" data-rhythm-play>▶️ Escuchar palmadas</button><div class="answer-options"><button type="button" class="choice" data-rhythm-answer="juntas">👏 👏<small>Dos palmadas juntas</small></button><button type="button" class="choice" data-rhythm-answer="separadas">👏 · 👏<small>Con una pausa</small></button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-rhythm-next>Otro ritmo</button></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Mostrar, con materiales autorizados, manifestaciones variadas de la música y el baile andaluz, incluido el flamenco.</p>
+    </article><article class="activity-card" id="act-8-4-d" data-criterion="CRR 3.6">
+      <div class="activity-head"><span class="activity-id">8.4.D</span><span class="activity-type">🧍 Juego musical</span></div>
+      <h3>Nos convertimos en estatuas</h3><p>Muévete cuando suene el ritmo y haz una estatua al detenerse. Después cambiad los papeles para dirigir el juego.</p>
+      <button type="button" class="audio-button spoken" data-say="Muévete cuando suene el ritmo y haz una estatua al detenerse. Después cambiad los papeles para dirigir el juego.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego motriz"><h4>🧍 ¡Estatuas musicales!</h4><p>Nos movemos mientras suenan los instrumentos. Cuando paramos la música, hacemos una estatua.</p><div class="game-controls"><button type="button" class="game-button" data-music-start>▶️ Suena</button><button type="button" class="game-button" data-music-stop>⏸️ Silencio</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Respetar la elección de movimientos y dejar espacio sin obstáculos; el docente controla los cambios de música y silencio.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Podemos bailar, marcar el ritmo con las manos o escuchar.</p></section><!-- 8.5 · Me convierto en personaje -->
+<section id="apartado-8-5" class="lesson-section solutions" aria-labelledby="title-8-5"><div class="section-top"><div><span class="section-tag">🎭 Exploramos y aprendemos · 8.5</span><h2 id="title-8-5" class="section-heading">Me convierto en personaje</h2><p class="section-intro">Representamos gestos, inventamos personajes y contamos pequeñas historias mediante el teatro.</p><button type="button" class="audio-button spoken" data-say="Con la voz, los gestos y los títeres podemos contar historias originales." data-audio="/media/infantil/inf5/inf5.8-8-5.mp3">🔊 Escucha la explicación</button></div><img id="art-theatre" class="section-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMzgwIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2ZmZjRlOSIvPjxjaXJjbGUgY3g9IjUwMSIgY3k9IjY2IiByPSIzMiIgZmlsbD0iI2ZmZTJhMCIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTAgMzE5IFEyMTAgMjkwIDM1MCAzMTYgVDU2MCAyOTggVjM4MCBIMFoiIGZpbGw9IiNlNmVhZDEiLz48cmVjdCB4PSI3MiIgeT0iNDYiIHdpZHRoPSI0MTciIGhlaWdodD0iMjU0IiByeD0iMTgiIGZpbGw9IiNmZmY5ZTYiIHN0cm9rZT0iI2I4OGQ3NiIgc3Ryb2tlLXdpZHRoPSI4Ii8+PHBhdGggZD0iTTY3IDQ1IFExNTUgMTIwIDE5NiA0NSBNMzY4IDQ1IFE0MTggMTI5IDQ5MiA0NSIgZmlsbD0iI2RmODU4ZSIgc3Ryb2tlPSIjYjY2ZDc1IiBzdHJva2Utd2lkdGg9IjciLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzIgMTAzKSBzY2FsZSgxLjEpIj48cGF0aCBkPSJNMCAxMCBRNDUgLTggODggMTAgTDg1IDk5IFE0NCAxNTEgNSA5OVoiIGZpbGw9IiNmOWQzYTciIHN0cm9rZT0iIzkyNmY2MiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGNpcmNsZSBjeD0iMjgiIGN5PSI1MCIgcj0iNiIgZmlsbD0iIzU3NGM1MSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNTAiIHI9IjYiIGZpbGw9IiM1NzRjNTEiLz48cGF0aCBkPSJNMjUgOTAgUTQ1IDExMSA2NCA4OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjc3MzZjIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik04NCAtMiBRMTMwIC0xOSAxNzAgMyBMMTYxIDg5IFExMzIgMTI4IDk1IDkzWiIgZmlsbD0iI2FiY2ZkNCIgc3Ryb2tlPSIjNmY5NGEwIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSIxMTMiIGN5PSI0MiIgcj0iNiIgZmlsbD0iIzQzNTA1YSIvPjxjaXJjbGUgY3g9IjE0NSIgY3k9IjQyIiByPSI2IiBmaWxsPSIjNDM1MDVhIi8+PHBhdGggZD0iTTEwOCA5MyBRMTI2IDY5IDE0NyA5MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNTI2Yzc3IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwIDIxMSkgc2NhbGUoMC40NykiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjOGRiZjg0IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNkNmFkODAiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjOWI1ODM4IiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgZmlsbD0iIzNkMzQ0MCI+PGNpcmNsZSBjeD0iLTEzIiBjeT0iLTIiIHI9IjMuNSIgLz48Y2lyY2xlIGN4PSIxMyIgY3k9Ii0yIiByPSIzLjUiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxlbGxpcHNlIGN4PSIwIiBjeT0iMTQiIHJ4PSI1LjUiIHJ5PSI5IiAvPjwvZz48L2c+PGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NTYgMjA1KSBzY2FsZSgwLjUpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JiODA1ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JiODA1ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iIzcxYjRkOCIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjYmI4MDVmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzJlMmEzOCIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIHN0cm9rZT0iIzRlNGI1NCIgc3Ryb2tlLXdpZHRoPSIyLjYiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMjAgMCBxNyA1IDE0IDAgTTYgMCBxNyA1IDE0IDAiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMTAgMTEgUTAgMTcgMTAgMTEiIC8+PC9nPjwvZz48L3N2Zz4=" alt="Ilustración infantil sobre me convierto en personaje" width="560" height="380" loading="lazy"></div><div class="activity-grid"><article class="activity-card" id="act-8-5-a" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.5.A</span><span class="activity-type">🙂 Mímica</span></div>
+      <h3>Caras que cuentan historias</h3><p>Observa gestos y explora cómo puedes expresar sorpresa, alegría o curiosidad con la cara y el cuerpo.</p>
+      <button type="button" class="audio-button spoken" data-say="Observa gestos y explora cómo puedes expresar sorpresa, alegría o curiosidad con la cara y el cuerpo.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Expresión dramática"><h4>🎭 Invento y represento</h4><p>Toca una propuesta, imagina y represéntala como prefieras.</p><div class="gallery-choices" data-gallery="faces"></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Usar espejos y dramatizaciones. No afirmar que un gesto representa siempre una emoción igual para todos.</p>
+    </article><article class="activity-card" id="act-8-5-b" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.5.B</span><span class="activity-type">🎭 Puzle y teatro</span></div>
+      <h3>Puzle de nuestro pequeño teatro</h3><p>Completa un escenario de teatro y después crea títeres con calcetines, papeles o dibujos.</p>
+      <button type="button" class="audio-button spoken" data-say="Completa un escenario de teatro y después crea títeres con calcetines, papeles o dibujos.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Puzle interactivo"><h4>🧩 Puzle de cuatro piezas</h4>
+      <p class="access-note">Toca la pieza y después su hueco, o arrástrala. Puedes ver la imagen de referencia.</p>
+      <div class="puzzle-layout new-puzzle" data-puzzle="theatre"><div class="puzzle-pieces" data-puzzle-bank></div><div class="puzzle-board" data-puzzle-board></div></div>
+      <p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-puzzle-reset>↺ Mezclar piezas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Construir títeres o sombras con cartón. No emplear focos calientes ni elementos de riesgo.</p>
+    </article><article class="activity-card" id="act-8-5-c" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.5.C</span><span class="activity-type">🐢 Juego simbólico</span></div>
+      <h3>¿En quién me transformo?</h3><p>Elige un personaje imaginario, un animal o un objeto y represéntalo con movimientos o sonidos.</p>
+      <button type="button" class="audio-button spoken" data-say="Elige un personaje imaginario, un animal o un objeto y represéntalo con movimientos o sonidos.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Expresión dramática"><h4>🎭 Invento y represento</h4><p>Toca una propuesta, imagina y represéntala como prefieras.</p><div class="gallery-choices" data-gallery="characters"></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Representar personajes sin asignar papeles por género. Permitir participación mediante gestos, voz, títeres o imágenes.</p>
+    </article><article class="activity-card" id="act-8-5-d" data-criterion="CRR 3.5">
+      <div class="activity-head"><span class="activity-id">8.5.D</span><span class="activity-type">📖 Narración dramática</span></div>
+      <h3>Inventamos una escena</h3><p>Ordena tres imágenes para imaginar el comienzo, lo que pasa y el final de una pequeña historia teatral. Después interpretadla juntos.</p>
+      <button type="button" class="audio-button spoken" data-say="Ordena tres imágenes para imaginar el comienzo, lo que pasa y el final de una pequeña historia teatral. Después interpretadla juntos.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de ordenación"><h4>🔢 Ordenamos una historia</h4><p class="access-note">Arrastra cada tarjeta al hueco correcto o usa dos toques.</p><div class="drop-bank" data-sort-bank="story"></div><div class="order-fields" data-sort-buckets></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Mezclar tarjetas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Montar una escena breve entre varios compañeros o con marionetas, apoyándose en pictogramas.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> No necesitamos actuar todos igual: cada personaje puede ser diferente.</p></section><section class="end-project" id="pasaporte" aria-labelledby="passport-title"><span class="section-tag">🌟 Nuestro reto final</span><h2 id="passport-title">Mi festival de arte y expresión</h2><p>¡Organizamos un <strong>museo-taller de la clase</strong>! Exhibimos dibujos, esculturas y collages; creamos una orquesta sencilla; compartimos un baile o movimiento libre; y representamos una historia con títeres. Lo importante es participar, crear y disfrutar, no competir.</p><div class="passport-grid" data-game="passport"><div class="passport-item"><input type="checkbox" id="p8-a"><label for="p8-a"><span class="seal">🎨</span>Mis colores</label></div><div class="passport-item"><input type="checkbox" id="p8-b"><label for="p8-b"><span class="seal">🖌️</span>Mis obras</label></div><div class="passport-item"><input type="checkbox" id="p8-c"><label for="p8-c"><span class="seal">🥁</span>Mis sonidos</label></div><div class="passport-item"><input type="checkbox" id="p8-d"><label for="p8-d"><span class="seal">💃</span>Mis movimientos</label></div><div class="passport-item"><input type="checkbox" id="p8-e"><label for="p8-e"><span class="seal">🎭</span>Mi teatro</label></div></div><div class="passport-progress"><p data-passport-status aria-live="polite">Mis descubrimientos: 0 de 5</p><div class="passport-meter" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" aria-label="Descubrimientos completados"><span class="passport-fill"></span></div></div><p class="teacher-tip"><strong>En clase:</strong> Preparar estaciones abiertas. Compartir las creaciones con quienes quieran participar; no obligar al alumnado a bailar o actuar delante de otras personas ni publicar su imagen sin autorización.</p></section><details class="teacher-notes"><summary>📋 Orientaciones docentes, progresión y criterios de evaluación</summary><p><strong>Etapa:</strong> Infantil, 5 años. <strong>Área principal:</strong> Comunicación y Representación de la Realidad; conexiones con Crecimiento en Armonía y Descubrimiento y Exploración del Entorno.</p><p><strong>Progresión flexible:</strong> descubrir con apoyo visual o sonoro → explorar materiales y colaborar → crear de forma progresivamente autónoma y explicar decisiones. No son niveles rígidos.</p><p><strong>Evaluación:</strong> observar interés, disfrute, exploración de materiales, creación original, escucha activa, expresión corporal, cooperación y respeto por las obras de los demás. Los resultados digitales no sustituyen la observación directa.</p><p><strong>Accesibilidad:</strong> ofrecer materiales reales, apoyos visuales, gestos, elección entre opciones y descanso sensorial. El arrastre permite también seleccionar con dos toques.</p><p><strong>Normativa:</strong> Decreto 100/2023 y Orden de 30 de mayo de 2023 (Anexo I, Andalucía). Los criterios corresponden al segundo ciclo de Infantil; se indica uno principal por actividad, sin calificación automática.</p><p><strong>Abreviaturas:</strong> CRR = Comunicación y Representación de la Realidad; CA = Crecimiento en Armonía; DEE = Descubrimiento y Exploración del Entorno.</p><div class="criteria-scroll"><table><thead><tr><th>Actividad</th><th>Título</th><th>Criterio principal</th></tr></thead><tbody><tr><td>8.1.A</td><td>Mis primeras mezclas</td><td>CRR 3.4</td></tr><tr><td>8.1.B</td><td>Detectives de formas</td><td>DEE 1.1</td></tr><tr><td>8.1.C</td><td>Un cuadro de líneas</td><td>CRR 3.4</td></tr><tr><td>8.1.D</td><td>Exploro las texturas</td><td>CRR 3.4</td></tr><tr><td>8.2.A</td><td>Un collage a mi manera</td><td>CRR 3.4</td></tr><tr><td>8.2.B</td><td>Reconstruyo una ilustración</td><td>CRR 2.2</td></tr><tr><td>8.2.C</td><td>Estampo círculos y figuras</td><td>CRR 3.4</td></tr><tr><td>8.2.D</td><td>Mi pequeña escultura</td><td>CRR 3.4</td></tr><tr><td>8.3.A</td><td>¿Qué instrumento suena?</td><td>CRR 3.5</td></tr><tr><td>8.3.B</td><td>Fuerte y suave</td><td>CRR 3.5</td></tr><tr><td>8.3.C</td><td>Escucho, imito y creo ritmos</td><td>CRR 3.5</td></tr><tr><td>8.3.D</td><td>La orquesta del aula</td><td>CRR 3.5</td></tr><tr><td>8.4.A</td><td>Mi cuerpo sigue el pulso</td><td>CRR 3.6</td></tr><tr><td>8.4.B</td><td>Bailo siguiendo una secuencia</td><td>CRR 3.6</td></tr><tr><td>8.4.C</td><td>Palmas, canciones y danza</td><td>CRR 3.5</td></tr><tr><td>8.4.D</td><td>Nos convertimos en estatuas</td><td>CRR 3.6</td></tr><tr><td>8.5.A</td><td>Caras que cuentan historias</td><td>CRR 3.5</td></tr><tr><td>8.5.B</td><td>Puzle de nuestro pequeño teatro</td><td>CRR 3.5</td></tr><tr><td>8.5.C</td><td>¿En quién me transformo?</td><td>CRR 3.5</td></tr><tr><td>8.5.D</td><td>Inventamos una escena</td><td>CRR 3.5</td></tr></tbody></table></div><p><strong>Saberes que se movilizan:</strong> posibilidades expresivas de los lenguajes plástico, musical y corporal; exploración de materiales, técnicas e instrumentos; escucha, ritmo, juego simbólico, dramatización y patrimonio cultural. El profesorado podrá concretar los saberes básicos del Anexo I en su propuesta pedagógica.</p></details></div></main>
+ <footer class="site-footer"><div class="footer-container"><div class="footer-junta"><img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación"></div><div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro</a></div></div></footer>
+ <script>
+(() => {
+'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const shuffled=a=>[...a].sort(()=>Math.random()-.5);
+let playing=null;
+function speak(t){if(!('speechSynthesis' in window))return; try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.83;const vs=speechSynthesis.getVoices();const v=vs.find(v=>v.lang==='es-ES')||vs.find(v=>v.lang.startsWith('es'));if(v)u.voice=v;speechSynthesis.speak(u);}catch(e){}}
+function feedback(root,text,good=true){const p=$('[data-feedback]',root);if(p){p.textContent=text;p.classList.toggle('try-again',!good);}}
+function stop(){if(playing){playing.pause();playing.currentTime=0;playing=null;}}
+function sound(name,volume=.62){stop();const a=new Audio('/media/infantil/inf5/inf5.8-'+name+'.mp3');a.volume=volume;playing=a;a.onended=()=>{if(playing===a)playing=null;};a.play().catch(()=>{if(playing===a)playing=null;speak('Audio no disponible. Puedes realizar el sonido con palmas o instrumentos de clase.');});}
+$$('[data-say]').forEach(b=>b.addEventListener('click',()=>{stop();if(b.dataset.audio){const a=new Audio(b.dataset.audio);playing=a;a.play().catch(()=>{playing=null;speak(b.dataset.say);});}else speak(b.dataset.say);}));
+const QUIZ={shapes:[['🔵','¿Dónde ves un círculo?',[['🔵','Círculo'],['🟦','Cuadrado'],['🔺','Triángulo']],0],['🔺','¿Qué figura tiene tres lados?',[['🟦','Cuadrado'],['🔺','Triángulo'],['🔵','Círculo']],1],['🟦','¿Qué figura tiene cuatro lados iguales y cuatro esquinas?',[['🔺','Triángulo'],['🔵','Círculo'],['🟦','Cuadrado']],2]]};
+$$('[data-quiz]').forEach(box=>{const qs=QUIZ[box.dataset.quiz]||[];let i=0;const prompt=$('[data-quiz-prompt]',box),opts=$('[data-quiz-options]',box);function show(){if(!qs.length)return;const [emo,text,answers,ok]=qs[i];$('[data-quiz-emoji]',box).textContent=emo;prompt.textContent=text;opts.replaceChildren();feedback(box,'');answers.forEach(([ic,txt],index)=>{const b=document.createElement('button');b.type='button';b.className='choice';b.innerHTML='<span class="big-icon">'+ic+'</span>'+txt;b.addEventListener('click',()=>feedback(box,index===ok?'¡Lo encontraste!':'Observa las figuras y vuelve a probar.',index===ok));opts.appendChild(b);});} $('[data-quiz-read]',box).addEventListener('click',()=>speak(prompt.textContent));$('[data-quiz-next]',box).addEventListener('click',()=>{i=(i+1)%qs.length;show();});show();});
+// Explore freely: no "wrong" personal artistic responses.
+const GALLERY={textures:[['📄','Papel','Podemos arrugarlo y ver cómo suena.'],['🧣','Tela','Hay telas suaves y otras con más textura.'],['🧽','Esponja','Podemos presionarla con la mano.']],sculpture:[['🐌','Caracol','Modela un caracol con una tira de plastilina.'],['🌼','Flor','Inventa una flor con pétalos y tallo.'],['🏠','Casa','Construye una casa imaginaria.']],faces:[['😲','Sorpresa','Prueba a representar sorpresa, si quieres.'],['😃','Alegría','Prueba un gesto de alegría a tu manera.'],['🤔','Curiosidad','Imagina que descubres algo misterioso.']],characters:[['🐢','Tortuga','Muévete como una tortuga inventada.'],['🌳','Árbol','Imagina que eres un árbol movido por el viento.'],['🚀','Cohete','Haz como si un cohete despegara.']]};
+$$('[data-gallery]').forEach(box=>{const p=box.closest('.mini-game');(GALLERY[box.dataset.gallery]||[]).forEach(([ico,n,txt])=>{const b=document.createElement('button');b.type='button';b.className='choice';b.innerHTML='<span class="big-icon">'+ico+'</span>'+n;b.addEventListener('click',()=>{feedback(p,txt);speak(txt);});box.appendChild(b);});});
+// Simulation of pigment colors, advisory approximation only.
+{const g=$('[data-mix-first]')?.closest('.mini-game');if(g){const cols=[['rojo','#e85f5d'],['amarillo','#f0cd50'],['azul','#4d92d7']];let picks=[null,null];function render(){[0,1].forEach(i=>{const container=$(i===0?'[data-mix-first]':'[data-mix-second]',g);cols.forEach(([name,value],k)=>{const b=document.createElement('button');b.type='button';b.style.background=value;b.textContent=name;b.setAttribute('aria-label',name);b.addEventListener('click',()=>{picks[i]=k;$$('button',container).forEach(x=>x.classList.toggle('selected',x===b));mix();});container.appendChild(b);});});}function mix(){const a=picks[0],b=picks[1];if(a===null||b===null)return;const pair=[a,b].sort().join('');const results={'00':['rojo','#e85f5d'],'11':['amarillo','#f0cd50'],'22':['azul','#4d92d7'],'01':['naranja','#ef9a51'],'02':['violeta','#a47ac4'],'12':['verde','#76b986']};const [name,color]=results[pair];$('[data-mixed-blob]',g).style.background=color;$('[data-mix-label]',g).textContent='¡Parece '+name+'!';}render();}}
+// Original drag and two-tap alternative using pointer events.
+function piecePointer(b,onPick,onPlace){let origin=null,ghost=null,suppress=false;b.addEventListener('click',()=>{if(suppress){suppress=false;return;}onPick(b);});b.addEventListener('pointerdown',ev=>{if(ev.button!==0||b.disabled)return;origin={id:ev.pointerId,x:ev.clientX,y:ev.clientY};try{b.setPointerCapture(ev.pointerId);}catch(e){}});b.addEventListener('pointermove',ev=>{if(!origin||ev.pointerId!==origin.id)return;if(!ghost&&Math.hypot(ev.clientX-origin.x,ev.clientY-origin.y)>10){ghost=b.cloneNode(true);ghost.style.cssText='position:fixed;pointer-events:none;z-index:9999;opacity:.83;width:125px;';document.body.appendChild(ghost);}if(ghost){ghost.style.left=(ev.clientX+12)+'px';ghost.style.top=(ev.clientY+12)+'px';}});b.addEventListener('pointerup',ev=>{if(!origin)return;const was=!!ghost;if(ghost){ghost.remove();ghost=null;}origin=null;if(was){const at=document.elementFromPoint(ev.clientX,ev.clientY)?.closest('[data-drop-cat]');if(at)onPlace(b,at);else onPick(b);suppress=true;}});b.addEventListener('pointercancel',()=>{if(ghost)ghost.remove();ghost=null;origin=null;});}
+const SORT={dance:{buckets:[['0','1'],['1','2'],['2','3']],items:[['🙌','Subo los brazos','0'],['🔄','Doy una vuelta','1'],['👏','Doy una palmada','2']]},story:{buckets:[['0','1'],['1','2'],['2','3']],items:[['🚪','El personaje abre la puerta','0'],['🐱','Encuentra un gato','1'],['❤️','Lo acompaña a casa','2']]}};
+$$('[data-sort-bank]').forEach(bank=>{const g=bank.closest('.mini-game'),data=SORT[bank.dataset.sortBank],targets=$('[data-sort-buckets]',g);if(!data)return;let selected=null,placed=0;function choose(b){if(b.disabled)return;selected=b;$$('.move-piece',bank).forEach(x=>x.classList.toggle('picked',x===b));}function place(b,t){if(!b||b.disabled)return;if(b.dataset.cat!==t.dataset.dropCat){feedback(g,'Mira el número del hueco y vuelve a intentarlo.',false);return;}b.disabled=true;t.insertAdjacentHTML('beforeend','<span class="placed-piece">'+b.dataset.ico+' '+b.dataset.name+'</span>');selected=null;placed++;feedback(g,placed===data.items.length?'¡Secuencia terminada!':'¡Bien! Sigue ordenando.');}function reset(){selected=null;placed=0;bank.replaceChildren();targets.replaceChildren();feedback(g,'');data.buckets.forEach(([cat,label])=>{const t=document.createElement('button');t.type='button';t.className='target-box';t.dataset.dropCat=cat;t.innerHTML='<h5>'+label+'</h5>';t.addEventListener('click',()=>place(selected,t));targets.appendChild(t);});shuffled(data.items).forEach(([ico,name,cat])=>{const b=document.createElement('button');b.type='button';b.className='move-piece';b.dataset.cat=cat;b.dataset.ico=ico;b.dataset.name=name;b.innerHTML='<span class="item-emoji">'+ico+'</span>'+name;piecePointer(b,choose,place);bank.appendChild(b);});} $('[data-sort-reset]',g).addEventListener('click',reset);reset();});
+const PUZZLES={making:'#art-making',theatre:'#art-theatre'};
+$$('[data-puzzle]').forEach(root=>{const p=root.closest('.mini-game'),img=$(PUZZLES[root.dataset.puzzle]),bank=$('[data-puzzle-bank]',root),board=$('[data-puzzle-board]',root);let selected=null,n=0;function slice(i){const s=document.createElement('span');s.className='piece-view';s.style.backgroundImage='url("'+img.src+'")';s.style.backgroundPosition=(i%2?'100%':'0%')+' '+(i<2?'0%':'100%');return s;}function pick(b){if(b.disabled)return;selected=b;$$('.puzzle-cell',bank).forEach(x=>x.classList.toggle('picked',x===b));}function put(b,t){if(!b||b.disabled||t.disabled)return;if(b.dataset.piece!==t.dataset.dropCat){feedback(p,'Prueba el hueco que corresponde a esa parte del dibujo.',false);return;}t.appendChild(slice(+b.dataset.piece));t.disabled=true;t.classList.add('done');t.classList.remove('drop');b.disabled=true;b.style.opacity='.2';n++;selected=null;feedback(p,n===4?'¡Puzle completo!':'¡Muy bien! Busca otra pieza.');}function reset(){selected=null;n=0;bank.replaceChildren();board.replaceChildren();feedback(p,'');shuffled([0,1,2,3]).forEach(i=>{const b=document.createElement('button');b.type='button';b.className='puzzle-cell';b.dataset.piece=i;b.setAttribute('aria-label','Pieza '+(i+1));b.appendChild(slice(i));piecePointer(b,pick,put);bank.appendChild(b);});[0,1,2,3].forEach(i=>{const t=document.createElement('button');t.type='button';t.className='puzzle-cell drop';t.dataset.dropCat=i;t.setAttribute('aria-label','Hueco '+(i+1));t.addEventListener('click',()=>put(selected,t));board.appendChild(t);});} $('[data-puzzle-reset]',p).addEventListener('click',reset);reset();});
+// Drawing surface: pointer/touch/stylus.
+function paintCanvas(canvas, reset, swatches, stamps=false){const ctx=canvas.getContext('2d');let color='#395f94',shape='circle',active=false,last=null;const point=ev=>{const r=canvas.getBoundingClientRect();return{x:(ev.clientX-r.left)*canvas.width/r.width,y:(ev.clientY-r.top)*canvas.height/r.height};};if(swatches){$$('[data-color]',swatches).forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;$$('[data-color]',swatches).forEach(x=>{x.classList.toggle('is-active',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});}));}if(stamps){$$('[data-shape]',stamps).forEach(b=>b.addEventListener('click',()=>{shape=b.dataset.shape;$$('[data-shape]',stamps).forEach(x=>{x.classList.toggle('is-selected',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});}));}function mark(pt){ctx.fillStyle=color;ctx.strokeStyle=color;ctx.beginPath();if(stamps){if(shape==='circle')ctx.arc(pt.x,pt.y,20,0,Math.PI*2);if(shape==='square')ctx.rect(pt.x-19,pt.y-19,38,38);if(shape==='triangle'){ctx.moveTo(pt.x,pt.y-23);ctx.lineTo(pt.x-23,pt.y+20);ctx.lineTo(pt.x+23,pt.y+20);ctx.closePath();}ctx.fill();}else{ctx.arc(pt.x,pt.y,5,0,Math.PI*2);ctx.fill();}}canvas.addEventListener('pointerdown',ev=>{if(ev.button!==0)return;active=true;last=point(ev);canvas.setPointerCapture(ev.pointerId);mark(last);});canvas.addEventListener('pointermove',ev=>{if(!active||stamps)return;const q=point(ev);ctx.beginPath();ctx.strokeStyle=color;ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=10;ctx.moveTo(last.x,last.y);ctx.lineTo(q.x,q.y);ctx.stroke();last=q;});const end=()=>{active=false;};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);if(reset)reset.addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height));}
+$$('[data-drawing]').forEach(c=>{const p=c.closest('.mini-game');paintCanvas(c,$('[data-draw-clear]',p),$('[data-draw-palette]',p));});
+{const c=$('[data-stamp-canvas]');if(c){const p=c.closest('.mini-game');paintCanvas(c,$('[data-stamp-reset]',p),$('.stamp-controls',p),$('.stamp-controls',p));}}
+// Placement collage: spatially free, pointer and button alternative.
+{const sheet=$('[data-collage-paper]');if(sheet){const g=sheet.closest('.mini-game');let selected='🌼';$$('[data-sticker]',g).forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.sticker;$$('[data-sticker]',g).forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));}));const put=(x,y)=>{const span=document.createElement('span');span.className='sticker'+('●▲'.includes(selected)?' sticker-geometric':'');span.textContent=selected;span.style.left=x+'%';span.style.top=y+'%';sheet.appendChild(span);};sheet.addEventListener('click',ev=>{if(ev.target.closest('.game-button'))return;const r=sheet.getBoundingClientRect();put(Math.max(8,Math.min(92,100*(ev.clientX-r.left)/r.width)),Math.max(18,Math.min(88,100*(ev.clientY-r.top)/r.height)));});$('[data-collage-center]',g).addEventListener('click',()=>put(50,51));$('[data-collage-reset]',g).addEventListener('click',()=>$$('.sticker',sheet).forEach(x=>x.remove()));}}
+// Filling butterfly areas with pointer and keyboard.
+{const g=$('[data-paint-game]');if(g){let color='#f2a4ba';const swatches=$$('[data-color]',g),regions=$$('[data-paint-region]',g);swatches.forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;swatches.forEach(x=>{x.classList.toggle('is-active',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});}));regions.forEach(region=>{const fill=()=>region.setAttribute('fill',color);region.addEventListener('click',fill);region.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();fill();}});});$('[data-paint-reset]',g.closest('.mini-game')).addEventListener('click',()=>regions.forEach(x=>x.setAttribute('fill','#fff')));}}
+// Sound identification, volume and rhythm are original non-melodic percussion samples.
+$$('[data-audio-quiz]').forEach(box=>{const kind=box.dataset.audioQuiz, g=box.closest('.mini-game');let i=0;const tasks=kind==='instrument'?[['tambor','🥁','Tambor'],['campana','🔔','Campana'],['sonajero','🪇','Sonajero']]:[['suave','🤫','Suave'],['fuerte','📣','Fuerte']];const opts=$('[data-clip-options]',box);function show(){feedback(g,'');opts.replaceChildren();(kind==='instrument'?tasks:[['suave','🤫','Suave'],['fuerte','📣','Fuerte']]).forEach(([id,ico,label])=>{const b=document.createElement('button');b.type='button';b.className='choice';b.innerHTML='<span class="big-icon">'+ico+'</span>'+label;b.addEventListener('click',()=>feedback(g,id===tasks[i][0]?'¡Escuchaste con atención!':'Escucha otra vez y prueba otra tarjeta.',id===tasks[i][0]));opts.appendChild(b);});}$('[data-clip-play]',box).addEventListener('click',()=>kind==='instrument'?sound(tasks[i][0]):sound('tambor',tasks[i][0]==='fuerte'?.70:.18));$('[data-clip-next]',box).addEventListener('click',()=>{i=(i+1)%tasks.length;show();});show();});
+$$('[data-sound]',document).forEach(b=>b.addEventListener('click',()=>{sound(b.dataset.sound);feedback(b.closest('.mini-game'),'¿Cómo te suena? Puedes imitarlo con palmas o materiales.');}));
+$$('[data-rhythm-match]').forEach(box=>{const g=box.closest('.mini-game');let i=0;const beats=['juntas','separadas'];$('[data-rhythm-play]',box).addEventListener('click',()=>sound('palmas-'+beats[i]));$$('[data-rhythm-answer]',box).forEach(b=>b.addEventListener('click',()=>feedback(g,b.dataset.rhythmAnswer===beats[i]?'¡Has escuchado el ritmo!':'Escucha las palmadas y prueba otra vez.',b.dataset.rhythmAnswer===beats[i])));$('[data-rhythm-next]',box).addEventListener('click',()=>{i=(i+1)%2;feedback(g,'');});});
+$$('[data-tempo]').forEach(b=>b.addEventListener('click',()=>{sound('pulso-'+b.dataset.tempo);feedback(b.closest('.mini-game'),'Escucha el pulso y muévete como prefieras.');}));$$('[data-stop-audio]').forEach(b=>b.addEventListener('click',stop));
+{const start=$('[data-music-start]');if(start){const g=start.closest('.mini-game');start.addEventListener('click',()=>{sound('pulso-rapido');feedback(g,'¡Puedes moverte mientras suena!');});$('[data-music-stop]',g).addEventListener('click',()=>{stop();feedback(g,'¡Estatua! Quédate como prefieras.');});}}
+// Final child-facing passport, no storage, data or grades.
+{const p=$('#pasaporte');if(p){const inputs=$$('input[type="checkbox"]',p),stat=$('[data-passport-status]',p),bar=$('.passport-meter',p),fill=$('.passport-fill',p);const update=()=>{const n=inputs.filter(x=>x.checked).length;stat.textContent='Mis descubrimientos: '+n+' de '+inputs.length;bar.setAttribute('aria-valuenow',n);fill.style.width=(100*n/inputs.length)+'%';};inputs.forEach(c=>c.addEventListener('change',update));update();}}
+})();
+</script>
+ <script src="/js/main.js"></script>
+</body></html>
