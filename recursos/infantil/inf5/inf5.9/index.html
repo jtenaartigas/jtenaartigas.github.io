@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="INF5.9: Pienso, investigo y resuelvo retos. Recursos para observación, memoria, indagación, construcción y pensamiento computacional en Infantil de 5 años.">
+ <meta name="theme-color" content="#fff4e5">
+ <title>INF5.9 · Pienso, investigo y resuelvo retos | CEIP Joaquín Tena Artigas</title>
+ <link rel="icon" href="/img/logo-centro.png" type="image/png">
+ <link rel="stylesheet" href="/css/base.css">
+ <style>
+    /* ======================================================
+       INFANTIL 5 AÑOS · BLOQUE 9 · INVESTIGACIÓN Y RETOS
+       Estilos locales; se preservan los de /css/base.css.
+       ====================================================== */
+    .infant-learning {
+      --ink: #24364a;
+      --muted: #52657a;
+      --orange: #ad5435;
+      --orange-soft: #fff0e7;
+      --page: #fffdfa;
+      --green: #006c3c;
+      --border-soft: #eadfd5;
+      color: var(--ink);
+      background: var(--page);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    .infant-learning *, .infant-learning *::before,
+    .infant-learning *::after { box-sizing: border-box; }
+    .infant-learning button { font: inherit; }
+    .infant-learning button:not(:disabled) { cursor: pointer; }
+    .infant-learning a:focus-visible,
+    .infant-learning button:focus-visible,
+    .infant-learning summary:focus-visible,
+    .infant-learning input:focus-visible + label {
+      outline: 3px solid #175ba6;
+      outline-offset: 4px;
+    }
+    .infant-learning .lesson-shell {
+      width: min(94%, 1160px);
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .infant-learning .breadcrumbs { margin-bottom: 20px; }
+    .infant-learning .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .86rem;
+      color: #617084;
+    }
+    .infant-learning .breadcrumbs li + li::before {
+      content: '/';
+      padding-right: 9px;
+      color: #9ca7b3;
+    }
+    .infant-learning .breadcrumbs a { color: #355c72; }
+    .infant-learning .unit-hero {
+      display: grid;
+      grid-template-columns: 1.28fr .84fr;
+      align-items: center;
+      gap: clamp(18px, 4vw, 50px);
+      padding: clamp(24px, 4vw, 48px);
+      background: linear-gradient(130deg, #fff4eb 0%, #fffae7 100%);
+      border: 1px solid #f2ded1;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .infant-learning .unit-eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-size: .85rem;
+      color: #99522f;
+      letter-spacing: .06em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .infant-learning .unit-hero h1 {
+      margin: 0 0 15px;
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      line-height: 1.15;
+      color: #29364b;
+      text-wrap: balance;
+    }
+    .infant-learning .unit-hero p:not(.unit-eyebrow) {
+      max-width: 600px;
+      margin: 0 0 18px;
+      color: #4e5a6a;
+      font-size: 1.07rem;
+      line-height: 1.7;
+    }
+    .infant-learning .unit-hero img {
+      width: 100%;
+      max-height: 340px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 5px solid #ffffff;
+      box-shadow: 0 15px 30px #a56b3a24;
+    }
+    .infant-learning .play-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #e5d9b9;
+      color: #7a5b25;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .infant-learning .audio-button,
+    .infant-learning .small-button,
+    .infant-learning .game-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 10px 16px;
+      border: 2px solid #e9c8b4;
+      border-radius: 13px;
+      background: #fff;
+      color: #753d29;
+      font-weight: 800;
+      text-align: center;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .infant-learning .audio-button:hover,
+    .infant-learning .small-button:hover,
+    .infant-learning .game-button:hover { background: #fff7ee; }
+    .infant-learning .audio-button:active,
+    .infant-learning .small-button:active,
+    .infant-learning .game-button:active { transform: scale(.98); }
+    .infant-learning .unit-nav {
+      margin: 25px 0 35px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #e8e5df;
+      border-radius: 19px;
+    }
+    .infant-learning .unit-nav h2 { margin: 0 0 13px; font-size: 1.03rem; }
+    .infant-learning .unit-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .infant-learning .unit-nav a {
+      display: inline-flex;
+      gap: 8px;
+      padding: 11px 14px;
+      background: #fff8ef;
+      border: 1px solid #f0dfcb;
+      border-radius: 12px;
+      color: #6d4530;
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+    }
+    .infant-learning .unit-nav a:hover { background: #ffe9d6; }
+    .infant-learning .lesson-section {
+      --section-color: #ba6a4b;
+      --section-pale: #ffede5;
+      margin: 42px 0 0;
+      padding: clamp(18px, 2.6vw, 32px);
+      background: #fff;
+      border: 1px solid #e7e1d9;
+      border-radius: 24px;
+      box-shadow: 0 7px 30px #2a364d09;
+      scroll-margin-top: 100px;
+    }
+    .infant-learning .lesson-section.senses { --section-color: #8355aa; --section-pale: #f5eafb; }
+    .infant-learning .lesson-section.movement { --section-color: #2378ad; --section-pale: #e9f5fc; }
+    .infant-learning .lesson-section.health { --section-color: #438147; --section-pale: #ecf7eb; }
+    .infant-learning .lesson-section.autonomy { --section-color: #ac771b; --section-pale: #fff4dd; }
+    .infant-learning .section-top {
+      display: grid;
+      grid-template-columns: 1fr minmax(190px, 235px);
+      align-items: center;
+      gap: 22px;
+      padding: 5px 2px 20px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .infant-learning .section-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--section-color);
+      font-size: .91rem;
+      font-weight: 850;
+    }
+    .infant-learning .section-heading {
+      margin: 0 0 10px;
+      color: #28374b;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    .infant-learning .section-intro { margin: 0; line-height: 1.6; color: #596677; }
+    .infant-learning .section-image {
+      display: block;
+      width: 100%;
+      max-height: 195px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 17px;
+      background: var(--section-pale);
+      border: 3px solid #fff;
+      box-shadow: 0 5px 15px #26364c15;
+    }
+    .infant-learning .section-sound { margin-top: 12px; }
+    .infant-learning .section-sound .audio-button { min-height: 42px; font-size: .9rem; }
+    .infant-learning .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+    .infant-learning .activity-card {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 19px;
+      border: 1px solid #eee1d6;
+      border-radius: 19px;
+      background: #fffefa;
+    }
+    .infant-learning .activity-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .infant-learning .activity-id {
+      padding: 6px 9px;
+      background: var(--section-pale);
+      color: var(--section-color);
+      border-radius: 10px;
+      font-size: .81rem;
+      font-weight: 850;
+    }
+    .infant-learning .activity-type {
+      font-size: .79rem;
+      color: #536377;
+      font-weight: 750;
+    }
+    .infant-learning .activity-card h3 {
+      margin: 0;
+      color: #2b3a4c;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+    .infant-learning .activity-card p {
+      margin: 0;
+      color: #4d5d70;
+      line-height: 1.6;
+      font-size: .96rem;
+    }
+    .infant-learning .activity-card .teacher-tip {
+      margin-top: auto;
+      padding: 10px 12px;
+      border-left: 3px solid var(--section-color);
+      background: var(--section-pale);
+      color: #4c5362;
+      border-radius: 4px 8px 8px 4px;
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+    .infant-learning .activity-card .audio-button { align-self: flex-start; min-height: 40px; font-size: .82rem; }
+    .infant-learning .game-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+      padding: 15px;
+      border: 1px dashed #d5b7a1;
+      border-radius: 15px;
+      background: #fff9f3;
+    }
+    .infant-learning .game-prompt {
+      min-height: 32px;
+      color: #344254;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .infant-learning .answer-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .infant-learning .answer-options.five { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+    .infant-learning .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 88px;
+      padding: 10px 6px;
+      background: #fff;
+      border: 2px solid #e5d7c8;
+      border-radius: 14px;
+      color: #33455b;
+      font-weight: 800;
+      text-align: center;
+      font-size: .95rem;
+    }
+    .infant-learning .choice .big-icon { font-size: clamp(2rem, 5vw, 2.5rem); line-height: 1.1; }
+    .infant-learning .choice:hover { background: #fff0df; }
+    .infant-learning .choice.is-selected,
+    .infant-learning .choice[aria-pressed="true"] {
+      border-color: #437f53;
+      background: #e8f5e9;
+    }
+    .infant-learning .choice:disabled { opacity: .65; cursor: default; }
+    .infant-learning .game-feedback {
+      min-height: 1.45em;
+      margin: 0;
+      font-size: .9rem;
+      font-weight: 750;
+      color: #396047;
+    }
+    .infant-learning .game-feedback.try-again { color: #925b2b; }
+    .infant-learning .game-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+    .infant-learning .game-button { min-height: 43px; font-size: .87rem; }
+    .infant-learning .small-label { font-size: .83rem; color: #566b7b; }
+    .infant-learning .progress-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+    .infant-learning .progress-dots span {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #e9ddd2; border: 1px solid #cebda9;
+    }
+    .infant-learning .progress-dots span.done { background: #5f9972; border-color: #3c7950; }
+    .infant-learning .body-builder { display: grid; grid-template-columns: 100px 1fr; gap: 14px; align-items: center; }
+    .infant-learning .body-builder svg { width: 100%; max-width: 110px; display: block; }
+    .infant-learning .body-builder svg [data-part] { fill: #f4e5d8; stroke: #b78c70; stroke-width: 3; }
+    .infant-learning .body-builder svg [data-part].revealed { fill: #6db9ce; stroke: #397d90; }
+    .infant-learning .traffic-light {
+      display: flex; gap: 12px; padding: 10px; width: max-content;
+      border-radius: 15px; background: #415063;
+    }
+    .infant-learning .bulb { width: 39px; height: 39px; border-radius: 50%; opacity: .24; border: 3px solid #fff4; }
+    .infant-learning .bulb.red { background: #f34c4c; }
+    .infant-learning .bulb.amber { background: #ffcb4c; }
+    .infant-learning .bulb.green { background: #5ddb80; }
+    .infant-learning .bulb.active { opacity: 1; box-shadow: 0 0 14px currentColor; }
+    .infant-learning .sequence-output {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 8px; min-height: 62px; font-size: 2.25rem; padding: 8px;
+      border-radius: 12px; background: #fff;
+    }
+    .infant-learning .steps-done { display: flex; flex-wrap: wrap; gap: 7px; min-height: 28px; align-items: center; }
+    .infant-learning .step-chip { padding: 8px 10px; font-size: .88rem; font-weight: 750; background: #def0e2; border-radius: 9px; color: #2c6540; }
+    .infant-learning .check-list { display: flex; flex-direction: column; gap: 10px; }
+    .infant-learning .check-item { display: flex; gap: 9px; align-items: center; padding: 9px 11px; border: 1px solid #e8e0d7; border-radius: 12px; background: #fff; }
+    .infant-learning input[type="checkbox"] { width: 22px; height: 22px; accent-color: #398251; }
+    .infant-learning label { cursor: pointer; font-weight: 650; }
+    .infant-learning .lesson-note {
+      margin: 22px 0 0; padding: 16px 19px; border-radius: 14px;
+      background: var(--section-pale); color: #47576a; line-height: 1.55;
+    }
+    .infant-learning .end-project {
+      margin-top: 46px; padding: clamp(20px, 4vw, 35px);
+      border-radius: 25px; border: 1px solid #d9e7d4;
+      background: linear-gradient(145deg, #eff9ee, #fdf9ed);
+      scroll-margin-top: 90px;
+    }
+    .infant-learning .end-project h2 { margin: 0 0 10px; color: #285a39; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+    .infant-learning .end-project > p { color: #466253; line-height: 1.6; }
+    .infant-learning .passport-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; margin-top: 21px; }
+    .infant-learning .passport-item { position: relative; min-width: 0; }
+    .infant-learning .passport-item input { position: absolute; opacity: 0; top: 12px; left: 12px; }
+    .infant-learning .passport-item label {
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; gap: 9px;
+      min-height: 150px; padding: 12px 7px;
+      background: #fff; color: #475567; border: 2px solid #d6e4d4;
+      border-radius: 15px; text-align: center; font-size: .88rem;
+    }
+    .infant-learning .passport-item label .seal { font-size: 2.5rem; }
+    .infant-learning .passport-item input:checked + label { background: #e4f5e6; border-color: #3e8656; }
+    .infant-learning .passport-item input:checked + label::after { content: '✓'; color: #18713b; font-size: 1.1rem; font-weight: 900; }
+    .infant-learning .passport-progress { margin: 20px 0 0; font-weight: 800; color: #326444; }
+    .infant-learning .passport-meter { overflow: hidden; height: 13px; margin-top: 8px; border-radius: 10px; background: #d9e9d8; }
+    .infant-learning .passport-fill { width: 0%; height: 100%; border-radius: inherit; background: #408d5c; transition: width .25s; }
+    .infant-learning .teacher-notes { margin-top: 28px; padding: 19px 22px; background: #fff; border: 1px solid #dedfdc; border-radius: 17px; }
+    .infant-learning .teacher-notes summary { cursor: pointer; color: #4d5967; font-weight: 800; }
+    .infant-learning .teacher-notes p,
+    .infant-learning .teacher-notes li { font-size: .91rem; color: #4d5967; line-height: 1.65; }
+    .infant-learning .teacher-notes table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .infant-learning .teacher-notes th,
+    .infant-learning .teacher-notes td { padding: 10px 9px; text-align: left; border-bottom: 1px solid #e5e6e4; }
+    .infant-learning .teacher-notes th { background: #f5f6f5; }
+    .infant-learning .site-footer .footer-school-name { margin-bottom: 8px; }
+    @media (max-width: 900px) {
+      .infant-learning .activity-grid { grid-template-columns: 1fr; }
+      .infant-learning .passport-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+      .infant-learning .unit-hero { grid-template-columns: 1fr; }
+      .infant-learning .unit-hero img { max-height: 260px; }
+      .infant-learning .section-top { grid-template-columns: 1fr; }
+      .infant-learning .section-image { max-height: 220px; }
+      .infant-learning .unit-nav ul { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 460px) {
+      .infant-learning .unit-nav ul,
+      .infant-learning .passport-grid { grid-template-columns: 1fr 1fr; }
+      .infant-learning .lesson-shell { padding-top: 15px; }
+      .infant-learning .body-builder { grid-template-columns: 90px 1fr; }
+      .infant-learning .activity-card { padding: 14px; }
+      .infant-learning .teacher-notes { overflow-x: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning *, .infant-learning *::before,
+      .infant-learning *::after { transition: none !important; scroll-behavior: auto !important; }
+    }
+  
+    /* ======================================================
+       FUENTES ESCOLARES: archivos ya alojados en /fonts
+       ====================================================== */
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_G.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar";
+      src: url("/fonts/Escolar_N.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Punteada";
+      src: url("/fonts/Escolar_P.ttf") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Escolar Calada";
+      src: url("/fonts/Escolar_C.ttf") format("truetype");
+      font-style: normal;
+      font-display: swap;
+    }
+    /* La navegación del colegio y las notas docentes conservan la fuente general. */
+    .infant-learning #unit-title,
+    .infant-learning .end-project h2,
+    .infant-learning .unit-hero p:not(.unit-eyebrow),
+    .infant-learning .section-heading,
+    .infant-learning .section-intro,
+    .infant-learning .activity-card h3,
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .game-prompt,
+    .infant-learning .choice,
+    .infant-learning .game-button,
+    .infant-learning .audio-button,
+    .infant-learning .step-chip,
+    .infant-learning .game-feedback,
+    .infant-learning .sequence-output,
+    .infant-learning .child-script,
+    .infant-learning .mini-game h4,
+    .infant-learning .mini-game p:not(.access-note),
+    .infant-learning .drop-target,
+    .infant-learning .drag-piece,
+    .infant-learning .paint-instruction {
+      font-family: "Escolar", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+      font-feature-settings: "liga" 1, "clig" 1;
+      line-height: 1.48;
+      letter-spacing: 0;
+    }
+    .infant-learning .activity-card > p:not(.teacher-tip),
+    .infant-learning .mini-game > p,
+    .infant-learning .game-prompt { font-size: clamp(1.13rem, 1.7vw, 1.36rem); }
+    .infant-learning .activity-card h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); }
+    .infant-learning .choice { font-size: clamp(1.06rem, 1.45vw, 1.24rem); }
+    .infant-learning .game-button { font-size: clamp(1rem, 1.35vw, 1.15rem); }
+    .infant-learning .teacher-tip,
+    .infant-learning details,
+    .infant-learning .activity-id,
+    .infant-learning .activity-type,
+    .infant-learning .access-note {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+    .infant-learning .handwriting-dotted {
+      font-family: "Escolar Punteada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-outline {
+      font-family: "Escolar Calada", "Escolar", cursive;
+      font-weight: 400;
+    }
+    .infant-learning .handwriting-bold { font-family: "Escolar", cursive; font-weight: 700; }
+
+    /* ======================================================
+       NUEVOS MINIJUEGOS VISUALES (ratón, dedo y selección táctil)
+       ====================================================== */
+    .infant-learning .mini-game {
+      margin-top: 15px;
+      padding: clamp(12px, 2.5vw, 19px);
+      border: 2px solid #ebd7c5;
+      border-radius: 20px;
+      background: #fffdf9;
+    }
+    .infant-learning .mini-game h4 {
+      margin: 0 0 7px;
+      color: #784330;
+      font-size: clamp(1.25rem, 2vw, 1.58rem);
+      font-weight: 700;
+    }
+    .infant-learning .mini-game p { margin: 4px 0 12px; }
+    .infant-learning .access-note {
+      font-size: .86rem;
+      color: #5b6472;
+    }
+    .infant-learning .drag-bank,
+    .infant-learning .drop-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: stretch;
+      margin: 13px 0;
+    }
+    .infant-learning .drag-piece,
+    .infant-learning .drop-target {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 7px;
+      padding: 11px;
+      text-align: center;
+      color: #334155;
+      background: white;
+      border: 3px solid #d6ddd8;
+      border-radius: 17px;
+      min-width: 110px;
+      min-height: 100px;
+      font-size: clamp(1.04rem, 1.55vw, 1.26rem);
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .infant-learning .drag-piece { border-color: #e7af7f; background: #fff7ec; }
+    .infant-learning .drag-piece .item-emoji,
+    .infant-learning .drop-target .item-emoji {
+      display: block;
+      font-family: system-ui, sans-serif;
+      font-size: clamp(2.3rem, 4vw, 3.25rem);
+      line-height: 1.1;
+    }
+    .infant-learning .drag-piece.is-chosen { border-color: #1169b0; box-shadow: 0 0 0 4px #b7dfff; }
+    .infant-learning .drop-target.is-hovered { border-color: #1169b0; background: #eaf6ff; }
+    .infant-learning .drop-target.is-complete { border-color: #007a33; background: #f0fbf2; }
+    .infant-learning .drop-target .placed-token {
+      display: inline-flex;
+      gap: 5px;
+      margin: 3px;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #7daf8d;
+      font-family: "Escolar", cursive;
+      font-size: 1.13rem;
+    }
+    .infant-learning .drag-ghost {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      opacity: .88;
+      transform: translate(-50%, -50%) rotate(-3deg);
+      box-shadow: 0 9px 24px #0003;
+      min-width: 110px;
+      max-width: 165px;
+    }
+    .infant-learning .drop-hint { font-family: "Escolar", system-ui, sans-serif; font-size: 1.12rem; font-weight: 700; color: #64748b; }
+    .infant-learning .game-feedback:empty { min-height: 1em; }
+    .infant-learning .drop-row .drop-target { flex: 1 1 120px; }
+    /* Puzle de 4 piezas: imagen original reutilizada mediante JavaScript. */
+    .infant-learning .puzzle-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: clamp(12px, 3vw, 26px);
+      margin: 15px auto;
+      max-width: 650px;
+    }
+    .infant-learning .puzzle-pieces,
+    .infant-learning .puzzle-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f5eee8;
+      padding: 5px;
+      border-radius: 14px;
+    }
+    .infant-learning .puzzle-pieces .drag-piece,
+    .infant-learning .puzzle-board .drop-target {
+      position: relative;
+      width: 100%; min-width: 0; min-height: 0;
+      aspect-ratio: 1;
+      padding: 0;
+      border-radius: 9px;
+      border-width: 2px;
+      overflow: hidden;
+    }
+    .infant-learning .puzzle-slice,
+    .infant-learning .puzzle-fixed {
+      width: 100%; height: 100%;
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      flex: 1 1 auto; min-height: 0; pointer-events: none;
+    }
+    .infant-learning .puzzle-pieces .drag-piece { font-family: system-ui, sans-serif; }
+    .infant-learning .puzzle-pieces .drag-piece:disabled { opacity: .35; }
+    .infant-learning .puzzle-board .drop-target { background: #f8fafc; border-style: dashed; }
+    .infant-learning .puzzle-board .drop-target::after {
+      content: attr(data-number);
+      color: #64748b;
+      font: 700 1.5rem system-ui, sans-serif;
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .infant-learning .puzzle-board .drop-target.is-complete::after { content: none; }
+    .infant-learning .puzzle-board .drop-target.is-complete { border-style: solid; padding: 0; }
+    .infant-learning .puzzle-board .drop-target .puzzle-fixed { position: relative; z-index: 1; }
+
+    /* Lámina de coloreado digital: contornos negros sobre blanco. */
+    .infant-learning .coloring-layout { max-width: 580px; margin: 4px auto; }
+    .infant-learning .paint-palette { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; justify-content: center; }
+    .infant-learning .paint-swatch {
+      appearance: none; border: 3px solid #ddd; border-radius: 50%;
+      background: var(--swatch); width: 48px; height: 48px;
+      font-size: 0; flex: 0 0 48px;
+    }
+    .infant-learning .paint-swatch.is-active { outline: 3px solid #224b6d; outline-offset: 3px; }
+    .infant-learning .paint-page { display: block; width: min(100%, 440px); height: auto; margin: 0 auto; background: white; border: 2px solid #d3dbe3; border-radius: 14px; }
+    .infant-learning .paint-page [data-paint-region] { cursor: pointer; transition: fill .12s ease; }
+    .infant-learning .paint-page [data-paint-region]:focus-visible { outline: none; stroke: #1766be; stroke-width: 5; }
+    .infant-learning .paint-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 12px 0; }
+    .infant-learning .outline-color-word {
+      display: block; width: 100%; margin: 5px auto 10px;
+      border: 2px dashed #d7c5b7; border-radius: 12px;
+      background: #fff; padding: 0 8px; color: #414141;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      line-height: 1.5; text-align: center;
+    }
+
+    /* Repaso digital: la fuente punteada permanece debajo del lienzo transparente. */
+    .infant-learning .trace-stage {
+      position: relative;
+      aspect-ratio: 900 / 220;
+      border: 2px solid #ddd1c3;
+      background: repeating-linear-gradient(to bottom, white 0, white 48%, #d5e9ed 48%, #d5e9ed 49%, white 49%, white 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      width: min(100%, 720px);
+      margin: 12px auto;
+    }
+    .infant-learning .trace-word {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(2.8rem, 9vw, 6.6rem);
+      white-space: nowrap;
+      color: #7a9aa6;
+      line-height: 1.15;
+      pointer-events: none;
+    }
+    .infant-learning .trace-canvas {
+      display: block; position: relative;
+      width: 100%; height: 100%;
+      touch-action: none; cursor: crosshair;
+    }
+    .infant-learning .script-preview { text-align: center; font-size: clamp(1.8rem, 5vw, 3.2rem); }
+    .infant-learning .trace-tools { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 620px) {
+      .infant-learning .puzzle-layout { gap: 8px; }
+      .infant-learning .drag-piece, .infant-learning .drop-target { min-width: 95px; min-height: 91px; }
+      .infant-learning .paint-swatch { width: 42px; height: 42px; flex-basis: 42px; }
+      .infant-learning .trace-stage { aspect-ratio: 900 / 260; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .infant-learning .paint-page [data-paint-region] { transition: none; }
+    }
+
+  
+
+/* INF5.2 · Juegos emocionales y de convivencia */
+.infant-learning .lesson-section.emotions { --section-color: #bd5a75; --section-pale: #fff0f4; }
+.infant-learning .lesson-section.expression { --section-color: #9462b6; --section-pale: #f6eefe; }
+.infant-learning .lesson-section.calm { --section-color: #3586a0; --section-pale: #e9f7fb; }
+.infant-learning .lesson-section.together { --section-color: #34865f; --section-pale: #e9f8ed; }
+.infant-learning .lesson-section.solutions { --section-color: #be7b2a; --section-pale: #fff4e4; }
+.infant-learning .emotion-face { font-size: clamp(4.6rem, 9vw, 7rem); line-height: 1.13; text-align:center; filter:drop-shadow(0 5px 6px #3331); }
+.infant-learning .emotion-prompt { display:flex; align-items:center; justify-content:center; gap: 10px; flex-wrap:wrap; text-align:center; background:white; border:2px solid #efdfd4; border-radius:16px; padding:12px; }
+.infant-learning .emotions-row { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.infant-learning .emotions-row .choice { flex:1 1 106px; }
+.infant-learning .big-emotion {font-size:2.4rem;line-height:1.1;display:block;}
+.infant-learning .illustrated-face {max-width:280px;width:100%;margin:auto;display:block;}
+.infant-learning .situation {display:grid;gap:8px;padding:15px;background:#fff;border:1px solid #e7d9c9;border-radius:15px;font-family:"Escolar",cursive;font-size:1.35rem;line-height:1.5;}
+.infant-learning .mini-game {margin-top:10px;}
+.infant-learning .choice.is-personal {border-color:#7f72b6;background:#f3eeff;}
+.infant-learning .chosen-message {border-radius:12px;padding:12px;background:#eaf4f7;color:#28576a;font-size:1.12rem;font-family:"Escolar",cursive;}
+.infant-learning .teacher-tip strong {font-family:inherit;}
+.infant-learning .breath-circle {width:min(220px,70vw);height:min(220px,70vw);margin:12px auto;border-radius:50%;border:8px solid #cbe0ee;background:radial-gradient(circle at 35% 30%,#fefefe,#9bd5e4);display:grid;place-items:center;position:relative;font-size:clamp(2.3rem,5vw,4.5rem);box-shadow:0 0 0 7px #e6f5f9 inset;}
+.infant-learning .breath-circle.is-breathing {animation:slow-breath 8s ease-in-out infinite;}
+.infant-learning .breath-circle span {pointer-events:none;}
+@keyframes slow-breath {0%,100%{transform:scale(.86)}50%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.infant-learning .breath-circle.is-breathing {animation:none;}}
+.infant-learning .counted-steps {display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.infant-learning .counted-steps .game-button {flex:1 1 115px;min-height:85px;flex-direction:column;}
+.infant-learning .counted-steps .game-button[aria-pressed=true] {background:#e0f2e3;border-color:#378357;}
+.infant-learning .reveal-text {padding:12px 14px;border-radius:12px;background:#e7f3f7;min-height:60px;font-family:"Escolar",cursive;font-size:1.3rem;}
+.infant-learning .face-canvas {display:block;margin:6px auto;width:min(100%,380px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .face-canvas [data-paint-region],
+.infant-learning .tree-canvas [data-paint-region] {cursor:pointer;}
+.infant-learning .tree-canvas {display:block;margin:6px auto;width:min(100%,410px);background:white;border:2px solid #e0d5d0;border-radius:15px;}
+.infant-learning .color-swatch {appearance:none;width:45px;height:45px;border-radius:50%;border:3px solid #ece6de;background:var(--swatch);}
+.infant-learning .color-swatch.is-active {outline:3px solid #1e5f8b;outline-offset:2px;}
+.infant-learning .puzzle-slice,.infant-learning .puzzle-fixed { background-color:#fff; }
+.infant-learning .game-panel [data-feedback],
+.infant-learning .mini-game [data-feedback] {font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:.88rem;}
+.infant-learning .soft-reminder {background:#e8f5ec;border-left:5px solid #55a17a;padding:12px 14px;border-radius:10px;line-height:1.55;}
+.infant-learning .emotion-words {display:flex;flex-wrap:wrap;gap:10px;}
+.infant-learning .emotion-words button {flex:1 1 110px;}
+.infant-learning .quiet-icon {font-size:3rem;line-height:1.15;}
+.infant-learning .teacher-notes summary {font-family:system-ui,sans-serif;}
+.infant-learning .lesson-note {font-family:system-ui,sans-serif;}
+.infant-learning .final-mantra {margin-top:18px;background:white;border-radius:16px;padding:18px;border:1px solid #cfe7d4;font-family:"Escolar",cursive;text-align:center;font-size:1.5rem;}
+.infant-learning .teacher-table-wrap {overflow-x:auto;}
+.infant-learning .unit-eyebrow,.infant-learning .unit-nav,.infant-learning .section-tag {font-family:system-ui,sans-serif;}
+@media(max-width:600px){.infant-learning .emotion-prompt {flex-direction:column;}.infant-learning .passport-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+    /* ======================================================
+       INF5.7 · AMPLIACIONES DE ACTIVIDADES INTERACTIVAS
+       ====================================================== */
+    .infant-learning .lesson-section.families {border-top:6px solid #d9956c;}
+    .infant-learning .lesson-section.school {border-top:6px solid #699cb9;}
+    .infant-learning .lesson-section.town {border-top:6px solid #88bc8e;}
+    .infant-learning .lesson-section.jobs {border-top:6px solid #af99c9;}
+    .infant-learning .lesson-section.heritage {border-top:6px solid #e1b66b;}
+    .infant-learning .unit-hero {background:linear-gradient(135deg,#f3f8e9,#fff0e9);}
+    .infant-learning .unit-nav a {min-height:46px;}
+    .infant-learning .question-display {margin-top:8px;}
+    .infant-learning .quiz-image {display:block;font-size:3rem;text-align:center;line-height:1.3;}
+    .infant-learning .answer-options {margin-top:14px;}
+    .infant-learning .choice .big-icon, .infant-learning .big-icon {display:block;font-size:2.2rem;margin:0 auto 5px;line-height:1.2;}
+    .infant-learning .family-gallery,.infant-learning .culture-gallery {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+    .infant-learning .family-gallery .choice,.infant-learning .culture-gallery .choice {min-height:125px;}
+    .infant-learning .drop-bank,.infant-learning .drop-fields,.infant-learning .order-fields {display:flex;flex-wrap:wrap;gap:11px;margin:14px 0;}
+    .infant-learning .move-piece {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#fff;border:2px solid #d8bca9;border-radius:16px;padding:9px 13px;min-width:95px;min-height:80px;color:#293a4d;box-shadow:0 2px 6px #4f3d2920;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;}
+    .infant-learning .move-piece:active {cursor:grabbing;}
+    .infant-learning .move-piece.picked {outline:4px solid #2a80b1;background:#eaf7ff;}
+    .infant-learning .move-piece:disabled {opacity:.48;cursor:default;}
+    .infant-learning .move-piece .item-emoji {font-size:2rem;line-height:1.1;}
+    .infant-learning .target-box {flex:1 1 135px;min-height:116px;max-width:100%;padding:13px 8px;border:3px dashed #abc3c0;background:#f4fbf7;border-radius:17px;text-align:center;overflow-wrap:anywhere;}
+    .infant-learning .target-box:hover {border-color:#7caba4;}
+    .infant-learning .target-box.is-over {background:#e0f2e9;border-color:#368766;}
+    .infant-learning .target-box h5 {font-family:system-ui,sans-serif;font-size:.95rem;line-height:1.35;color:#456170;margin:0 0 6px;}
+    .infant-learning .placed-piece {display:inline-flex;border-radius:12px;background:#fff;border:1px solid #b9d8c3;margin:4px;padding:6px 8px;font-size:1rem;}
+    .infant-learning .order-fields .target-box {flex-basis:90px;min-height:110px;}
+    .infant-learning .order-fields .target-box h5 {font-size:1.3rem;}
+    .infant-learning .new-puzzle .puzzle-pieces,.infant-learning .new-puzzle .puzzle-board {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;width:100%;max-width:268px;aspect-ratio:560/380;margin-inline:auto;}
+    .infant-learning .new-puzzle .puzzle-cell {width:100%;aspect-ratio:280/190;padding:0;border:3px solid #e7cfc3;border-radius:8px;position:relative;overflow:hidden;cursor:pointer;touch-action:none;}
+    .infant-learning .new-puzzle .puzzle-cell.picked {outline:4px solid #2a80b1;outline-offset:1px;}
+    .infant-learning .new-puzzle .puzzle-cell.done {border:3px solid #6fad81;}
+    .infant-learning .new-puzzle .puzzle-cell.drop {background:#f3f6f5;border-style:dashed;}
+    .infant-learning .new-puzzle .puzzle-cell.drop:empty::after {content:'?';font-size:2rem;color:#a1afac;}
+    .infant-learning .new-puzzle .puzzle-cell .piece-view {display:block;width:100%;height:100%;background-size:200% 200%;background-repeat:no-repeat;}
+    .infant-learning .new-puzzle .puzzle-cell.done .piece-view {opacity:1;}
+    .infant-learning .new-puzzle .puzzle-cell:disabled {cursor:default;}
+    .infant-learning .new-puzzle .puzzle-board {border-radius:10px;padding:3px;background:#f8ede2;}
+    .infant-learning .canvas-frame {width:100%;padding:6px;border:2px solid #e9d8c7;border-radius:16px;background:#fff;}
+    .infant-learning canvas[data-drawing] {width:100%;height:auto;display:block;touch-action:none;cursor:crosshair;border-radius:8px;}
+    .infant-learning .neighborhood-map {position:relative;width:100%;min-height:325px;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#dff0d7 0%,#e8f3de 100%);border:3px solid #b9d5a8;margin:14px 0;}
+    .infant-learning .neighborhood-map .street {position:absolute;z-index:0;background:#d8dedf;border:3px solid #f7f7f1;}
+    .infant-learning .neighborhood-map .street-one {width:100%;height:72px;top:40%;left:0;}
+    .infant-learning .neighborhood-map .street-two {height:100%;width:76px;left:43%;top:0;}
+    .infant-learning .map-place {position:absolute;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:95px;min-height:81px;border:3px solid #fff;border-radius:16px;background:#fffaf0;box-shadow:0 3px 7px #32422d3a;color:#2c4356;font-family:system-ui,sans-serif;font-size:.91rem;font-weight:750;}
+    .infant-learning .map-place span {font-size:2.5rem;}
+    .infant-learning .place-school {top:10px;left:9%;}.infant-learning .place-park {top:10px;right:9%;}
+    .infant-learning .place-library {bottom:10px;left:9%;}.infant-learning .place-clinic {bottom:10px;right:9%;}
+    .infant-learning .map-place:focus-visible {outline:4px solid #216b97;}
+    .infant-learning .paint-page {display:block;width:100%;max-width:470px;margin:10px auto;border-radius:17px;background:#fff;border:1px solid #e2d9d0;}
+    .infant-learning .paint-page [data-paint-region] {cursor:pointer;}
+    .infant-learning .paint-page [data-paint-region]:focus-visible {outline:none;stroke:#005fa3;stroke-width:7;}
+    .infant-learning .paint-palette {display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:14px auto;}
+    .infant-learning .paint-swatch {height:46px;width:46px;padding:0;border:3px solid #fff;box-shadow:0 0 0 1px #9babb4;border-radius:50%;cursor:pointer;}
+    .infant-learning .paint-swatch.is-active {outline:3px solid #27547c;outline-offset:2px;}
+    .infant-learning .route-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:360px;margin:12px auto;}
+    .infant-learning .route-cell {aspect-ratio:1;display:flex;justify-content:center;align-items:center;border:2px solid #bad4bf;border-radius:12px;background:#e8f3e7;font-size:1.7rem;}
+    .infant-learning .route-cell.wall {background:#ebdfd7;border-color:#dec9b6;}
+    .infant-learning .route-cell.now {background:#fbe9a9;border-color:#d0a74d;}
+    .infant-learning .route-buttons {display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:16px 0;}
+    .infant-learning .route-buttons .game-button {font-family:system-ui,sans-serif;font-size:1.5rem;min-width:52px;}
+    .infant-learning .trace-stage {position:relative;min-height:180px;background:#fff;border:2px solid #e9d8c7;border-radius:15px;margin:14px auto;overflow:hidden;}
+    .infant-learning .trace-stage .trace-word {position:absolute;left:0;top:22%;width:100%;text-align:center;font-size:clamp(3.7rem,10vw,6rem);line-height:1.2;color:#9d9da1;white-space:nowrap;pointer-events:none;}
+    .infant-learning .trace-stage canvas {position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;}
+    .infant-learning .criteria-scroll {overflow-x:auto;}
+    .infant-learning .site-footer {margin-top:0;}
+    @media(max-width:800px){.infant-learning .family-gallery,.infant-learning .culture-gallery{grid-template-columns:1fr;}.infant-learning .family-gallery .choice,.infant-learning .culture-gallery .choice{min-height:84px;}}
+    @media(max-width:570px){.infant-learning .neighborhood-map{min-height:290px;}.infant-learning .map-place{font-size:.73rem;min-width:85px;min-height:75px;}.infant-learning .map-place span{font-size:2rem;}.infant-learning .place-school,.infant-learning .place-library{left:5px;}.infant-learning .place-park,.infant-learning .place-clinic{right:5px;}.infant-learning .new-puzzle .puzzle-pieces,.infant-learning .new-puzzle .puzzle-board{max-width:220px;}.infant-learning .route-buttons .game-button{min-width:44px;padding:6px;}}
+    @media(max-width:355px){.infant-learning .map-place{min-width:74px;}.infant-learning .map-place span{font-size:1.8rem;}.infant-learning .drop-bank .move-piece{min-width:78px;}}
+
+/* INF5.9: ampliaciones para investigación, retos y secuencias. */
+.infant-learning .unit-hero {background:linear-gradient(128deg,#eaf5ff,#f4f6ec 70%,#fff1e4)}
+.infant-learning .lesson-section.emotions{border-top:6px solid #6da9c0}
+.infant-learning .lesson-section.expression{border-top:6px solid #a99cc6}
+.infant-learning .lesson-section.calm{border-top:6px solid #70af8a}
+.infant-learning .lesson-section.together{border-top:6px solid #e0a573}
+.infant-learning .lesson-section.solutions{border-top:6px solid #9893ce}
+.infant-learning .section-top .audio-button{margin-top:10px}
+.infant-learning .activity-card>.audio-button{margin:8px 0 12px}
+.infant-learning .lesson-section .mini-game{margin-top:12px}
+.infant-learning .difference-svg{width:100%;max-width:550px;height:auto;border:2px solid #d5e5eb;border-radius:14px;background:white;display:block;margin:12px auto}
+.infant-learning .difference-choices,.infant-learning .sound-memory-bank,.infant-learning .exp-item{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.infant-learning .difference-choices .choice,.infant-learning .sound-memory-bank .choice,.infant-learning .exp-item .choice{flex:1 1 110px;min-height:70px;font-size:1.18rem}
+.infant-learning [data-diff].is-found{border-color:#67a781;background:#e4f5ea}
+.infant-learning .missing-stage{background:#fff;border-radius:16px;border:2px dashed #b9c4d2;font-family:system-ui,sans-serif;text-align:center;min-height:110px;padding:25px 5px;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:.15em}
+.infant-learning .memory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:12px auto;max-width:490px}
+.infant-learning .memory-grid button{border-radius:12px;border:2px solid #a6bdd0;min-height:94px;background:#daebf5;font-size:2.3rem;cursor:pointer}
+.infant-learning .memory-grid button.is-open{background:#fff;border-color:#7bb9aa}
+.infant-learning .memory-grid button:disabled{background:#ecf8ed;border-color:#83b898}
+.infant-learning .pattern-display,.infant-learning .action-strip{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:2.25rem;padding:14px 8px;background:#fff;border-radius:14px;border:2px dashed #d1d8df}
+.infant-learning .exp-row{display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:9px 0}
+.infant-learning .exp-row span{font:700 1rem system-ui,sans-serif;flex:1 1 130px}
+.infant-learning .exp-row .game-button.is-selected{background:#d7f0e6;border-color:#478879}
+.infant-learning .exp-item .choice.is-selected{background:#e4f3ff;border-color:#5385a0}
+.infant-learning .investigate-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.infant-learning .investigate-steps button{min-height:100px}
+.infant-learning .experiment-comparison,.infant-learning .two-towers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.infant-learning .experiment-comparison>div{min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:#fff;border:2px solid #c7d9ce;border-radius:14px;font-size:2.4rem}
+.infant-learning .experiment-comparison strong,.infant-learning .experiment-comparison span{font:700 .96rem system-ui,sans-serif}
+.infant-learning .bridge-bank{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.infant-learning .bridge-bank button.is-picked{outline:3px solid #5084a8;outline-offset:2px;background:#ebf7ff}
+.infant-learning .bridge-scene{height:195px;background:linear-gradient(#e6f6fc 0%,#f9f5de 57%,#aad8ec 58%,#a4d2ec 100%);border-radius:14px;border:2px solid #c3d6de;position:relative;margin:12px 0;overflow:hidden}
+.infant-learning .bridge-scene .river{position:absolute;bottom:18px;width:100%;text-align:center;opacity:.7;font:2rem system-ui,sans-serif}
+.infant-learning .bridge-slot{position:absolute;z-index:2;bottom:32px;border:3px dashed #a9b7c3;background:rgba(255,255,255,.80);border-radius:9px;font:1.5rem system-ui,sans-serif;min-height:70px;min-width:62px;cursor:pointer}
+.infant-learning .bridge-slot[data-bridge-target="left"]{left:13%}
+.infant-learning .bridge-slot[data-bridge-target="right"]{right:13%}
+.infant-learning .bridge-slot.deck{left:27%;right:27%;width:46%;bottom:97px;min-height:35px}
+.infant-learning .bridge-slot.filled{background:#deb98b;border:3px solid #aa815b}
+.infant-learning .two-towers .choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:170px}
+.infant-learning .tower-icon{font:1.5rem system-ui,sans-serif;line-height:1.0;letter-spacing:-6px;white-space:nowrap}
+.infant-learning .route-grid,.infant-learning .robot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;max-width:365px;margin:12px auto;background:#d4e5ec;padding:6px;border-radius:14px}
+.infant-learning .route-cell,.infant-learning .robot-cell{aspect-ratio:1;background:#fff;border-radius:8px;display:flex;justify-content:center;align-items:center;font:1.8rem system-ui,sans-serif;text-align:center}
+.infant-learning .route-cell.wall,.infant-learning .robot-cell.wall{background:#d8e7d0}
+.infant-learning .route-cell.now,.infant-learning .robot-cell.now{background:#fff1ce;box-shadow:inset 0 0 0 3px #eec063}
+.infant-learning .route-pad,.infant-learning .robot-controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0}
+.infant-learning .route-pad button,.infant-learning .robot-controls button{min-height:52px;min-width:55px;font-size:1.6rem}
+.infant-learning .robot-program{background:#fff;border:2px dashed #c5d4dc;min-height:58px;border-radius:12px;padding:12px;text-align:center;font:1.5rem system-ui,sans-serif;word-break:break-word}
+.infant-learning .trace-panel{max-width:640px;margin:10px auto}
+.infant-learning .trace-sheet{position:relative;min-height:160px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(0deg,#fff 0px,#fff 35px,#e1ebf0 36px,#fff 37px);border:2px solid #d9e4e9;border-radius:13px;overflow:hidden}
+.infant-learning .trace-sheet .trace-dots{font-family:'Escolar Punteada','Escolar',cursive;font-size:clamp(3.5rem,10vw,6rem);color:#8b9db0;position:absolute;line-height:1;pointer-events:none}
+.infant-learning .trace-sheet canvas{width:100%;height:155px;display:block;position:relative;touch-action:none;cursor:crosshair}
+.infant-learning .sound-memory-bank .choice{font-family:'Escolar',cursive}
+.infant-learning .criteria-scroll{overflow-x:auto}
+@media(max-width:560px){.infant-learning .memory-grid button{min-height:65px;font-size:1.8rem}.infant-learning .route-cell,.infant-learning .robot-cell{font-size:1.5rem}.infant-learning .difference-choices .choice{flex:1 1 100px}}
+@media(max-width:375px){.infant-learning .experiment-comparison{grid-template-columns:1fr}.infant-learning .experiment-comparison>div{min-height:85px}}
+
+</style>
+</head>
+<body class="infant-learning">
+ <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+ <header class="site-banner">
+<a aria-label="Ir a la página de inicio" href="/">
+<img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/>
+</a>
+</header>
+ <div class="navigation-wrapper">
+<div class="navigation-container">
+<a aria-label="Inicio" class="navigation-logo" href="/">
+<img alt="" src="/img/logo-centro.png"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation">
+<ul>
+<li class="nav-green"><a href="/">Inicio</a></li>
+<li class="nav-yellow"><a href="/familias/">Familias</a></li>
+<li class="nav-blue"><a aria-current="page" href="/recursos/">Recursos educativos</a></li>
+<li class="nav-red">
+<a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true">🔒</span> Área privada Profesorado
+            </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+ <main id="contenido-principal"><div class="lesson-shell"><nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/recursos/">Recursos educativos</a></li><li><a href="/recursos/infantil/inf5/">Infantil · 5 años</a></li><li aria-current="page">INF5.9</li></ol></nav><section class="unit-hero" aria-labelledby="unit-title"><div><p class="unit-eyebrow">Infantil · 5 años · Bloque 9</p><h1 id="unit-title">Pienso, investigo y resuelvo retos</h1><p>¡Somos pequeños investigadores! Vamos a observar, recordar, experimentar, construir y crear instrucciones jugando.</p><span class="play-pill">🔎 ¡Exploro, pruebo y descubro!</span><div style="margin-top:16px"><button type="button" class="audio-button spoken" data-say="¡Hola! Vamos a mirar con atención, jugar con nuestra memoria, hacer descubrimientos, construir y dar instrucciones a nuestro robot." data-audio="/media/infantil/inf5/inf5.9-introduccion.mp3">🔊 Escucha la presentación</button></div></div><img width="560" height="380" alt="Niños investigando con una lupa, un robot y bloques de construcción" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjAiIGhlaWdodD0iMzgwIiB2aWV3Qm94PSIwIDAgNTYwIDM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2VhZjVmZiIvPjxjaXJjbGUgY3g9IjQ5OSIgY3k9IjYxIiByPSIyOSIgZmlsbD0iI2ZmZjBiYSIvPjxwYXRoIGQ9Ik0wIDMxOCBRMjEwIDI4MiAzNTYgMzE4IFQ1NjAgMjk4IFYzODAgSDBaIiBmaWxsPSIjZTVlZWRjIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzE2IDExNikgc2NhbGUoMS4xMikiIHN0cm9rZT0iIzY5ODI5NSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KIDxwYXRoIGQ9Ik03MiA0MyBWMTgiIHN0cm9rZS13aWR0aD0iNiIvPjxjaXJjbGUgY3g9IjcyIiBjeT0iMTMiIHI9IjkiIGZpbGw9IiNlZmM1NmYiLz48cmVjdCB4PSIxMyIgeT0iNDQiIHdpZHRoPSIxMTgiIGhlaWdodD0iMTA0IiByeD0iMjQiIGZpbGw9IiNjMGRiZTUiLz4KIDxyZWN0IHg9IjMwIiB5PSI2MyIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjUyIiByeD0iMTIiIGZpbGw9IiNmNmZjZmYiLz48Y2lyY2xlIGN4PSI1MyIgY3k9Ijg4IiByPSIxMSIgZmlsbD0iIzVmOTFhMyIvPjxjaXJjbGUgY3g9IjkyIiBjeT0iODgiIHI9IjExIiBmaWxsPSIjNWY5MWEzIi8+PHBhdGggZD0iTTU1IDEwOSBRNzIgMTIxIDkwIDEwOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWE3ODg1IiBzdHJva2Utd2lkdGg9IjUiLz4KIDxwYXRoIGQ9Ik0xMyA3MyBMLTEwIDk2IE0xMzEgNzMgTDE1MyA5NiIgc3Ryb2tlPSIjOGJhY2JiIiBzdHJva2Utd2lkdGg9IjEzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNDQgMTQ3IFYxNzEgTTEwMiAxNDcgVjE3MSIgc3Ryb2tlPSIjOGJhY2JiIiBzdHJva2Utd2lkdGg9IjE1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KIDwvZz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2NiAxNjEpIHNjYWxlKDAuNzQpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iI2VkOTE4OSIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjZjNjMzlmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzU5M2MzYiIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIGZpbGw9IiMzZDM0NDAiPjxjaXJjbGUgY3g9Ii0xMyIgY3k9Ii0yIiByPSIzLjUiIC8+PGNpcmNsZSBjeD0iMTMiIGN5PSItMiIgcj0iMy41IiAvPjwvZz48ZyBzdHJva2U9IiM3NzQ4M2YiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNLTEzIDkgUTAgMjUgMTMgOSIgLz48L2c+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzIDEyNCkgc2NhbGUoMC43MykiPjxjaXJjbGUgY3g9IjU0IiBjeT0iNTUiIHI9IjQzIiBmaWxsPSIjZDVlZmY1IiBmaWxsLW9wYWNpdHk9Ii44IiBzdHJva2U9IiM1NDg2OWUiIHN0cm9rZS13aWR0aD0iMTEiLz48cGF0aCBkPSJNODMgODcgTDEzOSAxNDQiIHN0cm9rZT0iI2JjN2U2NyIgc3Ryb2tlLXdpZHRoPSIyMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTM2IDMyIFE1NiAyMCA2NyAzMyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MTEgMjM3KSBzY2FsZSgwLjQ4KSIgc3Ryb2tlPSIjYWY4YjcxIiBzdHJva2Utd2lkdGg9IjQiPjxyZWN0IHg9IjciIHk9IjEwNCIgd2lkdGg9Ijg1IiBoZWlnaHQ9Ijc2IiByeD0iOCIgZmlsbD0iI2U3Yjc2YiIvPjxyZWN0IHg9Ijk2IiB5PSIxMDQiIHdpZHRoPSI4MSIgaGVpZ2h0PSI3NiIgcng9IjgiIGZpbGw9IiM5N2MzYTMiLz48cmVjdCB4PSI0NSIgeT0iMjUiIHdpZHRoPSI5OSIgaGVpZ2h0PSI3NSIgcng9IjgiIGZpbGw9IiNlOWEzYTIiLz48cGF0aCBkPSJNNTUgOTYgTDk0IDI5IEwxMzUgOTZaIiBmaWxsPSIjZjlkZDlmIi8+PC9nPjxnIGZpbGw9IiNmMWJjNjQiPjxwYXRoIGQ9Ik0yNTMgNDJsNyAxMiAxNCAzIC0xMSAxMCAyIDE0IC0xMiAtNyAtMTIgNyAyIC0xNCAtMTEgLTEwIDE0IC0zWiIvPjwvZz48ZyBmaWxsPSIjZjFiYzY0Ij48cGF0aCBkPSJNNjEgMjc0bDcgMTIgMTQgMyAtMTEgMTAgMiAxNCAtMTIgLTcgLTEyIDcgMiAtMTQgLTExIC0xMCAxNCAtM1oiLz48L2c+PC9zdmc+"></section><nav class="unit-nav" aria-label="Apartados de este bloque"><h2>¿Qué vamos a descubrir?</h2><ul><li><a href="#apartado-9-1">🔍 9.1 Observo y presto atención</a></li><li><a href="#apartado-9-2">🧠 9.2 Recuerdo y ordeno</a></li><li><a href="#apartado-9-3">🧪 9.3 Investigo</a></li><li><a href="#apartado-9-4">🛠️ 9.4 Resuelvo problemas</a></li><li><a href="#apartado-9-5">🤖 9.5 Doy instrucciones</a></li><li><a href="#pasaporte">🌟 Mi pasaporte</a></li></ul></nav><!-- ==============================================
+     9.1 OBSERVO Y PRESTO ATENCIÓN
+     ============================================== -->
+<section id="apartado-9-1" class="lesson-section emotions" aria-labelledby="title-9-1"><div class="section-top"><div><span class="section-tag">🔍 Descubro y practico · 9.1</span><h2 id="title-9-1" class="section-heading">Observo y presto atención</h2><p class="section-intro">Miro con curiosidad, descubro detalles y comparo objetos.</p><button type="button" class="audio-button spoken" data-say="Mirar con atención nos ayuda a descubrir lo que se parece y lo que cambia." data-audio="/media/infantil/inf5/inf5.9-apartado-9-1.mp3">🔊 Escuchar explicación</button></div><img id="art-observe" class="section-image" width="560" height="380" loading="lazy" alt="Ilustración infantil de observo y presto atención" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjAiIGhlaWdodD0iMzgwIiB2aWV3Qm94PSIwIDAgNTYwIDM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2ZlZjFlNyIvPjxjaXJjbGUgY3g9IjQ5OSIgY3k9IjYxIiByPSIyOSIgZmlsbD0iI2ZmZjBiYSIvPjxwYXRoIGQ9Ik0wIDMxOCBRMjEwIDI4MiAzNTYgMzE4IFQ1NjAgMjk4IFYzODAgSDBaIiBmaWxsPSIjZTVlZWRjIi8+PGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzYgMTUzKSBzY2FsZSgwLjc3KSI+PHBhdGggZD0iTS0xNSAxMjYgdjM4IE0xNSAxMjYgdjM4IiBzdHJva2U9IiM1MzY0OGMiIHN0cm9rZS13aWR0aD0iMTciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNLTE4IDE2NCBoLTE1IE0xMyAxNjQgaDIwIiBzdHJva2U9IiMzNDQyNWMiIHN0cm9rZS13aWR0aD0iMTEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNLTI3IDc2IFEtNTUgOTIgLTYxIDU3IiBmaWxsPSJub25lIiBzdHJva2U9IiNiYjgwNWYiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNMjcgNzYgUTU1IDkzIDYxIDU0IiBmaWxsPSJub25lIiBzdHJva2U9IiNiYjgwNWYiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNLTM2IDU1IFEtNDggOTIgLTMzIDEzMiBIMzMgUTQ3IDkyIDM2IDU1IFEwIDQxIC0zNiA1NVoiIGZpbGw9IiM3MWI0ZDgiIHN0cm9rZT0iI2EzNmE2YSIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMTUgNjIgaDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii41IiAvPjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIzOCIgZmlsbD0iI2JiODA1ZiIgc3Ryb2tlPSIjOTM2ODUzIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0zOCAtNyBRLTQ3IC00NCAtMTcgLTQwIFE4IC01MyAzMyAtMzAgUTM5IC0xNCAzOCAtMiBMMjkgLTI0IFExMyAtMjMgNCAtMzMgUS0xMyAtMTQgLTMzIC0xOVoiIGZpbGw9IiMyZTJhMzgiIC8+PGcgc3Ryb2tlPSIjNjI0OTQwIiBzdHJva2Utd2lkdGg9IjIuOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNLTIwIC0xMyBxNyAtMyAxMyAwIE03IC0xMyBxNyAtMyAxMyAwIiAvPjwvZz48ZyBzdHJva2U9IiM0ZTRiNTQiIHN0cm9rZS13aWR0aD0iMi42IiBmaWxsPSJub25lIj48cGF0aCBkPSJNLTIwIDAgcTcgNSAxNCAwIE02IDAgcTcgNSAxNCAwIiAvPjwvZz48ZyBzdHJva2U9IiM3NzQ4M2YiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNLTEwIDExIFEwIDE3IDEwIDExIiAvPjwvZz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU0IDk0KSBzY2FsZSgxLjExKSI+PGNpcmNsZSBjeD0iNTQiIGN5PSI1NSIgcj0iNDMiIGZpbGw9IiNkNWVmZjUiIGZpbGwtb3BhY2l0eT0iLjgiIHN0cm9rZT0iIzU0ODY5ZSIgc3Ryb2tlLXdpZHRoPSIxMSIvPjxwYXRoIGQ9Ik04MyA4NyBMMTM5IDE0NCIgc3Ryb2tlPSIjYmM3ZTY3IiBzdHJva2Utd2lkdGg9IjIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzYgMzIgUTU2IDIwIDY3IDMzIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY1IDIzNSkgc2NhbGUoMC43NSkiPjxwYXRoIGQ9Ik0wIDMgVjc1IiBzdHJva2U9IiM3NmE2NzgiIHN0cm9rZS13aWR0aD0iNyIvPjxwYXRoIGQ9Ik0wIDQyIFEtMjQgMjUgLTI5IDQxIFEtMTcgNTggMCA1NiIgZmlsbD0iIzhmYmY4MSIvPjxnIGZpbGw9IiNlZmI5YmUiIHN0cm9rZT0iI2JlOTA5NSIgc3Ryb2tlLXdpZHRoPSIyIj48ZWxsaXBzZSBjeT0iLTIyIiByeD0iMTciIHJ5PSIyNCIvPjxlbGxpcHNlIGN5PSIyMiIgcng9IjE3IiByeT0iMjQiLz48ZWxsaXBzZSBjeD0iLTIyIiByeD0iMjQiIHJ5PSIxNyIvPjxlbGxpcHNlIGN4PSIyMiIgcng9IjI0IiByeT0iMTciLz48L2c+PGNpcmNsZSByPSIxNSIgZmlsbD0iI2YzY2I2ZCIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NjEgMjExKSBzY2FsZSgwLjk1KSI+PHBhdGggZD0iTTAgMyBWNzUiIHN0cm9rZT0iIzc2YTY3OCIgc3Ryb2tlLXdpZHRoPSI3Ii8+PHBhdGggZD0iTTAgNDIgUS0yNCAyNSAtMjkgNDEgUS0xNyA1OCAwIDU2IiBmaWxsPSIjOGZiZjgxIi8+PGcgZmlsbD0iI2VmYjliZSIgc3Ryb2tlPSIjYmU5MDk1IiBzdHJva2Utd2lkdGg9IjIiPjxlbGxpcHNlIGN5PSItMjIiIHJ4PSIxNyIgcnk9IjI0Ii8+PGVsbGlwc2UgY3k9IjIyIiByeD0iMTciIHJ5PSIyNCIvPjxlbGxpcHNlIGN4PSItMjIiIHJ4PSIyNCIgcnk9IjE3Ii8+PGVsbGlwc2UgY3g9IjIyIiByeD0iMjQiIHJ5PSIxNyIvPjwvZz48Y2lyY2xlIHI9IjE1IiBmaWxsPSIjZjNjYjZkIi8+PC9nPjxnIGZvbnQtc2l6ZT0iMzUiPjx0ZXh0IHg9IjM2NCIgeT0iMTI3Ij7wn6aLPC90ZXh0Pjx0ZXh0IHg9IjQzMyIgeT0iMjc3Ij7wn5CePC90ZXh0PjwvZz48L3N2Zz4="></div><div class="activity-grid"><article class="activity-card" id="act-9-1-a" data-criterion="DEE 2.1">
+      <div class="activity-head"><span class="activity-id">9.1.A</span><span class="activity-type">🔍 Observación visual</span></div>
+      <h3>Encuentro las diferencias</h3><p>Mira los dos jardines y localiza tres pequeños cambios.</p>
+      <button type="button" class="audio-button spoken" data-say="Mira los dos jardines y localiza tres pequeños cambios.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Observación de diferencias"><h4>🔍 Dos jardines parecidos</h4><p>Observa las dos imágenes. Tienen tres cambios. Señala qué ha cambiado.</p><svg viewBox="0 0 440 220" class="difference-svg" role="img" aria-label="Dos jardines ilustrados con tres diferencias"><g transform="translate(0 0)"><rect width="213" height="215" rx="12" fill="#d9f0fa"/><path d="M0 151 Q90 125 213 148 V215 H0Z" fill="#c6dfb9"/><circle cx="41" cy="44" r="20" fill="#f9d474"/><path d="M100 170 V100" stroke="#81a681" stroke-width="8"/><circle cx="100" cy="89" r="22" fill="#e89fbb"/><path d="M100 89 v-22 M100 89 h20" stroke="#eaaaca" stroke-width="6"/><path d="M163 95 l18 -15 l-8 23 l-16 -7Z" fill="#ab91c9"/></g><g transform="translate(226 0)"><rect width="213" height="215" rx="12" fill="#d9f0fa"/><path d="M0 151 Q90 125 213 148 V215 H0Z" fill="#c6dfb9"/><circle cx="41" cy="44" r="12" fill="#f9d474"/><path d="M100 170 V100" stroke="#81a681" stroke-width="8"/><circle cx="100" cy="89" r="22" fill="#f4cc7b"/><path d="M100 89 v-22 M100 89 h20" stroke="#f4cc7b" stroke-width="6"/><path d="M163 95 l18 10 l-8 -23 l-16 13Z" fill="#ab91c9"/></g></svg><div class="difference-choices" data-differences><button type="button" class="choice" data-diff="sol">☀️ El sol</button><button type="button" class="choice" data-diff="flor">🌸 La flor</button><button type="button" class="choice" data-diff="mariposa">🦋 La mariposa</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-diff-reset>↺ Volver a mirar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Buscar diferencias entre objetos reales o fotografías del aula. Permitir señalar y describir oralmente.</p>
+    </article><article class="activity-card" id="act-9-1-b" data-criterion="DEE 2.1">
+      <div class="activity-head"><span class="activity-id">9.1.B</span><span class="activity-type">👀 Memoria visual</span></div>
+      <h3>¿Qué ha desaparecido?</h3><p>Observa cuatro objetos, esconde uno y recuerda cuál falta.</p>
+      <button type="button" class="audio-button spoken" data-say="Observa cuatro objetos, esconde uno y recuerda cuál falta.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Memoria visual"><h4>👀 Recuerda cuatro objetos</h4><div class="missing-stage" data-missing-stage>🍎 🪁 🧸 🌼</div><p class="game-feedback" data-feedback role="status" aria-live="polite">Mira los dibujos unos segundos y pulsa «Esconder».</p><div class="answer-options" data-missing-options></div><div class="game-controls"><button type="button" class="game-button" data-missing-hide>🙈 Esconder uno</button><button type="button" class="game-button" data-missing-reset>↺ Otra ronda</button></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Poner cuatro objetos en una bandeja, cubrirlos, retirar uno y volver a mostrarlos.</p>
+    </article><article class="activity-card" id="act-9-1-c" data-criterion="DEE 1.1">
+      <div class="activity-head"><span class="activity-id">9.1.C</span><span class="activity-type">🧺 Clasificación</span></div>
+      <h3>Agrupamos por una característica</h3><p>Arrastra o toca las tarjetas y clasifícalas según su color.</p>
+      <button type="button" class="audio-button spoken" data-say="Arrastra o toca las tarjetas y clasifícalas según su color.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de clasificación"><h4>🧩 Arrastra y coloca</h4><p class="access-note">Puedes arrastrar con el dedo o el ratón. También puedes tocar primero una tarjeta y después su destino.</p><div class="drop-bank" data-sort-bank="colors"></div><div class="drop-fields" data-sort-buckets></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button class="game-button" type="button" data-sort-reset>↺ Jugar de nuevo</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Clasificar tapones por color y repetir cambiando el criterio de clasificación.</p>
+    </article><article class="activity-card" id="act-9-1-d" data-criterion="DEE 2.1">
+      <div class="activity-head"><span class="activity-id">9.1.D</span><span class="activity-type">🧩 Puzle táctil</span></div>
+      <h3>Un puzle para observar</h3><p>Reconstruye la ilustración en cuatro piezas. Mira con atención los detalles antes de empezar.</p>
+      <button type="button" class="audio-button spoken" data-say="Reconstruye la ilustración en cuatro piezas. Mira con atención los detalles antes de empezar.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Puzle interactivo"><h4>🧩 Puzle de cuatro piezas</h4>
+      <p class="access-note">Toca la pieza y después su hueco, o arrástrala. Puedes ver la imagen de referencia.</p>
+      <div class="puzzle-layout new-puzzle" data-puzzle="observe"><div class="puzzle-pieces" data-puzzle-bank></div><div class="puzzle-board" data-puzzle-board></div></div>
+      <p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-puzzle-reset>↺ Mezclar piezas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Rehacer puzles de piezas grandes; verbalizar qué pistas visuales ayudan.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Podemos buscar detalles con los ojos, las manos y la conversación.</p></section><!-- ==============================================
+     9.2 RECUERDO Y ORDENO
+     ============================================== -->
+<section id="apartado-9-2" class="lesson-section expression" aria-labelledby="title-9-2"><div class="section-top"><div><span class="section-tag">🧠 Descubro y practico · 9.2</span><h2 id="title-9-2" class="section-heading">Recuerdo y ordeno</h2><p class="section-intro">Jugamos a recordar imágenes y sonidos y a construir secuencias.</p><button type="button" class="audio-button spoken" data-say="Recordar nos permite organizar lo que hemos visto, oído y realizado." data-audio="/media/infantil/inf5/inf5.9-apartado-9-2.mp3">🔊 Escuchar explicación</button></div><img id="art-memory" class="section-image" width="560" height="380" loading="lazy" alt="Ilustración infantil de recuerdo y ordeno" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjAiIGhlaWdodD0iMzgwIiB2aWV3Qm94PSIwIDAgNTYwIDM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2VmZjNmZiIvPjxjaXJjbGUgY3g9IjQ5OSIgY3k9IjYxIiByPSIyOSIgZmlsbD0iI2ZmZjBiYSIvPjxwYXRoIGQ9Ik0wIDMxOCBRMjEwIDI4MiAzNTYgMzE4IFQ1NjAgMjk4IFYzODAgSDBaIiBmaWxsPSIjZTVlZWRjIi8+PGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDUgMTUwKSBzY2FsZSgwLjczKSI+PHBhdGggZD0iTS0xNSAxMjYgdjM4IE0xNSAxMjYgdjM4IiBzdHJva2U9IiM1MzY0OGMiIHN0cm9rZS13aWR0aD0iMTciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNLTE4IDE2NCBoLTE1IE0xMyAxNjQgaDIwIiBzdHJva2U9IiMzNDQyNWMiIHN0cm9rZS13aWR0aD0iMTEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNLTI3IDc2IFEtNTUgOTIgLTYxIDU3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNmFkODAiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNMjcgNzYgUTU1IDkzIDYxIDU0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNmFkODAiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48cGF0aCBkPSJNLTM2IDU1IFEtNDggOTIgLTMzIDEzMiBIMzMgUTQ3IDkyIDM2IDU1IFEwIDQxIC0zNiA1NVoiIGZpbGw9IiM4ZGJmODQiIHN0cm9rZT0iI2EzNmE2YSIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMTUgNjIgaDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9Ii41IiAvPjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIzOCIgZmlsbD0iI2Q2YWQ4MCIgc3Ryb2tlPSIjOTM2ODUzIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0zOCAtNyBRLTQ3IC00NCAtMTcgLTQwIFE4IC01MyAzMyAtMzAgUTM5IC0xNCAzOCAtMiBMMjkgLTI0IFExMyAtMjMgNCAtMzMgUS0xMyAtMTQgLTMzIC0xOVoiIGZpbGw9IiM5YjU4MzgiIC8+PGcgc3Ryb2tlPSIjNjI0OTQwIiBzdHJva2Utd2lkdGg9IjIuOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNLTIwIC0xMyBxNyAtMyAxMyAwIE03IC0xMyBxNyAtMyAxMyAwIiAvPjwvZz48ZyBmaWxsPSIjM2QzNDQwIj48Y2lyY2xlIGN4PSItMTMiIGN5PSItMiIgcj0iMy41IiAvPjxjaXJjbGUgY3g9IjEzIiBjeT0iLTIiIHI9IjMuNSIgLz48L2c+PGcgc3Ryb2tlPSIjNzc0ODNmIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSI+PGVsbGlwc2UgY3g9IjAiIGN5PSIxNCIgcng9IjUuNSIgcnk9IjkiIC8+PC9nPjwvZz48cmVjdCB4PSIyMzciIHk9IjgwIiB3aWR0aD0iOTUiIGhlaWdodD0iMTAyIiByeD0iMTYiIGZpbGw9IiNmZmYyZDgiIHN0cm9rZT0iI2MxY2JkMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHRleHQgeD0iMjg0IiB5PSIxNDciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiPuKtkDwvdGV4dD48cmVjdCB4PSIzNTMiIHk9IjgwIiB3aWR0aD0iOTUiIGhlaWdodD0iMTAyIiByeD0iMTYiIGZpbGw9IiNlNWY3ZWUiIHN0cm9rZT0iI2MxY2JkMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHRleHQgeD0iNDAwIiB5PSIxNDciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iNDgiPvCfjLw8L3RleHQ+PHJlY3QgeD0iMjM3IiB5PSIyMDAiIHdpZHRoPSI5NSIgaGVpZ2h0PSIxMDIiIHJ4PSIxNiIgZmlsbD0iI2ZhZWRmMyIgc3Ryb2tlPSIjYzFjYmQwIiBzdHJva2Utd2lkdGg9IjUiLz48dGV4dCB4PSIyODQiIHk9IjI2NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI0OCI+8J+NjjwvdGV4dD48cmVjdCB4PSIzNTMiIHk9IjIwMCIgd2lkdGg9Ijk1IiBoZWlnaHQ9IjEwMiIgcng9IjE2IiBmaWxsPSIjZThlY2ZkIiBzdHJva2U9IiNjMWNiZDAiIHN0cm9rZS13aWR0aD0iNSIvPjx0ZXh0IHg9IjQwMCIgeT0iMjY3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjQ4Ij7wn6epPC90ZXh0PjxnIGZpbGw9IiNmMWJjNjQiPjxwYXRoIGQ9Ik03NiA0Mmw3IDEyIDE0IDMgLTExIDEwIDIgMTQgLTEyIC03IC0xMiA3IDIgLTE0IC0xMSAtMTAgMTQgLTNaIi8+PC9nPjwvc3ZnPg=="></div><div class="activity-grid"><article class="activity-card" id="act-9-2-a" data-criterion="DEE 2.1">
+      <div class="activity-head"><span class="activity-id">9.2.A</span><span class="activity-type">🃏 Memoria visual</span></div>
+      <h3>Encuentro las parejas</h3><p>Da la vuelta a dos tarjetas y encuentra las imágenes iguales.</p>
+      <button type="button" class="audio-button spoken" data-say="Da la vuelta a dos tarjetas y encuentra las imágenes iguales.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de memoria visual"><h4>🃏 Encuentra las parejas</h4><p>Da la vuelta a dos tarjetas. Recuerda dónde estaban los dibujos iguales.</p><div class="memory-grid" data-memory-grid></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-memory-restart>↺ Volver a jugar</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Jugar con cartas reales y comenzar por tres parejas, ampliando gradualmente.</p>
+    </article><article class="activity-card" id="act-9-2-b" data-criterion="DEE 2.1">
+      <div class="activity-head"><span class="activity-id">9.2.B</span><span class="activity-type">🔊 Memoria auditiva</span></div>
+      <h3>Eco de sonidos</h3><p>Escucha una pequeña secuencia y vuelve a tocar los sonidos en el mismo orden.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha una pequeña secuencia y vuelve a tocar los sonidos en el mismo orden.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Memoria auditiva"><h4>🎶 Eco de sonidos</h4><p>Escucha dos sonidos y repítelos en el mismo orden tocando sus dibujos. Puedes escuchar de nuevo.</p><div class="game-controls"><button type="button" class="game-button" data-sound-seq-play>🔊 Escuchar secuencia</button><button type="button" class="game-button" data-sound-seq-next>↺ Otra secuencia</button></div><div class="sound-memory-bank"><button class="choice" type="button" data-sound-pick="campana">🔔 Campana</button><button class="choice" type="button" data-sound-pick="tambor">🥁 Tambor</button><button class="choice" type="button" data-sound-pick="sonajero">🪇 Sonajero</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite">Escucha y repite los dos sonidos.</p></div></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Repetir secuencias con instrumentos reales, palmas o materiales sonoros. Ajustar el número de sonidos.</p>
+    </article><article class="activity-card" id="act-9-2-c" data-criterion="DEE 2.5">
+      <div class="activity-head"><span class="activity-id">9.2.C</span><span class="activity-type">🔢 Secuencia lógica</span></div>
+      <h3>Ordeno lo que pasó</h3><p>Coloca cuatro imágenes en orden: preparar piezas, construir, probar y guardar.</p>
+      <button type="button" class="audio-button spoken" data-say="Coloca cuatro imágenes en orden: preparar piezas, construir, probar y guardar.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de ordenación"><h4>🔢 Ordenamos una historia</h4><p class="access-note">Arrastra cada tarjeta al hueco correcto o usa dos toques.</p><div class="drop-bank" data-sort-bank="construction"></div><div class="order-fields" data-sort-buckets></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Mezclar tarjetas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Ordenar fotos de una construcción realizada por el propio grupo.</p>
+    </article><article class="activity-card" id="act-9-2-d" data-criterion="DEE 1.1">
+      <div class="activity-head"><span class="activity-id">9.2.D</span><span class="activity-type">🌈 Seriación</span></div>
+      <h3>Completo el patrón</h3><p>Observa una serie de figuras y elige cuál continúa.</p>
+      <button type="button" class="audio-button spoken" data-say="Observa una serie de figuras y elige cuál continúa.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Series lógicas"><h4>🟡 ¿Qué viene después?</h4><div class="pattern-display" data-pattern-show></div><p class="game-prompt">Toca la figura que sigue.</p><div class="answer-options" data-pattern-choices></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-pattern-next>Otro patrón</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Construir secuencias con bloques, tapones o cuentas y pedir a otra persona que las continúe.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> La memoria mejora con juegos breves, repetición y apoyos visuales.</p></section><!-- ==============================================
+     9.3 INVESTIGO
+     ============================================== -->
+<section id="apartado-9-3" class="lesson-section calm" aria-labelledby="title-9-3"><div class="section-top"><div><span class="section-tag">🧪 Descubro y practico · 9.3</span><h2 id="title-9-3" class="section-heading">Investigo</h2><p class="section-intro">Pregunto, imagino, pruebo y cuento mis descubrimientos.</p><button type="button" class="audio-button spoken" data-say="Cuando investigamos, podemos imaginar una respuesta y comprobarla sin miedo a equivocarnos." data-audio="/media/infantil/inf5/inf5.9-apartado-9-3.mp3">🔊 Escuchar explicación</button></div><img id="art-science" class="section-image" width="560" height="380" loading="lazy" alt="Ilustración infantil de investigo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjAiIGhlaWdodD0iMzgwIiB2aWV3Qm94PSIwIDAgNTYwIDM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2ViZjhmMCIvPjxjaXJjbGUgY3g9IjQ5OSIgY3k9IjYxIiByPSIyOSIgZmlsbD0iI2ZmZjBiYSIvPjxwYXRoIGQ9Ik0wIDMxOCBRMjEwIDI4MiAzNTYgMzE4IFQ1NjAgMjk4IFYzODAgSDBaIiBmaWxsPSIjZTVlZWRjIi8+PGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjMgMTY4KSBzY2FsZSgwLjcpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzYzM5ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iI2VkOTE4OSIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjZjNjMzlmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzU5M2MzYiIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIGZpbGw9IiMzZDM0NDAiPjxjaXJjbGUgY3g9Ii0xMyIgY3k9Ii0yIiByPSIzLjUiIC8+PGNpcmNsZSBjeD0iMTMiIGN5PSItMiIgcj0iMy41IiAvPjwvZz48ZyBzdHJva2U9IiM3NzQ4M2YiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNLTEzIDkgUTAgMjUgMTMgOSIgLz48L2c+PC9nPjxnIHN0cm9rZT0iIzdmOWE5ZiIgc3Ryb2tlLXdpZHRoPSI2Ij48cmVjdCB4PSIyNzQiIHk9IjEzMCIgd2lkdGg9IjE3OSIgaGVpZ2h0PSIxNzAiIHJ4PSIyMCIgZmlsbD0iI2VkZjlmYyIvPjxwYXRoIGQ9Ik0yODAgMTk1IFEzMTYgMTgwIDM1NSAxOTggVDQ0OCAxOTQgVjI5MSBIMjgwWiIgZmlsbD0iIzkyZDRlNSIgc3Ryb2tlPSJub25lIi8+PHJlY3QgeD0iMzE5IiB5PSIxNTUiIHdpZHRoPSI0NCIgaGVpZ2h0PSIzMyIgcng9IjgiIGZpbGw9IiNlN2FlNmMiLz48Y2lyY2xlIGN4PSI0MDMiIGN5PSIyNTAiIHI9IjI0IiBmaWxsPSIjYThhOGE4Ii8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQyIDgzKSBzY2FsZSgwLjU0KSI+PGNpcmNsZSBjeD0iNTQiIGN5PSI1NSIgcj0iNDMiIGZpbGw9IiNkNWVmZjUiIGZpbGwtb3BhY2l0eT0iLjgiIHN0cm9rZT0iIzU0ODY5ZSIgc3Ryb2tlLXdpZHRoPSIxMSIvPjxwYXRoIGQ9Ik04MyA4NyBMMTM5IDE0NCIgc3Ryb2tlPSIjYmM3ZTY3IiBzdHJva2Utd2lkdGg9IjIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzYgMzIgUTU2IDIwIDY3IDMzIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ4NSAxOTkpIHNjYWxlKDAuNTUpIj48cGF0aCBkPSJNMCAzIFY3NSIgc3Ryb2tlPSIjNzZhNjc4IiBzdHJva2Utd2lkdGg9IjciLz48cGF0aCBkPSJNMCA0MiBRLTI0IDI1IC0yOSA0MSBRLTE3IDU4IDAgNTYiIGZpbGw9IiM4ZmJmODEiLz48ZyBmaWxsPSIjZWZiOWJlIiBzdHJva2U9IiNiZTkwOTUiIHN0cm9rZS13aWR0aD0iMiI+PGVsbGlwc2UgY3k9Ii0yMiIgcng9IjE3IiByeT0iMjQiLz48ZWxsaXBzZSBjeT0iMjIiIHJ4PSIxNyIgcnk9IjI0Ii8+PGVsbGlwc2UgY3g9Ii0yMiIgcng9IjI0IiByeT0iMTciLz48ZWxsaXBzZSBjeD0iMjIiIHJ4PSIyNCIgcnk9IjE3Ii8+PC9nPjxjaXJjbGUgcj0iMTUiIGZpbGw9IiNmM2NiNmQiLz48L2c+PC9zdmc+"></div><div class="activity-grid"><article class="activity-card" id="act-9-3-a" data-criterion="DEE 2.3">
+      <div class="activity-head"><span class="activity-id">9.3.A</span><span class="activity-type">🧪 Experimento real</span></div>
+      <h3>¿Flotará o se hundirá?</h3><p>Elige un objeto, anticipa qué puede pasar, compruébalo en agua y registra el resultado.</p>
+      <button type="button" class="audio-button spoken" data-say="Elige un objeto, anticipa qué puede pasar, compruébalo en agua y registra el resultado.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Indagación y registro"><h4>🧪 Primero imagino; después compruebo</h4><p>Elige un objeto. ¿Crees que flotará o se hundirá? Luego pruébalo con agua y registra lo que pasó realmente.</p><div class="exp-item"><button type="button" class="choice" data-experiment="corcho">🟤 Tapón de corcho</button><button type="button" class="choice" data-experiment="piedra">🪨 Piedra pequeña</button><button type="button" class="choice" data-experiment="plastilina">🟣 Bola de plastilina</button></div><p class="game-prompt" data-exp-object>Elige un objeto para empezar.</p><div class="exp-row"><span>Mi predicción:</span><button type="button" class="game-button" data-exp-predict="flota">💧 Flota</button><button type="button" class="game-button" data-exp-predict="hunde">🌊 Se hunde</button></div><div class="exp-row"><span>Después de probarlo:</span><button type="button" class="game-button" data-exp-observe="flota">👁️ Flotó</button><button type="button" class="game-button" data-exp-observe="hunde">👁️ Se hundió</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Utilizar una cubeta poco profunda bajo supervisión. Los resultados pueden variar según forma y material. No usar recipientes de vidrio.</p>
+    </article><article class="activity-card" id="act-9-3-b" data-criterion="DEE 2.3">
+      <div class="activity-head"><span class="activity-id">9.3.B</span><span class="activity-type">🔬 Exploración científica</span></div>
+      <h3>Pregunto, imagino, pruebo y cuento</h3><p>Descubre cuatro pasos sencillos que utilizamos cuando investigamos.</p>
+      <button type="button" class="audio-button spoken" data-say="Descubre cuatro pasos sencillos que utilizamos cuando investigamos.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Pasos del método científico"><h4>🪴 ¿Qué hacemos al investigar?</h4><p>Toca las etapas para escuchar qué significa cada una.</p><div class="investigate-steps"><button type="button" class="choice" data-investigate="pregunto">❓ Pregunto</button><button type="button" class="choice" data-investigate="imagino">💭 Imagino</button><button type="button" class="choice" data-investigate="pruebo">🧪 Pruebo</button><button type="button" class="choice" data-investigate="cuento">💬 Cuento</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite">Elige una etapa.</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Investigar con una pregunta real, escuchar hipótesis sin censurar y documentar las observaciones.</p>
+    </article><article class="activity-card" id="act-9-3-c" data-criterion="DEE 2.3">
+      <div class="activity-head"><span class="activity-id">9.3.C</span><span class="activity-type">🌱 Comparación</span></div>
+      <h3>Cambiamos solo una cosa</h3><p>Comparamos dos macetas iguales cambiando el riego. ¿Qué otras condiciones mantenemos iguales?</p>
+      <button type="button" class="audio-button spoken" data-say="Comparamos dos macetas iguales cambiando el riego. ¿Qué otras condiciones mantenemos iguales?">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Experimento comparativo"><h4>🔎 Cambio una sola cosa</h4><p>Queremos descubrir si una semilla necesita agua. Elegimos dos macetas iguales y cambiamos solo el agua.</p><div class="experiment-comparison"><div>🪴 <strong>Maceta 1</strong><span>Con agua</span></div><div>🪴 <strong>Maceta 2</strong><span>Sin agua</span></div></div><p>¿Qué conviene mantener igual para comparar?</p><div class="answer-options"><button class="choice" type="button" data-change="luz">☀️ La luz</button><button class="choice" type="button" data-change="tierra">🌱 La tierra</button><button class="choice" type="button" data-change="semilla">🌰 Tipo de semilla</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Sembrar semillas semejantes en recipientes similares. Observar varios días y evitar conclusiones apresuradas.</p>
+    </article><article class="activity-card" id="act-9-3-d" data-criterion="DEE 2.6">
+      <div class="activity-head"><span class="activity-id">9.3.D</span><span class="activity-type">🎨 Dibujo y comunicación</span></div>
+      <h3>Mi diario del investigador</h3><p>Dibuja lo que has observado en un experimento y cuéntaselo al grupo.</p>
+      <button type="button" class="audio-button spoken" data-say="Dibuja lo que has observado en un experimento y cuéntaselo al grupo.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Dibujo libre digital"><h4>🎨 Dibuja con el dedo o el ratón</h4><p>Elige un color y dibuja. También puedes usar ceras y papel en clase.</p>
+      <div class="paint-palette" data-draw-palette="diario"><button class="paint-swatch is-active" data-color="#395f94" style="background:#395f94" aria-label="Azul" aria-pressed="true" type="button"></button><button class="paint-swatch" data-color="#eb806d" style="background:#eb806d" aria-label="Coral" aria-pressed="false" type="button"></button><button class="paint-swatch" data-color="#77b887" style="background:#77b887" aria-label="Verde" aria-pressed="false" type="button"></button><button class="paint-swatch" data-color="#d9aa47" style="background:#d9aa47" aria-label="Amarillo" aria-pressed="false" type="button"></button></div>
+      <div class="canvas-frame"><canvas width="660" height="310" data-drawing="diario" aria-label="Pizarra de dibujo libre"></canvas></div><button type="button" class="game-button" data-draw-clear>↺ Borrar dibujo</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Registrar con dibujos, fotografías, gestos o palabras las observaciones de experiencias reales.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Lo importante es observar, comprobar y explicar, aunque el resultado sea inesperado.</p></section><!-- ==============================================
+     9.4 RESUELVO PROBLEMAS
+     ============================================== -->
+<section id="apartado-9-4" class="lesson-section together" aria-labelledby="title-9-4"><div class="section-top"><div><span class="section-tag">🛠️ Descubro y practico · 9.4</span><h2 id="title-9-4" class="section-heading">Resuelvo problemas</h2><p class="section-intro">Invento soluciones, pruebo y cambio de estrategia cuando hace falta.</p><button type="button" class="audio-button spoken" data-say="Los problemas se pueden resolver de distintas maneras y a veces necesitamos ayuda." data-audio="/media/infantil/inf5/inf5.9-apartado-9-4.mp3">🔊 Escuchar explicación</button></div><img id="art-solve" class="section-image" width="560" height="380" loading="lazy" alt="Ilustración infantil de resuelvo problemas" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjAiIGhlaWdodD0iMzgwIiB2aWV3Qm94PSIwIDAgNTYwIDM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2ZmZjRlOSIvPjxjaXJjbGUgY3g9IjQ5OSIgY3k9IjYxIiByPSIyOSIgZmlsbD0iI2ZmZjBiYSIvPjxwYXRoIGQ9Ik0wIDMxOCBRMjEwIDI4MiAzNTYgMzE4IFQ1NjAgMjk4IFYzODAgSDBaIiBmaWxsPSIjZTVlZWRjIi8+PGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDMgMTYwKSBzY2FsZSgwLjcpIj48cGF0aCBkPSJNLTE1IDEyNiB2MzggTTE1IDEyNiB2MzgiIHN0cm9rZT0iIzUzNjQ4YyIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMTggMTY0IGgtMTUgTTEzIDE2NCBoMjAiIHN0cm9rZT0iIzM0NDI1YyIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMjcgNzYgUS01NSA5MiAtNjEgNTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JiODA1ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0yNyA3NiBRNTUgOTMgNjEgNTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JiODA1ZiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjxwYXRoIGQ9Ik0tMzYgNTUgUS00OCA5MiAtMzMgMTMyIEgzMyBRNDcgOTIgMzYgNTUgUTAgNDEgLTM2IDU1WiIgZmlsbD0iIzcxYjRkOCIgc3Ryb2tlPSIjYTM2YTZhIiBzdHJva2Utd2lkdGg9IjIiIC8+PHBhdGggZD0iTS0xNSA2MiBoMzAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjM4IiBmaWxsPSIjYmI4MDVmIiBzdHJva2U9IiM5MzY4NTMiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTM4IC03IFEtNDcgLTQ0IC0xNyAtNDAgUTggLTUzIDMzIC0zMCBRMzkgLTE0IDM4IC0yIEwyOSAtMjQgUTEzIC0yMyA0IC0zMyBRLTEzIC0xNCAtMzMgLTE5WiIgZmlsbD0iIzJlMmEzOCIgLz48ZyBzdHJva2U9IiM2MjQ5NDAiIHN0cm9rZS13aWR0aD0iMi45IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0tMjAgLTEzIHE3IC0zIDEzIDAgTTcgLTEzIHE3IC0zIDEzIDAiIC8+PC9nPjxnIHN0cm9rZT0iIzRlNGI1NCIgc3Ryb2tlLXdpZHRoPSIyLjYiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMjAgMCBxNyA1IDE0IDAgTTYgMCBxNyA1IDE0IDAiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0tMTAgMTEgUTAgMTcgMTAgMTEiIC8+PC9nPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDYgMTM5KSBzY2FsZSgxLjEzKSIgc3Ryb2tlPSIjYWY4YjcxIiBzdHJva2Utd2lkdGg9IjQiPjxyZWN0IHg9IjciIHk9IjEwNCIgd2lkdGg9Ijg1IiBoZWlnaHQ9Ijc2IiByeD0iOCIgZmlsbD0iI2U3Yjc2YiIvPjxyZWN0IHg9Ijk2IiB5PSIxMDQiIHdpZHRoPSI4MSIgaGVpZ2h0PSI3NiIgcng9IjgiIGZpbGw9IiM5N2MzYTMiLz48cmVjdCB4PSI0NSIgeT0iMjUiIHdpZHRoPSI5OSIgaGVpZ2h0PSI3NSIgcng9IjgiIGZpbGw9IiNlOWEzYTIiLz48cGF0aCBkPSJNNTUgOTYgTDk0IDI5IEwxMzUgOTZaIiBmaWxsPSIjZjlkZDlmIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQwMiAxODApIHNjYWxlKDAuNjMpIiBzdHJva2U9IiM2OTgyOTUiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiA8cGF0aCBkPSJNNzIgNDMgVjE4IiBzdHJva2Utd2lkdGg9IjYiLz48Y2lyY2xlIGN4PSI3MiIgY3k9IjEzIiByPSI5IiBmaWxsPSIjZWZjNTZmIi8+PHJlY3QgeD0iMTMiIHk9IjQ0IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjEwNCIgcng9IjI0IiBmaWxsPSIjYzBkYmU1Ii8+CiA8cmVjdCB4PSIzMCIgeT0iNjMiIHdpZHRoPSI4NCIgaGVpZ2h0PSI1MiIgcng9IjEyIiBmaWxsPSIjZjZmY2ZmIi8+PGNpcmNsZSBjeD0iNTMiIGN5PSI4OCIgcj0iMTEiIGZpbGw9IiM1ZjkxYTMiLz48Y2lyY2xlIGN4PSI5MiIgY3k9Ijg4IiByPSIxMSIgZmlsbD0iIzVmOTFhMyIvPjxwYXRoIGQ9Ik01NSAxMDkgUTcyIDEyMSA5MCAxMDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVhNzg4NSIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiA8cGF0aCBkPSJNMTMgNzMgTC0xMCA5NiBNMTMxIDczIEwxNTMgOTYiIHN0cm9rZT0iIzhiYWNiYiIgc3Ryb2tlLXdpZHRoPSIxMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTQ0IDE0NyBWMTcxIE0xMDIgMTQ3IFYxNzEiIHN0cm9rZT0iIzhiYWNiYiIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiA8L2c+PGcgZmlsbD0iI2YxYmM2NCI+PHBhdGggZD0iTTQwNSA3N2w3IDEyIDE0IDMgLTExIDEwIDIgMTQgLTEyIC03IC0xMiA3IDIgLTE0IC0xMSAtMTAgMTQgLTNaIi8+PC9nPjwvc3ZnPg=="></div><div class="activity-grid"><article class="activity-card" id="act-9-4-a" data-criterion="DEE 2.4">
+      <div class="activity-head"><span class="activity-id">9.4.A</span><span class="activity-type">🌉 Construcción interactiva</span></div>
+      <h3>Construimos un puente</h3><p>Coloca dos apoyos y un tablero para que un vehículo pueda pasar.</p>
+      <button type="button" class="audio-button spoken" data-say="Coloca dos apoyos y un tablero para que un vehículo pueda pasar.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Reto de construcción"><h4>🌉 Construye un puente</h4><p>Coloca dos apoyos y un tablero para que el pequeño vehículo pueda cruzar.</p><div class="bridge-bank" data-bridge-bank><button class="move-piece" type="button" data-bridge-part="left">🧱 Apoyo 1</button><button class="move-piece" type="button" data-bridge-part="right">🧱 Apoyo 2</button><button class="move-piece" type="button" data-bridge-part="plank">🪵 Tablero</button></div><div class="bridge-scene" data-bridge-scene><span class="river">💧 💧 💧</span><button type="button" data-bridge-target="left" class="bridge-slot" aria-label="Colocar apoyo izquierdo">?</button><button type="button" data-bridge-target="plank" class="bridge-slot deck" aria-label="Colocar tablero">?</button><button type="button" data-bridge-target="right" class="bridge-slot" aria-label="Colocar apoyo derecho">?</button></div><div class="game-controls"><button class="game-button" type="button" data-bridge-test>🚗 Probar puente</button><button class="game-button" type="button" data-bridge-reset>↺ Reiniciar</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Construir puentes con bloques, cartón o piezas grandes. Probar su estabilidad sin competir.</p>
+    </article><article class="activity-card" id="act-9-4-b" data-criterion="DEE 2.4">
+      <div class="activity-head"><span class="activity-id">9.4.B</span><span class="activity-type">🏗️ Predicción y ensayo</span></div>
+      <h3>La torre que no se cae</h3><p>Elige una torre para probar y después compara torres con bases diferentes.</p>
+      <button type="button" class="audio-button spoken" data-say="Elige una torre para probar y después compara torres con bases diferentes.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Predicción de soluciones"><h4>🏗️ ¿Cómo empieza una torre estable?</h4><p>Observa dos torres. Elige una para empezar a experimentar. Después construye ambas con bloques reales.</p><div class="two-towers"><button type="button" class="choice" data-tower="wide"><span class="tower-icon">🟫<br>🟫🟫<br>🟫🟫🟫</span><span>Base ancha</span></button><button type="button" class="choice" data-tower="narrow"><span class="tower-icon">🟫<br>🟫<br>🟫</span><span>Base estrecha</span></button></div><p class="game-feedback" data-feedback role="status" aria-live="polite">¿Cuál te gustaría probar primero?</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Probar bases anchas y estrechas con bloques iguales, observando también altura, equilibrio y materiales.</p>
+    </article><article class="activity-card" id="act-9-4-c" data-criterion="DEE 2.2">
+      <div class="activity-head"><span class="activity-id">9.4.C</span><span class="activity-type">🧭 Laberinto</span></div>
+      <h3>El camino de los retos</h3><p>Lleva al personaje hasta la estrella evitando árboles y límites del tablero.</p>
+      <button type="button" class="audio-button spoken" data-say="Lleva al personaje hasta la estrella evitando árboles y límites del tablero.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Laberinto interactivo"><h4>🧭 El camino de los retos</h4><p>Lleva al personaje hasta la estrella. Los árboles son obstáculos. Puedes probar diferentes caminos.</p><div class="route-grid" data-maze></div><div class="route-pad"><button class="game-button" type="button" data-maze-go="up" aria-label="Arriba">⬆️</button><button class="game-button" type="button" data-maze-go="left" aria-label="Izquierda">⬅️</button><button class="game-button" type="button" data-maze-go="right" aria-label="Derecha">➡️</button><button class="game-button" type="button" data-maze-go="down" aria-label="Abajo">⬇️</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button class="game-button" type="button" data-maze-reset>↺ Empezar otra vez</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Crear caminos en el suelo con cinta y recorrerlos dando instrucciones orales.</p>
+    </article><article class="activity-card" id="act-9-4-d" data-criterion="DEE 2.2">
+      <div class="activity-head"><span class="activity-id">9.4.D</span><span class="activity-type">💡 Resolución de problemas</span></div>
+      <h3>Buscamos un plan B</h3><p>Escucha una dificultad cotidiana y elige o inventa una estrategia para continuar.</p>
+      <button type="button" class="audio-button spoken" data-say="Escucha una dificultad cotidiana y elige o inventa una estrategia para continuar.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Toma de decisiones"><h4>💡 Buscamos otro plan</h4><p class="game-prompt" data-plan-question></p><div class="answer-options" data-plan-options></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button class="game-button" type="button" data-plan-next>Otra situación</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Modelar la petición de ayuda, la búsqueda de alternativas y la aceptación del error.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Equivocarnos forma parte de aprender; podemos volver a intentarlo.</p></section><!-- ==============================================
+     9.5 DOY INSTRUCCIONES
+     ============================================== -->
+<section id="apartado-9-5" class="lesson-section solutions" aria-labelledby="title-9-5"><div class="section-top"><div><span class="section-tag">🤖 Descubro y practico · 9.5</span><h2 id="title-9-5" class="section-heading">Doy instrucciones</h2><p class="section-intro">Aprendo a organizar acciones y a crear recorridos con flechas.</p><button type="button" class="audio-button spoken" data-say="Las instrucciones se pueden ordenar, probar y explicar con símbolos, gestos o palabras." data-audio="/media/infantil/inf5/inf5.9-apartado-9-5.mp3">🔊 Escuchar explicación</button></div><img id="art-code" class="section-image" width="560" height="380" loading="lazy" alt="Ilustración infantil de doy instrucciones" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjAiIGhlaWdodD0iMzgwIiB2aWV3Qm94PSIwIDAgNTYwIDM4MCI+PHJlY3Qgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzODAiIHJ4PSIzMCIgZmlsbD0iI2YxZWVmYiIvPjxjaXJjbGUgY3g9IjQ5OSIgY3k9IjYxIiByPSIyOSIgZmlsbD0iI2ZmZjBiYSIvPjxwYXRoIGQ9Ik0wIDMxOCBRMjEwIDI4MiAzNTYgMzE4IFQ1NjAgMjk4IFYzODAgSDBaIiBmaWxsPSIjZTVlZWRjIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTY1IDExMCkgc2NhbGUoMS4wNykiIHN0cm9rZT0iIzY5ODI5NSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KIDxwYXRoIGQ9Ik03MiA0MyBWMTgiIHN0cm9rZS13aWR0aD0iNiIvPjxjaXJjbGUgY3g9IjcyIiBjeT0iMTMiIHI9IjkiIGZpbGw9IiNlZmM1NmYiLz48cmVjdCB4PSIxMyIgeT0iNDQiIHdpZHRoPSIxMTgiIGhlaWdodD0iMTA0IiByeD0iMjQiIGZpbGw9IiNjMGRiZTUiLz4KIDxyZWN0IHg9IjMwIiB5PSI2MyIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjUyIiByeD0iMTIiIGZpbGw9IiNmNmZjZmYiLz48Y2lyY2xlIGN4PSI1MyIgY3k9Ijg4IiByPSIxMSIgZmlsbD0iIzVmOTFhMyIvPjxjaXJjbGUgY3g9IjkyIiBjeT0iODgiIHI9IjExIiBmaWxsPSIjNWY5MWEzIi8+PHBhdGggZD0iTTU1IDEwOSBRNzIgMTIxIDkwIDEwOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWE3ODg1IiBzdHJva2Utd2lkdGg9IjUiLz4KIDxwYXRoIGQ9Ik0xMyA3MyBMLTEwIDk2IE0xMzEgNzMgTDE1MyA5NiIgc3Ryb2tlPSIjOGJhY2JiIiBzdHJva2Utd2lkdGg9IjEzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNDQgMTQ3IFYxNzEgTTEwMiAxNDcgVjE3MSIgc3Ryb2tlPSIjOGJhY2JiIiBzdHJva2Utd2lkdGg9IjE1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KIDwvZz48ZyBzdHJva2U9IiM5Y2IyYzEiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0iI2ZmZiI+PHJlY3QgeD0iMzE0IiB5PSI4MiIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyMTUiIHJ4PSIxMyIvPjwvZz48ZyBmaWxsPSIjN2NhYWJiIiBmb250LXNpemU9IjM3Ij48dGV4dCB4PSIzMzYiIHk9IjEzOSI+4qyGPC90ZXh0Pjx0ZXh0IHg9IjQwOSIgeT0iMTM5Ij7inqE8L3RleHQ+PHRleHQgeD0iMzM2IiB5PSIyMDciPuKshzwvdGV4dD48dGV4dCB4PSI0MDkiIHk9IjIwNyI+4qyFPC90ZXh0PjwvZz48ZyBmaWxsPSIjZjFiYzY0Ij48cGF0aCBkPSJNNzYgNjRsNyAxMiAxNCAzIC0xMSAxMCAyIDE0IC0xMiAtNyAtMTIgNyAyIC0xNCAtMTEgLTEwIDE0IC0zWiIvPjwvZz48ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg5IDIwMSkgc2NhbGUoMC40NykiPjxwYXRoIGQ9Ik0tMTUgMTI2IHYzOCBNMTUgMTI2IHYzOCIgc3Ryb2tlPSIjNTM2NDhjIiBzdHJva2Utd2lkdGg9IjE3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0xOCAxNjQgaC0xNSBNMTMgMTY0IGgyMCIgc3Ryb2tlPSIjMzQ0MjVjIiBzdHJva2Utd2lkdGg9IjExIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0yNyA3NiBRLTU1IDkyIC02MSA1NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTTI3IDc2IFE1NSA5MyA2MSA1NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDZhZDgwIiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+PHBhdGggZD0iTS0zNiA1NSBRLTQ4IDkyIC0zMyAxMzIgSDMzIFE0NyA5MiAzNiA1NSBRMCA0MSAtMzYgNTVaIiBmaWxsPSIjOGRiZjg0IiBzdHJva2U9IiNhMzZhNmEiIHN0cm9rZS13aWR0aD0iMiIgLz48cGF0aCBkPSJNLTE1IDYyIGgzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuNSIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMzgiIGZpbGw9IiNkNmFkODAiIHN0cm9rZT0iIzkzNjg1MyIgc3Ryb2tlLXdpZHRoPSIyIiAvPjxwYXRoIGQ9Ik0tMzggLTcgUS00NyAtNDQgLTE3IC00MCBROCAtNTMgMzMgLTMwIFEzOSAtMTQgMzggLTIgTDI5IC0yNCBRMTMgLTIzIDQgLTMzIFEtMTMgLTE0IC0zMyAtMTlaIiBmaWxsPSIjOWI1ODM4IiAvPjxnIHN0cm9rZT0iIzYyNDk0MCIgc3Ryb2tlLXdpZHRoPSIyLjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTS0yMCAtMTMgcTcgLTMgMTMgMCBNNyAtMTMgcTcgLTMgMTMgMCIgLz48L2c+PGcgZmlsbD0iIzNkMzQ0MCI+PGNpcmNsZSBjeD0iLTEzIiBjeT0iLTIiIHI9IjMuNSIgLz48Y2lyY2xlIGN4PSIxMyIgY3k9Ii0yIiByPSIzLjUiIC8+PC9nPjxnIHN0cm9rZT0iIzc3NDgzZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxlbGxpcHNlIGN4PSIwIiBjeT0iMTQiIHJ4PSI1LjUiIHJ5PSI5IiAvPjwvZz48L2c+PC9zdmc+"></div><div class="activity-grid"><article class="activity-card" id="act-9-5-a" data-criterion="DEE 2.5">
+      <div class="activity-head"><span class="activity-id">9.5.A</span><span class="activity-type">🤖 Programación inicial</span></div>
+      <h3>Guío al robot</h3><p>Elige flechas, ordénalas y haz que el robot llegue a la estrella.</p>
+      <button type="button" class="audio-button spoken" data-say="Elige flechas, ordénalas y haz que el robot llegue a la estrella.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Pensamiento computacional"><h4>🤖 Programo un robot</h4><p>Ordena flechas y pulsa «Ejecutar». Lleva al robot hasta la estrella evitando el árbol.</p><div class="robot-grid" data-robot-grid="program"></div><div class="robot-controls" data-robot-controls="program"><button class="game-button" type="button" data-robot-add="up" aria-label="Añadir arriba">⬆️</button><button class="game-button" type="button" data-robot-add="left" aria-label="Añadir izquierda">⬅️</button><button class="game-button" type="button" data-robot-add="right" aria-label="Añadir derecha">➡️</button><button class="game-button" type="button" data-robot-add="down" aria-label="Añadir abajo">⬇️</button></div><div class="robot-program" data-robot-steps aria-label="Instrucciones elegidas">Sin flechas todavía.</div><div class="game-controls"><button class="game-button" type="button" data-robot-run>▶️ Ejecutar</button><button class="game-button" type="button" data-robot-undo>↶ Quitar última</button><button class="game-button" type="button" data-robot-reset>↺ Reiniciar</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Representar instrucciones en el suelo mediante flechas grandes y robots humanos.</p>
+    </article><article class="activity-card" id="act-9-5-b" data-criterion="DEE 2.5">
+      <div class="activity-head"><span class="activity-id">9.5.B</span><span class="activity-type">🌱 Ordenación y secuencias</span></div>
+      <h3>Pasos para preparar un semillero</h3><p>Coloca en orden las instrucciones necesarias para sembrar.</p>
+      <button type="button" class="audio-button spoken" data-say="Coloca en orden las instrucciones necesarias para sembrar.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Juego de ordenación"><h4>🔢 Ordenamos una historia</h4><p class="access-note">Arrastra cada tarjeta al hueco correcto o usa dos toques.</p><div class="drop-bank" data-sort-bank="seeds"></div><div class="order-fields" data-sort-buckets></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p><button type="button" class="game-button" data-sort-reset>↺ Mezclar tarjetas</button></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Realizar un semillero de verdad con ayuda: preparar recipiente, añadir tierra, poner semilla y regar suavemente.</p>
+    </article><article class="activity-card" id="act-9-5-c" data-criterion="DEE 2.5">
+      <div class="activity-head"><span class="activity-id">9.5.C</span><span class="activity-type">✏️ Trazado y secuencias</span></div>
+      <h3>Un paso detrás de otro</h3><p>Sigue una serie de acciones con flechas. Después, si quieres, repasa la palabra «paso» con letra punteada.</p>
+      <button type="button" class="audio-button spoken" data-say="Sigue una serie de acciones con flechas. Después, si quieres, repasa la palabra «paso» con letra punteada.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Secuencia motriz"><h4>➡️ Sigo instrucciones con el cuerpo</h4><p>Escucha y realiza la secuencia: una palmada, un salto y una vuelta pequeña. Después inventa otra secuencia.</p><div class="action-strip"><span>👏</span><span>➡️</span><span>🦘</span><span>➡️</span><span>🔄</span></div><button type="button" class="audio-button" data-say="Primero, una palmada. Después, un salto. Por último, da una vuelta pequeña. Hazlo con seguridad y a tu ritmo.">🔊 Escuchar secuencia</button></div><div class="mini-game" aria-label="Grafomotricidad opcional"><h4>✏️ Repaso la palabra «paso»</h4><p>Repasa con el dedo la palabra punteada que nos recuerda que podemos avanzar paso a paso.</p><div class="trace-panel"><div class="trace-sheet"><span class="trace-dots">paso</span><canvas data-trace-canvas width="650" height="155" aria-label="Área de repaso con el dedo o ratón"></canvas></div></div><button type="button" class="game-button" data-trace-reset>↺ Borrar trazos</button><p class="access-note">El repaso es opcional. También se puede escribir o dibujar en papel.</p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Dar consignas con pictogramas. Permitir adaptar los movimientos y omitir el trazo si no interesa.</p>
+    </article><article class="activity-card" id="act-9-5-d" data-criterion="DEE 2.6">
+      <div class="activity-head"><span class="activity-id">9.5.D</span><span class="activity-type">🧭 Creación y cooperación</span></div>
+      <h3>Invento mi recorrido</h3><p>Crea tus propias instrucciones con flechas, comprueba el recorrido y enséñaselo a otro niño.</p>
+      <button type="button" class="audio-button spoken" data-say="Crea tus propias instrucciones con flechas, comprueba el recorrido y enséñaselo a otro niño.">🔊 Escuchar la consigna</button><div class="mini-game" aria-label="Pensamiento computacional"><h4>🤖 Invento instrucciones</h4><p>Inventa un recorrido y muéstraselo a un compañero. No hay un único destino.</p><div class="robot-grid" data-robot-grid="creator"></div><div class="robot-controls" data-robot-controls="creator"><button class="game-button" type="button" data-robot-add="up" aria-label="Añadir arriba">⬆️</button><button class="game-button" type="button" data-robot-add="left" aria-label="Añadir izquierda">⬅️</button><button class="game-button" type="button" data-robot-add="right" aria-label="Añadir derecha">➡️</button><button class="game-button" type="button" data-robot-add="down" aria-label="Añadir abajo">⬇️</button></div><div class="robot-program" data-robot-steps aria-label="Instrucciones elegidas">Sin flechas todavía.</div><div class="game-controls"><button class="game-button" type="button" data-robot-run>▶️ Ejecutar</button><button class="game-button" type="button" data-robot-undo>↶ Quitar última</button><button class="game-button" type="button" data-robot-reset>↺ Reiniciar</button></div><p class="game-feedback" data-feedback role="status" aria-live="polite"></p></div>
+      <p class="teacher-tip"><strong>En clase:</strong> Trabajar por parejas: una persona diseña y otra ejecuta; después intercambian papeles.</p>
+    </article></div><p class="lesson-note">💡 <strong>Para recordar:</strong> Podemos programar jugando sin necesitar pantallas ni lectura convencional.</p></section><section class="end-project" id="pasaporte" aria-labelledby="passport-title"><span class="section-tag">🌟 Gran reto final</span><h2 id="passport-title">Mi pasaporte de investigador</h2><p>Preparamos entre todos una <strong>feria de pequeños retos</strong> con cinco estaciones: mirar, recordar, investigar, construir y dar instrucciones. Después, marca los descubrimientos que has explorado en clase o en la pantalla.</p><div class="passport-grid" data-game="passport"><div class="passport-item"><input id="p9-1" type="checkbox"><label for="p9-1"><span class="seal">🔍</span>He observado detalles</label></div><div class="passport-item"><input id="p9-2" type="checkbox"><label for="p9-2"><span class="seal">🧠</span>He recordado y ordenado</label></div><div class="passport-item"><input id="p9-3" type="checkbox"><label for="p9-3"><span class="seal">🧪</span>He probado una idea</label></div><div class="passport-item"><input id="p9-4" type="checkbox"><label for="p9-4"><span class="seal">🛠️</span>He construido una solución</label></div><div class="passport-item"><input id="p9-5" type="checkbox"><label for="p9-5"><span class="seal">🤖</span>He dado instrucciones</label></div></div><div class="passport-progress"><p data-passport-status aria-live="polite">Mis descubrimientos: 0 de 5</p><div class="passport-meter" role="progressbar" aria-label="Descubrimientos realizados" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><span class="passport-fill"></span></div></div><p class="teacher-tip"><strong>En clase:</strong> Organizar estaciones cooperativas con materiales reales. Los niños registran con dibujos, pictogramas, fotos o explicaciones orales, y comparten qué solución probaron. No es una prueba de aciertos.</p></section><details class="teacher-notes"><summary>📋 Orientaciones docentes, progresión y criterios de evaluación</summary>
+<p><strong>Etapa:</strong> Infantil, 5 años. <strong>Área principal:</strong> Descubrimiento y Exploración del Entorno. Se integra comunicación oral y cooperación.</p>
+<p><strong>Progresión flexible:</strong> 1) <em>Descubro:</em> observo, señalo e imito con ayuda. 2) <em>Relaciono:</em> comparo, recuerdo y planifico pasos con pictogramas. 3) <em>Aplico:</em> pruebo soluciones, reviso estrategias y comparto lo aprendido. Los niños pueden participar en diferentes momentos sin seguir niveles rígidos.</p>
+<p><strong>Accesibilidad:</strong> botones grandes, audios y voz del navegador como alternativa cuando falten archivos de narración; arrastre o selección mediante dos toques; puzle táctil; respuestas orales o gestuales; adaptación de movimientos. Los juegos de experimentación deben hacerse con materiales seguros y supervisión.</p>
+<p><strong>Evaluación:</strong> observación directa y sistemática, cualitativa y formativa; valorar curiosidad, estrategias, secuenciación, cooperación, comprensión de consignas y revisión de errores, no la velocidad de respuesta.</p>
+<p><strong>Normativa:</strong> Decreto 100/2023 y Orden de 30 de mayo de 2023, Anexo I, segundo ciclo (Andalucía). Se identifica un criterio principal orientativo para cada actividad. DEE = Descubrimiento y Exploración del Entorno.</p>
+<div class="criteria-scroll"><table><thead><tr><th>Actividad</th><th>Aprendizaje observado</th><th>Criterio principal</th></tr></thead><tbody><tr><td>9.1.A</td><td>Encuentro las diferencias</td><td>DEE 2.1</td></tr><tr><td>9.1.B</td><td>¿Qué ha desaparecido?</td><td>DEE 2.1</td></tr><tr><td>9.1.C</td><td>Agrupamos por una característica</td><td>DEE 1.1</td></tr><tr><td>9.1.D</td><td>Un puzle para observar</td><td>DEE 2.1</td></tr><tr><td>9.2.A</td><td>Encuentro las parejas</td><td>DEE 2.1</td></tr><tr><td>9.2.B</td><td>Eco de sonidos</td><td>DEE 2.1</td></tr><tr><td>9.2.C</td><td>Ordeno lo que pasó</td><td>DEE 2.5</td></tr><tr><td>9.2.D</td><td>Completo el patrón</td><td>DEE 1.1</td></tr><tr><td>9.3.A</td><td>¿Flotará o se hundirá?</td><td>DEE 2.3</td></tr><tr><td>9.3.B</td><td>Pregunto, imagino, pruebo y cuento</td><td>DEE 2.3</td></tr><tr><td>9.3.C</td><td>Cambiamos solo una cosa</td><td>DEE 2.3</td></tr><tr><td>9.3.D</td><td>Mi diario del investigador</td><td>DEE 2.6</td></tr><tr><td>9.4.A</td><td>Construimos un puente</td><td>DEE 2.4</td></tr><tr><td>9.4.B</td><td>La torre que no se cae</td><td>DEE 2.4</td></tr><tr><td>9.4.C</td><td>El camino de los retos</td><td>DEE 2.2</td></tr><tr><td>9.4.D</td><td>Buscamos un plan B</td><td>DEE 2.2</td></tr><tr><td>9.5.A</td><td>Guío al robot</td><td>DEE 2.5</td></tr><tr><td>9.5.B</td><td>Pasos para preparar un semillero</td><td>DEE 2.5</td></tr><tr><td>9.5.C</td><td>Un paso detrás de otro</td><td>DEE 2.5</td></tr><tr><td>9.5.D</td><td>Invento mi recorrido</td><td>DEE 2.6</td></tr></tbody></table></div>
+<p><strong>Saberes de referencia:</strong> DEE.02.B.01–B.06 (curiosidad, indagación, planificación y resolución de problemas, estrategias de pensamiento computacional, cooperación); DEE.02.A.01–A.05 (relaciones, comparación, clasificación y orientación espacial).</p>
+<p><strong>Actividades fuera de pantalla:</strong> bandejas de memoria, juegos de clasificación, experimentación con agua, semilleros, construcción de puentes y torres, circuitos físicos con flechas y feria de retos final.</p>
+</details></div></main>
+ <footer class="site-footer"><div class="footer-container"><div class="footer-junta"><img src="/img/junta-educacion.png" alt="Junta de Andalucía - Consejería de Educación"></div><div class="footer-school"><p class="footer-school-name">CEIP Joaquín Tena Artigas</p><p>Alcolea · Córdoba</p><a href="https://blogsaverroes.juntadeandalucia.es/ceipjoaquintenaartigas/" target="_blank" rel="noopener noreferrer">Web oficial del Centro</a></div></div></footer>
+ <script>
+(() => {
+'use strict';
+const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>Array.from(root.querySelectorAll(s));
+const random=arr=>arr[Math.floor(Math.random()*arr.length)];
+const shuffle=arr=>[...arr].sort(()=>Math.random()-.5);
+let audioCurrent=null;
+function speak(text){
+  if(!('speechSynthesis' in window))return;
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='es-ES';u.rate=.83;u.pitch=1.08;
+    const voices=speechSynthesis.getVoices(),v=voices.find(v=>v.lang.toLowerCase()==='es-es')||voices.find(v=>v.lang.startsWith('es'));
+    if(v)u.voice=v;speechSynthesis.speak(u);
+  }catch(e){console.debug('Voz no disponible',e);}
+}
+function feedback(parent,text,ok=true){const p=$('[data-feedback]',parent);if(p){p.textContent=text;p.classList.toggle('try-again',!ok);}}
+async function narration(btn){
+  const txt=btn.dataset.say||'';
+  if(audioCurrent){audioCurrent.pause();audioCurrent=null;}
+  if(btn.dataset.audio){const a=new Audio(btn.dataset.audio);audioCurrent=a;
+    try{await a.play();a.onended=()=>{audioCurrent=null;};return;}catch(e){audioCurrent=null;}}
+  if(txt)speak(txt);
+}
+$$('button[data-say]').forEach(b=>b.addEventListener('click',()=>narration(b)));
+const QUIZ={"attention": [{"icon": "🔍", "q": "Observa: ¿qué figura es redonda?", "options": [["🔵", "Círculo"], ["🔺", "Triángulo"], ["🟦", "Cuadrado"]], "ok": 0}], "strategy": [{"icon": "🧩", "q": "Si una pieza no encaja, ¿qué podemos hacer?", "options": [["🔄", "Probar a girarla"], ["💥", "Romperla"], ["🙈", "Cerrar los ojos"]], "ok": 0}]};
+$$('[data-question]').forEach(el=>{
+ const name=el.dataset.question,qs=QUIZ[name]||[];let index=0,answered=false;
+ const q=$('[data-quiz-prompt]',el),icon=$('[data-quiz-icon]',el),opts=$('[data-quiz-options]',el),next=$('[data-quiz-next]',el);
+ function show(){const item=qs[index%qs.length];answered=false;icon.textContent=item.icon;q.textContent=item.q;opts.replaceChildren();feedback(el,'');
+  item.options.forEach(([emo,label],n)=>{const b=document.createElement('button');b.type='button';b.className='choice';b.innerHTML='<span class="big-icon">'+emo+'</span>'+label;
+  b.addEventListener('click',()=>{if(answered)return;if(n===item.ok){answered=true;feedback(el,'¡Muy bien! Vamos a conocer otro ejemplo.');speak('¡Muy bien!');}else{feedback(el,'Prueba otra tarjeta. Puedes volver a escuchar la pregunta.',false);}});opts.appendChild(b);});}
+ next.addEventListener('click',()=>{index=(index+1)%qs.length;show();});$('[data-quiz-repeat]',el).addEventListener('click',()=>speak(q.textContent));if(qs.length)show();
+});
+// Pictures with no wrong answers.
+$$('[data-family-story], [data-culture]').forEach(b=>b.addEventListener('click',()=>{const p=b.closest('.mini-game');
+ $$('.choice',p).forEach(x=>{x.classList.remove('is-selected');x.setAttribute('aria-pressed','false');});b.classList.add('is-selected');b.setAttribute('aria-pressed','true');
+ const t=b.dataset.familyStory||b.dataset.culture;feedback(p,t);speak(t);
+}));
+// General drag + two-tap interaction, works with pointer mouse / touch / pen.
+function enablePiece(b, onPick, onDrop){
+ let drag=null, sx=0,sy=0, moving=false;
+ b.addEventListener('click',()=>{if(moving){moving=false;return;}onPick(b);});
+ b.addEventListener('pointerdown',ev=>{if(ev.button!==0||b.disabled)return;sx=ev.clientX;sy=ev.clientY;drag={id:ev.pointerId,ghost:null};try{b.setPointerCapture(ev.pointerId);}catch(e){};});
+ b.addEventListener('pointermove',ev=>{if(!drag||ev.pointerId!==drag.id)return;if(!drag.ghost&&Math.hypot(ev.clientX-sx,ev.clientY-sy)>9){moving=true;
+ const g=b.cloneNode(true);g.classList.add('drag-ghost');g.removeAttribute('id');g.style.position='fixed';g.style.pointerEvents='none';g.style.zIndex='9999';g.style.margin='0';g.style.width=b.getBoundingClientRect().width+'px';g.style.opacity='.91';document.body.appendChild(g);drag.ghost=g;}
+ if(drag.ghost){drag.ghost.style.left=(ev.clientX+12)+'px';drag.ghost.style.top=(ev.clientY+12)+'px';}});
+ b.addEventListener('pointerup',ev=>{if(!drag||ev.pointerId!==drag.id)return;const dragged=!!drag.ghost;if(drag.ghost)drag.ghost.remove();drag=null;
+ if(dragged){const under=document.elementFromPoint(ev.clientX,ev.clientY);const target=under&&under.closest('[data-drop-cat]');if(target)onDrop(b,target);else onPick(b);setTimeout(()=>{moving=false;},0);}});
+ b.addEventListener('pointercancel',()=>{if(drag?.ghost)drag.ghost.remove();drag=null;moving=false;});
+}
+const SORT={"colors": {"buckets": [["red", "Rojo 🔴"], ["blue", "Azul 🔵"]], "items": [["🔴", "Círculo rojo", "red"], ["🍎", "Manzana roja", "red"], ["🟥", "Cuadrado rojo", "red"], ["🔵", "Círculo azul", "blue"], ["🫐", "Fruto azul", "blue"], ["🟦", "Cuadrado azul", "blue"]]}, "construction": {"buckets": [["0", "1"], ["1", "2"], ["2", "3"], ["3", "4"]], "items": [["🧰", "Preparo piezas", "0"], ["🧱", "Construyo", "1"], ["🔍", "Compruebo", "2"], ["📦", "Guardo", "3"]]}, "seeds": {"buckets": [["0", "1"], ["1", "2"], ["2", "3"], ["3", "4"]], "items": [["🪴", "Preparo recipiente", "0"], ["🟤", "Pongo tierra", "1"], ["🌰", "Coloco semilla", "2"], ["💧", "Riego con cuidado", "3"]]}};
+$$('[data-sort-bank]').forEach(bank=>{
+ const p=bank.closest('.mini-game'),info=SORT[bank.dataset.sortBank],zones=$('[data-sort-buckets]',p),reset=$('[data-sort-reset]',p);let picked=null,done=0;
+ function choose(piece){if(piece.disabled)return;$$('.move-piece',bank).forEach(b=>b.classList.remove('picked'));picked=piece;piece.classList.add('picked');}
+ function tryPlace(piece,target){if(!piece||piece.disabled)return;
+  const wanted=piece.dataset.cat;if(target.dataset.dropCat!==wanted){feedback(p,'Prueba otro lugar. Puedes observar las imágenes otra vez.',false);return;}
+  piece.disabled=true;piece.classList.remove('picked');target.insertAdjacentHTML('beforeend','<span class="placed-piece">'+piece.dataset.icon+' '+piece.dataset.label+'</span>');picked=null;done++;feedback(p,done===info.items.length?'¡Todas las tarjetas están colocadas!':'¡Bien! Sigue con las demás.');}
+ function build(){picked=null;done=0;feedback(p,'');bank.replaceChildren();zones.replaceChildren();
+  info.buckets.forEach(([id,label])=>{const z=document.createElement('button');z.type='button';z.className='target-box';z.dataset.dropCat=id;z.innerHTML='<h5>'+label+'</h5>';z.setAttribute('aria-label','Destino: '+label);z.addEventListener('click',()=>tryPlace(picked,z));zones.appendChild(z);});
+  shuffle(info.items).forEach(([emo,label,cat])=>{const b=document.createElement('button');b.type='button';b.className='move-piece';b.dataset.cat=cat;b.dataset.icon=emo;b.dataset.label=label;b.innerHTML='<span class="item-emoji">'+emo+'</span>'+label;bank.appendChild(b);
+    enablePiece(b,choose,tryPlace);});}
+ reset.addEventListener('click',build);build();
+});
+// Jigsaw using the *same image* as the section artwork.
+const PUZZLE_IMAGES={observe:'#art-observe'};
+$$('[data-puzzle]').forEach(game=>{
+ const p=game.closest('.mini-game'),img=$(PUZZLE_IMAGES[game.dataset.puzzle]),bank=$('[data-puzzle-bank]',game),board=$('[data-puzzle-board]',game),url=img?img.src:'';
+ let picked=null,complete=0;
+ function slice(index){const span=document.createElement('span');span.className='piece-view';span.style.backgroundImage='url("'+url+'")';span.style.backgroundPosition=(index%2===0?'0%':'100%')+' '+(index<2?'0%':'100%');return span;}
+ function select(piece){if(piece.disabled)return;$$('.puzzle-cell',bank).forEach(el=>el.classList.remove('picked'));picked=piece;piece.classList.add('picked');}
+ function place(piece,target){if(!piece||piece.disabled||target.disabled)return;
+   if(+piece.dataset.piece!==+target.dataset.dropCat){feedback(p,'Busca el hueco que corresponde a esta parte del dibujo.',false);return;}
+   target.replaceChildren(slice(+piece.dataset.piece));target.classList.remove('drop');target.classList.add('done');target.disabled=true;piece.disabled=true;piece.classList.remove('picked');piece.style.opacity='.2';picked=null;complete++;feedback(p,complete===4?'¡Puzle terminado! Ahora puedes contar lo que ves.':'¡Muy bien! Coloca otra pieza.');}
+ function reset(){picked=null;complete=0;bank.replaceChildren();board.replaceChildren();feedback(p,'');
+   shuffle([0,1,2,3]).forEach(n=>{const b=document.createElement('button');b.type='button';b.className='puzzle-cell';b.dataset.piece=n;b.setAttribute('aria-label','Pieza de puzle '+(n+1));b.appendChild(slice(n));bank.appendChild(b);enablePiece(b,select,place);});
+   [0,1,2,3].forEach(n=>{const t=document.createElement('button');t.type='button';t.className='puzzle-cell drop';t.dataset.dropCat=n;t.setAttribute('aria-label','Hueco '+(n+1));t.addEventListener('click',()=>place(picked,t));board.appendChild(t);});}
+ $('[data-puzzle-reset]',p).addEventListener('click',reset);reset();
+});
+// Drawable canvas helper for free drawing, mouse, stylus and touch.
+function initCanvas(canvas,clearButton, palette){
+ if(!canvas)return;
+ const ctx=canvas.getContext('2d');let color='#395f94',started=false,last=null;
+ const rectPoint=ev=>{const rect=canvas.getBoundingClientRect();return {x:(ev.clientX-rect.left)*canvas.width/rect.width,y:(ev.clientY-rect.top)*canvas.height/rect.height};};
+ function start(ev){if(ev.button!==0)return;started=true;last=rectPoint(ev);canvas.setPointerCapture(ev.pointerId);ctx.beginPath();ctx.arc(last.x,last.y,5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();}
+ function move(ev){if(!started)return;const pt=rectPoint(ev);ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=10;ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(pt.x,pt.y);ctx.stroke();last=pt;}
+ function end(){started=false;last=null;}
+ canvas.addEventListener('pointerdown',start);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);
+ if(clearButton)clearButton.addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height));
+ if(palette)$$('[data-color]',palette).forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;$$('[data-color]',palette).forEach(x=>{x.classList.toggle('is-active',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});}));
+}
+$$('[data-drawing]').forEach(c=>{const p=c.closest('.mini-game');initCanvas(c,$('[data-draw-clear]',p),$('[data-draw-palette]',p));});
+// Locality map quiz.
+{
+ const p=$('[data-map-game]')?.closest('.mini-game');if(p){const tasks=[['Tengo ganas de leer un cuento.','biblioteca'],['Voy a jugar entre árboles.','parque'],['Vamos a aprender en clase.','cole'],['Necesito que me atienda personal sanitario.','salud']];let idx=0;
+ const q=$('[data-map-prompt]',p);function show(){q.textContent=tasks[idx][0];feedback(p,'');}
+ $$('[data-map-place]',p).forEach(b=>b.addEventListener('click',()=>{if(b.dataset.mapPlace===tasks[idx][1])feedback(p,'¡Has encontrado el lugar!');else feedback(p,'Prueba otro lugar del plano.',false);}));
+ $('[data-map-repeat]',p).addEventListener('click',()=>speak(q.textContent));$('[data-map-next]',p).addEventListener('click',()=>{idx=(idx+1)%tasks.length;show();});show();}
+}
+// Route grid with two obstacles; start (0,3), goal (3,0).
+{
+ const grid=$('[data-route-game]');if(grid){const p=grid.closest('.mini-game'),blocks=new Set(['1,1','2,1','1,2']);let x=0,y=3;
+ const render=()=>{grid.replaceChildren();for(let row=0;row<4;row++)for(let col=0;col<4;col++){
+  const cell=document.createElement('div');cell.className='route-cell';const key=col+','+row;
+  if(blocks.has(key)){cell.classList.add('wall');cell.textContent='🌳';}else if(x===col&&y===row){cell.classList.add('now');cell.textContent='🚶';}else if(col===0&&row===3)cell.textContent='🏡';else if(col===3&&row===0)cell.textContent='🌳';else cell.textContent='·';
+  cell.setAttribute('aria-label',row+' '+col+(x===col&&y===row?' ubicación actual':''));grid.appendChild(cell);}};
+ const moves={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};$$('[data-move]',p).forEach(b=>b.addEventListener('click',()=>{const [dx,dy]=moves[b.dataset.move],nx=x+dx,ny=y+dy;
+  if(nx<0||nx>3||ny<0||ny>3||blocks.has(nx+','+ny)){feedback(p,'Por ahí no podemos pasar. Prueba otra flecha.',false);return;}x=nx;y=ny;render();feedback(p,x===3&&y===0?'¡Llegaste al parque! Puedes inventar otro recorrido.':'¡Seguimos caminando!');}));
+ $('[data-route-reset]',p).addEventListener('click',()=>{x=0;y=3;render();feedback(p,'');});render();}
+}
+// Andalusian patio coloring.
+{
+ const game=$('[data-paint-game]');if(game){let color='#ef897a';const colors=$$('[data-color]',game),regions=$$('[data-paint-region]',game),p=game.closest('.mini-game');
+  colors.forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;colors.forEach(x=>{x.classList.toggle('is-active',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});}));
+  regions.forEach(r=>{const paint=()=>{r.setAttribute('fill',color);};r.addEventListener('click',paint);r.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();paint();}});});
+  $('[data-paint-reset]',p).addEventListener('click',()=>regions.forEach(r=>r.setAttribute('fill','#fff')));
+ }
+}
+// Audio discrimination (three royalty-free original short effects packaged in ZIP).
+{
+ const p=$('[data-sound-play]')?.closest('.mini-game');if(p){let index=0,done=false;const clips=['palmas','campana','agua'];const btn=$('[data-sound-play]',p);
+  function sound(){const a=new Audio('/media/infantil/inf5/inf5.7-'+clips[index]+'.mp3');a.play().catch(()=>speak('Sonido de '+clips[index]));}
+  btn.addEventListener('click',sound);
+  $$('[data-sound-answer]',p).forEach(b=>b.addEventListener('click',()=>{if(done)return;
+   if(b.dataset.soundAnswer===clips[index]){feedback(p,'¡Has reconocido el sonido!');done=true;}else feedback(p,'Puedes escucharlo otra vez.',false);}));
+  $('[data-sound-next]',p).addEventListener('click',()=>{index=(index+1)%clips.length;done=false;feedback(p,'');});
+ }
+}
+// Pasaporte final, no storage or personal data.
+{
+ const p=$('#pasaporte');if(p){const inputs=$$('input[type="checkbox"]',p),st=$('[data-passport-status]'),bar=$('.passport-meter',p),fill=$('.passport-fill',p);
+ const update=()=>{const n=inputs.filter(x=>x.checked).length;st.textContent='Mis descubrimientos: '+n+' de '+inputs.length;bar.setAttribute('aria-valuenow',n);fill.style.width=100*n/inputs.length+'%';};inputs.forEach(x=>x.addEventListener('change',update));update();}
+}
+
+// INF5.9 — Juegos de observación, memoria, indagación, construcción y programación.
+{
+ const p=$('[data-differences]')?.closest('.mini-game');if(p){const done=new Set();$$('[data-diff]',p).forEach(b=>b.addEventListener('click',()=>{done.add(b.dataset.diff);b.classList.add('is-found');b.setAttribute('aria-pressed','true');feedback(p,done.size===3?'¡Has localizado los tres detalles!':'Has encontrado '+done.size+' de 3 diferencias.');}));$('[data-diff-reset]',p).addEventListener('click',()=>{done.clear();$$('[data-diff]',p).forEach(b=>{b.classList.remove('is-found');b.setAttribute('aria-pressed','false');});feedback(p,'');});}}
+{
+ const p=$('[data-missing-stage]')?.closest('.mini-game');if(p){const all=[['🍎','Manzana'],['🪁','Cometa'],['🧸','Osito'],['🌼','Flor']];let hidden=null;const stage=$('[data-missing-stage]',p),options=$('[data-missing-options]',p);function reset(){hidden=null;stage.textContent=all.map(x=>x[0]).join('  ');options.replaceChildren();feedback(p,'Observa los cuatro dibujos. Cuando estés preparado, esconde uno.');}
+ $('[data-missing-hide]',p).addEventListener('click',()=>{hidden=Math.floor(Math.random()*4);stage.textContent=all.filter((x,i)=>i!==hidden).map(x=>x[0]).join('  ');options.replaceChildren();all.forEach(([ico,lab],i)=>{const b=document.createElement('button');b.className='choice';b.type='button';b.textContent=ico+' '+lab;b.addEventListener('click',()=>feedback(p,i===hidden?'¡Has recordado qué faltaba!':'Vuelve a mirar los objetos.',i===hidden));options.appendChild(b);});feedback(p,'¿Qué objeto falta?');});$('[data-missing-reset]',p).addEventListener('click',reset);reset();}}
+{
+ const grid=$('[data-memory-grid]');if(grid){const p=grid.closest('.mini-game'),icons=['🌞','🌞','⭐','⭐','🌼','🌼','🐞','🐞'];let a=null,lock=false,found=0;function build(){found=0;a=null;lock=false;grid.replaceChildren();feedback(p,'');shuffle(icons).forEach(ico=>{const b=document.createElement('button');b.type='button';b.dataset.icon=ico;b.textContent='❔';b.setAttribute('aria-label','Tarjeta boca abajo');b.addEventListener('click',()=>{if(lock||b.disabled||b===a)return;b.textContent=ico;b.classList.add('is-open');b.setAttribute('aria-label','Tarjeta '+ico);if(!a){a=b;return;}const first=a;a=null;if(first.dataset.icon===ico){first.disabled=b.disabled=true;found+=2;feedback(p,found===8?'¡Todas las parejas encontradas!':'¡Pareja encontrada!');}else{lock=true;feedback(p,'Recuerda dónde estaban los dibujos.');setTimeout(()=>{first.textContent='❔';b.textContent='❔';first.classList.remove('is-open');b.classList.remove('is-open');lock=false;},800);}});grid.appendChild(b);});}$('[data-memory-restart]',p).addEventListener('click',build);build();}}
+{
+ const p=$('[data-sound-seq-play]')?.closest('.mini-game');if(p){const names=['campana','tambor','sonajero'];let sequence=['campana','tambor'],input=[];let playingSeq=false;
+ async function play(name){return new Promise(resolve=>{const a=new Audio('/media/infantil/inf5/inf5.9-'+name+'.mp3');a.onended=resolve;a.onerror=()=>{speak(name);setTimeout(resolve,650);};a.play().catch(()=>{speak(name);setTimeout(resolve,650);});});}
+ $('[data-sound-seq-play]',p).addEventListener('click',async()=>{if(playingSeq)return;playingSeq=true;for(const s of sequence){await play(s);await new Promise(r=>setTimeout(r,250));}playingSeq=false;});
+ $$('[data-sound-pick]',p).forEach(b=>b.addEventListener('click',()=>{if(playingSeq)return;const name=b.dataset.soundPick;play(name);input.push(name);if(input.length===2){feedback(p,input.every((x,i)=>x===sequence[i])?'¡Has repetido los dos sonidos!':'Puedes volver a escucharlos y probar.',input.every((x,i)=>x===sequence[i]));input=[];}else feedback(p,'Has elegido el primero. Escoge el segundo.');}));
+ $('[data-sound-seq-next]',p).addEventListener('click',()=>{input=[];sequence=shuffle(names).slice(0,2);feedback(p,'Nueva secuencia preparada. Escucha otra vez.');});}}
+{
+ const p=$('[data-pattern-show]')?.closest('.mini-game');if(p){const qs=[['🔴','🔵','🔴','🔵','🔴','?','🔵'],['🌼','⭐','🌼','⭐','🌼','?','⭐'],['🔺','🔺','⚪','🔺','🔺','?','⚪'],['🟢','🟡','🟢','🟡','🟢','?','🟡']];let idx=0;function render(){const row=qs[idx],disp=$('[data-pattern-show]',p),opts=$('[data-pattern-choices]',p);disp.textContent=row.slice(0,6).join('  ');opts.replaceChildren();const options=shuffle([row[6],...['🔺','🔴','⭐','🟢','🟡'].filter(x=>x!==row[6]).slice(0,2)]);options.forEach(x=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=x;b.addEventListener('click',()=>feedback(p,x===row[6]?'¡Has continuado el patrón!':'Mira de nuevo la serie.',x===row[6]));opts.appendChild(b);});feedback(p,'');}$('[data-pattern-next]',p).addEventListener('click',()=>{idx=(idx+1)%qs.length;render();});render();}}
+{
+ const p=$('[data-experiment]')?.closest('.mini-game');if(p){let item='',prediction='';$$('[data-experiment]',p).forEach(b=>b.addEventListener('click',()=>{item=b.textContent;prediction='';$('[data-exp-object]',p).textContent='Vamos a investigar: '+item;$$('[data-experiment]',p).forEach(x=>x.classList.toggle('is-selected',x===b));feedback(p,'¿Qué crees que ocurrirá?');}));$$('[data-exp-predict]',p).forEach(b=>b.addEventListener('click',()=>{if(!item){feedback(p,'Primero elige un objeto.',false);return;}prediction=b.dataset.expPredict;$$('[data-exp-predict]',p).forEach(x=>x.classList.toggle('is-selected',x===b));feedback(p,'Predicción registrada. Ahora prueba el objeto de verdad con ayuda.');}));$$('[data-exp-observe]',p).forEach(b=>b.addEventListener('click',()=>{if(!prediction){feedback(p,'Primero elige objeto y predicción.',false);return;}feedback(p,'En tu prueba '+item.toLowerCase()+' '+(b.dataset.expObserve==='flota'?'flotó':'se hundió')+'. '+(prediction===b.dataset.expObserve?'Coincidió con tu idea.':'Fue diferente de lo esperado.')+' ¡Eso también es investigar!');}));}}
+{
+ const p=$('[data-investigate]')?.closest('.mini-game');if(p){const m={pregunto:'Primero hacemos una pregunta sobre algo que nos llama la atención.',imagino:'Después imaginamos qué podría ocurrir.',pruebo:'Realizamos una prueba sencilla y segura.',cuento:'Explicamos qué observamos, con palabras, dibujos o gestos.'};$$('[data-investigate]',p).forEach(b=>b.addEventListener('click',()=>{feedback(p,m[b.dataset.investigate]);speak(m[b.dataset.investigate]);}));}}
+{
+ const p=$('[data-change]')?.closest('.mini-game');if(p){const selected=new Set();$$('[data-change]',p).forEach(b=>b.addEventListener('click',()=>{selected.add(b.dataset.change);b.classList.add('is-selected');feedback(p,selected.size===3?'¡Bien! Las dos macetas reciben condiciones iguales, salvo el agua.':'Eso también conviene mantener igual para comparar.');}));}}
+{
+ const p=$('[data-bridge-scene]')?.closest('.mini-game');if(p){let picked='',filled=new Set();$$('[data-bridge-part]',p).forEach(b=>b.addEventListener('click',()=>{picked=b.dataset.bridgePart;$$('[data-bridge-part]',p).forEach(x=>x.classList.toggle('is-picked',x===b));}));$$('[data-bridge-target]',p).forEach(b=>b.addEventListener('click',()=>{if(!picked){feedback(p,'Elige primero una pieza.',false);return;}if(b.dataset.bridgeTarget!==picked){feedback(p,'Prueba a colocar esa pieza en otra posición.',false);return;}filled.add(picked);b.textContent=picked==='plank'?'🪵':'🧱';b.classList.add('filled');feedback(p,'Pieza colocada.');}));$('[data-bridge-test]',p).addEventListener('click',()=>feedback(p,filled.size===3?'¡El vehículo ya tiene un camino! Prueba a construirlo con materiales reales.':'¿Faltan apoyos o el tablero? Mira las piezas.',filled.size===3));$('[data-bridge-reset]',p).addEventListener('click',()=>{picked='';filled.clear();$$('[data-bridge-target]',p).forEach(b=>{b.classList.remove('filled');b.textContent='?';});feedback(p,'');});}}
+{
+ const p=$('[data-tower]')?.closest('.mini-game');if(p){$$('[data-tower]',p).forEach(b=>b.addEventListener('click',()=>{feedback(p,b.dataset.tower==='wide'?'Has elegido una base ancha. ¿Qué pasará al añadir más piezas?':'Has elegido una base estrecha. ¿Qué pasará al añadir más piezas?');speak('Vamos a probarlo con bloques reales.');}));}}
+function initGrid(el,buttons,reset,creature,obstacles,goal,origin){if(!el)return;const p=el.closest('.mini-game'),W=4,H=4;let [x,y]=origin;function render(){el.replaceChildren();for(let r=0;r<H;r++)for(let c=0;c<W;c++){const k=c+','+r,div=document.createElement('div');div.className=el.classList.contains('robot-grid')?'robot-cell':'route-cell';if(obstacles.has(k)){div.classList.add('wall');div.textContent='🌳';}else if(c===x&&r===y){div.classList.add('now');div.textContent=creature;}else if(c===goal[0]&&r===goal[1])div.textContent='⭐';else div.textContent='·';el.appendChild(div);}}const directions={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};buttons.forEach(b=>b.addEventListener('click',()=>{const d=directions[b.dataset.mazeGo],[xx,yy]=[x+d[0],y+d[1]];if(xx<0||xx>=W||yy<0||yy>=H||obstacles.has(xx+','+yy)){feedback(p,'Ese camino está cerrado. Prueba otra flecha.',false);return;}x=xx;y=yy;render();feedback(p,x===goal[0]&&y===goal[1]?'¡Llegaste a la estrella!':'¡Un paso más!');}));reset?.addEventListener('click',()=>{[x,y]=origin;render();feedback(p,'');});render();}
+{
+ const el=$('[data-maze]');if(el)initGrid(el,$$('[data-maze-go]',el.closest('.mini-game')),$('[data-maze-reset]',el.closest('.mini-game')),'🚶',new Set(['1,2','2,1']),[3,0],[0,3]);}
+{
+ const p=$('[data-plan-question]')?.closest('.mini-game');if(p){const cases=[['La torre se cae al poner otra pieza.',['Pruebo una base más ancha','Grito a un compañero','Tiro todas las piezas'],0],['El camino hacia la estrella está cerrado.',['Busco otra ruta','Me quedo quieto siempre','Rompo el tablero'],0],['No logro montar un puzle.',['Lo giro, miro detalles o pido ayuda','Rompo las piezas','Escondo el juego'],0]];let i=0;function show(){const [q,options,correct]=cases[i],o=$('[data-plan-options]',p);$('[data-plan-question]',p).textContent=q;o.replaceChildren();options.forEach((lab,n)=>{const b=document.createElement('button');b.className='choice';b.type='button';b.textContent=lab;b.addEventListener('click',()=>feedback(p,n===correct?'Es una estrategia que podemos probar. ¿Conoces otra?':'¿Qué otra manera podría ayudarte?',n===correct));o.appendChild(b);});feedback(p,'');}$('[data-plan-next]',p).addEventListener('click',()=>{i=(i+1)%cases.length;show();});show();}}
+{
+ $$('[data-robot-grid]').forEach(grid=>{const p=grid.closest('.mini-game'),creative=grid.dataset.robotGrid==='creator';const obstacles=creative?new Set():new Set(['1,2','2,1']);const target=[3,0],origin=creative?[1,1]:[0,3],steps=[];let pos=[...origin],busy=false;const dirs={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]},icons={up:'⬆️',down:'⬇️',left:'⬅️',right:'➡️'};
+ function render(){grid.replaceChildren();for(let r=0;r<4;r++)for(let c=0;c<4;c++){const k=c+','+r,b=document.createElement('div');b.className='robot-cell';if(obstacles.has(k)){b.classList.add('wall');b.textContent='🌳';}else if(pos[0]===c&&pos[1]===r){b.classList.add('now');b.textContent='🤖';}else if(!creative&&c===target[0]&&r===target[1])b.textContent='⭐';else b.textContent='·';grid.appendChild(b);}$('[data-robot-steps]',p).textContent=steps.length?steps.map(x=>icons[x]).join(' '):'Sin flechas todavía.';}
+ $$('[data-robot-add]',p).forEach(b=>b.addEventListener('click',()=>{if(busy)return;if(steps.length>=12){feedback(p,'Prueba primero esta secuencia.');return;}steps.push(b.dataset.robotAdd);render();}));
+ $('[data-robot-undo]',p).addEventListener('click',()=>{if(busy)return;steps.pop();render();});$('[data-robot-reset]',p).addEventListener('click',()=>{busy=false;steps.length=0;pos=[...origin];render();feedback(p,'');});$('[data-robot-run]',p).addEventListener('click',async()=>{if(busy)return;if(!steps.length){feedback(p,'Elige al menos una flecha.',false);return;}busy=true;pos=[...origin];render();let stopped=false;for(const step of steps){const dd=dirs[step],nx=pos[0]+dd[0],ny=pos[1]+dd[1];if(nx<0||nx>3||ny<0||ny>3||obstacles.has(nx+','+ny)){feedback(p,'El robot se encontró con un límite. Puedes cambiar las instrucciones.',false);stopped=true;break;}pos=[nx,ny];render();await new Promise(res=>setTimeout(res,300));}if(!stopped)feedback(p,creative?'¡Has creado un recorrido! Ahora puedes explicarlo a un compañero.':pos[0]===target[0]&&pos[1]===target[1]?'¡Tu programa llegó a la estrella!':'¡Lo has probado! Puedes añadir o cambiar flechas.');busy=false;});render();});}
+{
+ const c=$('[data-trace-canvas]');if(c){const p=c.closest('.mini-game'),ctx=c.getContext('2d');let pressed=false,last=null;function pt(ev){const r=c.getBoundingClientRect();return [(ev.clientX-r.left)*c.width/r.width,(ev.clientY-r.top)*c.height/r.height];}c.addEventListener('pointerdown',ev=>{pressed=true;last=pt(ev);c.setPointerCapture(ev.pointerId);});c.addEventListener('pointermove',ev=>{if(!pressed)return;const v=pt(ev);ctx.strokeStyle='#427bb8';ctx.lineWidth=8;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(...last);ctx.lineTo(...v);ctx.stroke();last=v;});['pointerup','pointercancel'].forEach(t=>c.addEventListener(t,()=>{pressed=false;}));$('[data-trace-reset]',p).addEventListener('click',()=>ctx.clearRect(0,0,c.width,c.height));}}
+
+})();
+</script>
+ <script src="/js/main.js"></script>
+</body></html>
