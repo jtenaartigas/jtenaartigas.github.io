@@ -1,0 +1,3473 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Situación de aprendizaje MAT3.1. Numeración. Explicaciones, gráficos, actividades, problemas, repaso y evaluación. Matemáticas de 3.º de Primaria." name="description"/>
+<title>
+   MAT3.1 · Numeración | CEIP Joaquín Tena Artigas
+  </title>
+<link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+<link href="/css/base.css" rel="stylesheet"/>
+<!--
+    MAT3.1: Numeración, Matemáticas de 3.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.A.2.4, MAT.2.A.2.5, MAT.2.A.3.1, MAT.2.A.5.1, MAT.2.D.1.1.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+<style>
+   :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  
+
+    /* Ajustes específicos de 3.º: iconografía nativa y apoyo a la lectura. */
+    .topic-page .math-visual { max-width: 100%; }
+    .topic-page .math-visual svg { width: 100%; max-height: 230px; }
+    .topic-page .explanation p { max-width: 90ch; }
+    .topic-page .worked-steps li { padding-left: .15rem; }
+    .topic-page .subquestions li { padding-left: .16rem; }
+    .topic-page .lesson-section-heading { text-align: left; }
+    @media (max-width: 640px) {
+      .topic-page .math-visual svg text { font-family: system-ui, sans-serif; }
+      .topic-page .math-visual figcaption { font-size: .78rem; }
+    }
+
+    /* Tabla de ordinales de MAT3.1: lectura cómoda en ordenador y móvil. */
+    .topic-page .ordinal-reference {
+      margin: 1.4rem 0 .6rem;
+      padding: 1rem;
+      border: 1px solid #c9ded0;
+      border-radius: 1rem;
+      background: #f8fcfa;
+    }
+
+    .topic-page .ordinal-reference h4 {
+      margin: 0 0 .6rem;
+      color: #005724;
+      font-size: 1.12rem;
+      text-align: left;
+    }
+
+    .topic-page .ordinal-tables {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: .9rem 0;
+    }
+
+    .topic-page .ordinal-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: .93rem;
+      text-align: left;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .topic-page .ordinal-table th,
+    .topic-page .ordinal-table td {
+      padding: .46rem .7rem;
+      border: 1px solid #d1e7dd;
+    }
+
+    .topic-page .ordinal-table thead th {
+      background: #007a33;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .topic-page .ordinal-table tbody th {
+      width: 6rem;
+      color: #005724;
+      font-weight: 800;
+    }
+
+    .topic-page .ordinal-table tbody tr:nth-child(even) {
+      background: #f2f9f4;
+    }
+
+    .topic-page .ordinal-note {
+      margin: .8rem 0 .1rem;
+      padding: .7rem .9rem;
+      border-left: 4px solid #007a33;
+      background: #e6f4ea;
+    }
+
+    @media (max-width: 640px) {
+      .topic-page .ordinal-tables {
+        grid-template-columns: 1fr;
+      }
+      .topic-page .ordinal-table {
+        font-size: .95rem;
+      }
+      .topic-page #sec-1 .math-visual,
+      .topic-page #sec-5 .math-visual,
+      .topic-page #sec-6 .math-visual {
+        overflow-x: auto;
+      }
+      .topic-page #sec-1 .math-visual svg,
+      .topic-page #sec-5 .math-visual svg,
+      .topic-page #sec-6 .math-visual svg {
+        min-width: 620px;
+        max-height: none;
+      }
+    }
+
+    /* Diagramas de lectura adaptados: SVG grande y tarjeta vertical en móviles. */
+    .topic-page .math-mobile-visual {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .topic-page #sec-1 .math-visual svg,
+      .topic-page #sec-5 .math-visual svg,
+      .topic-page #sec-6 .math-visual svg {
+        display: none;
+      }
+
+      .topic-page #sec-1 .math-mobile-visual,
+      .topic-page #sec-5 .math-mobile-visual,
+      .topic-page #sec-6 .math-mobile-visual {
+        display: block;
+        max-width: 100%;
+        text-align: left;
+      }
+
+      .topic-page .math-mobile-visual p {
+        margin: .7rem 0 .15rem;
+        color: #334155;
+        font-size: .91rem;
+      }
+
+      .topic-page .mobile-places {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: .25rem;
+        margin-bottom: .65rem;
+      }
+
+      .topic-page .mobile-places span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .4rem .15rem;
+        border: 1px solid #c9ded0;
+        border-radius: .5rem;
+        background: #e6f4ea;
+      }
+
+      .topic-page .mobile-places small {
+        font-weight: 800;
+        color: #005724;
+      }
+
+      .topic-page .mobile-places strong {
+        font-size: 1.4rem;
+      }
+
+      .topic-page .mobile-read-group {
+        padding: .45rem .6rem;
+        margin-top: .35rem;
+        border: 1px solid #d1e7dd;
+        border-radius: .5rem;
+        background: #f8fcfa;
+        font-size: .88rem;
+        overflow-wrap: break-word;
+      }
+
+      .topic-page .mobile-rounding-card,
+      .topic-page .mobile-line-card {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        margin: .6rem 0;
+        padding: .65rem .75rem;
+        border: 1px solid #a8d7bb;
+        border-radius: .6rem;
+        background: #f3faf5;
+        font-size: .88rem;
+      }
+
+      .topic-page .mobile-rounding-card:nth-child(2),
+      .topic-page .mobile-line-card:nth-child(2) {
+        background: #fff9ed;
+        border-color: #e9cb8a;
+      }
+
+      .topic-page .mobile-rounding-card:nth-child(3) {
+        background: #f7f0ff;
+        border-color: #c4a4f2;
+      }
+
+      .topic-page .mobile-rounding-card > strong,
+      .topic-page .mobile-line-card > strong {
+        color: #005724;
+        font-size: .98rem;
+      }
+
+      .topic-page .mobile-rounding-card b {
+        color: #1e293b;
+        font-size: 1.25rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .topic-page .mobile-line-values {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: .15rem;
+        padding-top: .5rem;
+        border-top: 2px solid #64748b;
+        text-align: center;
+        font-size: .8rem;
+        font-weight: 750;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .topic-page .mobile-line-card p {
+        margin-top: .25rem;
+        font-size: .85rem;
+      }
+    }
+  </style>
+</head>
+<body class="subject-mathematics">
+<a class="skip-link" href="#contenido-principal">
+   Ir al contenido principal
+  </a>
+<!-- Cabecera institucional del centro -->
+<header class="site-banner">
+<a aria-label="Ir a la página de inicio" href="/">
+<img alt="CEIP Joaquín Tena Artigas - Alcolea, Córdoba" class="banner-image" src="/img/banner-principal.png"/>
+</a>
+</header>
+<!-- Navegación común -->
+<div class="navigation-wrapper">
+<div class="navigation-container">
+<a aria-label="Ir al inicio" class="navigation-logo" href="/">
+<img alt="" src="/img/logo-centro.png"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" type="button">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+<nav aria-label="Navegación principal" class="main-navigation" id="main-navigation">
+<ul>
+<li class="nav-green">
+<a href="/">
+        Inicio
+       </a>
+</li>
+<li class="nav-yellow">
+<a href="/familias/">
+        Familias
+       </a>
+</li>
+<li class="nav-blue">
+<a aria-current="page" href="/recursos/">
+        Recursos educativos
+       </a>
+</li>
+<li class="nav-red">
+<a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true">
+         🔒
+        </span>
+        Área privada Profesorado
+       </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<main class="topic-page" id="contenido-principal">
+<div class="topic-shell">
+<nav aria-label="Migas de pan" class="breadcrumbs">
+<ol>
+<li>
+<a href="/">
+        Inicio
+       </a>
+</li>
+<li>
+<a href="/recursos/">
+        Recursos educativos
+       </a>
+</li>
+<li>
+<a href="/recursos/tercero/">
+        3.º de Primaria
+       </a>
+</li>
+<li>
+<a href="/recursos/tercero/matematicas3/">
+        Matemáticas
+       </a>
+</li>
+<li aria-current="page">
+       SdA 1
+      </li>
+</ol>
+</nav>
+<!-- Portada verde institucional; Tomatito figura solo en portada. -->
+<section aria-labelledby="titulo-sda" class="topic-hero">
+<div class="topic-hero-content">
+<span class="topic-eyebrow">
+       Matemáticas · 3.º de Primaria · SdA 1
+      </span>
+<h1 id="titulo-sda">
+       Nuestro colegio cuenta
+      </h1>
+<p>
+       Leemos, escribimos y comparamos números para organizar información de nuestro entorno.
+      </p>
+<div aria-label="Qué aprenderemos" class="hero-tags">
+<span>
+        Números
+       </span>
+<span>
+        Valor posicional
+       </span>
+<span>
+        Orden
+       </span>
+</div>
+</div>
+<figure class="media-frame hero-mascot">
+<img alt="Tomatito, la mascota del colegio, aprendiendo Matemáticas" onerror="markImageMissing(this)" src="/img/tomatito/matematicas.png"/>
+<figcaption class="sr-only">
+       Tomatito nos acompaña en esta situación de aprendizaje.
+      </figcaption>
+</figure>
+</section>
+<!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+<nav aria-label="Contenidos de la situación de aprendizaje" class="lesson-nav">
+<h2 class="lesson-nav-heading">
+      📍 Contenidos de la Situación de Aprendizaje
+     </h2>
+<div class="lesson-nav-links">
+<a href="#sec-1">
+       1.1 Lectura y escritura hasta 99.999
+      </a>
+<a href="#sec-2">
+       1.2 El valor de cada cifra
+      </a>
+<a href="#sec-3">
+       1.3 Componemos y descomponemos
+      </a>
+<a href="#sec-4">
+       1.4 Comparamos y ordenamos números
+      </a>
+<a href="#sec-5">
+       1.5 Aproximamos cantidades
+      </a>
+<a href="#sec-6">
+       1.6 Ubicamos números en la recta
+      </a>
+<a href="#sec-7">
+       1.7 Numeración en la vida cotidiana
+      </a>
+<a class="nav-challenge" href="#sec-8">
+       1.8 Problemas y desafíos
+      </a>
+<a class="nav-review" href="#sec-repaso">
+       🔄 Repasamos lo aprendido
+      </a>
+<a class="nav-selfeval" href="#sec-diana">
+       🎯 Autoevaluación
+      </a>
+<a class="nav-quiz" href="#sec-comprueba">
+       ✓ Comprueba lo aprendido
+      </a>
+</div>
+</nav>
+<div class="topic-content">
+<!-- SECCIÓN 1: Lectura y escritura de números -->
+<section class="lesson-section" id="sec-1">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.1
+       </span>
+       Lectura y escritura hasta 99.999
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p>Los números de hasta <strong>99.999</strong> tienen cinco órdenes: <strong>decenas de millar (DM)</strong>, <strong>unidades de millar (UM)</strong>, <strong>centenas (C)</strong>, <strong>decenas (D)</strong> y <strong>unidades (U)</strong>. Para leerlos con facilidad, podemos separar mentalmente el número en dos grupos: la parte de los millares y la parte final.</p>
+<p>Por ejemplo, en <strong>34.582</strong>, primero leemos <strong>34</strong> como <em>treinta y cuatro mil</em> y después leemos <strong>582</strong> como <em>quinientos ochenta y dos</em>. Juntando ambas partes obtenemos: <strong>treinta y cuatro mil quinientos ochenta y dos</strong>.</p>
+<p>Si aparecen ceros en medio, no se leen todos uno a uno; los ceros solo sirven para mantener el lugar correcto de las demás cifras. Así, <strong>40.005</strong> se lee <em>cuarenta mil cinco</em>.</p>
+<figure class="math-visual">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 235"
+     role="img" aria-label="34.582: las dos primeras cifras son treinta y cuatro mil, y las tres últimas quinientos ochenta y dos.">
+  <!-- Cinco cifras, cada una con su orden correspondiente. -->
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <rect x="25" y="16" width="126" height="86" rx="11" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+    <rect x="171" y="16" width="126" height="86" rx="11" fill="#eef5ff" stroke="#315f9e" stroke-width="2"/>
+    <rect x="317" y="16" width="126" height="86" rx="11" fill="#fff7e6" stroke="#d97706" stroke-width="2"/>
+    <rect x="463" y="16" width="126" height="86" rx="11" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>
+    <rect x="609" y="16" width="126" height="86" rx="11" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <g fill="#334155" font-size="17" font-weight="700">
+      <text x="88" y="45">DM</text>
+      <text x="234" y="45">UM</text>
+      <text x="380" y="45">C</text>
+      <text x="526" y="45">D</text>
+      <text x="672" y="45">U</text>
+    </g>
+    <g fill="#1e293b" font-size="36" font-weight="800">
+      <text x="88" y="84">3</text>
+      <text x="234" y="84">4</text>
+      <text x="380" y="84">5</text>
+      <text x="526" y="84">8</text>
+      <text x="672" y="84">2</text>
+    </g>
+  </g>
+  <line x1="307" x2="307" y1="18" y2="100" stroke="#64748b" stroke-width="2" stroke-dasharray="5 5"/>
+  <!-- Grupos de lectura con amplitud suficiente para todo el texto. -->
+  <rect x="25" y="128" width="295" height="56" rx="14" fill="#dcfce7" stroke="#007a33" stroke-width="2"/>
+  <rect x="337" y="128" width="398" height="56" rx="14" fill="#ffedd5" stroke="#d97706" stroke-width="2"/>
+  <text x="172" y="162" fill="#005724" font-size="18" font-weight="800" text-anchor="middle">34 → treinta y cuatro mil</text>
+  <text x="536" y="162" fill="#92400e" font-size="18" font-weight="800" text-anchor="middle">582 → quinientos ochenta y dos</text>
+  <text x="380" y="218" fill="#334155" font-size="18" font-weight="700" text-anchor="middle">34.582 = treinta y cuatro mil quinientos ochenta y dos</text>
+</svg>
+  <!-- Alternativa visual adaptable a pantallas pequeñas. -->
+  <div class="math-mobile-visual" aria-label="Lectura de 34.582 por órdenes y grupos">
+    <div class="mobile-places">
+      <span><small>DM</small><strong>3</strong></span>
+      <span><small>UM</small><strong>4</strong></span>
+      <span><small>C</small><strong>5</strong></span>
+      <span><small>D</small><strong>8</strong></span>
+      <span><small>U</small><strong>2</strong></span>
+    </div>
+    <div class="mobile-read-group">34 → <strong>treinta y cuatro mil</strong></div>
+    <div class="mobile-read-group">582 → <strong>quinientos ochenta y dos</strong></div>
+    <p><strong>34.582</strong> se lee «treinta y cuatro mil quinientos ochenta y dos».</p>
+  </div>
+
+  <figcaption>Para leer un número, agrupamos primero los millares y luego las tres últimas cifras.</figcaption>
+</figure>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>Observamos el número <strong>12.406</strong> y lo separamos en dos partes: <strong>12 | 406</strong>.</li>
+<li>Leemos <strong>12</strong> como <em>doce mil</em>.</li>
+<li>Leemos <strong>406</strong> como <em>cuatrocientos seis</em>.</li>
+<li>Juntamos ambas partes: <strong>doce mil cuatrocientos seis</strong>.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 1. Escribe con letras
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          1.208
+         </li>
+<li>
+          3.040
+         </li>
+<li>
+          14.352
+         </li>
+<li>
+          20.009
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 2. Escribe con cifras
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          Siete mil doscientos cuatro
+         </li>
+<li>
+          Dieciséis mil veinte
+         </li>
+<li>
+          Treinta y dos mil ochocientos
+         </li>
+<li>
+          Cuarenta mil seis
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.1">
+<h3>
+         Actividad 3. Escribe con letras
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          25.430
+         </li>
+<li>
+          90.105
+         </li>
+<li>
+          4.600
+         </li>
+<li>
+          68.019
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.2">
+<h3>
+         Actividad 4. Detecta y corrige el error
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          18.400: dieciocho mil cuarenta
+         </li>
+<li>
+          5.027: cinco mil doscientos siete
+         </li>
+<li>
+          70.008: setenta mil ochenta
+         </li>
+<li>
+          23.510: veintitrés mil quinientos diez
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 2: El valor de cada cifra -->
+<section class="lesson-section" id="sec-2">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.2
+       </span>
+       El valor de cada cifra
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p>En nuestro sistema decimal, el valor de una cifra depende de la <strong>posición</strong> que ocupa. No vale lo mismo un 5 colocado en las unidades que un 5 colocado en las centenas o en las unidades de millar.</p>
+<p>De derecha a izquierda encontramos estos órdenes: <strong>unidades (U)</strong>, <strong>decenas (D)</strong>, <strong>centenas (C)</strong>, <strong>unidades de millar (UM)</strong> y <strong>decenas de millar (DM)</strong>. Cada orden vale <strong>diez veces más</strong> que el anterior.</p>
+<p>Por eso, en <strong>52.418</strong>, la cifra <strong>2</strong> no vale 2, sino <strong>2.000</strong>, porque está en el lugar de las <strong>unidades de millar</strong>.</p>
+<figure class="math-visual">
+<svg aria-label="Valor posicional de la cifra 2 en el número 52.418." role="img" viewbox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#eef5ff" height="90" rx="10" stroke="#315f9e" stroke-width="2" width="120" x="30" y="20"></rect>
+<rect fill="#dcfce7" height="90" rx="10" stroke="#007a33" stroke-width="3" width="120" x="162" y="20"></rect>
+<rect fill="#fff7e6" height="90" rx="10" stroke="#d97706" stroke-width="2" width="120" x="294" y="20"></rect>
+<rect fill="#f3e8ff" height="90" rx="10" stroke="#7c3aed" stroke-width="2" width="120" x="426" y="20"></rect>
+<rect fill="#fee2e2" height="90" rx="10" stroke="#dc2626" stroke-width="2" width="120" x="558" y="20"></rect>
+<text fill="#1d4f91" font-size="17" font-weight="700" text-anchor="middle" x="90" y="52">DM</text>
+<text fill="#005724" font-size="17" font-weight="700" text-anchor="middle" x="222" y="52">UM</text>
+<text fill="#92400e" font-size="17" font-weight="700" text-anchor="middle" x="354" y="52">C</text>
+<text fill="#6d28d9" font-size="17" font-weight="700" text-anchor="middle" x="486" y="52">D</text>
+<text fill="#b91c1c" font-size="17" font-weight="700" text-anchor="middle" x="618" y="52">U</text>
+<text fill="#1e293b" font-size="34" font-weight="800" text-anchor="middle" x="90" y="89">5</text>
+<text fill="#007a33" font-size="34" font-weight="800" text-anchor="middle" x="222" y="89">2</text>
+<text fill="#1e293b" font-size="34" font-weight="800" text-anchor="middle" x="354" y="89">4</text>
+<text fill="#1e293b" font-size="34" font-weight="800" text-anchor="middle" x="486" y="89">1</text>
+<text fill="#1e293b" font-size="34" font-weight="800" text-anchor="middle" x="618" y="89">8</text>
+<path d="M222 114 C222 145, 222 145, 222 168" fill="none" stroke="#007a33" stroke-width="3"></path>
+<polygon fill="#007a33" points="214,160 222,176 230,160"></polygon>
+<rect fill="#dcfce7" height="28" rx="14" stroke="#007a33" stroke-width="2" width="168" x="138" y="178"></rect>
+<text fill="#005724" font-size="18" font-weight="800" text-anchor="middle" x="222" y="197">2 UM = 2.000</text>
+<text fill="#475569" font-size="18" font-weight="700" text-anchor="middle" x="516" y="162">10 U = 1 D · 10 D = 1 C · 10 C = 1 UM</text>
+</svg>
+</figure>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>Tomamos el número <strong>48.305</strong>.</li>
+<li>La cifra <strong>8</strong> está en las <strong>unidades de millar</strong>.</li>
+<li>Por tanto, su valor es <strong>8.000</strong>.</li>
+<li>La cifra <strong>3</strong> está en las <strong>centenas</strong>, así que vale <strong>300</strong>.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.1.1">
+<h3>
+         Actividad 1. Indica el valor de la cifra destacada
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          El 4 de 4.352
+         </li>
+<li>
+          El 4 de 24.317
+         </li>
+<li>
+          El 4 de 6.450
+         </li>
+<li>
+          El 4 de 53.104
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.2">
+<h3>
+         Actividad 2. Completa equivalencias
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          3 DM = … U
+         </li>
+<li>
+          8 UM = … U
+         </li>
+<li>
+          6 C = … U
+         </li>
+<li>
+          5 D = … U
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.1">
+<h3>
+         Actividad 3. Di qué cifra ocupa la posición
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          Las centenas en 18.425
+         </li>
+<li>
+          Las unidades en 30.506
+         </li>
+<li>
+          Las decenas de millar en 78.214
+         </li>
+<li>
+          Las unidades de millar en 40.809
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.1.2">
+<h3>
+         Actividad 4. Construye el número
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          2 DM, 5 UM, 7 C, 1 D y 4 U
+         </li>
+<li>
+          4 UM, 6 C y 9 U
+         </li>
+<li>
+          7 DM, 3 C y 2 D
+         </li>
+<li>
+          9 UM y 8 D
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 3: Componemos y descomponemos -->
+<section class="lesson-section" id="sec-3">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.3
+       </span>
+       Componemos y descomponemos
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p><strong>Descomponer</strong> un número es separarlo según el valor de cada cifra. <strong>Componer</strong> es realizar el camino contrario: juntar partes para formar el número completo.</p>
+<p>Podemos descomponer de dos maneras: como <strong>suma</strong> (por ejemplo, 46.205 = 40.000 + 6.000 + 200 + 5) o por <strong>órdenes</strong> (4 DM + 6 UM + 2 C + 5 U).</p>
+<p>Si un orden no aparece, significa que vale <strong>0</strong>. En <strong>46.205</strong> no hay decenas, así que ese orden queda vacío.</p>
+<figure class="math-visual">
+<svg aria-label="Composición y descomposición del número 46.205." role="img" viewbox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#eef5ff" height="48" rx="24" stroke="#315f9e" stroke-width="2" width="204" x="258" y="14"></rect>
+<text fill="#1d4f91" font-size="24" font-weight="800" text-anchor="middle" x="360" y="45">46.205</text>
+<line stroke="#94a3b8" stroke-width="3" x1="360" x2="360" y1="62" y2="95"></line>
+<polygon fill="#94a3b8" points="352,87 360,103 368,87"></polygon>
+<rect fill="#dcfce7" height="80" rx="12" stroke="#007a33" stroke-width="2" width="284" x="44" y="112"></rect>
+<text fill="#005724" font-size="18" font-weight="800" text-anchor="middle" x="186" y="138">Descomposición aditiva</text>
+<text fill="#1e293b" font-size="22" font-weight="700" text-anchor="middle" x="186" y="168">40.000 + 6.000 + 200 + 5</text>
+<rect fill="#fff7e6" height="80" rx="12" stroke="#d97706" stroke-width="2" width="284" x="392" y="112"></rect>
+<text fill="#92400e" font-size="18" font-weight="800" text-anchor="middle" x="534" y="138">Descomposición por órdenes</text>
+<text fill="#1e293b" font-size="22" font-weight="700" text-anchor="middle" x="534" y="168">4 DM + 6 UM + 2 C + 5 U</text>
+</svg>
+</figure>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>Descomponemos <strong>30.470</strong>.</li>
+<li>Identificamos sus valores: 3 DM, 0 UM, 4 C, 7 D y 0 U.</li>
+<li>Como suma: <strong>30.000 + 400 + 70</strong>.</li>
+<li>Por órdenes: <strong>3 DM + 4 C + 7 D</strong>.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.2.2">
+<h3>
+         Actividad 1. Descompón como suma
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          2.531
+         </li>
+<li>
+          8.406
+         </li>
+<li>
+          17.250
+         </li>
+<li>
+          40.009
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.1.2">
+<h3>
+         Actividad 2. Compón estas partes
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          3.000 + 400 + 50 + 2
+         </li>
+<li>
+          20.000 + 700 + 8
+         </li>
+<li>
+          6.000 + 60 + 5
+         </li>
+<li>
+          70.000 + 3.000 + 40
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.1.2">
+<h3>
+         Actividad 3. Descompón usando DM, UM, C, D o U
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          12.345
+         </li>
+<li>
+          5.060
+         </li>
+<li>
+          81.204
+         </li>
+<li>
+          9.900
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 4. Encuentra la parte que falta
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          4.527 = 4.000 + … + 20 + 7
+         </li>
+<li>
+          32.085 = 30.000 + … + 80 + 5
+         </li>
+<li>
+          7.609 = … + 600 + 9
+         </li>
+<li>
+          50.410 = 50.000 + … + 10
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 4: Comparamos y ordenamos -->
+<section class="lesson-section" id="sec-4">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.4
+       </span>
+       Comparamos y ordenamos números
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p>Para <strong>comparar</strong> dos números, primero observamos cuántas cifras tienen. Si uno tiene más cifras, es mayor. Si tienen el mismo número de cifras, comparamos de <strong>izquierda a derecha</strong> hasta encontrar una diferencia.</p>
+<p>Después usamos los símbolos <strong>&gt;</strong>, <strong>&lt;</strong> o <strong>=</strong>. Si ordenamos de menor a mayor, hacemos un <strong>orden ascendente</strong>; si ordenamos de mayor a menor, es un <strong>orden descendente</strong>.</p>
+<p>En <strong>24.560</strong> y <strong>24.650</strong>, las dos primeras cifras coinciden. La diferencia aparece en las centenas: <strong>5 centenas</strong> es menor que <strong>6 centenas</strong>, así que <strong>24.560 &lt; 24.650</strong>.</p>
+<figure class="math-visual">
+<svg aria-label="Comparación entre 24.560 y 24.650 fijándose en la primera cifra diferente." role="img" viewbox="0 0 720 210" xmlns="http://www.w3.org/2000/svg">
+<text fill="#475569" font-size="18" font-weight="700" text-anchor="middle" x="163" y="42">Primer número</text>
+<text fill="#475569" font-size="18" font-weight="700" text-anchor="middle" x="558" y="42">Segundo número</text>
+<g fill="#1e293b" font-size="34" font-weight="800">
+<text x="70" y="92">2</text><text x="118" y="92">4</text><text fill="#d97706" x="166" y="92">5</text><text x="214" y="92">6</text><text x="262" y="92">0</text>
+<text x="465" y="92">2</text><text x="513" y="92">4</text><text fill="#007a33" x="561" y="92">6</text><text x="609" y="92">5</text><text x="657" y="92">0</text>
+</g>
+<line stroke="#d97706" stroke-width="3" x1="167" x2="167" y1="100" y2="130"></line>
+<line stroke="#007a33" stroke-width="3" x1="563" x2="563" y1="100" y2="130"></line>
+<text fill="#92400e" font-size="18" font-weight="700" text-anchor="middle" x="167" y="150">5 centenas = 500</text>
+<text fill="#005724" font-size="18" font-weight="700" text-anchor="middle" x="563" y="150">6 centenas = 600</text>
+<text fill="#1e293b" font-size="28" font-weight="900" text-anchor="middle" x="360" y="195">24.560 &lt; 24.650</text>
+</svg>
+</figure>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>Comparamos <strong>18.205</strong> y <strong>18.152</strong>.</li>
+<li>Ambos tienen cinco cifras.</li>
+<li>Coinciden en 1 decena de millar y 8 unidades de millar.</li>
+<li>Miramos las centenas: <strong>2 centenas &gt; 1 centena</strong>, así que <strong>18.205 &gt; 18.152</strong>.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 1. Escribe &gt;, &lt; o =
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          2.340 … 2.430
+         </li>
+<li>
+          15.090 … 15.009
+         </li>
+<li>
+          8.700 … 8.700
+         </li>
+<li>
+          43.120 … 34.120
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.1">
+<h3>
+         Actividad 2. Ordena de menor a mayor
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          2.450, 2.405, 2.540
+         </li>
+<li>
+          8.100, 8.010, 8.001
+         </li>
+<li>
+          13.500, 15.300, 13.050
+         </li>
+<li>
+          91.002, 90.120, 91.020
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.1">
+<h3>
+         Actividad 3. Ordena de mayor a menor
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          4.200, 4.020, 4.002
+         </li>
+<li>
+          17.905, 17.590, 17.950
+         </li>
+<li>
+          62.100, 61.200, 62.010
+         </li>
+<li>
+          9.999, 10.000, 9.990
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.1">
+<h3>
+         Actividad 4. Elige el número que cumple
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          Entre 3.500 y 3.600
+         </li>
+<li>
+          Mayor que 20.800 y menor que 20.900
+         </li>
+<li>
+          Menor que 5.008 y mayor que 5.000
+         </li>
+<li>
+          El mayor que puedes formar con 2, 4, 8, 1
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 5: Aproximamos cantidades -->
+<section class="lesson-section" id="sec-5">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.5
+       </span>
+       Aproximamos cantidades
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p><strong>Redondear</strong> o <strong>aproximar</strong> consiste en sustituir un número por otro cercano y más fácil de recordar o calcular. Para saber si subimos o mantenemos, miramos la cifra que está <strong>a la derecha</strong> del orden al que queremos aproximar.</p>
+<p>Si aproximamos a las <strong>decenas</strong>, miramos las <strong>unidades</strong>. Si aproximamos a las <strong>centenas</strong>, miramos las <strong>decenas</strong>. Si aproximamos a los <strong>millares</strong>, miramos las <strong>centenas</strong>.</p>
+<p>La regla es siempre la misma: si la cifra observada es <strong>0, 1, 2, 3 o 4</strong>, dejamos igual la cifra anterior; si es <strong>5, 6, 7, 8 o 9</strong>, aumentamos una unidad. Después, las cifras de la derecha se convierten en ceros.</p>
+<figure class="math-visual">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 266"
+     role="img" aria-label="Tres ejemplos de redondeo. A decenas, 347 se aproxima a 350. A centenas, 4372 se aproxima a 4400. A millares, 18650 se aproxima a 19000.">
+  <!-- Cada fila mantiene el enunciado, la operación y la explicación separados. -->
+  <rect x="18" y="16" width="724" height="64" rx="12" fill="#e6f4ea" stroke="#007a33" stroke-width="2"/>
+  <rect x="18" y="92" width="724" height="64" rx="12" fill="#fff7e6" stroke="#d97706" stroke-width="2"/>
+  <rect x="18" y="168" width="724" height="64" rx="12" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>
+  <g stroke="#cbd5e1" stroke-width="1.5">
+    <line x1="190" y1="21" x2="190" y2="75"/>
+    <line x1="405" y1="21" x2="405" y2="75"/>
+    <line x1="190" y1="97" x2="190" y2="151"/>
+    <line x1="405" y1="97" x2="405" y2="151"/>
+    <line x1="190" y1="173" x2="190" y2="227"/>
+    <line x1="405" y1="173" x2="405" y2="227"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, sans-serif">
+    <text x="104" y="42" fill="#005724" font-size="18" font-weight="800">A las decenas</text>
+    <text x="104" y="63" fill="#334155" font-size="15">Miro unidades</text>
+    <text x="297" y="55" fill="#1e293b" font-size="24" font-weight="800">347 → 350</text>
+    <text x="104" y="118" fill="#92400e" font-size="18" font-weight="800">A las centenas</text>
+    <text x="104" y="139" fill="#334155" font-size="15">Miro decenas</text>
+    <text x="297" y="131" fill="#1e293b" font-size="23" font-weight="800">4.372 → 4.400</text>
+    <text x="104" y="194" fill="#6d28d9" font-size="18" font-weight="800">A los millares</text>
+    <text x="104" y="215" fill="#334155" font-size="15">Miro centenas</text>
+    <text x="297" y="207" fill="#1e293b" font-size="22" font-weight="800">18.650 → 19.000</text>
+    <text x="380" y="255" fill="#475569" font-size="16" font-weight="700">0 a 4: mantenemos · 5 a 9: aumentamos una unidad</text>
+  </g>
+  <g text-anchor="start" font-family="system-ui, sans-serif">
+    <text x="422" y="42" fill="#005724" font-size="17" font-weight="700">Unidades = 7 (mayor que 4)</text>
+    <text x="422" y="64" fill="#334155" font-size="16">Subimos una decena.</text>
+    <text x="422" y="118" fill="#92400e" font-size="17" font-weight="700">Decenas = 7 (mayor que 4)</text>
+    <text x="422" y="140" fill="#334155" font-size="16">Subimos una centena.</text>
+    <text x="422" y="194" fill="#6d28d9" font-size="17" font-weight="700">Centenas = 6 (mayor que 4)</text>
+    <text x="422" y="216" fill="#334155" font-size="16">Subimos un millar.</text>
+  </g>
+</svg>
+  <!-- Las tres reglas se apilan en móviles, sin recortar los números. -->
+  <div class="math-mobile-visual">
+    <div class="mobile-rounding-card">
+      <strong>A las decenas</strong>
+      <b>347 → 350</b>
+      <span>Miramos las unidades: <strong>7</strong>. Como es 5 o más, aumentamos la decena.</span>
+    </div>
+    <div class="mobile-rounding-card">
+      <strong>A las centenas</strong>
+      <b>4.372 → 4.400</b>
+      <span>Miramos las decenas: <strong>7</strong>. Como es 5 o más, aumentamos la centena.</span>
+    </div>
+    <div class="mobile-rounding-card">
+      <strong>A los millares</strong>
+      <b>18.650 → 19.000</b>
+      <span>Miramos las centenas: <strong>6</strong>. Como es 5 o más, aumentamos el millar.</span>
+    </div>
+    <p>Si la cifra es de 0 a 4, mantenemos; si es de 5 a 9, aumentamos.</p>
+  </div>
+
+  <figcaption>Para redondear miramos la cifra situada justo a la derecha del orden elegido.</figcaption>
+</figure>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>Queremos aproximar <strong>5.238</strong> a las <strong>centenas</strong>.</li>
+<li>Miramos la cifra de las <strong>decenas</strong>, que es <strong>3</strong>.</li>
+<li>Como <strong>3</strong> está entre 0 y 4, mantenemos la cifra de las centenas.</li>
+<li>El resultado es <strong>5.200</strong>.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.1.1">
+<h3>
+         Actividad 1. Aproxima a las decenas
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          146
+         </li>
+<li>
+          278
+         </li>
+<li>
+          1.934
+         </li>
+<li>
+          5.005
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.1.2">
+<h3>
+         Actividad 2. Aproxima a las centenas
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          1.249
+         </li>
+<li>
+          2.650
+         </li>
+<li>
+          7.844
+         </li>
+<li>
+          9.950
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.1">
+<h3>
+         Actividad 3. Aproxima a los millares
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          2.349
+         </li>
+<li>
+          6.580
+         </li>
+<li>
+          14.150
+         </li>
+<li>
+          29.800
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.2">
+<h3>
+         Actividad 4. Explica el resultado
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          ¿Por qué 234 se aproxima a 200 en centenas?
+         </li>
+<li>
+          ¿Por qué 650 se aproxima a 700 en centenas?
+         </li>
+<li>
+          ¿Qué cifra miras al aproximar 4.489 a decenas?
+         </li>
+<li>
+          ¿Es correcto aproximar 8.601 a 8.000 en millares?
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 6: La recta numérica -->
+<section class="lesson-section" id="sec-6">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.6
+       </span>
+       Ubicamos números en la recta
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p>La <strong>recta numérica</strong> nos ayuda a colocar números en orden y a entender la distancia que hay entre ellos. Si las marcas están igualmente separadas, cada salto representa siempre la <strong>misma cantidad</strong>.</p>
+<p>En una recta podemos contar de <strong>1 en 1</strong>, de <strong>10 en 10</strong> o de <strong>100 en 100</strong>. También nos ayuda a encontrar el <strong>anterior</strong> y el <strong>siguiente</strong> de un número.</p>
+<p>Antes de completar una recta, conviene mirar dos marcas conocidas para averiguar cuánto vale cada salto.</p>
+<figure class="math-visual">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220"
+     role="img" aria-label="A la izquierda, recta numérica de 2300 a 2600 de cien en cien. A la derecha, de 470 a 500 de diez en diez. Las etiquetas están debajo de las rectas, sin superponerse a los saltos.">
+  <!-- Dos rectas independientes: saltos constantes y etiquetas fuera de las líneas. -->
+  <text x="190" y="34" font-size="20" font-weight="800" fill="#005724" text-anchor="middle">Saltos de 100</text>
+  <text x="570" y="34" font-size="20" font-weight="800" fill="#92400e" text-anchor="middle">Saltos de 10</text>
+  <line x1="50" y1="84" x2="337" y2="84" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+  <line x1="425" y1="84" x2="712" y2="84" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#334155" stroke-width="3">
+    <line x1="62" y1="72" x2="62" y2="96"/>
+    <line x1="151" y1="72" x2="151" y2="96"/>
+    <line x1="240" y1="72" x2="240" y2="96"/>
+    <line x1="329" y1="72" x2="329" y2="96"/>
+    <line x1="437" y1="72" x2="437" y2="96"/>
+    <line x1="526" y1="72" x2="526" y2="96"/>
+    <line x1="615" y1="72" x2="615" y2="96"/>
+    <line x1="704" y1="72" x2="704" y2="96"/>
+  </g>
+  <g fill="#1e293b" font-size="17" font-weight="700" text-anchor="middle">
+    <text x="62" y="123">2.300</text><text x="151" y="123">2.400</text>
+    <text x="240" y="123">2.500</text><text x="329" y="123">2.600</text>
+    <text x="437" y="123">470</text><text x="526" y="123">480</text>
+    <text x="615" y="123">490</text><text x="704" y="123">500</text>
+  </g>
+  <!-- Las indicaciones se encuentran en dos bandas inferiores independientes. -->
+  <rect x="87" y="146" width="208" height="36" rx="18" fill="#dcfce7" stroke="#007a33" stroke-width="2"/>
+  <rect x="472" y="146" width="196" height="36" rx="18" fill="#fff7e6" stroke="#d97706" stroke-width="2"/>
+  <text x="191" y="169" font-size="17" fill="#005724" font-weight="800" text-anchor="middle">Cada salto: +100</text>
+  <text x="570" y="169" font-size="17" fill="#92400e" font-weight="800" text-anchor="middle">Cada salto: +10</text>
+  <text x="380" y="208" font-size="17" fill="#475569" font-weight="700" text-anchor="middle">Anterior: restamos 1 · Siguiente: sumamos 1</text>
+</svg>
+  <!-- Rectas simplificadas para móvil: un salto por cada par de marcas. -->
+  <div class="math-mobile-visual">
+    <div class="mobile-line-card">
+      <strong>Saltos de 100</strong>
+      <div class="mobile-line-values"><span>2.300</span><span>2.400</span><span>2.500</span><span>2.600</span></div>
+      <p>Entre dos números seguidos sumamos <strong>100</strong>.</p>
+    </div>
+    <div class="mobile-line-card">
+      <strong>Saltos de 10</strong>
+      <div class="mobile-line-values"><span>470</span><span>480</span><span>490</span><span>500</span></div>
+      <p>Entre dos números seguidos sumamos <strong>10</strong>.</p>
+    </div>
+    <p>Para hallar el anterior restamos 1; para hallar el siguiente sumamos 1.</p>
+  </div>
+
+  <figcaption>En una recta numérica, todas las marcas están a la misma distancia y cada salto tiene el mismo valor.</figcaption>
+</figure>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>En la recta aparecen <strong>1.200</strong> y <strong>1.500</strong> con tres saltos iguales entre medias.</li>
+<li>La diferencia es <strong>300</strong>.</li>
+<li>Si hay tres saltos iguales, cada salto vale <strong>100</strong>.</li>
+<li>Por eso, entre 1.200 y 1.500 colocamos <strong>1.300</strong> y <strong>1.400</strong>.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 1. Escribe anterior y siguiente
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          999
+         </li>
+<li>
+          2.000
+         </li>
+<li>
+          5.099
+         </li>
+<li>
+          10.000
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.2">
+<h3>
+         Actividad 2. Completa saltos de 10
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          120, 130, …, …
+         </li>
+<li>
+          485, 495, …, …
+         </li>
+<li>
+          2.000, 2.010, …, …
+         </li>
+<li>
+          9.970, 9.980, …, …
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.2.2">
+<h3>
+         Actividad 3. Completa saltos de 100
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          450, 550, …, …
+         </li>
+<li>
+          1.000, 1.100, …, …
+         </li>
+<li>
+          3.800, 3.900, …, …
+         </li>
+<li>
+          7.050, 7.150, …, …
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 4. Piensa en la posición
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          ¿Qué hay a mitad entre 200 y 300?
+         </li>
+<li>
+          ¿Qué hay a mitad entre 600 y 800?
+         </li>
+<li>
+          ¿Cuál está más cerca de 1.000: 980 o 900?
+         </li>
+<li>
+          ¿Cuántos saltos de 100 hay de 500 a 900?
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 7: Numeración cotidiana y ordinales -->
+<section class="lesson-section" id="sec-7">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.7
+       </span>
+       Numeración en la vida cotidiana
+      </h2>
+<div class="explanation">
+<h3 class="theory-label">Entendemos el concepto</h3>
+<p>Los números aparecen continuamente a nuestro alrededor, pero no siempre significan lo mismo. A veces expresan una <strong>cantidad</strong>, otras indican una <strong>posición</strong>, un <strong>precio</strong> o sirven como <strong>identificación</strong>.</p>
+<p>Cuando un número expresa cuántos objetos hay, hablamos de <strong>número cardinal</strong>. Cuando indica el lugar que ocupa algo en una clasificación, hablamos de <strong>número ordinal</strong>.</p>
+<p>También hay números que no cuentan ni ordenan, sino que ayudan a reconocer algo: el número de una casa, el dorsal de un jugador, un billete o una matrícula.</p>
+<figure class="math-visual">
+<svg aria-label="Usos cotidianos de los números: cantidad, orden, precio e identificación." role="img" viewbox="0 0 720 230" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#dcfce7" height="150" rx="14" stroke="#007a33" stroke-width="2" width="152" x="30" y="26"></rect>
+<text fill="#005724" font-size="19" font-weight="800" text-anchor="middle" x="106" y="58">Cantidad</text>
+<text fill="#1e293b" font-size="34" font-weight="900" text-anchor="middle" x="106" y="95">18</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="106" y="124">18 libros</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="106" y="146">→ cardinal</text>
+<rect fill="#eef5ff" height="150" rx="14" stroke="#315f9e" stroke-width="2" width="152" x="200" y="26"></rect>
+<text fill="#1d4f91" font-size="19" font-weight="800" text-anchor="middle" x="276" y="58">Posición</text>
+<text fill="#1e293b" font-size="34" font-weight="900" text-anchor="middle" x="276" y="95">3.º</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="276" y="124">tercero en la carrera</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="276" y="146">→ ordinal</text>
+<rect fill="#fff7e6" height="150" rx="14" stroke="#d97706" stroke-width="2" width="152" x="370" y="26"></rect>
+<text fill="#92400e" font-size="19" font-weight="800" text-anchor="middle" x="446" y="58">Precio</text>
+<text fill="#1e293b" font-size="34" font-weight="900" text-anchor="middle" x="446" y="95">12 €</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="446" y="124">12 euros</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="446" y="146">→ cuánto cuesta</text>
+<rect fill="#f3e8ff" height="150" rx="14" stroke="#7c3aed" stroke-width="2" width="152" x="540" y="26"></rect>
+<text fill="#6d28d9" font-size="19" font-weight="800" text-anchor="middle" x="616" y="58">Identificación</text>
+<text fill="#1e293b" font-size="30" font-weight="900" text-anchor="middle" x="616" y="95">24</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="616" y="124">dorsal 24</text>
+<text fill="#475569" font-size="16" text-anchor="middle" x="616" y="146">→ sirve para reconocer</text>
+<text fill="#475569" font-size="18" font-weight="700" text-anchor="middle" x="360" y="210">Para entender un número, fíjate siempre en el contexto.</text>
+</svg>
+</figure>
+  <div class="ordinal-reference" aria-labelledby="titulo-ordinales">
+    <h4 id="titulo-ordinales">Los números ordinales del 1.º al 20.º</h4>
+    <p>Los <strong>ordinales</strong> señalan la posición de una persona o de un objeto. Observa cómo se escriben y cómo se leen:</p>
+    <div class="ordinal-tables">
+  <table class="ordinal-table">
+    <thead><tr><th scope="col">Ordinal</th><th scope="col">Se lee</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">1.º</th><td>primero</td></tr>
+      <tr><th scope="row">2.º</th><td>segundo</td></tr>
+      <tr><th scope="row">3.º</th><td>tercero</td></tr>
+      <tr><th scope="row">4.º</th><td>cuarto</td></tr>
+      <tr><th scope="row">5.º</th><td>quinto</td></tr>
+      <tr><th scope="row">6.º</th><td>sexto</td></tr>
+      <tr><th scope="row">7.º</th><td>séptimo</td></tr>
+      <tr><th scope="row">8.º</th><td>octavo</td></tr>
+      <tr><th scope="row">9.º</th><td>noveno</td></tr>
+      <tr><th scope="row">10.º</th><td>décimo</td></tr>
+    </tbody>
+  </table>
+  <table class="ordinal-table">
+    <thead><tr><th scope="col">Ordinal</th><th scope="col">Se lee</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">11.º</th><td>undécimo</td></tr>
+      <tr><th scope="row">12.º</th><td>duodécimo</td></tr>
+      <tr><th scope="row">13.º</th><td>decimotercero</td></tr>
+      <tr><th scope="row">14.º</th><td>decimocuarto</td></tr>
+      <tr><th scope="row">15.º</th><td>decimoquinto</td></tr>
+      <tr><th scope="row">16.º</th><td>decimosexto</td></tr>
+      <tr><th scope="row">17.º</th><td>decimoséptimo</td></tr>
+      <tr><th scope="row">18.º</th><td>decimoctavo</td></tr>
+      <tr><th scope="row">19.º</th><td>decimonoveno</td></tr>
+      <tr><th scope="row">20.º</th><td>vigésimo</td></tr>
+    </tbody>
+  </table>
+    </div>
+    <p class="ordinal-note"><strong>Recuerda:</strong> si hablamos en femenino, cambia la terminación cuando corresponde: 4.ª = <em>cuarta</em>, 12.ª = <em>duodécima</em>, 20.ª = <em>vigésima</em>. En una carrera, 17.º significa <em>decimoséptimo puesto</em>.</p>
+  </div>
+</div>
+<div class="example">
+<strong>Ejemplo resuelto, paso a paso:</strong>
+<ol class="worked-steps">
+<li>Leemos la frase: <em>Lucía llegó en 17.º lugar y compró una botella por 3 €</em>.</li>
+<li>El número <strong>17.º</strong> indica una <strong>posición</strong>: se lee <strong>decimoséptimo</strong>, así que es un <strong>ordinal</strong>.</li>
+<li>El número <strong>3</strong> indica un <strong>precio</strong>.</li>
+<li>En el mismo texto, cada número tiene un significado distinto según el contexto.</li>
+</ol>
+</div>
+<div class="activity-grid">
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 1. Indica si expresa cantidad, orden o identificación
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          Hay 28 alumnos
+         </li>
+<li>
+          Llegó en 15.º lugar
+         </li>
+<li>
+          El autobús es el 214
+         </li>
+<li>
+          La biblioteca tiene 1.280 libros
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 2. Escribe ordinales con letras
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          6.º
+         </li>
+<li>
+          11.º
+         </li>
+<li>
+          17.º
+         </li>
+<li>
+          20.º
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.6.1">
+<h3>
+         Actividad 3. Escribe ordinales con cifras
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          Quinto
+         </li>
+<li>
+          Duodécima
+         </li>
+<li>
+          Decimoquinto
+         </li>
+<li>
+          Vigésima
+         </li>
+</ol>
+</article>
+<article class="exercise-card" data-criterio="MAT.3.5.2">
+<h3>
+         Actividad 4. Interpreta los números
+        </h3>
+<ol class="subquestions" type="a">
+<li>
+          En una clase hay 26 niños: ¿cardinal u ordinal?
+         </li>
+<li>
+          Una receta está en la página 9: ¿qué indica?
+         </li>
+<li>
+          Una atleta llega la 16.ª: escribe su posición con palabras
+         </li>
+<li>
+          Una entrada tiene el código 0318: ¿es cantidad o identificador?
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+<section class="lesson-section" id="sec-8">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        1.8
+       </span>
+       Problemas y desafíos
+      </h2>
+<h3 class="problem-subtitle">
+       Parte A. Problemas contextualizados
+      </h3>
+<p>
+       Lee cada situación, subraya los datos útiles y decide qué estrategia necesitas. Escribe las operaciones y responde con una frase completa.
+      </p>
+<div class="problem-grid">
+<article class="problem-card" data-criterio="MAT.3.1.1">
+<h4>
+         Problema 1. Libros por estantería
+        </h4>
+<p>
+         Una estantería tiene 2.340 libros y otra 2.430. ¿Cuál tiene más y cuántos libros de diferencia hay?
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.2.1">
+<h4>
+         Problema 2. Entradas numeradas
+        </h4>
+<p>
+         El colegio vende entradas con los números 1.205, 1.250, 1.025 y 1.502. Ordénalas de menor a mayor.
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.2.2">
+<h4>
+         Problema 3. Población de dos pueblos
+        </h4>
+<p>
+         Un pueblo tiene 8.605 habitantes y otro 8.560. ¿Cuál es mayor? Explica qué cifra has comparado.
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.6.2">
+<h4>
+         Problema 4. La etiqueta equivocada
+        </h4>
+<p>
+         Un cartel indica 24.506 y otro dice «veinticuatro mil cincuenta y seis». ¿Representan la misma cantidad?
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.1.1">
+<h4>
+         Problema 5. Material de clase
+        </h4>
+<p>
+         Una escuela recibe 3.000 hojas, 400 fichas y 25 pegatinas. Escribe la cantidad total en cifra y letras.
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.2.1">
+<h4>
+         Problema 6. El número de la entrada
+        </h4>
+<p>
+         En una entrada aparece 17.043. ¿Cuánto vale la cifra 7? ¿Qué posición ocupa el 4?
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.2.2">
+<h4>
+         Problema 7. Aproximamos visitantes
+        </h4>
+<p>
+         Un museo recibió 3.482 visitas. Aproxima esa cantidad a las centenas y explica cómo lo has hecho.
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.6.2">
+<h4>
+         Problema 8. Puntos de un torneo
+        </h4>
+<p>
+         El equipo A tiene 9.975 puntos y el B, 10.025. ¿Cuál va primero? ¿Cuánto falta al A para llegar a 10.000?
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.1.1">
+<h4>
+         Problema 9. Viaje en autobús
+        </h4>
+<p>
+         En una línea de tiempo se marcan 2.100, 2.200, 2.300 y 2.400. ¿Dónde situarías 2.250?
+        </p>
+</article>
+<article class="problem-card" data-criterio="MAT.3.2.1">
+<h4>
+         Problema 10. El podium
+        </h4>
+<p>
+         En una carrera Paula llega 12.ª y su hermano 15.º. ¿Cuántas posiciones los separan y qué significa cada ordinal?
+        </p>
+</article>
+</div>
+<h3 class="problem-subtitle challenge-subtitle">
+       Parte B. Desafíos matemáticos integrados
+      </h3>
+<p>
+       Utiliza lo aprendido en situaciones de la vida real. Sigue las instrucciones y comparte tus conclusiones de forma respetuosa.
+      </p>
+<div class="challenge-list">
+<article class="challenge-card" data-criterio="MAT.3.8.2">
+<h4>
+         Desafío 1. El censo de la clase
+        </h4>
+<p>
+         Diseñad un cartel numérico del colegio: bibliotecas, alumnado, libros y visitas. Los números pueden ser datos simulados claramente identificados.
+        </p>
+<ol>
+<li>
+          Elegid cuatro cifras de hasta cinco dígitos y escribidlas con palabras.
+         </li>
+<li>
+          Ordenadlas y representad dos en una recta numérica.
+         </li>
+<li>
+          Mostrad una descomposición y explicad la aproximación de otra cifra.
+         </li>
+<li>
+          Repartid tareas de escritura, cálculo y revisión y presentad el cartel.
+         </li>
+</ol>
+</article>
+<article class="challenge-card" data-criterio="MAT.3.3.2">
+<h4>
+         Desafío 2. Somos reporteros de cifras
+        </h4>
+<p>
+         Preparad una pequeña noticia con datos numéricos de un evento escolar ficticio.
+        </p>
+<ol>
+<li>
+          Formulad dos preguntas que puedan resolverse con las cifras.
+         </li>
+<li>
+          Descomponed un número de la noticia.
+         </li>
+<li>
+          Explicad en voz alta qué representa cada cantidad.
+         </li>
+</ol>
+</article>
+<article class="challenge-card" data-criterio="MAT.3.8.1">
+<h4>
+         Desafío 3. El número misterioso
+        </h4>
+<p>
+         Inventad un acertijo con pistas de valor posicional.
+        </p>
+<ol>
+<li>
+          Escribid cuatro pistas claras sin decir el número.
+         </li>
+<li>
+          Intercambiad las pistas con otro equipo y escuchad sus dudas.
+         </li>
+<li>
+          Comprobad la solución y corregid una pista si hacía falta.
+         </li>
+</ol>
+</article>
+</div>
+</section>
+<!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+<section class="lesson-section" id="sec-repaso">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        ↺
+       </span>
+       Repasamos lo aprendido
+      </h2>
+<p>
+       Dos fichas completas: una para afianzar y otra para seguir pensando. Cada actividad tiene cuatro apartados.
+      </p>
+<div class="review-group">
+<h3>
+        Ficha de refuerzo
+       </h3>
+<div class="review-grid">
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Refuerzo 1.1 · Lectura y escritura hasta 99.999
+         </span>
+<p>
+<strong>
+           Escribe con letras
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           2.105
+          </li>
+<li>
+           9.302
+          </li>
+<li>
+           13.007
+          </li>
+<li>
+           40.210
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Refuerzo 1.2 · El valor de cada cifra
+         </span>
+<p>
+<strong>
+           Repasa el valor posicional
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           ¿Cuánto vale el 6 de 6.123?
+          </li>
+<li>
+           ¿Cuánto vale el 6 de 26.145?
+          </li>
+<li>
+           ¿Cuánto vale el 6 de 3.608?
+          </li>
+<li>
+           ¿Cuánto vale el 6 de 5.260?
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.2.2">
+<span class="review-tag">
+          Refuerzo 1.3 · Componemos y descomponemos
+         </span>
+<p>
+<strong>
+           Descompón usando DM, UM, C, D o U
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           6.240
+          </li>
+<li>
+           9.003
+          </li>
+<li>
+           1.590
+          </li>
+<li>
+           42.305
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.2.1">
+<span class="review-tag">
+          Refuerzo 1.4 · Comparamos y ordenamos números
+         </span>
+<p>
+<strong>
+           Repasa las comparaciones
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           6.090 … 6.900
+          </li>
+<li>
+           12.345 … 12.354
+          </li>
+<li>
+           70.001 … 69.999
+          </li>
+<li>
+           3.030 … 3.030
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Refuerzo 1.5 · Aproximamos cantidades
+         </span>
+<p>
+<strong>
+           Repasa las aproximaciones
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Redondea 367 a decenas
+          </li>
+<li>
+           Redondea 1.446 a centenas
+          </li>
+<li>
+           Redondea 2.550 a millares
+          </li>
+<li>
+           Redondea 4.032 a decenas
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Refuerzo 1.6 · Ubicamos números en la recta
+         </span>
+<p>
+<strong>
+           Repasa saltos regulares
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Anterior de 1.000
+          </li>
+<li>
+           Siguiente de 1.999
+          </li>
+<li>
+           380, 390, …, …
+          </li>
+<li>
+           2.300, 2.400, …, …
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Refuerzo 1.7 · Numeración en la vida cotidiana
+         </span>
+<p>
+<strong>
+           Repasa ordinales y cardinales
+          </strong>
+</p>
+<p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Escribe 14.º con letras
+          </li>
+<li>
+           Escribe 12.ª con letras
+          </li>
+<li>
+           ¿Es ordinal el número de una calle? Explica
+          </li>
+<li>
+           Escribe 20.º con letras
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.5.1">
+<span class="review-tag">
+          Refuerzo 1.8 · Síntesis final
+         </span>
+<p>
+<strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+</p>
+<p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Escribe con letras 24.105.
+          </li>
+<li>
+           Indica el valor del 3 de 13.260.
+          </li>
+<li>
+           Ordena 3.840, 3.408 y 3.804.
+          </li>
+<li>
+           Aproxima 4.582 a centenas.
+          </li>
+</ol>
+</article>
+</div>
+</div>
+<div class="review-group review-ampliacion">
+<h3>
+        Ficha de ampliación
+       </h3>
+<div class="review-grid">
+<article class="review-card" data-criterio="MAT.3.6.1">
+<span class="review-tag">
+          Ampliación 1.1 · Lectura y escritura hasta 99.999
+         </span>
+<p>
+<strong>
+           Escribe números desde textos
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Noventa y cinco mil cuarenta
+          </li>
+<li>
+           Sesenta mil seis
+          </li>
+<li>
+           Cuarenta y tres mil setecientos nueve
+          </li>
+<li>
+           Veintiocho mil ocho
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Ampliación 1.2 · El valor de cada cifra
+         </span>
+<p>
+<strong>
+           Razona con cambios de posición
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           ¿Qué ocurre al mover el 3 de las U a las D?
+          </li>
+<li>
+           ¿Qué cifra de 53.218 vale 3.000?
+          </li>
+<li>
+           Escribe un número con 7 DM y 4 U
+          </li>
+<li>
+           ¿Cuántas centenas caben en 2 UM?
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Ampliación 1.3 · Componemos y descomponemos
+         </span>
+<p>
+<strong>
+           Investiga distintas composiciones
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Forma 8.240 con cuatro sumandos
+          </li>
+<li>
+           Forma 20.605 sin escribir el 0
+          </li>
+<li>
+           Descompón 70.070 de dos formas
+          </li>
+<li>
+           Explica por qué 5.000 + 30 no es 5.300
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.6.2">
+<span class="review-tag">
+          Ampliación 1.4 · Comparamos y ordenamos números
+         </span>
+<p>
+<strong>
+           Justifica una ordenación
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Sitúa 8.999, 9.001 y 9.000 en orden
+          </li>
+<li>
+           Crea cuatro números con 3, 2, 1 y 0
+          </li>
+<li>
+           Explica por qué 30.010 &gt; 29.999
+          </li>
+<li>
+           Corrige: 45.600 &lt; 45.060
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.1">
+<span class="review-tag">
+          Ampliación 1.5 · Aproximamos cantidades
+         </span>
+<p>
+<strong>
+           Razona entre dos extremos
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Busca un número que redondee a 3.000 en millares
+          </li>
+<li>
+           Busca uno que redondee a 450 en decenas
+          </li>
+<li>
+           Explica por qué 2.499 no redondea a 3.000 en millares
+          </li>
+<li>
+           Una clase tiene 248 libros: aproxima a centenas y valora si es exacto
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.1.2">
+<span class="review-tag">
+          Ampliación 1.6 · Ubicamos números en la recta
+         </span>
+<p>
+<strong>
+           Construye tu propia recta
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Traza 5 marcas desde 1.200 con saltos de 200
+          </li>
+<li>
+           Sitúa 2.250 entre 2.000 y 2.500
+          </li>
+<li>
+           Explica dónde pondrías 1.475 entre 1.400 y 1.500
+          </li>
+<li>
+           Inventa una recta con 4 marcas y una marca vacía
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.3.2">
+<span class="review-tag">
+          Ampliación 1.7 · Numeración en la vida cotidiana
+         </span>
+<p>
+<strong>
+           Inventa y comunica
+          </strong>
+</p>
+<p class="hint">
+          Razona tus decisiones y explica cómo has comprobado la respuesta.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Crea una clasificación del 9.º al 14.º puesto
+          </li>
+<li>
+           Explica un caso donde 18 sea cantidad y otro donde 18.º indique un orden
+          </li>
+<li>
+           Redacta una noticia con el ordinal 19.º y un cardinal
+          </li>
+<li>
+           Explica por qué el número de dorsal no equivale al puesto
+          </li>
+</ol>
+</article>
+<article class="review-card" data-criterio="MAT.3.5.1">
+<span class="review-tag">
+          Ampliación 1.8 · Síntesis final
+         </span>
+<p>
+<strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+</p>
+<p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+<ol class="subquestions" type="a">
+<li>
+           Inventa un número de cinco cifras con dos ceros.
+          </li>
+<li>
+           Descomponlo de dos formas distintas.
+          </li>
+<li>
+           Compáralo con el que resulta al intercambiar centenas y decenas.
+          </li>
+<li>
+           Explica cómo lo aproximarías a millares.
+          </li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+<!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+<section class="lesson-section" id="sec-diana">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        🎯
+       </span>
+       Diana de Autoevaluación Interactiva
+      </h2>
+<p>
+       Piensa en cómo has aprendido. Elige en cada fila la respuesta que mejor te describe; puedes cambiarla cuando quieras.
+      </p>
+<div class="diana-list">
+<div class="diana-row">
+<p>
+<strong>
+          1.1
+         </strong>
+         Leo y escribo números de cinco cifras.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.1" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.2
+         </strong>
+         Identifico el valor que tiene cada cifra.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.2" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.3
+         </strong>
+         Descompongo y compongo números sin cambiar su valor.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.3" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.4
+         </strong>
+         Comparo y ordeno números y explico mi decisión.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.4" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.5
+         </strong>
+         Aproximo números y explico la cifra que he observado.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.5" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.6
+         </strong>
+         Sitúo números en una recta y descubro el tamaño de cada salto.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.6" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.7
+         </strong>
+         Distingo cardinales y ordinales, y leo ordinales hasta el 20.º.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.7" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+<div class="diana-row">
+<p>
+<strong>
+          1.8
+         </strong>
+         Entiendo los problemas, busco soluciones y sé explicar mis decisiones.
+        </p>
+<div aria-label="Autoevaluación del apartado 1.8" class="diana-options" role="group">
+<button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+<button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+</div>
+</div>
+</div>
+<div class="button-row">
+<button class="action-button secondary" id="reset-diana" type="button">
+        Borrar mi autoevaluación
+       </button>
+</div>
+</section>
+<!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+<section class="lesson-section" id="sec-comprueba">
+<h2 class="lesson-section-heading">
+<span class="section-number">
+        ✓
+       </span>
+       Comprueba lo aprendido
+      </h2>
+<p>
+       Marca una respuesta por pregunta y pulsa
+       <strong>
+        Comprobar respuestas
+       </strong>
+       . Puedes repetir el cuestionario para seguir aprendiendo.
+      </p>
+<form id="mat3-quiz" novalidate="">
+<fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.6.1">
+<legend>
+         1. ¿Cómo se escribe «doce mil cuarenta»?
+        </legend>
+<label>
+<input name="q1" type="radio" value="a"/>
+         12.040
+        </label>
+<label>
+<input name="q1" type="radio" value="b"/>
+         12.400
+        </label>
+<label>
+<input name="q1" type="radio" value="c"/>
+         1.240
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.1.2">
+<legend>
+         2. ¿Qué valor tiene el 7 de 7.235?
+        </legend>
+<label>
+<input name="q2" type="radio" value="a"/>
+         70
+        </label>
+<label>
+<input name="q2" type="radio" value="b"/>
+         7.000
+        </label>
+<label>
+<input name="q2" type="radio" value="c"/>
+         700
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.2.2">
+<legend>
+         3. 3.408 se descompone como…
+        </legend>
+<label>
+<input name="q3" type="radio" value="a"/>
+         3.000 + 400 + 8
+        </label>
+<label>
+<input name="q3" type="radio" value="b"/>
+         3.000 + 40 + 8
+        </label>
+<label>
+<input name="q3" type="radio" value="c"/>
+         300 + 400 + 8
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.1">
+<legend>
+         4. ¿Qué número es mayor?
+        </legend>
+<label>
+<input name="q4" type="radio" value="a"/>
+         12.304
+        </label>
+<label>
+<input name="q4" type="radio" value="b"/>
+         12.430
+        </label>
+<label>
+<input name="q4" type="radio" value="c"/>
+         12.034
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.5.1">
+<legend>
+         5. 2.648 redondeado a centenas es…
+        </legend>
+<label>
+<input name="q5" type="radio" value="a"/>
+         2.600
+        </label>
+<label>
+<input name="q5" type="radio" value="b"/>
+         2.700
+        </label>
+<label>
+<input name="q5" type="radio" value="c"/>
+         2.650
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.6.2">
+<legend>
+         6. ¿Cuál sigue a 9.999?
+        </legend>
+<label>
+<input name="q6" type="radio" value="a"/>
+         9.998
+        </label>
+<label>
+<input name="q6" type="radio" value="b"/>
+         10.000
+        </label>
+<label>
+<input name="q6" type="radio" value="c"/>
+         9.100
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="c" data-criterio="MAT.3.5.2">
+<legend>
+         7. ¿Qué número aparece entre 500 y 700 si damos saltos de 100?
+        </legend>
+<label>
+<input name="q7" type="radio" value="a"/>
+         550
+        </label>
+<label>
+<input name="q7" type="radio" value="b"/>
+         650
+        </label>
+<label>
+<input name="q7" type="radio" value="c"/>
+         600
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.2">
+<legend>
+         8. El ordinal 17.º se lee…
+        </legend>
+<label>
+<input name="q8" type="radio" value="a"/>
+         diecisiete
+        </label>
+<label>
+<input name="q8" type="radio" value="b"/>
+         decimoséptimo
+        </label>
+<label>
+<input name="q8" type="radio" value="c"/>
+         séptimo
+        </label>
+<p aria-live="polite" class="feedback">
+</p>
+</fieldset>
+<div class="button-row">
+<button class="action-button" type="submit">
+         Comprobar respuestas
+        </button>
+<button class="action-button secondary" type="reset">
+         Volver a empezar
+        </button>
+</div>
+<p aria-live="polite" class="quiz-result" hidden="" id="quiz-result" role="status">
+</p>
+</form>
+</section>
+</div>
+<nav aria-label="Navegación final" class="lesson-footer">
+<a href="/recursos/tercero/matematicas3/">
+      ← Volver a Matemáticas de 3.º
+     </a>
+<a href="#contenido-principal">
+      ↑ Subir al inicio
+     </a>
+</nav>
+</div>
+</main>
+<footer class="site-footer">
+<p>
+    CEIP Joaquín Tena Artigas · Alcolea (Córdoba)
+   </p>
+</footer>
+<script>
+   "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat3-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>
