@@ -1,0 +1,3428 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Situaci&oacute;n de aprendizaje MAT3.2. Suma y resta. Explicaciones, gr&aacute;ficos, actividades, problemas, repaso y evaluaci&oacute;n. Matem&aacute;ticas de 3.&ordm; de Primaria." name="description"/>
+  <title>
+   MAT3.2 &middot; Suma y resta | CEIP Joaqu&iacute;n Tena Artigas
+  </title>
+  <link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+  <link href="/css/base.css" rel="stylesheet"/>
+  <!--
+    MAT4.4: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.A.2.4, MAT.2.A.2.5, MAT.2.A.3.1, MAT.2.A.5.1, MAT.2.D.1.1.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+   :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  
+
+    /* Ajustes específicos de 3.º: iconografía nativa y apoyo a la lectura. */
+    .topic-page .math-visual { max-width: 100%; }
+    .topic-page .math-visual svg { width: 100%; max-height: 230px; }
+    .topic-page .explanation p { max-width: 90ch; }
+    .topic-page .worked-steps li { padding-left: .15rem; }
+    .topic-page .subquestions li { padding-left: .16rem; }
+    .topic-page .lesson-section-heading { text-align: left; }
+    @media (max-width: 640px) {
+      .topic-page .math-visual svg text { font-family: system-ui, sans-serif; }
+      .topic-page .math-visual figcaption { font-size: .78rem; }
+    }
+  </style>
+ </head>
+ <body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">
+   Ir al contenido principal
+  </a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+   <a aria-label="Ir a la p&aacute;gina de inicio" href="/">
+    <img alt="CEIP Joaqu&iacute;n Tena Artigas - Alcolea, C&oacute;rdoba" class="banner-image" src="/img/banner-principal.png"/>
+   </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+   <div class="navigation-container">
+    <a aria-label="Ir al inicio" class="navigation-logo" href="/">
+     <img alt="" src="/img/logo-centro.png"/>
+    </a>
+    <button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir men&uacute; de navegaci&oacute;n" class="menu-toggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav aria-label="Navegaci&oacute;n principal" class="main-navigation" id="main-navigation">
+     <ul>
+      <li class="nav-green">
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li class="nav-yellow">
+       <a href="/familias/">
+        Familias
+       </a>
+      </li>
+      <li class="nav-blue">
+       <a aria-current="page" href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li class="nav-red">
+       <a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+        <span aria-hidden="true">
+         🔒
+        </span>
+        &Aacute;rea privada Profesorado
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <main class="topic-page" id="contenido-principal">
+   <div class="topic-shell">
+    <nav aria-label="Migas de pan" class="breadcrumbs">
+     <ol>
+      <li>
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/">
+        3.&ordm; de Primaria
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/matematicas3/">
+        Matem&aacute;ticas
+       </a>
+      </li>
+      <li aria-current="page">
+       SdA 2
+      </li>
+     </ol>
+    </nav>
+    <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+    <section aria-labelledby="titulo-sda" class="topic-hero">
+     <div class="topic-hero-content">
+      <span class="topic-eyebrow">
+       Matem&aacute;ticas &middot; 3.&ordm; de Primaria &middot; SdA 2
+      </span>
+      <h1 id="titulo-sda">
+       Organizamos la biblioteca
+      </h1>
+      <p>
+       Sumamos, restamos y comprobamos c&aacute;lculos para resolver situaciones de la vida escolar.
+      </p>
+      <div aria-label="Qu&eacute; aprenderemos" class="hero-tags">
+       <span>
+        Sumas
+       </span>
+       <span>
+        Restas
+       </span>
+       <span>
+        Estimaci&oacute;n
+       </span>
+      </div>
+     </div>
+     <figure class="media-frame hero-mascot">
+      <img alt="Tomatito, la mascota del colegio, aprendiendo Matem&aacute;ticas" onerror="markImageMissing(this)" src="/img/tomatito/matematicas.png"/>
+      <figcaption class="sr-only">
+       Tomatito nos acompa&ntilde;a en esta situaci&oacute;n de aprendizaje.
+      </figcaption>
+     </figure>
+    </section>
+    <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+    <nav aria-label="Contenidos de la situaci&oacute;n de aprendizaje" class="lesson-nav">
+     <h2 class="lesson-nav-heading">
+      📍 Contenidos de la Situaci&oacute;n de Aprendizaje
+     </h2>
+     <div class="lesson-nav-links">
+      <a href="#sec-1">
+       1.1 Sumar para reunir cantidades
+      </a>
+      <a href="#sec-2">
+       1.2 Sumas con llevadas
+      </a>
+      <a href="#sec-3">
+       1.3 La resta y la diferencia
+      </a>
+      <a href="#sec-4">
+       1.4 Restas con llevadas
+      </a>
+      <a href="#sec-5">
+       1.5 Propiedades y comprobaci&oacute;n
+      </a>
+      <a href="#sec-6">
+       1.6 C&aacute;lculo mental con estrategias
+      </a>
+      <a href="#sec-7">
+       1.7 Estimaciones y problemas de dos pasos
+      </a>
+      <a class="nav-challenge" href="#sec-8">
+       1.8 Problemas y desaf&iacute;os
+      </a>
+      <a class="nav-review" href="#sec-repaso">
+       🔄 Repasamos lo aprendido
+      </a>
+      <a class="nav-selfeval" href="#sec-diana">
+       🎯 Autoevaluaci&oacute;n
+      </a>
+      <a class="nav-quiz" href="#sec-comprueba">
+       &checkmark; Comprueba lo aprendido
+      </a>
+     </div>
+    </nav>
+    <div class="topic-content">
+     <!-- SECCIÓN 1: Partes iguales de una unidad -->
+     <section class="lesson-section" id="sec-1">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.1
+       </span>
+       Sumar para reunir cantidades
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Sumar es reunir cantidades o a&ntilde;adir elementos. En 235 + 142 = 377, los n&uacute;meros 235 y 142 se llaman sumandos y 377 es la suma o resultado.
+       </p>
+       <p>
+        Para sumar en vertical, colocamos unidades debajo de unidades, decenas debajo de decenas y centenas debajo de centenas. Empezamos por la derecha para no mezclar valores.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="37" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="97" y="56">
+          DM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="97" y="99">
+          2
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="168" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="228" y="56">
+          UM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="228" y="99">
+          4
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="299" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="359" y="56">
+          C
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="359" y="99">
+          7
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="430" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="490" y="56">
+          D
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="490" y="99">
+          3
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="561" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="621" y="56">
+          U
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="621" y="99">
+          6
+         </text>
+        </svg>
+        <figcaption>
+         24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Antes de hacer una suma, estima aproximadamente el resultado para detectar errores grandes.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Colocamos 324 + 152 con las unidades alineadas.
+        </li>
+        <li>
+         Unidades: 4 + 2 = 6; decenas: 2 + 5 = 7.
+        </li>
+        <li>
+         Centenas: 3 + 1 = 4. Resultado: 476.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Suma sin llevadas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          234 + 152
+         </li>
+         <li>
+          1.423 + 2.216
+         </li>
+         <li>
+          503 + 274
+         </li>
+         <li>
+          3.121 + 4.658
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Completa el sumando que falta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          120 + &hellip; = 370
+         </li>
+         <li>
+          430 + &hellip; = 650
+         </li>
+         <li>
+          2.100 + &hellip; = 3.400
+         </li>
+         <li>
+          46 + &hellip; = 89
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Resuelve sumas de objetos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          125 libros + 243 libros
+         </li>
+         <li>
+          310 cromos + 145 cromos
+         </li>
+         <li>
+          2.032 hojas + 1.211 hojas
+         </li>
+         <li>
+          406 entradas + 351 entradas
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 4. Encuentra un error
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          245 + 132 = 367
+         </li>
+         <li>
+          540 + 223 = 763
+         </li>
+         <li>
+          1.305 + 202 = 1.507
+         </li>
+         <li>
+          720 + 150 = 870
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 2: Leer y escribir fracciones -->
+     <section class="lesson-section" id="sec-2">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.2
+       </span>
+       Sumas con llevadas
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        A veces, al sumar las unidades obtenemos diez o m&aacute;s. Entonces cambiamos diez unidades por una decena: a eso lo llamamos &laquo;llevar una&raquo;. Tambi&eacute;n puede ocurrir entre decenas y centenas.
+       </p>
+       <p>
+        Escribimos debajo solamente la cifra de la posici&oacute;n y a&ntilde;adimos la decena o centena que se forma a la columna siguiente. Este cambio no a&ntilde;ade cantidad: solo la agrupa de otra manera.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="37" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="97" y="56">
+          DM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="97" y="99">
+          2
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="168" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="228" y="56">
+          UM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="228" y="99">
+          4
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="299" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="359" y="56">
+          C
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="359" y="99">
+          7
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="430" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="490" y="56">
+          D
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="490" y="99">
+          3
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="561" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="621" y="56">
+          U
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="621" y="99">
+          6
+         </text>
+        </svg>
+        <figcaption>
+         24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Puedes comprobar las llevadas con material base diez o descomponiendo los sumandos.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         278 + 156: las unidades son 8 + 6 = 14; escribimos 4 y llevamos 1 decena.
+        </li>
+        <li>
+         Decenas: 7 + 5 + 1 = 13; escribimos 3 y llevamos 1 centena.
+        </li>
+        <li>
+         Centenas: 2 + 1 + 1 = 4. Resultado: 434.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Suma con una llevada
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          247 + 126
+         </li>
+         <li>
+          355 + 218
+         </li>
+         <li>
+          1.256 + 129
+         </li>
+         <li>
+          784 + 105
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Suma con varias llevadas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          586 + 478
+         </li>
+         <li>
+          759 + 685
+         </li>
+         <li>
+          1.879 + 2.486
+         </li>
+         <li>
+          3.695 + 4.758
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 3. Explica d&oacute;nde llevas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          48 + 35
+         </li>
+         <li>
+          179 + 25
+         </li>
+         <li>
+          286 + 157
+         </li>
+         <li>
+          845 + 267
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 4. Comprueba por estimaci&oacute;n
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          689 + 254
+         </li>
+         <li>
+          1.998 + 2.005
+         </li>
+         <li>
+          759 + 486
+         </li>
+         <li>
+          3.546 + 2.829
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 3: Comparamos fracciones sencillas -->
+     <section class="lesson-section" id="sec-3">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.3
+       </span>
+       La resta y la diferencia
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Restar es quitar, comparar o averiguar lo que falta. En 587 &minus; 231 = 356, 587 es el minuendo, 231 el sustraendo y 356 la diferencia.
+       </p>
+       <p>
+        Para restar en vertical colocamos las cifras por &oacute;rdenes como en la suma. Cuando la cifra de arriba es suficiente, restamos directamente cada columna, de derecha a izquierda.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="37" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="97" y="56">
+          DM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="97" y="99">
+          2
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="168" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="228" y="56">
+          UM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="228" y="99">
+          4
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="299" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="359" y="56">
+          C
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="359" y="99">
+          7
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="430" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="490" y="56">
+          D
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="490" y="99">
+          3
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="561" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="621" y="56">
+          U
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="621" y="99">
+          6
+         </text>
+        </svg>
+        <figcaption>
+         24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        La diferencia tambi&eacute;n responde preguntas como &laquo;&iquest;cu&aacute;ntos m&aacute;s?&raquo; o &laquo;&iquest;cu&aacute;ntos quedan?&raquo;.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Tenemos 675 libros y retiramos 243.
+        </li>
+        <li>
+         Restamos unidades: 5 &minus; 3 = 2; decenas: 7 &minus; 4 = 3.
+        </li>
+        <li>
+         Centenas: 6 &minus; 2 = 4. Quedan 432 libros.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Resta sin llevadas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          756 &minus; 234
+         </li>
+         <li>
+          9.876 &minus; 4.321
+         </li>
+         <li>
+          648 &minus; 326
+         </li>
+         <li>
+          5.700 &minus; 2.400
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Encuentra lo que falta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          600 &minus; &hellip; = 250
+         </li>
+         <li>
+          980 &minus; &hellip; = 450
+         </li>
+         <li>
+          750 &minus; &hellip; = 500
+         </li>
+         <li>
+          4.400 &minus; &hellip; = 2.100
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.1">
+        <h3>
+         Actividad 3. Compara cantidades
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          568 frente a 234: diferencia
+         </li>
+         <li>
+          1.950 frente a 1.200: diferencia
+         </li>
+         <li>
+          830 frente a 410: diferencia
+         </li>
+         <li>
+          2.760 frente a 1.540: diferencia
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 4. Relaciona suma y resta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          356 + 242 y 598 &minus; 242
+         </li>
+         <li>
+          470 + 120 y 590 &minus; 120
+         </li>
+         <li>
+          800 &minus; 300 y 500 + 300
+         </li>
+         <li>
+          1.200 &minus; 400 y 800 + 400
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 4: Fracción de una cantidad -->
+     <section class="lesson-section" id="sec-4">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.4
+       </span>
+       Restas con llevadas
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Cuando las unidades de arriba son menores que las de abajo, podemos cambiar una decena por diez unidades. Si faltan decenas, cambiamos una centena por diez decenas, y as&iacute; sucesivamente.
+       </p>
+       <p>
+        Debemos recordar que, al cambiar una decena, en la columna de decenas queda una menos. El valor total del minuendo no cambia: solo usamos otra forma de agruparlo.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="37" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="97" y="56">
+          DM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="97" y="99">
+          2
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="168" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="228" y="56">
+          UM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="228" y="99">
+          4
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="299" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="359" y="56">
+          C
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="359" y="99">
+          7
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="430" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="490" y="56">
+          D
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="490" y="99">
+          3
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="561" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="621" y="56">
+          U
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="621" y="99">
+          6
+         </text>
+        </svg>
+        <figcaption>
+         24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Con ceros intermedios, busca a la izquierda una columna que tenga unidades que se puedan cambiar.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Calculamos 402 &minus; 185. En las unidades no podemos hacer 2 &minus; 5: cambiamos una centena en decenas y una de esas decenas en 10 unidades.
+        </li>
+        <li>
+         Quedan 3 centenas, 9 decenas y 12 unidades.
+        </li>
+        <li>
+         12 &minus; 5 = 7; 9 &minus; 8 = 1; 3 &minus; 1 = 2. Resultado: 217.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Resta con una llevada
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          542 &minus; 217
+         </li>
+         <li>
+          631 &minus; 215
+         </li>
+         <li>
+          873 &minus; 648
+         </li>
+         <li>
+          2.465 &minus; 1.127
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Resta con ceros
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          400 &minus; 178
+         </li>
+         <li>
+          1.003 &minus; 457
+         </li>
+         <li>
+          2.000 &minus; 658
+         </li>
+         <li>
+          5.040 &minus; 1.875
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Comprueba sumando
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          786 &minus; 359
+         </li>
+         <li>
+          902 &minus; 476
+         </li>
+         <li>
+          2.345 &minus; 678
+         </li>
+         <li>
+          5.100 &minus; 2.957
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 4. Detecta los fallos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          304 &minus; 198 = 206
+         </li>
+         <li>
+          700 &minus; 250 = 550
+         </li>
+         <li>
+          615 &minus; 287 = 338
+         </li>
+         <li>
+          1.000 &minus; 999 = 11
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 5: Fracciones equivalentes y unidad completa -->
+     <section class="lesson-section" id="sec-5">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.5
+       </span>
+       Propiedades y comprobaci&oacute;n
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        En la suma podemos cambiar el orden de los sumandos y el resultado es igual: 23 + 15 = 15 + 23. Es la propiedad conmutativa. Tambi&eacute;n podemos agrupar tres sumandos de distintas formas: (10 + 5) + 2 = 10 + (5 + 2).
+       </p>
+       <p>
+        La resta NO es conmutativa: 15 &minus; 7 no es igual a 7 &minus; 15. Para comprobar una resta sumamos diferencia y sustraendo: si recuperamos el minuendo, el c&aacute;lculo es correcto.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Tres grupos iguales de cuatro puntos: tres por cuatro es doce." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="120" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="360" y="178">
+          3 filas de 4 puntos: 3 &times; 4 = 12
+         </text>
+        </svg>
+        <figcaption>
+         Tres grupos iguales de cuatro puntos: tres por cuatro es doce.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Si est&aacute;s revisando una resta, escribe siempre la suma de comprobaci&oacute;n al lado.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Ejemplo: 704 &minus; 268 = 436.
+        </li>
+        <li>
+         Comprobamos: 436 + 268 = 704.
+        </li>
+        <li>
+         Como recuperamos el n&uacute;mero inicial, la resta es correcta.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 1. Aplica la conmutativa de la suma
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          18 + 42
+         </li>
+         <li>
+          135 + 264
+         </li>
+         <li>
+          2.015 + 310
+         </li>
+         <li>
+          6 + 94
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 2. Agrupa para sumar mejor
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          (25 + 75) + 18
+         </li>
+         <li>
+          40 + (60 + 13)
+         </li>
+         <li>
+          (5 + 35) + 20
+         </li>
+         <li>
+          120 + (80 + 16)
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Comprueba las restas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          540 &minus; 125 = 415
+         </li>
+         <li>
+          801 &minus; 299 = 502
+         </li>
+         <li>
+          1.090 &minus; 478 = 612
+         </li>
+         <li>
+          900 &minus; 670 = 230
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 4. Verdadero o falso; explica
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          75 + 50 = 50 + 75
+         </li>
+         <li>
+          90 &minus; 30 = 30 &minus; 90
+         </li>
+         <li>
+          (3 + 7) + 5 = 3 + (7 + 5)
+         </li>
+         <li>
+          200 &minus; 125 + 125 = 200
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 6: Euros y céntimos -->
+     <section class="lesson-section" id="sec-6">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.6
+       </span>
+       C&aacute;lculo mental con estrategias
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Calcular mentalmente no significa hacerlo todo de memoria. Podemos descomponer (38 + 20 = 58), compensar (49 + 21 = 50 + 20) o completar decenas y centenas (97 + 3 = 100).
+       </p>
+       <p>
+        Para restar, a veces conviene contar lo que falta: de 198 a 200 faltan 2 y de 200 a 250 faltan 50; por tanto, 250 &minus; 198 = 52.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Recta num&eacute;rica: 250 est&aacute; entre 200 y 300, justo en el punto medio." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <line stroke="#007a33" stroke-width="3" x1="60" x2="665" y1="110" y2="110">
+         </line>
+         <polygon fill="#007a33" points="665,110 651,102 651,118">
+         </polygon>
+         <line stroke="#007a33" stroke-width="3" x1="70" x2="70" y1="99" y2="122">
+         </line>
+         <text fill="#1e293b" font-size="19" font-weight="650" text-anchor="middle" x="70" y="151">
+          100
+         </text>
+         <line stroke="#007a33" stroke-width="3" x1="184" x2="184" y1="99" y2="122">
+         </line>
+         <text fill="#1e293b" font-size="19" font-weight="650" text-anchor="middle" x="184" y="151">
+          200
+         </text>
+         <line stroke="#007a33" stroke-width="3" x1="298" x2="298" y1="99" y2="122">
+         </line>
+         <text fill="#1e293b" font-size="19" font-weight="650" text-anchor="middle" x="298" y="151">
+          300
+         </text>
+         <line stroke="#007a33" stroke-width="3" x1="412" x2="412" y1="99" y2="122">
+         </line>
+         <text fill="#1e293b" font-size="19" font-weight="650" text-anchor="middle" x="412" y="151">
+          400
+         </text>
+         <line stroke="#007a33" stroke-width="3" x1="526" x2="526" y1="99" y2="122">
+         </line>
+         <text fill="#1e293b" font-size="19" font-weight="650" text-anchor="middle" x="526" y="151">
+          500
+         </text>
+         <line stroke="#007a33" stroke-width="3" x1="640" x2="640" y1="99" y2="122">
+         </line>
+         <text fill="#1e293b" font-size="19" font-weight="650" text-anchor="middle" x="640" y="151">
+          600
+         </text>
+         <rect fill="#fff7e6" height="43" rx="10" stroke="#d97706" stroke-width="2" width="120" x="184" y="21">
+         </rect>
+         <text fill="#9a5b08" font-size="24" font-weight="650" text-anchor="middle" x="244" y="49">
+          250
+         </text>
+         <line stroke="#d97706" stroke-width="2" x1="244" x2="244" y1="67" y2="100">
+         </line>
+        </svg>
+        <figcaption>
+         Recta num&eacute;rica: 250 est&aacute; entre 200 y 300, justo en el punto medio.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Elige la estrategia que haga m&aacute;s sencilla cada cuenta. No siempre hay un &uacute;nico camino correcto.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Calculamos 59 + 36.
+        </li>
+        <li>
+         Pasamos 1 unidad del 36 al 59: 60 + 35.
+        </li>
+        <li>
+         El resultado es 95.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Completa a la decena
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          38 + 2
+         </li>
+         <li>
+          67 + 3
+         </li>
+         <li>
+          124 + 6
+         </li>
+         <li>
+          295 + 5
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Calcula con decenas completas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          240 + 30
+         </li>
+         <li>
+          560 &minus; 40
+         </li>
+         <li>
+          1.200 + 300
+         </li>
+         <li>
+          800 &minus; 250
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Compensa en una suma
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          49 + 31
+         </li>
+         <li>
+          98 + 47
+         </li>
+         <li>
+          199 + 26
+         </li>
+         <li>
+          75 + 29
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 4. Cuenta lo que falta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          De 87 a 100
+         </li>
+         <li>
+          De 175 a 200
+         </li>
+         <li>
+          De 490 a 500
+         </li>
+         <li>
+          De 970 a 1.000
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 7: Compramos con un presupuesto -->
+     <section class="lesson-section" id="sec-7">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.7
+       </span>
+       Estimaciones y problemas de dos pasos
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Antes de calcular, podemos estimar cu&aacute;nto ser&aacute; la suma o la resta redondeando a decenas o centenas. Despu&eacute;s hacemos la operaci&oacute;n exacta y comparamos ambos resultados.
+       </p>
+       <p>
+        En algunos problemas hay que realizar dos operaciones seguidas. Conviene separar la informaci&oacute;n: &iquest;qu&eacute; sabemos?, &iquest;qu&eacute; nos preguntan?, &iquest;qu&eacute; operaci&oacute;n haremos primero? y &iquest;c&oacute;mo comprobaremos?
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Para aproximar a centenas se miran las decenas; 2.648 se aproxima a 2.600." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <text fill="#005724" font-size="23" font-weight="650" text-anchor="middle" x="360" y="30">
+          Aproximamos 2.648 a la centena
+         </text>
+         <rect fill="#e6f4ea" height="60" rx="8" stroke="#007a33" stroke-width="2" width="156" x="87" y="58">
+         </rect>
+         <text fill="#1e293b" font-size="25" font-weight="650" text-anchor="middle" x="165" y="95">
+          2.600
+         </text>
+         <rect fill="#fff7e6" height="60" rx="8" stroke="#007a33" stroke-width="2" width="156" x="281" y="58">
+         </rect>
+         <text fill="#1e293b" font-size="25" font-weight="650" text-anchor="middle" x="359" y="95">
+          2.650
+         </text>
+         <rect fill="#e6f4ea" height="60" rx="8" stroke="#007a33" stroke-width="2" width="156" x="475" y="58">
+         </rect>
+         <text fill="#1e293b" font-size="25" font-weight="650" text-anchor="middle" x="553" y="95">
+          2.700
+         </text>
+         <text fill="#9a5b08" font-size="18" font-weight="650" text-anchor="middle" x="360" y="158">
+          Como 48 &lt; 50, se aproxima a 2.600.
+         </text>
+        </svg>
+        <figcaption>
+         Para aproximar a centenas se miran las decenas; 2.648 se aproxima a 2.600.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Una estimaci&oacute;n orienta y permite detectar errores, pero si piden una respuesta exacta debemos calcularla.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         En la biblioteca hab&iacute;a 480 libros, llegaron 125 y se prestaron 78.
+        </li>
+        <li>
+         Primero sumamos 480 + 125 = 605.
+        </li>
+        <li>
+         Despu&eacute;s restamos 605 &minus; 78 = 527 libros. La cifra tiene sentido porque queda algo m&aacute;s que al principio.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.1.1">
+        <h3>
+         Actividad 1. Estima redondeando a decenas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          48 + 32
+         </li>
+         <li>
+          191 + 207
+         </li>
+         <li>
+          79 + 116
+         </li>
+         <li>
+          255 &minus; 38
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Estima redondeando a centenas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          468 + 325
+         </li>
+         <li>
+          1.210 + 590
+         </li>
+         <li>
+          906 &minus; 210
+         </li>
+         <li>
+          2.575 &minus; 1.090
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.1">
+        <h3>
+         Actividad 3. Resuelve en dos pasos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          Hay 125 y 240 fichas; regalamos 90
+         </li>
+         <li>
+          Recibimos 340 entradas y 175 m&aacute;s; usamos 260
+         </li>
+         <li>
+          El museo ten&iacute;a 520 visitas; llegan 180 y salen 75
+         </li>
+         <li>
+          Ahorramos 150 &euro;, ganamos 75 &euro; y gastamos 95 &euro;
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 4. Revisa la respuesta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          &iquest;Tiene sentido 450 + 230 = 68?
+         </li>
+         <li>
+          &iquest;Tiene sentido 800 &minus; 325 = 475?
+         </li>
+         <li>
+          &iquest;Es razonable 490 + 510 &asymp; 1.000?
+         </li>
+         <li>
+          &iquest;Es razonable 997 &minus; 50 &asymp; 100?
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+     <section class="lesson-section" id="sec-8">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.8
+       </span>
+       Problemas y desaf&iacute;os
+      </h2>
+      <h3 class="problem-subtitle">
+       Parte A. Problemas contextualizados
+      </h3>
+      <p>
+       Lee cada situaci&oacute;n, subraya los datos &uacute;tiles y decide qu&eacute; estrategia necesitas. Escribe las operaciones y responde con una frase completa.
+      </p>
+      <div class="problem-grid">
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 1. La biblioteca crece
+        </h4>
+        <p>
+         Hab&iacute;a 345 cuentos, llegan 178 nuevos y se prestan 96. &iquest;Cu&aacute;ntos quedan?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 2. Entradas para una funci&oacute;n
+        </h4>
+        <p>
+         Por la ma&ntilde;ana se vendieron 248 entradas y por la tarde 367. &iquest;Cu&aacute;ntas entradas se vendieron en total?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Problema 3. La caja de rotuladores
+        </h4>
+        <p>
+         El colegio compr&oacute; 950 rotuladores y reparti&oacute; 485. &iquest;Cu&aacute;ntos conserva? Comprueba la resta con una suma.
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.6.2">
+        <h4>
+         Problema 4. La excursi&oacute;n
+        </h4>
+        <p>
+         Hay 325 &euro; para una excursi&oacute;n. El autob&uacute;s cuesta 198 &euro;. &iquest;Cu&aacute;nto dinero queda?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 5. Pr&eacute;stamos del martes
+        </h4>
+        <p>
+         Se prestaron 147 libros el lunes y 265 el martes; el mi&eacute;rcoles se devolvieron 180. &iquest;Cu&aacute;ntos pr&eacute;stamos siguen sin devolver?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 6. El marcador
+        </h4>
+        <p>
+         Un equipo suma 285 puntos y otro 197. &iquest;Cu&aacute;ntos puntos m&aacute;s tiene el primero?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Problema 7. Estimaci&oacute;n de visitantes
+        </h4>
+        <p>
+         Un museo recibi&oacute; 498 personas por la ma&ntilde;ana y 307 por la tarde. Estima el total a centenas y calcula el total exacto.
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.6.2">
+        <h4>
+         Problema 8. Error en la cuenta
+        </h4>
+        <p>
+         Aitana dice que 600 &minus; 275 = 425. &iquest;Es correcto? Comprueba sumando.
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 9. Venta solidaria
+        </h4>
+        <p>
+         En un mercadillo se ingresan 480 &euro; y 365 &euro; en dos jornadas y se gastan 290 &euro;. &iquest;Cu&aacute;nto dinero queda?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 10. Las cajas de material
+        </h4>
+        <p>
+         Tenemos 1.250 hojas; usamos 375 y despu&eacute;s llegan 650 m&aacute;s. &iquest;Cu&aacute;ntas hay ahora?
+        </p>
+       </article>
+      </div>
+      <h3 class="problem-subtitle challenge-subtitle">
+       Parte B. Desaf&iacute;os matem&aacute;ticos integrados
+      </h3>
+      <p>
+       Utiliza lo aprendido en situaciones de la vida real. Sigue las instrucciones y comparte tus conclusiones de forma respetuosa.
+      </p>
+      <div class="challenge-list">
+       <article class="challenge-card" data-criterio="MAT.3.5.1">
+        <h4>
+         Desaf&iacute;o 1. Nuestro presupuesto de lectura
+        </h4>
+        <p>
+         Imaginad que una biblioteca recibe una cantidad de dinero y realiza compras durante dos d&iacute;as.
+        </p>
+        <ol>
+         <li>
+          Inventad una cantidad inicial y dos gastos realistas.
+         </li>
+         <li>
+          Calculad cu&aacute;nto queda y representad las operaciones con un esquema.
+         </li>
+         <li>
+          Comprobad mediante sumas inversas.
+         </li>
+         <li>
+          Escribid una breve conclusi&oacute;n sobre el presupuesto.
+         </li>
+        </ol>
+       </article>
+       <article class="challenge-card" data-criterio="MAT.3.7.2">
+        <h4>
+         Desaf&iacute;o 2. El error tambi&eacute;n ense&ntilde;a
+        </h4>
+        <p>
+         Un equipo ha sumado mal 457 + 268 y asegura que el resultado es 615.
+        </p>
+        <ol>
+         <li>
+          Decid qu&eacute; emociones pod&eacute;is experimentar ante un fallo de c&aacute;lculo.
+         </li>
+         <li>
+          Localizad el error sin culpar a nadie.
+         </li>
+         <li>
+          Repetid la operaci&oacute;n de otra manera y explicad c&oacute;mo ayuda corregirla.
+         </li>
+        </ol>
+       </article>
+       <article class="challenge-card" data-criterio="MAT.3.8.2">
+        <h4>
+         Desaf&iacute;o 3. Planificamos una salida
+        </h4>
+        <p>
+         Organizad una salida ficticia de dos grupos con entradas y gastos.
+        </p>
+        <ol>
+         <li>
+          Repartid los papeles de lector, calculista y comprobador.
+         </li>
+         <li>
+          Calculad un total y una diferencia usando datos inventados.
+         </li>
+         <li>
+          Escuchad las propuestas y decidid juntos qu&eacute; operaci&oacute;n conviene.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+     <section class="lesson-section" id="sec-repaso">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        &olarr;
+       </span>
+       Repasamos lo aprendido
+      </h2>
+      <p>
+       Dos fichas completas: una para afianzar y otra para seguir pensando. Cada actividad tiene cuatro apartados.
+      </p>
+      <div class="review-group">
+       <h3>
+        Ficha de refuerzo
+       </h3>
+       <div class="review-grid">
+        <article class="review-card" data-criterio="MAT.3.2.2">
+         <span class="review-tag">
+          Refuerzo 1.1 &middot; Sumar para reunir cantidades
+         </span>
+         <p>
+          <strong>
+           Repasa las sumas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           243 + 125
+          </li>
+          <li>
+           1.210 + 304
+          </li>
+          <li>
+           562 + 216
+          </li>
+          <li>
+           3.400 + 2.500
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.2 &middot; Sumas con llevadas
+         </span>
+         <p>
+          <strong>
+           Refuerza las llevadas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           156 + 278
+          </li>
+          <li>
+           295 + 107
+          </li>
+          <li>
+           468 + 163
+          </li>
+          <li>
+           1.389 + 214
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.2.2">
+         <span class="review-tag">
+          Refuerzo 1.3 &middot; La resta y la diferencia
+         </span>
+         <p>
+          <strong>
+           Practica restas sencillas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           875 &minus; 342
+          </li>
+          <li>
+           650 &minus; 420
+          </li>
+          <li>
+           4.860 &minus; 2.430
+          </li>
+          <li>
+           928 &minus; 615
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.4 &middot; Restas con llevadas
+         </span>
+         <p>
+          <strong>
+           Refuerza el pr&eacute;stamo
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           421 &minus; 185
+          </li>
+          <li>
+           500 &minus; 236
+          </li>
+          <li>
+           903 &minus; 445
+          </li>
+          <li>
+           1.200 &minus; 675
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.1">
+         <span class="review-tag">
+          Refuerzo 1.5 &middot; Propiedades y comprobaci&oacute;n
+         </span>
+         <p>
+          <strong>
+           Repasa propiedades
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           13 + 25 = 25 + &hellip;
+          </li>
+          <li>
+           Agrupa 50 + 30 + 20
+          </li>
+          <li>
+           Comprueba 300 &minus; 145 = 155
+          </li>
+          <li>
+           &iquest;Es la resta conmutativa?
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.6 &middot; C&aacute;lculo mental con estrategias
+         </span>
+         <p>
+          <strong>
+           Practica mentalmente
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           39 + 1
+          </li>
+          <li>
+           250 + 50
+          </li>
+          <li>
+           199 + 1
+          </li>
+          <li>
+           800 &minus; 100
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Refuerzo 1.7 &middot; Estimaciones y problemas de dos pasos
+         </span>
+         <p>
+          <strong>
+           Refuerza problemas encadenados
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           260 + 140 &minus; 100
+          </li>
+          <li>
+           700 &minus; 250 + 50
+          </li>
+          <li>
+           380 + 120 &minus; 90
+          </li>
+          <li>
+           900 &minus; 450 &minus; 100
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Refuerzo 1.8 &middot; S&iacute;ntesis final
+         </span>
+         <p>
+          <strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Resuelve 328 + 145.
+          </li>
+          <li>
+           Resuelve 700 &minus; 284.
+          </li>
+          <li>
+           Comprueba 600 &minus; 258 con una suma.
+          </li>
+          <li>
+           Estima 489 + 210 a centenas.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </div>
+      <div class="review-group review-ampliacion">
+       <h3>
+        Ficha de ampliaci&oacute;n
+       </h3>
+       <div class="review-grid">
+        <article class="review-card" data-criterio="MAT.3.6.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.1 &middot; Sumar para reunir cantidades
+         </span>
+         <p>
+          <strong>
+           Elige estrategia y justifica
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;C&oacute;mo sumar&iacute;as 999 + 1 r&aacute;pidamente?
+          </li>
+          <li>
+           Calcula 2.500 + 750 descomponiendo
+          </li>
+          <li>
+           Inventa tres sumandos cuyo total sea 1.000
+          </li>
+          <li>
+           Explica por qu&eacute; 345 + 120 no puede dar 355
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.2 &middot; Sumas con llevadas
+         </span>
+         <p>
+          <strong>
+           Investiga el error
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Corrige 258 + 173 = 321
+          </li>
+          <li>
+           Corrige 487 + 356 = 733
+          </li>
+          <li>
+           Explica 999 + 1 con llevadas
+          </li>
+          <li>
+           Inventa una suma con dos llevadas cuyo total sea 1.000
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.2.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.3 &middot; La resta y la diferencia
+         </span>
+         <p>
+          <strong>
+           Razona sin calcular todo
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;Es positivo 302 &minus; 400?
+          </li>
+          <li>
+           &iquest;Puede 650 &minus; 300 ser mayor que 650?
+          </li>
+          <li>
+           Explica 3 formas de obtener 500 restando
+          </li>
+          <li>
+           Inventa un problema para 845 &minus; 235
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.4 &middot; Restas con llevadas
+         </span>
+         <p>
+          <strong>
+           Comprueba dos procedimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Resuelve 2.003 &minus; 899 con llevadas
+          </li>
+          <li>
+           Resuelve la misma resta por descomposici&oacute;n
+          </li>
+          <li>
+           Compara los dos m&eacute;todos
+          </li>
+          <li>
+           Explica en qu&eacute; paso conviene comprobar
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.5 &middot; Propiedades y comprobaci&oacute;n
+         </span>
+         <p>
+          <strong>
+           Investiga c&oacute;mo comprobar
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Inventa una resta cuya diferencia sea 327
+          </li>
+          <li>
+           Comprueba 1.400 &minus; 735 de dos maneras
+          </li>
+          <li>
+           Explica por qu&eacute; 58 &minus; 27 no equivale a 27 &minus; 58
+          </li>
+          <li>
+           Escribe una suma de tres cantidades que puedas agrupar de dos formas
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.6 &middot; C&aacute;lculo mental con estrategias
+         </span>
+         <p>
+          <strong>
+           Explica dos estrategias
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Resuelve 99 + 37 de dos maneras
+          </li>
+          <li>
+           Resuelve 500 &minus; 198 contando
+          </li>
+          <li>
+           Explica por qu&eacute; 68 + 32 se calcula f&aacute;cilmente
+          </li>
+          <li>
+           Inventa una suma que d&eacute; 1.000 usando compensaci&oacute;n
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.7 &middot; Estimaciones y problemas de dos pasos
+         </span>
+         <p>
+          <strong>
+           Dise&ntilde;a una estrategia
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Inventa un problema de dos pasos con 250 y 60
+          </li>
+          <li>
+           Estima y calcula 596 + 398
+          </li>
+          <li>
+           Explica por qu&eacute; 700 &minus; 390 no puede dar 590
+          </li>
+          <li>
+           Resuelve 1.000 &minus; 375 + 248 y comprueba
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.8 &middot; S&iacute;ntesis final
+         </span>
+         <p>
+          <strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Una clase tiene 285 libros, recibe 178 y presta 196: &iquest;cu&aacute;ntos quedan?
+          </li>
+          <li>
+           Haz una estimaci&oacute;n antes de operar.
+          </li>
+          <li>
+           Resuelve con dos operaciones alineadas.
+          </li>
+          <li>
+           Comprueba el resultado de dos maneras.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </div>
+     </section>
+     <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+     <section class="lesson-section" id="sec-diana">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        🎯
+       </span>
+       Diana de Autoevaluaci&oacute;n Interactiva
+      </h2>
+      <p>
+       Piensa en c&oacute;mo has aprendido. Elige en cada fila la respuesta que mejor te describe; puedes cambiarla cuando quieras.
+      </p>
+      <div class="diana-list">
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.1
+         </strong>
+         Sumo alineando correctamente las cifras.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.1" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.2
+         </strong>
+         Resuelvo sumas con llevadas y s&eacute; explicar el cambio de unidades.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.2" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.3
+         </strong>
+         Utilizo la resta para quitar y comparar cantidades.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.3" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.4
+         </strong>
+         Realizo cambios de unidades al restar y compruebo el resultado.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.4" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.5
+         </strong>
+         Compruebo sumas y restas usando sus relaciones.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.5" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.6
+         </strong>
+         Elijo y explico estrategias sencillas de c&aacute;lculo mental.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.6" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.7
+         </strong>
+         Resuelvo problemas de varios pasos y valoro la coherencia de la soluci&oacute;n.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.7" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.8
+         </strong>
+         Entiendo los problemas, busco soluciones y s&eacute; explicar mis decisiones.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.8" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="button-row">
+       <button class="action-button secondary" id="reset-diana" type="button">
+        Borrar mi autoevaluaci&oacute;n
+       </button>
+      </div>
+     </section>
+     <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+     <section class="lesson-section" id="sec-comprueba">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        &checkmark;
+       </span>
+       Comprueba lo aprendido
+      </h2>
+      <p>
+       Marca una respuesta por pregunta y pulsa
+       <strong>
+        Comprobar respuestas
+       </strong>
+       . Puedes repetir el cuestionario para seguir aprendiendo.
+      </p>
+      <form id="mat3-quiz" novalidate="">
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.6.1">
+        <legend>
+         1. 234 + 125 =&hellip;
+        </legend>
+        <label>
+         <input name="q1" type="radio" value="a"/>
+         359
+        </label>
+        <label>
+         <input name="q1" type="radio" value="b"/>
+         369
+        </label>
+        <label>
+         <input name="q1" type="radio" value="c"/>
+         349
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.1.2">
+        <legend>
+         2. 278 + 156 =&hellip;
+        </legend>
+        <label>
+         <input name="q2" type="radio" value="a"/>
+         424
+        </label>
+        <label>
+         <input name="q2" type="radio" value="b"/>
+         434
+        </label>
+        <label>
+         <input name="q2" type="radio" value="c"/>
+         444
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.2">
+        <legend>
+         3. 756 &minus; 234 =&hellip;
+        </legend>
+        <label>
+         <input name="q3" type="radio" value="a"/>
+         532
+        </label>
+        <label>
+         <input name="q3" type="radio" value="b"/>
+         522
+        </label>
+        <label>
+         <input name="q3" type="radio" value="c"/>
+         512
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.1">
+        <legend>
+         4. 402 &minus; 185 =&hellip;
+        </legend>
+        <label>
+         <input name="q4" type="radio" value="a"/>
+         227
+        </label>
+        <label>
+         <input name="q4" type="radio" value="b"/>
+         217
+        </label>
+        <label>
+         <input name="q4" type="radio" value="c"/>
+         317
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.5.1">
+        <legend>
+         5. Para comprobar una resta&hellip;
+        </legend>
+        <label>
+         <input name="q5" type="radio" value="a"/>
+         sumamos diferencia y sustraendo
+        </label>
+        <label>
+         <input name="q5" type="radio" value="b"/>
+         restamos la suma
+        </label>
+        <label>
+         <input name="q5" type="radio" value="c"/>
+         multiplicamos el sustraendo
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.6.2">
+        <legend>
+         6. 49 + 31 se calcula f&aacute;cilmente como&hellip;
+        </legend>
+        <label>
+         <input name="q6" type="radio" value="a"/>
+         40 + 31
+        </label>
+        <label>
+         <input name="q6" type="radio" value="b"/>
+         50 + 30
+        </label>
+        <label>
+         <input name="q6" type="radio" value="c"/>
+         49 + 30
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.3.5.2">
+        <legend>
+         7. 589 redondeado a centenas es&hellip;
+        </legend>
+        <label>
+         <input name="q7" type="radio" value="a"/>
+         500
+        </label>
+        <label>
+         <input name="q7" type="radio" value="b"/>
+         580
+        </label>
+        <label>
+         <input name="q7" type="radio" value="c"/>
+         600
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.2">
+        <legend>
+         8. Ten&iacute;a 100 y gast&eacute; 35 y 20. Quedan&hellip;
+        </legend>
+        <label>
+         <input name="q8" type="radio" value="a"/>
+         55
+        </label>
+        <label>
+         <input name="q8" type="radio" value="b"/>
+         45
+        </label>
+        <label>
+         <input name="q8" type="radio" value="c"/>
+         65
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <div class="button-row">
+        <button class="action-button" type="submit">
+         Comprobar respuestas
+        </button>
+        <button class="action-button secondary" type="reset">
+         Volver a empezar
+        </button>
+       </div>
+       <p aria-live="polite" class="quiz-result" hidden="" id="quiz-result" role="status">
+       </p>
+      </form>
+     </section>
+    </div>
+    <nav aria-label="Navegaci&oacute;n final" class="lesson-footer">
+     <a href="/recursos/tercero/matematicas3/">
+      &larr; Volver a Matem&aacute;ticas de 3.&ordm;
+     </a>
+     <a href="#contenido-principal">
+      &uarr; Subir al inicio
+     </a>
+    </nav>
+   </div>
+  </main>
+  <footer class="site-footer">
+   <p>
+    CEIP Joaqu&iacute;n Tena Artigas &middot; Alcolea (C&oacute;rdoba)
+   </p>
+  </footer>
+  <script>
+   "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat3-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+ </body>
+</html>
