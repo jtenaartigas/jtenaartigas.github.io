@@ -1,0 +1,3794 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Situaci&oacute;n de aprendizaje MAT3.3. Multiplicaci&oacute;n. Explicaciones, gr&aacute;ficos, actividades, problemas, repaso y evaluaci&oacute;n. Matem&aacute;ticas de 3.&ordm; de Primaria." name="description"/>
+  <title>
+   MAT3.3 &middot; Multiplicaci&oacute;n | CEIP Joaqu&iacute;n Tena Artigas
+  </title>
+  <link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+  <link href="/css/base.css" rel="stylesheet"/>
+  <!--
+    MAT4.4: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.A.2.4, MAT.2.A.2.5, MAT.2.A.3.1, MAT.2.A.5.1, MAT.2.D.1.1.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+   :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  
+
+    /* Ajustes específicos de 3.º: iconografía nativa y apoyo a la lectura. */
+    .topic-page .math-visual { max-width: 100%; }
+    .topic-page .math-visual svg { width: 100%; max-height: 230px; }
+    .topic-page .explanation p { max-width: 90ch; }
+    .topic-page .worked-steps li { padding-left: .15rem; }
+    .topic-page .subquestions li { padding-left: .16rem; }
+    .topic-page .lesson-section-heading { text-align: left; }
+    @media (max-width: 640px) {
+      .topic-page .math-visual svg text { font-family: system-ui, sans-serif; }
+      .topic-page .math-visual figcaption { font-size: .78rem; }
+    }
+  </style>
+ </head>
+ <body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">
+   Ir al contenido principal
+  </a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+   <a aria-label="Ir a la p&aacute;gina de inicio" href="/">
+    <img alt="CEIP Joaqu&iacute;n Tena Artigas - Alcolea, C&oacute;rdoba" class="banner-image" src="/img/banner-principal.png"/>
+   </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+   <div class="navigation-container">
+    <a aria-label="Ir al inicio" class="navigation-logo" href="/">
+     <img alt="" src="/img/logo-centro.png"/>
+    </a>
+    <button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir men&uacute; de navegaci&oacute;n" class="menu-toggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav aria-label="Navegaci&oacute;n principal" class="main-navigation" id="main-navigation">
+     <ul>
+      <li class="nav-green">
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li class="nav-yellow">
+       <a href="/familias/">
+        Familias
+       </a>
+      </li>
+      <li class="nav-blue">
+       <a aria-current="page" href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li class="nav-red">
+       <a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+        <span aria-hidden="true">
+         🔒
+        </span>
+        &Aacute;rea privada Profesorado
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <main class="topic-page" id="contenido-principal">
+   <div class="topic-shell">
+    <nav aria-label="Migas de pan" class="breadcrumbs">
+     <ol>
+      <li>
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/">
+        3.&ordm; de Primaria
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/matematicas3/">
+        Matem&aacute;ticas
+       </a>
+      </li>
+      <li aria-current="page">
+       SdA 3
+      </li>
+     </ol>
+    </nav>
+    <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+    <section aria-labelledby="titulo-sda" class="topic-hero">
+     <div class="topic-hero-content">
+      <span class="topic-eyebrow">
+       Matem&aacute;ticas &middot; 3.&ordm; de Primaria &middot; SdA 3
+      </span>
+      <h1 id="titulo-sda">
+       La feria de los grupos iguales
+      </h1>
+      <p>
+       Aprendemos las tablas, los factores y las multiplicaciones para contar grupos y organizar materiales.
+      </p>
+      <div aria-label="Qu&eacute; aprenderemos" class="hero-tags">
+       <span>
+        Tablas
+       </span>
+       <span>
+        Multiplicaci&oacute;n
+       </span>
+       <span>
+        Grupos
+       </span>
+      </div>
+     </div>
+     <figure class="media-frame hero-mascot">
+      <img alt="Tomatito, la mascota del colegio, aprendiendo Matem&aacute;ticas" onerror="markImageMissing(this)" src="/img/tomatito/matematicas.png"/>
+      <figcaption class="sr-only">
+       Tomatito nos acompa&ntilde;a en esta situaci&oacute;n de aprendizaje.
+      </figcaption>
+     </figure>
+    </section>
+    <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+    <nav aria-label="Contenidos de la situaci&oacute;n de aprendizaje" class="lesson-nav">
+     <h2 class="lesson-nav-heading">
+      📍 Contenidos de la Situaci&oacute;n de Aprendizaje
+     </h2>
+     <div class="lesson-nav-links">
+      <a href="#sec-1">
+       1.1 Las tablas del 1 al 10
+      </a>
+      <a href="#sec-2">
+       1.2 Factores, producto y grupos iguales
+      </a>
+      <a href="#sec-3">
+       1.3 Propiedades de la multiplicaci&oacute;n
+      </a>
+      <a href="#sec-4">
+       1.4 Dobles, triples y multiplicar por 10 y 100
+      </a>
+      <a href="#sec-5">
+       1.5 Multiplicamos por una cifra
+      </a>
+      <a href="#sec-6">
+       1.6 Multiplicaciones con llevadas
+      </a>
+      <a href="#sec-7">
+       1.7 Problemas de multiplicaci&oacute;n
+      </a>
+      <a class="nav-challenge" href="#sec-8">
+       1.8 Problemas y desaf&iacute;os
+      </a>
+      <a class="nav-review" href="#sec-repaso">
+       🔄 Repasamos lo aprendido
+      </a>
+      <a class="nav-selfeval" href="#sec-diana">
+       🎯 Autoevaluaci&oacute;n
+      </a>
+      <a class="nav-quiz" href="#sec-comprueba">
+       &checkmark; Comprueba lo aprendido
+      </a>
+     </div>
+    </nav>
+    <div class="topic-content">
+     <!-- SECCIÓN 1: Partes iguales de una unidad -->
+     <section class="lesson-section" id="sec-1">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.1
+       </span>
+       Las tablas del 1 al 10
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Multiplicar nos permite sumar varias veces una misma cantidad. Si hay 4 mesas con 3 l&aacute;pices en cada una, podemos escribir 3 + 3 + 3 + 3 = 12 o 4 &times; 3 = 12.
+       </p>
+       <p>
+        Las tablas del 1 al 10 muestran el resultado de multiplicar un n&uacute;mero por 1, 2, 3&hellip; hasta 10. Conocerlas facilita resolver problemas, pero tambi&eacute;n debemos entender qu&eacute; grupos estamos contando.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Tres grupos iguales de cuatro puntos: tres por cuatro es doce." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="120" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="360" y="178">
+          3 filas de 4 puntos: 3 &times; 4 = 12
+         </text>
+        </svg>
+        <figcaption>
+         Tres grupos iguales de cuatro puntos: tres por cuatro es doce.
+        </figcaption>
+       </figure>
+       <div class="math-visual" style="text-align:left">
+        <h4>
+         Tablas de multiplicar del 1 al 10
+        </h4>
+        <p>
+         Busca una fila y una columna: donde se cruzan aparece el producto. Ejemplo: fila 7 y columna 6: 42.
+        </p>
+        <div aria-label="Tabla de multiplicar del 1 al 10" role="region" style="overflow-x:auto" tabindex="0">
+         <table class="multiplication-table">
+          <thead>
+           <tr>
+            <th scope="col">
+             &times;
+            </th>
+            <th scope="col">
+             1
+            </th>
+            <th scope="col">
+             2
+            </th>
+            <th scope="col">
+             3
+            </th>
+            <th scope="col">
+             4
+            </th>
+            <th scope="col">
+             5
+            </th>
+            <th scope="col">
+             6
+            </th>
+            <th scope="col">
+             7
+            </th>
+            <th scope="col">
+             8
+            </th>
+            <th scope="col">
+             9
+            </th>
+            <th scope="col">
+             10
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <th scope="row">
+             1
+            </th>
+            <td>
+             1
+            </td>
+            <td>
+             2
+            </td>
+            <td>
+             3
+            </td>
+            <td>
+             4
+            </td>
+            <td>
+             5
+            </td>
+            <td>
+             6
+            </td>
+            <td>
+             7
+            </td>
+            <td>
+             8
+            </td>
+            <td>
+             9
+            </td>
+            <td>
+             10
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             2
+            </th>
+            <td>
+             2
+            </td>
+            <td>
+             4
+            </td>
+            <td>
+             6
+            </td>
+            <td>
+             8
+            </td>
+            <td>
+             10
+            </td>
+            <td>
+             12
+            </td>
+            <td>
+             14
+            </td>
+            <td>
+             16
+            </td>
+            <td>
+             18
+            </td>
+            <td>
+             20
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             3
+            </th>
+            <td>
+             3
+            </td>
+            <td>
+             6
+            </td>
+            <td>
+             9
+            </td>
+            <td>
+             12
+            </td>
+            <td>
+             15
+            </td>
+            <td>
+             18
+            </td>
+            <td>
+             21
+            </td>
+            <td>
+             24
+            </td>
+            <td>
+             27
+            </td>
+            <td>
+             30
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             4
+            </th>
+            <td>
+             4
+            </td>
+            <td>
+             8
+            </td>
+            <td>
+             12
+            </td>
+            <td>
+             16
+            </td>
+            <td>
+             20
+            </td>
+            <td>
+             24
+            </td>
+            <td>
+             28
+            </td>
+            <td>
+             32
+            </td>
+            <td>
+             36
+            </td>
+            <td>
+             40
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             5
+            </th>
+            <td>
+             5
+            </td>
+            <td>
+             10
+            </td>
+            <td>
+             15
+            </td>
+            <td>
+             20
+            </td>
+            <td>
+             25
+            </td>
+            <td>
+             30
+            </td>
+            <td>
+             35
+            </td>
+            <td>
+             40
+            </td>
+            <td>
+             45
+            </td>
+            <td>
+             50
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             6
+            </th>
+            <td>
+             6
+            </td>
+            <td>
+             12
+            </td>
+            <td>
+             18
+            </td>
+            <td>
+             24
+            </td>
+            <td>
+             30
+            </td>
+            <td>
+             36
+            </td>
+            <td>
+             42
+            </td>
+            <td>
+             48
+            </td>
+            <td>
+             54
+            </td>
+            <td>
+             60
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             7
+            </th>
+            <td>
+             7
+            </td>
+            <td>
+             14
+            </td>
+            <td>
+             21
+            </td>
+            <td>
+             28
+            </td>
+            <td>
+             35
+            </td>
+            <td>
+             42
+            </td>
+            <td>
+             49
+            </td>
+            <td>
+             56
+            </td>
+            <td>
+             63
+            </td>
+            <td>
+             70
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             8
+            </th>
+            <td>
+             8
+            </td>
+            <td>
+             16
+            </td>
+            <td>
+             24
+            </td>
+            <td>
+             32
+            </td>
+            <td>
+             40
+            </td>
+            <td>
+             48
+            </td>
+            <td>
+             56
+            </td>
+            <td>
+             64
+            </td>
+            <td>
+             72
+            </td>
+            <td>
+             80
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             9
+            </th>
+            <td>
+             9
+            </td>
+            <td>
+             18
+            </td>
+            <td>
+             27
+            </td>
+            <td>
+             36
+            </td>
+            <td>
+             45
+            </td>
+            <td>
+             54
+            </td>
+            <td>
+             63
+            </td>
+            <td>
+             72
+            </td>
+            <td>
+             81
+            </td>
+            <td>
+             90
+            </td>
+           </tr>
+           <tr>
+            <th scope="row">
+             10
+            </th>
+            <td>
+             10
+            </td>
+            <td>
+             20
+            </td>
+            <td>
+             30
+            </td>
+            <td>
+             40
+            </td>
+            <td>
+             50
+            </td>
+            <td>
+             60
+            </td>
+            <td>
+             70
+            </td>
+            <td>
+             80
+            </td>
+            <td>
+             90
+            </td>
+            <td>
+             100
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <p class="hint">
+         Comprueba tambi&eacute;n que 3 &times; 7 y 7 &times; 3 tienen el mismo resultado.
+        </p>
+       </div>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Cuando una tabla se resiste, dibuja grupos iguales o usa una suma repetida: 6 &times; 4 es 4 + 4 + 4 + 4 + 4 + 4.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Para calcular 3 &times; 5 dibujamos 3 grupos de 5 puntos.
+        </li>
+        <li>
+         Contamos 5, 10, 15.
+        </li>
+        <li>
+         Por tanto, 3 &times; 5 = 15.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.5.2">
+        <h3>
+         Actividad 1. Completa productos de las tablas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          4 &times; 3
+         </li>
+         <li>
+          5 &times; 7
+         </li>
+         <li>
+          8 &times; 2
+         </li>
+         <li>
+          9 &times; 6
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Transforma en suma repetida
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          3 &times; 4
+         </li>
+         <li>
+          5 &times; 2
+         </li>
+         <li>
+          4 &times; 6
+         </li>
+         <li>
+          2 &times; 9
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 3. Escribe la multiplicaci&oacute;n
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          6 grupos de 3
+         </li>
+         <li>
+          4 bandejas de 5
+         </li>
+         <li>
+          8 cajas con 2 objetos
+         </li>
+         <li>
+          3 filas con 7 sillas
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 4. Encuentra el factor que falta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          7 &times; &hellip; = 35
+         </li>
+         <li>
+          &hellip; &times; 8 = 24
+         </li>
+         <li>
+          9 &times; &hellip; = 54
+         </li>
+         <li>
+          &hellip; &times; 6 = 42
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 2: Leer y escribir fracciones -->
+     <section class="lesson-section" id="sec-2">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.2
+       </span>
+       Factores, producto y grupos iguales
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Los dos n&uacute;meros que multiplicamos se llaman factores y el resultado se llama producto. En 6 &times; 4 = 24, 6 y 4 son los factores y 24 es el producto.
+       </p>
+       <p>
+        Podemos representar una multiplicaci&oacute;n mediante filas y columnas, agrupaciones o saltos iguales en la recta. Cada representaci&oacute;n muestra la misma cantidad desde un punto de vista diferente.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="75" y="26">
+         </rect>
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="277" y="26">
+         </rect>
+         <rect fill="#fff7e6" height="55" rx="8" stroke="#d97706" stroke-width="2" width="160" x="495" y="26">
+         </rect>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="157" y="61">
+          6
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="358" y="61">
+          4
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="575" y="61">
+          24
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="258" y="62">
+          &times;
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="465" y="62">
+          =
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="157" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="358" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="575" y="116">
+          producto
+         </text>
+        </svg>
+        <figcaption>
+         6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Antes de multiplicar, busca las palabras &laquo;cada&raquo;, &laquo;en cada caja&raquo; o &laquo;grupos iguales&raquo; para encontrar los factores.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Hay 5 equipos con 4 participantes cada uno.
+        </li>
+        <li>
+         Los factores son 5 (equipos) y 4 (personas por equipo).
+        </li>
+        <li>
+         El producto es 5 &times; 4 = 20 personas.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 1. Identifica los factores y el producto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          6 &times; 4 = 24
+         </li>
+         <li>
+          8 &times; 3 = 24
+         </li>
+         <li>
+          7 &times; 5 = 35
+         </li>
+         <li>
+          9 &times; 2 = 18
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 2. Escribe la operaci&oacute;n y resuelve
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          4 bolsas de 6 manzanas
+         </li>
+         <li>
+          7 mesas de 3 sillas
+         </li>
+         <li>
+          6 cajas de 5 libros
+         </li>
+         <li>
+          8 equipos de 4 personas
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 3. Dibuja matrices de puntos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          3 filas de 5
+         </li>
+         <li>
+          4 filas de 4
+         </li>
+         <li>
+          2 filas de 9
+         </li>
+         <li>
+          6 filas de 3
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 4. Completa cada producto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          5 &times; &hellip; = 40
+         </li>
+         <li>
+          7 &times; &hellip; = 28
+         </li>
+         <li>
+          &hellip; &times; 9 = 27
+         </li>
+         <li>
+          &hellip; &times; 6 = 48
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 3: Comparamos fracciones sencillas -->
+     <section class="lesson-section" id="sec-3">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.3
+       </span>
+       Propiedades de la multiplicaci&oacute;n
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        La propiedad conmutativa permite cambiar el orden de los factores sin cambiar el producto: 4 &times; 6 = 6 &times; 4 = 24. Es visible al girar una matriz de puntos.
+       </p>
+       <p>
+        La propiedad asociativa permite agrupar tres factores: (2 &times; 3) &times; 4 = 2 &times; (3 &times; 4) = 24. Y multiplicar por una suma equivale a repartir: 3 &times; (4 + 2) = 3 &times; 4 + 3 &times; 2 = 18. Es la propiedad distributiva, que podemos usar de forma intuitiva.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Tres grupos iguales de cuatro puntos: tres por cuatro es doce." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="120" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="360" y="178">
+          3 filas de 4 puntos: 3 &times; 4 = 12
+         </text>
+        </svg>
+        <figcaption>
+         Tres grupos iguales de cuatro puntos: tres por cuatro es doce.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Multiplicar por 1 no cambia la cantidad y multiplicar por 0 da 0.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Calculamos 7 &times; 6 como 7 &times; (5 + 1).
+        </li>
+        <li>
+         Hacemos 7 &times; 5 = 35 y 7 &times; 1 = 7.
+        </li>
+        <li>
+         Sumamos 35 + 7 = 42; la descomposici&oacute;n ayuda a recordar la tabla.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 1. Aplica la conmutativa
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          4 &times; 9 = &hellip; &times; 4
+         </li>
+         <li>
+          6 &times; 8 = 8 &times; &hellip;
+         </li>
+         <li>
+          3 &times; 7 = &hellip; &times; 3
+         </li>
+         <li>
+          5 &times; 2 = &hellip; &times; 5
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 2. Agrupa tres factores
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          (2 &times; 3) &times; 4
+         </li>
+         <li>
+          2 &times; (5 &times; 3)
+         </li>
+         <li>
+          (4 &times; 2) &times; 5
+         </li>
+         <li>
+          3 &times; (2 &times; 2)
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Descomp&oacute;n para multiplicar
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          3 &times; (5 + 2)
+         </li>
+         <li>
+          4 &times; (6 + 1)
+         </li>
+         <li>
+          5 &times; (3 + 2)
+         </li>
+         <li>
+          2 &times; (7 + 3)
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 4. Elige la propiedad correcta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          4 &times; 1 = 4
+         </li>
+         <li>
+          8 &times; 0 = 0
+         </li>
+         <li>
+          3 &times; 5 = 5 &times; 3
+         </li>
+         <li>
+          2 &times; (4 + 3) = 2 &times; 4 + 2 &times; 3
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 4: Fracción de una cantidad -->
+     <section class="lesson-section" id="sec-4">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.4
+       </span>
+       Dobles, triples y multiplicar por 10 y 100
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        El doble es multiplicar por 2: el doble de 14 es 28. El triple es multiplicar por 3: el triple de 6 es 18. Estas relaciones son &uacute;tiles para repartir materiales y contar objetos.
+       </p>
+       <p>
+        En los n&uacute;meros naturales, multiplicar por 10 desplaza las cifras una posici&oacute;n a la izquierda en la tabla decimal (24 &times; 10 = 240); multiplicar por 100, dos posiciones (24 &times; 100 = 2.400).
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="37" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="97" y="56">
+          DM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="97" y="99">
+          2
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="168" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="228" y="56">
+          UM
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="228" y="99">
+          4
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="299" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="359" y="56">
+          C
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="359" y="99">
+          7
+         </text>
+         <rect fill="#fff7e6" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="430" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="490" y="56">
+          D
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="490" y="99">
+          3
+         </text>
+         <rect fill="#e6f4ea" height="105" rx="8" stroke="#007a33" stroke-width="2" width="120" x="561" y="24">
+         </rect>
+         <text fill="#005724" font-size="18" font-weight="650" text-anchor="middle" x="621" y="56">
+          U
+         </text>
+         <text fill="#1e293b" font-size="36" font-weight="800" text-anchor="middle" x="621" y="99">
+          6
+         </text>
+        </svg>
+        <figcaption>
+         24.736 = 2 decenas de millar, 4 unidades de millar, 7 centenas, 3 decenas y 6 unidades.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Piensa en el valor posicional: no es &laquo;poner ceros por magia&raquo;, sino convertir unidades en decenas o centenas.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Calculamos 32 &times; 10: 3 decenas y 2 unidades pasan a 3 centenas y 2 decenas.
+        </li>
+        <li>
+         Por eso 32 &times; 10 = 320.
+        </li>
+        <li>
+         Si multiplicamos 32 &times; 100, obtenemos 3.200.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Calcula los dobles
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          12
+         </li>
+         <li>
+          24
+         </li>
+         <li>
+          36
+         </li>
+         <li>
+          45
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Calcula los triples
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          7
+         </li>
+         <li>
+          12
+         </li>
+         <li>
+          20
+         </li>
+         <li>
+          35
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Multiplica por 10
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          13 &times; 10
+         </li>
+         <li>
+          25 &times; 10
+         </li>
+         <li>
+          107 &times; 10
+         </li>
+         <li>
+          90 &times; 10
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 4. Multiplica por 100
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          3 &times; 100
+         </li>
+         <li>
+          14 &times; 100
+         </li>
+         <li>
+          60 &times; 100
+         </li>
+         <li>
+          205 &times; 100
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 5: Fracciones equivalentes y unidad completa -->
+     <section class="lesson-section" id="sec-5">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.5
+       </span>
+       Multiplicamos por una cifra
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Podemos multiplicar un n&uacute;mero de dos o tres cifras por una cifra empezando por las unidades. Si en una columna el producto es menor que diez, escribimos directamente la cifra correspondiente.
+       </p>
+       <p>
+        La descomposici&oacute;n ofrece una comprobaci&oacute;n: 23 &times; 3 = (20 &times; 3) + (3 &times; 3) = 60 + 9 = 69. La multiplicaci&oacute;n vertical realiza los mismos pasos agrupados por &oacute;rdenes.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="75" y="26">
+         </rect>
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="277" y="26">
+         </rect>
+         <rect fill="#fff7e6" height="55" rx="8" stroke="#d97706" stroke-width="2" width="160" x="495" y="26">
+         </rect>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="157" y="61">
+          6
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="358" y="61">
+          4
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="575" y="61">
+          24
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="258" y="62">
+          &times;
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="465" y="62">
+          =
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="157" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="358" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="575" y="116">
+          producto
+         </text>
+        </svg>
+        <figcaption>
+         6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Alinea las cifras y piensa qu&eacute; cantidad representa cada una; 20 &times; 3 no es lo mismo que 2 &times; 3.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Calculamos 24 &times; 2.
+        </li>
+        <li>
+         2 &times; 4 unidades = 8 unidades; 2 &times; 2 decenas = 4 decenas.
+        </li>
+        <li>
+         El producto es 48. Tambi&eacute;n 20 &times; 2 + 4 &times; 2 = 48.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Multiplica sin llevadas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          23 &times; 2
+         </li>
+         <li>
+          14 &times; 3
+         </li>
+         <li>
+          32 &times; 3
+         </li>
+         <li>
+          121 &times; 2
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Descomp&oacute;n para calcular
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          21 &times; 4
+         </li>
+         <li>
+          33 &times; 2
+         </li>
+         <li>
+          12 &times; 5
+         </li>
+         <li>
+          102 &times; 3
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Completa los productos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          42 &times; 2 = &hellip;
+         </li>
+         <li>
+          34 &times; 2 = &hellip;
+         </li>
+         <li>
+          11 &times; 7 = &hellip;
+         </li>
+         <li>
+          231 &times; 3 = &hellip;
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.5.1">
+        <h3>
+         Actividad 4. Aplica a grupos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          3 equipos con 24 fichas
+         </li>
+         <li>
+          2 cajas de 132 l&aacute;pices
+         </li>
+         <li>
+          4 mesas de 22 piezas
+         </li>
+         <li>
+          3 cursos con 31 participantes
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 6: Euros y céntimos -->
+     <section class="lesson-section" id="sec-6">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.6
+       </span>
+       Multiplicaciones con llevadas
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Cuando el producto de una columna tiene dos cifras, escribimos las unidades y llevamos las decenas a la siguiente columna. Es una agrupaci&oacute;n de diez unidades por una decena, como en la suma.
+       </p>
+       <p>
+        En 27 &times; 3, calculamos 7 &times; 3 = 21: escribimos 1 unidad y llevamos 2 decenas. Luego hacemos 2 decenas &times; 3 = 6 decenas y a&ntilde;adimos 2: en total 8 decenas.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="75" y="26">
+         </rect>
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="277" y="26">
+         </rect>
+         <rect fill="#fff7e6" height="55" rx="8" stroke="#d97706" stroke-width="2" width="160" x="495" y="26">
+         </rect>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="157" y="61">
+          6
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="358" y="61">
+          4
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="575" y="61">
+          24
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="258" y="62">
+          &times;
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="465" y="62">
+          =
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="157" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="358" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="575" y="116">
+          producto
+         </text>
+        </svg>
+        <figcaption>
+         6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Es importante a&ntilde;adir la llevada despu&eacute;s de multiplicar la cifra de la siguiente columna.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         27 &times; 3: 7 &times; 3 = 21; escribimos 1 y llevamos 2.
+        </li>
+        <li>
+         2 &times; 3 = 6; a&ntilde;adimos 2 y obtenemos 8.
+        </li>
+        <li>
+         El resultado es 81. Lo comprobamos: 27 + 27 + 27 = 81.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Multiplica con llevadas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          28 &times; 3
+         </li>
+         <li>
+          47 &times; 2
+         </li>
+         <li>
+          36 &times; 4
+         </li>
+         <li>
+          59 &times; 3
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Dos cifras por una cifra
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          67 &times; 4
+         </li>
+         <li>
+          84 &times; 6
+         </li>
+         <li>
+          75 &times; 3
+         </li>
+         <li>
+          96 &times; 5
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.1">
+        <h3>
+         Actividad 3. Tres cifras por una cifra
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          126 &times; 3
+         </li>
+         <li>
+          248 &times; 2
+         </li>
+         <li>
+          135 &times; 4
+         </li>
+         <li>
+          306 &times; 5
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 4. Comprueba y corrige
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          24 &times; 3 = 62
+         </li>
+         <li>
+          38 &times; 2 = 76
+         </li>
+         <li>
+          57 &times; 3 = 161
+         </li>
+         <li>
+          46 &times; 4 = 184
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 7: Compramos con un presupuesto -->
+     <section class="lesson-section" id="sec-7">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.7
+       </span>
+       Problemas de multiplicaci&oacute;n
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Multiplicamos cuando tenemos grupos iguales y queremos saber la cantidad total. Primero identificamos cu&aacute;ntos grupos hay y cu&aacute;ntos elementos contiene cada grupo.
+       </p>
+       <p>
+        En algunos problemas aparece m&aacute;s de una operaci&oacute;n. Debemos leer con atenci&oacute;n, hacer un dibujo o una tabla y comprobar que la respuesta tiene la unidad adecuada: piezas, euros, libros&hellip;
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Tres grupos iguales de cuatro puntos: tres por cuatro es doce." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="120" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="360" y="178">
+          3 filas de 4 puntos: 3 &times; 4 = 12
+         </text>
+        </svg>
+        <figcaption>
+         Tres grupos iguales de cuatro puntos: tres por cuatro es doce.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        No multipliques todos los n&uacute;meros del enunciado: piensa qu&eacute; representan y qu&eacute; te preguntan.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Hay 6 estanter&iacute;as con 24 libros cada una.
+        </li>
+        <li>
+         Calculamos 6 &times; 24 = 144 libros.
+        </li>
+        <li>
+         Si se prestan 18, restamos 144 &minus; 18 = 126 libros.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 1. Escribe multiplicaci&oacute;n y resultado
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          7 bolsas de 8 globos
+         </li>
+         <li>
+          4 cajas de 26 l&aacute;pices
+         </li>
+         <li>
+          5 filas de 18 sillas
+         </li>
+         <li>
+          3 bandejas de 36 vasos
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Resuelve con dos pasos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          4 paquetes de 25 y regalamos 13
+         </li>
+         <li>
+          6 mesas de 8 sillas y a&ntilde;adimos 10
+         </li>
+         <li>
+          3 grupos de 24 y faltan 8 alumnos
+         </li>
+         <li>
+          5 cajas de 32 y retiramos 20
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 3. Elige una representaci&oacute;n
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          Dibuja 4 &times; 5 en filas
+         </li>
+         <li>
+          Dibuja 6 &times; 3 en grupos
+         </li>
+         <li>
+          Explica 7 &times; 4 con una recta
+         </li>
+         <li>
+          Representa 3 &times; 12 por descomposici&oacute;n
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.3.2">
+        <h3>
+         Actividad 4. Inventa una situaci&oacute;n real
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          Para 5 &times; 6
+         </li>
+         <li>
+          Para 8 &times; 12
+         </li>
+         <li>
+          Para 3 &times; 24
+         </li>
+         <li>
+          Para 4 &times; 35
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+     <section class="lesson-section" id="sec-8">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.8
+       </span>
+       Problemas y desaf&iacute;os
+      </h2>
+      <h3 class="problem-subtitle">
+       Parte A. Problemas contextualizados
+      </h3>
+      <p>
+       Lee cada situaci&oacute;n, subraya los datos &uacute;tiles y decide qu&eacute; estrategia necesitas. Escribe las operaciones y responde con una frase completa.
+      </p>
+      <div class="problem-grid">
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 1. Mesas para el taller
+        </h4>
+        <p>
+         Hay 8 mesas con 6 participantes cada una. &iquest;Cu&aacute;ntas personas pueden sentarse?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 2. Pegatinas solidarias
+        </h4>
+        <p>
+         Se preparan 7 sobres con 24 pegatinas en cada uno. &iquest;Cu&aacute;ntas pegatinas hay?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Problema 3. Libros del concurso
+        </h4>
+        <p>
+         Cada clase lee 36 libros y participan 4 clases. &iquest;Cu&aacute;ntos libros se leen?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.6.2">
+        <h4>
+         Problema 4. Asientos del teatro
+        </h4>
+        <p>
+         En el teatro hay 9 filas de 8 asientos. Si ocupan 63 asientos, &iquest;cu&aacute;ntos quedan libres?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 5. Reparto de cajas
+        </h4>
+        <p>
+         Cada caja lleva 28 botellas y hay 5 cajas. &iquest;Cu&aacute;ntas botellas contienen?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 6. El mural
+        </h4>
+        <p>
+         Para el mural usamos 6 tiras de 15 pegatinas. Si a&ntilde;adimos 20, &iquest;cu&aacute;ntas hay en total?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Problema 7. El torneo
+        </h4>
+        <p>
+         Durante 3 d&iacute;as se juegan 24 partidas cada d&iacute;a. &iquest;Cu&aacute;ntas se disputan?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.6.2">
+        <h4>
+         Problema 8. Estuches de regalo
+        </h4>
+        <p>
+         Compramos 8 estuches de 7 l&aacute;pices. &iquest;Cu&aacute;ntos l&aacute;pices tenemos? Escribe tambi&eacute;n una suma repetida.
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 9. Dobles y triples
+        </h4>
+        <p>
+         Una clase recoge 18 kg de papel y otra el doble. &iquest;Cu&aacute;ntos kilogramos recoge la segunda?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 10. Puestos del mercadillo
+        </h4>
+        <p>
+         En 4 puestos hay 32 productos en cada uno. Se venden 45. &iquest;Cu&aacute;ntos quedan?
+        </p>
+       </article>
+      </div>
+      <h3 class="problem-subtitle challenge-subtitle">
+       Parte B. Desaf&iacute;os matem&aacute;ticos integrados
+      </h3>
+      <p>
+       Utiliza lo aprendido en situaciones de la vida real. Sigue las instrucciones y comparte tus conclusiones de forma respetuosa.
+      </p>
+      <div class="challenge-list">
+       <article class="challenge-card" data-criterio="MAT.3.1.2">
+        <h4>
+         Desaf&iacute;o 1. Montamos un puesto de feria
+        </h4>
+        <p>
+         Preparad un plano de un puesto con cajas y materiales en grupos iguales.
+        </p>
+        <ol>
+         <li>
+          Elegid dos tipos de lotes y el n&uacute;mero de objetos por lote.
+         </li>
+         <li>
+          Dibujad las filas y columnas.
+         </li>
+         <li>
+          Calculad productos mediante dos estrategias.
+         </li>
+         <li>
+          Explicad al grupo por qu&eacute; ambas representan la misma cantidad.
+         </li>
+        </ol>
+       </article>
+       <article class="challenge-card" data-criterio="MAT.3.4.2">
+        <h4>
+         Desaf&iacute;o 2. Tablas con una herramienta digital
+        </h4>
+        <p>
+         Usad una calculadora escolar o una cuadr&iacute;cula digital, con ayuda del docente, para comprobar tablas.
+        </p>
+        <ol>
+         <li>
+          Elegid una tabla dif&iacute;cil y anticipad tres productos.
+         </li>
+         <li>
+          Comprobadlos con una herramienta digital sencilla.
+         </li>
+         <li>
+          Anotad si hab&eacute;is corregido alg&uacute;n error y explicad por qu&eacute;.
+         </li>
+        </ol>
+       </article>
+       <article class="challenge-card" data-criterio="MAT.3.7.1">
+        <h4>
+         Desaf&iacute;o 3. Un reto sin rendirse
+        </h4>
+        <p>
+         Elegid una multiplicaci&oacute;n que inicialmente os cueste y probad otra estrategia.
+        </p>
+        <ol>
+         <li>
+          Anotad qu&eacute; os preocupa del ejercicio.
+         </li>
+         <li>
+          Probad grupos, suma repetida o descomposici&oacute;n.
+         </li>
+         <li>
+          Explicad qu&eacute; os ha ayudado a perseverar.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+     <section class="lesson-section" id="sec-repaso">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        &olarr;
+       </span>
+       Repasamos lo aprendido
+      </h2>
+      <p>
+       Dos fichas completas: una para afianzar y otra para seguir pensando. Cada actividad tiene cuatro apartados.
+      </p>
+      <div class="review-group">
+       <h3>
+        Ficha de refuerzo
+       </h3>
+       <div class="review-grid">
+        <article class="review-card" data-criterio="MAT.3.5.2">
+         <span class="review-tag">
+          Refuerzo 1.1 &middot; Las tablas del 1 al 10
+         </span>
+         <p>
+          <strong>
+           Repasa las tablas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           3 &times; 6
+          </li>
+          <li>
+           4 &times; 8
+          </li>
+          <li>
+           7 &times; 5
+          </li>
+          <li>
+           9 &times; 3
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.1">
+         <span class="review-tag">
+          Refuerzo 1.2 &middot; Factores, producto y grupos iguales
+         </span>
+         <p>
+          <strong>
+           Refuerza los t&eacute;rminos
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           En 4 &times; 7 = 28, indica factores
+          </li>
+          <li>
+           En 6 &times; 3 = 18, indica producto
+          </li>
+          <li>
+           Representa 2 filas de 8
+          </li>
+          <li>
+           Resuelve 5 grupos de 5 objetos
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.1">
+         <span class="review-tag">
+          Refuerzo 1.3 &middot; Propiedades de la multiplicaci&oacute;n
+         </span>
+         <p>
+          <strong>
+           Repasa propiedades
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           5 &times; 8 = 8 &times; &hellip;
+          </li>
+          <li>
+           6 &times; 1 = &hellip;
+          </li>
+          <li>
+           9 &times; 0 = &hellip;
+          </li>
+          <li>
+           2 &times; (3 + 1) = &hellip;
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.4 &middot; Dobles, triples y multiplicar por 10 y 100
+         </span>
+         <p>
+          <strong>
+           Repasa dobles y triples
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Doble de 18
+          </li>
+          <li>
+           Triple de 8
+          </li>
+          <li>
+           20 &times; 10
+          </li>
+          <li>
+           7 &times; 100
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.5 &middot; Multiplicamos por una cifra
+         </span>
+         <p>
+          <strong>
+           Repasa por una cifra
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           12 &times; 4
+          </li>
+          <li>
+           21 &times; 3
+          </li>
+          <li>
+           32 &times; 2
+          </li>
+          <li>
+           101 &times; 5
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.6 &middot; Multiplicaciones con llevadas
+         </span>
+         <p>
+          <strong>
+           Refuerza llevadas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           19 &times; 2
+          </li>
+          <li>
+           25 &times; 4
+          </li>
+          <li>
+           34 &times; 3
+          </li>
+          <li>
+           67 &times; 2
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Refuerzo 1.7 &middot; Problemas de multiplicaci&oacute;n
+         </span>
+         <p>
+          <strong>
+           Refuerza los problemas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Hay 4 cajas con 9 tizas cada una
+          </li>
+          <li>
+           Hay 3 filas con 12 sillas
+          </li>
+          <li>
+           Un equipo tiene 5 bolsas con 8 pelotas
+          </li>
+          <li>
+           Hay 6 mesas con 7 personas cada una
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Refuerzo 1.8 &middot; S&iacute;ntesis final
+         </span>
+         <p>
+          <strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Calcula 7 &times; 8.
+          </li>
+          <li>
+           Dibuja 4 &times; 6 con puntos.
+          </li>
+          <li>
+           Calcula el triple de 15.
+          </li>
+          <li>
+           Resuelve 36 &times; 3.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </div>
+      <div class="review-group review-ampliacion">
+       <h3>
+        Ficha de ampliaci&oacute;n
+       </h3>
+       <div class="review-grid">
+        <article class="review-card" data-criterio="MAT.3.5.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.1 &middot; Las tablas del 1 al 10
+         </span>
+         <p>
+          <strong>
+           Busca relaciones entre tablas
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Calcula 7 &times; 6 desde 5 &times; 6 y 2 &times; 6
+          </li>
+          <li>
+           Explica por qu&eacute; 4 &times; 8 = 8 &times; 4
+          </li>
+          <li>
+           Completa 8 &times; &hellip; = 56 y verifica
+          </li>
+          <li>
+           Dibuja una matriz para 6 &times; 5
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.2.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.2 &middot; Factores, producto y grupos iguales
+         </span>
+         <p>
+          <strong>
+           Compara modelos
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;Por qu&eacute; 4 &times; 6 y 6 &times; 4 tienen el mismo producto?
+          </li>
+          <li>
+           Explica 6 &times; 7 con filas y columnas
+          </li>
+          <li>
+           Inventa un problema para 8 &times; 5
+          </li>
+          <li>
+           Dibuja dos matrices distintas de 24 puntos
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.3 &middot; Propiedades de la multiplicaci&oacute;n
+         </span>
+         <p>
+          <strong>
+           Razona con otra estrategia
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Calcula 8 &times; 7 separando 5 + 2
+          </li>
+          <li>
+           Explica (2 &times; 4) &times; 3 y 2 &times; (4 &times; 3)
+          </li>
+          <li>
+           Demuestra con un dibujo que 3 &times; 8 = 8 &times; 3
+          </li>
+          <li>
+           Corrige: 4 &times; (2 + 3) = 4 &times; 2 + 3
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.2.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.4 &middot; Dobles, triples y multiplicar por 10 y 100
+         </span>
+         <p>
+          <strong>
+           Compara relaciones
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;Qu&eacute; es mayor: doble de 25 o triple de 16?
+          </li>
+          <li>
+           Explica por qu&eacute; 42 &times; 100 = 4.200
+          </li>
+          <li>
+           Calcula 18 &times; 20 usando 18 &times; 2 y &times; 10
+          </li>
+          <li>
+           Inventa un problema con el triple de 30
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.2.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.5 &middot; Multiplicamos por una cifra
+         </span>
+         <p>
+          <strong>
+           Dos maneras de multiplicar
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Resuelve 34 &times; 2 descomponiendo
+          </li>
+          <li>
+           Comprueba 33 &times; 3 con una suma
+          </li>
+          <li>
+           Explica qu&eacute; significa el 2 de 42 &times; 3
+          </li>
+          <li>
+           Inventa una matriz para 12 &times; 3
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.6 &middot; Multiplicaciones con llevadas
+         </span>
+         <p>
+          <strong>
+           Explica el procedimiento
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Describe la llevada de 48 &times; 3
+          </li>
+          <li>
+           Resuelve 99 &times; 5 y verifica con 100 &times; 5 &minus; 5
+          </li>
+          <li>
+           Detecta el error en 36 &times; 2 = 612
+          </li>
+          <li>
+           Inventa una multiplicaci&oacute;n con dos llevadas
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.7 &middot; Problemas de multiplicaci&oacute;n
+         </span>
+         <p>
+          <strong>
+           Dise&ntilde;a y contrasta
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Inventa dos problemas distintos para 5 &times; 24
+          </li>
+          <li>
+           Resuelve 8 &times; 19 mediante 8 &times; 20 &minus; 8
+          </li>
+          <li>
+           Explica cu&aacute;ndo no conviene multiplicar
+          </li>
+          <li>
+           Una clase compra 7 paquetes de 23 l&aacute;pices y regala 45: calcula
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.8 &middot; S&iacute;ntesis final
+         </span>
+         <p>
+          <strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           En 7 estanter&iacute;as hay 28 libros en cada una: calcula el total.
+          </li>
+          <li>
+           Calcula el mismo producto descomponiendo 28 en 20 y 8.
+          </li>
+          <li>
+           Si se retiran 35 libros, &iquest;cu&aacute;ntos quedan?
+          </li>
+          <li>
+           Explica por qu&eacute; ambas estrategias de multiplicaci&oacute;n coinciden.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </div>
+     </section>
+     <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+     <section class="lesson-section" id="sec-diana">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        🎯
+       </span>
+       Diana de Autoevaluaci&oacute;n Interactiva
+      </h2>
+      <p>
+       Piensa en c&oacute;mo has aprendido. Elige en cada fila la respuesta que mejor te describe; puedes cambiarla cuando quieras.
+      </p>
+      <div class="diana-list">
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.1
+         </strong>
+         Uso las tablas para contar grupos de igual tama&ntilde;o.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.1" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.2
+         </strong>
+         Distingo los factores del producto y represento multiplicaciones.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.2" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.3
+         </strong>
+         Uso propiedades de la multiplicaci&oacute;n para calcular de distintas formas.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.3" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.4
+         </strong>
+         Distingo dobles y triples y comprendo el efecto de &times;10 y &times;100.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.4" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.5
+         </strong>
+         Multiplico n&uacute;meros por una cifra y explico los &oacute;rdenes.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.5" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.6
+         </strong>
+         Multiplico con llevadas sin olvidar a&ntilde;adir lo que se transporta.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.6" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.7
+         </strong>
+         Uso la multiplicaci&oacute;n en problemas y compruebo su sentido.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.7" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.8
+         </strong>
+         Entiendo los problemas, busco soluciones y s&eacute; explicar mis decisiones.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.8" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="button-row">
+       <button class="action-button secondary" id="reset-diana" type="button">
+        Borrar mi autoevaluaci&oacute;n
+       </button>
+      </div>
+     </section>
+     <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+     <section class="lesson-section" id="sec-comprueba">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        &checkmark;
+       </span>
+       Comprueba lo aprendido
+      </h2>
+      <p>
+       Marca una respuesta por pregunta y pulsa
+       <strong>
+        Comprobar respuestas
+       </strong>
+       . Puedes repetir el cuestionario para seguir aprendiendo.
+      </p>
+      <form id="mat3-quiz" novalidate="">
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.6.1">
+        <legend>
+         1. 6 &times; 4 =&hellip;
+        </legend>
+        <label>
+         <input name="q1" type="radio" value="a"/>
+         24
+        </label>
+        <label>
+         <input name="q1" type="radio" value="b"/>
+         10
+        </label>
+        <label>
+         <input name="q1" type="radio" value="c"/>
+         64
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.1.2">
+        <legend>
+         2. Los n&uacute;meros que multiplicamos son&hellip;
+        </legend>
+        <label>
+         <input name="q2" type="radio" value="a"/>
+         sumandos
+        </label>
+        <label>
+         <input name="q2" type="radio" value="b"/>
+         factores
+        </label>
+        <label>
+         <input name="q2" type="radio" value="c"/>
+         divisores
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.2.2">
+        <legend>
+         3. La conmutativa afirma que&hellip;
+        </legend>
+        <label>
+         <input name="q3" type="radio" value="a"/>
+         3 &times; 5 = 5 &times; 3
+        </label>
+        <label>
+         <input name="q3" type="radio" value="b"/>
+         3 &times; 5 = 3 + 5
+        </label>
+        <label>
+         <input name="q3" type="radio" value="c"/>
+         3 &times; 5 = 3 &times; 3
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.1">
+        <legend>
+         4. El triple de 8 es&hellip;
+        </legend>
+        <label>
+         <input name="q4" type="radio" value="a"/>
+         16
+        </label>
+        <label>
+         <input name="q4" type="radio" value="b"/>
+         24
+        </label>
+        <label>
+         <input name="q4" type="radio" value="c"/>
+         32
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.5.1">
+        <legend>
+         5. 32 &times; 10 =&hellip;
+        </legend>
+        <label>
+         <input name="q5" type="radio" value="a"/>
+         320
+        </label>
+        <label>
+         <input name="q5" type="radio" value="b"/>
+         3.200
+        </label>
+        <label>
+         <input name="q5" type="radio" value="c"/>
+         42
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.6.2">
+        <legend>
+         6. 24 &times; 2 =&hellip;
+        </legend>
+        <label>
+         <input name="q6" type="radio" value="a"/>
+         46
+        </label>
+        <label>
+         <input name="q6" type="radio" value="b"/>
+         48
+        </label>
+        <label>
+         <input name="q6" type="radio" value="c"/>
+         44
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.5.2">
+        <legend>
+         7. 27 &times; 3 =&hellip;
+        </legend>
+        <label>
+         <input name="q7" type="radio" value="a"/>
+         71
+        </label>
+        <label>
+         <input name="q7" type="radio" value="b"/>
+         81
+        </label>
+        <label>
+         <input name="q7" type="radio" value="c"/>
+         91
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.3.2.2">
+        <legend>
+         8. Cuatro cajas con 15 objetos tienen&hellip;
+        </legend>
+        <label>
+         <input name="q8" type="radio" value="a"/>
+         19
+        </label>
+        <label>
+         <input name="q8" type="radio" value="b"/>
+         45
+        </label>
+        <label>
+         <input name="q8" type="radio" value="c"/>
+         60
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <div class="button-row">
+        <button class="action-button" type="submit">
+         Comprobar respuestas
+        </button>
+        <button class="action-button secondary" type="reset">
+         Volver a empezar
+        </button>
+       </div>
+       <p aria-live="polite" class="quiz-result" hidden="" id="quiz-result" role="status">
+       </p>
+      </form>
+     </section>
+    </div>
+    <nav aria-label="Navegaci&oacute;n final" class="lesson-footer">
+     <a href="/recursos/tercero/matematicas3/">
+      &larr; Volver a Matem&aacute;ticas de 3.&ordm;
+     </a>
+     <a href="#contenido-principal">
+      &uarr; Subir al inicio
+     </a>
+    </nav>
+   </div>
+  </main>
+  <footer class="site-footer">
+   <p>
+    CEIP Joaqu&iacute;n Tena Artigas &middot; Alcolea (C&oacute;rdoba)
+   </p>
+  </footer>
+  <script>
+   "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat3-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+ </body>
+</html>
