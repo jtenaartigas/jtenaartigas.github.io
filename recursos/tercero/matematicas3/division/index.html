@@ -1,0 +1,3391 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Situaci&oacute;n de aprendizaje MAT3.4. Divisi&oacute;n. Explicaciones, gr&aacute;ficos, actividades, problemas, repaso y evaluaci&oacute;n. Matem&aacute;ticas de 3.&ordm; de Primaria." name="description"/>
+  <title>
+   MAT3.4 &middot; Divisi&oacute;n | CEIP Joaqu&iacute;n Tena Artigas
+  </title>
+  <link href="/img/logo-centro.png" rel="icon" type="image/png"/>
+  <link href="/css/base.css" rel="stylesheet"/>
+  <!--
+    MAT4.4: Matemáticas, 4.º de Primaria.
+    Referente: Orden de 30 de mayo de 2023, Anexo II (Andalucía).
+    Saberes de referencia: MAT.2.A.2.4, MAT.2.A.2.5, MAT.2.A.3.1, MAT.2.A.5.1, MAT.2.D.1.1.
+    Cada actividad o problema tiene un criterio de evaluación único en data-criterio.
+    Estos códigos no son visibles para el alumnado.
+    Las situaciones, precios y cantidades contextualizadas son datos didácticos.
+  -->
+  <style>
+   :root {
+      --math-primary: #007a33;
+      --math-dark: #005724;
+      --math-light: #e6f4ea;
+      --math-accent: #00a847;
+      --math-ink: #1e293b;
+      --math-muted: #475569;
+      --math-border: #d1e7dd;
+      --math-bg: #f4f7f5;
+      --math-amber: #9a5b08;
+      --math-amber-light: #fff7e6;
+      --math-shadow: 0 5px 18px rgba(0, 90, 37, .08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--math-bg);
+      color: var(--math-ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--math-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -6rem;
+      z-index: 1000;
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    /* Integración con la estructura compartida de la web escolar. */
+    .topic-page {
+      background: var(--math-bg);
+      color: var(--math-ink);
+    }
+
+    .topic-shell {
+      width: min(94%, 1180px);
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+
+    .topic-page .breadcrumbs {
+      margin: .3rem 0 1.2rem;
+    }
+
+    .topic-page .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: .88rem;
+    }
+
+    .topic-page .breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin-left: .65rem;
+      color: #94a3b8;
+    }
+
+    /* Portada: verde institucional, como en las demás SdA. */
+    .topic-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      align-items: center;
+      min-height: 245px;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(110deg, #005724 0%, #007a33 60%, #00a847 100%);
+      color: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .topic-hero::after {
+      content: "123";
+      position: absolute;
+      right: 10px;
+      top: -90px;
+      color: rgba(255, 255, 255, .055);
+      font-size: 14rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    .topic-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .topic-eyebrow {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: #d1fae5;
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topic-hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .topic-hero p {
+      margin: .9rem 0 0;
+      max-width: 650px;
+      color: #effff4;
+      font-size: 1.05rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tags span {
+      padding: .2rem .65rem;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .topic-page .media-frame.hero-mascot {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      margin: 0 1rem 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .topic-page .media-frame.hero-mascot img {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .intro-note,
+    .lesson-section,
+    .summary-block {
+      margin: 1.4rem 0;
+      padding: clamp(1.15rem, 3.5vw, 2rem);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.35rem;
+      background: white;
+      box-shadow: var(--math-shadow);
+    }
+
+    .intro-note {
+      border-left: 5px solid #d97706;
+    }
+
+    .intro-note p {
+      margin: .35rem 0;
+    }
+
+    .lesson-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.3rem 0 1.8rem;
+      padding: 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: 1rem;
+      background: white;
+    }
+
+    .lesson-nav a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .15s ease;
+    }
+
+    .lesson-nav a:hover {
+      background: #c6edce;
+    }
+
+    .topic-content section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Clase propia: evita que base.css centre los títulos. */
+    .topic-page .lesson-section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      margin: 0 0 1.3rem;
+      padding: 0 0 .85rem;
+      border-bottom: 2px solid var(--math-border);
+      color: var(--math-ink);
+      font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.55rem;
+      height: 2.45rem;
+      padding: 0 .25rem;
+      border-radius: .65rem;
+      background: var(--math-primary);
+      color: white;
+      font-size: .95rem;
+    }
+
+    .topic-page .lesson-section h3 {
+      margin: 1.5rem 0 .55rem;
+      color: var(--math-dark);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .topic-page .lesson-section p {
+      margin: .55rem 0 1rem;
+    }
+
+    .topic-page .lesson-section ul,
+    .topic-page .lesson-section ol {
+      padding-left: 1.4rem;
+    }
+
+    .topic-page .lesson-section li {
+      margin-bottom: .45rem;
+    }
+
+    .explanation {
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--math-primary);
+      border-radius: 0 .9rem .9rem 0;
+      background: var(--math-light);
+    }
+
+    .example {
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--math-border);
+      border-radius: .9rem;
+      background: #fbfefd;
+    }
+
+    .example strong,
+    .explanation strong {
+      color: var(--math-dark);
+    }
+
+    .numeral {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .place-value,
+    .data-table {
+      width: 100%;
+      margin: .75rem 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .place-value th,
+    .place-value td,
+    .data-table th,
+    .data-table td {
+      padding: .65rem .7rem;
+      border: 1px solid var(--math-border);
+    }
+
+    .place-value th,
+    .data-table th {
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .table-scroller {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .practice {
+      margin: 1.2rem 0 0;
+      padding: 1.2rem;
+      border: 1px solid #e4e7ed;
+      border-radius: 1rem;
+      background: #f8fafc;
+    }
+
+    .practice h3 {
+      margin-top: 0 !important;
+    }
+
+    .task-tag {
+      display: inline-block;
+      margin-bottom: .4rem;
+      padding: .12rem .6rem;
+      border-radius: 999px;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .task-card {
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #b9dec7;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .task-card + .task-card {
+      margin-top: .9rem;
+    }
+
+    .task-card h3 {
+      margin: .25rem 0 .6rem !important;
+    }
+
+    .task-card ol {
+      margin-bottom: .25rem;
+    }
+
+    .hint {
+      color: var(--math-muted);
+      font-size: .92rem;
+    }
+
+    .callout {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      background: var(--math-amber-light);
+      color: #754709;
+    }
+
+    .topic-page .callout strong {
+      color: #754709;
+    }
+
+    .roman-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .45rem;
+      margin: 1.2rem 0;
+    }
+
+    .roman-item {
+      padding: .65rem .3rem;
+      border: 1px solid var(--math-border);
+      border-radius: .7rem;
+      background: var(--math-light);
+      text-align: center;
+    }
+
+    .roman-item b {
+      display: block;
+      color: var(--math-dark);
+      font-size: 1.2rem;
+    }
+
+    .roman-item span {
+      display: block;
+      font-size: .86rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid var(--math-border);
+      border-radius: .75rem;
+      background: white;
+    }
+
+    summary {
+      color: var(--math-dark);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .answer-line {
+      display: inline-block;
+      min-width: 7.5rem;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quiz-question {
+      margin: 1rem 0;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #dce7e0;
+      border-radius: .95rem;
+      background: #fbfefd;
+    }
+
+    .quiz-question legend {
+      padding: 0 .3rem;
+      color: var(--math-ink);
+      font-weight: 760;
+      text-align: left;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: .2rem 0;
+      padding: .35rem .5rem;
+      border-radius: .45rem;
+      cursor: pointer;
+    }
+
+    .quiz-question label:hover {
+      background: #eef8f0;
+    }
+
+    .quiz-question input {
+      margin-right: .55rem;
+      accent-color: var(--math-primary);
+    }
+
+    .quiz-question.correct {
+      border-color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .quiz-question.incorrect {
+      border-color: #e1a35c;
+      background: #fff9ee;
+    }
+
+    .quiz-question .feedback {
+      margin: .45rem 0 0;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.1rem 0;
+    }
+
+    .action-button {
+      padding: .68rem 1.1rem;
+      border: 2px solid var(--math-primary);
+      border-radius: .7rem;
+      background: var(--math-primary);
+      color: white;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background: var(--math-dark);
+    }
+
+    .action-button.secondary {
+      background: white;
+      color: var(--math-dark);
+    }
+
+    .action-button.secondary:hover {
+      background: var(--math-light);
+    }
+
+    .quiz-result {
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      background: var(--math-light);
+      color: var(--math-dark);
+      font-weight: 750;
+    }
+
+    .quiz-result[hidden] {
+      display: none;
+    }
+
+    .self-check {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .self-check label {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      cursor: pointer;
+    }
+
+    .self-check input {
+      margin-top: .35rem;
+      accent-color: var(--math-primary);
+    }
+
+    .summary-block {
+      border-color: var(--math-border);
+      background: #f9fefb;
+    }
+
+    .summary-block h2 {
+      color: var(--math-dark);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .lesson-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 1rem 0;
+    }
+
+    .lesson-footer a {
+      padding: .5rem .8rem;
+      border-radius: .7rem;
+      background: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .topic-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-hero-content {
+        padding-bottom: .5rem;
+      }
+
+      .topic-page .media-frame.hero-mascot {
+        width: 145px;
+        justify-self: center;
+        margin: 0;
+      }
+
+      .two-columns,
+      .self-check {
+        grid-template-columns: 1fr;
+      }
+
+      .roman-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .site-banner,
+      .navigation-wrapper,
+      .lesson-nav,
+      .button-row,
+      .lesson-footer,
+      .skip-link,
+      .site-footer {
+        display: none !important;
+      }
+
+      body,
+      .topic-page {
+        background: white;
+        color: #111;
+      }
+
+      .topic-shell {
+        width: 100%;
+      }
+
+      .intro-note,
+      .lesson-section,
+      .summary-block,
+      .topic-hero {
+        box-shadow: none;
+      }
+
+      .topic-hero {
+        color: var(--math-dark);
+        background: var(--math-light);
+      }
+
+      .topic-hero h1,
+      .topic-hero p,
+      .topic-eyebrow {
+        color: var(--math-dark);
+      }
+
+      .lesson-section,
+      .practice,
+      .quiz-question,
+      .task-card,
+      .media-frame {
+        break-inside: avoid;
+      }
+    }
+
+    /* ===============================================================
+       Navegación: enlaces y colores de las SdA MAT5 / MAT6.
+       Evitar el aspecto de píldoras del diseño inicial.
+       =============================================================== */
+    .topic-page .lesson-nav {
+      display: block;
+      margin: 1.25rem 0 2.5rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #fff;
+      border: 1px solid #d1fae5;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+    }
+
+    .lesson-nav-heading {
+      margin: 0 0 .85rem;
+      color: #007a33;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .lesson-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .topic-page .lesson-nav-links a {
+      display: inline-block;
+      padding: .375rem .75rem;
+      border: 0;
+      border-radius: .5rem;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .83rem;
+      font-weight: 600;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: background .16s, color .16s;
+    }
+
+    .topic-page .lesson-nav-links a:hover,
+    .topic-page .lesson-nav-links a:focus-visible {
+      background: #007a33;
+      color: white;
+    }
+
+    .topic-page .lesson-nav-links .nav-challenge {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .topic-page .lesson-nav-links .nav-review {
+      background: #d1fae5;
+      color: #005724;
+    }
+
+    .topic-page .lesson-nav-links .nav-selfeval {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .topic-page .lesson-nav-links .nav-quiz {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    /* Actividades con cuatro subapartados. */
+    .activity-grid,
+    .problem-grid,
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0 .3rem;
+    }
+
+    .exercise-card,
+    .problem-card,
+    .review-card {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+      break-inside: avoid;
+    }
+
+    .exercise-card h3,
+    .problem-card h4 {
+      margin: 0 0 .6rem !important;
+      color: #005724;
+      font-size: 1.02rem;
+      text-align: left;
+    }
+
+    .subquestions {
+      padding-left: 1.55rem !important;
+      margin: .6rem 0 .1rem;
+      list-style-type: lower-alpha;
+    }
+
+    .subquestions li {
+      padding-left: .18rem;
+      margin-bottom: .5rem !important;
+    }
+
+    /* Problemas y tareas competenciales en una única sección. */
+    .section-number-amber {
+      background: #d97706;
+    }
+
+    .topic-page .lesson-section .problem-subtitle {
+      margin-top: 2rem;
+      color: #007a33;
+      font-size: 1.18rem;
+    }
+
+    .topic-page .lesson-section .challenge-subtitle {
+      color: #92400e;
+    }
+
+    .problem-card p {
+      margin: 0 !important;
+    }
+
+    .challenge-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .challenge-card {
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #fcd69c;
+      border-radius: 1rem;
+      background: #fffbeb;
+      break-inside: avoid;
+    }
+
+    .challenge-card h4 {
+      margin: 0 0 .5rem;
+      color: #92400e;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    /* Dos fichas con ocho actividades equivalentes. */
+    .review-section {
+      border: 2px solid #007a33;
+    }
+
+    .review-group {
+      margin-top: 1.9rem;
+    }
+
+    .topic-page .lesson-section .review-group h3 {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-left: 4px solid #007a33;
+      border-radius: 0 .6rem .6rem 0;
+      background: #ecfdf5;
+      color: #005724;
+      font-size: 1.1rem;
+    }
+
+    .topic-page .lesson-section .review-ampliacion h3 {
+      background: #fff7ed;
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .review-card p {
+      margin: .55rem 0 !important;
+    }
+
+    .review-tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: .4rem;
+      background: #007a33;
+      color: white;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    .review-ampliacion .review-tag {
+      background: #b45309;
+    }
+
+    /* Diana de cuatro opciones, como MAT5.1, con estado accesible. */
+    .diana-section {
+      border: 2px solid #c7d2fe;
+    }
+
+    .diana-marker {
+      background: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .diana-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .diana-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #f8fafc;
+    }
+
+    .diana-row p {
+      flex: 1 1 280px;
+      margin: 0 !important;
+      font-size: .96rem;
+    }
+
+    .diana-row p strong {
+      color: #007a33;
+    }
+
+    .diana-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .diana-option {
+      padding: .4rem .65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: .5rem;
+      background: #fff;
+      color: #475569;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .diana-option:hover {
+      background: #eef2ff;
+    }
+
+    .diana-option[aria-pressed="true"] {
+      border-color: #007a33;
+      background: #007a33;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 90, 37, .15);
+    }
+
+    @media (max-width: 760px) {
+      .activity-grid,
+      .problem-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .diana-option[aria-pressed="false"] {
+        color: #64748b;
+      }
+      .diana-option[aria-pressed="true"] {
+        color: #005724;
+        background: #e6f4ea;
+      }
+      .exercise-card,
+      .review-card,
+      .problem-card,
+      .challenge-card,
+      .diana-row {
+        break-inside: avoid;
+      }
+    }
+
+    /* Material pedagógico visual: independiente de los estilos globales. */
+    .topic-page .explanation { margin-bottom: 1.05rem; }
+    .topic-page .theory-label { margin: 0 0 .65rem; font-size: 1.12rem; color: var(--math-dark); }
+    .topic-page .theory-steps { margin: .6rem 0 .7rem; padding-left: 1.5rem; }
+    .topic-page .theory-steps li { margin: .35rem 0; }
+    .topic-page .theory-tip { margin: .85rem 0 0; padding: .75rem 1rem; border-left: 3px solid #c47d11; border-radius: .35rem; background: #fff9eb; color: #6b460c; }
+    .topic-page .math-visual { margin: 1rem 0; padding: 1rem; border: 1px solid #c9ded0; border-radius: 1rem; background: #fff; text-align: center; }
+    .topic-page .math-visual svg { display: block; width: 100%; height: auto; max-width: 740px; margin: 0 auto; overflow: visible; }
+    .topic-page .math-visual figcaption { margin-top: .6rem; color: #475569; font-size: .88rem; text-align: center; }
+    .topic-page .math-visual .diagram-caption { font-size: 14px; fill: #475569; }
+    .topic-page .math-visual .diagram-label { font-size: 17px; font-weight: 750; fill: #1e293b; }
+    .topic-page .math-visual .diagram-value { font-size: 24px; font-weight: 800; fill: #005724; }
+    .topic-page .worked-steps { margin: .55rem 0 .3rem; padding-left: 1.55rem; }
+    .topic-page .worked-steps li { margin: .35rem 0; }
+    .topic-page .frac { display: inline-grid; grid-template-rows: auto auto; justify-items: center; align-items: center; min-width: 1.25em; margin: 0 .12em; font-size: 1em; font-weight: 750; line-height: 1.15; vertical-align: middle; }
+    .topic-page .frac .num { display: block; padding: 0 .22em .12em; width: 100%; border-bottom: 2px solid currentColor; text-align: center; }
+    .topic-page .frac .den { display: block; padding: .12em .22em 0; text-align: center; }
+    .topic-page .fraction-expression { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .35rem 0; color: var(--math-dark); font-size: 1.12rem; font-weight: 650; }
+    .topic-page .facts-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; margin: .75rem 0; }
+    .topic-page .fact-card { padding: .7rem; border: 1px solid #d1e7dd; border-radius: .65rem; background: #fff; }
+    .topic-page .fact-card strong { display: block; color: #005724; }
+    .topic-page .multiplication-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: .82rem; font-variant-numeric: tabular-nums; }
+    .topic-page .multiplication-table th,.topic-page .multiplication-table td { padding: .4rem .3rem; border: 1px solid #d1e7dd; text-align: center; }
+    .topic-page .multiplication-table thead th,.topic-page .multiplication-table tbody th { background: #e6f4ea; color: #005724; font-weight: 800; }
+    .topic-page .multiplication-table td:nth-child(2n) { background: #f7fbf8; }
+    .topic-page .mini-formula { margin: .6rem 0; padding: .55rem .7rem; border: 1px solid #c4e4d2; border-radius: .6rem; background: #fff; font-size: 1.07rem; font-weight: 750; text-align: center; color: #005724; }
+    @media (max-width: 600px) {
+      .topic-page .facts-grid { grid-template-columns: 1fr; }
+      .topic-page .math-visual { padding: .55rem; }
+      .topic-page .math-visual .diagram-label { font-size: 16px; }
+    }
+  
+
+    /* Ajustes específicos de 3.º: iconografía nativa y apoyo a la lectura. */
+    .topic-page .math-visual { max-width: 100%; }
+    .topic-page .math-visual svg { width: 100%; max-height: 230px; }
+    .topic-page .explanation p { max-width: 90ch; }
+    .topic-page .worked-steps li { padding-left: .15rem; }
+    .topic-page .subquestions li { padding-left: .16rem; }
+    .topic-page .lesson-section-heading { text-align: left; }
+    @media (max-width: 640px) {
+      .topic-page .math-visual svg text { font-family: system-ui, sans-serif; }
+      .topic-page .math-visual figcaption { font-size: .78rem; }
+    }
+  </style>
+ </head>
+ <body class="subject-mathematics">
+  <a class="skip-link" href="#contenido-principal">
+   Ir al contenido principal
+  </a>
+  <!-- Cabecera institucional del centro -->
+  <header class="site-banner">
+   <a aria-label="Ir a la p&aacute;gina de inicio" href="/">
+    <img alt="CEIP Joaqu&iacute;n Tena Artigas - Alcolea, C&oacute;rdoba" class="banner-image" src="/img/banner-principal.png"/>
+   </a>
+  </header>
+  <!-- Navegación común -->
+  <div class="navigation-wrapper">
+   <div class="navigation-container">
+    <a aria-label="Ir al inicio" class="navigation-logo" href="/">
+     <img alt="" src="/img/logo-centro.png"/>
+    </a>
+    <button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir men&uacute; de navegaci&oacute;n" class="menu-toggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav aria-label="Navegaci&oacute;n principal" class="main-navigation" id="main-navigation">
+     <ul>
+      <li class="nav-green">
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li class="nav-yellow">
+       <a href="/familias/">
+        Familias
+       </a>
+      </li>
+      <li class="nav-blue">
+       <a aria-current="page" href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li class="nav-red">
+       <a href="https://profesorado.ceipjta.com/" rel="noopener noreferrer" target="_blank">
+        <span aria-hidden="true">
+         🔒
+        </span>
+        &Aacute;rea privada Profesorado
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <main class="topic-page" id="contenido-principal">
+   <div class="topic-shell">
+    <nav aria-label="Migas de pan" class="breadcrumbs">
+     <ol>
+      <li>
+       <a href="/">
+        Inicio
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/">
+        Recursos educativos
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/">
+        3.&ordm; de Primaria
+       </a>
+      </li>
+      <li>
+       <a href="/recursos/tercero/matematicas3/">
+        Matem&aacute;ticas
+       </a>
+      </li>
+      <li aria-current="page">
+       SdA 4
+      </li>
+     </ol>
+    </nav>
+    <!-- Portada verde institucional; Tomatito figura solo en portada. -->
+    <section aria-labelledby="titulo-sda" class="topic-hero">
+     <div class="topic-hero-content">
+      <span class="topic-eyebrow">
+       Matem&aacute;ticas &middot; 3.&ordm; de Primaria &middot; SdA 4
+      </span>
+      <h1 id="titulo-sda">
+       Repartimos de forma justa
+      </h1>
+      <p>
+       Descubrimos c&oacute;mo repartir y agrupar cantidades, reconocer el resto y comprobar divisiones.
+      </p>
+      <div aria-label="Qu&eacute; aprenderemos" class="hero-tags">
+       <span>
+        Repartos
+       </span>
+       <span>
+        Divisiones
+       </span>
+       <span>
+        Resto
+       </span>
+      </div>
+     </div>
+     <figure class="media-frame hero-mascot">
+      <img alt="Tomatito, la mascota del colegio, aprendiendo Matem&aacute;ticas" onerror="markImageMissing(this)" src="/img/tomatito/matematicas.png"/>
+      <figcaption class="sr-only">
+       Tomatito nos acompa&ntilde;a en esta situaci&oacute;n de aprendizaje.
+      </figcaption>
+     </figure>
+    </section>
+    <!-- Índice con las clases y colores rectangulares de MAT4.1 y MAT5.1. -->
+    <nav aria-label="Contenidos de la situaci&oacute;n de aprendizaje" class="lesson-nav">
+     <h2 class="lesson-nav-heading">
+      📍 Contenidos de la Situaci&oacute;n de Aprendizaje
+     </h2>
+     <div class="lesson-nav-links">
+      <a href="#sec-1">
+       1.1 Repartimos en partes iguales
+      </a>
+      <a href="#sec-2">
+       1.2 Formamos grupos de un mismo tama&ntilde;o
+      </a>
+      <a href="#sec-3">
+       1.3 Divisiones exactas y no exactas
+      </a>
+      <a href="#sec-4">
+       1.4 Los t&eacute;rminos de la divisi&oacute;n
+      </a>
+      <a href="#sec-5">
+       1.5 Dividimos n&uacute;meros de dos cifras
+      </a>
+      <a href="#sec-6">
+       1.6 Dividimos cuando sobran elementos
+      </a>
+      <a href="#sec-7">
+       1.7 Relacionamos multiplicaci&oacute;n y divisi&oacute;n
+      </a>
+      <a class="nav-challenge" href="#sec-8">
+       1.8 Problemas y desaf&iacute;os
+      </a>
+      <a class="nav-review" href="#sec-repaso">
+       🔄 Repasamos lo aprendido
+      </a>
+      <a class="nav-selfeval" href="#sec-diana">
+       🎯 Autoevaluaci&oacute;n
+      </a>
+      <a class="nav-quiz" href="#sec-comprueba">
+       &checkmark; Comprueba lo aprendido
+      </a>
+     </div>
+    </nav>
+    <div class="topic-content">
+     <!-- SECCIÓN 1: Partes iguales de una unidad -->
+     <section class="lesson-section" id="sec-1">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.1
+       </span>
+       Repartimos en partes iguales
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Dividir sirve para repartir una cantidad en partes iguales. Si tenemos 12 galletas y las distribuimos entre 3 ni&ntilde;os, cada uno recibe 4 porque 3 &times; 4 = 12.
+       </p>
+       <p>
+        Un reparto justo tiene la misma cantidad en cada grupo. Podemos representar el reparto con fichas, dibujos o marcas para ver c&oacute;mo se distribuyen los elementos.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Tres grupos iguales de cuatro puntos: tres por cuatro es doce." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="120" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="360" y="178">
+          3 filas de 4 puntos: 3 &times; 4 = 12
+         </text>
+        </svg>
+        <figcaption>
+         Tres grupos iguales de cuatro puntos: tres por cuatro es doce.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Si queda alg&uacute;n objeto sin repartir, aparecer&aacute; un resto; de momento comienza con repartos exactos.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Disponemos de 15 cromos para 5 personas.
+        </li>
+        <li>
+         Vamos dando un cromo a cada una hasta terminar.
+        </li>
+        <li>
+         Cada persona recibe 3 cromos: 15 &divide; 5 = 3.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 1. Calcula cada reparto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          12 pegatinas entre 3 ni&ntilde;os
+         </li>
+         <li>
+          20 l&aacute;pices entre 5 mesas
+         </li>
+         <li>
+          18 globos entre 6 grupos
+         </li>
+         <li>
+          24 hojas entre 4 carpetas
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Completa la divisi&oacute;n
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          16 &divide; 4
+         </li>
+         <li>
+          27 &divide; 3
+         </li>
+         <li>
+          35 &divide; 5
+         </li>
+         <li>
+          48 &divide; 6
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 3. Dibuja el reparto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          12 objetos en 4 grupos
+         </li>
+         <li>
+          14 objetos en 2 grupos
+         </li>
+         <li>
+          21 objetos en 7 grupos
+         </li>
+         <li>
+          30 objetos en 5 grupos
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 4. Comprueba con multiplicaci&oacute;n
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          24 &divide; 4 = 6
+         </li>
+         <li>
+          18 &divide; 3 = 6
+         </li>
+         <li>
+          32 &divide; 8 = 4
+         </li>
+         <li>
+          36 &divide; 9 = 4
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 2: Leer y escribir fracciones -->
+     <section class="lesson-section" id="sec-2">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.2
+       </span>
+       Formamos grupos de un mismo tama&ntilde;o
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Dividir tambi&eacute;n sirve para agrupar. Si tenemos 20 l&aacute;pices y hacemos paquetes de 5, obtenemos 4 paquetes. Aqu&iacute; sabemos el tama&ntilde;o de cada grupo y buscamos cu&aacute;ntos grupos caben.
+       </p>
+       <p>
+        En el reparto sabemos cu&aacute;ntos grupos hay y buscamos cu&aacute;nto corresponde a cada uno. En el agrupamiento conocemos cu&aacute;nto cabe en cada grupo y averiguamos el n&uacute;mero de grupos.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="Tres grupos iguales de cuatro puntos: tres por cuatro es doce." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="120" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="40" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="81" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="120" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="255" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="390" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <circle cx="525" cy="122" fill="#0f9952" r="15">
+         </circle>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="360" y="178">
+          3 filas de 4 puntos: 3 &times; 4 = 12
+         </text>
+        </svg>
+        <figcaption>
+         Tres grupos iguales de cuatro puntos: tres por cuatro es doce.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        F&iacute;jate en la pregunta: &laquo;&iquest;cu&aacute;ntos en cada uno?&raquo; indica reparto; &laquo;&iquest;cu&aacute;ntos grupos?&raquo; indica agrupamiento.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Tenemos 28 botellas y cajas de 7 botellas.
+        </li>
+        <li>
+         Formamos cajas de 7 hasta gastar las 28.
+        </li>
+        <li>
+         28 &divide; 7 = 4 cajas.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 1. Calcula agrupamientos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          18 botones en bolsas de 3
+         </li>
+         <li>
+          36 gomas en paquetes de 6
+         </li>
+         <li>
+          24 cartas en montones de 8
+         </li>
+         <li>
+          40 fichas en cajas de 5
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.3.1">
+        <h3>
+         Actividad 2. &iquest;Reparto o agrupamiento?
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          12 caramelos entre 4 personas
+         </li>
+         <li>
+          12 caramelos en bolsas de 4
+         </li>
+         <li>
+          30 libros entre 5 mesas
+         </li>
+         <li>
+          30 libros en lotes de 5
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Completa con grupos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          6 grupos de 4 forman &hellip; objetos
+         </li>
+         <li>
+          &hellip; grupos de 5 forman 35
+         </li>
+         <li>
+          8 grupos de &hellip; forman 48
+         </li>
+         <li>
+          &hellip; grupos de 3 forman 27
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 4. Dibuja y cuenta grupos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          16 puntos en grupos de 4
+         </li>
+         <li>
+          21 puntos en grupos de 7
+         </li>
+         <li>
+          28 puntos en grupos de 4
+         </li>
+         <li>
+          32 puntos en grupos de 8
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 3: Comparamos fracciones sencillas -->
+     <section class="lesson-section" id="sec-3">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.3
+       </span>
+       Divisiones exactas y no exactas
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Una divisi&oacute;n es exacta cuando no sobra ning&uacute;n objeto. Una divisi&oacute;n no exacta deja algunos elementos sin repartir: ese n&uacute;mero que sobra es el resto.
+       </p>
+       <p>
+        El resto siempre es menor que el divisor. Si sobrasen suficientes objetos para formar otro grupo completo, a&uacute;n tendr&iacute;amos que seguir dividiendo.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="115" rx="8" stroke="#007a33" stroke-width="2" width="585" x="60" y="35">
+         </rect>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="155" y="91">
+          23
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="265" y="91">
+          &divide;
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="355" y="91">
+          5
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="433" y="91">
+          =
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="503" y="91">
+          4
+         </text>
+         <text fill="#9a5b08" font-size="24" font-weight="650" text-anchor="middle" x="572" y="91">
+          r 3
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="155" y="176">
+          dividendo
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="355" y="176">
+          divisor
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="502" y="176">
+          cociente
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="585" y="176">
+          resto
+         </text>
+        </svg>
+        <figcaption>
+         23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        En un problema debes explicar qu&eacute; significa el resto: pueden ser cromos sueltos, personas sin sitio o una caja incompleta.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Repartimos 17 l&aacute;pices entre 4 personas.
+        </li>
+        <li>
+         Cada una recibe 4 y se han repartido 16.
+        </li>
+        <li>
+         Sobra 1 l&aacute;piz: 17 &divide; 4 = 4, resto 1.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.1.1">
+        <h3>
+         Actividad 1. Indica cociente y resto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          17 &divide; 5
+         </li>
+         <li>
+          23 &divide; 4
+         </li>
+         <li>
+          29 &divide; 6
+         </li>
+         <li>
+          14 &divide; 3
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.1">
+        <h3>
+         Actividad 2. Clasifica como exacta o no exacta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          24 &divide; 6
+         </li>
+         <li>
+          19 &divide; 4
+         </li>
+         <li>
+          35 &divide; 5
+         </li>
+         <li>
+          32 &divide; 7
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Completa seg&uacute;n el reparto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          20 entre 6: cociente &hellip; resto &hellip;
+         </li>
+         <li>
+          31 entre 5: cociente &hellip; resto &hellip;
+         </li>
+         <li>
+          15 entre 7: cociente &hellip; resto &hellip;
+         </li>
+         <li>
+          28 entre 9: cociente &hellip; resto &hellip;
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 4. Explica el resto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          22 cromos entre 5 personas
+         </li>
+         <li>
+          29 piezas en bolsas de 4
+         </li>
+         <li>
+          34 entradas en paquetes de 6
+         </li>
+         <li>
+          17 bolas en cajas de 3
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 4: Fracción de una cantidad -->
+     <section class="lesson-section" id="sec-4">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.4
+       </span>
+       Los t&eacute;rminos de la divisi&oacute;n
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        En 23 &divide; 5 = 4 y resto 3, el 23 es el dividendo (lo que tenemos), el 5 el divisor (en cu&aacute;ntos grupos o de qu&eacute; tama&ntilde;o), el 4 el cociente y el 3 el resto.
+       </p>
+       <p>
+        Podemos comprobar toda divisi&oacute;n con esta igualdad: divisor &times; cociente + resto = dividendo. Por ejemplo, 5 &times; 4 + 3 = 23. Si no coincide, debemos revisar el reparto.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="115" rx="8" stroke="#007a33" stroke-width="2" width="585" x="60" y="35">
+         </rect>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="155" y="91">
+          23
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="265" y="91">
+          &divide;
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="355" y="91">
+          5
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="433" y="91">
+          =
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="503" y="91">
+          4
+         </text>
+         <text fill="#9a5b08" font-size="24" font-weight="650" text-anchor="middle" x="572" y="91">
+          r 3
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="155" y="176">
+          dividendo
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="355" y="176">
+          divisor
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="502" y="176">
+          cociente
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="585" y="176">
+          resto
+         </text>
+        </svg>
+        <figcaption>
+         23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Al comprobar, recuerda sumar el resto despu&eacute;s de multiplicar, nunca antes.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Dividimos 31 entre 6: cociente 5, resto 1.
+        </li>
+        <li>
+         Comprobamos 6 &times; 5 + 1 = 31.
+        </li>
+        <li>
+         Como obtenemos el dividendo, la divisi&oacute;n est&aacute; bien hecha.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 1. Nombra los t&eacute;rminos
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          20 &divide; 4 = 5, r 0
+         </li>
+         <li>
+          26 &divide; 6 = 4, r 2
+         </li>
+         <li>
+          35 &divide; 8 = 4, r 3
+         </li>
+         <li>
+          19 &divide; 5 = 3, r 4
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Comprueba con la igualdad
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          18 &divide; 5 = 3, r 3
+         </li>
+         <li>
+          29 &divide; 4 = 7, r 1
+         </li>
+         <li>
+          32 &divide; 6 = 5, r 2
+         </li>
+         <li>
+          41 &divide; 7 = 5, r 6
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 3. Encuentra el dividendo
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          Divisor 4, cociente 6, resto 2
+         </li>
+         <li>
+          Divisor 5, cociente 3, resto 1
+         </li>
+         <li>
+          Divisor 7, cociente 4, resto 0
+         </li>
+         <li>
+          Divisor 6, cociente 5, resto 3
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 4. Corrige el error
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          22 &divide; 5 = 4, r 3
+         </li>
+         <li>
+          28 &divide; 6 = 4, r 4
+         </li>
+         <li>
+          16 &divide; 3 = 5, r 1
+         </li>
+         <li>
+          34 &divide; 8 = 4, r 3
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 5: Fracciones equivalentes y unidad completa -->
+     <section class="lesson-section" id="sec-5">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.5
+       </span>
+       Dividimos n&uacute;meros de dos cifras
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Para dividir un n&uacute;mero de dos cifras entre otro de una cifra, podemos utilizar las tablas de multiplicar. Buscamos el mayor producto del divisor que no supere el dividendo.
+       </p>
+       <p>
+        Por ejemplo, 48 &divide; 6 es 8 porque 6 &times; 8 = 48. Si la divisi&oacute;n es m&aacute;s grande, podemos descomponer en decenas y unidades, siempre que la distribuci&oacute;n quede clara.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="115" rx="8" stroke="#007a33" stroke-width="2" width="585" x="60" y="35">
+         </rect>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="155" y="91">
+          23
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="265" y="91">
+          &divide;
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="355" y="91">
+          5
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="433" y="91">
+          =
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="503" y="91">
+          4
+         </text>
+         <text fill="#9a5b08" font-size="24" font-weight="650" text-anchor="middle" x="572" y="91">
+          r 3
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="155" y="176">
+          dividendo
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="355" y="176">
+          divisor
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="502" y="176">
+          cociente
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="585" y="176">
+          resto
+         </text>
+        </svg>
+        <figcaption>
+         23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        La estimaci&oacute;n ayuda: si dividimos 63 entre 7, sabemos por la tabla del 7 que el resultado es 9.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         54 &divide; 6: buscamos la tabla del 6.
+        </li>
+        <li>
+         6 &times; 9 = 54; se completa exactamente.
+        </li>
+        <li>
+         El cociente es 9 y el resto es 0.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.5.2">
+        <h3>
+         Actividad 1. Resuelve usando tablas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          42 &divide; 6
+         </li>
+         <li>
+          56 &divide; 7
+         </li>
+         <li>
+          81 &divide; 9
+         </li>
+         <li>
+          48 &divide; 8
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Divisiones de dos cifras
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          36 &divide; 4
+         </li>
+         <li>
+          72 &divide; 8
+         </li>
+         <li>
+          45 &divide; 5
+         </li>
+         <li>
+          63 &divide; 7
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.1">
+        <h3>
+         Actividad 3. Encuentra el factor que falta
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          7 &times; &hellip; = 49
+         </li>
+         <li>
+          &hellip; &times; 9 = 72
+         </li>
+         <li>
+          8 &times; &hellip; = 64
+         </li>
+         <li>
+          &hellip; &times; 6 = 54
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 4. Comprueba cada cociente
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          28 &divide; 7
+         </li>
+         <li>
+          54 &divide; 9
+         </li>
+         <li>
+          32 &divide; 4
+         </li>
+         <li>
+          35 &divide; 5
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 6: Euros y céntimos -->
+     <section class="lesson-section" id="sec-6">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.6
+       </span>
+       Dividimos cuando sobran elementos
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Si una cantidad no permite formar grupos completos, buscamos el producto m&aacute;s cercano por debajo y calculamos la diferencia. Esa diferencia ser&aacute; el resto.
+       </p>
+       <p>
+        Por ejemplo, al dividir 46 entre 5, la tabla da 5 &times; 9 = 45. Como 46 &minus; 45 = 1, el cociente es 9 y el resto es 1.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="115" rx="8" stroke="#007a33" stroke-width="2" width="585" x="60" y="35">
+         </rect>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="155" y="91">
+          23
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="265" y="91">
+          &divide;
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="355" y="91">
+          5
+         </text>
+         <text fill="#1e293b" font-size="30" font-weight="650" text-anchor="middle" x="433" y="91">
+          =
+         </text>
+         <text fill="#1e293b" font-size="37" font-weight="650" text-anchor="middle" x="503" y="91">
+          4
+         </text>
+         <text fill="#9a5b08" font-size="24" font-weight="650" text-anchor="middle" x="572" y="91">
+          r 3
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="155" y="176">
+          dividendo
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="355" y="176">
+          divisor
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="502" y="176">
+          cociente
+         </text>
+         <text fill="#1e293b" font-size="16" font-weight="650" text-anchor="middle" x="585" y="176">
+          resto
+         </text>
+        </svg>
+        <figcaption>
+         23 dividido entre 5 es 4 y sobran 3: dividendo, divisor, cociente y resto.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Comprueba que el resto es menor que el divisor y que divisor &times; cociente + resto devuelve el dividendo.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Calculamos 38 &divide; 6.
+        </li>
+        <li>
+         6 &times; 6 = 36 y 38 &minus; 36 = 2.
+        </li>
+        <li>
+         Cociente 6, resto 2. Comprobamos: 6 &times; 6 + 2 = 38.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.1.1">
+        <h3>
+         Actividad 1. Resuelve con resto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          43 &divide; 6
+         </li>
+         <li>
+          59 &divide; 8
+         </li>
+         <li>
+          25 &divide; 4
+         </li>
+         <li>
+          62 &divide; 9
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.1.2">
+        <h3>
+         Actividad 2. Halla el producto m&aacute;s cercano por debajo
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          31 entre 7
+         </li>
+         <li>
+          50 entre 6
+         </li>
+         <li>
+          47 entre 5
+         </li>
+         <li>
+          68 entre 8
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.1">
+        <h3>
+         Actividad 3. Comprueba el resto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          29 &divide; 5
+         </li>
+         <li>
+          71 &divide; 9
+         </li>
+         <li>
+          34 &divide; 4
+         </li>
+         <li>
+          53 &divide; 7
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.5.2">
+        <h3>
+         Actividad 4. Interpreta el resultado
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          43 globos en ramos de 6
+         </li>
+         <li>
+          29 alumnos en equipos de 4
+         </li>
+         <li>
+          38 libros en cajas de 5
+         </li>
+         <li>
+          50 cromos entre 8 ni&ntilde;os
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 7: Compramos con un presupuesto -->
+     <section class="lesson-section" id="sec-7">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.7
+       </span>
+       Relacionamos multiplicaci&oacute;n y divisi&oacute;n
+      </h2>
+      <div class="explanation">
+       <h3 class="theory-label">
+        Entendemos el concepto
+       </h3>
+       <p>
+        Multiplicaci&oacute;n y divisi&oacute;n est&aacute;n relacionadas. Si 7 &times; 4 = 28, entonces 28 &divide; 7 = 4 y 28 &divide; 4 = 7. Esta relaci&oacute;n permite comprobar operaciones y encontrar datos que faltan.
+       </p>
+       <p>
+        En un problema de reparto podemos multiplicar para comprobar que todos los objetos se han contado. Si hay resto, se a&ntilde;ade al total de los grupos completos.
+       </p>
+       <figure class="math-visual">
+        <svg aria-label="6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n." role="img" viewbox="0 0 720 190" xmlns="http://www.w3.org/2000/svg">
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="75" y="26">
+         </rect>
+         <rect fill="#e6f4ea" height="55" rx="8" stroke="#007a33" stroke-width="2" width="165" x="277" y="26">
+         </rect>
+         <rect fill="#fff7e6" height="55" rx="8" stroke="#d97706" stroke-width="2" width="160" x="495" y="26">
+         </rect>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="157" y="61">
+          6
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="358" y="61">
+          4
+         </text>
+         <text fill="#1e293b" font-size="31" font-weight="650" text-anchor="middle" x="575" y="61">
+          24
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="258" y="62">
+          &times;
+         </text>
+         <text fill="#1e293b" font-size="28" font-weight="650" text-anchor="middle" x="465" y="62">
+          =
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="157" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="358" y="116">
+          factor
+         </text>
+         <text fill="#1e293b" font-size="20" font-weight="650" text-anchor="middle" x="575" y="116">
+          producto
+         </text>
+        </svg>
+        <figcaption>
+         6 y 4 son factores; 24 es el producto de la multiplicaci&oacute;n.
+        </figcaption>
+       </figure>
+       <p class="theory-tip">
+        <strong>
+         Para recordar:
+        </strong>
+        Lee la pregunta para decidir si necesitamos el n&uacute;mero de grupos o el tama&ntilde;o de cada uno.
+       </p>
+      </div>
+      <div class="example">
+       <strong>
+        Ejemplo resuelto, paso a paso:
+       </strong>
+       <ol class="worked-steps">
+        <li>
+         Tenemos 32 piezas y hacemos grupos de 8: 32 &divide; 8 = 4 grupos.
+        </li>
+        <li>
+         Comprobamos 4 &times; 8 = 32.
+        </li>
+        <li>
+         Si ten&iacute;amos 34, seguir&iacute;amos teniendo 4 grupos completos, pero sobrar&iacute;an 2 piezas.
+        </li>
+       </ol>
+      </div>
+      <div class="activity-grid">
+       <article class="exercise-card" data-criterio="MAT.3.6.1">
+        <h3>
+         Actividad 1. Escribe dos divisiones a partir de
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          6 &times; 4 = 24
+         </li>
+         <li>
+          9 &times; 3 = 27
+         </li>
+         <li>
+          7 &times; 8 = 56
+         </li>
+         <li>
+          5 &times; 6 = 30
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.2.2">
+        <h3>
+         Actividad 2. Completa familias de operaciones
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          4 &times; 8 = 32; 32 &divide; &hellip; = 8
+         </li>
+         <li>
+          6 &times; 7 = 42; 42 &divide; 6 = &hellip;
+         </li>
+         <li>
+          9 &times; 5 = 45; 45 &divide; &hellip; = 9
+         </li>
+         <li>
+          3 &times; 8 = 24; &hellip; &divide; 3 = 8
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.5.1">
+        <h3>
+         Actividad 3. Resuelve problemas de reparto
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          35 l&aacute;pices para 5 equipos
+         </li>
+         <li>
+          48 cromos en bolsas de 6
+         </li>
+         <li>
+          29 flores en ramos de 4
+         </li>
+         <li>
+          42 estudiantes en grupos de 7
+         </li>
+        </ol>
+       </article>
+       <article class="exercise-card" data-criterio="MAT.3.6.2">
+        <h3>
+         Actividad 4. Explica qu&eacute; operaci&oacute;n necesitas
+        </h3>
+        <ol class="subquestions" type="a">
+         <li>
+          6 cajas con 8 libros cada una
+         </li>
+         <li>
+          48 libros en cajas de 8
+         </li>
+         <li>
+          36 libros repartidos entre 6 clases
+         </li>
+         <li>
+          Un paquete de 7 cuesta 4 &euro;: &iquest;qu&eacute; datos faltan para dividir?
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- SECCIÓN 1.8: Problemas contextualizados y desafíos competenciales. -->
+     <section class="lesson-section" id="sec-8">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        1.8
+       </span>
+       Problemas y desaf&iacute;os
+      </h2>
+      <h3 class="problem-subtitle">
+       Parte A. Problemas contextualizados
+      </h3>
+      <p>
+       Lee cada situaci&oacute;n, subraya los datos &uacute;tiles y decide qu&eacute; estrategia necesitas. Escribe las operaciones y responde con una frase completa.
+      </p>
+      <div class="problem-grid">
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 1. Reparto de cromos
+        </h4>
+        <p>
+         24 cromos se reparten entre 6 alumnos. &iquest;Cu&aacute;ntos obtiene cada uno?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 2. Bolsas de caramelos
+        </h4>
+        <p>
+         Hay 38 caramelos y bolsas de 5. &iquest;Cu&aacute;ntas bolsas completas formamos y cu&aacute;ntos caramelos sobran?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Problema 3. Equipos deportivos
+        </h4>
+        <p>
+         Se apuntan 30 estudiantes y hacemos equipos de 4. &iquest;Cu&aacute;ntos equipos completos se forman y cu&aacute;ntos quedan sin equipo?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.6.2">
+        <h4>
+         Problema 4. El comedor
+        </h4>
+        <p>
+         En una mesa caben 6 personas. &iquest;Cu&aacute;ntas mesas necesitamos para sentar a 32 personas?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 5. El material del aula
+        </h4>
+        <p>
+         Se reparten 45 l&aacute;pices entre 9 cajas iguales. &iquest;Cu&aacute;ntos l&aacute;pices hay en cada una?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 6. Comprobamos el reparto
+        </h4>
+        <p>
+         Mario asegura que 29 &divide; 4 da 6 y resto 5. &iquest;Qu&eacute; falla? Prop&oacute;n el reparto correcto.
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Problema 7. Galletas de la merienda
+        </h4>
+        <p>
+         Hay 56 galletas para 8 platos. &iquest;Cu&aacute;ntas corresponden a cada plato?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.6.2">
+        <h4>
+         Problema 8. Tarjetas de lectura
+        </h4>
+        <p>
+         Hay 47 tarjetas y hacemos paquetes de 6. &iquest;Cu&aacute;ntos paquetes completos resultan?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.1.1">
+        <h4>
+         Problema 9. Botellas para la excursi&oacute;n
+        </h4>
+        <p>
+         Tenemos 60 botellas y las repartimos entre 10 grupos. &iquest;Cu&aacute;ntas botellas recibe cada uno?
+        </p>
+       </article>
+       <article class="problem-card" data-criterio="MAT.3.2.1">
+        <h4>
+         Problema 10. Las sillas
+        </h4>
+        <p>
+         En el patio hay 52 sillas; queremos filas de 8. &iquest;Cu&aacute;ntas filas completas se consiguen? &iquest;Cu&aacute;ntas sillas sobran?
+        </p>
+       </article>
+      </div>
+      <h3 class="problem-subtitle challenge-subtitle">
+       Parte B. Desaf&iacute;os matem&aacute;ticos integrados
+      </h3>
+      <p>
+       Utiliza lo aprendido en situaciones de la vida real. Sigue las instrucciones y comparte tus conclusiones de forma respetuosa.
+      </p>
+      <div class="challenge-list">
+       <article class="challenge-card" data-criterio="MAT.3.2.2">
+        <h4>
+         Desaf&iacute;o 1. La fiesta del reparto
+        </h4>
+        <p>
+         Ten&eacute;is 53 fichas para organizar juegos en mesas de 6 participantes.
+        </p>
+        <ol>
+         <li>
+          Representad cu&aacute;ntas mesas completas se forman.
+         </li>
+         <li>
+          Calculad el resto y explicad qu&eacute; representa.
+         </li>
+         <li>
+          Pensad si para sentar a todos hace falta otra mesa.
+         </li>
+         <li>
+          Comprobad con divisor &times; cociente + resto.
+         </li>
+        </ol>
+       </article>
+       <article class="challenge-card" data-criterio="MAT.3.3.2">
+        <h4>
+         Desaf&iacute;o 2. Dos maneras de repartir
+        </h4>
+        <p>
+         Inventad dos preguntas para la misma divisi&oacute;n 36 &divide; 4.
+        </p>
+        <ol>
+         <li>
+          Una pregunta debe pedir cantidad por grupo y otra n&uacute;mero de grupos.
+         </li>
+         <li>
+          Resolved ambas con dibujos.
+         </li>
+         <li>
+          Explicad la diferencia en la interpretaci&oacute;n.
+         </li>
+        </ol>
+       </article>
+       <article class="challenge-card" data-criterio="MAT.3.8.1">
+        <h4>
+         Desaf&iacute;o 3. Equipo de reparto
+        </h4>
+        <p>
+         Resolvel juntos un reparto no exacto y revisad el resultado.
+        </p>
+        <ol>
+         <li>
+          Asignad papeles de dibujante, calculista y portavoz.
+         </li>
+         <li>
+          Escuchad una propuesta distinta sin interrumpir.
+         </li>
+         <li>
+          Presentad una soluci&oacute;n acordada y justificadla.
+         </li>
+        </ol>
+       </article>
+      </div>
+     </section>
+     <!-- Repaso: fichas de refuerzo y ampliación, ocho actividades de cuatro apartados en cada una. -->
+     <section class="lesson-section" id="sec-repaso">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        &olarr;
+       </span>
+       Repasamos lo aprendido
+      </h2>
+      <p>
+       Dos fichas completas: una para afianzar y otra para seguir pensando. Cada actividad tiene cuatro apartados.
+      </p>
+      <div class="review-group">
+       <h3>
+        Ficha de refuerzo
+       </h3>
+       <div class="review-grid">
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.1 &middot; Repartimos en partes iguales
+         </span>
+         <p>
+          <strong>
+           Repasa el reparto
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           10 &divide; 2
+          </li>
+          <li>
+           15 &divide; 3
+          </li>
+          <li>
+           21 &divide; 7
+          </li>
+          <li>
+           20 &divide; 4
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.1">
+         <span class="review-tag">
+          Refuerzo 1.2 &middot; Formamos grupos de un mismo tama&ntilde;o
+         </span>
+         <p>
+          <strong>
+           Repasa agrupamientos
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           24 objetos en cajas de 6
+          </li>
+          <li>
+           18 objetos en cajas de 3
+          </li>
+          <li>
+           16 objetos en cajas de 2
+          </li>
+          <li>
+           30 objetos en cajas de 10
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.3 &middot; Divisiones exactas y no exactas
+         </span>
+         <p>
+          <strong>
+           Refuerza exactas y restos
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           13 &divide; 4
+          </li>
+          <li>
+           18 &divide; 6
+          </li>
+          <li>
+           25 &divide; 4
+          </li>
+          <li>
+           30 &divide; 5
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.1">
+         <span class="review-tag">
+          Refuerzo 1.4 &middot; Los t&eacute;rminos de la divisi&oacute;n
+         </span>
+         <p>
+          <strong>
+           Repasa los t&eacute;rminos
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           En 15 &divide; 3 indica el divisor
+          </li>
+          <li>
+           En 24 &divide; 5 indica el cociente
+          </li>
+          <li>
+           Comprueba 17 &divide; 4 = 4 r 1
+          </li>
+          <li>
+           Calcula 6 &times; 3 + 2
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.2">
+         <span class="review-tag">
+          Refuerzo 1.5 &middot; Dividimos n&uacute;meros de dos cifras
+         </span>
+         <p>
+          <strong>
+           Refuerza con tablas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           24 &divide; 3
+          </li>
+          <li>
+           40 &divide; 8
+          </li>
+          <li>
+           27 &divide; 9
+          </li>
+          <li>
+           36 &divide; 6
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.6 &middot; Dividimos cuando sobran elementos
+         </span>
+         <p>
+          <strong>
+           Refuerza con resto
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           14 &divide; 3
+          </li>
+          <li>
+           23 &divide; 5
+          </li>
+          <li>
+           37 &divide; 6
+          </li>
+          <li>
+           44 &divide; 7
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Refuerzo 1.7 &middot; Relacionamos multiplicaci&oacute;n y divisi&oacute;n
+         </span>
+         <p>
+          <strong>
+           Refuerza operaciones inversas
+          </strong>
+         </p>
+         <p class="hint">
+          Si lo necesitas, utiliza un dibujo, una tabla o material para representar.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           5 &times; 8 = &hellip;; 40 &divide; 8 = &hellip;
+          </li>
+          <li>
+           9 &times; 4 = &hellip;; 36 &divide; 9 = &hellip;
+          </li>
+          <li>
+           24 &divide; 6 = &hellip;; 6 &times; &hellip; = 24
+          </li>
+          <li>
+           42 &divide; 7 = &hellip;; 7 &times; &hellip; = 42
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Refuerzo 1.8 &middot; S&iacute;ntesis final
+         </span>
+         <p>
+          <strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Reparte 24 entre 6.
+          </li>
+          <li>
+           Agrupa 35 objetos de 7 en 7.
+          </li>
+          <li>
+           Calcula 29 &divide; 4 e indica el resto.
+          </li>
+          <li>
+           Comprueba 34 &divide; 5 = 6, resto 4.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </div>
+      <div class="review-group review-ampliacion">
+       <h3>
+        Ficha de ampliaci&oacute;n
+       </h3>
+       <div class="review-grid">
+        <article class="review-card" data-criterio="MAT.3.1.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.1 &middot; Repartimos en partes iguales
+         </span>
+         <p>
+          <strong>
+           Razona el reparto
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;Qu&eacute; ocurre si repartimos 18 entre 1?
+          </li>
+          <li>
+           Inventa dos formas de repartir 24 sin resto
+          </li>
+          <li>
+           Explica por qu&eacute; 17 entre 4 deja objetos
+          </li>
+          <li>
+           Dibuja 30 fichas repartidas en 6 grupos
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.2 &middot; Formamos grupos de un mismo tama&ntilde;o
+         </span>
+         <p>
+          <strong>
+           Inventa y explica
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Escribe reparto y agrupamiento para 20 &divide; 5
+          </li>
+          <li>
+           Inventa un agrupamiento con 42 &divide; 7
+          </li>
+          <li>
+           Dibuja 27 objetos y agr&uacute;palos de 9
+          </li>
+          <li>
+           Explica por qu&eacute; 24 &divide; 6 puede tener dos preguntas diferentes
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.3 &middot; Divisiones exactas y no exactas
+         </span>
+         <p>
+          <strong>
+           Busca reglas del resto
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;Puede una divisi&oacute;n entre 3 tener resto 3?
+          </li>
+          <li>
+           Enumera los restos posibles al dividir entre 5
+          </li>
+          <li>
+           &iquest;Qu&eacute; ocurre al sumar 1 a 24 &divide; 6?
+          </li>
+          <li>
+           Inventa una divisi&oacute;n cuyo resto sea 2
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.4 &middot; Los t&eacute;rminos de la divisi&oacute;n
+         </span>
+         <p>
+          <strong>
+           Razona con t&eacute;rminos
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Inventa una divisi&oacute;n con divisor 4 y resto 3
+          </li>
+          <li>
+           &iquest;Es posible 21 &divide; 5 = 3 r 6?
+          </li>
+          <li>
+           Halla dividendo si 8 &times; 4 + 5
+          </li>
+          <li>
+           Explica por qu&eacute; resto &lt; divisor
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.5 &middot; Dividimos n&uacute;meros de dos cifras
+         </span>
+         <p>
+          <strong>
+           Explica un procedimiento
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Resuelve 96 &divide; 8 y muestra una descomposici&oacute;n
+          </li>
+          <li>
+           Calcula 84 &divide; 7 por la tabla
+          </li>
+          <li>
+           Inventa una divisi&oacute;n exacta con cociente 9
+          </li>
+          <li>
+           Explica c&oacute;mo se relacionan 6 &times; 8 y 48 &divide; 6
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.6.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.6 &middot; Dividimos cuando sobran elementos
+         </span>
+         <p>
+          <strong>
+           Revisa problemas no exactos
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           &iquest;Cu&aacute;ntas cajas de 6 hacen falta para 31 botellas?
+          </li>
+          <li>
+           &iquest;Cu&aacute;ntos grupos completos de 6 se forman con 31?
+          </li>
+          <li>
+           Explica por qu&eacute; son preguntas diferentes
+          </li>
+          <li>
+           Inventa una divisi&oacute;n cuyo cociente sea 7 y resto 4
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.3.2">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.7 &middot; Relacionamos multiplicaci&oacute;n y divisi&oacute;n
+         </span>
+         <p>
+          <strong>
+           Plantea y resuelve
+          </strong>
+         </p>
+         <p class="hint">
+          Razona tus decisiones y explica c&oacute;mo has comprobado la respuesta.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Inventa un reparto exacto de 56 objetos
+          </li>
+          <li>
+           Inventa uno no exacto con 56 objetos
+          </li>
+          <li>
+           Compara repartir 30 entre 5 y hacer grupos de 5
+          </li>
+          <li>
+           Explica c&oacute;mo comprobar&iacute;as 49 &divide; 8
+          </li>
+         </ol>
+        </article>
+        <article class="review-card" data-criterio="MAT.3.5.1">
+         <span class="review-tag">
+          Ampliaci&oacute;n 1.8 &middot; S&iacute;ntesis final
+         </span>
+         <p>
+          <strong>
+           Repasamos y conectamos conocimientos
+          </strong>
+         </p>
+         <p class="hint">
+          Realiza los cuatro apartados.
+         </p>
+         <ol class="subquestions" type="a">
+          <li>
+           Tienes 59 materiales y cajas de 8: &iquest;cu&aacute;ntas cajas completas haces?
+          </li>
+          <li>
+           &iquest;Cu&aacute;ntos materiales sobran?
+          </li>
+          <li>
+           &iquest;Cu&aacute;ntas cajas necesitas si quieres guardar tambi&eacute;n los que sobran?
+          </li>
+          <li>
+           Explica por qu&eacute; las dos preguntas tienen respuestas distintas.
+          </li>
+         </ol>
+        </article>
+       </div>
+      </div>
+     </section>
+     <!-- Diana de autoevaluación: cuatro niveles por aprendizaje. -->
+     <section class="lesson-section" id="sec-diana">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        🎯
+       </span>
+       Diana de Autoevaluaci&oacute;n Interactiva
+      </h2>
+      <p>
+       Piensa en c&oacute;mo has aprendido. Elige en cada fila la respuesta que mejor te describe; puedes cambiarla cuando quieras.
+      </p>
+      <div class="diana-list">
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.1
+         </strong>
+         Interpreto una divisi&oacute;n como reparto en partes iguales.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.1" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.2
+         </strong>
+         Diferencio repartir entre grupos y formar grupos de un tama&ntilde;o.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.2" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.3
+         </strong>
+         Distingo si una divisi&oacute;n es exacta y qu&eacute; significa el resto.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.3" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.4
+         </strong>
+         Identifico dividendo, divisor, cociente y resto y compruebo.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.4" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.5
+         </strong>
+         Uso las tablas para resolver divisiones exactas.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.5" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.6
+         </strong>
+         Resuelvo divisiones con resto y doy sentido a lo que sobra.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.6" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.7
+         </strong>
+         Elijo entre multiplicar y dividir y justifico mi estrategia.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.7" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+       <div class="diana-row">
+        <p>
+         <strong>
+          1.8
+         </strong>
+         Entiendo los problemas, busco soluciones y s&eacute; explicar mis decisiones.
+        </p>
+        <div aria-label="Autoevaluaci&oacute;n del apartado 1.8" class="diana-options" role="group">
+         <button aria-pressed="false" class="diana-option" data-value="1" type="button">
+          Casi nunca
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="2" type="button">
+          A veces
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="3" type="button">
+          Casi siempre
+         </button>
+         <button aria-pressed="false" class="diana-option" data-value="4" type="button">
+          Siempre
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="button-row">
+       <button class="action-button secondary" id="reset-diana" type="button">
+        Borrar mi autoevaluaci&oacute;n
+       </button>
+      </div>
+     </section>
+     <!-- Actividad interactiva adicional: no sustituye a las pruebas de evaluación. -->
+     <section class="lesson-section" id="sec-comprueba">
+      <h2 class="lesson-section-heading">
+       <span class="section-number">
+        &checkmark;
+       </span>
+       Comprueba lo aprendido
+      </h2>
+      <p>
+       Marca una respuesta por pregunta y pulsa
+       <strong>
+        Comprobar respuestas
+       </strong>
+       . Puedes repetir el cuestionario para seguir aprendiendo.
+      </p>
+      <form id="mat3-quiz" novalidate="">
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.6.1">
+        <legend>
+         1. 18 &divide; 3 =&hellip;
+        </legend>
+        <label>
+         <input name="q1" type="radio" value="a"/>
+         9
+        </label>
+        <label>
+         <input name="q1" type="radio" value="b"/>
+         6
+        </label>
+        <label>
+         <input name="q1" type="radio" value="c"/>
+         5
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.1.2">
+        <legend>
+         2. 24 objetos en bolsas de 6 forman&hellip;
+        </legend>
+        <label>
+         <input name="q2" type="radio" value="a"/>
+         4 bolsas
+        </label>
+        <label>
+         <input name="q2" type="radio" value="b"/>
+         6 bolsas
+        </label>
+        <label>
+         <input name="q2" type="radio" value="c"/>
+         3 bolsas
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.2.2">
+        <legend>
+         3. 17 &divide; 4 tiene resto&hellip;
+        </legend>
+        <label>
+         <input name="q3" type="radio" value="a"/>
+         0
+        </label>
+        <label>
+         <input name="q3" type="radio" value="b"/>
+         1
+        </label>
+        <label>
+         <input name="q3" type="radio" value="c"/>
+         4
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="c" data-criterio="MAT.3.2.1">
+        <legend>
+         4. En 23 &divide; 5 = 4, resto 3, el cociente es&hellip;
+        </legend>
+        <label>
+         <input name="q4" type="radio" value="a"/>
+         3
+        </label>
+        <label>
+         <input name="q4" type="radio" value="b"/>
+         5
+        </label>
+        <label>
+         <input name="q4" type="radio" value="c"/>
+         4
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.5.1">
+        <legend>
+         5. La comprobaci&oacute;n es&hellip;
+        </legend>
+        <label>
+         <input name="q5" type="radio" value="a"/>
+         divisor &times; cociente + resto
+        </label>
+        <label>
+         <input name="q5" type="radio" value="b"/>
+         dividendo + resto
+        </label>
+        <label>
+         <input name="q5" type="radio" value="c"/>
+         cociente &minus; divisor
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="b" data-criterio="MAT.3.6.2">
+        <legend>
+         6. 54 &divide; 6 =&hellip;
+        </legend>
+        <label>
+         <input name="q6" type="radio" value="a"/>
+         8
+        </label>
+        <label>
+         <input name="q6" type="radio" value="b"/>
+         9
+        </label>
+        <label>
+         <input name="q6" type="radio" value="c"/>
+         7
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.5.2">
+        <legend>
+         7. 38 &divide; 6 da&hellip;
+        </legend>
+        <label>
+         <input name="q7" type="radio" value="a"/>
+         6, resto 2
+        </label>
+        <label>
+         <input name="q7" type="radio" value="b"/>
+         7, resto 2
+        </label>
+        <label>
+         <input name="q7" type="radio" value="c"/>
+         6, resto 6
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <fieldset class="quiz-question" data-correct="a" data-criterio="MAT.3.2.2">
+        <legend>
+         8. Si 7 &times; 4 = 28, entonces 28 &divide; 7 =&hellip;
+        </legend>
+        <label>
+         <input name="q8" type="radio" value="a"/>
+         4
+        </label>
+        <label>
+         <input name="q8" type="radio" value="b"/>
+         7
+        </label>
+        <label>
+         <input name="q8" type="radio" value="c"/>
+         21
+        </label>
+        <p aria-live="polite" class="feedback">
+        </p>
+       </fieldset>
+       <div class="button-row">
+        <button class="action-button" type="submit">
+         Comprobar respuestas
+        </button>
+        <button class="action-button secondary" type="reset">
+         Volver a empezar
+        </button>
+       </div>
+       <p aria-live="polite" class="quiz-result" hidden="" id="quiz-result" role="status">
+       </p>
+      </form>
+     </section>
+    </div>
+    <nav aria-label="Navegaci&oacute;n final" class="lesson-footer">
+     <a href="/recursos/tercero/matematicas3/">
+      &larr; Volver a Matem&aacute;ticas de 3.&ordm;
+     </a>
+     <a href="#contenido-principal">
+      &uarr; Subir al inicio
+     </a>
+    </nav>
+   </div>
+  </main>
+  <footer class="site-footer">
+   <p>
+    CEIP Joaqu&iacute;n Tena Artigas &middot; Alcolea (C&oacute;rdoba)
+   </p>
+  </footer>
+  <script>
+   "use strict";
+
+    // Esconder la imagen si aún no existe en el servidor o se produce un error.
+    function markImageMissing(image) {
+      const figure = image.closest("figure");
+      if (figure) {
+        figure.hidden = true;
+      } else {
+        image.hidden = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menú móvil de la web, sin depender de una función de otro archivo.
+      const menuButton = document.querySelector(".menu-toggle");
+      const mainNavigation = document.getElementById("main-navigation");
+
+      if (menuButton && mainNavigation) {
+        menuButton.addEventListener("click", function () {
+          const opened = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!opened));
+          mainNavigation.classList.toggle("is-open", !opened);
+        });
+      }
+
+
+      // Diana de autoevaluación: una sola opción marcada por fila.
+      document.querySelectorAll(".diana-options").forEach(function (group) {
+        group.querySelectorAll(".diana-option").forEach(function (button) {
+          button.addEventListener("click", function () {
+            group.querySelectorAll(".diana-option").forEach(function (option) {
+              option.setAttribute("aria-pressed", "false");
+            });
+            button.setAttribute("aria-pressed", "true");
+          });
+        });
+      });
+
+      const resetDiana = document.getElementById("reset-diana");
+      if (resetDiana) {
+        resetDiana.addEventListener("click", function () {
+          document.querySelectorAll(".diana-option").forEach(function (button) {
+            button.setAttribute("aria-pressed", "false");
+          });
+        });
+      }
+
+      const quiz = document.getElementById("mat3-quiz");
+      const result = document.getElementById("quiz-result");
+      if (!quiz || !result) {
+        return;
+      }
+
+      quiz.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(quiz.querySelectorAll(".quiz-question"));
+        let correct = 0;
+        let unanswered = 0;
+
+        questions.forEach(function (question) {
+          const selected = question.querySelector("input[type='radio']:checked");
+          const feedback = question.querySelector(".feedback");
+
+          question.classList.remove("correct", "incorrect");
+          if (!selected) {
+            unanswered += 1;
+            feedback.textContent = "Elige una respuesta para continuar.";
+            return;
+          }
+
+          if (selected.value === question.dataset.correct) {
+            correct += 1;
+            question.classList.add("correct");
+            feedback.textContent = "¡Correcto!";
+          } else {
+            question.classList.add("incorrect");
+            feedback.textContent = "Revisa la explicación y vuelve a intentarlo.";
+          }
+        });
+
+        result.hidden = false;
+        if (unanswered > 0) {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            ". Te quedan " + unanswered + " preguntas por responder.";
+        } else {
+          result.textContent = "Has acertado " + correct + " de " + questions.length +
+            " preguntas. " + (correct === questions.length
+              ? "¡Muy bien, has resuelto todas!"
+              : "Puedes repasar y volver a probar.");
+        }
+      });
+
+      quiz.addEventListener("reset", function () {
+        quiz.querySelectorAll(".quiz-question").forEach(function (question) {
+          question.classList.remove("correct", "incorrect");
+          question.querySelector(".feedback").textContent = "";
+        });
+        result.textContent = "";
+        result.hidden = true;
+      });
+    });
+  </script>
+ </body>
+</html>
